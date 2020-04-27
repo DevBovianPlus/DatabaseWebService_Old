@@ -24,7 +24,6 @@ namespace DatabaseWebService.DomainPDO.Concrete
 {
     // klic na DB
     // nekaj super za GIT
-    // kaj pa tole lele
     public class OrderPDORepository : IOrderPDORepository
     {
         GrafolitPDOEntities context;
