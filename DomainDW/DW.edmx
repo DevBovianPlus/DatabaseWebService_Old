@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CashFlow_Skupno">
+          <Key>
+            <PropertyRef Name="CashFlowSkupnoID" />
+          </Key>
+          <Property Name="CashFlowSkupnoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DatumPlana" Type="datetime" />
+          <Property Name="Datum" Type="datetime" />
+          <Property Name="Vrsta" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="PlacilaKupcev" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaAvansov" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaDobaviteljskiFaktoring" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaDobaviteljem" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaCassaSconto" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaOdkupov" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaOdkupovHR" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaDDV" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaPlace" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaKredit" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaLeasing" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PlacilaCassaScontoRocni" Type="numeric" Precision="38" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="DWModelStoreContainer">
+          <EntitySet Name="CashFlow_Skupno" EntityType="Self.CashFlow_Skupno" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CashFlow_Skupno">
+          <Key>
+            <PropertyRef Name="CashFlowSkupnoID" />
+          </Key>
+          <Property Name="CashFlowSkupnoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatumPlana" Type="DateTime" Precision="3" />
+          <Property Name="Datum" Type="DateTime" Precision="3" />
+          <Property Name="Vrsta" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlacilaKupcev" Type="Decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaAvansov" Type="Decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaDobaviteljskiFaktoring" Type="Decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaDobaviteljem" Type="Decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaCassaSconto" Type="Decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="PlacilaOdkupov" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaOdkupovHR" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaDDV" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaPlace" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaKredit" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaLeasing" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="PlacilaCassaScontoRocni" Type="Decimal" Precision="38" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="DWEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CashFlow_Skupno" EntityType="Self.CashFlow_Skupno" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DWModelStoreContainer" CdmEntityContainer="DWEntities">
+          <EntitySetMapping Name="CashFlow_Skupno">
+            <EntityTypeMapping TypeName="DWModel.CashFlow_Skupno">
+              <MappingFragment StoreEntitySet="CashFlow_Skupno">
+                <ScalarProperty Name="CashFlowSkupnoID" ColumnName="CashFlowSkupnoID" />
+                <ScalarProperty Name="DatumPlana" ColumnName="DatumPlana" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
+                <ScalarProperty Name="PlacilaKupcev" ColumnName="PlacilaKupcev" />
+                <ScalarProperty Name="PlacilaAvansov" ColumnName="PlacilaAvansov" />
+                <ScalarProperty Name="PlacilaDobaviteljskiFaktoring" ColumnName="PlacilaDobaviteljskiFaktoring" />
+                <ScalarProperty Name="PlacilaDobaviteljem" ColumnName="PlacilaDobaviteljem" />
+                <ScalarProperty Name="PlacilaCassaSconto" ColumnName="PlacilaCassaSconto" />
+                <ScalarProperty Name="PlacilaOdkupov" ColumnName="PlacilaOdkupov" />
+                <ScalarProperty Name="PlacilaOdkupovHR" ColumnName="PlacilaOdkupovHR" />
+                <ScalarProperty Name="PlacilaDDV" ColumnName="PlacilaDDV" />
+                <ScalarProperty Name="PlacilaPlace" ColumnName="PlacilaPlace" />
+                <ScalarProperty Name="PlacilaKredit" ColumnName="PlacilaKredit" />
+                <ScalarProperty Name="PlacilaLeasing" ColumnName="PlacilaLeasing" />
+                <ScalarProperty Name="PlacilaCassaScontoRocni" ColumnName="PlacilaCassaScontoRocni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

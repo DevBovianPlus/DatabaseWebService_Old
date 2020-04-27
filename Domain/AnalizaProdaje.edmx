@@ -1,0 +1,1990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AnalizaProdajeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Avtomatika">
+          <Key>
+            <PropertyRef Name="AvtomatikaID" />
+          </Key>
+          <Property Name="AvtomatikaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OsebaID" Type="int" Nullable="false" />
+          <Property Name="DogodekID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="StopnjaNadrejenega" Type="int" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Dogodek">
+          <Key>
+            <PropertyRef Name="idDogodek" />
+          </Key>
+          <Property Name="idDogodek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="idKategorija" Type="int" />
+          <Property Name="Skrbnik" Type="int" />
+          <Property Name="Izvajalec" Type="int" />
+          <Property Name="idStatus" Type="int" />
+          <Property Name="Opis" Type="varchar" MaxLength="2000" />
+          <Property Name="DatumOtvoritve" Type="datetime" />
+          <Property Name="Rok" Type="datetime" />
+          <Property Name="DatumZadZaprtja" Type="char" MaxLength="10" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="Tip" Type="varchar" MaxLength="30" />
+          <Property Name="RokIzvedbe" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DogodekSestanek">
+          <Key>
+            <PropertyRef Name="DogodekSestanekID" />
+          </Key>
+          <Property Name="DogodekSestanekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DogodekID" Type="int" Nullable="false" />
+          <Property Name="Tip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Opis" Type="varchar(max)" Nullable="false" />
+          <Property Name="Datum" Type="datetime" Nullable="false" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IzpisGrafa">
+          <Key>
+            <PropertyRef Name="IzpisGrafaID" />
+          </Key>
+          <Property Name="IzpisGrafaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="KategorijaID" Type="int" Nullable="false" />
+          <Property Name="Obdobje" Type="int" />
+          <Property Name="Tip" Type="int" />
+          <Property Name="EnotaMere" Type="varchar" MaxLength="20" />
+          <Property Name="Opis" Type="varchar" MaxLength="70" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Vrednost" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="idKategorija" />
+          </Key>
+          <Property Name="idKategorija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="KontaktneOsebe">
+          <Key>
+            <PropertyRef Name="idKontaktneOsebe" />
+          </Key>
+          <Property Name="idKontaktneOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="NazivKontaktneOsebe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="GSM" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="50" />
+          <Property Name="ZaporednaStevika" Type="int" />
+          <Property Name="Fax" Type="varchar" MaxLength="30" />
+          <Property Name="Opombe" Type="varchar" MaxLength="3000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Nadzor">
+          <Key>
+            <PropertyRef Name="idNadzor" />
+          </Key>
+          <Property Name="idNadzor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Izvajalec" Type="int" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="idKategorija" Type="int" />
+          <Property Name="idStatusNadzora" Type="int" />
+          <Property Name="ZapStNadzora" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Naprava">
+          <Key>
+            <PropertyRef Name="idNaprava" />
+          </Key>
+          <Property Name="idNaprava" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="Koda" Type="varchar" MaxLength="15" />
+          <Property Name="Naziv" Type="varchar" MaxLength="150" />
+          <Property Name="Opis" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Osebe">
+          <Key>
+            <PropertyRef Name="idOsebe" />
+          </Key>
+          <Property Name="idOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idVloga" Type="int" />
+          <Property Name="Ime" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Priimek" Type="varchar" MaxLength="60" />
+          <Property Name="Naslov" Type="varchar" MaxLength="160" />
+          <Property Name="DatumRojstva" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="DatumZaposlitve" Type="date" />
+          <Property Name="UporabniskoIme" Type="varchar" MaxLength="100" />
+          <Property Name="Geslo" Type="varchar" MaxLength="100" />
+          <Property Name="TelefonGSM" Type="varchar" MaxLength="60" />
+          <Property Name="Zunanji" Type="int" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="200" />
+          <Property Name="ProfileImage" Type="varchar" MaxLength="300" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idOseba" Type="int" Nullable="false" />
+          <Property Name="idNadrejeni" Type="int" Nullable="false" />
+          <Property Name="Opomba" Type="varchar" MaxLength="200" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDosebe" Type="int" />
+        </EntityType>
+        <EntityType Name="PlanStranka">
+          <Key>
+            <PropertyRef Name="idPlanStranka" />
+          </Key>
+          <Property Name="idPlanStranka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKategorija" Type="int" />
+          <Property Name="IDStranka" Type="int" />
+          <Property Name="LetniZnesek" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Leto" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Sporocila">
+          <Key>
+            <PropertyRef Name="idSporocila" />
+          </Key>
+          <Property Name="idSporocila" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDDogodek" Type="int" />
+          <Property Name="OpisDel" Type="varchar" MaxLength="5000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="StatusDogodek">
+          <Key>
+            <PropertyRef Name="idStatusDogodek" />
+          </Key>
+          <Property Name="idStatusDogodek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="StatusNadzora">
+          <Key>
+            <PropertyRef Name="idStatusNadzora" />
+          </Key>
+          <Property Name="idStatusNadzora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Stranka">
+          <Key>
+            <PropertyRef Name="idStranka" />
+          </Key>
+          <Property Name="idStranka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KodaStranke" Type="varchar" MaxLength="250" />
+          <Property Name="NazivPrvi" Type="varchar" MaxLength="250" />
+          <Property Name="NazivDrugi" Type="varchar(max)" />
+          <Property Name="Naslov" Type="varchar" MaxLength="250" />
+          <Property Name="StevPoste" Type="varchar" MaxLength="12" />
+          <Property Name="NazivPoste" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="InternetniNalov" Type="varchar" MaxLength="50" />
+          <Property Name="KontaktnaOseba" Type="varchar" MaxLength="50" />
+          <Property Name="RokPlacila" Type="nchar" MaxLength="3" />
+          <Property Name="TRR" Type="varchar" MaxLength="35" />
+          <Property Name="DavcnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="MaticnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="RangStranke" Type="varchar" MaxLength="15" />
+          <Property Name="StatusDomacTuji" Type="varchar" MaxLength="10" />
+          <Property Name="Zavezanec_DA_NE" Type="varchar" MaxLength="2" />
+          <Property Name="IdentifikacijskaStev" Type="varchar" MaxLength="20" />
+          <Property Name="Clan_EU" Type="varchar" MaxLength="2" />
+          <Property Name="BIC" Type="varchar" MaxLength="11" />
+          <Property Name="KodaPlacila" Type="varchar" MaxLength="4" />
+          <Property Name="StatusKupecDobavitelj" Type="varchar" MaxLength="20" />
+          <Property Name="DrzavaStranke" Type="varchar" MaxLength="50" />
+          <Property Name="Neaktivna" Type="varchar" MaxLength="2" />
+          <Property Name="GenerirajERacun" Type="int" />
+          <Property Name="JavniZavod" Type="int" />
+          <Property Name="SecondID" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="StrankaKategorija">
+          <Key>
+            <PropertyRef Name="idStrankaKategorija" />
+          </Key>
+          <Property Name="idStrankaKategorija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" Nullable="false" />
+          <Property Name="idKategorija" Type="int" Nullable="false" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOseba" Type="int" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni">
+          <Key>
+            <PropertyRef Name="idStrankaOsebe" />
+          </Key>
+          <Property Name="idStrankaOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="idOsebe" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailTo" Type="varchar" MaxLength="100" />
+          <Property Name="EmailBody" Type="varchar(max)" />
+          <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents">
+          <Key>
+            <PropertyRef Name="SystemMessageEventID" />
+          </Key>
+          <Property Name="SystemMessageEventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="Vloga">
+          <Key>
+            <PropertyRef Name="idVloga" />
+          </Key>
+          <Property Name="idVloga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="FinancniDashboard">
+          <Key>
+            <PropertyRef Name="FinancniDashboardID" />
+          </Key>
+          <Property Name="Timestmp" Type="datetime" />
+          <Property Name="FinancniDashboardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dobavitelji" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Kupci" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Zaloga" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Investicije" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Investicijsko_vzdrzevanje" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Krediti" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Dobicek" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Skupaj" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="StDniKupci" Type="int" />
+          <Property Name="StDniDobavitelji" Type="int" />
+        </EntityType>
+        <Association Name="FK_Avtomatika_Osebe">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="1" />
+          <End Role="Avtomatika" Type="Self.Avtomatika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Avtomatika">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_KATEGORI">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="Izvajalec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_OSEBE1">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="Skrbnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_STATUSDO">
+          <End Role="StatusDogodek" Type="Self.StatusDogodek" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDogodek">
+              <PropertyRef Name="idStatusDogodek" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DogodekID">
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="1" />
+          <End Role="Avtomatika" Type="Self.Avtomatika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="Avtomatika">
+              <PropertyRef Name="DogodekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DogodekSestanek_Dogodek">
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="1" />
+          <End Role="DogodekSestanek" Type="Self.DogodekSestanek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="DogodekSestanek">
+              <PropertyRef Name="DogodekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzpisGrafa_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
+          <End Role="IzpisGrafa" Type="Self.IzpisGrafa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="IzpisGrafa">
+              <PropertyRef Name="KategorijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzpisGrafa_Stranka">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="1" />
+          <End Role="IzpisGrafa" Type="Self.IzpisGrafa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="IzpisGrafa">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KontaktneOsebe" Type="Self.KontaktneOsebe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="KontaktneOsebe">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_KATEGORI">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="Izvajalec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_STATUSNA">
+          <End Role="StatusNadzora" Type="Self.StatusNadzora" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusNadzora">
+              <PropertyRef Name="idStatusNadzora" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idStatusNadzora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Naprava_Stranka">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="Naprava" Type="Self.Naprava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Naprava">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OSEBE_REFERENCE_VLOGA">
+          <End Role="Vloga" Type="Self.Vloga" Multiplicity="0..1" />
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga">
+              <PropertyRef Name="idVloga" />
+            </Principal>
+            <Dependent Role="Osebe">
+              <PropertyRef Name="idVloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OsebeNadrejeni" Type="Self.OsebeNadrejeni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni">
+              <PropertyRef Name="idOseba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe1">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="1" />
+          <End Role="OsebeNadrejeni" Type="Self.OsebeNadrejeni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni">
+              <PropertyRef Name="idNadrejeni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANSTRA_REFERENCE_KATEGORI">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlanStranka" Type="Self.PlanStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="PlanStranka">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANSTRA_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlanStranka" Type="Self.PlanStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="PlanStranka">
+              <PropertyRef Name="IDStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPOROCIL_REFERENCE_DOGODEK">
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sporocila" Type="Self.Sporocila" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="Sporocila">
+              <PropertyRef Name="IDDogodek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaKategorija_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaKategorija" Type="Self.StrankaKategorija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="StrankaKategorija">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaKategorija_Stranka">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaKategorija" Type="Self.StrankaKategorija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaKategorija">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni">
+              <PropertyRef Name="idOsebe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="IzrisGrafa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Stranka" Type="varchar" Mode="In" />
+          <Parameter Name="Kategorija" Type="varchar" Mode="In" />
+          <Parameter Name="Tip_Grafa" Type="int" Mode="In" />
+          <Parameter Name="Tip_Izpisa" Type="int" Mode="In" />
+          <Parameter Name="ObdobjeOd" Type="date" Mode="In" />
+          <Parameter Name="ObdobjeDo" Type="date" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="StrankaID" Type="int" />
+                <Property Name="KategorijaID" Type="int" />
+                <Property Name="Obdobje" Type="int" />
+                <Property Name="Tip" Type="int" />
+                <Property Name="EnotaMere" Type="varchar" MaxLength="20" />
+                <Property Name="Opis" Type="varchar" MaxLength="70" />
+                <Property Name="Datum" Type="date" />
+                <Property Name="Vrednost" Type="decimal" Precision="18" Scale="3" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="AnalizaProdajeModelStoreContainer">
+          <EntitySet Name="Avtomatika" EntityType="Self.Avtomatika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dogodek" EntityType="Self.Dogodek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DogodekSestanek" EntityType="Self.DogodekSestanek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IzpisGrafa" EntityType="Self.IzpisGrafa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategorija" EntityType="Self.Kategorija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KontaktneOsebe" EntityType="Self.KontaktneOsebe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nadzor" EntityType="Self.Nadzor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Naprava" EntityType="Self.Naprava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Osebe" EntityType="Self.Osebe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OsebeNadrejeni" EntityType="Self.OsebeNadrejeni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlanStranka" EntityType="Self.PlanStranka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sporocila" EntityType="Self.Sporocila" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusDogodek" EntityType="Self.StatusDogodek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusNadzora" EntityType="Self.StatusNadzora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stranka" EntityType="Self.Stranka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StrankaKategorija" EntityType="Self.StrankaKategorija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StrankaZaposleni" EntityType="Self.StrankaZaposleni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemEmailMessage" EntityType="Self.SystemEmailMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemMessageEvents" EntityType="Self.SystemMessageEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vloga" EntityType="Self.Vloga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancniDashboard" EntityType="Self.FinancniDashboard" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[FinancniDashboard].[Timestmp] AS [Timestmp], 
+[FinancniDashboard].[FinancniDashboardID] AS [FinancniDashboardID], 
+[FinancniDashboard].[Dobavitelji] AS [Dobavitelji], 
+[FinancniDashboard].[Kupci] AS [Kupci], 
+[FinancniDashboard].[Zaloga] AS [Zaloga], 
+[FinancniDashboard].[Investicije] AS [Investicije], 
+[FinancniDashboard].[Investicijsko_vzdrzevanje] AS [Investicijsko_vzdrzevanje], 
+[FinancniDashboard].[Krediti] AS [Krediti], 
+[FinancniDashboard].[Dobicek] AS [Dobicek], 
+[FinancniDashboard].[Skupaj] AS [Skupaj], 
+[FinancniDashboard].[StDniKupci] AS [StDniKupci], 
+[FinancniDashboard].[StDniDobavitelji] AS [StDniDobavitelji]
+FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Avtomatika_Osebe" Association="Self.FK_Avtomatika_Osebe">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Avtomatika" EntitySet="Avtomatika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_KATEGORI" Association="Self.FK_DOGODEK_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_OSEBE" Association="Self.FK_DOGODEK_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_OSEBE1" Association="Self.FK_DOGODEK_REFERENCE_OSEBE1">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_STATUSDO" Association="Self.FK_DOGODEK_REFERENCE_STATUSDO">
+            <End Role="StatusDogodek" EntitySet="StatusDogodek" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_STRANKA" Association="Self.FK_DOGODEK_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DogodekID" Association="Self.FK_DogodekID">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="Avtomatika" EntitySet="Avtomatika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DogodekSestanek_Dogodek" Association="Self.FK_DogodekSestanek_Dogodek">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="DogodekSestanek" EntitySet="DogodekSestanek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzpisGrafa_Kategorija" Association="Self.FK_IzpisGrafa_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzpisGrafa_Stranka" Association="Self.FK_IzpisGrafa_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="Self.FK_KONTAKTN_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="KontaktneOsebe" EntitySet="KontaktneOsebe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_KATEGORI" Association="Self.FK_NADZOR_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_OSEBE" Association="Self.FK_NADZOR_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_STATUSNA" Association="Self.FK_NADZOR_REFERENCE_STATUSNA">
+            <End Role="StatusNadzora" EntitySet="StatusNadzora" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_STRANKA" Association="Self.FK_NADZOR_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Naprava_Stranka" Association="Self.FK_Naprava_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Naprava" EntitySet="Naprava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="Self.FK_OSEBE_REFERENCE_VLOGA">
+            <End Role="Vloga" EntitySet="Vloga" />
+            <End Role="Osebe" EntitySet="Osebe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe" Association="Self.FK_OsebeNadrejeni_Osebe">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="OsebeNadrejeni" EntitySet="OsebeNadrejeni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe1" Association="Self.FK_OsebeNadrejeni_Osebe1">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="OsebeNadrejeni" EntitySet="OsebeNadrejeni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANSTRA_REFERENCE_KATEGORI" Association="Self.FK_PLANSTRA_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="PlanStranka" EntitySet="PlanStranka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANSTRA_REFERENCE_STRANKA" Association="Self.FK_PLANSTRA_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="PlanStranka" EntitySet="PlanStranka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPOROCIL_REFERENCE_DOGODEK" Association="Self.FK_SPOROCIL_REFERENCE_DOGODEK">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="Sporocila" EntitySet="Sporocila" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaKategorija_Kategorija" Association="Self.FK_StrankaKategorija_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaKategorija_Stranka" Association="Self.FK_StrankaKategorija_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_OSEBE" Association="Self.FK_STRANKAZ_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="Self.FK_STRANKAZ_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AnalizaProdajeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dogodek">
+          <Key>
+            <PropertyRef Name="idDogodek" />
+          </Key>
+          <Property Name="idDogodek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="idKategorija" Type="Int32" />
+          <Property Name="Skrbnik" Type="Int32" />
+          <Property Name="Izvajalec" Type="Int32" />
+          <Property Name="idStatus" Type="Int32" />
+          <Property Name="Opis" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DatumOtvoritve" Type="DateTime" Precision="3" />
+          <Property Name="Rok" Type="DateTime" Precision="3" />
+          <Property Name="DatumZadZaprtja" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Kategorija" Relationship="Self.FK_DOGODEK_REFERENCE_KATEGORI" FromRole="Dogodek" ToRole="Kategorija" />
+          <NavigationProperty Name="Osebe" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE" FromRole="Dogodek" ToRole="Osebe" />
+          <NavigationProperty Name="Osebe1" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE1" FromRole="Dogodek" ToRole="Osebe" />
+          <NavigationProperty Name="StatusDogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STATUSDO" FromRole="Dogodek" ToRole="StatusDogodek" />
+          <NavigationProperty Name="Stranka" Relationship="Self.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Dogodek" ToRole="Stranka" />
+          <NavigationProperty Name="Sporocila" Relationship="Self.FK_SPOROCIL_REFERENCE_DOGODEK" FromRole="Dogodek" ToRole="Sporocila" />
+          <NavigationProperty Name="DogodekSestanek" Relationship="AnalizaProdajeModel.FK_DogodekSestanek_Dogodek" FromRole="Dogodek" ToRole="DogodekSestanek" />
+          <Property Name="Tip" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RokIzvedbe" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Avtomatika" Relationship="AnalizaProdajeModel.FK_DogodekID" FromRole="Dogodek" ToRole="Avtomatika" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="idKategorija" />
+          </Key>
+          <Property Name="idKategorija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_KATEGORI" FromRole="Kategorija" ToRole="Dogodek" />
+          <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_KATEGORI" FromRole="Kategorija" ToRole="Nadzor" />
+          <NavigationProperty Name="PlanStranka" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_KATEGORI" FromRole="Kategorija" ToRole="PlanStranka" />
+          <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Kategorija" FromRole="Kategorija" ToRole="StrankaKategorija" />
+          <NavigationProperty Name="IzpisGrafa" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija" FromRole="Kategorija" ToRole="IzpisGrafa" />
+        </EntityType>
+        <EntityType Name="KontaktneOsebe">
+          <Key>
+            <PropertyRef Name="idKontaktneOsebe" />
+          </Key>
+          <Property Name="idKontaktneOsebe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="NazivKontaktneOsebe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GSM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZaporednaStevika" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Stranka" Relationship="Self.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="KontaktneOsebe" ToRole="Stranka" />
+          <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nadzor">
+          <Key>
+            <PropertyRef Name="idNadzor" />
+          </Key>
+          <Property Name="idNadzor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Izvajalec" Type="Int32" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="idKategorija" Type="Int32" />
+          <Property Name="idStatusNadzora" Type="Int32" />
+          <Property Name="ZapStNadzora" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Kategorija" Relationship="Self.FK_NADZOR_REFERENCE_KATEGORI" FromRole="Nadzor" ToRole="Kategorija" />
+          <NavigationProperty Name="Osebe" Relationship="Self.FK_NADZOR_REFERENCE_OSEBE" FromRole="Nadzor" ToRole="Osebe" />
+          <NavigationProperty Name="StatusNadzora" Relationship="Self.FK_NADZOR_REFERENCE_STATUSNA" FromRole="Nadzor" ToRole="StatusNadzora" />
+          <NavigationProperty Name="Stranka" Relationship="Self.FK_NADZOR_REFERENCE_STRANKA" FromRole="Nadzor" ToRole="Stranka" />
+        </EntityType>
+        <EntityType Name="Osebe">
+          <Key>
+            <PropertyRef Name="idOsebe" />
+          </Key>
+          <Property Name="idOsebe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idVloga" Type="Int32" />
+          <Property Name="Ime" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Priimek" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="DatumRojstva" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatumZaposlitve" Type="DateTime" Precision="0" />
+          <Property Name="UporabniskoIme" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Geslo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonGSM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Zunanji" Type="Int32" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE" FromRole="Osebe" ToRole="Dogodek" />
+          <NavigationProperty Name="Dogodek1" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE1" FromRole="Osebe" ToRole="Dogodek" />
+          <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_OSEBE" FromRole="Osebe" ToRole="Nadzor" />
+          <NavigationProperty Name="Vloga" Relationship="Self.FK_OSEBE_REFERENCE_VLOGA" FromRole="Osebe" ToRole="Vloga" />
+          <NavigationProperty Name="StrankaZaposleni" Relationship="Self.FK_STRANKAZ_REFERENCE_OSEBE" FromRole="Osebe" ToRole="StrankaZaposleni" />
+          <NavigationProperty Name="Avtomatika" Relationship="AnalizaProdajeModel.FK_Avtomatika_Osebe" FromRole="Osebe" ToRole="Avtomatika" />
+          <Property Name="ProfileImage" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OsebeNadrejeni" Relationship="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe" FromRole="Osebe" ToRole="OsebeNadrejeni" />
+          <NavigationProperty Name="OsebeNadrejeni1" Relationship="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe1" FromRole="Osebe" ToRole="OsebeNadrejeni" />
+        </EntityType>
+        <EntityType Name="Sporocila">
+          <Key>
+            <PropertyRef Name="idSporocila" />
+          </Key>
+          <Property Name="idSporocila" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDDogodek" Type="Int32" />
+          <Property Name="OpisDel" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="Self.FK_SPOROCIL_REFERENCE_DOGODEK" FromRole="Sporocila" ToRole="Dogodek" />
+        </EntityType>
+        <EntityType Name="StatusDogodek">
+          <Key>
+            <PropertyRef Name="idStatusDogodek" />
+          </Key>
+          <Property Name="idStatusDogodek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STATUSDO" FromRole="StatusDogodek" ToRole="Dogodek" />
+        </EntityType>
+        <EntityType Name="StatusNadzora">
+          <Key>
+            <PropertyRef Name="idStatusNadzora" />
+          </Key>
+          <Property Name="idStatusNadzora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_STATUSNA" FromRole="StatusNadzora" ToRole="Nadzor" />
+        </EntityType>
+        <EntityType Name="Stranka">
+          <Key>
+            <PropertyRef Name="idStranka" />
+          </Key>
+          <Property Name="idStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivDrugi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RokPlacila" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RangStranke" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDomacTuji" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zavezanec_DA_NE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clan_EU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="StatusKupecDobavitelj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GenerirajERacun" Type="Int32" />
+          <Property Name="JavniZavod" Type="Int32" />
+          <Property Name="SecondID" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Dogodek" />
+          <NavigationProperty Name="KontaktneOsebe" Relationship="Self.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="Stranka" ToRole="KontaktneOsebe" />
+          <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Nadzor" />
+          <NavigationProperty Name="StrankaZaposleni" Relationship="Self.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="Stranka" ToRole="StrankaZaposleni" />
+          <NavigationProperty Name="PlanStranka" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" FromRole="Stranka" ToRole="PlanStranka" />
+          <NavigationProperty Name="Naprava" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Stranka" ToRole="Naprava" />
+          <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="Stranka" ToRole="StrankaKategorija" />
+          <NavigationProperty Name="IzpisGrafa" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="Stranka" ToRole="IzpisGrafa" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni">
+          <Key>
+            <PropertyRef Name="idStrankaOsebe" />
+          </Key>
+          <Property Name="idStrankaOsebe" Type="Int32" Nullable="false" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="idOsebe" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Osebe" Relationship="Self.FK_STRANKAZ_REFERENCE_OSEBE" FromRole="StrankaZaposleni" ToRole="Osebe" />
+          <NavigationProperty Name="Stranka" Relationship="Self.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="StrankaZaposleni" ToRole="Stranka" />
+        </EntityType>
+        <EntityType Name="Vloga">
+          <Key>
+            <PropertyRef Name="idVloga" />
+          </Key>
+          <Property Name="idVloga" Type="Int32" Nullable="false" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Osebe" Relationship="Self.FK_OSEBE_REFERENCE_VLOGA" FromRole="Vloga" ToRole="Osebe" />
+        </EntityType>
+        <Association Name="FK_DOGODEK_REFERENCE_KATEGORI">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="Izvajalec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_OSEBE1">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="Skrbnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_STATUSDO">
+          <End Role="StatusDogodek" Type="Self.StatusDogodek" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDogodek">
+              <PropertyRef Name="idStatusDogodek" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPOROCIL_REFERENCE_DOGODEK">
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="0..1" />
+          <End Role="Sporocila" Type="Self.Sporocila" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="Sporocila">
+              <PropertyRef Name="IDDogodek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_KATEGORI">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="KontaktneOsebe" Type="Self.KontaktneOsebe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="KontaktneOsebe">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="Izvajalec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_STATUSNA">
+          <End Role="StatusNadzora" Type="Self.StatusNadzora" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusNadzora">
+              <PropertyRef Name="idStatusNadzora" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idStatusNadzora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OSEBE_REFERENCE_VLOGA">
+          <End Role="Vloga" Type="Self.Vloga" Multiplicity="0..1" />
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga">
+              <PropertyRef Name="idVloga" />
+            </Principal>
+            <Dependent Role="Osebe">
+              <PropertyRef Name="idVloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_OSEBE">
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
+          <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni">
+              <PropertyRef Name="idOsebe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AnalizaProdajeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dogodek" EntityType="Self.Dogodek" />
+          <EntitySet Name="Kategorija" EntityType="Self.Kategorija" />
+          <EntitySet Name="KontaktneOsebe" EntityType="Self.KontaktneOsebe" />
+          <EntitySet Name="Nadzor" EntityType="Self.Nadzor" />
+          <EntitySet Name="Osebe" EntityType="Self.Osebe" />
+          <EntitySet Name="Sporocila" EntityType="Self.Sporocila" />
+          <EntitySet Name="StatusDogodek" EntityType="Self.StatusDogodek" />
+          <EntitySet Name="StatusNadzora" EntityType="Self.StatusNadzora" />
+          <EntitySet Name="Stranka" EntityType="Self.Stranka" />
+          <EntitySet Name="StrankaZaposleni" EntityType="Self.StrankaZaposleni" />
+          <EntitySet Name="Vloga" EntityType="Self.Vloga" />
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_KATEGORI" Association="Self.FK_DOGODEK_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_OSEBE" Association="Self.FK_DOGODEK_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_OSEBE1" Association="Self.FK_DOGODEK_REFERENCE_OSEBE1">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_STATUSDO" Association="Self.FK_DOGODEK_REFERENCE_STATUSDO">
+            <End Role="StatusDogodek" EntitySet="StatusDogodek" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_STRANKA" Association="Self.FK_DOGODEK_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPOROCIL_REFERENCE_DOGODEK" Association="Self.FK_SPOROCIL_REFERENCE_DOGODEK">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="Sporocila" EntitySet="Sporocila" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_KATEGORI" Association="Self.FK_NADZOR_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="Self.FK_KONTAKTN_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="KontaktneOsebe" EntitySet="KontaktneOsebe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_OSEBE" Association="Self.FK_NADZOR_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_STATUSNA" Association="Self.FK_NADZOR_REFERENCE_STATUSNA">
+            <End Role="StatusNadzora" EntitySet="StatusNadzora" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_STRANKA" Association="Self.FK_NADZOR_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="Self.FK_OSEBE_REFERENCE_VLOGA">
+            <End Role="Vloga" EntitySet="Vloga" />
+            <End Role="Osebe" EntitySet="Osebe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_OSEBE" Association="Self.FK_STRANKAZ_REFERENCE_OSEBE">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="Self.FK_STRANKAZ_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
+          </AssociationSet>
+          <EntitySet Name="PlanStranka" EntityType="AnalizaProdajeModel.PlanStranka" />
+          <AssociationSet Name="FK_PLANSTRA_REFERENCE_KATEGORI" Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_KATEGORI">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="PlanStranka" EntitySet="PlanStranka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANSTRA_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="PlanStranka" EntitySet="PlanStranka" />
+          </AssociationSet>
+          <EntitySet Name="Naprava" EntityType="AnalizaProdajeModel.Naprava" />
+          <AssociationSet Name="FK_Naprava_Stranka" Association="AnalizaProdajeModel.FK_Naprava_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Naprava" EntitySet="Naprava" />
+          </AssociationSet>
+          <EntitySet Name="SystemEmailMessage" EntityType="AnalizaProdajeModel.SystemEmailMessage" />
+          <EntitySet Name="SystemMessageEvents" EntityType="AnalizaProdajeModel.SystemMessageEvents" />
+          <EntitySet Name="StrankaKategorija" EntityType="AnalizaProdajeModel.StrankaKategorija" />
+          <AssociationSet Name="FK_StrankaKategorija_Kategorija" Association="AnalizaProdajeModel.FK_StrankaKategorija_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaKategorija_Stranka" Association="AnalizaProdajeModel.FK_StrankaKategorija_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
+          </AssociationSet>
+          <EntitySet Name="Avtomatika" EntityType="AnalizaProdajeModel.Avtomatika" />
+          <EntitySet Name="IzpisGrafa" EntityType="AnalizaProdajeModel.IzpisGrafa" />
+          <AssociationSet Name="FK_Avtomatika_Osebe" Association="AnalizaProdajeModel.FK_Avtomatika_Osebe">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="Avtomatika" EntitySet="Avtomatika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzpisGrafa_Kategorija" Association="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzpisGrafa_Stranka" Association="AnalizaProdajeModel.FK_IzpisGrafa_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
+          </AssociationSet>
+          <EntitySet Name="OsebeNadrejeni" EntityType="AnalizaProdajeModel.OsebeNadrejeni" />
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe" Association="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="OsebeNadrejeni" EntitySet="OsebeNadrejeni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe1" Association="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe1">
+            <End Role="Osebe" EntitySet="Osebe" />
+            <End Role="OsebeNadrejeni" EntitySet="OsebeNadrejeni" />
+          </AssociationSet>
+          <FunctionImport Name="IzrisGrafa" IsComposable="true" ReturnType="Collection(AnalizaProdajeModel.IzrisGrafa_Result)">
+            <Parameter Name="Stranka" Mode="In" Type="String" />
+            <Parameter Name="Kategorija" Mode="In" Type="String" />
+            <Parameter Name="Tip_Grafa" Mode="In" Type="Int32" />
+            <Parameter Name="Tip_Izpisa" Mode="In" Type="Int32" />
+            <Parameter Name="ObdobjeOd" Mode="In" Type="DateTime" />
+            <Parameter Name="ObdobjeDo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="IzrisGrafa1" IsComposable="true" ReturnType="Collection(AnalizaProdajeModel.IzrisGrafa1_Result)">
+            <Parameter Name="Stranka" Mode="In" Type="String" />
+            <Parameter Name="Kategorija" Mode="In" Type="String" />
+            <Parameter Name="Tip_Grafa" Mode="In" Type="Int32" />
+            <Parameter Name="Tip_Izpisa" Mode="In" Type="Int32" />
+            <Parameter Name="ObdobjeOd" Mode="In" Type="DateTime" />
+            <Parameter Name="ObdobjeDo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="DogodekSestanek" EntityType="AnalizaProdajeModel.DogodekSestanek" />
+          <AssociationSet Name="FK_DogodekSestanek_Dogodek" Association="AnalizaProdajeModel.FK_DogodekSestanek_Dogodek">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="DogodekSestanek" EntitySet="DogodekSestanek" />
+          </AssociationSet>
+          <EntitySet Name="FinancniDashboard" EntityType="AnalizaProdajeModel.FinancniDashboard" />
+          <AssociationSet Name="FK_DogodekID" Association="AnalizaProdajeModel.FK_DogodekID">
+            <End Role="Dogodek" EntitySet="Dogodek" />
+            <End Role="Avtomatika" EntitySet="Avtomatika" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PlanStranka">
+          <Key>
+            <PropertyRef Name="idPlanStranka" />
+          </Key>
+          <Property Name="idPlanStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idKategorija" Type="Int32" />
+          <Property Name="IDStranka" Type="Int32" />
+          <Property Name="LetniZnesek" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Leto" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Kategorija" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_KATEGORI" FromRole="PlanStranka" ToRole="Kategorija" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" FromRole="PlanStranka" ToRole="Stranka" />
+        </EntityType>
+        <Association Name="FK_PLANSTRA_REFERENCE_KATEGORI">
+          <End Type="AnalizaProdajeModel.Kategorija" Role="Kategorija" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.PlanStranka" Role="PlanStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="PlanStranka">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANSTRA_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.PlanStranka" Role="PlanStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="PlanStranka">
+              <PropertyRef Name="IDStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Naprava">
+          <Key>
+            <PropertyRef Name="idNaprava" />
+          </Key>
+          <Property Name="idNaprava" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="Koda" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Naprava" ToRole="Stranka" />
+        </EntityType>
+        <Association Name="FK_Naprava_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.Naprava" Role="Naprava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Naprava">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SystemEmailMessage">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents">
+          <Key>
+            <PropertyRef Name="SystemMessageEventID" />
+          </Key>
+          <Property Name="SystemMessageEventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StrankaKategorija">
+          <Key>
+            <PropertyRef Name="idStrankaKategorija" />
+          </Key>
+          <Property Name="idStrankaKategorija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" Nullable="false" />
+          <Property Name="idKategorija" Type="Int32" Nullable="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <NavigationProperty Name="Kategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Kategorija" FromRole="StrankaKategorija" ToRole="Kategorija" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="StrankaKategorija" ToRole="Stranka" />
+        </EntityType>
+        <Association Name="FK_StrankaKategorija_Kategorija">
+          <End Type="AnalizaProdajeModel.Kategorija" Role="Kategorija" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.StrankaKategorija" Role="StrankaKategorija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="StrankaKategorija">
+              <PropertyRef Name="idKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaKategorija_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.StrankaKategorija" Role="StrankaKategorija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaKategorija">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Avtomatika">
+          <Key>
+            <PropertyRef Name="AvtomatikaID" />
+          </Key>
+          <Property Name="AvtomatikaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OsebaID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="StopnjaNadrejenega" Type="Int32" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Osebe" Relationship="AnalizaProdajeModel.FK_Avtomatika_Osebe" FromRole="Avtomatika" ToRole="Osebe" />
+          <Property Name="DogodekID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dogodek" Relationship="AnalizaProdajeModel.FK_DogodekID" FromRole="Avtomatika" ToRole="Dogodek" />
+        </EntityType>
+        <EntityType Name="IzpisGrafa">
+          <Key>
+            <PropertyRef Name="IzpisGrafaID" />
+          </Key>
+          <Property Name="IzpisGrafaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="KategorijaID" Type="Int32" Nullable="false" />
+          <Property Name="Obdobje" Type="Int32" />
+          <Property Name="Tip" Type="Int32" />
+          <Property Name="EnotaMere" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Vrednost" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Kategorija" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija" FromRole="IzpisGrafa" ToRole="Kategorija" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="IzpisGrafa" ToRole="Stranka" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_Avtomatika_Osebe">
+          <End Type="AnalizaProdajeModel.Osebe" Role="Osebe" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.Avtomatika" Role="Avtomatika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Avtomatika">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzpisGrafa_Kategorija">
+          <End Type="AnalizaProdajeModel.Kategorija" Role="Kategorija" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.IzpisGrafa" Role="IzpisGrafa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="idKategorija" />
+            </Principal>
+            <Dependent Role="IzpisGrafa">
+              <PropertyRef Name="KategorijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzpisGrafa_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.IzpisGrafa" Role="IzpisGrafa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="IzpisGrafa">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OsebeNadrejeni">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="Int32" Nullable="false" />
+          <Property Name="idOseba" Type="Int32" Nullable="false" />
+          <Property Name="idNadrejeni" Type="Int32" Nullable="false" />
+          <Property Name="Opomba" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDosebe" Type="Int32" />
+          <NavigationProperty Name="Osebe" Relationship="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe" FromRole="OsebeNadrejeni" ToRole="Osebe" />
+          <NavigationProperty Name="Osebe1" Relationship="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe1" FromRole="OsebeNadrejeni" ToRole="Osebe" />
+        </EntityType>
+        <Association Name="FK_OsebeNadrejeni_Osebe">
+          <End Type="AnalizaProdajeModel.Osebe" Role="Osebe" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.OsebeNadrejeni" Role="OsebeNadrejeni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni">
+              <PropertyRef Name="idOseba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe1">
+          <End Type="AnalizaProdajeModel.Osebe" Role="Osebe" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.OsebeNadrejeni" Role="OsebeNadrejeni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni">
+              <PropertyRef Name="idNadrejeni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="IzrisGrafa_Result">
+          <Property Type="Int32" Name="StrankaID" Nullable="true" />
+          <Property Type="Int32" Name="KategorijaID" Nullable="true" />
+          <Property Type="Int32" Name="Obdobje" Nullable="true" />
+          <Property Type="Int32" Name="Tip" Nullable="true" />
+          <Property Type="String" Name="EnotaMere" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Opis" Nullable="true" MaxLength="70" />
+          <Property Type="DateTime" Name="Datum" Nullable="true" Precision="10" />
+          <Property Type="Decimal" Name="Vrednost" Nullable="true" Precision="18" Scale="3" />
+        </ComplexType>
+        <ComplexType Name="IzrisGrafa1_Result">
+          <Property Type="Int32" Name="StrankaID" Nullable="true" />
+          <Property Type="Int32" Name="KategorijaID" Nullable="true" />
+          <Property Type="Int32" Name="Obdobje" Nullable="true" />
+          <Property Type="Int32" Name="Tip" Nullable="true" />
+          <Property Type="String" Name="EnotaMere" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Opis" Nullable="true" MaxLength="70" />
+          <Property Type="DateTime" Name="Datum" Nullable="true" Precision="10" />
+          <Property Type="Decimal" Name="Vrednost" Nullable="true" Precision="18" Scale="3" />
+        </ComplexType>
+        <EntityType Name="DogodekSestanek">
+          <Key>
+            <PropertyRef Name="DogodekSestanekID" />
+          </Key>
+          <Property Name="DogodekSestanekID" Type="Int32" Nullable="false" />
+          <Property Name="DogodekID" Type="Int32" Nullable="false" />
+          <Property Name="Tip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Dogodek" Relationship="AnalizaProdajeModel.FK_DogodekSestanek_Dogodek" FromRole="DogodekSestanek" ToRole="Dogodek" />
+        </EntityType>
+        <Association Name="FK_DogodekSestanek_Dogodek">
+          <End Type="AnalizaProdajeModel.Dogodek" Role="Dogodek" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.DogodekSestanek" Role="DogodekSestanek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="DogodekSestanek">
+              <PropertyRef Name="DogodekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FinancniDashboard">
+          <Key>
+            <PropertyRef Name="FinancniDashboardID" />
+          </Key>
+          <Property Name="Timestmp" Type="DateTime" Precision="3" />
+          <Property Name="FinancniDashboardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dobavitelji" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Kupci" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Zaloga" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Investicije" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Investicijsko_vzdrzevanje" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Krediti" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Dobicek" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Skupaj" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StDniKupci" Type="Int32" />
+          <Property Name="StDniDobavitelji" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_DogodekID">
+          <End Type="AnalizaProdajeModel.Dogodek" Role="Dogodek" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.Avtomatika" Role="Avtomatika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogodek">
+              <PropertyRef Name="idDogodek" />
+            </Principal>
+            <Dependent Role="Avtomatika">
+              <PropertyRef Name="DogodekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AnalizaProdajeModelStoreContainer" CdmEntityContainer="AnalizaProdajeEntities">
+          <EntitySetMapping Name="Dogodek">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Dogodek">
+              <MappingFragment StoreEntitySet="Dogodek">
+                <ScalarProperty Name="RokIzvedbe" ColumnName="RokIzvedbe" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="idDogodek" ColumnName="idDogodek" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idKategorija" ColumnName="idKategorija" />
+                <ScalarProperty Name="Skrbnik" ColumnName="Skrbnik" />
+                <ScalarProperty Name="Izvajalec" ColumnName="Izvajalec" />
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="DatumOtvoritve" ColumnName="DatumOtvoritve" />
+                <ScalarProperty Name="Rok" ColumnName="Rok" />
+                <ScalarProperty Name="DatumZadZaprtja" ColumnName="DatumZadZaprtja" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategorija">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Kategorija">
+              <MappingFragment StoreEntitySet="Kategorija">
+                <ScalarProperty Name="idKategorija" ColumnName="idKategorija" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KontaktneOsebe">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.KontaktneOsebe">
+              <MappingFragment StoreEntitySet="KontaktneOsebe">
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="idKontaktneOsebe" ColumnName="idKontaktneOsebe" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="NazivKontaktneOsebe" ColumnName="NazivKontaktneOsebe" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="GSM" ColumnName="GSM" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="ZaporednaStevika" ColumnName="ZaporednaStevika" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nadzor">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Nadzor">
+              <MappingFragment StoreEntitySet="Nadzor">
+                <ScalarProperty Name="idNadzor" ColumnName="idNadzor" />
+                <ScalarProperty Name="Izvajalec" ColumnName="Izvajalec" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idKategorija" ColumnName="idKategorija" />
+                <ScalarProperty Name="idStatusNadzora" ColumnName="idStatusNadzora" />
+                <ScalarProperty Name="ZapStNadzora" ColumnName="ZapStNadzora" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Osebe">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Osebe">
+              <MappingFragment StoreEntitySet="Osebe">
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="idOsebe" ColumnName="idOsebe" />
+                <ScalarProperty Name="idVloga" ColumnName="idVloga" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Priimek" ColumnName="Priimek" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="DatumRojstva" ColumnName="DatumRojstva" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumZaposlitve" ColumnName="DatumZaposlitve" />
+                <ScalarProperty Name="UporabniskoIme" ColumnName="UporabniskoIme" />
+                <ScalarProperty Name="Geslo" ColumnName="Geslo" />
+                <ScalarProperty Name="TelefonGSM" ColumnName="TelefonGSM" />
+                <ScalarProperty Name="Zunanji" ColumnName="Zunanji" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sporocila">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Sporocila">
+              <MappingFragment StoreEntitySet="Sporocila">
+                <ScalarProperty Name="idSporocila" ColumnName="idSporocila" />
+                <ScalarProperty Name="IDDogodek" ColumnName="IDDogodek" />
+                <ScalarProperty Name="OpisDel" ColumnName="OpisDel" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusDogodek">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.StatusDogodek">
+              <MappingFragment StoreEntitySet="StatusDogodek">
+                <ScalarProperty Name="idStatusDogodek" ColumnName="idStatusDogodek" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusNadzora">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.StatusNadzora">
+              <MappingFragment StoreEntitySet="StatusNadzora">
+                <ScalarProperty Name="idStatusNadzora" ColumnName="idStatusNadzora" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stranka">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
+              <MappingFragment StoreEntitySet="Stranka">
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
+                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
+                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
+                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
+                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
+                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
+                <ScalarProperty Name="TRR" ColumnName="TRR" />
+                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
+                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
+                <ScalarProperty Name="RangStranke" ColumnName="RangStranke" />
+                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
+                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
+                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
+                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
+                <ScalarProperty Name="StatusKupecDobavitelj" ColumnName="StatusKupecDobavitelj" />
+                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
+                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
+                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
+                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
+                <ScalarProperty Name="SecondID" ColumnName="SecondID" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StrankaZaposleni">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.StrankaZaposleni">
+              <MappingFragment StoreEntitySet="StrankaZaposleni">
+                <ScalarProperty Name="idStrankaOsebe" ColumnName="idStrankaOsebe" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idOsebe" ColumnName="idOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vloga">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Vloga">
+              <MappingFragment StoreEntitySet="Vloga">
+                <ScalarProperty Name="idVloga" ColumnName="idVloga" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanStranka">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.PlanStranka">
+              <MappingFragment StoreEntitySet="PlanStranka">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Leto" ColumnName="Leto" />
+                <ScalarProperty Name="LetniZnesek" ColumnName="LetniZnesek" />
+                <ScalarProperty Name="IDStranka" ColumnName="IDStranka" />
+                <ScalarProperty Name="idKategorija" ColumnName="idKategorija" />
+                <ScalarProperty Name="idPlanStranka" ColumnName="idPlanStranka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Naprava">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Naprava">
+              <MappingFragment StoreEntitySet="Naprava">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idNaprava" ColumnName="idNaprava" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemEmailMessage">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.SystemEmailMessage">
+              <MappingFragment StoreEntitySet="SystemEmailMessage">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemMessageEvents">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.SystemMessageEvents">
+              <MappingFragment StoreEntitySet="SystemMessageEvents">
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="SystemMessageEventID" ColumnName="SystemMessageEventID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StrankaKategorija">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.StrankaKategorija">
+              <MappingFragment StoreEntitySet="StrankaKategorija">
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="idKategorija" ColumnName="idKategorija" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idStrankaKategorija" ColumnName="idStrankaKategorija" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Avtomatika">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Avtomatika">
+              <MappingFragment StoreEntitySet="Avtomatika">
+                <ScalarProperty Name="DogodekID" ColumnName="DogodekID" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="StopnjaNadrejenega" ColumnName="StopnjaNadrejenega" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="AvtomatikaID" ColumnName="AvtomatikaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IzpisGrafa">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.IzpisGrafa">
+              <MappingFragment StoreEntitySet="IzpisGrafa">
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Vrednost" ColumnName="Vrednost" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Obdobje" ColumnName="Obdobje" />
+                <ScalarProperty Name="KategorijaID" ColumnName="KategorijaID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="IzpisGrafaID" ColumnName="IzpisGrafaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OsebeNadrejeni">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.OsebeNadrejeni">
+              <MappingFragment StoreEntitySet="OsebeNadrejeni">
+                <ScalarProperty Name="tsIDosebe" ColumnName="tsIDosebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="idNadrejeni" ColumnName="idNadrejeni" />
+                <ScalarProperty Name="idOseba" ColumnName="idOseba" />
+                <ScalarProperty Name="OsebeNadrejeniID" ColumnName="OsebeNadrejeniID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="IzrisGrafa" FunctionName="AnalizaProdajeModel.Store.IzrisGrafa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AnalizaProdajeModel.IzrisGrafa_Result">
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="KategorijaID" ColumnName="KategorijaID" />
+                <ScalarProperty Name="Obdobje" ColumnName="Obdobje" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrednost" ColumnName="Vrednost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IzrisGrafa1" FunctionName="AnalizaProdajeModel.Store.IzrisGrafa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AnalizaProdajeModel.IzrisGrafa1_Result">
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="KategorijaID" ColumnName="KategorijaID" />
+                <ScalarProperty Name="Obdobje" ColumnName="Obdobje" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrednost" ColumnName="Vrednost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DogodekSestanek">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.DogodekSestanek">
+              <MappingFragment StoreEntitySet="DogodekSestanek">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="DogodekID" ColumnName="DogodekID" />
+                <ScalarProperty Name="DogodekSestanekID" ColumnName="DogodekSestanekID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancniDashboard">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.FinancniDashboard">
+              <MappingFragment StoreEntitySet="FinancniDashboard">
+                <ScalarProperty Name="StDniDobavitelji" ColumnName="StDniDobavitelji" />
+                <ScalarProperty Name="StDniKupci" ColumnName="StDniKupci" />
+                <ScalarProperty Name="Skupaj" ColumnName="Skupaj" />
+                <ScalarProperty Name="Dobicek" ColumnName="Dobicek" />
+                <ScalarProperty Name="Krediti" ColumnName="Krediti" />
+                <ScalarProperty Name="Investicijsko_vzdrzevanje" ColumnName="Investicijsko_vzdrzevanje" />
+                <ScalarProperty Name="Investicije" ColumnName="Investicije" />
+                <ScalarProperty Name="Zaloga" ColumnName="Zaloga" />
+                <ScalarProperty Name="Kupci" ColumnName="Kupci" />
+                <ScalarProperty Name="Dobavitelji" ColumnName="Dobavitelji" />
+                <ScalarProperty Name="FinancniDashboardID" ColumnName="FinancniDashboardID" />
+                <ScalarProperty Name="Timestmp" ColumnName="Timestmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

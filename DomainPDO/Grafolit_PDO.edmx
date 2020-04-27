@@ -1,0 +1,2136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GrafolitPDOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jeziki">
+          <Key>
+            <PropertyRef Name="JezikID" />
+          </Key>
+          <Property Name="JezikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="KontaktnaOseba_PDO">
+          <Key>
+            <PropertyRef Name="KontaktnaOsebaID" />
+          </Key>
+          <Property Name="KontaktnaOsebaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StrankaID" Type="int" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="GSM" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="50" />
+          <Property Name="ZaporednaStevika" Type="int" />
+          <Property Name="Fax" Type="varchar" MaxLength="30" />
+          <Property Name="Opombe" Type="varchar" MaxLength="1000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="NazivPodpis" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Narocilo_PDO">
+          <Key>
+            <PropertyRef Name="NarociloID" />
+          </Key>
+          <Property Name="NarociloID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloStevilka_P" Type="varchar" MaxLength="50" />
+          <Property Name="DatumDobave" Type="date" />
+          <Property Name="Opombe" Type="varchar(max)" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="P_CreateOrder" Type="datetime" />
+          <Property Name="P_UnsuccCountCreatePDFPantheon" Type="int" />
+          <Property Name="P_LastTSCreatePDFPantheon" Type="datetime" />
+          <Property Name="P_TransportOrderPDFName" Type="varchar" MaxLength="50" />
+          <Property Name="P_TransportOrderPDFDocPath" Type="varchar" MaxLength="400" />
+          <Property Name="P_GetPDFOrderFile" Type="datetime" />
+          <Property Name="P_SendWarningToAmin" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="DobaviteljID" Type="int" />
+          <Property Name="OddelekID" Type="int" />
+          <Property Name="PovprasevanjeID" Type="int" Nullable="false" />
+          <Property Name="PovprasevanjeStevilka" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NarociloPozicija_PDO">
+          <Key>
+            <PropertyRef Name="NarociloPozicijaID" />
+          </Key>
+          <Property Name="NarociloPozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloID" Type="int" Nullable="false" />
+          <Property Name="PovprasevanjePozicijaID" Type="int" Nullable="false" />
+          <Property Name="IzbranDobaviteljID" Type="int" />
+          <Property Name="IzbraniArtikelNaziv_P" Type="varchar" MaxLength="200" />
+          <Property Name="ArtikelCena" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="DatumDobave" Type="datetime" />
+          <Property Name="Opombe" Type="varchar" MaxLength="1000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="Ident" Type="varchar" MaxLength="50" />
+          <Property Name="KolicinavKG" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EnotaMere" Type="varchar" MaxLength="10" />
+          <Property Name="Rabat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OpombaNarocilnica" Type="varchar" MaxLength="5000" />
+          <Property Name="OddelekID" Type="int" />
+          <Property Name="PrikaziKupca" Type="bit" />
+        </EntityType>
+        <EntityType Name="Nastavitve">
+          <Key>
+            <PropertyRef Name="NastavitveID" />
+          </Key>
+          <Property Name="NastavitveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PovprasevanjeStevilcenjeStev" Type="int" />
+          <Property Name="PovprasevanjeStevilcenjePredpona" Type="varchar" MaxLength="10" />
+          <Property Name="Opombe" Type="varchar" MaxLength="1000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="PosiljanjePoste" Type="bit" />
+          <Property Name="EmailStreznik" Type="varchar" MaxLength="50" />
+          <Property Name="EmailVrata" Type="int" />
+          <Property Name="EmailSifriranjeSSL" Type="bit" />
+        </EntityType>
+        <EntityType Name="Oddelek">
+          <Key>
+            <PropertyRef Name="OddelekID" />
+          </Key>
+          <Property Name="OddelekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Osebe_PDO">
+          <Key>
+            <PropertyRef Name="OsebaID" />
+          </Key>
+          <Property Name="OsebaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VlogaID" Type="int" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Priimek" Type="varchar" MaxLength="60" />
+          <Property Name="Naslov" Type="varchar" MaxLength="160" />
+          <Property Name="DatumRojstva" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="DatumZaposlitve" Type="date" />
+          <Property Name="UporabniskoIme" Type="varchar" MaxLength="100" />
+          <Property Name="Geslo" Type="varchar" MaxLength="100" />
+          <Property Name="TelefonGSM" Type="varchar" MaxLength="60" />
+          <Property Name="Zunanji" Type="int" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="200" />
+          <Property Name="ProfileImage" Type="varchar" MaxLength="300" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="PDODostop" Type="bit" />
+          <Property Name="EmailGeslo" Type="varchar" MaxLength="50" />
+          <Property Name="EmailStreznik" Type="varchar" MaxLength="50" />
+          <Property Name="EmailVrata" Type="int" />
+          <Property Name="EmailSifriranjeSSL" Type="bit" />
+          <Property Name="Podpis" Type="varchar" MaxLength="100" />
+          <Property Name="PantheonUsrID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_PDO">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OsebaID" Type="int" Nullable="false" />
+          <Property Name="NadrejeniID" Type="int" Nullable="false" />
+          <Property Name="Opomba" Type="varchar" MaxLength="200" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDosebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Povprasevanje">
+          <Key>
+            <PropertyRef Name="PovprasevanjeID" />
+          </Key>
+          <Property Name="PovprasevanjeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KupecID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="NarociloID" Type="int" />
+          <Property Name="KupecNaziv_P" Type="varchar" MaxLength="350" />
+          <Property Name="Naziv" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="PovprasevanjeStevilka" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DatumOddajePovprasevanja" Type="datetime" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="Zakleni" Type="bit" />
+          <Property Name="ZaklenilUporabnik" Type="int" />
+          <Property Name="DatumPredvideneDobave" Type="datetime" />
+          <Property Name="PovprasevajneOddal" Type="int" />
+          <Property Name="Dobavitelji" Type="varchar" MaxLength="500" />
+          <Property Name="OpombaNarocilnica" Type="varchar" MaxLength="5000" />
+          <Property Name="NotSendPDFAndEmailsToSupplier" Type="bit" />
+          <Property Name="Narocila" Type="varchar" MaxLength="500" />
+          <Property Name="OddelekID" Type="int" />
+        </EntityType>
+        <EntityType Name="PovprasevanjePozicija">
+          <Key>
+            <PropertyRef Name="PovprasevanjePozicijaID" />
+          </Key>
+          <Property Name="PovprasevanjePozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PovprasevanjeID" Type="int" Nullable="false" />
+          <Property Name="DobaviteljID" Type="int" Nullable="false" />
+          <Property Name="DobaviteljNaziv_P" Type="varchar" MaxLength="300" />
+          <Property Name="DobaviteljKontaktOsebe" Type="varchar" MaxLength="300" />
+          <Property Name="DobaviteljID_P" Type="varchar" MaxLength="50" />
+          <Property Name="Artikli" Type="varchar" MaxLength="5000" />
+          <Property Name="KupecViden" Type="bit" />
+          <Property Name="DatumPredvideneDobave" Type="datetime" />
+          <Property Name="PotDokumenta" Type="varchar" MaxLength="3000" />
+          <Property Name="Opomba" Type="varchar" MaxLength="3000" />
+          <Property Name="EmailBody" Type="varchar" MaxLength="3000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="ObvesceneOsebe" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="PovprasevanjePozicijaArtikel">
+          <Key>
+            <PropertyRef Name="PovprasevanjePozicijaArtikelID" />
+          </Key>
+          <Property Name="PovprasevanjePozicijaArtikelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PovprasevanjePozicijaID" Type="int" Nullable="false" />
+          <Property Name="KategorijaNaziv" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Kolicina1" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="EnotaMere1" Type="varchar" MaxLength="30" />
+          <Property Name="Kolicina2" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="EnotaMere2" Type="varchar" MaxLength="30" />
+          <Property Name="Opombe" Type="varchar" MaxLength="3000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="Ident" Type="varchar" MaxLength="50" />
+          <Property Name="IzbraniArtikelNaziv_P" Type="varchar" MaxLength="200" />
+          <Property Name="ArtikelCena" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinavKG" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EnotaMere" Type="varchar" MaxLength="10" />
+          <Property Name="Rabat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OpombaNarocilnica" Type="varchar" MaxLength="5000" />
+          <Property Name="OddelekID" Type="int" />
+          <Property Name="PrikaziKupca" Type="bit" />
+          <Property Name="IzbranArtikel" Type="bit" />
+          <Property Name="DatumDobavePos" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StatusPovprasevanja">
+          <Key>
+            <PropertyRef Name="StatusPovprasevanjaID" />
+          </Key>
+          <Property Name="StatusPovprasevanjaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Stranka_PDO">
+          <Key>
+            <PropertyRef Name="StrankaID" />
+          </Key>
+          <Property Name="StrankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KodaStranke" Type="varchar" MaxLength="250" />
+          <Property Name="TipStrankaID" Type="int" Nullable="false" />
+          <Property Name="NazivPrvi" Type="varchar" MaxLength="250" />
+          <Property Name="NazivDrugi" Type="varchar" MaxLength="300" />
+          <Property Name="Naslov" Type="varchar" MaxLength="250" />
+          <Property Name="StevPoste" Type="varchar" MaxLength="12" />
+          <Property Name="NazivPoste" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="InternetniNalov" Type="varchar" MaxLength="50" />
+          <Property Name="KontaktnaOseba" Type="varchar" MaxLength="50" />
+          <Property Name="RokPlacila" Type="nchar" MaxLength="6" />
+          <Property Name="TRR" Type="varchar" MaxLength="35" />
+          <Property Name="DavcnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="MaticnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="StatusDomacTuji" Type="bit" />
+          <Property Name="Zavezanec_DA_NE" Type="bit" />
+          <Property Name="IdentifikacijskaStev" Type="varchar" MaxLength="20" />
+          <Property Name="Clan_EU" Type="bit" />
+          <Property Name="BIC" Type="varchar" MaxLength="11" />
+          <Property Name="KodaPlacila" Type="varchar" MaxLength="4" />
+          <Property Name="DrzavaStranke" Type="varchar" MaxLength="50" />
+          <Property Name="Neaktivna" Type="varchar" MaxLength="2" />
+          <Property Name="GenerirajERacun" Type="int" />
+          <Property Name="JavniZavod" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="JezikID" Type="int" />
+          <Property Name="PrivzetaEM" Type="varchar" MaxLength="50" />
+          <Property Name="ZadnjaIzbranaKategorija" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_PDO">
+          <Key>
+            <PropertyRef Name="StrankaOsebeID" />
+          </Key>
+          <Property Name="StrankaOsebeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="OsebeID" Type="int" Nullable="false" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage_PDO">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailTo" Type="varchar" MaxLength="100" />
+          <Property Name="EmailBody" Type="varchar(max)" />
+          <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="OsebaEmailFromID" Type="int" />
+          <Property Name="Attachments" Type="varchar" MaxLength="4000" />
+          <Property Name="CCEmails" Type="varchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_PDO">
+          <Key>
+            <PropertyRef Name="SystemMessageEventsID" />
+          </Key>
+          <Property Name="SystemMessageEventsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="TipStranka_PDO">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Vloga_PDO">
+          <Key>
+            <PropertyRef Name="VlogaID" />
+          </Key>
+          <Property Name="VlogaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <Association Name="FK_DobaviteljID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="1" />
+          <End Role="PovprasevanjePozicija" Type="Self.PovprasevanjePozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicija">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DobaviteljNarociloID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="0..1" />
+          <End Role="Narocilo_PDO" Type="Self.Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_OsebaID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="0..1" />
+          <End Role="Povprasevanje" Type="Self.Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="PovprasevajneOddal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzbranDobaviteljID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="0..1" />
+          <End Role="NarociloPozicija_PDO" Type="Self.NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="IzbranDobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jezik">
+          <End Role="Jeziki" Type="Self.Jeziki" Multiplicity="0..1" />
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jeziki">
+              <PropertyRef Name="JezikID" />
+            </Principal>
+            <Dependent Role="Stranka_PDO">
+              <PropertyRef Name="JezikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_K_StrankaID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="0..1" />
+          <End Role="KontaktnaOseba_PDO" Type="Self.KontaktnaOseba_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="KontaktnaOseba_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KupecID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="1" />
+          <End Role="Povprasevanje" Type="Self.Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="KupecID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_N_PovprasevanjePozicijaID">
+          <End Role="PovprasevanjePozicija" Type="Self.PovprasevanjePozicija" Multiplicity="1" />
+          <End Role="NarociloPozicija_PDO" Type="Self.NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NadrejeniID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_PDO" Type="Self.OsebeNadrejeni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_PDO">
+              <PropertyRef Name="NadrejeniID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narocilo_PDO">
+          <End Role="Narocilo_PDO" Type="Self.Narocilo_PDO" Multiplicity="1" />
+          <End Role="NarociloPozicija_PDO" Type="Self.NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narocilo_PDO">
+              <PropertyRef Name="NarociloID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="NarociloID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NarociloStatusID">
+          <End Role="StatusPovprasevanja" Type="Self.StatusPovprasevanja" Multiplicity="0..1" />
+          <End Role="Narocilo_PDO" Type="Self.Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPovprasevanja">
+              <PropertyRef Name="StatusPovprasevanjaID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oddelek">
+          <End Role="Oddelek" Type="Self.Oddelek" Multiplicity="0..1" />
+          <End Role="Narocilo_PDO" Type="Self.Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OddelekID">
+          <End Role="Oddelek" Type="Self.Oddelek" Multiplicity="0..1" />
+          <End Role="PovprasevanjePozicijaArtikel" Type="Self.PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OddelekNArociloPozicija">
+          <End Role="Oddelek" Type="Self.Oddelek" Multiplicity="0..1" />
+          <End Role="NarociloPozicija_PDO" Type="Self.NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebaID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_PDO" Type="Self.OsebeNadrejeni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="StrankaZaposleni_PDO" Type="Self.StrankaZaposleni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_PDO">
+              <PropertyRef Name="OsebeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjeID">
+          <End Role="Povprasevanje" Type="Self.Povprasevanje" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PovprasevanjePozicija" Type="Self.PovprasevanjePozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Povprasevanje">
+              <PropertyRef Name="PovprasevanjeID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjeOddelekID">
+          <End Role="Oddelek" Type="Self.Oddelek" Multiplicity="0..1" />
+          <End Role="Povprasevanje" Type="Self.Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjePozicijaArtikelID">
+          <End Role="PovprasevanjePozicija" Type="Self.PovprasevanjePozicija" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PovprasevanjePozicijaArtikel" Type="Self.PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Role="StatusPovprasevanja" Type="Self.StatusPovprasevanja" Multiplicity="1" />
+          <End Role="Povprasevanje" Type="Self.Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPovprasevanja">
+              <PropertyRef Name="StatusPovprasevanjaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni_PDO" Type="Self.StrankaZaposleni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysEmailMsg_OsebaID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="0..1" />
+          <End Role="SystemEmailMessage_PDO" Type="Self.SystemEmailMessage_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="SystemEmailMessage_PDO">
+              <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipStrankeID">
+          <End Role="TipStranka_PDO" Type="Self.TipStranka_PDO" Multiplicity="1" />
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka_PDO">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_PDO">
+              <PropertyRef Name="TipStrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VlogaID">
+          <End Role="Vloga_PDO" Type="Self.Vloga_PDO" Multiplicity="1" />
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_PDO">
+              <PropertyRef Name="VlogaID" />
+            </Principal>
+            <Dependent Role="Osebe_PDO">
+              <PropertyRef Name="VlogaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DodajPantheonDokument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_xParameters" Type="xml" Mode="In" />
+          <Parameter Name="p_cExportPath" Type="varchar" Mode="InOut" />
+          <Parameter Name="p_cKey" Type="char" Mode="InOut" />
+          <Parameter Name="p_cError" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="GetArtikelByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Supplier" Type="varchar" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="StArtikla" Type="char" MaxLength="16" Nullable="false" />
+                <Property Name="NAZIV" Type="varchar" MaxLength="80" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" Nullable="false" />
+                <Property Name="Gloss" Type="varchar" MaxLength="9" Nullable="false" />
+                <Property Name="Gramatura" Type="varchar" MaxLength="4" Nullable="false" />
+                <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Tek" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetArtikelBySearchStr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="StArtikla" Type="char" MaxLength="16" Nullable="false" />
+                <Property Name="NAZIV" Type="varchar" MaxLength="80" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+                <Property Name="Gloss" Type="varchar" MaxLength="9" Nullable="false" />
+                <Property Name="Gramatura" Type="varchar" MaxLength="4" Nullable="false" />
+                <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Tek" Type="varchar" MaxLength="6" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetBuyerList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Kupec" Type="char" MaxLength="30" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetCategoryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetPantheonUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="acSubject" Type="varchar" MaxLength="61" />
+                <Property Name="acUserId" Type="nvarchar" MaxLength="128" />
+                <Property Name="anUserID" Type="int" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetSuplierBySearchStr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="GrafolitPDOModelStoreContainer">
+          <EntitySet Name="Jeziki" EntityType="Self.Jeziki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KontaktnaOseba_PDO" EntityType="Self.KontaktnaOseba_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narocilo_PDO" EntityType="Self.Narocilo_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NarociloPozicija_PDO" EntityType="Self.NarociloPozicija_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nastavitve" EntityType="Self.Nastavitve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oddelek" EntityType="Self.Oddelek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Osebe_PDO" EntityType="Self.Osebe_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OsebeNadrejeni_PDO" EntityType="Self.OsebeNadrejeni_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Povprasevanje" EntityType="Self.Povprasevanje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PovprasevanjePozicija" EntityType="Self.PovprasevanjePozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PovprasevanjePozicijaArtikel" EntityType="Self.PovprasevanjePozicijaArtikel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusPovprasevanja" EntityType="Self.StatusPovprasevanja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stranka_PDO" EntityType="Self.Stranka_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StrankaZaposleni_PDO" EntityType="Self.StrankaZaposleni_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemEmailMessage_PDO" EntityType="Self.SystemEmailMessage_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemMessageEvents_PDO" EntityType="Self.SystemMessageEvents_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipStranka_PDO" EntityType="Self.TipStranka_PDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vloga_PDO" EntityType="Self.Vloga_PDO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DobaviteljID" Association="Self.FK_DobaviteljID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DobaviteljNarociloID" Association="Self.FK_DobaviteljNarociloID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_OsebaID" Association="Self.FK_Employee_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzbranDobaviteljID" Association="Self.FK_IzbranDobaviteljID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jezik" Association="Self.FK_Jezik">
+            <End Role="Jeziki" EntitySet="Jeziki" />
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_K_StrankaID" Association="Self.FK_K_StrankaID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="KontaktnaOseba_PDO" EntitySet="KontaktnaOseba_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupecID" Association="Self.FK_KupecID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_N_PovprasevanjePozicijaID" Association="Self.FK_N_PovprasevanjePozicijaID">
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NadrejeniID" Association="Self.FK_NadrejeniID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="OsebeNadrejeni_PDO" EntitySet="OsebeNadrejeni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narocilo_PDO" Association="Self.FK_Narocilo_PDO">
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NarociloStatusID" Association="Self.FK_NarociloStatusID">
+            <End Role="StatusPovprasevanja" EntitySet="StatusPovprasevanja" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oddelek" Association="Self.FK_Oddelek">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OddelekID" Association="Self.FK_OddelekID">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OddelekNArociloPozicija" Association="Self.FK_OddelekNArociloPozicija">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebaID" Association="Self.FK_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="OsebeNadrejeni_PDO" EntitySet="OsebeNadrejeni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeID" Association="Self.FK_OsebeID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="StrankaZaposleni_PDO" EntitySet="StrankaZaposleni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjeID" Association="Self.FK_PovprasevanjeID">
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjeOddelekID" Association="Self.FK_PovprasevanjeOddelekID">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjePozicijaArtikelID" Association="Self.FK_PovprasevanjePozicijaArtikelID">
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="Self.FK_StatusID">
+            <End Role="StatusPovprasevanja" EntitySet="StatusPovprasevanja" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="Self.FK_StrankaID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="StrankaZaposleni_PDO" EntitySet="StrankaZaposleni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="Self.FK_SysEmailMsg_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="SystemEmailMessage_PDO" EntitySet="SystemEmailMessage_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipStrankeID" Association="Self.FK_TipStrankeID">
+            <End Role="TipStranka_PDO" EntitySet="TipStranka_PDO" />
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VlogaID" Association="Self.FK_VlogaID">
+            <End Role="Vloga_PDO" EntitySet="Vloga_PDO" />
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GrafolitPDOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Osebe_PDO">
+          <Key>
+            <PropertyRef Name="OsebaID" />
+          </Key>
+          <Property Name="OsebaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VlogaID" Type="Int32" Nullable="false" />
+          <Property Name="Ime" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Priimek" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="DatumRojstva" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatumZaposlitve" Type="DateTime" Precision="0" />
+          <Property Name="UporabniskoIme" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Geslo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonGSM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Zunanji" Type="Int32" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="OsebeNadrejeni_PDO" Relationship="Self.FK_NadrejeniID" FromRole="Osebe_PDO" ToRole="OsebeNadrejeni_PDO" />
+          <NavigationProperty Name="OsebeNadrejeni_PDO1" Relationship="Self.FK_OsebaID" FromRole="Osebe_PDO" ToRole="OsebeNadrejeni_PDO" />
+          <NavigationProperty Name="StrankaZaposleni_PDO" Relationship="Self.FK_OsebeID" FromRole="Osebe_PDO" ToRole="StrankaZaposleni_PDO" />
+          <NavigationProperty Name="Vloga_PDO" Relationship="Self.FK_VlogaID" FromRole="Osebe_PDO" ToRole="Vloga_PDO" />
+          <Property Name="PDODostop" Type="Boolean" />
+          <Property Name="EmailGeslo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailStreznik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailVrata" Type="Int32" />
+          <Property Name="EmailSifriranjeSSL" Type="Boolean" />
+          <NavigationProperty Name="SystemEmailMessage_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="Osebe_PDO" ToRole="SystemEmailMessage_PDO" />
+          <Property Name="Podpis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_Employee_OsebaID" FromRole="Osebe_PDO" ToRole="Povprasevanje" />
+          <Property Name="PantheonUsrID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_PDO">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OsebaID" Type="Int32" Nullable="false" />
+          <Property Name="NadrejeniID" Type="Int32" Nullable="false" />
+          <Property Name="Opomba" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDosebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="Self.FK_NadrejeniID" FromRole="OsebeNadrejeni_PDO" ToRole="Osebe_PDO" />
+          <NavigationProperty Name="Osebe_PDO1" Relationship="Self.FK_OsebaID" FromRole="OsebeNadrejeni_PDO" ToRole="Osebe_PDO" />
+        </EntityType>
+        <EntityType Name="StatusPovprasevanja">
+          <Key>
+            <PropertyRef Name="StatusPovprasevanjaID" />
+          </Key>
+          <Property Name="StatusPovprasevanjaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Narocilo_PDO" Relationship="GrafolitPDOModel.FK_NarociloStatusID" FromRole="StatusPovprasevanja" ToRole="Narocilo_PDO" />
+          <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_StatusID" FromRole="StatusPovprasevanja" ToRole="Povprasevanje" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_PDO">
+          <Key>
+            <PropertyRef Name="StrankaOsebeID" />
+          </Key>
+          <Property Name="StrankaOsebeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="OsebeID" Type="Int32" Nullable="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="Self.FK_OsebeID" FromRole="StrankaZaposleni_PDO" ToRole="Osebe_PDO" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_StrankaID" FromRole="StrankaZaposleni_PDO" ToRole="Stranka_PDO" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage_PDO">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="OsebaEmailFromID" Type="Int32" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="SystemEmailMessage_PDO" ToRole="Osebe_PDO" />
+          <Property Name="Attachments" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="CCEmails" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_PDO">
+          <Key>
+            <PropertyRef Name="SystemMessageEventsID" />
+          </Key>
+          <Property Name="SystemMessageEventsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TipStranka_PDO">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_TipStrankeID" FromRole="TipStranka_PDO" ToRole="Stranka_PDO" />
+        </EntityType>
+        <EntityType Name="Vloga_PDO">
+          <Key>
+            <PropertyRef Name="VlogaID" />
+          </Key>
+          <Property Name="VlogaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="Self.FK_VlogaID" FromRole="Vloga_PDO" ToRole="Osebe_PDO" />
+        </EntityType>
+        <Association Name="FK_NadrejeniID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_PDO" Type="Self.OsebeNadrejeni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_PDO">
+              <PropertyRef Name="NadrejeniID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebaID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_PDO" Type="Self.OsebeNadrejeni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeID">
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="1" />
+          <End Role="StrankaZaposleni_PDO" Type="Self.StrankaZaposleni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_PDO">
+              <PropertyRef Name="OsebeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VlogaID">
+          <End Role="Vloga_PDO" Type="Self.Vloga_PDO" Multiplicity="1" />
+          <End Role="Osebe_PDO" Type="Self.Osebe_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_PDO">
+              <PropertyRef Name="VlogaID" />
+            </Principal>
+            <Dependent Role="Osebe_PDO">
+              <PropertyRef Name="VlogaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GrafolitPDOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Osebe_PDO" EntityType="Self.Osebe_PDO" />
+          <EntitySet Name="OsebeNadrejeni_PDO" EntityType="Self.OsebeNadrejeni_PDO" />
+          <EntitySet Name="StatusPovprasevanja" EntityType="Self.StatusPovprasevanja" />
+          <EntitySet Name="StrankaZaposleni_PDO" EntityType="Self.StrankaZaposleni_PDO" />
+          <EntitySet Name="SystemEmailMessage_PDO" EntityType="Self.SystemEmailMessage_PDO" />
+          <EntitySet Name="SystemMessageEvents_PDO" EntityType="Self.SystemMessageEvents_PDO" />
+          <EntitySet Name="TipStranka_PDO" EntityType="Self.TipStranka_PDO" />
+          <EntitySet Name="Vloga_PDO" EntityType="Self.Vloga_PDO" />
+          <AssociationSet Name="FK_NadrejeniID" Association="Self.FK_NadrejeniID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="OsebeNadrejeni_PDO" EntitySet="OsebeNadrejeni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebaID" Association="Self.FK_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="OsebeNadrejeni_PDO" EntitySet="OsebeNadrejeni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeID" Association="Self.FK_OsebeID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="StrankaZaposleni_PDO" EntitySet="StrankaZaposleni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VlogaID" Association="Self.FK_VlogaID">
+            <End Role="Vloga_PDO" EntitySet="Vloga_PDO" />
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+          </AssociationSet>
+          <EntitySet Name="Nastavitve" EntityType="GrafolitPDOModel.Nastavitve" />
+          <FunctionImport Name="GetArtikelBySearchStr" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetArtikelBySearchStr_Result)">
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetBuyerList" IsComposable="true" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetCategoryList" IsComposable="true" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetSuplierBySearchStr" IsComposable="true" ReturnType="Collection(String)">
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="SystemEmailMessage_PDO" EntitySet="SystemEmailMessage_PDO" />
+          </AssociationSet>
+          <FunctionImport Name="DodajPantheonDokument">
+            <Parameter Name="p_xParameters" Mode="In" Type="String" />
+            <Parameter Name="p_cExportPath" Mode="InOut" Type="String" />
+            <Parameter Name="p_cKey" Mode="InOut" Type="String" />
+            <Parameter Name="p_cError" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Jeziki" EntityType="GrafolitPDOModel.Jeziki" />
+          <EntitySet Name="Oddelek" EntityType="GrafolitPDOModel.Oddelek" />
+          <EntitySet Name="KontaktnaOseba_PDO" EntityType="GrafolitPDOModel.KontaktnaOseba_PDO" />
+          <EntitySet Name="Stranka_PDO" EntityType="GrafolitPDOModel.Stranka_PDO" />
+          <AssociationSet Name="FK_Jezik" Association="GrafolitPDOModel.FK_Jezik">
+            <End Role="Jeziki" EntitySet="Jeziki" />
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_K_StrankaID" Association="GrafolitPDOModel.FK_K_StrankaID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="KontaktnaOseba_PDO" EntitySet="KontaktnaOseba_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="GrafolitPDOModel.FK_StrankaID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="StrankaZaposleni_PDO" EntitySet="StrankaZaposleni_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipStrankeID" Association="GrafolitPDOModel.FK_TipStrankeID">
+            <End Role="TipStranka_PDO" EntitySet="TipStranka_PDO" />
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+          </AssociationSet>
+          <EntitySet Name="PovprasevanjePozicija" EntityType="GrafolitPDOModel.PovprasevanjePozicija" />
+          <EntitySet Name="PovprasevanjePozicijaArtikel" EntityType="GrafolitPDOModel.PovprasevanjePozicijaArtikel" />
+          <AssociationSet Name="FK_OddelekID" Association="GrafolitPDOModel.FK_OddelekID">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DobaviteljID" Association="GrafolitPDOModel.FK_DobaviteljID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjePozicijaID" Association="GrafolitPDOModel.FK_PovprasevanjePozicijaID">
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
+          </AssociationSet>
+          <EntitySet Name="NarociloPozicija_PDO" EntityType="GrafolitPDOModel.NarociloPozicija_PDO" />
+          <AssociationSet Name="FK_IzbranDobaviteljID" Association="GrafolitPDOModel.FK_IzbranDobaviteljID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OddelekNArociloPozicija" Association="GrafolitPDOModel.FK_OddelekNArociloPozicija">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <EntitySet Name="Narocilo_PDO" EntityType="GrafolitPDOModel.Narocilo_PDO" />
+          <AssociationSet Name="FK_DobaviteljNarociloID" Association="GrafolitPDOModel.FK_DobaviteljNarociloID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narocilo_PDO" Association="GrafolitPDOModel.FK_Narocilo_PDO">
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NarociloStatusID" Association="GrafolitPDOModel.FK_NarociloStatusID">
+            <End Role="StatusPovprasevanja" EntitySet="StatusPovprasevanja" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oddelek" Association="GrafolitPDOModel.FK_Oddelek">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <EntitySet Name="Povprasevanje" EntityType="GrafolitPDOModel.Povprasevanje" />
+          <AssociationSet Name="FK_PovprasevanjeOddelekID" Association="GrafolitPDOModel.FK_PovprasevanjeOddelekID">
+            <End Role="Oddelek" EntitySet="Oddelek" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_OsebaID" Association="GrafolitPDOModel.FK_Employee_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupecID" Association="GrafolitPDOModel.FK_KupecID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjeID" Association="GrafolitPDOModel.FK_PovprasevanjeID">
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="GrafolitPDOModel.FK_StatusID">
+            <End Role="StatusPovprasevanja" EntitySet="StatusPovprasevanja" />
+            <End Role="Povprasevanje" EntitySet="Povprasevanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_N_PovprasevanjePozicijaID" Association="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID">
+            <End Role="PovprasevanjePozicija" EntitySet="PovprasevanjePozicija" />
+            <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
+          </AssociationSet>
+          <FunctionImport Name="GetPantheonUsers" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetPantheonUsers_Result)" />
+          <FunctionImport Name="GetArtikelByName" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetArtikelByName_Result2)">
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
+          </EntityContainer>
+        <EntityType Name="Nastavitve">
+          <Key>
+            <PropertyRef Name="NastavitveID" />
+          </Key>
+          <Property Name="NastavitveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PovprasevanjeStevilcenjeStev" Type="Int32" />
+          <Property Name="PovprasevanjeStevilcenjePredpona" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="PosiljanjePoste" Type="Boolean" />
+          <Property Name="EmailStreznik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailVrata" Type="Int32" />
+          <Property Name="EmailSifriranjeSSL" Type="Boolean" />
+        </EntityType>
+        <ComplexType Name="GetArtikelBySearchStr_Result">
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+        </ComplexType>
+        <Association Name="FK_SysEmailMsg_OsebaID">
+          <End Type="GrafolitPDOModel.Osebe_PDO" Role="Osebe_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.SystemEmailMessage_PDO" Role="SystemEmailMessage_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="SystemEmailMessage_PDO">
+              <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Jeziki">
+          <Key>
+            <PropertyRef Name="JezikID" />
+          </Key>
+          <Property Name="JezikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_Jezik" FromRole="Jeziki" ToRole="Stranka_PDO" />
+        </EntityType>
+        <EntityType Name="Oddelek">
+          <Key>
+            <PropertyRef Name="OddelekID" />
+          </Key>
+          <Property Name="OddelekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PovprasevanjePozicijaArtikel" Relationship="GrafolitPDOModel.FK_OddelekID" FromRole="Oddelek" ToRole="PovprasevanjePozicijaArtikel" />
+          <NavigationProperty Name="NarociloPozicija_PDO" Relationship="GrafolitPDOModel.FK_OddelekNArociloPozicija" FromRole="Oddelek" ToRole="NarociloPozicija_PDO" />
+          <NavigationProperty Name="Narocilo_PDO" Relationship="GrafolitPDOModel.FK_Oddelek" FromRole="Oddelek" ToRole="Narocilo_PDO" />
+          <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_PovprasevanjeOddelekID" FromRole="Oddelek" ToRole="Povprasevanje" />
+        </EntityType>
+        <EntityType Name="KontaktnaOseba_PDO">
+          <Key>
+            <PropertyRef Name="KontaktnaOsebaID" />
+          </Key>
+          <Property Name="KontaktnaOsebaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StrankaID" Type="Int32" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPodpis" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GSM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_K_StrankaID" FromRole="KontaktnaOseba_PDO" ToRole="Stranka_PDO" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZaporednaStevika" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Stranka_PDO">
+          <Key>
+            <PropertyRef Name="StrankaID" />
+          </Key>
+          <Property Name="StrankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TipStrankaID" Type="Int32" Nullable="false" />
+          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivDrugi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RokPlacila" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDomacTuji" Type="Boolean" />
+          <Property Name="Zavezanec_DA_NE" Type="Boolean" />
+          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clan_EU" Type="Boolean" />
+          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GenerirajERacun" Type="Int32" />
+          <Property Name="JavniZavod" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="JezikID" Type="Int32" />
+          <NavigationProperty Name="Jeziki" Relationship="GrafolitPDOModel.FK_Jezik" FromRole="Stranka_PDO" ToRole="Jeziki" />
+          <NavigationProperty Name="KontaktnaOseba_PDO" Relationship="GrafolitPDOModel.FK_K_StrankaID" FromRole="Stranka_PDO" ToRole="KontaktnaOseba_PDO" />
+          <NavigationProperty Name="StrankaZaposleni_PDO" Relationship="GrafolitPDOModel.FK_StrankaID" FromRole="Stranka_PDO" ToRole="StrankaZaposleni_PDO" />
+          <NavigationProperty Name="TipStranka_PDO" Relationship="GrafolitPDOModel.FK_TipStrankeID" FromRole="Stranka_PDO" ToRole="TipStranka_PDO" />
+          <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_DobaviteljID" FromRole="Stranka_PDO" ToRole="PovprasevanjePozicija" />
+          <NavigationProperty Name="NarociloPozicija_PDO" Relationship="GrafolitPDOModel.FK_IzbranDobaviteljID" FromRole="Stranka_PDO" ToRole="NarociloPozicija_PDO" />
+          <NavigationProperty Name="Narocilo_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljNarociloID" FromRole="Stranka_PDO" ToRole="Narocilo_PDO" />
+          <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_KupecID" FromRole="Stranka_PDO" ToRole="Povprasevanje" />
+          <Property Name="PrivzetaEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZadnjaIzbranaKategorija" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Jezik">
+          <End Type="GrafolitPDOModel.Jeziki" Role="Jeziki" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jeziki">
+              <PropertyRef Name="JezikID" />
+            </Principal>
+            <Dependent Role="Stranka_PDO">
+              <PropertyRef Name="JezikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_K_StrankaID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.KontaktnaOseba_PDO" Role="KontaktnaOseba_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="KontaktnaOseba_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitPDOModel.StrankaZaposleni_PDO" Role="StrankaZaposleni_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipStrankeID">
+          <End Type="GrafolitPDOModel.TipStranka_PDO" Role="TipStranka_PDO" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka_PDO">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_PDO">
+              <PropertyRef Name="TipStrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetArtikelByName_Result">
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+        </ComplexType>
+        <EntityType Name="PovprasevanjePozicija">
+          <Key>
+            <PropertyRef Name="PovprasevanjePozicijaID" />
+          </Key>
+          <Property Name="PovprasevanjePozicijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PovprasevanjeID" Type="Int32" Nullable="false" />
+          <Property Name="DobaviteljID" Type="Int32" Nullable="false" />
+          <Property Name="DobaviteljNaziv_P" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljKontaktOsebe" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljID_P" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Artikli" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="KupecViden" Type="Boolean" />
+          <Property Name="DatumPredvideneDobave" Type="DateTime" Precision="3" />
+          <Property Name="PotDokumenta" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="Opomba" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljID" FromRole="PovprasevanjePozicija" ToRole="Stranka_PDO" />
+          <NavigationProperty Name="PovprasevanjePozicijaArtikel" Relationship="GrafolitPDOModel.FK_PovprasevanjePozicijaID" FromRole="PovprasevanjePozicija" ToRole="PovprasevanjePozicijaArtikel" />
+          <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_PovprasevanjeID" FromRole="PovprasevanjePozicija" ToRole="Povprasevanje" />
+          <NavigationProperty Name="NarociloPozicija_PDO" Relationship="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" FromRole="PovprasevanjePozicija" ToRole="NarociloPozicija_PDO" />
+          <Property Name="ObvesceneOsebe" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PovprasevanjePozicijaArtikel">
+          <Key>
+            <PropertyRef Name="PovprasevanjePozicijaArtikelID" />
+          </Key>
+          <Property Name="PovprasevanjePozicijaArtikelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PovprasevanjePozicijaID" Type="Int32" Nullable="false" />
+          <Property Name="KategorijaNaziv" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Kolicina1" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="EnotaMere1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Kolicina2" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="EnotaMere2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="Ident" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IzbraniArtikelNaziv_P" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ArtikelCena" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinavKG" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EnotaMere" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Rabat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OpombaNarocilnica" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="OddelekID" Type="Int32" />
+          <Property Name="PrikaziKupca" Type="Boolean" />
+          <Property Name="IzbranArtikel" Type="Boolean" />
+          <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_OddelekID" FromRole="PovprasevanjePozicijaArtikel" ToRole="Oddelek" />
+          <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_PovprasevanjePozicijaID" FromRole="PovprasevanjePozicijaArtikel" ToRole="PovprasevanjePozicija" />
+          <Property Name="DatumDobavePos" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_OddelekID">
+          <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.PovprasevanjePozicijaArtikel" Role="PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DobaviteljID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.PovprasevanjePozicija" Role="PovprasevanjePozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicija">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjePozicijaID">
+          <End Type="GrafolitPDOModel.PovprasevanjePozicija" Role="PovprasevanjePozicija" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.PovprasevanjePozicijaArtikel" Role="PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NarociloPozicija_PDO">
+          <Key>
+            <PropertyRef Name="NarociloPozicijaID" />
+          </Key>
+          <Property Name="NarociloPozicijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloID" Type="Int32" Nullable="false" />
+          <Property Name="PovprasevanjePozicijaID" Type="Int32" Nullable="false" />
+          <Property Name="IzbranDobaviteljID" Type="Int32" />
+          <Property Name="IzbraniArtikelNaziv_P" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ArtikelCena" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DatumDobave" Type="DateTime" Precision="3" />
+          <Property Name="Opombe" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="Ident" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinavKG" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EnotaMere" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Rabat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OpombaNarocilnica" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="OddelekID" Type="Int32" />
+          <Property Name="PrikaziKupca" Type="Boolean" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_IzbranDobaviteljID" FromRole="NarociloPozicija_PDO" ToRole="Stranka_PDO" />
+          <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_OddelekNArociloPozicija" FromRole="NarociloPozicija_PDO" ToRole="Oddelek" />
+          <NavigationProperty Name="Narocilo_PDO" Relationship="GrafolitPDOModel.FK_Narocilo_PDO" FromRole="NarociloPozicija_PDO" ToRole="Narocilo_PDO" />
+          <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" FromRole="NarociloPozicija_PDO" ToRole="PovprasevanjePozicija" />
+        </EntityType>
+        <Association Name="FK_IzbranDobaviteljID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.NarociloPozicija_PDO" Role="NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="IzbranDobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OddelekNArociloPozicija">
+          <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.NarociloPozicija_PDO" Role="NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Narocilo_PDO">
+          <Key>
+            <PropertyRef Name="NarociloID" />
+          </Key>
+          <Property Name="NarociloID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloStevilka_P" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DatumDobave" Type="DateTime" Precision="0" />
+          <Property Name="Opombe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="P_CreateOrder" Type="DateTime" Precision="3" />
+          <Property Name="P_UnsuccCountCreatePDFPantheon" Type="Int32" />
+          <Property Name="P_LastTSCreatePDFPantheon" Type="DateTime" Precision="3" />
+          <Property Name="P_TransportOrderPDFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="P_TransportOrderPDFDocPath" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="P_GetPDFOrderFile" Type="DateTime" Precision="3" />
+          <Property Name="P_SendWarningToAmin" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="DobaviteljID" Type="Int32" />
+          <Property Name="OddelekID" Type="Int32" />
+          <Property Name="PovprasevanjeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljNarociloID" FromRole="Narocilo_PDO" ToRole="Stranka_PDO" />
+          <NavigationProperty Name="NarociloPozicija_PDO" Relationship="GrafolitPDOModel.FK_Narocilo_PDO" FromRole="Narocilo_PDO" ToRole="NarociloPozicija_PDO" />
+          <NavigationProperty Name="StatusPovprasevanja" Relationship="GrafolitPDOModel.FK_NarociloStatusID" FromRole="Narocilo_PDO" ToRole="StatusPovprasevanja" />
+          <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_Oddelek" FromRole="Narocilo_PDO" ToRole="Oddelek" />
+          <Property Name="PovprasevanjeStevilka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_DobaviteljNarociloID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Narocilo_PDO" Role="Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narocilo_PDO">
+          <End Type="GrafolitPDOModel.Narocilo_PDO" Role="Narocilo_PDO" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.NarociloPozicija_PDO" Role="NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narocilo_PDO">
+              <PropertyRef Name="NarociloID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="NarociloID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NarociloStatusID">
+          <End Type="GrafolitPDOModel.StatusPovprasevanja" Role="StatusPovprasevanja" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Narocilo_PDO" Role="Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPovprasevanja">
+              <PropertyRef Name="StatusPovprasevanjaID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oddelek">
+          <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Narocilo_PDO" Role="Narocilo_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Povprasevanje">
+          <Key>
+            <PropertyRef Name="PovprasevanjeID" />
+          </Key>
+          <Property Name="PovprasevanjeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KupecID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="NarociloID" Type="Int32" />
+          <Property Name="KupecNaziv_P" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PovprasevanjeStevilka" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DatumOddajePovprasevanja" Type="DateTime" Precision="3" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="Zakleni" Type="Boolean" />
+          <Property Name="ZaklenilUporabnik" Type="Int32" />
+          <Property Name="DatumPredvideneDobave" Type="DateTime" Precision="3" />
+          <Property Name="PovprasevajneOddal" Type="Int32" />
+          <Property Name="NotSendPDFAndEmailsToSupplier" Type="Boolean" />
+          <Property Name="Dobavitelji" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OpombaNarocilnica" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="OddelekID" Type="Int32" />
+          <Property Name="Narocila" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_PovprasevanjeOddelekID" FromRole="Povprasevanje" ToRole="Oddelek" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="GrafolitPDOModel.FK_Employee_OsebaID" FromRole="Povprasevanje" ToRole="Osebe_PDO" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_KupecID" FromRole="Povprasevanje" ToRole="Stranka_PDO" />
+          <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_PovprasevanjeID" FromRole="Povprasevanje" ToRole="PovprasevanjePozicija" />
+          <NavigationProperty Name="StatusPovprasevanja" Relationship="GrafolitPDOModel.FK_StatusID" FromRole="Povprasevanje" ToRole="StatusPovprasevanja" />
+        </EntityType>
+        <Association Name="FK_PovprasevanjeOddelekID">
+          <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Povprasevanje" Role="Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oddelek">
+              <PropertyRef Name="OddelekID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="OddelekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_OsebaID">
+          <End Type="GrafolitPDOModel.Osebe_PDO" Role="Osebe_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.Povprasevanje" Role="Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="PovprasevajneOddal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KupecID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.Povprasevanje" Role="Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="KupecID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjeID">
+          <End Type="GrafolitPDOModel.Povprasevanje" Role="Povprasevanje" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.PovprasevanjePozicija" Role="PovprasevanjePozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Povprasevanje">
+              <PropertyRef Name="PovprasevanjeID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Type="GrafolitPDOModel.StatusPovprasevanja" Role="StatusPovprasevanja" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.Povprasevanje" Role="Povprasevanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPovprasevanja">
+              <PropertyRef Name="StatusPovprasevanjaID" />
+            </Principal>
+            <Dependent Role="Povprasevanje">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_N_PovprasevanjePozicijaID">
+          <End Type="GrafolitPDOModel.PovprasevanjePozicija" Role="PovprasevanjePozicija" Multiplicity="1" />
+          <End Type="GrafolitPDOModel.NarociloPozicija_PDO" Role="NarociloPozicija_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PovprasevanjePozicija">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija_PDO">
+              <PropertyRef Name="PovprasevanjePozicijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetArtikelByName_Result1">
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+        </ComplexType>
+        <ComplexType Name="GetPantheonUsers_Result">
+          <Property Type="String" Name="acSubject" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="acUserId" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="anUserID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetArtikelByName_Result2">
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GrafolitPDOModelStoreContainer" CdmEntityContainer="GrafolitPDOEntities">
+          <EntitySetMapping Name="Osebe_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Osebe_PDO">
+              <MappingFragment StoreEntitySet="Osebe_PDO">
+                <ScalarProperty Name="PantheonUsrID" ColumnName="PantheonUsrID" />
+                <ScalarProperty Name="Podpis" ColumnName="Podpis" />
+                <ScalarProperty Name="EmailSifriranjeSSL" ColumnName="EmailSifriranjeSSL" />
+                <ScalarProperty Name="EmailVrata" ColumnName="EmailVrata" />
+                <ScalarProperty Name="EmailStreznik" ColumnName="EmailStreznik" />
+                <ScalarProperty Name="EmailGeslo" ColumnName="EmailGeslo" />
+                <ScalarProperty Name="PDODostop" ColumnName="PDODostop" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="VlogaID" ColumnName="VlogaID" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Priimek" ColumnName="Priimek" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="DatumRojstva" ColumnName="DatumRojstva" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumZaposlitve" ColumnName="DatumZaposlitve" />
+                <ScalarProperty Name="UporabniskoIme" ColumnName="UporabniskoIme" />
+                <ScalarProperty Name="Geslo" ColumnName="Geslo" />
+                <ScalarProperty Name="TelefonGSM" ColumnName="TelefonGSM" />
+                <ScalarProperty Name="Zunanji" ColumnName="Zunanji" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OsebeNadrejeni_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.OsebeNadrejeni_PDO">
+              <MappingFragment StoreEntitySet="OsebeNadrejeni_PDO">
+                <ScalarProperty Name="OsebeNadrejeniID" ColumnName="OsebeNadrejeniID" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="NadrejeniID" ColumnName="NadrejeniID" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDosebe" ColumnName="tsIDosebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusPovprasevanja">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.StatusPovprasevanja">
+              <MappingFragment StoreEntitySet="StatusPovprasevanja">
+                <ScalarProperty Name="StatusPovprasevanjaID" ColumnName="StatusPovprasevanjaID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StrankaZaposleni_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.StrankaZaposleni_PDO">
+              <MappingFragment StoreEntitySet="StrankaZaposleni_PDO">
+                <ScalarProperty Name="StrankaOsebeID" ColumnName="StrankaOsebeID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="OsebeID" ColumnName="OsebeID" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemEmailMessage_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.SystemEmailMessage_PDO">
+              <MappingFragment StoreEntitySet="SystemEmailMessage_PDO">
+                <ScalarProperty Name="CCEmails" ColumnName="CCEmails" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="OsebaEmailFromID" ColumnName="OsebaEmailFromID" />
+                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
+                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemMessageEvents_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.SystemMessageEvents_PDO">
+              <MappingFragment StoreEntitySet="SystemMessageEvents_PDO">
+                <ScalarProperty Name="SystemMessageEventsID" ColumnName="SystemMessageEventsID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipStranka_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.TipStranka_PDO">
+              <MappingFragment StoreEntitySet="TipStranka_PDO">
+                <ScalarProperty Name="TipStrankaID" ColumnName="TipStrankaID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vloga_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Vloga_PDO">
+              <MappingFragment StoreEntitySet="Vloga_PDO">
+                <ScalarProperty Name="VlogaID" ColumnName="VlogaID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nastavitve">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Nastavitve">
+              <MappingFragment StoreEntitySet="Nastavitve">
+                <ScalarProperty Name="EmailSifriranjeSSL" ColumnName="EmailSifriranjeSSL" />
+                <ScalarProperty Name="EmailVrata" ColumnName="EmailVrata" />
+                <ScalarProperty Name="EmailStreznik" ColumnName="EmailStreznik" />
+                <ScalarProperty Name="PosiljanjePoste" ColumnName="PosiljanjePoste" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="PovprasevanjeStevilcenjePredpona" ColumnName="PovprasevanjeStevilcenjePredpona" />
+                <ScalarProperty Name="PovprasevanjeStevilcenjeStev" ColumnName="PovprasevanjeStevilcenjeStev" />
+                <ScalarProperty Name="NastavitveID" ColumnName="NastavitveID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetArtikelBySearchStr" FunctionName="GrafolitPDOModel.Store.GetArtikelBySearchStr">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetArtikelBySearchStr_Result">
+                <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
+                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
+                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
+                <ScalarProperty Name="Tek" ColumnName="Tek" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBuyerList" FunctionName="GrafolitPDOModel.Store.GetBuyerList" />
+          <FunctionImportMapping FunctionImportName="GetCategoryList" FunctionName="GrafolitPDOModel.Store.GetCategoryList" />
+          <FunctionImportMapping FunctionImportName="GetSuplierBySearchStr" FunctionName="GrafolitPDOModel.Store.GetSuplierBySearchStr" />
+          <FunctionImportMapping FunctionImportName="DodajPantheonDokument" FunctionName="GrafolitPDOModel.Store.DodajPantheonDokument" />
+          <EntitySetMapping Name="Jeziki">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Jeziki">
+              <MappingFragment StoreEntitySet="Jeziki">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="JezikID" ColumnName="JezikID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oddelek">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Oddelek">
+              <MappingFragment StoreEntitySet="Oddelek">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KontaktnaOseba_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.KontaktnaOseba_PDO">
+              <MappingFragment StoreEntitySet="KontaktnaOseba_PDO">
+                <ScalarProperty Name="ZaporednaStevika" ColumnName="ZaporednaStevika" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="GSM" ColumnName="GSM" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="NazivPodpis" ColumnName="NazivPodpis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="KontaktnaOsebaID" ColumnName="KontaktnaOsebaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stranka_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Stranka_PDO">
+              <MappingFragment StoreEntitySet="Stranka_PDO">
+                <ScalarProperty Name="ZadnjaIzbranaKategorija" ColumnName="ZadnjaIzbranaKategorija" />
+                <ScalarProperty Name="PrivzetaEM" ColumnName="PrivzetaEM" />
+                <ScalarProperty Name="JezikID" ColumnName="JezikID" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
+                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
+                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
+                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
+                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
+                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
+                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
+                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
+                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
+                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
+                <ScalarProperty Name="TRR" ColumnName="TRR" />
+                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
+                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
+                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
+                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
+                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
+                <ScalarProperty Name="TipStrankaID" ColumnName="TipStrankaID" />
+                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PovprasevanjePozicija">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.PovprasevanjePozicija">
+              <MappingFragment StoreEntitySet="PovprasevanjePozicija">
+                <ScalarProperty Name="ObvesceneOsebe" ColumnName="ObvesceneOsebe" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="PotDokumenta" ColumnName="PotDokumenta" />
+                <ScalarProperty Name="DatumPredvideneDobave" ColumnName="DatumPredvideneDobave" />
+                <ScalarProperty Name="KupecViden" ColumnName="KupecViden" />
+                <ScalarProperty Name="Artikli" ColumnName="Artikli" />
+                <ScalarProperty Name="DobaviteljID_P" ColumnName="DobaviteljID_P" />
+                <ScalarProperty Name="DobaviteljKontaktOsebe" ColumnName="DobaviteljKontaktOsebe" />
+                <ScalarProperty Name="DobaviteljNaziv_P" ColumnName="DobaviteljNaziv_P" />
+                <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
+                <ScalarProperty Name="PovprasevanjeID" ColumnName="PovprasevanjeID" />
+                <ScalarProperty Name="PovprasevanjePozicijaID" ColumnName="PovprasevanjePozicijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PovprasevanjePozicijaArtikel">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.PovprasevanjePozicijaArtikel">
+              <MappingFragment StoreEntitySet="PovprasevanjePozicijaArtikel">
+                <ScalarProperty Name="DatumDobavePos" ColumnName="DatumDobavePos" />
+                <ScalarProperty Name="IzbranArtikel" ColumnName="IzbranArtikel" />
+                <ScalarProperty Name="PrikaziKupca" ColumnName="PrikaziKupca" />
+                <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
+                <ScalarProperty Name="OpombaNarocilnica" ColumnName="OpombaNarocilnica" />
+                <ScalarProperty Name="Rabat" ColumnName="Rabat" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="KolicinavKG" ColumnName="KolicinavKG" />
+                <ScalarProperty Name="ArtikelCena" ColumnName="ArtikelCena" />
+                <ScalarProperty Name="IzbraniArtikelNaziv_P" ColumnName="IzbraniArtikelNaziv_P" />
+                <ScalarProperty Name="Ident" ColumnName="Ident" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="EnotaMere2" ColumnName="EnotaMere2" />
+                <ScalarProperty Name="Kolicina2" ColumnName="Kolicina2" />
+                <ScalarProperty Name="EnotaMere1" ColumnName="EnotaMere1" />
+                <ScalarProperty Name="Kolicina1" ColumnName="Kolicina1" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="KategorijaNaziv" ColumnName="KategorijaNaziv" />
+                <ScalarProperty Name="PovprasevanjePozicijaID" ColumnName="PovprasevanjePozicijaID" />
+                <ScalarProperty Name="PovprasevanjePozicijaArtikelID" ColumnName="PovprasevanjePozicijaArtikelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NarociloPozicija_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.NarociloPozicija_PDO">
+              <MappingFragment StoreEntitySet="NarociloPozicija_PDO">
+                <ScalarProperty Name="PrikaziKupca" ColumnName="PrikaziKupca" />
+                <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
+                <ScalarProperty Name="OpombaNarocilnica" ColumnName="OpombaNarocilnica" />
+                <ScalarProperty Name="Rabat" ColumnName="Rabat" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="KolicinavKG" ColumnName="KolicinavKG" />
+                <ScalarProperty Name="Ident" ColumnName="Ident" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="DatumDobave" ColumnName="DatumDobave" />
+                <ScalarProperty Name="ArtikelCena" ColumnName="ArtikelCena" />
+                <ScalarProperty Name="IzbraniArtikelNaziv_P" ColumnName="IzbraniArtikelNaziv_P" />
+                <ScalarProperty Name="IzbranDobaviteljID" ColumnName="IzbranDobaviteljID" />
+                <ScalarProperty Name="PovprasevanjePozicijaID" ColumnName="PovprasevanjePozicijaID" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+                <ScalarProperty Name="NarociloPozicijaID" ColumnName="NarociloPozicijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narocilo_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Narocilo_PDO">
+              <MappingFragment StoreEntitySet="Narocilo_PDO">
+                <ScalarProperty Name="PovprasevanjeStevilka" ColumnName="PovprasevanjeStevilka" />
+                <ScalarProperty Name="PovprasevanjeID" ColumnName="PovprasevanjeID" />
+                <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
+                <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="P_SendWarningToAmin" ColumnName="P_SendWarningToAmin" />
+                <ScalarProperty Name="P_GetPDFOrderFile" ColumnName="P_GetPDFOrderFile" />
+                <ScalarProperty Name="P_TransportOrderPDFDocPath" ColumnName="P_TransportOrderPDFDocPath" />
+                <ScalarProperty Name="P_TransportOrderPDFName" ColumnName="P_TransportOrderPDFName" />
+                <ScalarProperty Name="P_LastTSCreatePDFPantheon" ColumnName="P_LastTSCreatePDFPantheon" />
+                <ScalarProperty Name="P_UnsuccCountCreatePDFPantheon" ColumnName="P_UnsuccCountCreatePDFPantheon" />
+                <ScalarProperty Name="P_CreateOrder" ColumnName="P_CreateOrder" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="DatumDobave" ColumnName="DatumDobave" />
+                <ScalarProperty Name="NarociloStevilka_P" ColumnName="NarociloStevilka_P" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Povprasevanje">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.Povprasevanje">
+              <MappingFragment StoreEntitySet="Povprasevanje">
+                <ScalarProperty Name="Narocila" ColumnName="Narocila" />
+                <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
+                <ScalarProperty Name="OpombaNarocilnica" ColumnName="OpombaNarocilnica" />
+                <ScalarProperty Name="Dobavitelji" ColumnName="Dobavitelji" />
+                <ScalarProperty Name="NotSendPDFAndEmailsToSupplier" ColumnName="NotSendPDFAndEmailsToSupplier" />
+                <ScalarProperty Name="PovprasevajneOddal" ColumnName="PovprasevajneOddal" />
+                <ScalarProperty Name="DatumPredvideneDobave" ColumnName="DatumPredvideneDobave" />
+                <ScalarProperty Name="ZaklenilUporabnik" ColumnName="ZaklenilUporabnik" />
+                <ScalarProperty Name="Zakleni" ColumnName="Zakleni" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="DatumOddajePovprasevanja" ColumnName="DatumOddajePovprasevanja" />
+                <ScalarProperty Name="PovprasevanjeStevilka" ColumnName="PovprasevanjeStevilka" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="KupecNaziv_P" ColumnName="KupecNaziv_P" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="KupecID" ColumnName="KupecID" />
+                <ScalarProperty Name="PovprasevanjeID" ColumnName="PovprasevanjeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetPantheonUsers" FunctionName="GrafolitPDOModel.Store.GetPantheonUsers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetPantheonUsers_Result">
+                <ScalarProperty Name="acSubject" ColumnName="acSubject" />
+                <ScalarProperty Name="acUserId" ColumnName="acUserId" />
+                <ScalarProperty Name="anUserID" ColumnName="anUserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetArtikelByName" FunctionName="GrafolitPDOModel.Store.GetArtikelByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetArtikelByName_Result2">
+                <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
+                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
+                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
+                <ScalarProperty Name="Tek" ColumnName="Tek" />
+                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

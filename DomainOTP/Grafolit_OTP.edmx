@@ -1,0 +1,2349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GrafolitOTPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jeziki">
+          <Key>
+            <PropertyRef Name="JezikID" />
+          </Key>
+          <Property Name="JezikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="KodaJezik" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="KontaktneOsebe_OTP">
+          <Key>
+            <PropertyRef Name="idKontaktneOsebe" />
+          </Key>
+          <Property Name="idKontaktneOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="NazivKontaktneOsebe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="GSM" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="50" />
+          <Property Name="ZaporednaStevika" Type="int" />
+          <Property Name="Fax" Type="varchar" MaxLength="30" />
+          <Property Name="Opombe" Type="varchar" MaxLength="3000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="NazivPodpis" Type="varchar" MaxLength="300" />
+          <Property Name="Naziv" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="LastnaZaloga">
+          <Key>
+            <PropertyRef Name="idLastnaZaloga" />
+          </Key>
+          <Property Name="idLastnaZaloga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastnoSkladisceID" Type="int" Nullable="false" />
+          <Property Name="OdpoklicID" Type="int" Nullable="false" />
+          <Property Name="NarociloID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NarociloPozicijaID" Type="int" Nullable="false" />
+          <Property Name="TipID" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="KolicinaIzNarocila" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="StatusKolicine" Type="int" Nullable="false" />
+          <Property Name="Material" Type="varchar" MaxLength="500" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="OC" Type="varchar" MaxLength="300" />
+          <Property Name="KolicinaPrevzeta" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaRazlika" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Palete" Type="int" />
+          <Property Name="KupecNaziv" Type="varchar" MaxLength="300" />
+          <Property Name="KupecViden" Type="int" />
+          <Property Name="TrenutnaZaloga" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="OptimalnaZaloga" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TipNaziv" Type="varchar" MaxLength="250" />
+          <Property Name="Interno" Type="varchar" MaxLength="200" />
+          <Property Name="Proizvedeno" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="MaterialIdent" Type="varchar" MaxLength="300" />
+          <Property Name="KolicinaOTPPozicijaNarocilnice" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ZaporednaStevilka" Type="int" />
+          <Property Name="DatumVnosa" Type="datetime" />
+          <Property Name="KolicinaOTP" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="StatusPrevzeto" Type="bit" />
+          <Property Name="KupecNaslov" Type="varchar" MaxLength="500" />
+          <Property Name="KupecPosta" Type="varchar" MaxLength="100" />
+          <Property Name="KupecKraj" Type="varchar" MaxLength="200" />
+          <Property Name="EnotaMere" Type="varchar" MaxLength="150" />
+          <Property Name="TransportnaKolicina" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Narocilo">
+          <Key>
+            <PropertyRef Name="NarociloID" />
+          </Key>
+          <Property Name="NarociloID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloStevilka" Type="int" Nullable="false" />
+          <Property Name="Cena" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Relacija" Type="varchar" MaxLength="50" />
+          <Property Name="KolicinaSkupaj" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NarociloPozicija">
+          <Key>
+            <PropertyRef Name="NarociloPozicijaID" />
+          </Key>
+          <Property Name="NarociloPozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloID" Type="int" Nullable="false" />
+          <Property Name="Cena" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Odpoklic">
+          <Key>
+            <PropertyRef Name="OdpoklicID" />
+          </Key>
+          <Property Name="OdpoklicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DobaviteljID" Type="int" />
+          <Property Name="RelacijaID" Type="int" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="CenaPrevoza" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaSkupno" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="5000" />
+          <Property Name="PaleteSkupaj" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoferNaziv" Type="varchar" MaxLength="300" />
+          <Property Name="Registracija" Type="varchar" MaxLength="300" />
+          <Property Name="OdobritevKomentar" Type="varchar" MaxLength="5000" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="RazpisPozicijaID" Type="int" />
+          <Property Name="OdpoklicStevilka" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="DatumNaklada" Type="datetime" />
+          <Property Name="DobaviteljNaziv" Type="varchar" MaxLength="600" />
+          <Property Name="DobaviteljNaslov" Type="varchar" MaxLength="500" />
+          <Property Name="DobaviteljPosta" Type="varchar" MaxLength="100" />
+          <Property Name="DobaviteljKraj" Type="varchar" MaxLength="200" />
+          <Property Name="DobaviteljUrediTransport" Type="bit" />
+          <Property Name="RazlogOdobritveSistem" Type="varchar" MaxLength="150" />
+          <Property Name="LastenPrevoz" Type="bit" />
+          <Property Name="TipPrevoza" Type="int" />
+          <Property Name="LastnoSkladisceID" Type="int" />
+          <Property Name="KupecUrediTransport" Type="bit" />
+          <Property Name="Prevozniki" Type="varchar" MaxLength="1000" />
+          <Property Name="PovprasevanjePoslanoPrevoznikom" Type="bit" />
+          <Property Name="PrevoznikOddalNajnizjoCeno" Type="bit" />
+          <Property Name="DatumPosiljanjaMailLogistika" Type="datetime" />
+          <Property Name="OpombaZaPovprasevnjePrevoznikom" Type="varchar" MaxLength="4000" />
+          <Property Name="P_CreateOrder" Type="datetime" />
+          <Property Name="P_UnsuccCountCreatePDFPantheon" Type="int" />
+          <Property Name="P_LastTSCreatePDFPantheon" Type="datetime" />
+          <Property Name="P_TransportOrderPDFName" Type="varchar" MaxLength="50" />
+          <Property Name="P_TransportOrderPDFDocPath" Type="varchar" MaxLength="400" />
+          <Property Name="P_GetPDFOrderFile" Type="datetime" />
+          <Property Name="DatumRazklada" Type="datetime" />
+          <Property Name="P_SendWarningToAmin" Type="int" />
+        </EntityType>
+        <EntityType Name="OdpoklicPozicija">
+          <Key>
+            <PropertyRef Name="OdpoklicPozicijaID" />
+          </Key>
+          <Property Name="OdpoklicPozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdpoklicID" Type="int" Nullable="false" />
+          <Property Name="NarociloID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NarociloPozicijaID" Type="int" Nullable="false" />
+          <Property Name="TipID" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="KolicinaIzNarocila" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="StatusKolicine" Type="int" Nullable="false" />
+          <Property Name="Material" Type="varchar" MaxLength="500" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="OC" Type="varchar" MaxLength="300" />
+          <Property Name="KolicinaPrevzeta" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaRazlika" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Palete" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KupecNaziv" Type="varchar" MaxLength="300" />
+          <Property Name="KupecViden" Type="int" />
+          <Property Name="TrenutnaZaloga" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="OptimalnaZaloga" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TipNaziv" Type="varchar" MaxLength="250" />
+          <Property Name="Interno" Type="varchar" MaxLength="200" />
+          <Property Name="Proizvedeno" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="MaterialIdent" Type="varchar" MaxLength="300" />
+          <Property Name="KolicinaOTPPozicijaNarocilnice" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ZaporednaStevilka" Type="int" />
+          <Property Name="DatumVnosa" Type="datetime" />
+          <Property Name="KolicinaOTP" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="StatusPrevzeto" Type="bit" />
+          <Property Name="KupecNaslov" Type="varchar" MaxLength="500" />
+          <Property Name="KupecPosta" Type="varchar" MaxLength="100" />
+          <Property Name="KupecKraj" Type="varchar" MaxLength="200" />
+          <Property Name="OdpoklicIzLastneZaloge" Type="bit" />
+          <Property Name="PrvotniOdpoklicPozicijaID" Type="int" />
+          <Property Name="Split" Type="bit" />
+          <Property Name="EnotaMere" Type="varchar" MaxLength="150" />
+          <Property Name="TransportnaKolicina" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="StPalet" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Osebe_OTP">
+          <Key>
+            <PropertyRef Name="idOsebe" />
+          </Key>
+          <Property Name="idOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idVloga" Type="int" />
+          <Property Name="Ime" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Priimek" Type="varchar" MaxLength="60" />
+          <Property Name="Naslov" Type="varchar" MaxLength="160" />
+          <Property Name="DatumRojstva" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="DatumZaposlitve" Type="date" />
+          <Property Name="UporabniskoIme" Type="varchar" MaxLength="100" />
+          <Property Name="Geslo" Type="varchar" MaxLength="100" />
+          <Property Name="TelefonGSM" Type="varchar" MaxLength="60" />
+          <Property Name="Zunanji" Type="int" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="200" />
+          <Property Name="ProfileImage" Type="varchar" MaxLength="300" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="activity" Type="int" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_OTP">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idOseba" Type="int" Nullable="false" />
+          <Property Name="idNadrejeni" Type="int" Nullable="false" />
+          <Property Name="Opomba" Type="varchar" MaxLength="200" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDosebe" Type="int" />
+        </EntityType>
+        <EntityType Name="PrijavaPrevoznika">
+          <Key>
+            <PropertyRef Name="PrijavaPrevoznikaID" />
+          </Key>
+          <Property Name="PrijavaPrevoznikaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdpoklicID" Type="int" Nullable="false" />
+          <Property Name="PrevoznikID" Type="int" Nullable="false" />
+          <Property Name="PrvotnaCena" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="PrijavljenaCena" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="DatumNaklada" Type="datetime" Nullable="false" />
+          <Property Name="DatumPosiljanjePrijav" Type="datetime" Nullable="false" />
+          <Property Name="DatumPrijave" Type="datetime" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="OpombaPrijave" Type="varchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="Razpis">
+          <Key>
+            <PropertyRef Name="RazpisID" />
+          </Key>
+          <Property Name="RazpisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CenaSkupaj" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="DatumRazpisa" Type="datetime" Nullable="false" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" />
+          <Property Name="RazpisKreiran" Type="bit" />
+        </EntityType>
+        <EntityType Name="RazpisPozicija">
+          <Key>
+            <PropertyRef Name="RazpisPozicijaID" />
+          </Key>
+          <Property Name="RazpisPozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RazpisID" Type="int" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="RelacijaID" Type="int" Nullable="false" />
+          <Property Name="Cena" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="IDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="PotDokumenta" Type="varchar" MaxLength="800" />
+          <Property Name="PrevoznikAktualnaCena" Type="bit" />
+        </EntityType>
+        <EntityType Name="Relacija">
+          <Key>
+            <PropertyRef Name="RelacijaID" />
+          </Key>
+          <Property Name="RelacijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="50" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Dolzina" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Datum" Type="datetime" />
+          <Property Name="Opomba" Type="varchar" MaxLength="700" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StatusOdpoklica">
+          <Key>
+            <PropertyRef Name="StatusOdpoklicaID" />
+          </Key>
+          <Property Name="StatusOdpoklicaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Stranka_OTP">
+          <Key>
+            <PropertyRef Name="idStranka" />
+          </Key>
+          <Property Name="idStranka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KodaStranke" Type="varchar" MaxLength="250" />
+          <Property Name="TipID" Type="int" Nullable="false" />
+          <Property Name="NazivPrvi" Type="varchar" MaxLength="250" />
+          <Property Name="NazivDrugi" Type="varchar(max)" />
+          <Property Name="Naslov" Type="varchar" MaxLength="250" />
+          <Property Name="StevPoste" Type="varchar" MaxLength="12" />
+          <Property Name="NazivPoste" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="InternetniNalov" Type="varchar" MaxLength="50" />
+          <Property Name="KontaktnaOseba" Type="varchar" MaxLength="50" />
+          <Property Name="RokPlacila" Type="nchar" MaxLength="3" />
+          <Property Name="TRR" Type="varchar" MaxLength="35" />
+          <Property Name="DavcnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="MaticnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="RangStranke" Type="varchar" MaxLength="15" />
+          <Property Name="StatusDomacTuji" Type="varchar" MaxLength="10" />
+          <Property Name="Zavezanec_DA_NE" Type="varchar" MaxLength="2" />
+          <Property Name="IdentifikacijskaStev" Type="varchar" MaxLength="20" />
+          <Property Name="Clan_EU" Type="varchar" MaxLength="2" />
+          <Property Name="BIC" Type="varchar" MaxLength="11" />
+          <Property Name="KodaPlacila" Type="varchar" MaxLength="4" />
+          <Property Name="StatusKupecDobavitelj" Type="varchar" MaxLength="20" />
+          <Property Name="DrzavaStranke" Type="varchar" MaxLength="50" />
+          <Property Name="Neaktivna" Type="varchar" MaxLength="2" />
+          <Property Name="GenerirajERacun" Type="int" />
+          <Property Name="JavniZavod" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="TipPrevoza" Type="int" />
+          <Property Name="Activity" Type="int" />
+          <Property Name="JezikID" Type="int" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_OTP">
+          <Key>
+            <PropertyRef Name="idStrankaOsebe" />
+          </Key>
+          <Property Name="idStrankaOsebe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="idOsebe" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage_OTP">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailTo" Type="varchar" MaxLength="100" />
+          <Property Name="EmailBody" Type="varchar(max)" />
+          <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="Attachments" Type="varchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_OTP">
+          <Key>
+            <PropertyRef Name="SystemMessageEventID" />
+          </Key>
+          <Property Name="SystemMessageEventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="TipOdpoklica">
+          <Key>
+            <PropertyRef Name="TipOdpoklicaID" />
+          </Key>
+          <Property Name="TipOdpoklicaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TipPrevoza">
+          <Key>
+            <PropertyRef Name="TipPrevozaID" />
+          </Key>
+          <Property Name="TipPrevozaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Opombe" Type="varchar" MaxLength="2000" />
+          <Property Name="DovoljenaTeza" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ShranjevanjePozicij" Type="bit" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDPrijave" Type="int" />
+        </EntityType>
+        <EntityType Name="TipStranka">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vloga_OTP">
+          <Key>
+            <PropertyRef Name="idVloga" />
+          </Key>
+          <Property Name="idVloga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PrevzemiView">
+          <Key>
+            <PropertyRef Name="Kolicina_Prevzema" />
+          </Key>
+          <Property Name="Datum_Prevzema" Type="smalldatetime" />
+          <Property Name="Dobavitelj" Type="char" MaxLength="30" />
+          <Property Name="Stevilka_Odpoklica" Type="varchar" MaxLength="35" />
+          <Property Name="Ident" Type="char" MaxLength="16" />
+          <Property Name="Artikel" Type="varchar" MaxLength="80" />
+          <Property Name="Kolicina_Prevzema" Type="decimal" Precision="19" Scale="6" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Jezik">
+          <End Role="Jeziki" Type="Self.Jeziki" Multiplicity="0..1" />
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jeziki">
+              <PropertyRef Name="JezikID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="JezikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KontaktneOsebe_OTP" Type="Self.KontaktneOsebe_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="KontaktneOsebe_OTP">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LastnaZaloga_Odpoklic">
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LastnaZaloga" Type="Self.LastnaZaloga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="LastnaZaloga">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LastnaZaloga_Stranka_OTP">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LastnaZaloga" Type="Self.LastnaZaloga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="LastnaZaloga">
+              <PropertyRef Name="LastnoSkladisceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LastnoSkladisce_Stranka">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="LastnoSkladisceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NarociloPozicija_Narocilo">
+          <End Role="Narocilo" Type="Self.Narocilo" Multiplicity="1" />
+          <End Role="NarociloPozicija" Type="Self.NarociloPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narocilo">
+              <PropertyRef Name="NarociloID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija">
+              <PropertyRef Name="NarociloID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odpoklic_StatusOdpoklica">
+          <End Role="StatusOdpoklica" Type="Self.StatusOdpoklica" Multiplicity="1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusOdpoklica">
+              <PropertyRef Name="StatusOdpoklicaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdpoklicID">
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="1" />
+          <End Role="PrijavaPrevoznika" Type="Self.PrijavaPrevoznika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="PrijavaPrevoznika">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdpoklicPozicija_Odpoklic">
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OdpoklicPozicija" Type="Self.OdpoklicPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="OdpoklicPozicija">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OSEBE_REFERENCE_VLOGA">
+          <End Role="Vloga_OTP" Type="Self.Vloga_OTP" Multiplicity="0..1" />
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_OTP">
+              <PropertyRef Name="idVloga" />
+            </Principal>
+            <Dependent Role="Osebe_OTP">
+              <PropertyRef Name="idVloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe">
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OsebeNadrejeni_OTP" Type="Self.OsebeNadrejeni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_OTP">
+              <PropertyRef Name="idOseba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe1">
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_OTP" Type="Self.OsebeNadrejeni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_OTP">
+              <PropertyRef Name="idNadrejeni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrevoznikID">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="1" />
+          <End Role="PrijavaPrevoznika" Type="Self.PrijavaPrevoznika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="PrijavaPrevoznika">
+              <PropertyRef Name="PrevoznikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RazpisID">
+          <End Role="Razpis" Type="Self.Razpis" Multiplicity="1" />
+          <End Role="RazpisPozicija" Type="Self.RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razpis">
+              <PropertyRef Name="RazpisID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="RazpisID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relacija_Odpoklic">
+          <End Role="Relacija" Type="Self.Relacija" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelacijaID">
+          <End Role="Relacija" Type="Self.Relacija" Multiplicity="1" />
+          <End Role="RazpisPozicija" Type="Self.RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stranka_Odpoklic">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stranka_OTP_TipStranka">
+          <End Role="TipStranka" Type="Self.TipStranka" Multiplicity="1" />
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="TipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="1" />
+          <End Role="RazpisPozicija" Type="Self.RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_OSEBE">
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni_OTP" Type="Self.StrankaZaposleni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni_OTP" Type="Self.StrankaZaposleni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_OTP">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipPrevoza">
+          <End Role="TipPrevoza" Type="Self.TipPrevoza" Multiplicity="0..1" />
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipPrevoza">
+              <PropertyRef Name="TipPrevozaID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="TipPrevoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipPrevoza_Stranka">
+          <End Role="TipPrevoza" Type="Self.TipPrevoza" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipPrevoza">
+              <PropertyRef Name="TipPrevozaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="TipPrevoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserID">
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DodajPantheonDokument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_xParameters" Type="xml" Mode="In" />
+          <Parameter Name="p_cExportPath" Type="varchar" Mode="InOut" />
+          <Parameter Name="p_cKey" Type="char" Mode="InOut" />
+          <Parameter Name="p_cError" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="GetLastYearRecallCountBySuplierAndRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RelacijaID" Type="int" Mode="In" />
+          <Parameter Name="DobaviteljID" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="RelacijaID" Type="int" />
+                <Property Name="DobaviteljID" Type="int" />
+                <Property Name="St_Relacija_Dobavitelj" Type="int" />
+                <Property Name="St_Relacija" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="SeznamDobaviteljev" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" />
+                <Property Name="Naslov" Type="varchar" MaxLength="60" />
+                <Property Name="Posta" Type="char" MaxLength="13" />
+                <Property Name="Kraj" Type="varchar" MaxLength="40" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Dobavitelj" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Narocilnica" Type="varchar" MaxLength="15" />
+                <Property Name="St_Pozicija" Type="int" Nullable="false" />
+                <Property Name="Order_Confirm" Type="varchar" MaxLength="25" />
+                <Property Name="Tovarna" Type="varchar" MaxLength="25" />
+                <Property Name="Ident" Type="char" MaxLength="16" />
+                <Property Name="Artikel" Type="varchar" MaxLength="80" />
+                <Property Name="Datum_narocila" Type="smalldatetime" />
+                <Property Name="Datum_Dobave" Type="smalldatetime" Nullable="false" />
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" />
+                <Property Name="Kupec" Type="char" MaxLength="30" />
+                <Property Name="Kupec_Naslov" Type="varchar" MaxLength="60" />
+                <Property Name="Kupec_Posta" Type="char" MaxLength="13" />
+                <Property Name="Kupec_Kraj" Type="varchar" MaxLength="40" />
+                <Property Name="Naroceno" Type="decimal" Precision="30" Scale="12" Nullable="false" />
+                <Property Name="Proizvedeno" Type="decimal" Precision="19" Scale="6" Nullable="false" />
+                <Property Name="Prevzeto" Type="decimal" Precision="30" Scale="12" Nullable="false" />
+                <Property Name="Razlika" Type="decimal" Precision="31" Scale="12" />
+                <Property Name="Tip" Type="char" MaxLength="30" />
+                <Property Name="Zaloga" Type="decimal" Precision="38" Scale="2" />
+                <Property Name="Dovoljeno_odpoklicati" Type="int" Nullable="false" />
+                <Property Name="Enota_Mere" Type="char" MaxLength="3" />
+                <Property Name="Interno" Type="varchar" MaxLength="9" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="GrafolitOTPModelStoreContainer">
+          <EntitySet Name="Jeziki" EntityType="Self.Jeziki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KontaktneOsebe_OTP" EntityType="Self.KontaktneOsebe_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LastnaZaloga" EntityType="Self.LastnaZaloga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narocilo" EntityType="Self.Narocilo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NarociloPozicija" EntityType="Self.NarociloPozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odpoklic" EntityType="Self.Odpoklic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OdpoklicPozicija" EntityType="Self.OdpoklicPozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Osebe_OTP" EntityType="Self.Osebe_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OsebeNadrejeni_OTP" EntityType="Self.OsebeNadrejeni_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrijavaPrevoznika" EntityType="Self.PrijavaPrevoznika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Razpis" EntityType="Self.Razpis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RazpisPozicija" EntityType="Self.RazpisPozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relacija" EntityType="Self.Relacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusOdpoklica" EntityType="Self.StatusOdpoklica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stranka_OTP" EntityType="Self.Stranka_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StrankaZaposleni_OTP" EntityType="Self.StrankaZaposleni_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemEmailMessage_OTP" EntityType="Self.SystemEmailMessage_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemMessageEvents_OTP" EntityType="Self.SystemMessageEvents_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipOdpoklica" EntityType="Self.TipOdpoklica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipPrevoza" EntityType="Self.TipPrevoza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipStranka" EntityType="Self.TipStranka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vloga_OTP" EntityType="Self.Vloga_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrevzemiView" EntityType="Self.PrevzemiView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PrevzemiView].[Datum_Prevzema] AS [Datum_Prevzema], 
+[PrevzemiView].[Dobavitelj] AS [Dobavitelj], 
+[PrevzemiView].[Stevilka_Odpoklica] AS [Stevilka_Odpoklica], 
+[PrevzemiView].[Ident] AS [Ident], 
+[PrevzemiView].[Artikel] AS [Artikel], 
+[PrevzemiView].[Kolicina_Prevzema] AS [Kolicina_Prevzema]
+FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Jezik" Association="Self.FK_Jezik">
+            <End Role="Jeziki" EntitySet="Jeziki" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="Self.FK_KONTAKTN_REFERENCE_STRANKA">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="KontaktneOsebe_OTP" EntitySet="KontaktneOsebe_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LastnaZaloga_Odpoklic" Association="Self.FK_LastnaZaloga_Odpoklic">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="LastnaZaloga" EntitySet="LastnaZaloga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LastnaZaloga_Stranka_OTP" Association="Self.FK_LastnaZaloga_Stranka_OTP">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="LastnaZaloga" EntitySet="LastnaZaloga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LastnoSkladisce_Stranka" Association="Self.FK_LastnoSkladisce_Stranka">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NarociloPozicija_Narocilo" Association="Self.FK_NarociloPozicija_Narocilo">
+            <End Role="Narocilo" EntitySet="Narocilo" />
+            <End Role="NarociloPozicija" EntitySet="NarociloPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odpoklic_StatusOdpoklica" Association="Self.FK_Odpoklic_StatusOdpoklica">
+            <End Role="StatusOdpoklica" EntitySet="StatusOdpoklica" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdpoklicID" Association="Self.FK_OdpoklicID">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="PrijavaPrevoznika" EntitySet="PrijavaPrevoznika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdpoklicPozicija_Odpoklic" Association="Self.FK_OdpoklicPozicija_Odpoklic">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="OdpoklicPozicija" EntitySet="OdpoklicPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="Self.FK_OSEBE_REFERENCE_VLOGA">
+            <End Role="Vloga_OTP" EntitySet="Vloga_OTP" />
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe" Association="Self.FK_OsebeNadrejeni_Osebe">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="OsebeNadrejeni_OTP" EntitySet="OsebeNadrejeni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe1" Association="Self.FK_OsebeNadrejeni_Osebe1">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="OsebeNadrejeni_OTP" EntitySet="OsebeNadrejeni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrevoznikID" Association="Self.FK_PrevoznikID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="PrijavaPrevoznika" EntitySet="PrijavaPrevoznika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RazpisID" Association="Self.FK_RazpisID">
+            <End Role="Razpis" EntitySet="Razpis" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relacija_Odpoklic" Association="Self.FK_Relacija_Odpoklic">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelacijaID" Association="Self.FK_RelacijaID">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stranka_Odpoklic" Association="Self.FK_Stranka_Odpoklic">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stranka_OTP_TipStranka" Association="Self.FK_Stranka_OTP_TipStranka">
+            <End Role="TipStranka" EntitySet="TipStranka" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="Self.FK_StrankaID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_OSEBE" Association="Self.FK_STRANKAZ_REFERENCE_OSEBE">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="StrankaZaposleni_OTP" EntitySet="StrankaZaposleni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="Self.FK_STRANKAZ_REFERENCE_STRANKA">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="StrankaZaposleni_OTP" EntitySet="StrankaZaposleni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipPrevoza" Association="Self.FK_TipPrevoza">
+            <End Role="TipPrevoza" EntitySet="TipPrevoza" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipPrevoza_Stranka" Association="Self.FK_TipPrevoza_Stranka">
+            <End Role="TipPrevoza" EntitySet="TipPrevoza" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserID" Association="Self.FK_UserID">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GrafolitOTPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GrafolitOTPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Osebe_OTP" EntityType="GrafolitOTPModel.Osebe_OTP" />
+          <EntitySet Name="Vloga_OTP" EntityType="GrafolitOTPModel.Vloga_OTP" />
+          <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="GrafolitOTPModel.FK_OSEBE_REFERENCE_VLOGA">
+            <End Role="Vloga_OTP" EntitySet="Vloga_OTP" />
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+          </AssociationSet>
+          <EntitySet Name="StatusOdpoklica" EntityType="GrafolitOTPModel.StatusOdpoklica" />
+          <EntitySet Name="TipOdpoklica" EntityType="GrafolitOTPModel.TipOdpoklica" />
+          <EntitySet Name="TipStranka" EntityType="GrafolitOTPModel.TipStranka" />
+          <EntitySet Name="StrankaZaposleni_OTP" EntityType="GrafolitOTPModel.StrankaZaposleni_OTP" />
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_OSEBE" Association="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_OSEBE">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="StrankaZaposleni_OTP" EntitySet="StrankaZaposleni_OTP" />
+          </AssociationSet>
+          <EntitySet Name="NarociloPozicija" EntityType="GrafolitOTPModel.NarociloPozicija" />
+          <EntitySet Name="Narocilo" EntityType="GrafolitOTPModel.Narocilo" />
+          <AssociationSet Name="FK_NarociloPozicija_Narocilo" Association="GrafolitOTPModel.FK_NarociloPozicija_Narocilo">
+            <End Role="Narocilo" EntitySet="Narocilo" />
+            <End Role="NarociloPozicija" EntitySet="NarociloPozicija" />
+          </AssociationSet>
+          <EntitySet Name="Relacija" EntityType="GrafolitOTPModel.Relacija" />
+          <EntitySet Name="Razpis" EntityType="GrafolitOTPModel.Razpis" />
+          <EntitySet Name="RazpisPozicija" EntityType="GrafolitOTPModel.RazpisPozicija" />
+          <AssociationSet Name="FK_RazpisID" Association="GrafolitOTPModel.FK_RazpisID">
+            <End Role="Razpis" EntitySet="Razpis" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelacijaID" Association="GrafolitOTPModel.FK_RelacijaID">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <EntitySet Name="SystemEmailMessage_OTP" EntityType="GrafolitOTPModel.SystemEmailMessage_OTP" />
+          <EntitySet Name="SystemMessageEvents_OTP" EntityType="GrafolitOTPModel.SystemMessageEvents_OTP" />
+          <EntitySet Name="OsebeNadrejeni_OTP" EntityType="GrafolitOTPModel.OsebeNadrejeni_OTP" />
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe" Association="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="OsebeNadrejeni_OTP" EntitySet="OsebeNadrejeni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeNadrejeni_Osebe1" Association="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe1">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="OsebeNadrejeni_OTP" EntitySet="OsebeNadrejeni_OTP" />
+          </AssociationSet>
+          <FunctionImport Name="SeznamDobaviteljev" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamDobaviteljev_Result)" />
+          <EntitySet Name="TipPrevoza" EntityType="GrafolitOTPModel.TipPrevoza" />
+          <EntitySet Name="LastnaZaloga" EntityType="GrafolitOTPModel.LastnaZaloga" />
+          <FunctionImport Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result)">
+          <Parameter Name="Dobavitelj" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetLastYearRecallCountBySuplierAndRoute" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.GetLastYearRecallCountBySuplierAndRoute_Result)">
+            <Parameter Name="RelacijaID" Mode="In" Type="Int32" />
+            <Parameter Name="DobaviteljID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Odpoklic" EntityType="GrafolitOTPModel.Odpoklic" />
+          <AssociationSet Name="FK_LastnaZaloga_Odpoklic" Association="GrafolitOTPModel.FK_LastnaZaloga_Odpoklic">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="LastnaZaloga" EntitySet="LastnaZaloga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odpoklic_StatusOdpoklica" Association="GrafolitOTPModel.FK_Odpoklic_StatusOdpoklica">
+            <End Role="StatusOdpoklica" EntitySet="StatusOdpoklica" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relacija_Odpoklic" Association="GrafolitOTPModel.FK_Relacija_Odpoklic">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipPrevoza_Stranka" Association="GrafolitOTPModel.FK_TipPrevoza_Stranka">
+            <End Role="TipPrevoza" EntitySet="TipPrevoza" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserID" Association="GrafolitOTPModel.FK_UserID">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <EntitySet Name="PrijavaPrevoznika" EntityType="GrafolitOTPModel.PrijavaPrevoznika" />
+          <AssociationSet Name="FK_OdpoklicID" Association="GrafolitOTPModel.FK_OdpoklicID">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="PrijavaPrevoznika" EntitySet="PrijavaPrevoznika" />
+          </AssociationSet>
+          <FunctionImport Name="DodajPantheonDokument">
+            <Parameter Name="p_xParameters" Mode="In" Type="String" />
+            <Parameter Name="p_cExportPath" Mode="InOut" Type="String" />
+            <Parameter Name="p_cKey" Mode="InOut" Type="String" />
+            <Parameter Name="p_cError" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Stranka_OTP" EntityType="GrafolitOTPModel.Stranka_OTP" />
+          <AssociationSet Name="FK_LastnaZaloga_Stranka_OTP" Association="GrafolitOTPModel.FK_LastnaZaloga_Stranka_OTP">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="LastnaZaloga" EntitySet="LastnaZaloga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LastnoSkladisce_Stranka" Association="GrafolitOTPModel.FK_LastnoSkladisce_Stranka">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stranka_Odpoklic" Association="GrafolitOTPModel.FK_Stranka_Odpoklic">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrevoznikID" Association="GrafolitOTPModel.FK_PrevoznikID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="PrijavaPrevoznika" EntitySet="PrijavaPrevoznika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="GrafolitOTPModel.FK_StrankaID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stranka_OTP_TipStranka" Association="GrafolitOTPModel.FK_Stranka_OTP_TipStranka">
+            <End Role="TipStranka" EntitySet="TipStranka" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_STRANKA">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="StrankaZaposleni_OTP" EntitySet="StrankaZaposleni_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipPrevoza" Association="GrafolitOTPModel.FK_TipPrevoza">
+            <End Role="TipPrevoza" EntitySet="TipPrevoza" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <EntitySet Name="PrevzemiView" EntityType="GrafolitOTPModel.PrevzemiView" />
+          <EntitySet Name="Jeziki" EntityType="GrafolitOTPModel.Jeziki" />
+          <EntitySet Name="KontaktneOsebe_OTP" EntityType="GrafolitOTPModel.KontaktneOsebe_OTP" />
+          <AssociationSet Name="FK_Jezik" Association="GrafolitOTPModel.FK_Jezik">
+            <End Role="Jeziki" EntitySet="Jeziki" />
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="GrafolitOTPModel.FK_KONTAKTN_REFERENCE_STRANKA">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="KontaktneOsebe_OTP" EntitySet="KontaktneOsebe_OTP" />
+          </AssociationSet>
+          <EntitySet Name="OdpoklicPozicija" EntityType="GrafolitOTPModel.OdpoklicPozicija" />
+          <AssociationSet Name="FK_OdpoklicPozicija_Odpoklic" Association="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic">
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+            <End Role="OdpoklicPozicija" EntitySet="OdpoklicPozicija" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Osebe_OTP">
+          <Key>
+            <PropertyRef Name="idOsebe" />
+          </Key>
+          <Property Name="idOsebe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idVloga" Type="Int32" />
+          <Property Name="Ime" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Priimek" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="DatumRojstva" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatumZaposlitve" Type="DateTime" Precision="0" />
+          <Property Name="UporabniskoIme" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Geslo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonGSM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Zunanji" Type="Int32" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Vloga_OTP" Relationship="GrafolitOTPModel.FK_OSEBE_REFERENCE_VLOGA" FromRole="Osebe_OTP" ToRole="Vloga_OTP" />
+          <NavigationProperty Name="StrankaZaposleni_OTP" Relationship="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_OSEBE" FromRole="Osebe_OTP" ToRole="StrankaZaposleni_OTP" />
+          <NavigationProperty Name="OsebeNadrejeni_OTP" Relationship="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe" FromRole="Osebe_OTP" ToRole="OsebeNadrejeni_OTP" />
+          <NavigationProperty Name="OsebeNadrejeni_OTP1" Relationship="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe1" FromRole="Osebe_OTP" ToRole="OsebeNadrejeni_OTP" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_UserID" FromRole="Osebe_OTP" ToRole="Odpoklic" />
+          <Property Name="activity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vloga_OTP">
+          <Key>
+            <PropertyRef Name="idVloga" />
+          </Key>
+          <Property Name="idVloga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Osebe_OTP" Relationship="GrafolitOTPModel.FK_OSEBE_REFERENCE_VLOGA" FromRole="Vloga_OTP" ToRole="Osebe_OTP" />
+        </EntityType>
+        <Association Name="FK_OSEBE_REFERENCE_VLOGA">
+          <End Type="GrafolitOTPModel.Vloga_OTP" Role="Vloga_OTP" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_OTP">
+              <PropertyRef Name="idVloga" />
+            </Principal>
+            <Dependent Role="Osebe_OTP">
+              <PropertyRef Name="idVloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StatusOdpoklica">
+          <Key>
+            <PropertyRef Name="StatusOdpoklicaID" />
+          </Key>
+          <Property Name="StatusOdpoklicaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_Odpoklic_StatusOdpoklica" FromRole="StatusOdpoklica" ToRole="Odpoklic" />
+          </EntityType>
+        <EntityType Name="TipOdpoklica">
+          <Key>
+            <PropertyRef Name="TipOdpoklicaID" />
+          </Key>
+          <Property Name="TipOdpoklicaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          </EntityType>
+        <EntityType Name="TipStranka">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_Stranka_OTP_TipStranka" FromRole="TipStranka" ToRole="Stranka_OTP" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_OTP">
+          <Key>
+            <PropertyRef Name="idStrankaOsebe" />
+          </Key>
+          <Property Name="idStrankaOsebe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="idOsebe" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Osebe_OTP" Relationship="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_OSEBE" FromRole="StrankaZaposleni_OTP" ToRole="Osebe_OTP" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="StrankaZaposleni_OTP" ToRole="Stranka_OTP" />
+        </EntityType>
+        <Association Name="FK_STRANKAZ_REFERENCE_OSEBE">
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.StrankaZaposleni_OTP" Role="StrankaZaposleni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NarociloPozicija">
+          <Key>
+            <PropertyRef Name="NarociloPozicijaID" />
+          </Key>
+          <Property Name="NarociloPozicijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloID" Type="Int32" Nullable="false" />
+          <Property Name="Cena" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="Kolicina" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Narocilo" Relationship="GrafolitOTPModel.FK_NarociloPozicija_Narocilo" FromRole="NarociloPozicija" ToRole="Narocilo" />
+        </EntityType>
+        <EntityType Name="Narocilo">
+          <Key>
+            <PropertyRef Name="NarociloID" />
+          </Key>
+          <Property Name="NarociloID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloStevilka" Type="Int32" Nullable="false" />
+          <Property Name="Cena" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Relacija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaSkupaj" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NarociloPozicija" Relationship="GrafolitOTPModel.FK_NarociloPozicija_Narocilo" FromRole="Narocilo" ToRole="NarociloPozicija" />
+        </EntityType>
+        <Association Name="FK_NarociloPozicija_Narocilo">
+          <End Type="GrafolitOTPModel.Narocilo" Role="Narocilo" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.NarociloPozicija" Role="NarociloPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narocilo">
+              <PropertyRef Name="NarociloID" />
+            </Principal>
+            <Dependent Role="NarociloPozicija">
+              <PropertyRef Name="NarociloID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Relacija">
+          <Key>
+            <PropertyRef Name="RelacijaID" />
+          </Key>
+          <Property Name="RelacijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Dolzina" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Datum" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="Opomba" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_RelacijaID" FromRole="Relacija" ToRole="RazpisPozicija" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_Relacija_Odpoklic" FromRole="Relacija" ToRole="Odpoklic" />
+        </EntityType>
+        <EntityType Name="Razpis">
+          <Key>
+            <PropertyRef Name="RazpisID" />
+          </Key>
+          <Property Name="RazpisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CenaSkupaj" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="DatumRazpisa" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_RazpisID" FromRole="Razpis" ToRole="RazpisPozicija" />
+          <Property Name="RazpisKreiran" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="RazpisPozicija">
+          <Key>
+            <PropertyRef Name="RazpisPozicijaID" />
+          </Key>
+          <Property Name="RazpisPozicijaID" Type="Int32" Nullable="false" />
+          <Property Name="RazpisID" Type="Int32" Nullable="false" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="RelacijaID" Type="Int32" Nullable="false" />
+          <Property Name="Cena" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="PotDokumenta" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Razpis" Relationship="GrafolitOTPModel.FK_RazpisID" FromRole="RazpisPozicija" ToRole="Razpis" />
+          <NavigationProperty Name="Relacija" Relationship="GrafolitOTPModel.FK_RelacijaID" FromRole="RazpisPozicija" ToRole="Relacija" />
+          <Property Name="PrevoznikAktualnaCena" Type="Boolean" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_StrankaID" FromRole="RazpisPozicija" ToRole="Stranka_OTP" />
+        </EntityType>
+        <Association Name="FK_RazpisID">
+          <End Type="GrafolitOTPModel.Razpis" Role="Razpis" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicija" Role="RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razpis">
+              <PropertyRef Name="RazpisID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="RazpisID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelacijaID">
+          <End Type="GrafolitOTPModel.Relacija" Role="Relacija" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicija" Role="RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SystemEmailMessage_OTP">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="Attachments" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_OTP">
+          <Key>
+            <PropertyRef Name="SystemMessageEventID" />
+          </Key>
+          <Property Name="SystemMessageEventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_OTP">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idOseba" Type="Int32" Nullable="false" />
+          <Property Name="idNadrejeni" Type="Int32" Nullable="false" />
+          <Property Name="Opomba" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDosebe" Type="Int32" />
+          <NavigationProperty Name="Osebe_OTP" Relationship="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe" FromRole="OsebeNadrejeni_OTP" ToRole="Osebe_OTP" />
+          <NavigationProperty Name="Osebe_OTP1" Relationship="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe1" FromRole="OsebeNadrejeni_OTP" ToRole="Osebe_OTP" />
+        </EntityType>
+        <Association Name="FK_OsebeNadrejeni_Osebe">
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.OsebeNadrejeni_OTP" Role="OsebeNadrejeni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_OTP">
+              <PropertyRef Name="idOseba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeNadrejeni_Osebe1">
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.OsebeNadrejeni_OTP" Role="OsebeNadrejeni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_OTP">
+              <PropertyRef Name="idNadrejeni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SeznamDobaviteljev_Result">
+          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Naslov" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="Posta" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="Kraj" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <EntityType Name="TipPrevoza">
+          <Key>
+            <PropertyRef Name="TipPrevozaID" />
+          </Key>
+          <Property Name="TipPrevozaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DovoljenaTeza" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ShranjevanjePozicij" Type="Boolean" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDPrijave" Type="Int32" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_TipPrevoza_Stranka" FromRole="TipPrevoza" ToRole="Odpoklic" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_TipPrevoza" FromRole="TipPrevoza" ToRole="Stranka_OTP" />
+        </EntityType>
+        <EntityType Name="LastnaZaloga">
+          <Key>
+            <PropertyRef Name="idLastnaZaloga" />
+          </Key>
+          <Property Name="idLastnaZaloga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastnoSkladisceID" Type="Int32" Nullable="false" />
+          <Property Name="OdpoklicID" Type="Int32" Nullable="false" />
+          <Property Name="NarociloID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NarociloPozicijaID" Type="Int32" Nullable="false" />
+          <Property Name="TipID" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="KolicinaIzNarocila" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="StatusKolicine" Type="Int32" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="OC" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaPrevzeta" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaRazlika" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Palete" Type="Int32" />
+          <Property Name="KupecNaziv" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KupecViden" Type="Int32" />
+          <Property Name="TrenutnaZaloga" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="OptimalnaZaloga" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TipNaziv" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Interno" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Proizvedeno" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="MaterialIdent" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaOTPPozicijaNarocilnice" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ZaporednaStevilka" Type="Int32" />
+          <Property Name="DatumVnosa" Type="DateTime" Precision="3" />
+          <Property Name="KolicinaOTP" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="StatusPrevzeto" Type="Boolean" />
+          <Property Name="KupecNaslov" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="KupecPosta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="KupecKraj" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EnotaMere" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TransportnaKolicina" Type="Decimal" Precision="18" Scale="3" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Odpoklic" FromRole="LastnaZaloga" ToRole="Odpoklic" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Stranka_OTP" FromRole="LastnaZaloga" ToRole="Stranka_OTP" />
+        </EntityType>
+        <ComplexType Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
+          <Property Type="String" Name="Narocilnica" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="St_Pozicija" Nullable="false" />
+          <Property Type="String" Name="Order_Confirm" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Tovarna" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Ident" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="Artikel" Nullable="true" MaxLength="80" />
+          <Property Type="DateTime" Name="Datum_narocila" Nullable="true" Precision="16" />
+          <Property Type="DateTime" Name="Datum_Dobave" Nullable="false" Precision="16" />
+          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Kupec" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Kupec_Naslov" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="Kupec_Posta" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="Kupec_Kraj" Nullable="true" MaxLength="40" />
+          <Property Type="Decimal" Name="Naroceno" Nullable="true" Precision="30" Scale="12" />
+          <Property Type="Decimal" Name="Proizvedeno" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="Decimal" Name="Prevzeto" Nullable="true" Precision="30" Scale="12" />
+          <Property Type="Decimal" Name="Razlika" Nullable="true" Precision="31" Scale="12" />
+          <Property Type="String" Name="Tip" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="Zaloga" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Int32" Name="Dovoljeno_odpoklicati" Nullable="false" />
+          <Property Type="String" Name="Enota_Mere" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Interno" Nullable="false" MaxLength="9" />
+        </ComplexType>
+        <ComplexType Name="GetLastYearRecallCountBySuplierAndRoute_Result">
+          <Property Type="Int32" Name="RelacijaID" Nullable="true" />
+          <Property Type="Int32" Name="DobaviteljID" Nullable="true" />
+          <Property Type="Int32" Name="St_Relacija_Dobavitelj" Nullable="true" />
+          <Property Type="Int32" Name="St_Relacija" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Odpoklic">
+          <Key>
+            <PropertyRef Name="OdpoklicID" />
+          </Key>
+          <Property Name="OdpoklicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DobaviteljID" Type="Int32" />
+          <Property Name="RelacijaID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="CenaPrevoza" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaSkupno" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="Opis" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PaleteSkupaj" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoferNaziv" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Registracija" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="OdobritevKomentar" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="RazpisPozicijaID" Type="Int32" />
+          <Property Name="OdpoklicStevilka" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="DatumNaklada" Type="DateTime" Precision="3" />
+          <Property Name="DobaviteljNaziv" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljNaslov" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljPosta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljKraj" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DobaviteljUrediTransport" Type="Boolean" />
+          <Property Name="RazlogOdobritveSistem" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastenPrevoz" Type="Boolean" />
+          <Property Name="TipPrevoza" Type="Int32" />
+          <Property Name="LastnoSkladisceID" Type="Int32" />
+          <Property Name="KupecUrediTransport" Type="Boolean" />
+          <Property Name="Prevozniki" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PovprasevanjePoslanoPrevoznikom" Type="Boolean" />
+          <Property Name="PrevoznikOddalNajnizjoCeno" Type="Boolean" />
+          <Property Name="DatumPosiljanjaMailLogistika" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LastnaZaloga" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Odpoklic" FromRole="Odpoklic" ToRole="LastnaZaloga" />
+          <NavigationProperty Name="StatusOdpoklica" Relationship="GrafolitOTPModel.FK_Odpoklic_StatusOdpoklica" FromRole="Odpoklic" ToRole="StatusOdpoklica" />
+          <NavigationProperty Name="Relacija" Relationship="GrafolitOTPModel.FK_Relacija_Odpoklic" FromRole="Odpoklic" ToRole="Relacija" />
+          <NavigationProperty Name="TipPrevoza1" Relationship="GrafolitOTPModel.FK_TipPrevoza_Stranka" FromRole="Odpoklic" ToRole="TipPrevoza" />
+          <NavigationProperty Name="Osebe_OTP" Relationship="GrafolitOTPModel.FK_UserID" FromRole="Odpoklic" ToRole="Osebe_OTP" />
+          <Property Name="OpombaZaPovprasevnjePrevoznikom" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="P_CreateOrder" Type="DateTime" Precision="3" />
+          <Property Name="P_UnsuccCountCreatePDFPantheon" Type="Int32" />
+          <Property Name="P_LastTSCreatePDFPantheon" Type="DateTime" Precision="3" />
+          <Property Name="P_TransportOrderPDFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="P_TransportOrderPDFDocPath" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PrijavaPrevoznika" Relationship="GrafolitOTPModel.FK_OdpoklicID" FromRole="Odpoklic" ToRole="PrijavaPrevoznika" />
+          <Property Name="P_GetPDFOrderFile" Type="DateTime" Precision="3" />
+          <Property Name="DatumRazklada" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_LastnoSkladisce_Stranka" FromRole="Odpoklic" ToRole="Stranka_OTP" />
+          <NavigationProperty Name="Stranka_OTP1" Relationship="GrafolitOTPModel.FK_Stranka_Odpoklic" FromRole="Odpoklic" ToRole="Stranka_OTP" />
+          <Property Name="P_SendWarningToAmin" Type="Int32" />
+          <NavigationProperty Name="OdpoklicPozicija" Relationship="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic" FromRole="Odpoklic" ToRole="OdpoklicPozicija" />
+        </EntityType>
+        <Association Name="FK_LastnaZaloga_Odpoklic">
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.LastnaZaloga" Role="LastnaZaloga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="LastnaZaloga">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odpoklic_StatusOdpoklica">
+          <End Type="GrafolitOTPModel.StatusOdpoklica" Role="StatusOdpoklica" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusOdpoklica">
+              <PropertyRef Name="StatusOdpoklicaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relacija_Odpoklic">
+          <End Type="GrafolitOTPModel.Relacija" Role="Relacija" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipPrevoza_Stranka">
+          <End Type="GrafolitOTPModel.TipPrevoza" Role="TipPrevoza" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipPrevoza">
+              <PropertyRef Name="TipPrevozaID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="TipPrevoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserID">
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PrijavaPrevoznika">
+          <Key>
+            <PropertyRef Name="PrijavaPrevoznikaID" />
+          </Key>
+          <Property Name="PrijavaPrevoznikaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdpoklicID" Type="Int32" Nullable="false" />
+          <Property Name="PrevoznikID" Type="Int32" Nullable="false" />
+          <Property Name="PrvotnaCena" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="PrijavljenaCena" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DatumNaklada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DatumPosiljanjePrijav" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DatumPrijave" Type="DateTime" Precision="3" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_OdpoklicID" FromRole="PrijavaPrevoznika" ToRole="Odpoklic" />
+          <Property Name="OpombaPrijave" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_PrevoznikID" FromRole="PrijavaPrevoznika" ToRole="Stranka_OTP" />
+        </EntityType>
+        <Association Name="FK_OdpoklicID">
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.PrijavaPrevoznika" Role="PrijavaPrevoznika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="PrijavaPrevoznika">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Stranka_OTP">
+          <Key>
+            <PropertyRef Name="idStranka" />
+          </Key>
+          <Property Name="idStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TipID" Type="Int32" Nullable="false" />
+          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivDrugi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RokPlacila" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RangStranke" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDomacTuji" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zavezanec_DA_NE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clan_EU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="StatusKupecDobavitelj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GenerirajERacun" Type="Int32" />
+          <Property Name="JavniZavod" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="TipPrevoza" Type="Int32" />
+          <Property Name="Activity" Type="Int32" />
+          <NavigationProperty Name="LastnaZaloga" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Stranka_OTP" FromRole="Stranka_OTP" ToRole="LastnaZaloga" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_LastnoSkladisce_Stranka" FromRole="Stranka_OTP" ToRole="Odpoklic" />
+          <NavigationProperty Name="Odpoklic1" Relationship="GrafolitOTPModel.FK_Stranka_Odpoklic" FromRole="Stranka_OTP" ToRole="Odpoklic" />
+          <NavigationProperty Name="PrijavaPrevoznika" Relationship="GrafolitOTPModel.FK_PrevoznikID" FromRole="Stranka_OTP" ToRole="PrijavaPrevoznika" />
+          <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_StrankaID" FromRole="Stranka_OTP" ToRole="RazpisPozicija" />
+          <NavigationProperty Name="TipStranka" Relationship="GrafolitOTPModel.FK_Stranka_OTP_TipStranka" FromRole="Stranka_OTP" ToRole="TipStranka" />
+          <NavigationProperty Name="StrankaZaposleni_OTP" Relationship="GrafolitOTPModel.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="Stranka_OTP" ToRole="StrankaZaposleni_OTP" />
+          <NavigationProperty Name="TipPrevoza1" Relationship="GrafolitOTPModel.FK_TipPrevoza" FromRole="Stranka_OTP" ToRole="TipPrevoza" />
+          <Property Name="JezikID" Type="Int32" />
+          <NavigationProperty Name="Jeziki" Relationship="GrafolitOTPModel.FK_Jezik" FromRole="Stranka_OTP" ToRole="Jeziki" />
+          <NavigationProperty Name="KontaktneOsebe_OTP" Relationship="GrafolitOTPModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="Stranka_OTP" ToRole="KontaktneOsebe_OTP" />
+        </EntityType>
+        <Association Name="FK_LastnaZaloga_Stranka_OTP">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.LastnaZaloga" Role="LastnaZaloga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="LastnaZaloga">
+              <PropertyRef Name="LastnoSkladisceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LastnoSkladisce_Stranka">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="LastnoSkladisceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stranka_Odpoklic">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrevoznikID">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.PrijavaPrevoznika" Role="PrijavaPrevoznika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="PrijavaPrevoznika">
+              <PropertyRef Name="PrevoznikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicija" Role="RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stranka_OTP_TipStranka">
+          <End Type="GrafolitOTPModel.TipStranka" Role="TipStranka" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="TipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.StrankaZaposleni_OTP" Role="StrankaZaposleni_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_OTP">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipPrevoza">
+          <End Type="GrafolitOTPModel.TipPrevoza" Role="TipPrevoza" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipPrevoza">
+              <PropertyRef Name="TipPrevozaID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="TipPrevoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PrevzemiView">
+          <Key>
+            <PropertyRef Name="Kolicina_Prevzema" />
+          </Key>
+          <Property Name="Datum_Prevzema" Type="DateTime" Precision="0" />
+          <Property Name="Dobavitelj" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Stevilka_Odpoklica" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Ident" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="Artikel" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Kolicina_Prevzema" Type="Decimal" Nullable="false" Precision="19" Scale="6" />
+        </EntityType>
+        <EntityType Name="Jeziki">
+          <Key>
+            <PropertyRef Name="JezikID" />
+          </Key>
+          <Property Name="JezikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_Jezik" FromRole="Jeziki" ToRole="Stranka_OTP" />
+          <Property Name="KodaJezik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KontaktneOsebe_OTP">
+          <Key>
+            <PropertyRef Name="idKontaktneOsebe" />
+          </Key>
+          <Property Name="idKontaktneOsebe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="NazivKontaktneOsebe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GSM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZaporednaStevika" Type="Int32" />
+          <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="NazivPodpis" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="KontaktneOsebe_OTP" ToRole="Stranka_OTP" />
+        </EntityType>
+        <Association Name="FK_Jezik">
+          <End Type="GrafolitOTPModel.Jeziki" Role="Jeziki" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jeziki">
+              <PropertyRef Name="JezikID" />
+            </Principal>
+            <Dependent Role="Stranka_OTP">
+              <PropertyRef Name="JezikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.KontaktneOsebe_OTP" Role="KontaktneOsebe_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="KontaktneOsebe_OTP">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OdpoklicPozicija">
+          <Key>
+            <PropertyRef Name="OdpoklicPozicijaID" />
+          </Key>
+          <Property Name="OdpoklicPozicijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdpoklicID" Type="Int32" Nullable="false" />
+          <Property Name="NarociloID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NarociloPozicijaID" Type="Int32" Nullable="false" />
+          <Property Name="TipID" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="KolicinaIzNarocila" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="StatusKolicine" Type="Int32" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="OC" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaPrevzeta" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KolicinaRazlika" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Palete" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KupecNaziv" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KupecViden" Type="Int32" />
+          <Property Name="TrenutnaZaloga" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="OptimalnaZaloga" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TipNaziv" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Interno" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Proizvedeno" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="MaterialIdent" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaOTPPozicijaNarocilnice" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ZaporednaStevilka" Type="Int32" />
+          <Property Name="DatumVnosa" Type="DateTime" Precision="3" />
+          <Property Name="KolicinaOTP" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="StatusPrevzeto" Type="Boolean" />
+          <Property Name="KupecNaslov" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="KupecPosta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="KupecKraj" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OdpoklicIzLastneZaloge" Type="Boolean" />
+          <Property Name="PrvotniOdpoklicPozicijaID" Type="Int32" />
+          <Property Name="Split" Type="Boolean" />
+          <Property Name="EnotaMere" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TransportnaKolicina" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="StPalet" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic" FromRole="OdpoklicPozicija" ToRole="Odpoklic" />
+        </EntityType>
+        <Association Name="FK_OdpoklicPozicija_Odpoklic">
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.OdpoklicPozicija" Role="OdpoklicPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odpoklic">
+              <PropertyRef Name="OdpoklicID" />
+            </Principal>
+            <Dependent Role="OdpoklicPozicija">
+              <PropertyRef Name="OdpoklicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GrafolitOTPModelStoreContainer" CdmEntityContainer="GrafolitOTPEntities">
+          <EntitySetMapping Name="Osebe_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Osebe_OTP">
+              <MappingFragment StoreEntitySet="Osebe_OTP">
+                <ScalarProperty Name="activity" ColumnName="activity" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="Zunanji" ColumnName="Zunanji" />
+                <ScalarProperty Name="TelefonGSM" ColumnName="TelefonGSM" />
+                <ScalarProperty Name="Geslo" ColumnName="Geslo" />
+                <ScalarProperty Name="UporabniskoIme" ColumnName="UporabniskoIme" />
+                <ScalarProperty Name="DatumZaposlitve" ColumnName="DatumZaposlitve" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumRojstva" ColumnName="DatumRojstva" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="Priimek" ColumnName="Priimek" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="idVloga" ColumnName="idVloga" />
+                <ScalarProperty Name="idOsebe" ColumnName="idOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vloga_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Vloga_OTP">
+              <MappingFragment StoreEntitySet="Vloga_OTP">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="idVloga" ColumnName="idVloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusOdpoklica">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.StatusOdpoklica">
+              <MappingFragment StoreEntitySet="StatusOdpoklica">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="StatusOdpoklicaID" ColumnName="StatusOdpoklicaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipOdpoklica">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.TipOdpoklica">
+              <MappingFragment StoreEntitySet="TipOdpoklica">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="TipOdpoklicaID" ColumnName="TipOdpoklicaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipStranka">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.TipStranka">
+              <MappingFragment StoreEntitySet="TipStranka">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="TipStrankaID" ColumnName="TipStrankaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StrankaZaposleni_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.StrankaZaposleni_OTP">
+              <MappingFragment StoreEntitySet="StrankaZaposleni_OTP">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="idOsebe" ColumnName="idOsebe" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idStrankaOsebe" ColumnName="idStrankaOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NarociloPozicija">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.NarociloPozicija">
+              <MappingFragment StoreEntitySet="NarociloPozicija">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+                <ScalarProperty Name="NarociloPozicijaID" ColumnName="NarociloPozicijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narocilo">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Narocilo">
+              <MappingFragment StoreEntitySet="Narocilo">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="KolicinaSkupaj" ColumnName="KolicinaSkupaj" />
+                <ScalarProperty Name="Relacija" ColumnName="Relacija" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="NarociloStevilka" ColumnName="NarociloStevilka" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relacija">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Relacija">
+              <MappingFragment StoreEntitySet="Relacija">
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Dolzina" ColumnName="Dolzina" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="RelacijaID" ColumnName="RelacijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Razpis">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Razpis">
+              <MappingFragment StoreEntitySet="Razpis">
+                <ScalarProperty Name="RazpisKreiran" ColumnName="RazpisKreiran" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="DatumRazpisa" ColumnName="DatumRazpisa" />
+                <ScalarProperty Name="CenaSkupaj" ColumnName="CenaSkupaj" />
+                <ScalarProperty Name="RazpisID" ColumnName="RazpisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RazpisPozicija">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.RazpisPozicija">
+              <MappingFragment StoreEntitySet="RazpisPozicija">
+                <ScalarProperty Name="PrevoznikAktualnaCena" ColumnName="PrevoznikAktualnaCena" />
+                <ScalarProperty Name="PotDokumenta" ColumnName="PotDokumenta" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="IDOseba" ColumnName="IDOseba" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="RelacijaID" ColumnName="RelacijaID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="RazpisID" ColumnName="RazpisID" />
+                <ScalarProperty Name="RazpisPozicijaID" ColumnName="RazpisPozicijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemEmailMessage_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.SystemEmailMessage_OTP">
+              <MappingFragment StoreEntitySet="SystemEmailMessage_OTP">
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemMessageEvents_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.SystemMessageEvents_OTP">
+              <MappingFragment StoreEntitySet="SystemMessageEvents_OTP">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="SystemMessageEventID" ColumnName="SystemMessageEventID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OsebeNadrejeni_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.OsebeNadrejeni_OTP">
+              <MappingFragment StoreEntitySet="OsebeNadrejeni_OTP">
+                <ScalarProperty Name="tsIDosebe" ColumnName="tsIDosebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="idNadrejeni" ColumnName="idNadrejeni" />
+                <ScalarProperty Name="idOseba" ColumnName="idOseba" />
+                <ScalarProperty Name="OsebeNadrejeniID" ColumnName="OsebeNadrejeniID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SeznamDobaviteljev" FunctionName="GrafolitOTPModel.Store.SeznamDobaviteljev">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitOTPModel.SeznamDobaviteljev_Result">
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="Posta" ColumnName="Posta" />
+                <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TipPrevoza">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.TipPrevoza">
+              <MappingFragment StoreEntitySet="TipPrevoza">
+                <ScalarProperty Name="tsIDPrijave" ColumnName="tsIDPrijave" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="ShranjevanjePozicij" ColumnName="ShranjevanjePozicij" />
+                <ScalarProperty Name="DovoljenaTeza" ColumnName="DovoljenaTeza" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="TipPrevozaID" ColumnName="TipPrevozaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LastnaZaloga">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.LastnaZaloga">
+              <MappingFragment StoreEntitySet="LastnaZaloga">
+                <ScalarProperty Name="TransportnaKolicina" ColumnName="TransportnaKolicina" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="KupecKraj" ColumnName="KupecKraj" />
+                <ScalarProperty Name="KupecPosta" ColumnName="KupecPosta" />
+                <ScalarProperty Name="KupecNaslov" ColumnName="KupecNaslov" />
+                <ScalarProperty Name="StatusPrevzeto" ColumnName="StatusPrevzeto" />
+                <ScalarProperty Name="KolicinaOTP" ColumnName="KolicinaOTP" />
+                <ScalarProperty Name="DatumVnosa" ColumnName="DatumVnosa" />
+                <ScalarProperty Name="ZaporednaStevilka" ColumnName="ZaporednaStevilka" />
+                <ScalarProperty Name="KolicinaOTPPozicijaNarocilnice" ColumnName="KolicinaOTPPozicijaNarocilnice" />
+                <ScalarProperty Name="MaterialIdent" ColumnName="MaterialIdent" />
+                <ScalarProperty Name="Proizvedeno" ColumnName="Proizvedeno" />
+                <ScalarProperty Name="Interno" ColumnName="Interno" />
+                <ScalarProperty Name="TipNaziv" ColumnName="TipNaziv" />
+                <ScalarProperty Name="OptimalnaZaloga" ColumnName="OptimalnaZaloga" />
+                <ScalarProperty Name="TrenutnaZaloga" ColumnName="TrenutnaZaloga" />
+                <ScalarProperty Name="KupecViden" ColumnName="KupecViden" />
+                <ScalarProperty Name="KupecNaziv" ColumnName="KupecNaziv" />
+                <ScalarProperty Name="Palete" ColumnName="Palete" />
+                <ScalarProperty Name="KolicinaRazlika" ColumnName="KolicinaRazlika" />
+                <ScalarProperty Name="KolicinaPrevzeta" ColumnName="KolicinaPrevzeta" />
+                <ScalarProperty Name="OC" ColumnName="OC" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="StatusKolicine" ColumnName="StatusKolicine" />
+                <ScalarProperty Name="KolicinaIzNarocila" ColumnName="KolicinaIzNarocila" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="TipID" ColumnName="TipID" />
+                <ScalarProperty Name="NarociloPozicijaID" ColumnName="NarociloPozicijaID" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+                <ScalarProperty Name="OdpoklicID" ColumnName="OdpoklicID" />
+                <ScalarProperty Name="LastnoSkladisceID" ColumnName="LastnoSkladisceID" />
+                <ScalarProperty Name="idLastnaZaloga" ColumnName="idLastnaZaloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" FunctionName="GrafolitOTPModel.Store.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
+                <ScalarProperty Name="Narocilnica" ColumnName="Narocilnica" />
+                <ScalarProperty Name="St_Pozicija" ColumnName="St_Pozicija" />
+                <ScalarProperty Name="Order_Confirm" ColumnName="Order_Confirm" />
+                <ScalarProperty Name="Tovarna" ColumnName="Tovarna" />
+                <ScalarProperty Name="Ident" ColumnName="Ident" />
+                <ScalarProperty Name="Artikel" ColumnName="Artikel" />
+                <ScalarProperty Name="Datum_narocila" ColumnName="Datum_narocila" />
+                <ScalarProperty Name="Datum_Dobave" ColumnName="Datum_Dobave" />
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Kupec" ColumnName="Kupec" />
+                <ScalarProperty Name="Kupec_Naslov" ColumnName="Kupec_Naslov" />
+                <ScalarProperty Name="Kupec_Posta" ColumnName="Kupec_Posta" />
+                <ScalarProperty Name="Kupec_Kraj" ColumnName="Kupec_Kraj" />
+                <ScalarProperty Name="Naroceno" ColumnName="Naroceno" />
+                <ScalarProperty Name="Proizvedeno" ColumnName="Proizvedeno" />
+                <ScalarProperty Name="Prevzeto" ColumnName="Prevzeto" />
+                <ScalarProperty Name="Razlika" ColumnName="Razlika" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Zaloga" ColumnName="Zaloga" />
+                <ScalarProperty Name="Dovoljeno_odpoklicati" ColumnName="Dovoljeno_odpoklicati" />
+                <ScalarProperty Name="Enota_Mere" ColumnName="Enota_Mere" />
+                <ScalarProperty Name="Interno" ColumnName="Interno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetLastYearRecallCountBySuplierAndRoute" FunctionName="GrafolitOTPModel.Store.GetLastYearRecallCountBySuplierAndRoute">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitOTPModel.GetLastYearRecallCountBySuplierAndRoute_Result">
+                <ScalarProperty Name="RelacijaID" ColumnName="RelacijaID" />
+                <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
+                <ScalarProperty Name="St_Relacija_Dobavitelj" ColumnName="St_Relacija_Dobavitelj" />
+                <ScalarProperty Name="St_Relacija" ColumnName="St_Relacija" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Odpoklic">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Odpoklic">
+              <MappingFragment StoreEntitySet="Odpoklic">
+                <ScalarProperty Name="P_SendWarningToAmin" ColumnName="P_SendWarningToAmin" />
+                <ScalarProperty Name="DatumRazklada" ColumnName="DatumRazklada" />
+                <ScalarProperty Name="P_GetPDFOrderFile" ColumnName="P_GetPDFOrderFile" />
+                <ScalarProperty Name="P_TransportOrderPDFDocPath" ColumnName="P_TransportOrderPDFDocPath" />
+                <ScalarProperty Name="P_TransportOrderPDFName" ColumnName="P_TransportOrderPDFName" />
+                <ScalarProperty Name="P_LastTSCreatePDFPantheon" ColumnName="P_LastTSCreatePDFPantheon" />
+                <ScalarProperty Name="P_UnsuccCountCreatePDFPantheon" ColumnName="P_UnsuccCountCreatePDFPantheon" />
+                <ScalarProperty Name="P_CreateOrder" ColumnName="P_CreateOrder" />
+                <ScalarProperty Name="OpombaZaPovprasevnjePrevoznikom" ColumnName="OpombaZaPovprasevnjePrevoznikom" />
+                <ScalarProperty Name="DatumPosiljanjaMailLogistika" ColumnName="DatumPosiljanjaMailLogistika" />
+                <ScalarProperty Name="PrevoznikOddalNajnizjoCeno" ColumnName="PrevoznikOddalNajnizjoCeno" />
+                <ScalarProperty Name="PovprasevanjePoslanoPrevoznikom" ColumnName="PovprasevanjePoslanoPrevoznikom" />
+                <ScalarProperty Name="Prevozniki" ColumnName="Prevozniki" />
+                <ScalarProperty Name="KupecUrediTransport" ColumnName="KupecUrediTransport" />
+                <ScalarProperty Name="LastnoSkladisceID" ColumnName="LastnoSkladisceID" />
+                <ScalarProperty Name="TipPrevoza" ColumnName="TipPrevoza" />
+                <ScalarProperty Name="LastenPrevoz" ColumnName="LastenPrevoz" />
+                <ScalarProperty Name="RazlogOdobritveSistem" ColumnName="RazlogOdobritveSistem" />
+                <ScalarProperty Name="DobaviteljUrediTransport" ColumnName="DobaviteljUrediTransport" />
+                <ScalarProperty Name="DobaviteljKraj" ColumnName="DobaviteljKraj" />
+                <ScalarProperty Name="DobaviteljPosta" ColumnName="DobaviteljPosta" />
+                <ScalarProperty Name="DobaviteljNaslov" ColumnName="DobaviteljNaslov" />
+                <ScalarProperty Name="DobaviteljNaziv" ColumnName="DobaviteljNaziv" />
+                <ScalarProperty Name="DatumNaklada" ColumnName="DatumNaklada" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OdpoklicStevilka" ColumnName="OdpoklicStevilka" />
+                <ScalarProperty Name="RazpisPozicijaID" ColumnName="RazpisPozicijaID" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="OdobritevKomentar" ColumnName="OdobritevKomentar" />
+                <ScalarProperty Name="Registracija" ColumnName="Registracija" />
+                <ScalarProperty Name="SoferNaziv" ColumnName="SoferNaziv" />
+                <ScalarProperty Name="PaleteSkupaj" ColumnName="PaleteSkupaj" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KolicinaSkupno" ColumnName="KolicinaSkupno" />
+                <ScalarProperty Name="CenaPrevoza" ColumnName="CenaPrevoza" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="RelacijaID" ColumnName="RelacijaID" />
+                <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
+                <ScalarProperty Name="OdpoklicID" ColumnName="OdpoklicID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrijavaPrevoznika">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.PrijavaPrevoznika">
+              <MappingFragment StoreEntitySet="PrijavaPrevoznika">
+                <ScalarProperty Name="OpombaPrijave" ColumnName="OpombaPrijave" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="DatumPrijave" ColumnName="DatumPrijave" />
+                <ScalarProperty Name="DatumPosiljanjePrijav" ColumnName="DatumPosiljanjePrijav" />
+                <ScalarProperty Name="DatumNaklada" ColumnName="DatumNaklada" />
+                <ScalarProperty Name="PrijavljenaCena" ColumnName="PrijavljenaCena" />
+                <ScalarProperty Name="PrvotnaCena" ColumnName="PrvotnaCena" />
+                <ScalarProperty Name="PrevoznikID" ColumnName="PrevoznikID" />
+                <ScalarProperty Name="OdpoklicID" ColumnName="OdpoklicID" />
+                <ScalarProperty Name="PrijavaPrevoznikaID" ColumnName="PrijavaPrevoznikaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DodajPantheonDokument" FunctionName="GrafolitOTPModel.Store.DodajPantheonDokument" />
+          <EntitySetMapping Name="Stranka_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Stranka_OTP">
+              <MappingFragment StoreEntitySet="Stranka_OTP">
+                <ScalarProperty Name="JezikID" ColumnName="JezikID" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="TipPrevoza" ColumnName="TipPrevoza" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
+                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
+                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
+                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
+                <ScalarProperty Name="StatusKupecDobavitelj" ColumnName="StatusKupecDobavitelj" />
+                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
+                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
+                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
+                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
+                <ScalarProperty Name="RangStranke" ColumnName="RangStranke" />
+                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
+                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
+                <ScalarProperty Name="TRR" ColumnName="TRR" />
+                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
+                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
+                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
+                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
+                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
+                <ScalarProperty Name="TipID" ColumnName="TipID" />
+                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrevzemiView">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.PrevzemiView">
+              <MappingFragment StoreEntitySet="PrevzemiView">
+                <ScalarProperty Name="Kolicina_Prevzema" ColumnName="Kolicina_Prevzema" />
+                <ScalarProperty Name="Artikel" ColumnName="Artikel" />
+                <ScalarProperty Name="Ident" ColumnName="Ident" />
+                <ScalarProperty Name="Stevilka_Odpoklica" ColumnName="Stevilka_Odpoklica" />
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Datum_Prevzema" ColumnName="Datum_Prevzema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jeziki">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.Jeziki">
+              <MappingFragment StoreEntitySet="Jeziki">
+                <ScalarProperty Name="KodaJezik" ColumnName="KodaJezik" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="JezikID" ColumnName="JezikID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KontaktneOsebe_OTP">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.KontaktneOsebe_OTP">
+              <MappingFragment StoreEntitySet="KontaktneOsebe_OTP">
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="NazivPodpis" ColumnName="NazivPodpis" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="ZaporednaStevika" ColumnName="ZaporednaStevika" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="GSM" ColumnName="GSM" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="NazivKontaktneOsebe" ColumnName="NazivKontaktneOsebe" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idKontaktneOsebe" ColumnName="idKontaktneOsebe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OdpoklicPozicija">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.OdpoklicPozicija">
+              <MappingFragment StoreEntitySet="OdpoklicPozicija">
+                <ScalarProperty Name="StPalet" ColumnName="StPalet" />
+                <ScalarProperty Name="TransportnaKolicina" ColumnName="TransportnaKolicina" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="Split" ColumnName="Split" />
+                <ScalarProperty Name="PrvotniOdpoklicPozicijaID" ColumnName="PrvotniOdpoklicPozicijaID" />
+                <ScalarProperty Name="OdpoklicIzLastneZaloge" ColumnName="OdpoklicIzLastneZaloge" />
+                <ScalarProperty Name="KupecKraj" ColumnName="KupecKraj" />
+                <ScalarProperty Name="KupecPosta" ColumnName="KupecPosta" />
+                <ScalarProperty Name="KupecNaslov" ColumnName="KupecNaslov" />
+                <ScalarProperty Name="StatusPrevzeto" ColumnName="StatusPrevzeto" />
+                <ScalarProperty Name="KolicinaOTP" ColumnName="KolicinaOTP" />
+                <ScalarProperty Name="DatumVnosa" ColumnName="DatumVnosa" />
+                <ScalarProperty Name="ZaporednaStevilka" ColumnName="ZaporednaStevilka" />
+                <ScalarProperty Name="KolicinaOTPPozicijaNarocilnice" ColumnName="KolicinaOTPPozicijaNarocilnice" />
+                <ScalarProperty Name="MaterialIdent" ColumnName="MaterialIdent" />
+                <ScalarProperty Name="Proizvedeno" ColumnName="Proizvedeno" />
+                <ScalarProperty Name="Interno" ColumnName="Interno" />
+                <ScalarProperty Name="TipNaziv" ColumnName="TipNaziv" />
+                <ScalarProperty Name="OptimalnaZaloga" ColumnName="OptimalnaZaloga" />
+                <ScalarProperty Name="TrenutnaZaloga" ColumnName="TrenutnaZaloga" />
+                <ScalarProperty Name="KupecViden" ColumnName="KupecViden" />
+                <ScalarProperty Name="KupecNaziv" ColumnName="KupecNaziv" />
+                <ScalarProperty Name="Palete" ColumnName="Palete" />
+                <ScalarProperty Name="KolicinaRazlika" ColumnName="KolicinaRazlika" />
+                <ScalarProperty Name="KolicinaPrevzeta" ColumnName="KolicinaPrevzeta" />
+                <ScalarProperty Name="OC" ColumnName="OC" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="StatusKolicine" ColumnName="StatusKolicine" />
+                <ScalarProperty Name="KolicinaIzNarocila" ColumnName="KolicinaIzNarocila" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="TipID" ColumnName="TipID" />
+                <ScalarProperty Name="NarociloPozicijaID" ColumnName="NarociloPozicijaID" />
+                <ScalarProperty Name="NarociloID" ColumnName="NarociloID" />
+                <ScalarProperty Name="OdpoklicID" ColumnName="OdpoklicID" />
+                <ScalarProperty Name="OdpoklicPozicijaID" ColumnName="OdpoklicPozicijaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

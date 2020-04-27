@@ -1,0 +1,1405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GrafolitNOZModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NarociloOptimalnihZalog">
+          <Key>
+            <PropertyRef Name="NarociloOptimalnihZalogID" />
+          </Key>
+          <Property Name="NarociloOptimalnihZalogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="NarociloOptimalnihZalogStevilka" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NarociloID_P" Type="varchar" MaxLength="150" />
+          <Property Name="DatumOddaje" Type="datetime" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="Opombe" Type="varchar(max)" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="PotDokumenta" Type="varchar" MaxLength="1000" />
+          <Property Name="NarociloOddal" Type="int" />
+        </EntityType>
+        <EntityType Name="NarociloOptimalnihZalogPozicija">
+          <Key>
+            <PropertyRef Name="NarociloOptimalnihZalogPozicijaID" />
+          </Key>
+          <Property Name="NarociloOptimalnihZalogPozicijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloOptimalnihZalogID" Type="int" Nullable="false" />
+          <Property Name="IdentArtikla_P" Type="varchar" MaxLength="100" />
+          <Property Name="KategorijaNaziv" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NazivArtikla" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Opombe" Type="varchar" MaxLength="3000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Nastavitve_NOZ">
+          <Key>
+            <PropertyRef Name="NastavitveID" />
+          </Key>
+          <Property Name="NastavitveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NarociloOptimalnihZalogStev" Type="int" />
+          <Property Name="NarociloOptimalnihZalogPredpona" Type="varchar" MaxLength="10" />
+          <Property Name="Opombe" Type="varchar" MaxLength="1000" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="PosiljanjePoste" Type="bit" />
+          <Property Name="EmailStreznik" Type="varchar" MaxLength="50" />
+          <Property Name="EmailVrata" Type="int" />
+          <Property Name="EmailSifriranjeSSL" Type="bit" />
+        </EntityType>
+        <EntityType Name="Osebe_NOZ">
+          <Key>
+            <PropertyRef Name="OsebaID" />
+          </Key>
+          <Property Name="OsebaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VlogaID" Type="int" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Priimek" Type="varchar" MaxLength="60" />
+          <Property Name="Naslov" Type="varchar" MaxLength="160" />
+          <Property Name="DatumRojstva" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="DatumZaposlitve" Type="date" />
+          <Property Name="UporabniskoIme" Type="varchar" MaxLength="100" />
+          <Property Name="Geslo" Type="varchar" MaxLength="100" />
+          <Property Name="TelefonGSM" Type="varchar" MaxLength="60" />
+          <Property Name="Zunanji" Type="int" />
+          <Property Name="DelovnoMesto" Type="varchar" MaxLength="200" />
+          <Property Name="ProfileImage" Type="varchar" MaxLength="300" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="NOZDostop" Type="bit" />
+          <Property Name="Podpis" Type="varchar" MaxLength="100" />
+          <Property Name="PantheonUsrID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_NOZ">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OsebaID" Type="int" Nullable="false" />
+          <Property Name="NadrejeniID" Type="int" Nullable="false" />
+          <Property Name="Opomba" Type="varchar" MaxLength="200" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDosebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="StatusNarocilaOptimalnihZalog">
+          <Key>
+            <PropertyRef Name="StatusNarocilaOptimalnihZalogID" />
+          </Key>
+          <Property Name="StatusNarocilaOptimalnihZalogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Stranka_NOZ">
+          <Key>
+            <PropertyRef Name="StrankaID" />
+          </Key>
+          <Property Name="StrankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KodaStranke" Type="varchar" MaxLength="250" />
+          <Property Name="TipStrankaID" Type="int" Nullable="false" />
+          <Property Name="NazivPrvi" Type="varchar" MaxLength="250" />
+          <Property Name="NazivDrugi" Type="varchar" MaxLength="300" />
+          <Property Name="Naslov" Type="varchar" MaxLength="250" />
+          <Property Name="StevPoste" Type="varchar" MaxLength="12" />
+          <Property Name="NazivPoste" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="InternetniNalov" Type="varchar" MaxLength="50" />
+          <Property Name="KontaktnaOseba" Type="varchar" MaxLength="50" />
+          <Property Name="RokPlacila" Type="nchar" MaxLength="6" />
+          <Property Name="TRR" Type="varchar" MaxLength="35" />
+          <Property Name="DavcnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="MaticnaStev" Type="varchar" MaxLength="20" />
+          <Property Name="StatusDomacTuji" Type="bit" />
+          <Property Name="Zavezanec_DA_NE" Type="bit" />
+          <Property Name="IdentifikacijskaStev" Type="varchar" MaxLength="20" />
+          <Property Name="Clan_EU" Type="bit" />
+          <Property Name="BIC" Type="varchar" MaxLength="11" />
+          <Property Name="KodaPlacila" Type="varchar" MaxLength="4" />
+          <Property Name="DrzavaStranke" Type="varchar" MaxLength="50" />
+          <Property Name="Neaktivna" Type="varchar" MaxLength="2" />
+          <Property Name="GenerirajERacun" Type="int" />
+          <Property Name="JavniZavod" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_NOZ">
+          <Key>
+            <PropertyRef Name="StrankaOsebeID" />
+          </Key>
+          <Property Name="StrankaOsebeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="OsebeID" Type="int" Nullable="false" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage_NOZ">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailTo" Type="varchar" MaxLength="100" />
+          <Property Name="EmailBody" Type="varchar(max)" />
+          <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="OsebaEmailFromID" Type="int" />
+          <Property Name="Attachments" Type="varchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_NOZ">
+          <Key>
+            <PropertyRef Name="SystemMessageEventsID" />
+          </Key>
+          <Property Name="SystemMessageEventsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="TipStranka_NOZ">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="tsIDOseba" Type="int" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Vloga_NOZ">
+          <Key>
+            <PropertyRef Name="VlogaID" />
+          </Key>
+          <Property Name="VlogaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="60" />
+          <Property Name="Naziv" Type="varchar" MaxLength="160" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="tsUpdate" Type="datetime" />
+          <Property Name="tsUpdateUserID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Employee_OsebaID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="0..1" />
+          <End Role="NarociloOptimalnihZalog" Type="Self.NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="NarociloOddal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KupecID">
+          <End Role="Stranka_NOZ" Type="Self.Stranka_NOZ" Multiplicity="1" />
+          <End Role="NarociloOptimalnihZalog" Type="Self.NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NadrejeniID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_NOZ" Type="Self.OsebeNadrejeni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_NOZ">
+              <PropertyRef Name="NadrejeniID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebaID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OsebeNadrejeni_NOZ" Type="Self.OsebeNadrejeni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1" />
+          <End Role="StrankaZaposleni_NOZ" Type="Self.StrankaZaposleni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_NOZ">
+              <PropertyRef Name="OsebeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjeID">
+          <End Role="NarociloOptimalnihZalog" Type="Self.NarociloOptimalnihZalog" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NarociloOptimalnihZalogPozicija" Type="Self.NarociloOptimalnihZalogPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="NarociloOptimalnihZalogID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalogPozicija">
+              <PropertyRef Name="NarociloOptimalnihZalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Role="StatusNarocilaOptimalnihZalog" Type="Self.StatusNarocilaOptimalnihZalog" Multiplicity="1" />
+          <End Role="NarociloOptimalnihZalog" Type="Self.NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusNarocilaOptimalnihZalog">
+              <PropertyRef Name="StatusNarocilaOptimalnihZalogID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Role="Stranka_NOZ" Type="Self.Stranka_NOZ" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StrankaZaposleni_NOZ" Type="Self.StrankaZaposleni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysEmailMsg_OsebaID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="0..1" />
+          <End Role="SystemEmailMessage_NOZ" Type="Self.SystemEmailMessage_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="SystemEmailMessage_NOZ">
+              <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipStrankeID">
+          <End Role="TipStranka_NOZ" Type="Self.TipStranka_NOZ" Multiplicity="1" />
+          <End Role="Stranka_NOZ" Type="Self.Stranka_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka_NOZ">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_NOZ">
+              <PropertyRef Name="TipStrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VlogaID">
+          <End Role="Vloga_NOZ" Type="Self.Vloga_NOZ" Multiplicity="1" />
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_NOZ">
+              <PropertyRef Name="VlogaID" />
+            </Principal>
+            <Dependent Role="Osebe_NOZ">
+              <PropertyRef Name="VlogaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DodajPantheonDokument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_xParameters" Type="xml" Mode="In" />
+          <Parameter Name="p_cExportPath" Type="varchar" Mode="InOut" />
+          <Parameter Name="p_cKey" Type="char" Mode="InOut" />
+          <Parameter Name="p_cError" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="GetCategoryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetColorListByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryStr" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Barva" Type="varchar" MaxLength="20" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetDIMIdentiOPTList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" Nullable="false" />
+                <Property Name="Gloss" Type="varchar" MaxLength="9" Nullable="false" />
+                <Property Name="Gramatura" Type="varchar" MaxLength="4" Nullable="false" />
+                <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Tek" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Barva" Type="varchar" MaxLength="20" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetListOptimalnaZaloga" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+                <Property Name="Gloss" Type="varchar" MaxLength="9" Nullable="false" />
+                <Property Name="Gramatura" Type="varchar" MaxLength="4" Nullable="false" />
+                <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Tek" Type="varchar" MaxLength="6" Nullable="false" />
+                <Property Name="Barva" Type="varchar" MaxLength="20" />
+                <Property Name="IDIdent" Type="int" />
+                <Property Name="Kolicina_OPT" Type="int" />
+                <Property Name="Kolicina_tretjine" Type="int" />
+                <Property Name="Max_Kolicina" Type="int" />
+                <Property Name="Min_Narocilo" Type="int" Nullable="false" />
+                <Property Name="anStock" Type="int" />
+                <Property Name="anValue" Type="decimal" Precision="18" Scale="2" />
+                <Property Name="VTekuKolicina" Type="int" />
+                <Property Name="VTekuVrednost" Type="decimal" Precision="18" Scale="2" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetPantheonUsersNOZ" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="acSubject" Type="varchar" MaxLength="61" />
+                <Property Name="acUserId" Type="nvarchar" MaxLength="128" />
+                <Property Name="anUserID" Type="int" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetProductsByOptimalStockValues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Kategorija" Type="varchar" Mode="In" />
+          <Parameter Name="Gloss" Type="varchar" Mode="In" />
+          <Parameter Name="Gramatura" Type="varchar" Mode="In" />
+          <Parameter Name="Velikost" Type="varchar" Mode="In" />
+          <Parameter Name="Tek" Type="varchar" Mode="In" />
+          <Parameter Name="Barva" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IDENT" Type="char" MaxLength="16" Nullable="false" />
+                <Property Name="NAZIV" Type="varchar" MaxLength="80" />
+                <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetProductStockByIdent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Ident" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="acIdent" Type="char" MaxLength="16" Nullable="false" />
+                <Property Name="anStock" Type="decimal" Precision="38" Scale="6" />
+                <Property Name="anValue" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetSupplierList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" Nullable="false" />
+                <Property Name="Drzava" Type="varchar" MaxLength="20" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="IdentByOPTGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="acIdent" Type="char" MaxLength="16" />
+                <Property Name="Qty" Type="int" />
+                <Property Name="ID" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="ProductSalesQtyByGroupID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GroupID" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="acIdent" Type="char" MaxLength="16" />
+                <Property Name="Naziv" Type="char" MaxLength="250" />
+                <Property Name="Dobavitelj" Type="char" MaxLength="250" />
+                <Property Name="Qty" Type="decimal" Precision="18" Scale="5" />
+                <Property Name="ID" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="GrafolitNOZModelStoreContainer">
+          <EntitySet Name="NarociloOptimalnihZalog" EntityType="Self.NarociloOptimalnihZalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NarociloOptimalnihZalogPozicija" EntityType="Self.NarociloOptimalnihZalogPozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nastavitve_NOZ" EntityType="Self.Nastavitve_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Osebe_NOZ" EntityType="Self.Osebe_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OsebeNadrejeni_NOZ" EntityType="Self.OsebeNadrejeni_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusNarocilaOptimalnihZalog" EntityType="Self.StatusNarocilaOptimalnihZalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stranka_NOZ" EntityType="Self.Stranka_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StrankaZaposleni_NOZ" EntityType="Self.StrankaZaposleni_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemEmailMessage_NOZ" EntityType="Self.SystemEmailMessage_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemMessageEvents_NOZ" EntityType="Self.SystemMessageEvents_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipStranka_NOZ" EntityType="Self.TipStranka_NOZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vloga_NOZ" EntityType="Self.Vloga_NOZ" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Employee_OsebaID" Association="Self.FK_Employee_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupecID" Association="Self.FK_KupecID">
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NadrejeniID" Association="Self.FK_NadrejeniID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="OsebeNadrejeni_NOZ" EntitySet="OsebeNadrejeni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebaID" Association="Self.FK_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="OsebeNadrejeni_NOZ" EntitySet="OsebeNadrejeni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeID" Association="Self.FK_OsebeID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="StrankaZaposleni_NOZ" EntitySet="StrankaZaposleni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjeID" Association="Self.FK_PovprasevanjeID">
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+            <End Role="NarociloOptimalnihZalogPozicija" EntitySet="NarociloOptimalnihZalogPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="Self.FK_StatusID">
+            <End Role="StatusNarocilaOptimalnihZalog" EntitySet="StatusNarocilaOptimalnihZalog" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="Self.FK_StrankaID">
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+            <End Role="StrankaZaposleni_NOZ" EntitySet="StrankaZaposleni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="Self.FK_SysEmailMsg_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="SystemEmailMessage_NOZ" EntitySet="SystemEmailMessage_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipStrankeID" Association="Self.FK_TipStrankeID">
+            <End Role="TipStranka_NOZ" EntitySet="TipStranka_NOZ" />
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VlogaID" Association="Self.FK_VlogaID">
+            <End Role="Vloga_NOZ" EntitySet="Vloga_NOZ" />
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GrafolitNOZModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NarociloOptimalnihZalogPozicija">
+          <Key>
+            <PropertyRef Name="NarociloOptimalnihZalogPozicijaID" />
+          </Key>
+          <Property Name="NarociloOptimalnihZalogPozicijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloOptimalnihZalogID" Type="Int32" Nullable="false" />
+          <Property Name="KategorijaNaziv" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NazivArtikla" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kolicina" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="IdentArtikla_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NarociloOptimalnihZalog" Relationship="GrafolitNOZModel.FK_PovprasevanjeID" FromRole="NarociloOptimalnihZalogPozicija" ToRole="NarociloOptimalnihZalog" />
+        </EntityType>
+        <EntityType Name="Nastavitve_NOZ">
+          <Key>
+            <PropertyRef Name="NastavitveID" />
+          </Key>
+          <Property Name="NastavitveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NarociloOptimalnihZalogStev" Type="Int32" />
+          <Property Name="NarociloOptimalnihZalogPredpona" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Opombe" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="PosiljanjePoste" Type="Boolean" />
+          <Property Name="EmailStreznik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailVrata" Type="Int32" />
+          <Property Name="EmailSifriranjeSSL" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Osebe_NOZ">
+          <Key>
+            <PropertyRef Name="OsebaID" />
+          </Key>
+          <Property Name="OsebaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VlogaID" Type="Int32" Nullable="false" />
+          <Property Name="Ime" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Priimek" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="DatumRojstva" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatumZaposlitve" Type="DateTime" Precision="0" />
+          <Property Name="UporabniskoIme" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Geslo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonGSM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Zunanji" Type="Int32" />
+          <Property Name="DelovnoMesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="NOZDostop" Type="Boolean" />
+          <Property Name="Podpis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OsebeNadrejeni_NOZ" Relationship="Self.FK_NadrejeniID" FromRole="Osebe_NOZ" ToRole="OsebeNadrejeni_NOZ" />
+          <NavigationProperty Name="OsebeNadrejeni_NOZ1" Relationship="Self.FK_OsebaID" FromRole="Osebe_NOZ" ToRole="OsebeNadrejeni_NOZ" />
+          <NavigationProperty Name="StrankaZaposleni_NOZ" Relationship="Self.FK_OsebeID" FromRole="Osebe_NOZ" ToRole="StrankaZaposleni_NOZ" />
+          <NavigationProperty Name="SystemEmailMessage_NOZ" Relationship="Self.FK_SysEmailMsg_OsebaID" FromRole="Osebe_NOZ" ToRole="SystemEmailMessage_NOZ" />
+          <NavigationProperty Name="Vloga_NOZ" Relationship="Self.FK_VlogaID" FromRole="Osebe_NOZ" ToRole="Vloga_NOZ" />
+          <NavigationProperty Name="NarociloOptimalnihZalog" Relationship="GrafolitNOZModel.FK_Employee_OsebaID" FromRole="Osebe_NOZ" ToRole="NarociloOptimalnihZalog" />
+          <Property Name="PantheonUsrID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OsebeNadrejeni_NOZ">
+          <Key>
+            <PropertyRef Name="OsebeNadrejeniID" />
+          </Key>
+          <Property Name="OsebeNadrejeniID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OsebaID" Type="Int32" Nullable="false" />
+          <Property Name="NadrejeniID" Type="Int32" Nullable="false" />
+          <Property Name="Opomba" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDosebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_NOZ" Relationship="Self.FK_NadrejeniID" FromRole="OsebeNadrejeni_NOZ" ToRole="Osebe_NOZ" />
+          <NavigationProperty Name="Osebe_NOZ1" Relationship="Self.FK_OsebaID" FromRole="OsebeNadrejeni_NOZ" ToRole="Osebe_NOZ" />
+        </EntityType>
+        <EntityType Name="StatusNarocilaOptimalnihZalog">
+          <Key>
+            <PropertyRef Name="StatusNarocilaOptimalnihZalogID" />
+          </Key>
+          <Property Name="StatusNarocilaOptimalnihZalogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="NarociloOptimalnihZalog" Relationship="GrafolitNOZModel.FK_StatusID" FromRole="StatusNarocilaOptimalnihZalog" ToRole="NarociloOptimalnihZalog" />
+        </EntityType>
+        <EntityType Name="Stranka_NOZ">
+          <Key>
+            <PropertyRef Name="StrankaID" />
+          </Key>
+          <Property Name="StrankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TipStrankaID" Type="Int32" Nullable="false" />
+          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivDrugi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RokPlacila" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDomacTuji" Type="Boolean" />
+          <Property Name="Zavezanec_DA_NE" Type="Boolean" />
+          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clan_EU" Type="Boolean" />
+          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GenerirajERacun" Type="Int32" />
+          <Property Name="JavniZavod" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="StrankaZaposleni_NOZ" Relationship="Self.FK_StrankaID" FromRole="Stranka_NOZ" ToRole="StrankaZaposleni_NOZ" />
+          <NavigationProperty Name="TipStranka_NOZ" Relationship="Self.FK_TipStrankeID" FromRole="Stranka_NOZ" ToRole="TipStranka_NOZ" />
+          <NavigationProperty Name="NarociloOptimalnihZalog" Relationship="GrafolitNOZModel.FK_KupecID" FromRole="Stranka_NOZ" ToRole="NarociloOptimalnihZalog" />
+        </EntityType>
+        <EntityType Name="StrankaZaposleni_NOZ">
+          <Key>
+            <PropertyRef Name="StrankaOsebeID" />
+          </Key>
+          <Property Name="StrankaOsebeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="OsebeID" Type="Int32" Nullable="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_NOZ" Relationship="Self.FK_OsebeID" FromRole="StrankaZaposleni_NOZ" ToRole="Osebe_NOZ" />
+          <NavigationProperty Name="Stranka_NOZ" Relationship="Self.FK_StrankaID" FromRole="StrankaZaposleni_NOZ" ToRole="Stranka_NOZ" />
+        </EntityType>
+        <EntityType Name="SystemEmailMessage_NOZ">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="OsebaEmailFromID" Type="Int32" />
+          <Property Name="Attachments" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Osebe_NOZ" Relationship="Self.FK_SysEmailMsg_OsebaID" FromRole="SystemEmailMessage_NOZ" ToRole="Osebe_NOZ" />
+        </EntityType>
+        <EntityType Name="SystemMessageEvents_NOZ">
+          <Key>
+            <PropertyRef Name="SystemMessageEventsID" />
+          </Key>
+          <Property Name="SystemMessageEventsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TipStranka_NOZ">
+          <Key>
+            <PropertyRef Name="TipStrankaID" />
+          </Key>
+          <Property Name="TipStrankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="tsIDOseba" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Stranka_NOZ" Relationship="Self.FK_TipStrankeID" FromRole="TipStranka_NOZ" ToRole="Stranka_NOZ" />
+        </EntityType>
+        <EntityType Name="Vloga_NOZ">
+          <Key>
+            <PropertyRef Name="VlogaID" />
+          </Key>
+          <Property Name="VlogaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Osebe_NOZ" Relationship="Self.FK_VlogaID" FromRole="Vloga_NOZ" ToRole="Osebe_NOZ" />
+        </EntityType>
+        <Association Name="FK_NadrejeniID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_NOZ" Type="Self.OsebeNadrejeni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_NOZ">
+              <PropertyRef Name="NadrejeniID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebaID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1" />
+          <End Role="OsebeNadrejeni_NOZ" Type="Self.OsebeNadrejeni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="OsebeNadrejeni_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OsebeID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="1" />
+          <End Role="StrankaZaposleni_NOZ" Type="Self.StrankaZaposleni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_NOZ">
+              <PropertyRef Name="OsebeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysEmailMsg_OsebaID">
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="0..1" />
+          <End Role="SystemEmailMessage_NOZ" Type="Self.SystemEmailMessage_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="SystemEmailMessage_NOZ">
+              <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VlogaID">
+          <End Role="Vloga_NOZ" Type="Self.Vloga_NOZ" Multiplicity="1" />
+          <End Role="Osebe_NOZ" Type="Self.Osebe_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloga_NOZ">
+              <PropertyRef Name="VlogaID" />
+            </Principal>
+            <Dependent Role="Osebe_NOZ">
+              <PropertyRef Name="VlogaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaID">
+          <End Role="Stranka_NOZ" Type="Self.Stranka_NOZ" Multiplicity="1" />
+          <End Role="StrankaZaposleni_NOZ" Type="Self.StrankaZaposleni_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipStrankeID">
+          <End Role="TipStranka_NOZ" Type="Self.TipStranka_NOZ" Multiplicity="1" />
+          <End Role="Stranka_NOZ" Type="Self.Stranka_NOZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipStranka_NOZ">
+              <PropertyRef Name="TipStrankaID" />
+            </Principal>
+            <Dependent Role="Stranka_NOZ">
+              <PropertyRef Name="TipStrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GrafolitNOZEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NarociloOptimalnihZalogPozicija" EntityType="Self.NarociloOptimalnihZalogPozicija" />
+          <EntitySet Name="Nastavitve_NOZ" EntityType="Self.Nastavitve_NOZ" />
+          <EntitySet Name="Osebe_NOZ" EntityType="Self.Osebe_NOZ" />
+          <EntitySet Name="OsebeNadrejeni_NOZ" EntityType="Self.OsebeNadrejeni_NOZ" />
+          <EntitySet Name="StatusNarocilaOptimalnihZalog" EntityType="Self.StatusNarocilaOptimalnihZalog" />
+          <EntitySet Name="Stranka_NOZ" EntityType="Self.Stranka_NOZ" />
+          <EntitySet Name="StrankaZaposleni_NOZ" EntityType="Self.StrankaZaposleni_NOZ" />
+          <EntitySet Name="SystemEmailMessage_NOZ" EntityType="Self.SystemEmailMessage_NOZ" />
+          <EntitySet Name="SystemMessageEvents_NOZ" EntityType="Self.SystemMessageEvents_NOZ" />
+          <EntitySet Name="TipStranka_NOZ" EntityType="Self.TipStranka_NOZ" />
+          <EntitySet Name="Vloga_NOZ" EntityType="Self.Vloga_NOZ" />
+          <AssociationSet Name="FK_NadrejeniID" Association="Self.FK_NadrejeniID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="OsebeNadrejeni_NOZ" EntitySet="OsebeNadrejeni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebaID" Association="Self.FK_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="OsebeNadrejeni_NOZ" EntitySet="OsebeNadrejeni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OsebeID" Association="Self.FK_OsebeID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="StrankaZaposleni_NOZ" EntitySet="StrankaZaposleni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="Self.FK_SysEmailMsg_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="SystemEmailMessage_NOZ" EntitySet="SystemEmailMessage_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VlogaID" Association="Self.FK_VlogaID">
+            <End Role="Vloga_NOZ" EntitySet="Vloga_NOZ" />
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaID" Association="Self.FK_StrankaID">
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+            <End Role="StrankaZaposleni_NOZ" EntitySet="StrankaZaposleni_NOZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipStrankeID" Association="Self.FK_TipStrankeID">
+            <End Role="TipStranka_NOZ" EntitySet="TipStranka_NOZ" />
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+          </AssociationSet>
+          <FunctionImport Name="GetCategoryList" IsComposable="true" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetListOptimalnaZaloga" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetListOptimalnaZaloga_Result)" />
+          <FunctionImport Name="GetColorListByCategory" IsComposable="true" ReturnType="Collection(String)">
+          <Parameter Name="CategoryStr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetProductsByOptimalStockValues" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetProductsByOptimalStockValues_Result)">
+            <Parameter Name="Kategorija" Mode="In" Type="String" />
+            <Parameter Name="Gloss" Mode="In" Type="String" />
+            <Parameter Name="Gramatura" Mode="In" Type="String" />
+            <Parameter Name="Velikost" Mode="In" Type="String" />
+            <Parameter Name="Tek" Mode="In" Type="String" />
+            <Parameter Name="Barva" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetSupplierList" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetSupplierList_Result)" />
+          <EntitySet Name="NarociloOptimalnihZalog" EntityType="GrafolitNOZModel.NarociloOptimalnihZalog" />
+          <AssociationSet Name="FK_Employee_OsebaID" Association="GrafolitNOZModel.FK_Employee_OsebaID">
+            <End Role="Osebe_NOZ" EntitySet="Osebe_NOZ" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupecID" Association="GrafolitNOZModel.FK_KupecID">
+            <End Role="Stranka_NOZ" EntitySet="Stranka_NOZ" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PovprasevanjeID" Association="GrafolitNOZModel.FK_PovprasevanjeID">
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+            <End Role="NarociloOptimalnihZalogPozicija" EntitySet="NarociloOptimalnihZalogPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="GrafolitNOZModel.FK_StatusID">
+            <End Role="StatusNarocilaOptimalnihZalog" EntitySet="StatusNarocilaOptimalnihZalog" />
+            <End Role="NarociloOptimalnihZalog" EntitySet="NarociloOptimalnihZalog" />
+          </AssociationSet>
+          <FunctionImport Name="GetProductStockByIdent" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetProductStockByIdent_Result)">
+          <Parameter Name="Ident" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="IdentByOPTGroup" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.IdentByOPTGroup_Result)" />
+          <FunctionImport Name="ProductSalesQtyByGroupID" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.ProductSalesQtyByGroupID_Result)">
+          <Parameter Name="GroupID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetDIMIdentiOPTList" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetDIMIdentiOPTList_Result)" />
+          <FunctionImport Name="DodajPantheonDokument">
+            <Parameter Name="p_xParameters" Mode="In" Type="String" />
+            <Parameter Name="p_cExportPath" Mode="InOut" Type="String" />
+            <Parameter Name="p_cKey" Mode="InOut" Type="String" />
+            <Parameter Name="p_cError" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetPantheonUsersNOZ" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetPantheonUsersNOZ_Result)" />             
+        </EntityContainer>
+        <ComplexType Name="GetListOptimalnaZaloga_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Barva" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="IDIdent" Nullable="true" />
+          <Property Type="Int32" Name="Kolicina_OPT" Nullable="true" />
+          <Property Type="Int32" Name="Kolicina_tretjine" Nullable="true" />
+          <Property Type="Int32" Name="Max_Kolicina" Nullable="true" />
+          <Property Type="Int32" Name="Min_Narocilo" Nullable="false" />
+          <Property Type="Int32" Name="anStock" Nullable="true" />
+          <Property Type="Decimal" Name="anValue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="VTekuKolicina" Nullable="true" />
+          <Property Type="Decimal" Name="VTekuVrednost" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="GetProductsByOptimalStockValues_Result">
+          <Property Type="String" Name="IDENT" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="GetSupplierList_Result">
+          <Property Type="String" Name="Dobavitelj" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Drzava" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="NarociloOptimalnihZalog">
+          <Key>
+            <PropertyRef Name="NarociloOptimalnihZalogID" />
+          </Key>
+          <Property Name="NarociloOptimalnihZalogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="NarociloOptimalnihZalogStevilka" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NarociloID_P" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="DatumOddaje" Type="DateTime" Precision="3" />
+          <Property Name="Kolicina" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="Opombe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="PotDokumenta" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NarociloOddal" Type="Int32" />
+          <NavigationProperty Name="Osebe_NOZ" Relationship="GrafolitNOZModel.FK_Employee_OsebaID" FromRole="NarociloOptimalnihZalog" ToRole="Osebe_NOZ" />
+          <NavigationProperty Name="Stranka_NOZ" Relationship="GrafolitNOZModel.FK_KupecID" FromRole="NarociloOptimalnihZalog" ToRole="Stranka_NOZ" />
+          <NavigationProperty Name="NarociloOptimalnihZalogPozicija" Relationship="GrafolitNOZModel.FK_PovprasevanjeID" FromRole="NarociloOptimalnihZalog" ToRole="NarociloOptimalnihZalogPozicija" />
+          <NavigationProperty Name="StatusNarocilaOptimalnihZalog" Relationship="GrafolitNOZModel.FK_StatusID" FromRole="NarociloOptimalnihZalog" ToRole="StatusNarocilaOptimalnihZalog" />
+        </EntityType>
+        <Association Name="FK_Employee_OsebaID">
+          <End Type="GrafolitNOZModel.Osebe_NOZ" Role="Osebe_NOZ" Multiplicity="0..1" />
+          <End Type="GrafolitNOZModel.NarociloOptimalnihZalog" Role="NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_NOZ">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="NarociloOddal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KupecID">
+          <End Type="GrafolitNOZModel.Stranka_NOZ" Role="Stranka_NOZ" Multiplicity="1" />
+          <End Type="GrafolitNOZModel.NarociloOptimalnihZalog" Role="NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_NOZ">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PovprasevanjeID">
+          <End Type="GrafolitNOZModel.NarociloOptimalnihZalog" Role="NarociloOptimalnihZalog" Multiplicity="1" />
+          <End Type="GrafolitNOZModel.NarociloOptimalnihZalogPozicija" Role="NarociloOptimalnihZalogPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="NarociloOptimalnihZalogID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalogPozicija">
+              <PropertyRef Name="NarociloOptimalnihZalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Type="GrafolitNOZModel.StatusNarocilaOptimalnihZalog" Role="StatusNarocilaOptimalnihZalog" Multiplicity="1" />
+          <End Type="GrafolitNOZModel.NarociloOptimalnihZalog" Role="NarociloOptimalnihZalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusNarocilaOptimalnihZalog">
+              <PropertyRef Name="StatusNarocilaOptimalnihZalogID" />
+            </Principal>
+            <Dependent Role="NarociloOptimalnihZalog">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetProductStockByIdent_Result">
+          <Property Type="String" Name="acIdent" Nullable="false" MaxLength="16" />
+          <Property Type="Decimal" Name="anStock" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Double" Name="anValue" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="IdentByOPTGroup_Result">
+          <Property Type="String" Name="acIdent" Nullable="true" MaxLength="16" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Int32" Name="ID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ProductSalesQtyByGroupID_Result">
+          <Property Type="String" Name="acIdent" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="Naziv" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="250" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="5" />
+          <Property Type="Int32" Name="ID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetDIMIdentiOPTList_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Barva" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="GetPantheonUsersNOZ_Result">
+          <Property Type="String" Name="acSubject" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="acUserId" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="anUserID" Nullable="false" />
+        </ComplexType>       
+       
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GrafolitNOZModelStoreContainer" CdmEntityContainer="GrafolitNOZEntities">
+          <EntitySetMapping Name="NarociloOptimalnihZalogPozicija">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.NarociloOptimalnihZalogPozicija">
+              <MappingFragment StoreEntitySet="NarociloOptimalnihZalogPozicija">
+                <ScalarProperty Name="IdentArtikla_P" ColumnName="IdentArtikla_P" />
+                <ScalarProperty Name="NarociloOptimalnihZalogPozicijaID" ColumnName="NarociloOptimalnihZalogPozicijaID" />
+                <ScalarProperty Name="NarociloOptimalnihZalogID" ColumnName="NarociloOptimalnihZalogID" />
+                <ScalarProperty Name="KategorijaNaziv" ColumnName="KategorijaNaziv" />
+                <ScalarProperty Name="NazivArtikla" ColumnName="NazivArtikla" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nastavitve_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.Nastavitve_NOZ">
+              <MappingFragment StoreEntitySet="Nastavitve_NOZ">
+                <ScalarProperty Name="NastavitveID" ColumnName="NastavitveID" />
+                <ScalarProperty Name="NarociloOptimalnihZalogStev" ColumnName="NarociloOptimalnihZalogStev" />
+                <ScalarProperty Name="NarociloOptimalnihZalogPredpona" ColumnName="NarociloOptimalnihZalogPredpona" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="PosiljanjePoste" ColumnName="PosiljanjePoste" />
+                <ScalarProperty Name="EmailStreznik" ColumnName="EmailStreznik" />
+                <ScalarProperty Name="EmailVrata" ColumnName="EmailVrata" />
+                <ScalarProperty Name="EmailSifriranjeSSL" ColumnName="EmailSifriranjeSSL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Osebe_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.Osebe_NOZ">
+              <MappingFragment StoreEntitySet="Osebe_NOZ">
+                <ScalarProperty Name="PantheonUsrID" ColumnName="PantheonUsrID" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="VlogaID" ColumnName="VlogaID" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Priimek" ColumnName="Priimek" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="DatumRojstva" ColumnName="DatumRojstva" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumZaposlitve" ColumnName="DatumZaposlitve" />
+                <ScalarProperty Name="UporabniskoIme" ColumnName="UporabniskoIme" />
+                <ScalarProperty Name="Geslo" ColumnName="Geslo" />
+                <ScalarProperty Name="TelefonGSM" ColumnName="TelefonGSM" />
+                <ScalarProperty Name="Zunanji" ColumnName="Zunanji" />
+                <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="NOZDostop" ColumnName="NOZDostop" />
+                <ScalarProperty Name="Podpis" ColumnName="Podpis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OsebeNadrejeni_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.OsebeNadrejeni_NOZ">
+              <MappingFragment StoreEntitySet="OsebeNadrejeni_NOZ">
+                <ScalarProperty Name="OsebeNadrejeniID" ColumnName="OsebeNadrejeniID" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="NadrejeniID" ColumnName="NadrejeniID" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDosebe" ColumnName="tsIDosebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusNarocilaOptimalnihZalog">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.StatusNarocilaOptimalnihZalog">
+              <MappingFragment StoreEntitySet="StatusNarocilaOptimalnihZalog">
+                <ScalarProperty Name="StatusNarocilaOptimalnihZalogID" ColumnName="StatusNarocilaOptimalnihZalogID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stranka_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.Stranka_NOZ">
+              <MappingFragment StoreEntitySet="Stranka_NOZ">
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
+                <ScalarProperty Name="TipStrankaID" ColumnName="TipStrankaID" />
+                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
+                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
+                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
+                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
+                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
+                <ScalarProperty Name="TRR" ColumnName="TRR" />
+                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
+                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
+                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
+                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
+                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
+                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
+                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
+                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
+                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
+                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StrankaZaposleni_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.StrankaZaposleni_NOZ">
+              <MappingFragment StoreEntitySet="StrankaZaposleni_NOZ">
+                <ScalarProperty Name="StrankaOsebeID" ColumnName="StrankaOsebeID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="OsebeID" ColumnName="OsebeID" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemEmailMessage_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.SystemEmailMessage_NOZ">
+              <MappingFragment StoreEntitySet="SystemEmailMessage_NOZ">
+                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
+                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="OsebaEmailFromID" ColumnName="OsebaEmailFromID" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemMessageEvents_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.SystemMessageEvents_NOZ">
+              <MappingFragment StoreEntitySet="SystemMessageEvents_NOZ">
+                <ScalarProperty Name="SystemMessageEventsID" ColumnName="SystemMessageEventsID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipStranka_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.TipStranka_NOZ">
+              <MappingFragment StoreEntitySet="TipStranka_NOZ">
+                <ScalarProperty Name="TipStrankaID" ColumnName="TipStrankaID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="tsIDOseba" ColumnName="tsIDOseba" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vloga_NOZ">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.Vloga_NOZ">
+              <MappingFragment StoreEntitySet="Vloga_NOZ">
+                <ScalarProperty Name="VlogaID" ColumnName="VlogaID" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCategoryList" FunctionName="GrafolitNOZModel.Store.GetCategoryList" />
+          <FunctionImportMapping FunctionImportName="GetListOptimalnaZaloga" FunctionName="GrafolitNOZModel.Store.GetListOptimalnaZaloga">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetListOptimalnaZaloga_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
+                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
+                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
+                <ScalarProperty Name="Tek" ColumnName="Tek" />
+                <ScalarProperty Name="Barva" ColumnName="Barva" />
+                <ScalarProperty Name="IDIdent" ColumnName="IDIdent" />
+                <ScalarProperty Name="Kolicina_OPT" ColumnName="Kolicina_OPT" />
+                <ScalarProperty Name="Kolicina_tretjine" ColumnName="Kolicina_tretjine" />
+                <ScalarProperty Name="Max_Kolicina" ColumnName="Max_Kolicina" />
+                <ScalarProperty Name="Min_Narocilo" ColumnName="Min_Narocilo" />
+                <ScalarProperty Name="anStock" ColumnName="anStock" />
+                <ScalarProperty Name="anValue" ColumnName="anValue" />
+                <ScalarProperty Name="VTekuKolicina" ColumnName="VTekuKolicina" />
+                <ScalarProperty Name="VTekuVrednost" ColumnName="VTekuVrednost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetColorListByCategory" FunctionName="GrafolitNOZModel.Store.GetColorListByCategory" />
+          <FunctionImportMapping FunctionImportName="GetProductsByOptimalStockValues" FunctionName="GrafolitNOZModel.Store.GetProductsByOptimalStockValues">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetProductsByOptimalStockValues_Result">
+                <ScalarProperty Name="IDENT" ColumnName="IDENT" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSupplierList" FunctionName="GrafolitNOZModel.Store.GetSupplierList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetSupplierList_Result">
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="NarociloOptimalnihZalog">
+            <EntityTypeMapping TypeName="GrafolitNOZModel.NarociloOptimalnihZalog">
+              <MappingFragment StoreEntitySet="NarociloOptimalnihZalog">
+                <ScalarProperty Name="NarociloOddal" ColumnName="NarociloOddal" />
+                <ScalarProperty Name="PotDokumenta" ColumnName="PotDokumenta" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opombe" ColumnName="Opombe" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="DatumOddaje" ColumnName="DatumOddaje" />
+                <ScalarProperty Name="NarociloID_P" ColumnName="NarociloID_P" />
+                <ScalarProperty Name="NarociloOptimalnihZalogStevilka" ColumnName="NarociloOptimalnihZalogStevilka" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="NarociloOptimalnihZalogID" ColumnName="NarociloOptimalnihZalogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetProductStockByIdent" FunctionName="GrafolitNOZModel.Store.GetProductStockByIdent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetProductStockByIdent_Result">
+                <ScalarProperty Name="acIdent" ColumnName="acIdent" />
+                <ScalarProperty Name="anStock" ColumnName="anStock" />
+                <ScalarProperty Name="anValue" ColumnName="anValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IdentByOPTGroup" FunctionName="GrafolitNOZModel.Store.IdentByOPTGroup">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.IdentByOPTGroup_Result">
+                <ScalarProperty Name="acIdent" ColumnName="acIdent" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProductSalesQtyByGroupID" FunctionName="GrafolitNOZModel.Store.ProductSalesQtyByGroupID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.ProductSalesQtyByGroupID_Result">
+                <ScalarProperty Name="acIdent" ColumnName="acIdent" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetDIMIdentiOPTList" FunctionName="GrafolitNOZModel.Store.GetDIMIdentiOPTList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetDIMIdentiOPTList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
+                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
+                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
+                <ScalarProperty Name="Tek" ColumnName="Tek" />
+                <ScalarProperty Name="Barva" ColumnName="Barva" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DodajPantheonDokument" FunctionName="GrafolitNOZModel.Store.DodajPantheonDokument" />
+          <FunctionImportMapping FunctionImportName="GetPantheonUsersNOZ" FunctionName="GrafolitNOZModel.Store.GetPantheonUsersNOZ">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetPantheonUsersNOZ_Result">
+                <ScalarProperty Name="acSubject" ColumnName="acSubject" />
+                <ScalarProperty Name="acUserId" ColumnName="acUserId" />
+                <ScalarProperty Name="anUserID" ColumnName="anUserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

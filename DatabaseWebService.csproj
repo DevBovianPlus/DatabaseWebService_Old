@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84BF1A48-6493-49FF-A98D-64C45391CA29}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatabaseWebService</RootNamespace>
+    <AssemblyName>DatabaseWebService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\LocalNinjectDependencyResolver.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Common\DataTypesHelper.cs" />
+    <Compile Include="Common\EmailTemplates\TranslationHelper.cs" />
+    <Compile Include="Common\Enums\Enums.cs" />
+    <Compile Include="Common\ExceptionValidationHelper.cs" />
+    <Compile Include="Common\LinqExpressionHelper.cs" />
+    <Compile Include="Common\PropertyCopyHelper.cs" />
+    <Compile Include="Controllers\CashFlowController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ClientNOZController.cs" />
+    <Compile Include="Controllers\ClientPDOController.cs" />
+    <Compile Include="Controllers\ClientOTPController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EmailMessageController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeNOZController.cs" />
+    <Compile Include="Controllers\EmployeePDOController.cs" />
+    <Compile Include="Controllers\EmployeeOTPController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\FinancialControlController.cs" />
+    <Compile Include="Controllers\OptimalStockOrderController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\InquiryController.cs" />
+    <Compile Include="Controllers\OrderPDOController.cs" />
+    <Compile Include="Controllers\RecallController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TenderController.cs" />
+    <Compile Include="DomainDW\Abstract\ICashFlow_SkupnoRepository.cs" />
+    <Compile Include="DomainDW\CashFlow_Skupno.cs">
+      <DependentUpon>DW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainDW\Concrete\CashFlow_SkupnoRepository.cs" />
+    <Compile Include="DomainDW\DW.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DW.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainDW\DW.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainDW\DW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DW.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Abstract\IClientNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\IDashboardNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\IEmployeeNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\IMSSQLNOZFunctionRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\IOptimalStockOrderRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\ISettingsNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\IUserNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\ClientNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\DashboardNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\EmployeeNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\MSSQLNOZFunctionRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\OptimalStockOrderRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\SettingsNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\UserNOZRepository.cs" />
+    <Compile Include="DomainNOZ\GetDIMIdentiOPTList_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetListOptimalnaZaloga_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetPantheonUsersNOZ_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetProductsByOptimalStockValues_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetProductStockByIdent_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetSupplierList_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Grafolit_NOZ.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_NOZ.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Grafolit_NOZ.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Grafolit_NOZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_NOZ.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\IdentByOPTGroup_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\NarociloOptimalnihZalog.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\NarociloOptimalnihZalogPozicija.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Nastavitve_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\OsebeNadrejeni_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Osebe_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\ProductSalesQtyByGroupID_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\StatusNarocilaOptimalnihZalog.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\StrankaZaposleni_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Stranka_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\SystemEmailMessage_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\SystemMessageEvents_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\TipStranka_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\Vloga_NOZ.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Abstract\IClientOTPRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IDashboardRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IEmployeeOTPRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IMSSQLFunctionsRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IOrderRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IRecallRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IRouteRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\ISystemEmailMessageRepository_OTP.cs" />
+    <Compile Include="DomainOTP\Abstract\ISystemMessageEventsRepository_OTP.cs" />
+    <Compile Include="DomainOTP\Abstract\ITenderRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IUserOTPRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IUtilityServiceRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\ClientOTPRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\DashboardRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\EmployeeOTPRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\MSSQLFunctionsRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\OrderRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\RecallRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\RouteRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\SystemEmailMessageRepository_OTP.cs" />
+    <Compile Include="DomainOTP\Concrete\SystemMessageEventsRepository_OTP.cs" />
+    <Compile Include="DomainOTP\Concrete\TenderRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\UserOTPRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\UtilityServiceRepository.cs" />
+    <Compile Include="DomainOTP\GetLastYearRecallCountBySuplierAndRoute_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Grafolit_OTP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_OTP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Grafolit_OTP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Grafolit_OTP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_OTP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Jeziki.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\KontaktneOsebe_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\LastnaZaloga.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Narocilo.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\NarociloPozicija.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Odpoklic.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\OdpoklicPozicija.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\OsebeNadrejeni_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Osebe_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\PrevzemiView.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\PrijavaPrevoznika.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Razpis.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\RazpisPozicija.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Relacija.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SeznamDobaviteljev_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\StatusOdpoklica.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\StrankaZaposleni_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Stranka_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SystemEmailMessage_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SystemMessageEvents_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\TipOdpoklica.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\TipPrevoza.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\TipStranka.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\Vloga_OTP.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Abstract\IDashboardPDORepository.cs" />
+    <Compile Include="DomainPDO\Abstract\IEmployeePDORepository.cs" />
+    <Compile Include="DomainPDO\Abstract\IClientPDORepository.cs" />
+    <Compile Include="DomainPDO\Abstract\IInquiryRepository.cs" />
+    <Compile Include="DomainPDO\Abstract\IMSSQLPDOFunctionRepository.cs" />
+    <Compile Include="DomainPDO\Abstract\IOrderPDORepository.cs" />
+    <Compile Include="DomainPDO\Abstract\ISettingsRepository.cs" />
+    <Compile Include="DomainPDO\Abstract\ISystemEmailMessageRepository_PDO.cs" />
+    <Compile Include="DomainPDO\Abstract\ISystemMessageEventsRepository_PDO.cs" />
+    <Compile Include="DomainPDO\Abstract\IUserPDORepository.cs" />
+    <Compile Include="DomainPDO\Concrete\ClientPDORepository.cs" />
+    <Compile Include="DomainPDO\Concrete\DashboardPDORepository.cs" />
+    <Compile Include="DomainPDO\Concrete\EmployeePDORepository.cs" />
+    <Compile Include="DomainPDO\Concrete\InquiryRepository.cs" />
+    <Compile Include="DomainPDO\Concrete\MSSQLPDOFunctionRepository.cs" />
+    <Compile Include="DomainPDO\Concrete\OrderPDORepository.cs" />
+    <Compile Include="DomainPDO\Concrete\SettingsRepository.cs" />
+    <Compile Include="DomainPDO\Concrete\SystemEmailMessageRepository_PDO.cs" />
+    <Compile Include="DomainPDO\Concrete\SystemMessageEventsRepository_PDO.cs" />
+    <Compile Include="DomainPDO\Concrete\UserPDORepository.cs" />
+    <Compile Include="DomainPDO\GetArtikelByName_Result.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\GetArtikelByName_Result1.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\GetArtikelByName_Result2.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\GetArtikelBySearchStr_Result.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\GetPantheonUsers_Result.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Grafolit_PDO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_PDO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Grafolit_PDO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Grafolit_PDO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grafolit_PDO.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Jeziki.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\KontaktnaOseba_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\NarociloPozicija_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Narocilo_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Nastavitve.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Oddelek.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\OsebeNadrejeni_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Osebe_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Povprasevanje.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\PovprasevanjePozicija.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\PovprasevanjePozicijaArtikel.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\StatusPovprasevanja.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\StrankaZaposleni_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Stranka_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\SystemEmailMessage_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\SystemMessageEvents_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\TipStranka_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\Vloga_PDO.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Abstract\IChartsRepository.cs" />
+    <Compile Include="Domain\Abstract\IClientRepository.cs" />
+    <Compile Include="Domain\Abstract\IEmployeeRankRepository.cs" />
+    <Compile Include="Domain\Abstract\IEmployeeRepository.cs" />
+    <Compile Include="Domain\Abstract\IEventRepository.cs" />
+    <Compile Include="Domain\Abstract\IFinancialControlRepository.cs" />
+    <Compile Include="Domain\Abstract\IPostRepository.cs" />
+    <Compile Include="Domain\Abstract\ISystemEmailMessageRepository.cs" />
+    <Compile Include="Domain\Abstract\ISystemMessageEventsRepository.cs" />
+    <Compile Include="Domain\Abstract\IUserRepository.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Domain\AnalizaProdaje.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalizaProdaje.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\AnalizaProdaje.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\AnalizaProdaje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalizaProdaje.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Avtomatika.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Concrete\ChartsRepository.cs" />
+    <Compile Include="Domain\Concrete\ClientRepository.cs" />
+    <Compile Include="Domain\Concrete\EmployeeRankRepository.cs" />
+    <Compile Include="Domain\Concrete\EmployeeRepository.cs" />
+    <Compile Include="Domain\Concrete\EventRepository.cs" />
+    <Compile Include="Domain\Concrete\FinancialControlRepository.cs" />
+    <Compile Include="Domain\Concrete\PostRepository.cs" />
+    <Compile Include="Domain\Concrete\SystemEmailMessageRepository.cs" />
+    <Compile Include="Domain\Concrete\SystemMessageEventsRepository.cs" />
+    <Compile Include="Domain\Concrete\UserRepository.cs" />
+    <Compile Include="Domain\Dogodek.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DogodekSestanek.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FinancniDashboard.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\IzpisGrafa.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\IzrisGrafa1_Result.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\IzrisGrafa_Result.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Kategorija.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\KontaktneOsebe.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Nadzor.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Naprava.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Osebe.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\OsebeNadrejeni.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\PlanStranka.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Sporocila.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\StatusDogodek.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\StatusNadzora.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Stranka.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\StrankaKategorija.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\StrankaZaposleni.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SystemEmailMessage.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SystemMessageEvents.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Vloga.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ModelsNOZ\DashboardNOZModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\GetProductStockByIdentModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\GetProductsByOptimalStockValuesModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockCalculationFields.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\hlpOptimalStockOrderModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\SumSubCategoryModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockColumnsModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockOrderModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockOrderPositionModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockOrderStatusModel.cs" />
+    <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockTreeHierarchy.cs" />
+    <Compile Include="ModelsNOZ\ProductColor.cs" />
+    <Compile Include="ModelsNOZ\Settings\SettingsNOZModel.cs" />
+    <Compile Include="ModelsOTP\Client\CarrierModel.cs" />
+    <Compile Include="ModelsOTP\CreateOrderModel.cs" />
+    <Compile Include="ModelsOTP\LanguageModelOTP.cs" />
+    <Compile Include="ModelsOTP\LogisticsMailPartialModel.cs" />
+    <Compile Include="ModelsOTP\LogisticsMailModel.cs" />
+    <Compile Include="ModelsOTP\CarrierMailModel.cs" />
+    <Compile Include="ModelsOTP\Client\ClientTransportType.cs" />
+    <Compile Include="ModelsOTP\DashboardDataModel.cs" />
+    <Compile Include="ModelsOTP\RecallApprovalEmailModel.cs" />
+    <Compile Include="ModelsOTP\Recall\CarrierInquiryModel.cs" />
+    <Compile Include="ModelsOTP\Recall\CreateOrderDocument.cs" />
+    <Compile Include="ModelsOTP\Recall\MaterialModel.cs" />
+    <Compile Include="ModelsOTP\Recall\ModelsDW\CashFlow_Skupno\CashFlow_SkupnoModel.cs" />
+    <Compile Include="ModelsOTP\Client\ClientType.cs" />
+    <Compile Include="ModelsOTP\Client\SupplierModel.cs" />
+    <Compile Include="ModelsOTP\Order\OrderModel.cs" />
+    <Compile Include="ModelsOTP\Order\OrderPositionModel.cs" />
+    <Compile Include="ModelsOTP\Order\OrderPositionModelNew.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallFullModel.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallModel.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallPositionModel.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallStatus.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallType.cs" />
+    <Compile Include="ModelsOTP\Route\RouteModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TenderFullModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TenderModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TenderPositionModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TransportCountModel.cs" />
+    <Compile Include="ModelsPDO\DashboardPDOModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\GroupedInquiryPositionsBySupplier.cs" />
+    <Compile Include="ModelsPDO\Inquiry\InquiryFullModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\InquiryModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\InquiryPositionArtikelModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\InquiryPositionModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\InquiryStatusModel.cs" />
+    <Compile Include="ModelsPDO\Inquiry\ProductCategory.cs" />
+    <Compile Include="ModelsPDO\Inquiry\ProductModel.cs" />
+    <Compile Include="ModelsPDO\DepartmentModel.cs" />
+    <Compile Include="ModelsPDO\Order\OrderPDOFullModel.cs" />
+    <Compile Include="ModelsPDO\Order\OrderPDOPositionModel.cs" />
+    <Compile Include="ModelsPDO\Order\InquiryStatus.cs" />
+    <Compile Include="ModelsPDO\LanguageModel.cs" />
+    <Compile Include="ModelsPDO\Settings\PDOEmailModel.cs" />
+    <Compile Include="ModelsPDO\Settings\SettingsModel.cs" />
+    <Compile Include="ModelsPDO\SupplierMailModel.cs" />
+    <Compile Include="Models\AutomaticsModel.cs" />
+    <Compile Include="Models\ChartRenderModel.cs" />
+    <Compile Include="Models\Client\CategorieModel.cs" />
+    <Compile Include="Models\Client\ClientCategorieModel.cs" />
+    <Compile Include="Models\Client\ClientEmployeeModel.cs" />
+    <Compile Include="Models\Client\ClientFullModel.cs" />
+    <Compile Include="Models\Client\ClientSimpleModel.cs" />
+    <Compile Include="Models\Client\ContactPersonModel.cs" />
+    <Compile Include="Models\Client\DevicesModel.cs" />
+    <Compile Include="Models\EmailMessage\EmailMessageModel.cs" />
+    <Compile Include="Models\Employee\EmployeeFullModel.cs" />
+    <Compile Include="Models\Employee\PantheonUsers.cs" />
+    <Compile Include="Models\Employee\RoleModel.cs" />
+    <Compile Include="Models\Event\EventFullModel.cs" />
+    <Compile Include="Models\Event\EventMeetingModel.cs" />
+    <Compile Include="Models\Event\EventSimpleModel.cs" />
+    <Compile Include="Models\ComplexModel.cs" />
+    <Compile Include="Models\Employee\EmployeeSimpleModel.cs" />
+    <Compile Include="Models\EmployeeRankModel.cs" />
+    <Compile Include="Models\Client\PlanModel.cs" />
+    <Compile Include="Models\Event\EventStatusModel.cs" />
+    <Compile Include="Models\Event\MessageModel.cs" />
+    <Compile Include="Models\FinancialControl\FinancialControlModel.cs" />
+    <Compile Include="Models\PostModel.cs" />
+    <Compile Include="Models\ServiceHelpersModels\EventMessageTemplateModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WebResponseContentModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SystemEmailMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemEmailMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationExceptionError.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationExceptionError.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Common\EmailTemplates\CarrierCongratsOrBetterLuckNextTimeMail.html" />
+    <Content Include="Common\EmailTemplates\AdministratorEmail_Odpoklic.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailHRV.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailANG.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailOrderANG.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailOrderHRV.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailOrderSLO.html" />
+    <Content Include="Common\EmailTemplates\SuppliersInquiryForEmployeeMail.html" />
+    <Content Include="Common\EmailTemplates\SupplierMailSLO.html" />
+    <Content Include="Common\EmailTemplates\CarrierMailOrder.html" />
+    <Content Include="Common\EmailTemplates\LogisticsPartialMail.html" />
+    <Content Include="Common\EmailTemplates\LogisticsMail.html" />
+    <Content Include="Common\EmailTemplates\CarrierMail.html" />
+    <Content Include="Common\EmailTemplates\RecallStatusChangedMail.html" />
+    <Content Include="Common\EmailTemplates\ApproveRecallMail.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DomainNOZ\Grafolit_NOZ.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_NOZ.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_NOZ.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainNOZ\Grafolit_NOZ.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_NOZ.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_NOZ.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainPDO\Grafolit_PDO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_PDO.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_PDO.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainPDO\Grafolit_PDO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_PDO.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_PDO.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Domain\AnalizaProdaje.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AnalizaProdaje.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Domain\AnalizaProdaje.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnalizaProdaje.edmx</DependentUpon>
+      <LastGenOutput>AnalizaProdaje.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Domain\AnalizaProdaje.edmx.diagram">
+      <DependentUpon>AnalizaProdaje.edmx</DependentUpon>
+    </Content>
+    <Content Include="Domain\AnalizaProdaje.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnalizaProdaje.edmx</DependentUpon>
+      <LastGenOutput>AnalizaProdaje.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DomainDW\DW.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DW.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DomainDW\DW.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DW.edmx</DependentUpon>
+      <LastGenOutput>DW.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainDW\DW.edmx.diagram">
+      <DependentUpon>DW.edmx</DependentUpon>
+    </Content>
+    <Content Include="DomainDW\DW.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DW.edmx</DependentUpon>
+      <LastGenOutput>DW.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DomainOTP\Grafolit_OTP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Grafolit_OTP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DomainOTP\Grafolit_OTP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_OTP.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_OTP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainOTP\Grafolit_OTP.edmx.diagram">
+      <DependentUpon>Grafolit_OTP.edmx</DependentUpon>
+    </Content>
+    <Content Include="DomainOTP\Grafolit_OTP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Grafolit_OTP.edmx</DependentUpon>
+      <LastGenOutput>Grafolit_OTP.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DomainPDO\Grafolit_PDO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Grafolit_PDO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DomainPDO\Grafolit_PDO.edmx.diagram">
+      <DependentUpon>Grafolit_PDO.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="DomainNOZ\Grafolit_NOZ.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Grafolit_NOZ.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DomainNOZ\Grafolit_NOZ.edmx.diagram">
+      <DependentUpon>Grafolit_NOZ.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\WebServiceAP.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SystemEmailMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemEmailMessageResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationExceptionError.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationExceptionError.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11590</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/DatabaseWebService</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/DatabaseWebService</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

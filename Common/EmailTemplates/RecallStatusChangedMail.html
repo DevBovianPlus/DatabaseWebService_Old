@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .bodyWrap {
+            background-color: #ebebeb;
+            font-family: Corbel;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .logoImage {
+            display: block;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+            .logoImage img {
+                height: 48px;
+                width: 150px;
+            }
+
+        .wrapper {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        .eventData {
+            display: block;
+            margin: 0 auto;
+            width: 90%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .intro {
+            display: block;
+            margin: 0 auto;
+            width: 93%;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .eventDesc {
+            display: block;
+            background-color: ghostwhite;
+            border-radius: 5px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-bottom: 35px;
+        }
+
+            .eventDesc table {
+                width: 90%;
+                border-collapse: collapse;
+                margin: 0 auto;
+                font-size: 14px;
+                padding-bottom: 20px;
+            }
+
+        table th {
+            border-bottom: 1px solid black;
+        }
+
+        .messageDesc {
+            padding-top: 20px;
+            display: block;
+            background-color: ghostwhite;
+            border-radius: 5px;
+            margin-bottom: 40px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .footerGreetings {
+            text-align: left;
+            margin-top: 3px;
+        }
+
+        .mailFooter {
+            display: block;
+            margin: auto;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 10px;
+        }
+
+        .info-footer {
+            font-size: 12px;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .myRowClick {
+            line-height: 30px;
+        }
+
+        .eventBtn {
+            border: 1px solid;
+            padding: 3px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            color: white;
+            background-color: #0072C6;
+        }
+
+            .eventBtn:hover {
+                text-decoration: none;
+                color: black;
+                background-color: white;
+                border-color: white;
+            }
+    </style>
+</head>
+<body>
+    <div class="bodyWrap">
+        <div class="wrapper">
+            <div class="intro">
+                <!--<div class="logoImage"><img src="http://analizaprodaje.bovianplus.si/Images/bovianplus_logo.png" alt="Logo" title="BovianPlusLogo" /></div>-->
+                <h4 style="text-align:left; margin-left:10px; padding-top:10px;">Spoštovani $%FirstName%$ $%Lastname%$</h4>
+
+                <p style="padding-bottom:10px; text-align:left; padding-left:30px">Status odpoklica ($%OdpoklicID%$) je bil spremenjen v :  $%RecallStatus%$</p>
+
+                <div class="eventData">
+                    <div style="text-align:center;">
+                        <a href="$%ServerTagOTP%$">Prijavi se</a>
+                    </div>
+                </div>
+                <div class="info-footer">
+                    <div class="mailFooter">
+                        <!--<p class="footerGreetings">Če imate kakšna vprašanja nas kontaktirajte na: info@bovianplus.si</p>-->
+                        <p class="footerGreetings">Lep pozdrav<br /> Ekipa bovianplus</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div>
+                ©2018 Sistem GrafolitOTP. Vsebina sporočila je zaupna. Sporočilo je bilo poslano na naslov <a href="mailto:$%Email%$" target="_blank">$%Email%$</a>. Če je sporočilo zgrešilo naslovnika, nam to sporočite na <a href="mailto:info@bovianplus.si" target="_blank">info@bovianplus.si</a>.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
