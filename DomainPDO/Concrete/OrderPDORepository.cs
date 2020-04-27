@@ -22,6 +22,7 @@ using System.Xml;
 
 namespace DatabaseWebService.DomainPDO.Concrete
 {
+    // klic na DB
     public class OrderPDORepository : IOrderPDORepository
     {
         GrafolitPDOEntities context;
