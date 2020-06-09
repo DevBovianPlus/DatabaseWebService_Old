@@ -1,6 +1,8 @@
 ﻿using DatabaseWebService.Common;
 using DatabaseWebService.Common.Enums;
+using DatabaseWebService.DomainNOZ;
 using DatabaseWebService.DomainOTP.Abstract;
+using DatabaseWebService.DomainPDO;
 using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
@@ -11,16 +13,21 @@ using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
 using System.Web;
+using static DatabaseWebService.Common.Enums.Enums;
 
 namespace DatabaseWebService.DomainOTP.Concrete
 {
     public class MSSQLFunctionsRepository : IMSSQLFunctionsRepository
     {
         GrafolitOTPEntities context;
+        GrafolitPDOEntities contextPDO;
+        GrafolitNOZEntities contextNOZ;
 
-        public MSSQLFunctionsRepository(GrafolitOTPEntities _context)
+        public MSSQLFunctionsRepository(GrafolitOTPEntities _context, GrafolitPDOEntities _contextPDO, GrafolitNOZEntities _contextNOZ)
         {
             context = _context;
+            contextPDO = _contextPDO;
+            contextNOZ = _contextNOZ;
         }
 
         public List<SupplierModel> GetListOfSupplier()
@@ -60,10 +67,59 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+
+        private List<OrderPositionModelNew> SetApplicationToOrderPosition(List<OrderPositionModelNew> listPositions)
+        {
+            foreach (OrderPositionModelNew itmPos in listPositions)
+            {
+                DataTypesHelper.LogThis("Before PDO naročila");
+                string sOrderNumber = (itmPos.Narocilnica != null && itmPos.Narocilnica.Length > 0) ? itmPos.Narocilnica : "";
+                //DataTypesHelper.LogThis("1");
+                if (sOrderNumber.Length == 0) continue;
+                sOrderNumber = sOrderNumber.Trim().Replace("-", "");
+                //DataTypesHelper.LogThis("2");
+
+                // preverimmo ali je naročilnica med PDO naročili            
+                var queryPDO = from narItm in contextPDO.Narocilo_PDO where narItm.NarociloStevilka_P != null && narItm.NarociloStevilka_P.Trim() == sOrderNumber select narItm;
+
+
+                //DataTypesHelper.LogThis("3");
+                var itmPosPDO = queryPDO.FirstOrDefault();
+                itmPos.TipAplikacije = (itmPosPDO != null) ? Enums.AppType.PDO.ToString() : "";
+                //DataTypesHelper.LogThis("4");
+                if (itmPosPDO != null)
+                {
+                    itmPos.SortGledeNaTipApp = (itmPos.Order_Confirm != null && itmPos.Order_Confirm.Length>0) ? 0 : 1;
+                    continue;
+                }
+                DataTypesHelper.LogThis("Before NOZ naročila");
+                // preverimo ali je med NOZ naročili
+                var queryNOZ = from narItm in contextNOZ.NarociloOptimalnihZalog where narItm.NarociloID_P != null && narItm.NarociloID_P.Trim() == sOrderNumber select narItm;
+                //DataTypesHelper.LogThis("1");
+                var itmPosNOZ = queryNOZ.FirstOrDefault();
+                //DataTypesHelper.LogThis("2");
+                itmPos.TipAplikacije = (itmPosNOZ != null) ? Enums.AppType.NOZ.ToString() : "";
+                if (itmPosNOZ != null)
+                {
+                    itmPos.SortGledeNaTipApp = (itmPos.Order_Confirm != null && itmPos.Order_Confirm.Length > 0) ? 2 : 3;
+                    continue;
+                }
+                //DataTypesHelper.LogThis("3");
+
+                itmPos.SortGledeNaTipApp = 4;
+                //DataTypesHelper.LogThis("4");
+
+            }
+
+            return listPositions;
+        }
+
         public List<OrderPositionModelNew> GetListOfOpenedOrderPositions(string supplier, int clientID = 0)
         {//TODO: pridobimo še vse pozicije iz tabele lastna zaloga če je izbran dobavitelj iz naše tabele stranka_otp i da je tipa SKLADISCE
             try
             {
+                DataTypesHelper.LogThis("GetListOfOpenedOrderPositions for : " + supplier);
+
                 supplier = supplier.Replace("|", "&");
 
                 var query = from np in context.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja(supplier.Trim())
@@ -101,14 +157,21 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     item.tempID = count;
                     count++;
                 }
+                DataTypesHelper.LogThis("count : " + count);
 
                 string kodaPotrjen = Enums.StatusOfRecall.POTRJEN.ToString();
                 int statusPotrjen = context.StatusOdpoklica.Where(so => so.Koda == kodaPotrjen).FirstOrDefault().StatusOdpoklicaID;
 
                 string kodaDelnoPrevzet = Enums.StatusOfRecall.DELNO_PREVZET.ToString();
                 int statusDelnoPrevzet = context.StatusOdpoklica.Where(so => so.Koda == kodaDelnoPrevzet).FirstOrDefault().StatusOdpoklicaID;
-
+                DataTypesHelper.LogThis("Before CheckPositionQuantity");
                 CheckPositionQuantity(list, statusPotrjen, statusDelnoPrevzet);
+                DataTypesHelper.LogThis("After CheckPositionQuantity");
+                // preverimo za katero aplikacijo gre
+                DataTypesHelper.LogThis("Before SetApplicationToOrderPosition");
+                list = SetApplicationToOrderPosition(list);
+                DataTypesHelper.LogThis("After SetApplicationToOrderPosition");
+                list = list.OrderBy(p => p.Datum_Dobave).OrderBy(p1 => p1.SortGledeNaTipApp).ToList();
 
                 #region
                 /*for (int i = list.Count - 1; i >= 0; i--)
@@ -175,7 +238,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     }
                 }*/
                 #endregion
-
+                DataTypesHelper.LogThis("Before clientID : " + clientID.ToString());
                 if (clientID > 0)
                 {
                     var lastnoSkladisce = from ow in context.LastnaZaloga
@@ -220,7 +283,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                     list.AddRange(newList);
                 }
-
+                DataTypesHelper.LogThis("After Client");
                 return list;
             }
             catch (Exception ex)

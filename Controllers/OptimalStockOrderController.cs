@@ -18,11 +18,13 @@ namespace DatabaseWebService.Controllers
     public class OptimalStockOrderController : ApiController
     {
         private IOptimalStockOrderRepository optimalStockOrderRepo;
+        private ISystemEmailMessageRepository_NOZ systemEmailMessage;
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
-        public OptimalStockOrderController(IOptimalStockOrderRepository _optimalStockOrderRepo)
+        public OptimalStockOrderController(IOptimalStockOrderRepository _optimalStockOrderRepo, ISystemEmailMessageRepository_NOZ _systemEmailMessage)
         {
             optimalStockOrderRepo = _optimalStockOrderRepo;
+            systemEmailMessage = _systemEmailMessage;
         }
 
         public WebResponseContentModel<T> ProcessContentModel<T>(WebResponseContentModel<T> model, Exception ex = null)
@@ -137,35 +139,36 @@ namespace DatabaseWebService.Controllers
             return Json(model);
         }
 
-        //[HttpPost]
-        //public IHttpActionResult GetProductsForSelectedOptimalStock(string color, [FromBody]object filteredOptimalStockTreeData)
-        //{
-        //    WebResponseContentModel<List<OptimalStockTreeHierarchy>> model = null;
-        //    try
-        //    {
-        //        model = JsonConvert.DeserializeObject<WebResponseContentModel<List<OptimalStockTreeHierarchy>>>(filteredOptimalStockTreeData.ToString());
+        [HttpPost]
+        public IHttpActionResult UpdateSubCategoriesWithProductsForSelectedNodes(string color, [FromBody]object helperOptimalStock)
+        {
+            WebResponseContentModel<hlpOptimalStockOrderModel> model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<hlpOptimalStockOrderModel>>(helperOptimalStock.ToString());
 
-        //        if (model.Content != null)
-        //        {
-        //            model.Content = optimalStockOrderRepo.GetProductsForSelectedOptimalStock(model.Content, color);
+                if (model.Content != null)
+                {
+                    List<OptimalStockTreeHierarchy> lst = model.Content.SubCategoryWithProducts;
+                    model.Content = optimalStockOrderRepo.UpdateSubCategoriesWithProductsForSelectedNodes(lst, color, model.Content);
 
-        //            model.IsRequestSuccesful = true;
-        //        }
-        //        else
-        //        {
-        //            model.IsRequestSuccesful = false;
-        //            model.ValidationError = ValidationExceptionError.res_09;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        model.IsRequestSuccesful = false;
-        //        model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
-        //        return Json(model);
-        //    }
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
 
-        //    return Json(model);
-        //}
+            return Json(model);
+        }
 
 
         #region Naročilo optimalnih zalog
@@ -473,6 +476,40 @@ namespace DatabaseWebService.Controllers
             }
 
             return Json(tmpUser);
+        }
+
+        #endregion
+
+        #region Pošiljanje Emaila
+
+        [HttpPost]
+        public IHttpActionResult CreateEmailForUserCreateNewCodeForProduct([FromBody]object mailData)
+        {
+            WebResponseContentModel<CreateNewCodeMailModel> model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<CreateNewCodeMailModel>>(mailData.ToString());
+
+                if (model.Content != null)
+                {
+                    systemEmailMessage.CreateEmailForUserCreateNewCodeForProduct(model.Content);
+
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
         }
 
         #endregion

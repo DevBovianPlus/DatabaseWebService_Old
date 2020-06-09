@@ -121,6 +121,7 @@ namespace DatabaseWebService.App_Start
             kernel.Bind<IMSSQLNOZFunctionRepository>().To<MSSQLNOZFunctionRepository>();
             kernel.Bind<IOptimalStockOrderRepository>().To<OptimalStockOrderRepository>();
             kernel.Bind<IDashboardNOZRepository>().To<DashboardNOZRepository>();
+            kernel.Bind<ISystemEmailMessageRepository_NOZ>().To<SystemEmailMessageRepository_NOZ>();
 
         }
     }

@@ -25,6 +25,7 @@ namespace DatabaseWebService.DomainNOZ
         public Nullable<System.DateTime> tsUpdate { get; set; }
         public Nullable<int> tsUpdateUserID { get; set; }
         public string IdentArtikla_P { get; set; }
+        public Nullable<decimal> KolicinaPol { get; set; }
     
         public virtual NarociloOptimalnihZalog NarociloOptimalnihZalog { get; set; }
     }

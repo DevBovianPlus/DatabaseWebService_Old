@@ -156,6 +156,7 @@ namespace DatabaseWebService.Common.Enums
             EMAILTOSUPPLIER_MATERIAL = 19,
             EMAILTOSUPPLIER_KOLICINA = 20,
             EMAILTOSUPPLIER_OPOMBE = 21,
+            EMAILTOSUPPLIER_THANKANDGREETING = 22,
 
         }
 
@@ -187,6 +188,12 @@ namespace DatabaseWebService.Common.Enums
             USTVARJENO_NAROCILO,
             ODDANO,
             KOPIRANO_NAROCILO
+        }
+
+        public enum AppType
+        {
+            PDO,
+            NOZ            
         }
     }
 }

@@ -177,6 +177,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
         {
             try
             {
+                DataTypesHelper.LogThis("Start - SaveTender");
+
                 Razpis tender = new Razpis();
                 tender.CenaSkupaj = model.CenaSkupaj;
                 tender.DatumRazpisa = model.DatumRazpisa;
@@ -206,6 +208,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
             catch (Exception ex)
             {
+                DataTypesHelper.LogThis(ex.Message);
                 throw new Exception(ValidationExceptionError.res_08, ex);
             }
         }
@@ -311,10 +314,15 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        
+
         public void SaveTenderPositions(List<TenderPositionModel> positions, int tenderID)
         {
             try
             {
+                
+                DataTypesHelper.LogThis(DateTime.Now.ToString());
+
                 int cnt = 0;
 
                 foreach (var item in positions)
@@ -337,7 +345,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                         //Nastavimo polje PrevoznikAktualnaCena na true ker je ta zadnja cena za tega prevoznika s to relacijo
                         tenderPos.PrevoznikAktualnaCena = true;
                         //Nastavimo vse prejšnje pozicije razpisa z enakim prevoznikom in relacijo polje PrevoznikAktualnaCena na false
-                        context.RazpisPozicija.Where(rp => rp.StrankaID == item.StrankaID && rp.RelacijaID == item.RelacijaID).ToList().ForEach(rp => rp.PrevoznikAktualnaCena = false);
+                        //context.RazpisPozicija.Where(rp => rp.StrankaID == item.StrankaID && rp.RelacijaID == item.RelacijaID).ToList().ForEach(rp => rp.PrevoznikAktualnaCena = false);
                         context.RazpisPozicija.Add(tenderPos);
                     }
                     else
@@ -349,7 +357,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 var tender = context.Razpis.Where(t => t.RazpisID == tenderID).FirstOrDefault();
                 tender.RazpisKreiran = true;
-
+                DataTypesHelper.LogThis(DateTime.Now.ToString());
                 context.SaveChanges();
             }
             catch (Exception ex)

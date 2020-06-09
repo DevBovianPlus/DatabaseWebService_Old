@@ -9,6 +9,7 @@ using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -295,6 +296,84 @@ namespace DatabaseWebService.DomainPDO.Concrete
             catch (Exception ex)
             {
                 throw new Exception("Method SaveToSystemEmailMessage ERROR: " + ex);
+            }
+        }
+
+        public void SaveSystemEmailMessage(PDOEmailModel model, bool updateRecord = true, bool createCopy = false)
+        {
+            try
+            {
+                SystemEmailMessage_PDO m = new SystemEmailMessage_PDO();
+                m.EmailBody = model.EmailBody;
+                m.EmailFrom = model.EmailFrom;
+                m.EmailSubject = model.EmailSubject;
+                m.EmailTo = model.EmailTo;
+                m.Status = createCopy ?  0 : model.EmailStatus;
+                m.tsUpdate = DateTime.Now;
+                m.tsUpdateUserID = model.tsUpdateUserID;
+                m.ts = model.ts.Equals(DateTime.MinValue) ? (DateTime?)null : model.ts;
+                m.tsIDOsebe = model.tsIDOsebe;
+
+
+                var existingItem = context.SystemEmailMessage_PDO.Where(mes => mes.SystemEmailMessageID == model.SystemEmailMessageID).FirstOrDefault();
+                if (existingItem != null)
+                {
+                    m.Attachments = existingItem.Attachments;
+                    m.CCEmails = existingItem.CCEmails;
+                    m.OsebaEmailFromID = existingItem.OsebaEmailFromID;
+                    m.SystemEmailMessageID = createCopy ? 0 : existingItem.SystemEmailMessageID;
+                    m.MasterMailID = existingItem.SystemEmailMessageID;
+                }
+
+                if (m.SystemEmailMessageID == 0)
+                {
+                    m.ts = DateTime.Now;
+                    m.tsIDOsebe = model.tsIDOsebe;
+
+                    context.SystemEmailMessage_PDO.Add(m);
+                }
+                else
+                {
+                    if (updateRecord)
+                    {
+                        SystemEmailMessage_PDO original = context.SystemEmailMessage_PDO.Where(mes => mes.SystemEmailMessageID == m.SystemEmailMessageID).FirstOrDefault();
+                        context.Entry(original).CurrentValues.SetValues(m);
+                    }
+                }
+
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_08, ex);
+            }
+        }
+
+        public PDOEmailModel GetMailByID(int mailID)
+        {
+            try
+            {
+                var query = from mail in context.SystemEmailMessage_PDO
+                            where mail.SystemEmailMessageID == mailID
+                            select new PDOEmailModel
+                            {
+                                SystemEmailMessageID = mail.SystemEmailMessageID,
+                                EmailBody = mail.EmailBody,
+                                EmailFrom = mail.EmailFrom,
+                                EmailStatus = mail.Status.HasValue ? mail.Status.Value : -1,
+                                EmailSubject = mail.EmailSubject,
+                                EmailTo = mail.EmailTo,
+                                ts = mail.ts.HasValue ? mail.ts.Value : DateTime.MinValue,
+                                tsIDOsebe = mail.tsIDOsebe.HasValue ? mail.tsIDOsebe.Value : 0,
+                                tsUpdate = mail.tsUpdate.HasValue ? mail.tsUpdate.Value : DateTime.MinValue,
+                                tsUpdateUserID = mail.tsUpdateUserID.HasValue ? mail.tsUpdateUserID.Value : 0,
+                            };
+
+                return query.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_08, ex);
             }
         }
     }

@@ -18,7 +18,8 @@ namespace DatabaseWebService.ModelsNOZ.OptimalStockOrder
         public string Pefc { get; set; }
         public string Fsc { get; set; }
         public decimal VsotaZaloge { get; set; }
-
+        public decimal VsotaLetneProdaje { get; set; }
+        public string NazivPodKategorijeFilter { get; set; }
         public List<GetProductsByOptimalStockValuesModel> ChildProducts { get; set; }
     }
 }

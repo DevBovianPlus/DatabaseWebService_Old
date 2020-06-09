@@ -74,7 +74,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     emailConstruct.Status = (int)Enums.SystemEmailMessageStatus.UnProcessed;
                     emailConstruct.ts = DateTime.Now;
                     emailConstruct.tsIDOsebe = userID.HasValue ? userID.Value : 0;
-                    emailConstruct.CCEmails = CCEmails;
+                    emailConstruct.CCEmails = CCEmails;                    
 
                     emailConstruct.OsebaEmailFromID = submitedInquiryByEmployeeID != null ? submitedInquiryByEmployeeID.idOsebe : (int?)null;
 
@@ -92,11 +92,13 @@ namespace DatabaseWebService.DomainPDO.Concrete
                         emailConstruct.EmailSubject += " - Sporočilo za nadrejenega";
                     }
 
-                    if (attachments.Length > 0)
+                    if (attachments != null)
                     {
-                        emailConstruct.Attachments = attachments;
+                        if (attachments.Length > 0)
+                        {
+                            emailConstruct.Attachments = attachments;
+                        }
                     }
-
                     context.SystemEmailMessage_PDO.Add(emailConstruct);
                 }
 
@@ -149,66 +151,62 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     {
                         string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["SUPPLIER_MAIL"].ToString()).Replace("\"", "\\");
 
-                        string[] split = item.SelectedContactPersonsEmails.Split(';');
 
-                        if (split.Length > 0)
+                        if (!String.IsNullOrEmpty(item.SelectedContactPersonsEmails))//TODO: kaj pa če ima stranka vpisanih več mail-ov
                         {
-                            foreach (string sContactEmail in split)
+
+                            string langStr = (item.Supplier.JezikID > 0) ? item.Supplier.Jezik.Koda : Language.SLO.ToString();
+                            Language enLanguage = (Language)(Enum.Parse(typeof(Language), langStr));
+
+                            templatePath = templatePath.Replace("XXX", langStr);
+
+                            message = new SupplierMailModel();
+
+
+                            message.BodyText = item.EmailBody;
+                            message.SupplierName = item.Supplier.NazivPrvi;
+                            message.Email = item.Supplier.Email;
+                            message.CCEmails = item.SelectedGrafolitPersonsEmails;                            
+                            message.Signature = inquirySubmittedByEmployee.Podpis;
+                            message.InquiryNumber = StevilkaPovprasevanja;
+
+                            message.ThanksAndGreeting = TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_THANKANDGREETING);
+
+
+                            //Dodamo pozicije povpraševanja v html šablono
+                            if (item.InquiryPositionsArtikel != null && item.InquiryPositionsArtikel.Count() > 0)
                             {
-                                if (!String.IsNullOrEmpty(sContactEmail))//TODO: kaj pa če ima stranka vpisanih več mail-ov
+                                message.ListOfPositions = "<thead><tr><th style=\"text-align:left; border:1px solid;  padding: 10px;\">" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_MATERIAL) + "</th><th style=\"text-align:center; border:1px solid;  padding: 10px;\">" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_KOLICINA) + "</th><th style=\"text-align:center; border:1px solid;  padding: 10px;\">" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_OPOMBE) + "</th></tr></thead>";
+                                foreach (var productPos in item.InquiryPositionsArtikel)
                                 {
+                                    string sKolicina = productPos.Kolicina1.ToString("N2") + " " + productPos.EnotaMere1 + ((productPos.EnotaMere2 != null && productPos.EnotaMere2.Length > 0) ? " (" + productPos.Kolicina2.ToString("N2") + " " + productPos.EnotaMere2 + ")" : "");
+                                    string row = "<tr>";
+                                    row += "<td style=\"text-align:left; border:1px solid;  padding: 10px;\">" + productPos.Naziv + "</td>";
+                                    row += "<td style=\"text-align:center; border:1px solid;  padding: 10px;\">" + sKolicina + "</td>";
+                                    row += "<td style=\"text-align:center; border:1px solid;  padding: 10px;\">" + productPos.OpombaNarocilnica + "</td>";
+                                    row += "</tr>";
 
-                                    string langStr = (item.Supplier.JezikID > 0) ? item.Supplier.Jezik.Koda : Language.SLO.ToString();
-                                    Language enLanguage = (Language)(Enum.Parse(typeof(Language), langStr));
-
-                                    templatePath = templatePath.Replace("XXX", langStr);
-
-                                    message = new SupplierMailModel();
-
-
-                                    message.BodyText = item.EmailBody;
-                                    message.SupplierName = item.Supplier.NazivPrvi;
-                                    message.Email = item.Supplier.Email;
-                                    message.CCEmails = item.SelectedGrafolitPersonsEmails;
-                                    message.Signature = inquirySubmittedByEmployee.Podpis;
-                                    message.InquiryNumber = StevilkaPovprasevanja;
-                                    
-
-                                    //Dodamo pozicije povpraševanja v html šablono
-                                    if (item.InquiryPositionsArtikel != null && item.InquiryPositionsArtikel.Count() > 0)
-                                    {
-                                        message.ListOfPositions = "<thead><tr><th>" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_MATERIAL) + "</th><th>" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_KOLICINA) + "</th><th>" + TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_OPOMBE) + "</th></tr></thead>";
-                                        foreach (var productPos in item.InquiryPositionsArtikel)
-                                        {
-                                            string row = "<tr>";
-                                            row += "<td>" + productPos.Naziv + "</td>";
-                                            row += "<td>" + productPos.Kolicina1.ToString("N2") + "</td>";
-                                            row += "<td>" + productPos.Opombe + "</td>";
-                                            row += "<td>";
-                                            row += "</tr>";
-
-                                            message.ListOfPositions += row;
-                                        }
-                                    }
-
-                                    SetLanguageContentEmail(message, langStr);
-
-                                    message.SubjectText = "(" + StevilkaPovprasevanja + ") " + message.SubjectText;
-
-                                    modelForEmployees.ListOfSuppliers += "<li>" + message.SupplierName + "</li>";
-                                    modelForEmployees.Reports += item.ReportFilePath + ";";
-
-                                    reader = new StreamReader(templatePath);
-                                    string templateString = reader.ReadToEnd();
-                                    templateString = ReplaceDefaultValuesInTemplate(message, templateString);
-
-                                    SaveToSystemEmailMessage(sContactEmail, templateString, null, 1, message.SubjectText, item.ReportFilePath, inquirySubmittedByEmployee, message.CCEmails);
-
-                                    if (item.InquiryPositionsArtikel.Count() > 0)
-                                        inquiryPositionID = item.InquiryPositionsArtikel.FirstOrDefault().PovprasevanjePozicijaID;
+                                    message.ListOfPositions += row;
                                 }
                             }
+
+                            SetLanguageContentEmail(message, langStr);
+
+                            message.SubjectText = "(" + StevilkaPovprasevanja + ") " + message.SubjectText;
+
+                            modelForEmployees.ListOfSuppliers += "<li>" + message.SupplierName + "</li>";
+                            modelForEmployees.Reports += item.ReportFilePath + ";";
+
+                            reader = new StreamReader(templatePath);
+                            string templateString = reader.ReadToEnd();
+                            templateString = ReplaceDefaultValuesInTemplate(message, templateString);
+
+                            SaveToSystemEmailMessage(item.SelectedContactPersonsEmails, templateString, null, 1, message.SubjectText, item.ReportFilePath, inquirySubmittedByEmployee, message.CCEmails);
+
+                            if (item.InquiryPositionsArtikel.Count() > 0)
+                                inquiryPositionID = item.InquiryPositionsArtikel.FirstOrDefault().PovprasevanjePozicijaID;
                         }
+
 
 
                         //else
@@ -249,7 +247,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     string templateString = reader.ReadToEnd();
                     templateString = ReplaceDefaultValuesInTemplate(model, templateString);
                     emailSubject = "(" + StevilkaPovprasevanja + ") " + emailSubject;
-                    SaveToSystemEmailMessage(model.Email, templateString, null, 1, emailSubject, model.Reports);
+                    SaveToSystemEmailMessage(model.Email, templateString, null, 1, emailSubject, model.Reports, inquirySubmittedByEmployee);
                 }
                 else
                 {

@@ -11,11 +11,9 @@ namespace DatabaseWebService.DomainNOZ
 {
     using System;
     
-    public partial class GetProductsByOptimalStockValues_Result
+    public partial class GetSupplierListByNameLike_Result
     {
-        public string IDENT { get; set; }
-        public string NAZIV { get; set; }
-        public string DOBAVITELJ { get; set; }
-        public Nullable<System.DateTime> DATUMZAP { get; set; }
+        public string Dobavitelj { get; set; }
+        public string Drzava { get; set; }
     }
 }

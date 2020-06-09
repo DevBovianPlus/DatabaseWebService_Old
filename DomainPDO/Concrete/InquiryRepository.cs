@@ -1093,6 +1093,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     pp.Artikli = item.Artikli;
                     pp.Opomba = item.Opomba;
                     pp.PotDokumenta = item.PotDokumenta;
+                    if (cpyInquery) pp.PotDokumenta = "";
                     pp.EmailBody = item.EmailBody;
                     pp.KupecViden = item.KupecViden;
                     pp.tsUpdate = DateTime.Now;
@@ -1720,17 +1721,21 @@ namespace DatabaseWebService.DomainPDO.Concrete
             foreach (GroupedInquiryPositionsBySupplier item in InquiryPositionsGroupedBySupplier)
             {
                 sEmails = "";
+                if (isObvesceneOsebe && item.SelectedGrafolitPersons == null) return;
                 sListEmails = (isObvesceneOsebe ? item.SelectedGrafolitPersons : item.SelectedContactPersons);
 
                 //string[] split = item.SelectedContactPersons.Split(';');
+                sListEmails = sListEmails.Replace("\t", " ");
                 string[] split = sListEmails.Split(';');
-
+                
                 if (split.Length > 0)
                 {
                     foreach (string sContactName in split)
                     {
                         string sEmail = "";
+                        
                         var obj = context.KontaktnaOseba_PDO.Where(ppd => ppd.Naziv == sContactName).FirstOrDefault();
+                        if (obj == null) continue;
                         sEmail = obj.Email;
                         if (Common.DataTypesHelper.IsValidEmail(sEmail))
                             sEmails += obj.Email + ";";

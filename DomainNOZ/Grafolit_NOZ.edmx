@@ -40,6 +40,7 @@
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="tsUpdate" Type="datetime" />
           <Property Name="tsUpdateUserID" Type="int" />
+          <Property Name="KolicinaPol" Type="decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="Nastavitve_NOZ">
           <Key>
@@ -361,7 +362,7 @@
           <ReturnType>
             <CollectionType>
               <RowType>
-                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" Nullable="false" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -391,12 +392,22 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="GetLastSupplierByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SuppName" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="GetListOptimalnaZaloga" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
             <CollectionType>
               <RowType>
                 <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="Kategorija" Type="varchar" MaxLength="10" Nullable="false" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" Nullable="false" />
                 <Property Name="Gloss" Type="varchar" MaxLength="9" Nullable="false" />
                 <Property Name="Gramatura" Type="varchar" MaxLength="4" Nullable="false" />
                 <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
@@ -439,6 +450,7 @@
                 <Property Name="IDENT" Type="char" MaxLength="16" Nullable="false" />
                 <Property Name="NAZIV" Type="varchar" MaxLength="80" />
                 <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+                <Property Name="DATUMZAP" Type="datetime" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -456,6 +468,17 @@
           </ReturnType>
         </Function>
         <Function Name="GetSupplierList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" Nullable="false" />
+                <Property Name="Drzava" Type="varchar" MaxLength="20" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetSupplierListByNameLike" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SuppName" Type="varchar" Mode="In" />
           <ReturnType>
             <CollectionType>
               <RowType>
@@ -568,6 +591,7 @@
           <Property Name="tsUpdateUserID" Type="Int32" />
           <Property Name="IdentArtikla_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NarociloOptimalnihZalog" Relationship="GrafolitNOZModel.FK_PovprasevanjeID" FromRole="NarociloOptimalnihZalogPozicija" ToRole="NarociloOptimalnihZalog" />
+          <Property Name="KolicinaPol" Type="Decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="Nastavitve_NOZ">
           <Key>
@@ -887,14 +911,6 @@
           <FunctionImport Name="GetColorListByCategory" IsComposable="true" ReturnType="Collection(String)">
           <Parameter Name="CategoryStr" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetProductsByOptimalStockValues" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetProductsByOptimalStockValues_Result)">
-            <Parameter Name="Kategorija" Mode="In" Type="String" />
-            <Parameter Name="Gloss" Mode="In" Type="String" />
-            <Parameter Name="Gramatura" Mode="In" Type="String" />
-            <Parameter Name="Velikost" Mode="In" Type="String" />
-            <Parameter Name="Tek" Mode="In" Type="String" />
-            <Parameter Name="Barva" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="GetSupplierList" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetSupplierList_Result)" />
           <EntitySet Name="NarociloOptimalnihZalog" EntityType="GrafolitNOZModel.NarociloOptimalnihZalog" />
           <AssociationSet Name="FK_Employee_OsebaID" Association="GrafolitNOZModel.FK_Employee_OsebaID">
@@ -927,7 +943,21 @@
             <Parameter Name="p_cKey" Mode="InOut" Type="String" />
             <Parameter Name="p_cError" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetPantheonUsersNOZ" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetPantheonUsersNOZ_Result)" />             
+          <FunctionImport Name="GetPantheonUsersNOZ" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetPantheonUsersNOZ_Result)" />
+          <FunctionImport Name="GetProductsByOptimalStockValues" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetProductsByOptimalStockValues_Result)">
+            <Parameter Name="Kategorija" Mode="In" Type="String" />
+            <Parameter Name="Gloss" Mode="In" Type="String" />
+            <Parameter Name="Gramatura" Mode="In" Type="String" />
+            <Parameter Name="Velikost" Mode="In" Type="String" />
+            <Parameter Name="Tek" Mode="In" Type="String" />
+            <Parameter Name="Barva" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetLastSupplierByName" IsComposable="true" ReturnType="Collection(String)">
+          <Parameter Name="SuppName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetSupplierListByNameLike" IsComposable="true" ReturnType="Collection(GrafolitNOZModel.GetSupplierListByNameLike_Result)">
+            <Parameter Name="SuppName" Mode="In" Type="String" />
+          </FunctionImport>             
         </EntityContainer>
         <ComplexType Name="GetListOptimalnaZaloga_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -946,12 +976,7 @@
           <Property Type="Decimal" Name="anValue" Nullable="true" Precision="18" Scale="2" />
           <Property Type="Int32" Name="VTekuKolicina" Nullable="true" />
           <Property Type="Decimal" Name="VTekuVrednost" Nullable="true" Precision="18" Scale="2" />
-        </ComplexType>
-        <ComplexType Name="GetProductsByOptimalStockValues_Result">
-          <Property Type="String" Name="IDENT" Nullable="false" MaxLength="16" />
-          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
-        </ComplexType>
+        </ComplexType>       
         <ComplexType Name="GetSupplierList_Result">
           <Property Type="String" Name="Dobavitelj" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="Drzava" Nullable="true" MaxLength="20" />
@@ -1058,6 +1083,16 @@
           <Property Type="String" Name="acSubject" Nullable="true" MaxLength="61" />
           <Property Type="String" Name="acUserId" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="anUserID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetProductsByOptimalStockValues_Result">
+          <Property Type="String" Name="IDENT" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="DATUMZAP" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetSupplierListByNameLike_Result">
+          <Property Type="String" Name="Dobavitelj" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Drzava" Nullable="true" MaxLength="20" />
         </ComplexType>       
        
       </Schema>
@@ -1069,6 +1104,7 @@
           <EntitySetMapping Name="NarociloOptimalnihZalogPozicija">
             <EntityTypeMapping TypeName="GrafolitNOZModel.NarociloOptimalnihZalogPozicija">
               <MappingFragment StoreEntitySet="NarociloOptimalnihZalogPozicija">
+                <ScalarProperty Name="KolicinaPol" ColumnName="KolicinaPol" />
                 <ScalarProperty Name="IdentArtikla_P" ColumnName="IdentArtikla_P" />
                 <ScalarProperty Name="NarociloOptimalnihZalogPozicijaID" ColumnName="NarociloOptimalnihZalogPozicijaID" />
                 <ScalarProperty Name="NarociloOptimalnihZalogID" ColumnName="NarociloOptimalnihZalogID" />
@@ -1289,15 +1325,6 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetColorListByCategory" FunctionName="GrafolitNOZModel.Store.GetColorListByCategory" />
-          <FunctionImportMapping FunctionImportName="GetProductsByOptimalStockValues" FunctionName="GrafolitNOZModel.Store.GetProductsByOptimalStockValues">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetProductsByOptimalStockValues_Result">
-                <ScalarProperty Name="IDENT" ColumnName="IDENT" />
-                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
-                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetSupplierList" FunctionName="GrafolitNOZModel.Store.GetSupplierList">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GrafolitNOZModel.GetSupplierList_Result">
@@ -1376,6 +1403,25 @@
                 <ScalarProperty Name="acSubject" ColumnName="acSubject" />
                 <ScalarProperty Name="acUserId" ColumnName="acUserId" />
                 <ScalarProperty Name="anUserID" ColumnName="anUserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProductsByOptimalStockValues" FunctionName="GrafolitNOZModel.Store.GetProductsByOptimalStockValues">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetProductsByOptimalStockValues_Result">
+                <ScalarProperty Name="IDENT" ColumnName="IDENT" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+                <ScalarProperty Name="DATUMZAP" ColumnName="DATUMZAP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetLastSupplierByName" FunctionName="GrafolitNOZModel.Store.GetLastSupplierByName" />
+          <FunctionImportMapping FunctionImportName="GetSupplierListByNameLike" FunctionName="GrafolitNOZModel.Store.GetSupplierListByNameLike">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitNOZModel.GetSupplierListByNameLike_Result">
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -27,6 +27,8 @@ namespace DatabaseWebService.DomainPDO
         public Nullable<int> OsebaEmailFromID { get; set; }
         public string Attachments { get; set; }
         public string CCEmails { get; set; }
+        public string TOEmails { get; set; }
+        public Nullable<int> MasterMailID { get; set; }
     
         public virtual Osebe_PDO Osebe_PDO { get; set; }
     }

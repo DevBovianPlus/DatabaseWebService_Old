@@ -31,6 +31,7 @@ namespace DatabaseWebService.DomainNOZ.Abstract
         List<ProductColor> GetColorListByCategory(string category);
 
         hlpOptimalStockOrderModel GetProductsForSelectedOptimalStock(List<OptimalStockTreeHierarchy> list, string color, hlpOptimalStockOrderModel hlpOptimalStock);
+        hlpOptimalStockOrderModel UpdateSubCategoriesWithProductsForSelectedNodes(List<OptimalStockTreeHierarchy> list, string color, hlpOptimalStockOrderModel hlpOptimalStock);
 
         OptimalStockOrderStatusModel GetOptimalStockStatusByID(int id);
         List<OptimalStockOrderStatusModel> GetOptimalStockStatuses();

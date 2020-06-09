@@ -26,5 +26,7 @@ namespace DatabaseWebService.DomainNOZ.Abstract
         List<GetProductsByOptimalStockValuesModel> GetProductSalesQtyByGroupID(int GroupID);
         CreateOrderDocument GetOrderDocumentData(string OrderDocXML);
         List<PantheonUsers> GetPantheonUsers();
+        string GetLastSupplierByName(string SupplierName);
+        List<ClientSimpleModel> GetSupplierListByNameLike(string SupplierName);
     }
 }

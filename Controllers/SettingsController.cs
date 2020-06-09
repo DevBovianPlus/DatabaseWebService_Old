@@ -19,15 +19,17 @@ namespace DatabaseWebService.Controllers
     {
         private ISettingsRepository settingsRepo;
         private ISystemEmailMessageRepository_PDO mailsRepo;
+        private ISystemEmailMessageRepository_NOZ NOZmailsRepo;
 
         private ISettingsNOZRepository settingsNOZRepo;
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
 
-        public SettingsController(ISettingsRepository isettingsRepo, ISystemEmailMessageRepository_PDO ImailsRepo, ISettingsNOZRepository IsettingsNOZRepo)
+        public SettingsController(ISettingsRepository isettingsRepo, ISystemEmailMessageRepository_PDO ImailsRepo, ISettingsNOZRepository IsettingsNOZRepo, ISystemEmailMessageRepository_NOZ ImailsNOZRepo)
         {
             settingsRepo = isettingsRepo;
             mailsRepo = ImailsRepo;
+            NOZmailsRepo = ImailsNOZRepo;
             settingsNOZRepo = IsettingsNOZRepo;
         }
 
@@ -152,7 +154,98 @@ namespace DatabaseWebService.Controllers
             return Json(model);
         }
 
+        [HttpGet]
+        public IHttpActionResult CreateMailCopy(int mailID)
+        {
+            WebResponseContentModel<bool> tmpUser = new WebResponseContentModel<bool>();
+            Del<bool> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                var mail = mailsRepo.GetMailByID(mailID);
+                if (mail != null) mail.EmailStatus = 0;
+                mailsRepo.SaveSystemEmailMessage(mail, false, true);
+                tmpUser.Content = true;
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpPost]
+        public IHttpActionResult CreateMailCopy([FromBody]object mailData)
+        {
+            WebResponseContentModel<PDOEmailModel> model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<PDOEmailModel>>(mailData.ToString());
+
+                if (model.Content != null)
+                {
+                    mailsRepo.SaveSystemEmailMessage(model.Content, false, true);
+
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetMailByID(int mailID)
+        {
+            WebResponseContentModel<PDOEmailModel> tmpUser = new WebResponseContentModel<PDOEmailModel>();
+            Del<PDOEmailModel> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = mailsRepo.GetMailByID(mailID);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
         #region Grafolit_NOZ
+
+        [HttpGet]
+        public IHttpActionResult GetAllEmailsNOZ()
+        {
+            WebResponseContentModel<List<NOZEmailModel>> tmpUser = new WebResponseContentModel<List<NOZEmailModel>>();
+            Del<List<NOZEmailModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = NOZmailsRepo.GetAllEmailsNOZ();
+
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
 
         [HttpGet]
         public IHttpActionResult GetAppNOZSettings()

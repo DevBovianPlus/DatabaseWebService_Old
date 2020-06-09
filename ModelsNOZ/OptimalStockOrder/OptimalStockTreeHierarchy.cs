@@ -20,6 +20,8 @@ namespace DatabaseWebService.ModelsNOZ.OptimalStockOrder
         public decimal VsotaZalNarKolicnikOpt { get; set; }// Z + N / O
         public decimal KolicinaNarocilo { get; set; }// količina, ki jo bomo naročili
         public string NazivPodkategorije { get; set; }
+        public string NazivPodkategorijeFilter { get; set; }
+        public string Gloss { get; set; }
 
         public OptimalStockTreeHierarchy Parent { get; set; }
         public List<OptimalStockTreeHierarchy> Child { get; set; }

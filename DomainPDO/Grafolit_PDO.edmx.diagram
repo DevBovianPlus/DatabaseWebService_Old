@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="GrafolitPDOModel.OsebeNadrejeni_PDO" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GrafolitPDOModel.StatusPovprasevanja" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="GrafolitPDOModel.StrankaZaposleni_PDO" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="GrafolitPDOModel.SystemEmailMessage_PDO" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GrafolitPDOModel.SystemMessageEvents_PDO" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GrafolitPDOModel.TipStranka_PDO" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="GrafolitPDOModel.Vloga_PDO" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
@@ -18,7 +17,6 @@
         <AssociationConnector Association="GrafolitPDOModel.FK_OsebeID" ManuallyRouted="false" />
         <AssociationConnector Association="GrafolitPDOModel.FK_VlogaID" ManuallyRouted="false" />
         <EntityTypeShape EntityType="GrafolitPDOModel.Nastavitve" Width="1.5" PointX="10.375" PointY="11.75" />
-        <AssociationConnector Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" />
         <EntityTypeShape EntityType="GrafolitPDOModel.Jeziki" Width="1.5" PointX="5.375" PointY="0.875" />
         <EntityTypeShape EntityType="GrafolitPDOModel.Oddelek" Width="1.5" PointX="5.375" PointY="3.875" />
         <EntityTypeShape EntityType="GrafolitPDOModel.KontaktnaOseba_PDO" Width="1.5" PointX="5.25" PointY="8.75" />
@@ -47,6 +45,8 @@
         <AssociationConnector Association="GrafolitPDOModel.FK_PovprasevanjeID" />
         <AssociationConnector Association="GrafolitPDOModel.FK_StatusID" />
         <AssociationConnector Association="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" />
+        <EntityTypeShape EntityType="GrafolitPDOModel.SystemEmailMessage_PDO" Width="1.5" PointX="5.25" PointY="22.25" />
+        <AssociationConnector Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

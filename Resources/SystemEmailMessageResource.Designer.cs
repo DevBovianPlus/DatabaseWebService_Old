@@ -257,5 +257,14 @@ namespace DatabaseWebService.Resources {
                 return ResourceManager.GetString("res_22", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obvestilo o potrebnem odprtju nove šifre.
+        /// </summary>
+        public static string res_23 {
+            get {
+                return ResourceManager.GetString("res_23", resourceCulture);
+            }
+        }
     }
 }

@@ -259,6 +259,7 @@
     <Compile Include="DomainNOZ\Abstract\IMSSQLNOZFunctionRepository.cs" />
     <Compile Include="DomainNOZ\Abstract\IOptimalStockOrderRepository.cs" />
     <Compile Include="DomainNOZ\Abstract\ISettingsNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Abstract\ISystemEmailMessageRepository_NOZ.cs" />
     <Compile Include="DomainNOZ\Abstract\IUserNOZRepository.cs" />
     <Compile Include="DomainNOZ\Concrete\ClientNOZRepository.cs" />
     <Compile Include="DomainNOZ\Concrete\DashboardNOZRepository.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="DomainNOZ\Concrete\MSSQLNOZFunctionRepository.cs" />
     <Compile Include="DomainNOZ\Concrete\OptimalStockOrderRepository.cs" />
     <Compile Include="DomainNOZ\Concrete\SettingsNOZRepository.cs" />
+    <Compile Include="DomainNOZ\Concrete\SystemEmailMessageRepository_NOZ.cs" />
     <Compile Include="DomainNOZ\Concrete\UserNOZRepository.cs" />
     <Compile Include="DomainNOZ\GetDIMIdentiOPTList_Result.cs">
       <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
@@ -280,6 +282,9 @@
       <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainNOZ\GetProductStockByIdent_Result.cs">
+      <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainNOZ\GetSupplierListByNameLike_Result.cs">
       <DependentUpon>Grafolit_NOZ.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainNOZ\GetSupplierList_Result.cs">
@@ -672,6 +677,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsNOZ\CreateNewCodeMailModel.cs" />
     <Compile Include="ModelsNOZ\DashboardNOZModel.cs" />
     <Compile Include="ModelsNOZ\OptimalStockOrder\GetProductStockByIdentModel.cs" />
     <Compile Include="ModelsNOZ\OptimalStockOrder\GetProductsByOptimalStockValuesModel.cs" />
@@ -684,6 +690,7 @@
     <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockOrderStatusModel.cs" />
     <Compile Include="ModelsNOZ\OptimalStockOrder\OptimalStockTreeHierarchy.cs" />
     <Compile Include="ModelsNOZ\ProductColor.cs" />
+    <Compile Include="ModelsNOZ\Settings\NOZEmailModel.cs" />
     <Compile Include="ModelsNOZ\Settings\SettingsNOZModel.cs" />
     <Compile Include="ModelsOTP\Client\CarrierModel.cs" />
     <Compile Include="ModelsOTP\CreateOrderModel.cs" />
@@ -773,6 +780,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Common\EmailTemplates\CarrierCongratsOrBetterLuckNextTimeMail.html" />
     <Content Include="Common\EmailTemplates\AdministratorEmail_Odpoklic.html" />
+    <Content Include="Common\EmailTemplates\UserMailNOZ.html" />
     <Content Include="Common\EmailTemplates\SupplierMailHRV.html" />
     <Content Include="Common\EmailTemplates\SupplierMailANG.html" />
     <Content Include="Common\EmailTemplates\SupplierMailOrderANG.html" />

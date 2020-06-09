@@ -56,5 +56,9 @@ namespace DatabaseWebService.Models.Client
 
         //use only for NOZ project
         public int HasStock { get; set; }
+        public int HasProdaja { get; set; }
+        public decimal StockNumber { get; set; }
+        public List<ClientSimpleModel> SubSupplier { get; set; }
+        public int LastSupplier { get; set; } 
     }
 }

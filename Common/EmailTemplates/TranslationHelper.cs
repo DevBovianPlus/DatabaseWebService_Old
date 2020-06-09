@@ -312,7 +312,7 @@ namespace DatabaseWebService.Common.EmailTemplates
                             RetStr = "Materjal";
                             break;
                         case Language.SLO:
-                            RetStr = "Materijal";
+                            RetStr = "Material";
                             break;
                         default:
                             break;
@@ -345,6 +345,22 @@ namespace DatabaseWebService.Common.EmailTemplates
                             break;
                         case Language.SLO:
                             RetStr = "Opombe";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case EmailContentType.EMAILTOSUPPLIER_THANKANDGREETING:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "Thank you and best regards.";
+                            break;
+                        case Language.HRV:
+                            RetStr = "Hvala i lijep pozdrav.";
+                            break;
+                        case Language.SLO:
+                            RetStr = "Hvala in lep pozdrav.";
                             break;
                         default:
                             break;

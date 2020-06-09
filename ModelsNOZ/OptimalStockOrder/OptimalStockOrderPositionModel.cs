@@ -12,6 +12,9 @@ namespace DatabaseWebService.ModelsNOZ.OptimalStockOrder
         public string KategorijaNaziv { get; set; }
         public string NazivArtikla { get; set; }
         public decimal Kolicina { get; set; }
+        public decimal KolicinaPol { get; set; }
+        public string EMvKG { get; set; }
+        public string EMvPol { get; set; }
         public string Opombe { get; set; }
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }

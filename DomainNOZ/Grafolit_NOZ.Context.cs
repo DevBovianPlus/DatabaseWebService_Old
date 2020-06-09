@@ -63,36 +63,6 @@ namespace DatabaseWebService.DomainNOZ
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[GrafolitNOZEntities].[GetColorListByCategory](@CategoryStr)", categoryStrParameter);
         }
     
-        [EdmFunction("GrafolitNOZEntities", "GetProductsByOptimalStockValues")]
-        public virtual IQueryable<GetProductsByOptimalStockValues_Result> GetProductsByOptimalStockValues(string kategorija, string gloss, string gramatura, string velikost, string tek, string barva)
-        {
-            var kategorijaParameter = kategorija != null ?
-                new ObjectParameter("Kategorija", kategorija) :
-                new ObjectParameter("Kategorija", typeof(string));
-    
-            var glossParameter = gloss != null ?
-                new ObjectParameter("Gloss", gloss) :
-                new ObjectParameter("Gloss", typeof(string));
-    
-            var gramaturaParameter = gramatura != null ?
-                new ObjectParameter("Gramatura", gramatura) :
-                new ObjectParameter("Gramatura", typeof(string));
-    
-            var velikostParameter = velikost != null ?
-                new ObjectParameter("Velikost", velikost) :
-                new ObjectParameter("Velikost", typeof(string));
-    
-            var tekParameter = tek != null ?
-                new ObjectParameter("Tek", tek) :
-                new ObjectParameter("Tek", typeof(string));
-    
-            var barvaParameter = barva != null ?
-                new ObjectParameter("Barva", barva) :
-                new ObjectParameter("Barva", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetProductsByOptimalStockValues_Result>("[GrafolitNOZEntities].[GetProductsByOptimalStockValues](@Kategorija, @Gloss, @Gramatura, @Velikost, @Tek, @Barva)", kategorijaParameter, glossParameter, gramaturaParameter, velikostParameter, tekParameter, barvaParameter);
-        }
-    
         [EdmFunction("GrafolitNOZEntities", "GetSupplierList")]
         public virtual IQueryable<GetSupplierList_Result> GetSupplierList()
         {
@@ -144,6 +114,56 @@ namespace DatabaseWebService.DomainNOZ
         public virtual IQueryable<GetPantheonUsersNOZ_Result> GetPantheonUsersNOZ()
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetPantheonUsersNOZ_Result>("[GrafolitNOZEntities].[GetPantheonUsersNOZ]()");
+        }
+    
+        [EdmFunction("GrafolitNOZEntities", "GetProductsByOptimalStockValues")]
+        public virtual IQueryable<GetProductsByOptimalStockValues_Result> GetProductsByOptimalStockValues(string kategorija, string gloss, string gramatura, string velikost, string tek, string barva)
+        {
+            var kategorijaParameter = kategorija != null ?
+                new ObjectParameter("Kategorija", kategorija) :
+                new ObjectParameter("Kategorija", typeof(string));
+    
+            var glossParameter = gloss != null ?
+                new ObjectParameter("Gloss", gloss) :
+                new ObjectParameter("Gloss", typeof(string));
+    
+            var gramaturaParameter = gramatura != null ?
+                new ObjectParameter("Gramatura", gramatura) :
+                new ObjectParameter("Gramatura", typeof(string));
+    
+            var velikostParameter = velikost != null ?
+                new ObjectParameter("Velikost", velikost) :
+                new ObjectParameter("Velikost", typeof(string));
+    
+            var tekParameter = tek != null ?
+                new ObjectParameter("Tek", tek) :
+                new ObjectParameter("Tek", typeof(string));
+    
+            var barvaParameter = barva != null ?
+                new ObjectParameter("Barva", barva) :
+                new ObjectParameter("Barva", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetProductsByOptimalStockValues_Result>("[GrafolitNOZEntities].[GetProductsByOptimalStockValues](@Kategorija, @Gloss, @Gramatura, @Velikost, @Tek, @Barva)", kategorijaParameter, glossParameter, gramaturaParameter, velikostParameter, tekParameter, barvaParameter);
+        }
+    
+        [EdmFunction("GrafolitNOZEntities", "GetLastSupplierByName")]
+        public virtual IQueryable<string> GetLastSupplierByName(string suppName)
+        {
+            var suppNameParameter = suppName != null ?
+                new ObjectParameter("SuppName", suppName) :
+                new ObjectParameter("SuppName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[GrafolitNOZEntities].[GetLastSupplierByName](@SuppName)", suppNameParameter);
+        }
+    
+        [EdmFunction("GrafolitNOZEntities", "GetSupplierListByNameLike")]
+        public virtual IQueryable<GetSupplierListByNameLike_Result> GetSupplierListByNameLike(string suppName)
+        {
+            var suppNameParameter = suppName != null ?
+                new ObjectParameter("SuppName", suppName) :
+                new ObjectParameter("SuppName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetSupplierListByNameLike_Result>("[GrafolitNOZEntities].[GetSupplierListByNameLike](@SuppName)", suppNameParameter);
         }
     }
 }

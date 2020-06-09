@@ -11,12 +11,15 @@ namespace DatabaseWebService.ModelsOTP.Route
         public int RelacijaID { get; set; }
         public string Koda { get; set; }
         public string Naziv { get; set; }
+        public string DrzavaKoda { get; set; }
+        public string PostaKoda { get; set; }
         public decimal Dolzina { get; set; }
         public DateTime Datum { get; set; }
         public int tsIDOsebe { get; set; }
         public DateTime ts { get; set; }
 
         public string Opomba { get; set; }
+        
 
         public int RecallCount { get; set; }
         public int SupplierArrangesTransportRecallCount { get; set; }

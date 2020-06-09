@@ -16,5 +16,7 @@ namespace DatabaseWebService.DomainPDO.Abstract
         void SaveEmail(SystemEmailMessage_PDO model);
         void CreateEmailForSupplierOrder(OrderPDOFullModel order);
         void CreateEmailForAdmin_NoPDFForOrderPDO(string sOdobritevKomentar, string sStevilkaDokumenta, string sStevilkaNarocilnice, bool bOdpoklic);
+        void SaveSystemEmailMessage(PDOEmailModel model, bool updateRecord = true, bool createCopy = false);
+        PDOEmailModel GetMailByID(int mailID);
     }
 }

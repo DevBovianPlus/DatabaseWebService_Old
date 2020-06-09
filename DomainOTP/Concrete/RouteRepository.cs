@@ -63,13 +63,28 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 foreach (var item in list)
                 {
+                    if (item.Naziv.Length > 0)
+                    {
+                        int iPrviOklepaj = item.Naziv.IndexOf(")");
+                        if (iPrviOklepaj > 0)
+                        {
+                            item.DrzavaKoda = item.Naziv.Substring(1, iPrviOklepaj-1);
+                        }
+
+                        string[] split = item.Naziv.Split(' ');
+                        if (split.Length > 1)
+                        {
+                            item.PostaKoda = split[1];
+                        }
+                    }
+
                     int monthDiff = ((DateTime.Now.Year - item.RouteFirstRecallDate.Year) * 12) + DateTime.Now.Month - item.RouteFirstRecallDate.Month;
                     int diff = monthDiff > 0 ? monthDiff : 1;
 
                     if (item.RecallCount >= diff)
                         item.RecallCount = (item.RecallCount / diff) * (!checkForPastYear ? 12 : 1);
                 }
-
+                list = list.OrderBy(d => d.PostaKoda).ToList().OrderByDescending(p => p.DrzavaKoda).ToList();
                 return list;
             }
             catch (Exception ex)

@@ -14,5 +14,8 @@ namespace DatabaseWebService.ModelsNOZ.OptimalStockOrder
         public List<OptimalStockTreeHierarchy> SubCategoryWithProducts { get; set; }
 
         public List<SumSubCategoryModel> lAllSubCategory { get; set; }
+        public string  sSelectedSupplier { get; set; }
+        public bool bRefreshTreeLastMonth { get; set; }
+
     }
 }

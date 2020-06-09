@@ -32,7 +32,6 @@ namespace DatabaseWebService.DomainPDO
         public DbSet<OsebeNadrejeni_PDO> OsebeNadrejeni_PDO { get; set; }
         public DbSet<StatusPovprasevanja> StatusPovprasevanja { get; set; }
         public DbSet<StrankaZaposleni_PDO> StrankaZaposleni_PDO { get; set; }
-        public DbSet<SystemEmailMessage_PDO> SystemEmailMessage_PDO { get; set; }
         public DbSet<SystemMessageEvents_PDO> SystemMessageEvents_PDO { get; set; }
         public DbSet<TipStranka_PDO> TipStranka_PDO { get; set; }
         public DbSet<Vloga_PDO> Vloga_PDO { get; set; }
@@ -46,6 +45,7 @@ namespace DatabaseWebService.DomainPDO
         public DbSet<NarociloPozicija_PDO> NarociloPozicija_PDO { get; set; }
         public DbSet<Narocilo_PDO> Narocilo_PDO { get; set; }
         public DbSet<Povprasevanje> Povprasevanje { get; set; }
+        public DbSet<SystemEmailMessage_PDO> SystemEmailMessage_PDO { get; set; }
     
         [EdmFunction("GrafolitPDOEntities", "GetArtikelBySearchStr")]
         public virtual IQueryable<GetArtikelBySearchStr_Result> GetArtikelBySearchStr(string searchStr)

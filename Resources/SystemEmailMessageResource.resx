@@ -183,4 +183,7 @@
   <data name="res_22" xml:space="preserve">
     <value>Pošiljamo vam naročilnico za povpraševanje</value>
   </data>
+  <data name="res_23" xml:space="preserve">
+    <value>Obvestilo o potrebnem odprtju nove šifre</value>
+  </data>
 </root>

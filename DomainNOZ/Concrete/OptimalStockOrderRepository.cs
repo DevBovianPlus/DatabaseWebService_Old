@@ -46,11 +46,38 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             }
         }
 
+        /// <summary>
+        /// Uredimo seznam tako da so najprej gramatura Manjša od 10 s . v imenu gramature
+        /// Nato pride vsi ki so manjši kot 100 in potem še tisti ki so večji ali enako kot 100
+        /// </summary>
+        /// <param name="listData"></param>
+        /// <returns></returns>
+        private List<GetListOptimalnaZaloga_Result> SetupOrderByGramaturaData(List<GetListOptimalnaZaloga_Result> listData)
+        {
+            listData = listData.OrderBy(l => l.Gramatura).ToList();
+
+            var ListDecimalGramatura = listData.Where(s => s.Gramatura.Contains(".")).ToList();
+            var ListDecimalGramaturaManjsiOd100 = listData.Where(g => !g.Gramatura.Contains(".")).Where(s => Convert.ToInt32(s.Gramatura) < 100).ToList();
+
+            var ListDecimalGramaturaVecjiOd100 = listData.Where(g => !g.Gramatura.Contains(".")).Where(s => Convert.ToInt32(s.Gramatura) >= 100).ToList();
+
+
+            List<GetListOptimalnaZaloga_Result> lNewResult = new List<GetListOptimalnaZaloga_Result>();
+
+            lNewResult.AddRange(ListDecimalGramatura);
+            lNewResult.AddRange(ListDecimalGramaturaManjsiOd100);
+            lNewResult.AddRange(ListDecimalGramaturaVecjiOd100);
+
+            return lNewResult;
+        }
+
         public List<OptimalStockTreeHierarchy> GetOptimalStockTree(string productCategory, string color)
         {
             indeks = 0;
             //Pridobimo vse optimalne zaloge iz DW baze.
             var sqlOptimalStock = msSqlRepo.GetListOptimalnaZaloga();
+            sqlOptimalStock = SetupOrderByGramaturaData(sqlOptimalStock);
+            //sqlOptimalStock = sqlOptimalStock.OrderBy(l => l.Gramatura).ToList();
 
             if (!String.IsNullOrEmpty(color))
                 sqlOptimalStock = sqlOptimalStock.Where(c => c.Barva == color).ToList();
@@ -437,6 +464,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                                                                    {
                                                                        KategorijaNaziv = pos.KategorijaNaziv,
                                                                        Kolicina = pos.Kolicina.HasValue ? pos.Kolicina.Value : 0,
+                                                                       KolicinaPol = pos.KolicinaPol.HasValue ? pos.KolicinaPol.Value : 0,
                                                                        NarociloOptimalnihZalogID = pos.NarociloOptimalnihZalogID,
                                                                        NarociloOptimalnihZalogPozicijaID = pos.NarociloOptimalnihZalogPozicijaID,
                                                                        NazivArtikla = pos.NazivArtikla,
@@ -553,6 +581,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                             {
                                 KategorijaNaziv = pos.KategorijaNaziv,
                                 Kolicina = pos.Kolicina.HasValue ? pos.Kolicina.Value : 0,
+                                KolicinaPol = pos.KolicinaPol.HasValue ? pos.KolicinaPol.Value : 0,
                                 NarociloOptimalnihZalogID = pos.NarociloOptimalnihZalogID,
                                 NarociloOptimalnihZalogPozicijaID = pos.NarociloOptimalnihZalogPozicijaID,
                                 NazivArtikla = pos.NazivArtikla,
@@ -582,6 +611,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                             {
                                 KategorijaNaziv = pos.KategorijaNaziv,
                                 Kolicina = pos.Kolicina.HasValue ? pos.Kolicina.Value : 0,
+                                KolicinaPol = pos.KolicinaPol.HasValue ? pos.KolicinaPol.Value : 0,
                                 NarociloOptimalnihZalogID = pos.NarociloOptimalnihZalogID,
                                 NarociloOptimalnihZalogPozicijaID = pos.NarociloOptimalnihZalogPozicijaID,
                                 NazivArtikla = pos.NazivArtikla,
@@ -723,7 +753,8 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                     nozp.NarociloOptimalnihZalogPozicijaID = nozp.NarociloOptimalnihZalogPozicijaID > 0 ? nozp.NarociloOptimalnihZalogPozicijaID : item.NarociloOptimalnihZalogPozicijaID;
                     nozp.KategorijaNaziv = item.KategorijaNaziv;
                     nozp.Kolicina = item.Kolicina;
-                    nozp.NazivArtikla = item.NazivArtikla;
+                    nozp.KolicinaPol = item.KolicinaPol;
+                    nozp.NazivArtikla = item.NazivArtikla.Trim();
                     nozp.Opombe = item.Opombe;
                     nozp.ts = item.ts;
                     nozp.tsIDOsebe = item.tsIDOsebe;
@@ -775,6 +806,12 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 foreach (var item in categories)
                 {
                     var colors = msSqlRepo.GetColorListByCategory(item.Trim());
+
+                    // najprej pogledam če je notri bela (WHITE) in je potrebno da je prva v seznamu
+                    var itmW = colors.FirstOrDefault(g => g.Naziv == "WHITE");
+                    if (itmW != null) list.Add(itmW);
+                    colors.Remove(itmW);
+
                     list.AddRange(colors);
                 }
 
@@ -808,14 +845,17 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             }
             else
             {
-                findsc.VsotaZaloge += sc.VsotaZaloge;
+                findsc.VsotaLetneProdaje += sc.VsotaLetneProdaje;
             }
 
             // dodamo vse produkte v prodajno kategorijo, da lahko potem izberemo vsak artikel ne glede na podkategorijo
-
             if (findsc.ChildProducts == null) findsc.ChildProducts = new List<GetProductsByOptimalStockValuesModel>();
             GetProductStockByIdentModel pm = msSqlRepo.GetProductByIdent(product.IDENT);
             product.TrenutnaZaloga = (pm != null ? pm.Zaloga : 0);
+
+            // seštevamo zalogo za podskupino
+            findsc.VsotaZaloge += (pm != null ? pm.Zaloga : 0);
+
             // če ima zalogo je potrebno tega dobavitleja označiti, da ima zalogo
             hasStock = ((pm != null && pm.Zaloga > 0) ? 1 : 0);
             findsc.ChildProducts.Add(product);
@@ -824,12 +864,12 @@ namespace DatabaseWebService.DomainNOZ.Concrete
 
         }
 
-        private void AddOrUpdateSupplierHasStock(string sSuplier, hlpOptimalStockOrderModel hlpOptimalStock, int iHasStock)
+        private void AddOrUpdateSupplierHasStock(string sSuplier, string sSuplierAlter, hlpOptimalStockOrderModel hlpOptimalStock, int iHasStock, decimal dStock, int iHasProdaja)
         {
             if (!hlpOptimalStock.Suppliers.Exists(s => s.NazivPrvi.Contains(sSuplier)))
-                {
+            {
                 tempNum++;
-                hlpOptimalStock.Suppliers.Add(new ClientSimpleModel { NazivPrvi = sSuplier, TempID = tempNum, HasStock = iHasStock });
+                hlpOptimalStock.Suppliers.Add(new ClientSimpleModel { NazivPrvi = sSuplier, TempID = tempNum, HasStock = iHasStock, StockNumber = dStock, HasProdaja = iHasProdaja });
             }
             else
             {
@@ -837,13 +877,35 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 if (Supplier != null)
                 {
                     Supplier.HasStock = (Supplier.HasStock != iHasStock && iHasStock == 1) ? Supplier.HasStock = iHasStock : Supplier.HasStock;
+                    Supplier.HasProdaja = (Supplier.HasProdaja != iHasProdaja && iHasProdaja == 1) ? Supplier.HasProdaja = iHasProdaja : Supplier.HasProdaja;
+                    if (Supplier.HasStock == 1)
+                    {
+                        Supplier.StockNumber += dStock;
+                    }
                 }
             }
 
+            // če gre za SAPPI dobavitelja je potrebno dodati v seznam poddobaviteljev sSupplierAlter, zaradi prikaza potencialnih SAPPi dobaviteljev v 3 koraku
+            if (sSuplier != sSuplierAlter)
+            {
+                ClientSimpleModel SelSupplier = hlpOptimalStock.Suppliers.Where(s => s.NazivPrvi == sSuplier).FirstOrDefault();
+                if (SelSupplier != null)
+                {
+                    SelSupplier.SubSupplier = (SelSupplier.SubSupplier == null) ? new List<ClientSimpleModel>() : SelSupplier.SubSupplier;
+
+                    if (!SelSupplier.SubSupplier.Exists(s => s.NazivPrvi.Contains(sSuplierAlter)))
+                    {
+                        tempNumAlterSupplier++;
+                        SelSupplier.SubSupplier.Add(new ClientSimpleModel { NazivPrvi = sSuplierAlter, TempID = tempNumAlterSupplier, HasStock = iHasStock, StockNumber = dStock, HasProdaja = iHasProdaja });
+                    }
+                }
+
+            }
         }
 
         // Globalni Števic za Potencialne Dobavitelje
         int tempNum = 0;
+        int tempNumAlterSupplier = 0;
         /// <summary>
         /// Dobimo naziv za podgrupo, ki se prikaže v TV
         /// </summary>
@@ -859,8 +921,11 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             if (lProducts.Count == 0) return null;
             foreach (var item in lProducts)
             {
+                item.DOBAVITELJ = item.DOBAVITELJ.Trim();
+                item.DOBAVITELJ_ALTER = item.DOBAVITELJ.Trim();
+                item.DOBAVITELJ = item.DOBAVITELJ.Contains("SAPPI") ? "SAPPI" : item.DOBAVITELJ;
                 iHasStock = 0;
-                SumSubCategoryModel sc = GetSubCategoryFromNaziv(item);
+                SumSubCategoryModel sc = GetSubCategoryFromNaziv(item.IDENT, item.NAZIV, item.LetnaProdaja);
                 item.NazivPodkategorije = sc.NazivPodKategorije;
                 iHasStock = GetOrAddSubCategoryOnCalculateSum(sc, lSubCategoryBySum, item);
 
@@ -869,7 +934,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 item.DOBAVITELJ = item.DOBAVITELJ.Trim();
                 if (hlpOptimalStock.Suppliers == null) hlpOptimalStock.Suppliers = new List<ClientSimpleModel>();
 
-                AddOrUpdateSupplierHasStock(item.DOBAVITELJ.Trim(), hlpOptimalStock, iHasStock);
+                AddOrUpdateSupplierHasStock(item.DOBAVITELJ.Trim(), item.DOBAVITELJ_ALTER, hlpOptimalStock, iHasStock, item.TrenutnaZaloga, 1);
             }
 
 
@@ -879,21 +944,49 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             foreach (var pr in productsOnGoup)
             {
                 GetProductStockByIdentModel pm = msSqlRepo.GetProductByIdent(pr.IDENT);
+                if (pm == null) continue;
                 pr.TrenutnaZaloga = (pm != null ? pm.Zaloga : 0);
                 // če ima zalogo je potrebno tega dobavitleja označiti, da ima zalogo
                 iHasStock = ((pm != null && pm.Zaloga > 0) ? 1 : 0);
+                //preverimo ali product še ne obstaja v seznamu najbolj prodajanih v enem letu, če ne obstaja preverimo ali ima zalog, če ne obstaja in 
+                // ima zalogo ugotovimo h kateri podskupini spada in mu dodamo zalogo v to podskupino
+                if (lProducts.Where(p => p.IDENT == pr.IDENT).FirstOrDefault() == null)
+                {
+                    if (pm != null)
+                    {
+                        if (pm.Zaloga > 0)
+                        {
+                            SumSubCategoryModel sc = GetSubCategoryFromNaziv(pm.IDENT, pr.NAZIV, 0);
+                            iHasStock = GetOrAddSubCategoryOnCalculateSum(sc, lSubCategoryBySum, pr);
+                            //sc.VsotaZaloge += pm.Zaloga;
+                        }
+                    }
+                }
 
-                AddOrUpdateSupplierHasStock(pr.DOBAVITELJ.Trim(), hlpOptimalStock, iHasStock);
+                pr.DOBAVITELJ = pr.DOBAVITELJ.Trim();
+                pr.DOBAVITELJ_ALTER = pr.DOBAVITELJ.Trim();
+                pr.DOBAVITELJ = pr.DOBAVITELJ.Contains("SAPPI") ? "SAPPI" : pr.DOBAVITELJ;
+
+                AddOrUpdateSupplierHasStock(pr.DOBAVITELJ.Trim(), pr.DOBAVITELJ_ALTER, hlpOptimalStock, iHasStock, pm.Zaloga, 0);
             }
 
 
 
-            SumSubCategoryModel scBigestSum = lSubCategoryBySum.OrderByDescending(sc => sc.VsotaZaloge).First();
+
+
+
+
+
+
+            SumSubCategoryModel scBigestSum = lSubCategoryBySum.OrderByDescending(sc => sc.VsotaLetneProdaje).First();
 
 
 
 
             hlpOptimalStock.lAllSubCategory = lSubCategoryBySum;
+
+            // sortiramo še dobavitelje
+            hlpOptimalStock.Suppliers = hlpOptimalStock.Suppliers.OrderByDescending(s => s.StockNumber).ToList().OrderBy(s => s.HasProdaja).ToList();
 
             return scBigestSum;
         }
@@ -903,34 +996,44 @@ namespace DatabaseWebService.DomainNOZ.Concrete
         /// </summary>
         /// <param name="product"></param>
         /// <returns></returns>
-        private SumSubCategoryModel GetSubCategoryFromNaziv(GetProductsByOptimalStockValuesModel product)
+        private SumSubCategoryModel GetSubCategoryFromNaziv(string sIdent, string sNaziv, decimal dLetnaProdaja)
         {
             SumSubCategoryModel sc = new SumSubCategoryModel();
 
-            if (product.IDENT != null)
+            if (sIdent != null)
             {
-                product.IDENT = product.IDENT.Trim().ToUpper();
-                string sLast = product.IDENT.Substring(product.IDENT.Length - 1);
+                sIdent = sIdent.Trim().ToUpper();
+                string sLast = sIdent.Substring(sIdent.Length - 1);
                 sc.Pefc = (sLast == "P") ? "PEFC CERTIFIED" : "";
             }
 
-            if (product.IDENT != null)
+            if (sIdent != null)
             {
-                product.IDENT = product.IDENT.Trim().ToUpper();
-                string sLast = product.IDENT.Substring(product.IDENT.Length - 1);
+                sIdent = sIdent.Trim().ToUpper();
+                string sLast = sIdent.Substring(sIdent.Length - 1);
                 sc.Fsc = (sLast == "F") ? "FSC" : "";
             }
 
-            sc.VsotaZaloge = product.LetnaProdaja;
+            sc.VsotaLetneProdaje = dLetnaProdaja;
 
-            if (product.NAZIV != null)
+            if (sNaziv != null)
             {
-                product.NAZIV = product.NAZIV.Trim().ToUpper();
+                sNaziv = sNaziv.Trim().ToUpper();
 
 
-                string[] split = product.NAZIV.Split(' ');
+                string[] split = sNaziv.Split(' ');
                 foreach (var item in split)
                 {
+                    if (item.Contains("GLOSS"))
+                    {
+                        sc.Gloss = "GLOSS";
+                    }
+
+                    if (item.Contains("MATT") || item.Contains("SATIN") || item.Contains("SILK"))
+                    {
+                        sc.Gloss = "MAT";
+                    }
+
                     // weight
                     if (item.Contains("g") || item.Contains("G"))
                     {
@@ -968,11 +1071,76 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             sc.NazivPodKategorije += (sc.Pefc.Length > 0) ? " " + sc.Pefc : "";
             sc.NazivPodKategorije += (sc.Fsc.Length > 0) ? " " + sc.Fsc : "";
             sc.NazivPodKategorije += (sc.Paket != null) ? " " + sc.Paket : "";
+            sc.NazivPodKategorijeFilter += sc.Gloss + " " + sc.NazivPodKategorije;
             return sc;
         }
 
 
 
+        /// <summary>
+        /// posodobili bome vse izbrane podkategorije z produkti za posametnega dobavitelja
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="color"></param>
+        /// <param name="hlpOptimalStock"></param>
+        /// <returns></returns>
+        public hlpOptimalStockOrderModel UpdateSubCategoriesWithProductsForSelectedNodes(List<OptimalStockTreeHierarchy> list, string color, hlpOptimalStockOrderModel hlpOptimalStock)
+        {
+            try
+            {
+                //var mainGroupProducts = msSqlRepo.GetMainProducts();
+                List<OptimalStockColumnsModel> lGetDimIdentOptList = msSqlRepo.GetDIMIdentiOPTList();
+                List<GetProductsByOptimalStockValuesModel> productsOnGroup = null;
+
+                var listOfLeafs = list.Where(ost => ost.IsLeaf).ToList();
+                int maxID = list.Max(m => m.ID);
+
+                foreach (var leaf in listOfLeafs)
+                {
+                    var columnValues = GetColumnValuesForOptimalStock(list, leaf, color);
+
+                    productsOnGroup = msSqlRepo.GetProductsByOptimalStockValues(columnValues);
+
+                    productsOnGroup = hlpOptimalStock.bRefreshTreeLastMonth ? productsOnGroup.Where(p => p.DATUMZAP >= DateTime.Now && p.DATUMZAP <= DateTime.Now.AddMonths(-1)).ToList() : productsOnGroup;
+                    // pridobimo vse artikle za skupino in pa najbolj prodajano podskupino primer Skupina, ki jo potem prikažemo na treview 130G 45X64 SB PEFC 
+                    // preverimo še vse produkte v skupini ali obstaja dobavitelj, katerega artikel je na zalogi in ni med najbolj prodajani
+                    // če je zahteva po vseh artikleh za enega dobavitelja, potem se izvede ta koda, ki doda vse artikle za izbranega dobavitlja
+                    if (hlpOptimalStock.sSelectedSupplier != null && hlpOptimalStock.sSelectedSupplier.Length > 0)
+                    {
+                        productsOnGroup = productsOnGroup.Where(p => p.DOBAVITELJ.Trim() == hlpOptimalStock.sSelectedSupplier.Trim()).ToList();
+                        foreach (var pr in productsOnGroup)
+                        {
+
+
+                            SumSubCategoryModel sc = GetSubCategoryFromNaziv(pr.IDENT, pr.NAZIV, 0);
+                            pr.DOBAVITELJ = pr.DOBAVITELJ.Trim();
+                            List<OptimalStockTreeHierarchy> selListProductForUpdate = list.Where(l => (l.NazivPodkategorije == sc.NazivPodKategorije && l.Gloss == sc.Gloss)).ToList();
+
+                            foreach (var item in selListProductForUpdate)
+                            {
+
+                                var cp = item.Product.ChildProducts.FirstOrDefault(p => p.IDENT.Trim().Contains(pr.IDENT.Trim()));
+                                if (cp == null)
+                                {
+                                    item.Product.ChildProducts.Add(pr);
+                                }
+                            }
+
+
+                            //iHasStock = GetOrAddSubCategoryOnCalculateSum(sc, lSubCategoryBySum, pr);
+                        }
+                    }
+                }
+
+                hlpOptimalStock.SubCategoryWithProducts = list;
+
+                return hlpOptimalStock;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Get products for selected optimal stock error!", ex);
+            }
+        }
 
 
         public hlpOptimalStockOrderModel GetProductsForSelectedOptimalStock(List<OptimalStockTreeHierarchy> list, string color, hlpOptimalStockOrderModel hlpOptimalStock)
@@ -1014,54 +1182,45 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                             IsProduct = true,
                             Name = (cntGrp > 0) ? mainSubGroup.NAZIV + " (" + cntGrp + " podskupin)" : mainSubGroup.NAZIV,
                             NazivPodkategorije = mainSubGroup.NAZIV,
+                            NazivPodkategorijeFilter = scSubGroupSales.NazivPodKategorijeFilter,
+                            Gloss = columnValues.Gloss,
                             ParentID = leaf.ID,
                             Product = mainSubGroup,
-                            KolicinaOptimalna = leaf.KolicinaOptimalna,
-                            KolicinaZaloga = leaf.KolicinaZaloga,
+                            KolicinaOptimalna = 0,
+                            KolicinaZaloga = scSubGroupSales.VsotaZaloge,
+                            //VsotaZalNarRazlikaOpt = 0
                             VsotaZalNarRazlikaOpt = ((leaf.KolicinaZaloga + leaf.KolicinaNarocenoVTeku) - leaf.KolicinaOptimalna)
                         });
 
                     }
-
-
-
-
-                    //var products = msSqlRepo.GetProductsByOptimalStockValues(columnValues);
-
-                    //if (products != null)
-                    //{
-                    //    var mainGroupProduct = products.Where(p => mainGroupProducts.Any(mgp => mgp.IDENT == p.IDENT)).FirstOrDefault();//pridobimo nosilni izdelek
-                    //    if (mainGroupProduct != null)
-                    //    {
-                    //        products.Remove(mainGroupProduct);//iz seznama odstranimo nosilni izdelek, da ga ne dodajamo v seznam child izdelkov
-                    //        mainGroupProduct.ChildProducts = new List<GetProductsByOptimalStockValuesModel>();
-
-                    //        //dodamo child izdelke nosilnemu
-                    //        foreach (var product in products)
-                    //        {
-                    //            GetProductStockByIdentModel pm = msSqlRepo.GetProductByIdent(product.IDENT);
-                    //            product.TrenutnaZaloga = (pm != null ? pm.Zaloga : 0);
-
-                    //            mainGroupProduct.ChildProducts.Add(product);
-                    //        }
-
-                    //        //v drevo dodamo nosilni izdelek
-                    //        list.Add(new OptimalStockTreeHierarchy
-                    //        {
-                    //            ID = ++maxID,
-                    //            IsLeaf = false,
-                    //            IsProcessed = true,
-                    //            IsProduct = true,
-                    //            Name = mainGroupProduct.NAZIV,
-                    //            ParentID = leaf.ID,
-                    //            Product = mainGroupProduct,
-                    //            KolicinaOptimalna = leaf.KolicinaOptimalna,
-                    //            KolicinaZaloga = leaf.KolicinaZaloga,
-                    //            VsotaZalNarRazlikaOpt = ((leaf.KolicinaZaloga + leaf.KolicinaNarocenoVTeku) - leaf.KolicinaOptimalna)
-                    //        });
-                    //    }
-                    //}
                 }
+
+                // poiščemo tistega dobavitelja, ki je bil zadnji naročeni - velja samo za subsuplier 
+                foreach (ClientSimpleModel supp in hlpOptimalStock.Suppliers)
+                {
+                    
+                    if (supp.NazivPrvi == "SAPPI")
+                    {
+                        supp.NazivPrvi = supp.NazivPrvi.ToUpper().Trim();
+                        // get all suupiler like %sappi%
+                        supp.SubSupplier = new List<ClientSimpleModel>();
+                        supp.SubSupplier = msSqlRepo.GetSupplierListByNameLike(supp.NazivPrvi);
+                    }
+
+                    if (supp.SubSupplier != null && supp.SubSupplier.Count > 0)
+                    {
+                        foreach (ClientSimpleModel subSupplier in supp.SubSupplier)
+                        {
+                            string supName = msSqlRepo.GetLastSupplierByName(supp.NazivPrvi);
+                            if (supName.Length > 0)
+                            {
+                                subSupplier.LastSupplier = (subSupplier.NazivPrvi.Trim() == supName.Trim() ? 1 : 0);
+                            }
+                        }
+                    }
+                }
+
+
                 hlpOptimalStock.SubCategoryWithProducts = list;
                 return hlpOptimalStock;
             }

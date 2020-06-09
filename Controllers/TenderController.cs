@@ -93,6 +93,8 @@ namespace DatabaseWebService.Controllers
             WebResponseContentModel<TenderFullModel> model = null;
             try
             {
+                DataTypesHelper.LogThis("Start - Controler");
+
                 model = JsonConvert.DeserializeObject<WebResponseContentModel<TenderFullModel>>(tenderData.ToString());
 
                 if (model.Content != null)

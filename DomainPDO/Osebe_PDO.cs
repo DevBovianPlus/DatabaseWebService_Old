@@ -19,8 +19,8 @@ namespace DatabaseWebService.DomainPDO
             this.OsebeNadrejeni_PDO = new HashSet<OsebeNadrejeni_PDO>();
             this.OsebeNadrejeni_PDO1 = new HashSet<OsebeNadrejeni_PDO>();
             this.StrankaZaposleni_PDO = new HashSet<StrankaZaposleni_PDO>();
-            this.SystemEmailMessage_PDO = new HashSet<SystemEmailMessage_PDO>();
             this.Povprasevanje = new HashSet<Povprasevanje>();
+            this.SystemEmailMessage_PDO = new HashSet<SystemEmailMessage_PDO>();
         }
     
         public int OsebaID { get; set; }
@@ -53,7 +53,7 @@ namespace DatabaseWebService.DomainPDO
         public virtual ICollection<OsebeNadrejeni_PDO> OsebeNadrejeni_PDO1 { get; set; }
         public virtual ICollection<StrankaZaposleni_PDO> StrankaZaposleni_PDO { get; set; }
         public virtual Vloga_PDO Vloga_PDO { get; set; }
-        public virtual ICollection<SystemEmailMessage_PDO> SystemEmailMessage_PDO { get; set; }
         public virtual ICollection<Povprasevanje> Povprasevanje { get; set; }
+        public virtual ICollection<SystemEmailMessage_PDO> SystemEmailMessage_PDO { get; set; }
     }
 }

@@ -136,7 +136,7 @@
           <Property Name="EmailStreznik" Type="varchar" MaxLength="50" />
           <Property Name="EmailVrata" Type="int" />
           <Property Name="EmailSifriranjeSSL" Type="bit" />
-          <Property Name="Podpis" Type="varchar" MaxLength="100" />
+          <Property Name="Podpis" Type="varchar" MaxLength="4000" />
           <Property Name="PantheonUsrID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OsebeNadrejeni_PDO">
@@ -298,7 +298,7 @@
             <PropertyRef Name="SystemEmailMessageID" />
           </Key>
           <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="4000" />
           <Property Name="EmailTo" Type="varchar" MaxLength="100" />
           <Property Name="EmailBody" Type="varchar(max)" />
           <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
@@ -310,6 +310,8 @@
           <Property Name="OsebaEmailFromID" Type="int" />
           <Property Name="Attachments" Type="varchar" MaxLength="4000" />
           <Property Name="CCEmails" Type="varchar" MaxLength="4000" />
+          <Property Name="TOEmails" Type="varchar" MaxLength="4000" />
+          <Property Name="MasterMailID" Type="int" />
         </EntityType>
         <EntityType Name="SystemMessageEvents_PDO">
           <Key>
@@ -873,10 +875,10 @@
           <Property Name="EmailStreznik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EmailVrata" Type="Int32" />
           <Property Name="EmailSifriranjeSSL" Type="Boolean" />
-          <NavigationProperty Name="SystemEmailMessage_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="Osebe_PDO" ToRole="SystemEmailMessage_PDO" />
-          <Property Name="Podpis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Podpis" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_Employee_OsebaID" FromRole="Osebe_PDO" ToRole="Povprasevanje" />
           <Property Name="PantheonUsrID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SystemEmailMessage_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="Osebe_PDO" ToRole="SystemEmailMessage_PDO" />
         </EntityType>
         <EntityType Name="OsebeNadrejeni_PDO">
           <Key>
@@ -921,25 +923,6 @@
           <Property Name="tsUpdateUserID" Type="Int32" />
           <NavigationProperty Name="Osebe_PDO" Relationship="Self.FK_OsebeID" FromRole="StrankaZaposleni_PDO" ToRole="Osebe_PDO" />
           <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_StrankaID" FromRole="StrankaZaposleni_PDO" ToRole="Stranka_PDO" />
-        </EntityType>
-        <EntityType Name="SystemEmailMessage_PDO">
-          <Key>
-            <PropertyRef Name="SystemEmailMessageID" />
-          </Key>
-          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="Int32" />
-          <Property Name="ts" Type="DateTime" Precision="3" />
-          <Property Name="tsIDOsebe" Type="Int32" />
-          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
-          <Property Name="tsUpdateUserID" Type="Int32" />
-          <Property Name="OsebaEmailFromID" Type="Int32" />
-          <NavigationProperty Name="Osebe_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="SystemEmailMessage_PDO" ToRole="Osebe_PDO" />
-          <Property Name="Attachments" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="CCEmails" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SystemMessageEvents_PDO">
           <Key>
@@ -1034,7 +1017,6 @@
           <EntitySet Name="OsebeNadrejeni_PDO" EntityType="Self.OsebeNadrejeni_PDO" />
           <EntitySet Name="StatusPovprasevanja" EntityType="Self.StatusPovprasevanja" />
           <EntitySet Name="StrankaZaposleni_PDO" EntityType="Self.StrankaZaposleni_PDO" />
-          <EntitySet Name="SystemEmailMessage_PDO" EntityType="Self.SystemEmailMessage_PDO" />
           <EntitySet Name="SystemMessageEvents_PDO" EntityType="Self.SystemMessageEvents_PDO" />
           <EntitySet Name="TipStranka_PDO" EntityType="Self.TipStranka_PDO" />
           <EntitySet Name="Vloga_PDO" EntityType="Self.Vloga_PDO" />
@@ -1063,10 +1045,6 @@
           <FunctionImport Name="GetSuplierBySearchStr" IsComposable="true" ReturnType="Collection(String)">
           <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
-          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID">
-            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
-            <End Role="SystemEmailMessage_PDO" EntitySet="SystemEmailMessage_PDO" />
-          </AssociationSet>
           <FunctionImport Name="DodajPantheonDokument">
             <Parameter Name="p_xParameters" Mode="In" Type="String" />
             <Parameter Name="p_cExportPath" Mode="InOut" Type="String" />
@@ -1163,6 +1141,11 @@
             <Parameter Name="Supplier" Mode="In" Type="String" />
             <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="SystemEmailMessage_PDO" EntityType="GrafolitPDOModel.SystemEmailMessage_PDO" />
+          <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID">
+            <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
+            <End Role="SystemEmailMessage_PDO" EntitySet="SystemEmailMessage_PDO" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Nastavitve">
           <Key>
@@ -1190,18 +1173,6 @@
           <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
           <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
         </ComplexType>
-        <Association Name="FK_SysEmailMsg_OsebaID">
-          <End Type="GrafolitPDOModel.Osebe_PDO" Role="Osebe_PDO" Multiplicity="0..1" />
-          <End Type="GrafolitPDOModel.SystemEmailMessage_PDO" Role="SystemEmailMessage_PDO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Osebe_PDO">
-              <PropertyRef Name="OsebaID" />
-            </Principal>
-            <Dependent Role="SystemEmailMessage_PDO">
-              <PropertyRef Name="OsebaEmailFromID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Jeziki">
           <Key>
             <PropertyRef Name="JezikID" />
@@ -1702,6 +1673,39 @@
           <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
           <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
         </ComplexType>
+        <EntityType Name="SystemEmailMessage_PDO">
+          <Key>
+            <PropertyRef Name="SystemEmailMessageID" />
+          </Key>
+          <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailFrom" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="tsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="tsUpdateUserID" Type="Int32" />
+          <Property Name="OsebaEmailFromID" Type="Int32" />
+          <Property Name="Attachments" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="CCEmails" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="TOEmails" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="MasterMailID" Type="Int32" />
+          <NavigationProperty Name="Osebe_PDO" Relationship="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" FromRole="SystemEmailMessage_PDO" ToRole="Osebe_PDO" />
+        </EntityType>
+        <Association Name="FK_SysEmailMsg_OsebaID">
+          <End Type="GrafolitPDOModel.Osebe_PDO" Role="Osebe_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.SystemEmailMessage_PDO" Role="SystemEmailMessage_PDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_PDO">
+              <PropertyRef Name="OsebaID" />
+            </Principal>
+            <Dependent Role="SystemEmailMessage_PDO">
+              <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1773,25 +1777,6 @@
                 <ScalarProperty Name="StrankaOsebeID" ColumnName="StrankaOsebeID" />
                 <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
                 <ScalarProperty Name="OsebeID" ColumnName="OsebeID" />
-                <ScalarProperty Name="ts" ColumnName="ts" />
-                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
-                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
-                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SystemEmailMessage_PDO">
-            <EntityTypeMapping TypeName="GrafolitPDOModel.SystemEmailMessage_PDO">
-              <MappingFragment StoreEntitySet="SystemEmailMessage_PDO">
-                <ScalarProperty Name="CCEmails" ColumnName="CCEmails" />
-                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
-                <ScalarProperty Name="OsebaEmailFromID" ColumnName="OsebaEmailFromID" />
-                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
-                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
-                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
-                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
-                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ts" ColumnName="ts" />
                 <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
                 <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
@@ -2110,6 +2095,27 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="SystemEmailMessage_PDO">
+            <EntityTypeMapping TypeName="GrafolitPDOModel.SystemEmailMessage_PDO">
+              <MappingFragment StoreEntitySet="SystemEmailMessage_PDO">
+                <ScalarProperty Name="MasterMailID" ColumnName="MasterMailID" />
+                <ScalarProperty Name="TOEmails" ColumnName="TOEmails" />
+                <ScalarProperty Name="CCEmails" ColumnName="CCEmails" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="OsebaEmailFromID" ColumnName="OsebaEmailFromID" />
+                <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
+                <ScalarProperty Name="tsUpdate" ColumnName="tsUpdate" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+                <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+                <ScalarProperty Name="SystemEmailMessageID" ColumnName="SystemEmailMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

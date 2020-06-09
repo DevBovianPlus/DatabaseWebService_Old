@@ -77,7 +77,8 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                         {
                             DOBAVITELJ = p.DOBAVITELJ,
                             IDENT = p.IDENT,
-                            NAZIV = p.NAZIV
+                            NAZIV = p.NAZIV,
+                            DATUMZAP = p.DATUMZAP.HasValue ? p.DATUMZAP.Value : DateTime.MinValue
                         };
 
             return query.ToList();
@@ -89,10 +90,16 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                         select new GetProductStockByIdentModel
                         {
                             IDENT = p.acIdent,
-                            Zaloga = p.anStock.HasValue ? p.anStock.Value : 0,                         
-                            ZalogaVrednost = p.anValue.HasValue ? p.anValue.Value : 0,                            
+                            Zaloga = p.anStock.HasValue ? p.anStock.Value : 0,
+                            ZalogaVrednost = p.anValue.HasValue ? p.anValue.Value : 0,
                         };
 
+            return query.FirstOrDefault();
+        }
+
+        public string GetLastSupplierByName(string SupplierName)
+        {
+            var query = from s in context.GetLastSupplierByName(SupplierName) select s;                        
             return query.FirstOrDefault();
         }
 
@@ -129,6 +136,25 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             return list;
         }
 
+        public List<ClientSimpleModel> GetSupplierListByNameLike(string SupplierName)
+        {
+            int tempNum = 0;
+            var query = from s in context.GetSupplierListByNameLike(SupplierName)
+                        select new ClientSimpleModel
+                        {
+                            NazivPrvi = s.Dobavitelj,
+                            Drzava = s.Drzava
+                        };
+
+            var list = query.ToList();
+            foreach (var item in list)
+            {
+                item.TempID = tempNum++;
+            }
+
+            return list;
+        }
+
         public List<GetProductsByOptimalStockValuesModel> GetMainProducts()
         {
             var query = from q in context.IdentByOPTGroup()
@@ -146,7 +172,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                         select new OptimalStockColumnsModel
                         {
                             ID = p.ID,
-                            Gloss= p.Gloss,
+                            Gloss = p.Gloss,
                             Gramatura = p.Gramatura,
                             Velikost = p.Velikost,
                             Tek = p.Tek,

@@ -57,7 +57,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 model.Role = tmpUsers.Vloga_PDO.Koda;
                 model.RoleName = tmpUsers.Vloga_PDO.Naziv;
 
-                model.Signature = tmpUsers.Podpis;
+                //model.Signature = tmpUsers.Podpis;
             }
             else
                 throw new Exception("Napačna prijava! Ponovno vnesi geslo in uporabniško ime!");

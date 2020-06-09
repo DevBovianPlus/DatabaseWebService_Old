@@ -10,9 +10,11 @@ namespace DatabaseWebService.ModelsNOZ.OptimalStockOrder
         public string IDENT { get; set; }
         public string NAZIV { get; set; }
         public string DOBAVITELJ { get; set; }
+        public string DOBAVITELJ_ALTER { get; set; } // zaradi SAPPI dobavitelja
+        public DateTime DATUMZAP { get; set; }
         public decimal LetnaProdaja { get; set; }
         public decimal TrenutnaZaloga { get; set; }
-        public string NazivPodkategorije { get; set; }
+        public string NazivPodkategorije { get; set; }        
 
         public List<GetProductsByOptimalStockValuesModel> ChildProducts { get; set; }
         public List<SumSubCategoryModel> AllSubCategories { get; set; }
