@@ -1679,7 +1679,7 @@
           </Key>
           <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmailFrom" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="EmailTo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailTo" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Int32" />
