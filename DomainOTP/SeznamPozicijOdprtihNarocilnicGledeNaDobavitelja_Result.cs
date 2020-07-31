@@ -17,6 +17,7 @@ namespace DatabaseWebService.DomainOTP
         public int St_Pozicija { get; set; }
         public string Order_Confirm { get; set; }
         public string Tovarna { get; set; }
+        public string Kategorija { get; set; }
         public string Ident { get; set; }
         public string Artikel { get; set; }
         public Nullable<System.DateTime> Datum_narocila { get; set; }
@@ -26,9 +27,9 @@ namespace DatabaseWebService.DomainOTP
         public string Kupec_Naslov { get; set; }
         public string Kupec_Posta { get; set; }
         public string Kupec_Kraj { get; set; }
-        public Nullable<decimal> Naroceno { get; set; }
-        public Nullable<decimal> Proizvedeno { get; set; }
-        public Nullable<decimal> Prevzeto { get; set; }
+        public decimal Naroceno { get; set; }
+        public decimal Proizvedeno { get; set; }
+        public decimal Prevzeto { get; set; }
         public Nullable<decimal> Razlika { get; set; }
         public string Tip { get; set; }
         public Nullable<decimal> Zaloga { get; set; }

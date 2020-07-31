@@ -34,3 +34,1616 @@ The statement has been terminated.
    at DatabaseWebService.DomainPDO.Concrete.SystemMessageEventsRepository_PDO.SaveToSystemEmailMessage(String emailTo, String bodyMessage, Nullable`1 userID, Int32 hierarchyLevel, String emailSubject, String attachments, EmployeeFullModel submitedInquiryByEmployeeID, String CCEmails) in D:\GitHub\DatabaseWebService\DomainPDO\Concrete\SystemMessageEventsRepository_PDO.cs:line 105
 12. 06. 2020 11:50:56 D:\GitHub\DatabaseWebService\
 12. 06. 2020 11:52:24 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:18:35 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:18:35 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:19:55 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:20:01 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:25:36 D:\GitHub\DatabaseWebService\
+12. 06. 2020 12:25:39 D:\GitHub\DatabaseWebService\
+15. 06. 2020 08:06:52 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>15. 06. 2020 08:06:52</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>15. 06. 2020 08:06:52</OrderDate>
+  <LoadDate>15. 06. 2020 08:06:52</LoadDate>
+  <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718070322000   </Ident>
+      <Name>AKIR GLOSS 70G 88X64 BB                                                                                                                                                                                                                                   </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718111322000   </Ident>
+      <Name>NIVIS NEXT GLOSS 115G 64X45 BB                                                                                                                                                                                                                            </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718140421019   </Ident>
+      <Name>NIVIS NEXT GLOSS 150G 70X100 SB                                                                                                                                                                                                                           </Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170422011   </Ident>
+      <Name>NIVIS NEXT GLOSS 170G 100X70 BB                                                                                                                                                                                                                           </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718180322009   </Ident>
+      <Name>NIVIS NEXT GLOSS 200G 90X64 BB                                                                                                                                                                                                                            </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718190421016   </Ident>
+      <Name>NIVIS NEXT GLOSS 250G 70X100 SB                                                                                                                                                                                                                           </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718070332001   </Ident>
+      <Name>AKIR MATT 70G 90X64 BB                                                                                                                                                                                                                                    </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718070432001   </Ident>
+      <Name>AKIR MATT 70G 100X70 BB                                                                                                                                                                                                                                   </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718080332008   </Ident>
+      <Name>AKIR MATT 80G 90X64 BB                                                                                                                                                                                                                                    </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100332012   </Ident>
+      <Name>NIVIS NEXT MATT 100G 90X64 BB                                                                                                                                                                                                                             </Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100331013   </Ident>
+      <Name>NIVIS NEXT MATT 100G 64X90 SB                                                                                                                                                                                                                             </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100431012   </Ident>
+      <Name>NIVIS NEXT MATT 100G 70X100 SB                                                                                                                                                                                                                            </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718111332002   </Ident>
+      <Name>NIVIS NEXT MATT 115G 64X45 BB                                                                                                                                                                                                                             </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718180432009   </Ident>
+      <Name>NIVIS NEXT MATT 200G 100X70 BB                                                                                                                                                                                                                            </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210332016   </Ident>
+      <Name>NIVIS NEXT MATT 300G 90X64 BB                                                                                                                                                                                                                             </Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210431026   </Ident>
+      <Name>NIVIS NEXT MATT 300G 70X100 SB                                                                                                                                                                                                                            </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:06:52</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718220432015   </Ident>
+      <Name>NIVIS NEXT MATT 350G 102X72 BB                                                                                                                                                                                                                            </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+15. 06. 2020 08:06:52 Run Create order procedure _upJM_CreateSupplierOrder
+15. 06. 2020 08:07:19 Update Create order Recall Data
+15. 06. 2020 08:14:57 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>15. 06. 2020 08:14:57</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>15. 06. 2020 08:14:57</OrderDate>
+  <LoadDate>15. 06. 2020 08:14:57</LoadDate>
+  <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070201005   </Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 61X86 SB                                                                                                                                                                                                                          </Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080401011   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB                                                                                                                                                                                                                         </Name>
+      <Qty>6000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712090401009   </Ident>
+      <Name>ARCOSET EXTRA WHITE 90G 70X100 SB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712100201005   </Ident>
+      <Name>ARCOSET EXTRA WHITE 100G 61X86 SB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712100302017   </Ident>
+      <Name>ARCOSET EXTRA WHITE 100G 90X64 BB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712410301016   </Ident>
+      <Name>ARCOSET EXTRA WHITE 120G 64X90 SB                                                                                                                                                                                                                         </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712130302000   </Ident>
+      <Name>ARCOSET EXTRA WHITE 140G 90X64 BB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712170402001   </Ident>
+      <Name>ARCOSET EXTRA WHITE 170G 100X70 BB                                                                                                                                                                                                                        </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712180402001   </Ident>
+      <Name>ARCOSET EXTRA WHITE 190G 100X70 BB                                                                                                                                                                                                                        </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712180401001   </Ident>
+      <Name>ARCOSET EXTRA WHITE 190G 70X100 SB                                                                                                                                                                                                                        </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712190302000   </Ident>
+      <Name>ARCOSET EXTRA WHITE 250G 90X64 BB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712190301000   </Ident>
+      <Name>ARCOSET EXTRA WHITE 250G 64X90 SB                                                                                                                                                                                                                         </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712190401001   </Ident>
+      <Name>ARCOSET EXTRA WHITE 250G 70X100 SB                                                                                                                                                                                                                        </Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712210402002   </Ident>
+      <Name>ARCOSET EXTRA WHITE 300G 100X70 BB                                                                                                                                                                                                                        </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712210401001   </Ident>
+      <Name>ARCOSET EXTRA WHITE 300G 70X100 SB                                                                                                                                                                                                                        </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080302044   </Ident>
+      <Name>ARCO PREPRINT 80G 90X64 BB                                                                                                                                                                                                                                </Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:14:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712090302032   </Ident>
+      <Name>ARCO PREPRINT 90G 90X64 BB                                                                                                                                                                                                                                </Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+15. 06. 2020 08:14:57 Run Create order procedure _upJM_CreateSupplierOrder
+15. 06. 2020 08:14:58 Update Create order Recall Data
+15. 06. 2020 08:18:38 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>15. 06. 2020 08:18:38</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>R.D.M. OVARO S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>15. 06. 2020 08:18:38</OrderDate>
+  <LoadDate>15. 06. 2020 08:18:38</LoadDate>
+  <DeliveryDate>15. 06. 2020 08:18:38</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>15. 06. 2020 08:18:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>1429750401004   </Ident>
+      <Name>LEPENKA 2,2 MM TIPO 918 70X100 SB                                                                                                                                                                                                                         </Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+15. 06. 2020 08:18:38 Run Create order procedure _upJM_CreateSupplierOrder
+15. 06. 2020 08:18:38 Update Create order Recall Data
+15. 06. 2020 08:40:46 D:\GitHub\DatabaseWebService\
+15. 06. 2020 08:40:46 D:\GitHub\DatabaseWebService\
+15. 06. 2020 09:25:51 D:\GitHub\DatabaseWebService\
+15. 06. 2020 09:25:51 D:\GitHub\DatabaseWebService\
+15. 06. 2020 09:27:21 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>15. 06. 2020 09:27:19</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>DS</ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>FEDRIGONI S.P.A.              </Buyer>
+  <OrderDate>15. 06. 2020 09:27:21</OrderDate>
+  <LoadDate>16. 06. 2020 00:00:00</LoadDate>
+  <DeliveryDate>16. 06. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>16. 06. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0526170401002   </Ident>
+      <Name>MATERICA TERRA ROSSA 180G 72X102 SB</Name>
+      <Qty>132,19</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>16. 06. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0518340401000F  </Ident>
+      <Name>SYMBOL CARD 1SC 360G 72X102 SB FSC MIX CREDIT</Name>
+      <Qty>528,76</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>16. 06. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0526190401007   </Ident>
+      <Name>MATERICA TERRA ROSSA 250G 72X102 SB</Name>
+      <Qty>550,80</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+15. 06. 2020 09:27:21 Run Create order procedure _upJM_CreateSupplierOrder
+15. 06. 2020 09:27:21 Update Create order Recall Data
+17. 06. 2020 14:59:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+17. 06. 2020 14:59:39 count : 128
+17. 06. 2020 14:59:39 Before CheckPositionQuantity
+17. 06. 2020 14:59:47 After CheckPositionQuantity
+17. 06. 2020 14:59:47 Before SetApplicationToOrderPosition
+17. 06. 2020 14:59:47 Before PDO naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:48 Before NOZ naročila
+17. 06. 2020 14:59:48 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:49 Before PDO naročila
+17. 06. 2020 14:59:49 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:50 Before PDO naročila
+17. 06. 2020 14:59:50 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:51 Before PDO naročila
+17. 06. 2020 14:59:51 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:52 Before PDO naročila
+17. 06. 2020 14:59:52 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:53 Before NOZ naročila
+17. 06. 2020 14:59:53 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:54 Before PDO naročila
+17. 06. 2020 14:59:54 Before NOZ naročila
+17. 06. 2020 14:59:55 Before PDO naročila
+17. 06. 2020 14:59:55 Before NOZ naročila
+17. 06. 2020 14:59:55 Before PDO naročila
+17. 06. 2020 14:59:55 Before NOZ naročila
+17. 06. 2020 14:59:55 Before PDO naročila
+17. 06. 2020 14:59:55 Before NOZ naročila
+17. 06. 2020 14:59:55 Before PDO naročila
+17. 06. 2020 14:59:57 Before NOZ naročila
+17. 06. 2020 14:59:57 Before PDO naročila
+17. 06. 2020 14:59:57 Before NOZ naročila
+17. 06. 2020 14:59:57 Before PDO naročila
+17. 06. 2020 14:59:57 Before NOZ naročila
+17. 06. 2020 14:59:57 Before PDO naročila
+17. 06. 2020 14:59:58 Before NOZ naročila
+17. 06. 2020 14:59:59 Before PDO naročila
+17. 06. 2020 14:59:59 Before NOZ naročila
+17. 06. 2020 14:59:59 Before PDO naročila
+17. 06. 2020 14:59:59 Before NOZ naročila
+17. 06. 2020 14:59:59 After SetApplicationToOrderPosition
+17. 06. 2020 14:59:59 Before clientID : 0
+17. 06. 2020 14:59:59 After Client
+18. 06. 2020 09:49:30 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 06. 2020 09:49:32 count : 128
+18. 06. 2020 09:49:32 Before CheckPositionQuantity
+18. 06. 2020 09:49:39 After CheckPositionQuantity
+18. 06. 2020 09:49:39 Before SetApplicationToOrderPosition
+18. 06. 2020 09:49:39 Before PDO naročila
+18. 06. 2020 09:49:39 Before PDO naročila
+18. 06. 2020 09:49:39 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:40 Before PDO naročila
+18. 06. 2020 09:49:40 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:41 Before NOZ naročila
+18. 06. 2020 09:49:41 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:42 Before PDO naročila
+18. 06. 2020 09:49:42 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:43 Before PDO naročila
+18. 06. 2020 09:49:43 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:44 Before PDO naročila
+18. 06. 2020 09:49:44 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:45 Before NOZ naročila
+18. 06. 2020 09:49:45 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 Before PDO naročila
+18. 06. 2020 09:49:46 Before NOZ naročila
+18. 06. 2020 09:49:46 After SetApplicationToOrderPosition
+18. 06. 2020 09:49:46 Before clientID : 0
+18. 06. 2020 09:49:46 After Client
+19. 06. 2020 07:48:54 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>19. 06. 2020 07:48:53</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>19. 06. 2020 07:48:54</OrderDate>
+  <LoadDate>19. 06. 2020 07:48:54</LoadDate>
+  <DeliveryDate>19. 06. 2020 07:48:54</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>gfdsgdsf</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>19. 06. 2020 07:48:54</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718070322000</Ident>
+      <Name>AKIR GLOSS 70G 88X64 BB</Name>
+      <Qty>19,71</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>19. 06. 2020 07:48:54</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718070422000</Ident>
+      <Name>AKIR GLOSS 70G 100X70 BB</Name>
+      <Qty>29,4</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>19. 06. 2020 07:48:54</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718080322001</Ident>
+      <Name>AKIR GLOSS 80G 90X64 BB</Name>
+      <Qty>32,26</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+19. 06. 2020 07:48:54 Run Create order procedure _upJM_CreateSupplierOrder
+19. 06. 2020 07:49:08 Update Create order Recall Data
+19. 06. 2020 08:37:50 GetListOfOrderNumber10
+19. 06. 2020 08:39:34 GetListOfOrderNumber10
+19. 06. 2020 08:41:17 GetListOfOrderNumber10
+19. 06. 2020 08:50:05 GetListOfOrderNumber10
+19. 06. 2020 08:50:11 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 08:52:24 GetListOfOrderNumber10
+19. 06. 2020 08:52:30 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+19. 06. 2020 08:52:36 GetListOfOpenedOrderPositions for : BRANCHER                      
+19. 06. 2020 08:53:01 GetListOfOrderNumber10
+19. 06. 2020 08:53:10 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 08:54:48 GetListOfOrderNumber10
+19. 06. 2020 08:56:47 GetListOfOrderNumber10
+19. 06. 2020 08:57:14 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 09:05:39 GetListOfOrderNumber10
+19. 06. 2020 09:06:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 09:16:44 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 09:41:37 GetListOfOrderNumber10
+19. 06. 2020 09:41:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 09:47:49 GetListOfOrderNumber10
+19. 06. 2020 09:50:26 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 06. 2020 09:51:27 GetListOfOrderNumber10
+19. 06. 2020 09:51:34 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 09:55:46 GetListOfOrderNumber10
+19. 06. 2020 09:55:50 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 10:03:38 GetListOfOrderNumber10
+19. 06. 2020 10:03:45 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 10:55:39 GetListOfOrderNumber10
+19. 06. 2020 10:55:58 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:09:42 GetListOfOrderNumber10
+19. 06. 2020 11:09:50 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:15:06 GetListOfOrderNumber10
+19. 06. 2020 11:28:42 GetListOfOrderNumber10
+19. 06. 2020 11:30:33 GetListOfOrderNumber10
+19. 06. 2020 11:30:51 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:31:38 GetListOfOrderNumber10
+19. 06. 2020 11:31:44 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:33:07 GetListOfOrderNumber10
+19. 06. 2020 11:33:17 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 06. 2020 11:33:50 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:34:39 GetListOfOrderNumber10
+19. 06. 2020 11:35:30 GetListOfOrderNumber10
+19. 06. 2020 11:35:44 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:37:26 GetListOfOrderNumber10
+19. 06. 2020 11:37:58 GetListOfOrderNumber10
+19. 06. 2020 11:39:05 GetListOfOrderNumber10
+19. 06. 2020 11:41:29 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:42:01 GetListOfOrderNumber10
+19. 06. 2020 11:44:59 GetListOfOrderNumber10
+19. 06. 2020 11:45:42 GetListOfOrderNumber10
+19. 06. 2020 11:45:46 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:46:25 GetListOfOrderNumber10
+19. 06. 2020 11:47:15 GetListOfOrderNumber10
+19. 06. 2020 11:47:40 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:49:51 GetListOfOrderNumber10
+19. 06. 2020 11:50:30 GetListOfOrderNumber10
+19. 06. 2020 11:53:27 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:55:55 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 06. 2020 11:58:22 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 11:58:36 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 06. 2020 13:58:03 GetListOfOrderNumber10
+19. 06. 2020 13:58:39 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 14:17:05 GetListOfOrderNumber10
+19. 06. 2020 14:24:41 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 06. 2020 14:30:28 GetListOfOrderNumber10
+19. 06. 2020 14:30:58 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 14:40:09 GetListOfOrderNumber10
+19. 06. 2020 14:40:30 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 14:45:01 GetListOfOrderNumber10
+19. 06. 2020 14:45:14 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 14:46:14 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+19. 06. 2020 14:50:33 GetListOfOrderNumber10
+19. 06. 2020 14:52:51 GetListOfOrderNumber10
+19. 06. 2020 14:53:26 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 14:54:45 GetListOfOrderNumber10
+19. 06. 2020 14:54:59 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 14:58:09 GetListOfOrderNumber10
+19. 06. 2020 14:58:32 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 15:00:17 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+19. 06. 2020 15:08:09 GetListOfOrderNumber10
+19. 06. 2020 15:08:38 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 15:08:59 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 15:09:59 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+19. 06. 2020 15:10:15 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+19. 06. 2020 15:10:39 GetListOfOpenedOrderPositions for : 
+19. 06. 2020 15:14:48 GetListOfOrderNumber10
+19. 06. 2020 15:15:09 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 15:15:39 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+19. 06. 2020 15:18:46 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+19. 06. 2020 15:18:55 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+22. 06. 2020 07:49:14 GetListOfOrderNumber10
+22. 06. 2020 07:49:29 GetListOfOrderNumber10
+22. 06. 2020 07:50:01 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 07:50:26 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 08:02:09 GetListOfOrderNumber10
+22. 06. 2020 08:02:12 GetListOfOrderNumber10
+22. 06. 2020 08:02:24 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 08:03:23 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+22. 06. 2020 08:04:08 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+22. 06. 2020 08:07:54 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 09:30:28 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 09:37:50 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 09:38:15 GetListOfOrderNumber10
+22. 06. 2020 09:38:27 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 09:42:54 GetListOfOrderNumber10
+22. 06. 2020 09:43:04 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 09:56:39 GetListOfOrderNumber10
+22. 06. 2020 09:57:08 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:03:11 GetListOfOrderNumber10
+22. 06. 2020 10:03:20 GetListOfOrderNumber10
+22. 06. 2020 10:03:31 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:04:35 GetListOfOrderNumber10
+22. 06. 2020 10:04:45 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:05:07 GetListOfOrderNumber10
+22. 06. 2020 10:05:20 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:06:11 GetListOfOrderNumber10
+22. 06. 2020 10:06:35 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:06:54 GetListOfOrderNumber10
+22. 06. 2020 10:07:07 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:13:05 GetListOfOrderNumber10
+22. 06. 2020 10:14:09 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 10:22:35 GetListOfOrderNumber10
+22. 06. 2020 10:25:50 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 11:40:44 GetListOfOrderNumber10
+22. 06. 2020 11:41:06 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 11:41:35 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 11:42:28 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 11:51:32 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:13:06 GetListOfOrderNumber10
+22. 06. 2020 13:13:25 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:13:33 GetListOfOrderNumber10
+22. 06. 2020 13:13:51 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:16:06 GetListOfOrderNumber10
+22. 06. 2020 13:16:28 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:17:29 GetListOfOrderNumber10
+22. 06. 2020 13:17:44 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:18:16 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:29:39 GetListOfOrderNumber10
+22. 06. 2020 13:30:01 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 13:37:10 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:06:56 GetListOfOrderNumber10
+22. 06. 2020 14:07:14 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:17:08 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:20:44 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:24:53 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:27:22 GetListOfOrderNumber10
+22. 06. 2020 14:27:35 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:28:42 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:48:45 GetListOfOrderNumber10
+22. 06. 2020 14:49:09 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 14:57:48 GetListOfOrderNumber10
+22. 06. 2020 14:57:51 GetListOfOrderNumber10
+22. 06. 2020 14:57:59 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 15:07:58 GetListOfOrderNumber10
+22. 06. 2020 15:08:16 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 15:21:13 GetListOfOrderNumber10
+22. 06. 2020 15:21:23 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 15:22:24 GetListOfOrderNumber10
+22. 06. 2020 15:22:24 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+22. 06. 2020 15:26:29 GetListOfOrderNumber10
+22. 06. 2020 15:26:38 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 06. 2020 15:27:36 GetListOfOrderNumber10
+22. 06. 2020 15:28:17 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+22. 06. 2020 15:33:03 GetListOfOrderNumber10
+22. 06. 2020 15:33:04 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+23. 06. 2020 09:12:43 GetListOfOrderNumber10
+23. 06. 2020 09:13:49 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 09:28:37 GetListOfOrderNumber10
+23. 06. 2020 09:28:51 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 09:31:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 09:42:31 GetListOfOrderNumber10
+23. 06. 2020 09:42:44 GetListOfOrderNumber10
+23. 06. 2020 09:42:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 09:44:37 GetListOfOrderNumber10
+23. 06. 2020 09:44:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 10:13:14 GetListOfOrderNumber10
+23. 06. 2020 10:13:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 10:16:27 GetListOfOrderNumber10
+23. 06. 2020 10:16:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 10:16:57 GetListOfOrderNumber10
+23. 06. 2020 10:16:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:12:27 GetListOfOrderNumber10
+23. 06. 2020 11:12:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:12:36 GetListOfOrderNumber10
+23. 06. 2020 11:12:36 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:12:42 GetListOfOrderNumber10
+23. 06. 2020 11:12:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:14:19 GetListOfOrderNumber10
+23. 06. 2020 11:14:19 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:15:02 GetListOfOrderNumber10
+23. 06. 2020 11:15:02 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:19:29 GetListOfOrderNumber10
+23. 06. 2020 11:19:30 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:23:31 GetListOfOrderNumber10
+23. 06. 2020 11:23:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:24:54 GetListOfOrderNumber10
+23. 06. 2020 11:25:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 11:25:23 GetListOfOrderNumber10
+23. 06. 2020 11:25:23 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:26:36 GetListOfOrderNumber10
+23. 06. 2020 11:26:36 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:27:24 GetListOfOrderNumber10
+23. 06. 2020 11:27:24 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:30:10 GetListOfOrderNumber10
+23. 06. 2020 11:30:10 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:31:35 GetListOfOrderNumber10
+23. 06. 2020 11:31:35 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:32:20 GetListOfOrderNumber10
+23. 06. 2020 11:32:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 11:32:46 GetListOfOrderNumber10
+23. 06. 2020 11:32:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:33:04 GetListOfOrderNumber10
+23. 06. 2020 11:33:04 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:33:58 GetListOfOrderNumber10
+23. 06. 2020 11:33:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:34:31 GetListOfOrderNumber10
+23. 06. 2020 11:34:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:34:58 GetListOfOrderNumber10
+23. 06. 2020 11:34:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:37:04 GetListOfOrderNumber10
+23. 06. 2020 11:37:05 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:37:45 GetListOfOrderNumber10
+23. 06. 2020 11:37:47 GetListOfOrderNumber10
+23. 06. 2020 11:37:55 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 11:38:11 GetListOfOrderNumber10
+23. 06. 2020 11:38:11 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:44:32 GetListOfOrderNumber10
+23. 06. 2020 11:44:40 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 11:44:58 GetListOfOrderNumber10
+23. 06. 2020 11:44:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 11:57:42 GetListOfOrderNumber10
+23. 06. 2020 11:58:15 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 11:58:46 GetListOfOrderNumber10
+23. 06. 2020 11:58:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 12:01:25 GetListOfOrderNumber10
+23. 06. 2020 12:01:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 12:09:38 GetListOfOrderNumber10
+23. 06. 2020 12:10:16 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 12:10:39 GetListOfOrderNumber10
+23. 06. 2020 12:10:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+23. 06. 2020 12:13:55 GetListOfOrderNumber10
+23. 06. 2020 12:15:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 06. 2020 12:15:50 GetListOfOrderNumber10
+23. 06. 2020 12:15:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+24. 06. 2020 07:35:15 GetListOfOrderNumber10
+24. 06. 2020 07:37:20 GetListOfOrderNumber10
+24. 06. 2020 07:38:08 GetListOfOrderNumber10
+24. 06. 2020 07:38:34 GetListOfOrderNumber10
+24. 06. 2020 07:38:54 GetListOfOrderNumber10
+24. 06. 2020 07:39:48 GetListOfOrderNumber10
+24. 06. 2020 07:44:15 GetListOfOrderNumber10
+24. 06. 2020 07:44:32 GetListOfOrderNumber10
+24. 06. 2020 07:45:08 GetListOfOrderNumber10
+24. 06. 2020 07:45:20 GetListOfOrderNumber10
+24. 06. 2020 07:45:31 GetListOfOrderNumber10
+24. 06. 2020 07:46:16 GetListOfOrderNumber10
+24. 06. 2020 07:47:14 GetListOfOrderNumber10
+24. 06. 2020 08:00:26 GetListOfOrderNumber10
+24. 06. 2020 08:00:41 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 08:26:21 GetListOfOrderNumber10
+24. 06. 2020 08:27:18 GetListOfOrderNumber10
+24. 06. 2020 08:27:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 08:33:02 GetListOfOrderNumber10
+24. 06. 2020 08:33:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 08:35:42 GetListOfOrderNumber10
+24. 06. 2020 08:35:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 08:40:48 GetListOfOrderNumber10
+24. 06. 2020 08:40:53 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 08:41:43 GetListOfOrderNumber10
+24. 06. 2020 08:42:15 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:40:49 GetListOfOrderNumber10
+24. 06. 2020 09:41:55 GetListOfOrderNumber10
+24. 06. 2020 09:42:07 GetListOfOrderNumber10
+24. 06. 2020 09:42:26 GetListOfOrderNumber10
+24. 06. 2020 09:42:41 GetListOfOrderNumber10
+24. 06. 2020 09:43:05 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:44:50 GetListOfOrderNumber10
+24. 06. 2020 09:44:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:46:16 GetListOfOrderNumber10
+24. 06. 2020 09:46:21 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:49:38 GetListOfOrderNumber10
+24. 06. 2020 09:50:21 GetListOfOrderNumber10
+24. 06. 2020 09:50:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:51:22 GetListOfOrderNumber10
+24. 06. 2020 09:51:27 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:55:25 GetListOfOrderNumber10
+24. 06. 2020 09:55:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 09:56:16 GetListOfOrderNumber10
+24. 06. 2020 09:56:29 GetListOfOrderNumber10
+24. 06. 2020 09:56:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:33:40 GetListOfOrderNumber10
+24. 06. 2020 13:34:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:43:37 GetListOfOrderNumber10
+24. 06. 2020 13:43:47 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:44:14 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:47:05 GetListOfOrderNumber10
+24. 06. 2020 13:47:18 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:47:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:48:53 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:52:27 GetListOfOrderNumber10
+24. 06. 2020 13:52:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:54:44 GetListOfOrderNumber10
+24. 06. 2020 13:55:30 GetListOfOrderNumber10
+24. 06. 2020 13:55:41 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:56:08 GetListOfOrderNumber10
+24. 06. 2020 13:56:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:57:33 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 13:59:29 GetListOfOrderNumber10
+24. 06. 2020 13:59:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 14:00:04 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 14:01:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 14:01:54 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 14:02:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 14:06:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 15:03:32 GetListOfOrderNumber10
+24. 06. 2020 15:03:35 GetListOfOrderNumber10
+24. 06. 2020 15:03:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 15:04:26 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+24. 06. 2020 15:04:51 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+24. 06. 2020 15:05:07 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 15:05:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 15:10:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 06. 2020 15:10:22 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:28:03 GetListOfOrderNumber10
+26. 06. 2020 09:28:27 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:29:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:29:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:36:16 GetListOfOrderNumber10
+26. 06. 2020 09:36:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:36:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:39:14 GetListOfOrderNumber10
+26. 06. 2020 09:40:06 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:40:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:46:44 GetListOfOrderNumber10
+26. 06. 2020 09:47:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:47:52 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 09:50:32 GetListOfOrderNumber10
+26. 06. 2020 09:50:39 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+26. 06. 2020 09:51:22 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+26. 06. 2020 10:00:46 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+26. 06. 2020 10:01:11 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+26. 06. 2020 10:24:00 GetListOfOrderNumber10
+26. 06. 2020 10:24:04 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 06. 2020 10:25:49 GetListOfOrderNumber10
+26. 06. 2020 10:25:57 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+26. 06. 2020 12:56:22 GetListOfOrderNumber10
+26. 06. 2020 12:56:27 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+29. 06. 2020 08:00:56 GetListOfOrderNumber10
+29. 06. 2020 08:01:09 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+29. 06. 2020 08:02:49 GetListOfOrderNumber10
+1. 07. 2020 14:11:54 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+1. 07. 2020 14:12:47 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+1. 07. 2020 14:24:41 D:\GitHub\DatabaseWebService\
+1. 07. 2020 14:26:41 Zaposlen Ana Matjažnima dodeljenega nadrejenega!
+1. 07. 2020 14:26:59 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+1. 07. 2020 14:28:10 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+1. 07. 2020 14:31:00 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+1. 07. 2020 14:31:45 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.
+1. 07. 2020 14:34:16 D:\GitHub\DatabaseWebService\
+1. 07. 2020 14:43:41 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+1. 07. 2020 14:46:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+1. 07. 2020 14:46:41 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+1. 07. 2020 14:47:32 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.
+1. 07. 2020 14:49:33 D:\GitHub\DatabaseWebService\
+1. 07. 2020 15:08:15 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+1. 07. 2020 17:25:07 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+1. 07. 2020 17:25:14 GetListOfOpenedOrderPositions for : DS SMITH BELIŠĆE CROATIA D.O.O
+1. 07. 2020 17:25:20 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+1. 07. 2020 17:26:06 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+1. 07. 2020 17:26:51 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+1. 07. 2020 17:56:49 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+1. 07. 2020 17:58:38 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+1. 07. 2020 18:00:16 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+1. 07. 2020 18:04:29 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+1. 07. 2020 18:06:44 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+1. 07. 2020 18:07:52 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+1. 07. 2020 18:09:22 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+2. 07. 2020 08:58:45 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+2. 07. 2020 09:02:04 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+2. 07. 2020 09:06:09 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+2. 07. 2020 09:09:53 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+2. 07. 2020 12:46:17 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+2. 07. 2020 12:47:23 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+2. 07. 2020 12:49:21 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+2. 07. 2020 13:24:43 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 07. 2020 13:42:01 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 07. 2020 13:45:20 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 07. 2020 10:52:08 GetListOfOrderNumber10
+20. 07. 2020 10:54:24 GetListOfOrderNumber10
+20. 07. 2020 10:54:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 07. 2020 10:55:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 07. 2020 12:22:24 GetListOfOrderNumber10
+20. 07. 2020 12:22:31 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+20. 07. 2020 12:23:15 GetListOfOrderNumber10
+20. 07. 2020 12:23:20 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+20. 07. 2020 12:23:57 GetListOfOrderNumber10
+20. 07. 2020 12:24:01 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+21. 07. 2020 20:30:37 GetListOfOrderNumber10
+21. 07. 2020 20:32:13 GetListOfOrderNumber10
+22. 07. 2020 08:04:25 GetListOfOrderNumber10
+22. 07. 2020 08:07:31 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+22. 07. 2020 17:12:02 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 07. 2020 17:13:24 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 07. 2020 17:13:52 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 07. 2020 17:14:21 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+22. 07. 2020 17:14:41 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+22. 07. 2020 17:14:53 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+22. 07. 2020 17:14:58 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+22. 07. 2020 17:15:26 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22. 07. 2020 17:19:13 GetListOfOpenedOrderPositions for : VAL KART d.o.o.               
+22. 07. 2020 17:19:46 GetListOfOrderNumber10
+22. 07. 2020 17:19:52 GetListOfOpenedOrderPositions for : VAL KART d.o.o.               
+22. 07. 2020 17:34:12 GetListOfOrderNumber10
+22. 07. 2020 17:34:20 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22. 07. 2020 17:34:50 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+22. 07. 2020 17:34:55 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+22. 07. 2020 17:34:59 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+22. 07. 2020 17:35:23 GetListOfOrderNumber10
+22. 07. 2020 17:35:31 GetListOfOpenedOrderPositions for : DREWSEN SPEZIALPAPIERE GmbH   
+22. 07. 2020 17:35:36 GetListOfOpenedOrderPositions for : DS SMITH BELIŠĆE CROATIA D.O.O
+22. 07. 2020 17:35:42 GetListOfOpenedOrderPositions for : HOLMEN AKTIEBOLAG MOMSGRUPP   
+22. 07. 2020 17:36:48 D:\GitHub\DatabaseWebService\
+22. 07. 2020 17:36:48 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 07. 2020 17:36:59 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+22. 07. 2020 17:37:23 GetListOfOrderNumber10
+22. 07. 2020 17:37:29 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+22. 07. 2020 17:38:44 D:\GitHub\DatabaseWebService\
+22. 07. 2020 17:38:44 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 07. 2020 17:38:56 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+22. 07. 2020 17:40:13 D:\GitHub\DatabaseWebService\
+22. 07. 2020 17:40:13 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 07. 2020 18:13:35 D:\GitHub\DatabaseWebService\
+23. 07. 2020 10:46:36 GetListOfOrderNumber10
+23. 07. 2020 10:53:42 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 07. 2020 11:07:26 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 07. 2020 11:08:08 GetListOfOrderNumber10
+23. 07. 2020 11:08:12 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 07. 2020 11:09:16 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 07. 2020 11:14:32 GetListOfOrderNumber10
+23. 07. 2020 11:14:37 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:15:04 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:41:36 GetListOfOrderNumber10
+23. 07. 2020 11:41:41 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:42:39 GetListOfOrderNumber10
+23. 07. 2020 11:42:44 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:43:17 GetListOfOrderNumber10
+23. 07. 2020 11:43:20 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:46:26 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:47:01 GetListOfOrderNumber10
+23. 07. 2020 11:47:04 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:48:45 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:50:36 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:50:52 GetListOfOrderNumber10
+23. 07. 2020 11:51:01 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:58:49 GetListOfOrderNumber10
+23. 07. 2020 11:59:04 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 07. 2020 11:59:45 GetListOfOrderNumber10
+23. 07. 2020 11:59:48 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+23. 07. 2020 14:23:30 GetListOfOrderNumber10
+23. 07. 2020 14:24:22 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 07. 2020 14:25:00 GetListOfOrderNumber10
+23. 07. 2020 14:25:11 GetListOfOpenedOrderPositions for : DREWSEN SPEZIALPAPIERE GmbH   
+23. 07. 2020 14:29:10 GetListOfOpenedOrderPositions for : DS SMITH BELIŠĆE CROATIA D.O.O
+23. 07. 2020 14:29:19 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+23. 07. 2020 14:30:10 GetListOfOrderNumber10
+23. 07. 2020 14:30:17 GetListOfOpenedOrderPositions for : GOLD EAST TRADING (HONG KONG) 
+23. 07. 2020 14:30:27 GetListOfOpenedOrderPositions for : GRAFO LIT ZAGREB              
+23. 07. 2020 14:44:38 GetListOfOrderNumber10
+23. 07. 2020 14:44:46 GetListOfOpenedOrderPositions for : Kabel Premium Pulp | Paper Gmb
+23. 07. 2020 14:44:56 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+23. 07. 2020 14:45:04 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+23. 07. 2020 14:47:05 GetListOfOrderNumber10
+23. 07. 2020 14:47:12 GetListOfOpenedOrderPositions for : MITSUBISHI                    
+23. 07. 2020 15:06:52 GetListOfOrderNumber10
+23. 07. 2020 15:07:05 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+23. 07. 2020 15:07:35 GetListOfOrderNumber10
+23. 07. 2020 15:07:44 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+23. 07. 2020 15:08:28 GetListOfOrderNumber10
+23. 07. 2020 15:08:37 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+23. 07. 2020 15:10:48 GetListOfOrderNumber10
+23. 07. 2020 15:10:55 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+23. 07. 2020 15:15:23 GetListOfOrderNumber10
+23. 07. 2020 15:15:29 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 12:00:46 GetListOfOrderNumber10
+24. 07. 2020 12:00:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 07. 2020 12:01:48 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24. 07. 2020 12:02:33 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+24. 07. 2020 12:10:25 GetListOfOrderNumber10
+24. 07. 2020 12:10:36 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+24. 07. 2020 12:11:34 GetListOfOrderNumber10
+24. 07. 2020 12:11:44 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+24. 07. 2020 12:12:37 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+24. 07. 2020 13:20:23 GetListOfOpenedOrderPositions for : Stora Enso Ingerois Oy        
+24. 07. 2020 13:20:31 GetListOfOpenedOrderPositions for : TRIGLAV PAPIR D.O.O.          
+24. 07. 2020 13:20:39 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+24. 07. 2020 13:24:39 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:28:06 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:30:46 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:32:05 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:34:30 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:37:06 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:39:20 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:44:20 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 13:46:52 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+24. 07. 2020 14:33:16 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+26. 07. 2020 14:00:45 GetListOfOrderNumber10
+26. 07. 2020 14:01:07 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+27. 07. 2020 09:54:43 GetListOfOrderNumber10
+27. 07. 2020 09:55:10 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 09:57:03 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 09:59:24 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:00:33 GetListOfOrderNumber10
+27. 07. 2020 10:00:42 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:01:39 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:03:12 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:05:31 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:18:39 GetListOfOrderNumber10
+27. 07. 2020 10:18:58 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:27:48 GetListOfOrderNumber10
+27. 07. 2020 10:27:57 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:33:27 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:36:28 GetListOfOrderNumber10
+27. 07. 2020 10:36:35 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:39:53 GetListOfOrderNumber10
+27. 07. 2020 10:39:57 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:42:25 GetListOfOrderNumber10
+27. 07. 2020 10:42:43 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:46:26 GetListOfOrderNumber10
+27. 07. 2020 10:46:34 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 10:47:28 GetListOfOrderNumber10
+27. 07. 2020 10:47:32 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+27. 07. 2020 11:28:16 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 11:33:57 GetListOfOrderNumber10
+27. 07. 2020 11:34:03 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+27. 07. 2020 11:34:50 GetListOfOrderNumber10
+27. 07. 2020 11:35:15 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+27. 07. 2020 11:35:24 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+27. 07. 2020 11:35:36 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+27. 07. 2020 11:43:52 GetListOfOrderNumber10
+27. 07. 2020 11:43:57 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+27. 07. 2020 11:46:58 GetListOfOrderNumber10
+27. 07. 2020 11:47:05 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+27. 07. 2020 11:51:20 GetListOfOrderNumber10
+27. 07. 2020 11:51:27 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+27. 07. 2020 12:09:05 GetListOfOrderNumber10
+27. 07. 2020 12:09:10 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+27. 07. 2020 12:16:05 GetListOfOrderNumber10
+27. 07. 2020 12:16:15 GetListOfOpenedOrderPositions for : PAPIRNICA VEVČE               
+28. 07. 2020 09:29:38 GetListOfOrderNumber10
+28. 07. 2020 09:46:19 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 09:46:55 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:34:07 GetListOfOrderNumber10
+28. 07. 2020 10:34:11 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:36:26 GetListOfOrderNumber10
+28. 07. 2020 10:36:31 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:38:48 GetListOfOrderNumber10
+28. 07. 2020 10:39:05 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:39:26 GetListOfOrderNumber10
+28. 07. 2020 10:39:39 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:39:57 GetListOfOrderNumber10
+28. 07. 2020 10:41:35 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+28. 07. 2020 10:43:38 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+28. 07. 2020 10:43:43 GetListOfOrderNumber10
+28. 07. 2020 10:43:58 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+28. 07. 2020 10:44:51 GetListOfOrderNumber10
+28. 07. 2020 10:44:59 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+28. 07. 2020 10:46:32 GetListOfOrderNumber10
+28. 07. 2020 10:46:38 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28. 07. 2020 11:02:41 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:20:35 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:23:35 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:45:53 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:45:58 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:46:18 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:48:59 D:\GitHub\DatabaseWebService\
+28. 07. 2020 11:54:54 D:\GitHub\DatabaseWebService\
+28. 07. 2020 12:00:22 D:\GitHub\DatabaseWebService\
+28. 07. 2020 12:06:49 D:\GitHub\DatabaseWebService\
+28. 07. 2020 13:49:04 D:\GitHub\DatabaseWebService\
+28. 07. 2020 13:49:43 D:\GitHub\DatabaseWebService\
+28. 07. 2020 13:56:33 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:04:55 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:32:58 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:34:11 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:34:19 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:36:41 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:45:39 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:51:24 D:\GitHub\DatabaseWebService\
+28. 07. 2020 14:53:10 D:\GitHub\DatabaseWebService\
+28. 07. 2020 15:03:36 D:\GitHub\DatabaseWebService\
+28. 07. 2020 15:06:36 D:\GitHub\DatabaseWebService\
+28. 07. 2020 15:07:16 D:\GitHub\DatabaseWebService\
+29. 07. 2020 00:11:35 D:\GitHub\DatabaseWebService\
+29. 07. 2020 00:14:10 D:\GitHub\DatabaseWebService\
+29. 07. 2020 00:14:35 D:\GitHub\DatabaseWebService\
+31. 07. 2020 08:39:55 D:\GitHub\DatabaseWebService\
+31. 07. 2020 08:40:21 D:\GitHub\DatabaseWebService\
+31. 07. 2020 08:51:29 D:\GitHub\DatabaseWebService\
+31. 07. 2020 08:51:38 D:\GitHub\DatabaseWebService\
+31. 07. 2020 08:51:42 D:\GitHub\DatabaseWebService\

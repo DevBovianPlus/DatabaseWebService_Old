@@ -926,6 +926,8 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 item.DOBAVITELJ = item.DOBAVITELJ.Contains("SAPPI") ? "SAPPI" : item.DOBAVITELJ;
                 iHasStock = 0;
                 SumSubCategoryModel sc = GetSubCategoryFromNaziv(item.IDENT, item.NAZIV, item.LetnaProdaja);
+                sc.Gloss = (sc.Gloss != null) ? sc.Gloss : columnValues.Gloss;
+                sc.NazivPodKategorijeFilter = (sc.Gramatura == null) ? columnValues.Gramatura + " " + sc.NazivPodKategorijeFilter : sc.NazivPodKategorijeFilter;
                 item.NazivPodkategorije = sc.NazivPodKategorije;
                 iHasStock = GetOrAddSubCategoryOnCalculateSum(sc, lSubCategoryBySum, item);
 
@@ -1071,7 +1073,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             sc.NazivPodKategorije += (sc.Pefc.Length > 0) ? " " + sc.Pefc : "";
             sc.NazivPodKategorije += (sc.Fsc.Length > 0) ? " " + sc.Fsc : "";
             sc.NazivPodKategorije += (sc.Paket != null) ? " " + sc.Paket : "";
-            sc.NazivPodKategorijeFilter += sc.Gloss + " " + sc.NazivPodKategorije;
+            sc.NazivPodKategorijeFilter += sc.Gramatura + " " + sc.Gloss + " " + sc.NazivPodKategorije;
             return sc;
         }
 
@@ -1114,7 +1116,10 @@ namespace DatabaseWebService.DomainNOZ.Concrete
 
                             SumSubCategoryModel sc = GetSubCategoryFromNaziv(pr.IDENT, pr.NAZIV, 0);
                             pr.DOBAVITELJ = pr.DOBAVITELJ.Trim();
-                            List<OptimalStockTreeHierarchy> selListProductForUpdate = list.Where(l => (l.NazivPodkategorije == sc.NazivPodKategorije && l.Gloss == sc.Gloss)).ToList();
+                            // 28.07.2020 - popravek
+                            sc.Gloss = (columnValues.Gloss != null) ? columnValues.Gloss : null;
+
+                            List <OptimalStockTreeHierarchy> selListProductForUpdate = list.Where(l => (l.NazivPodkategorije == sc.NazivPodKategorije && l.Gloss == sc.Gloss)).ToList();
 
                             foreach (var item in selListProductForUpdate)
                             {
@@ -1157,7 +1162,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 {
                     var columnValues = GetColumnValuesForOptimalStock(list, leaf, color);
                     // TODO: dobiti moramo pravo Groupo, lahko iz ColumnValues ali pa če prenesem izbrano skupino na server
-                    OptimalStockColumnsModel dimGroup = lGetDimIdentOptList.Where(i => i.Gloss == columnValues.Gloss && i.Gramatura == columnValues.Gramatura && i.Velikost == columnValues.Velikost && i.Tek == columnValues.Tek).FirstOrDefault();
+                    OptimalStockColumnsModel dimGroup = lGetDimIdentOptList.Where(i => i.Gloss == columnValues.Gloss && i.Gramatura == columnValues.Gramatura && i.Velikost == columnValues.Velikost && i.Tek == columnValues.Tek && i.Barva == columnValues.Barva).FirstOrDefault();
                     if (dimGroup == null) throw new Exception("Napačna izbrana skupina");
                     int iGroupID = dimGroup.ID;
                     // pridobimo vse artikle za skupino in pa najbolj prodajano podskupino primer Skupina, ki jo potem prikažemo na treview 130G 45X64 SB PEFC 

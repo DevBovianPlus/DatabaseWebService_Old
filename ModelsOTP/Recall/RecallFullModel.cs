@@ -63,5 +63,11 @@ namespace DatabaseWebService.ModelsOTP.Recall
         public string P_TransportOrderPDFDocPath { get; set; }
         public DateTime P_GetPDFOrderFile { get; set; }
         public int P_SendWarningToAdmin { get; set; }
+
+        public decimal IzbranaKolicinaPDO { get; set; }
+        public decimal IzbranaKolicinaNOZ { get; set; }
+        public decimal IzbranaKolicinaOstalo { get; set; }
+        public decimal SkupajNOZPDO { get; set; }
+        public decimal SkupajNOZPDOOstalo { get; set; }
     }
 }

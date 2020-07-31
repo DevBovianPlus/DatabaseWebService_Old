@@ -434,6 +434,9 @@
     <Compile Include="DomainOTP\SeznamDobaviteljev_Result.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
+    <Compile Include="DomainOTP\SeznamPozicijNarocilnic10ZaOdpoklic_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainOTP\SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
