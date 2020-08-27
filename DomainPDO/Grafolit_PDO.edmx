@@ -33,6 +33,7 @@
           <Property Name="tsUpdate" Type="datetime" />
           <Property Name="tsUpdateUserID" Type="int" />
           <Property Name="NazivPodpis" Type="varchar" MaxLength="300" />
+          <Property Name="IsNabava" Type="bit" />
         </EntityType>
         <EntityType Name="Narocilo_PDO">
           <Key>
@@ -228,6 +229,8 @@
           <Property Name="PrikaziKupca" Type="bit" />
           <Property Name="IzbranArtikel" Type="bit" />
           <Property Name="DatumDobavePos" Type="datetime" />
+          <Property Name="DobaviteljID" Type="int" />
+          <Property Name="DobaviteljNaziv_PA" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="StatusPovprasevanja">
           <Key>
@@ -298,8 +301,8 @@
             <PropertyRef Name="SystemEmailMessageID" />
           </Key>
           <Property Name="SystemEmailMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmailFrom" Type="varchar" MaxLength="4000" />
-          <Property Name="EmailTo" Type="varchar" MaxLength="100" />
+          <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+          <Property Name="EmailTo" Type="varchar" MaxLength="4000" />
           <Property Name="EmailBody" Type="varchar(max)" />
           <Property Name="EmailSubject" Type="varchar" MaxLength="200" />
           <Property Name="Status" Type="int" />
@@ -310,8 +313,8 @@
           <Property Name="OsebaEmailFromID" Type="int" />
           <Property Name="Attachments" Type="varchar" MaxLength="4000" />
           <Property Name="CCEmails" Type="varchar" MaxLength="4000" />
-          <Property Name="TOEmails" Type="varchar" MaxLength="4000" />
           <Property Name="MasterMailID" Type="int" />
+          <Property Name="TOEmails" Type="varchar" MaxLength="4000" />
         </EntityType>
         <EntityType Name="SystemMessageEvents_PDO">
           <Key>
@@ -371,6 +374,18 @@
               <PropertyRef Name="StrankaID" />
             </Principal>
             <Dependent Role="Narocilo_PDO">
+              <PropertyRef Name="DobaviteljID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DobaviteljPozivijaArtikelID">
+          <End Role="Stranka_PDO" Type="Self.Stranka_PDO" Multiplicity="0..1" />
+          <End Role="PovprasevanjePozicijaArtikel" Type="Self.PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
               <PropertyRef Name="DobaviteljID" />
             </Dependent>
           </ReferentialConstraint>
@@ -669,6 +684,19 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="GetArtikelByNamePantheonOnly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Supplier" Type="varchar" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="StArtikla" Type="char" MaxLength="16" Nullable="false" />
+                <Property Name="NAZIV" Type="varchar" MaxLength="80" />
+                <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="GetArtikelBySearchStr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SearchStr" Type="varchar" Mode="In" />
           <ReturnType>
@@ -750,6 +778,10 @@
           <AssociationSet Name="FK_DobaviteljNarociloID" Association="Self.FK_DobaviteljNarociloID">
             <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
             <End Role="Narocilo_PDO" EntitySet="Narocilo_PDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DobaviteljPozivijaArtikelID" Association="Self.FK_DobaviteljPozivijaArtikelID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_OsebaID" Association="Self.FK_Employee_OsebaID">
             <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
@@ -1146,6 +1178,14 @@
             <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
             <End Role="SystemEmailMessage_PDO" EntitySet="SystemEmailMessage_PDO" />
           </AssociationSet>
+          <FunctionImport Name="GetArtikelByNamePantheonOnly" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetArtikelByNamePantheonOnly_Result)">
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_DobaviteljPozivijaArtikelID" Association="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID">
+            <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
+            <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Nastavitve">
           <Key>
@@ -1216,6 +1256,7 @@
           <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_K_StrankaID" FromRole="KontaktnaOseba_PDO" ToRole="Stranka_PDO" />
           <Property Name="DelovnoMesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ZaporednaStevika" Type="Int32" />
+          <Property Name="IsNabava" Type="Boolean" />
         </EntityType>
         <EntityType Name="Stranka_PDO">
           <Key>
@@ -1263,6 +1304,7 @@
           <NavigationProperty Name="Povprasevanje" Relationship="GrafolitPDOModel.FK_KupecID" FromRole="Stranka_PDO" ToRole="Povprasevanje" />
           <Property Name="PrivzetaEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ZadnjaIzbranaKategorija" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PovprasevanjePozicijaArtikel" Relationship="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID" FromRole="Stranka_PDO" ToRole="PovprasevanjePozicijaArtikel" />
         </EntityType>
         <Association Name="FK_Jezik">
           <End Type="GrafolitPDOModel.Jeziki" Role="Jeziki" Multiplicity="0..1" />
@@ -1379,6 +1421,9 @@
           <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_OddelekID" FromRole="PovprasevanjePozicijaArtikel" ToRole="Oddelek" />
           <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_PovprasevanjePozicijaID" FromRole="PovprasevanjePozicijaArtikel" ToRole="PovprasevanjePozicija" />
           <Property Name="DatumDobavePos" Type="DateTime" Precision="3" />
+          <Property Name="DobaviteljID" Type="Int32" />
+          <Property Name="DobaviteljNaziv_PA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID" FromRole="PovprasevanjePozicijaArtikel" ToRole="Stranka_PDO" />
         </EntityType>
         <Association Name="FK_OddelekID">
           <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
@@ -1678,7 +1723,7 @@
             <PropertyRef Name="SystemEmailMessageID" />
           </Key>
           <Property Name="SystemEmailMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmailFrom" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EmailTo" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
@@ -1703,6 +1748,23 @@
             </Principal>
             <Dependent Role="SystemEmailMessage_PDO">
               <PropertyRef Name="OsebaEmailFromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetArtikelByNamePantheonOnly_Result">
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <Association Name="FK_DobaviteljPozivijaArtikelID">
+          <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
+          <End Type="GrafolitPDOModel.PovprasevanjePozicijaArtikel" Role="PovprasevanjePozicijaArtikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_PDO">
+              <PropertyRef Name="StrankaID" />
+            </Principal>
+            <Dependent Role="PovprasevanjePozicijaArtikel">
+              <PropertyRef Name="DobaviteljID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1883,6 +1945,7 @@
           <EntitySetMapping Name="KontaktnaOseba_PDO">
             <EntityTypeMapping TypeName="GrafolitPDOModel.KontaktnaOseba_PDO">
               <MappingFragment StoreEntitySet="KontaktnaOseba_PDO">
+                <ScalarProperty Name="IsNabava" ColumnName="IsNabava" />
                 <ScalarProperty Name="ZaporednaStevika" ColumnName="ZaporednaStevika" />
                 <ScalarProperty Name="DelovnoMesto" ColumnName="DelovnoMesto" />
                 <ScalarProperty Name="tsUpdateUserID" ColumnName="tsUpdateUserID" />
@@ -1967,6 +2030,8 @@
           <EntitySetMapping Name="PovprasevanjePozicijaArtikel">
             <EntityTypeMapping TypeName="GrafolitPDOModel.PovprasevanjePozicijaArtikel">
               <MappingFragment StoreEntitySet="PovprasevanjePozicijaArtikel">
+                <ScalarProperty Name="DobaviteljNaziv_PA" ColumnName="DobaviteljNaziv_PA" />
+                <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
                 <ScalarProperty Name="DatumDobavePos" ColumnName="DatumDobavePos" />
                 <ScalarProperty Name="IzbranArtikel" ColumnName="IzbranArtikel" />
                 <ScalarProperty Name="PrikaziKupca" ColumnName="PrikaziKupca" />
@@ -2116,6 +2181,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetArtikelByNamePantheonOnly" FunctionName="GrafolitPDOModel.Store.GetArtikelByNamePantheonOnly">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetArtikelByNamePantheonOnly_Result">
+                <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

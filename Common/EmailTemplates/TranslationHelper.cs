@@ -366,6 +366,22 @@ namespace DatabaseWebService.Common.EmailTemplates
                             break;
                     }
                     break;
+                case EmailContentType.EMAILTOSUPPLIER_FORCUSTOMER:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "For customer: ";
+                            break;
+                        case Language.HRV:
+                            RetStr = "Za stranko: ";
+                            break;
+                        case Language.SLO:
+                            RetStr = "Za stranko: ";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }

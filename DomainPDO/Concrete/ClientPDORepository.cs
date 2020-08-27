@@ -261,7 +261,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                             };
 
                 ClientFullModel model = query.FirstOrDefault();
-                model.KontaktneOsebe = new List<ContactPersonModel>();                
+                model.KontaktneOsebe = new List<ContactPersonModel>();
 
                 return model;
             }
@@ -485,6 +485,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 kontOseba.tsUpdateUserID = model.tsIDOsebe;
                 kontOseba.Fax = model.Fax;
                 kontOseba.Opombe = model.Opombe;
+                kontOseba.IsNabava = model.IsNabava;
 
                 if (kontOseba.KontaktnaOsebaID == 0)
                 {
@@ -674,7 +675,9 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 ts = contact.ts.HasValue ? contact.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = contact.tsIDOsebe.HasValue ? contact.tsIDOsebe.Value : 0,
                                 Fax = contact.Fax,
-                                Opombe = contact.Opombe
+                                Opombe = contact.Opombe,
+                                IsNabava = contact.IsNabava.HasValue ? contact.IsNabava.Value : false
+
                             };
 
                 return query.ToList();
@@ -919,7 +922,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 DrzavaStranke = client.DrzavaStranke,
                                 Neaktivna = client.Neaktivna,
                                 PrivzetaEM = client.PrivzetaEM,
-                                ZadnjaIzbranaKategorija = client.ZadnjaIzbranaKategorija,                                
+                                ZadnjaIzbranaKategorija = client.ZadnjaIzbranaKategorija,
                                 GenerirajERacun = client.GenerirajERacun.HasValue ? client.GenerirajERacun.Value : 0,
                                 JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
@@ -949,6 +952,12 @@ namespace DatabaseWebService.DomainPDO.Concrete
                             };
 
                 ClientFullModel model = query.FirstOrDefault();
+
+                if (model != null)
+                {
+                    model.KontaktneOsebe = new List<ContactPersonModel>();
+                    model.KontaktneOsebe = GetContactPersonModelList(model.idStranka);
+                }
 
                 return model;
             }

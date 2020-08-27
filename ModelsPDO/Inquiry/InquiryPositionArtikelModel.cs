@@ -44,5 +44,8 @@ namespace DatabaseWebService.ModelsPDO.Inquiry
 
         public List<ProductModel> ArtikliPantheon { get; set; }
 
+        public int DobaviteljID { get; set; }
+        public string DobaviteljNaziv_PA { get; set; }
+
     }
 }

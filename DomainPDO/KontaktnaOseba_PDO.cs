@@ -29,6 +29,7 @@ namespace DatabaseWebService.DomainPDO
         public Nullable<int> tsUpdateUserID { get; set; }
         public string DelovnoMesto { get; set; }
         public Nullable<int> ZaporednaStevika { get; set; }
+        public Nullable<bool> IsNabava { get; set; }
     
         public virtual Stranka_PDO Stranka_PDO { get; set; }
     }

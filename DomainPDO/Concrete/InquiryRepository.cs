@@ -832,6 +832,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 DobaviteljID_P = ip.DobaviteljID_P,
                                 DobaviteljNaziv_P = ip.DobaviteljNaziv_P,
                                 DobaviteljKontaktOsebe = ip.DobaviteljKontaktOsebe,
+                                EmailBody = ip.EmailBody,
                                 ObvesceneOsebe = ip.ObvesceneOsebe,
                                 GrafolitID = context.Stranka_PDO.Where(s => s.KodaStranke == "GRAFOLIT").FirstOrDefault().StrankaID,
                                 Artikli = ip.Artikli,
@@ -1158,6 +1159,8 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 ppa.OddelekID = (item.OddelekID > 0) ? item.OddelekID : (int?)null;
                 ppa.EnotaMere = item.EnotaMere;
                 ppa.DatumDobavePos = item.DatumDobavePos.Equals(DateTime.MinValue) ? (DateTime?)null : item.DatumDobavePos;
+                ppa.DobaviteljID = item.DobaviteljID;
+                ppa.DobaviteljNaziv_PA = item.DobaviteljNaziv_PA;
 
                 if (ppa.PovprasevanjePozicijaArtikelID == 0)
                 {
@@ -1184,16 +1187,19 @@ namespace DatabaseWebService.DomainPDO.Concrete
         {
             try
             {
+
+
                 var query = from ppa in context.PovprasevanjePozicijaArtikel
                             join pp in context.PovprasevanjePozicija on ppa.PovprasevanjePozicijaID equals pp.PovprasevanjePozicijaID
-                            where pp.PovprasevanjeID == iId && (isSelected ? ppa.IzbranArtikel == isSelected : true) && (iSelDobaviteljID > 0 ? pp.DobaviteljID == iSelDobaviteljID : true)
+                            where pp.PovprasevanjeID == iId && (isSelected ? ppa.IzbranArtikel == isSelected : true) && (iSelDobaviteljID > 0 && ppa.DobaviteljID != null ? ppa.DobaviteljID == iSelDobaviteljID : (iSelDobaviteljID == 0 ? true : pp.DobaviteljID == iSelDobaviteljID))
                             select new InquiryPositionArtikelModel
                             {
                                 PovprasevanjePozicijaArtikelID = ppa.PovprasevanjePozicijaArtikelID,
                                 PovprasevanjePozicijaID = pp.PovprasevanjePozicijaID,
-                                IzbranDobaviteljID = pp.DobaviteljID,
+                                IzbranDobaviteljID = ppa.DobaviteljID.HasValue ? ppa.DobaviteljID.Value : pp.DobaviteljID,
+                                DobaviteljID = ppa.DobaviteljID.HasValue ? ppa.DobaviteljID.Value : pp.DobaviteljID,
                                 Dobavitelj = (from d in context.Stranka_PDO
-                                              where d.StrankaID == pp.DobaviteljID
+                                              where d.StrankaID == (ppa.DobaviteljID.HasValue ? ppa.DobaviteljID.Value : pp.DobaviteljID)
                                               select new ClientFullModel
                                               {
                                                   idStranka = d.StrankaID,
@@ -1274,6 +1280,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 OddelekID = ppa.OddelekID.HasValue ? ppa.OddelekID.Value : 0,
                                 IzbranArtikel = ppa.IzbranArtikel.HasValue ? ppa.IzbranArtikel.Value : false,
                                 DatumDobavePos = ppa.DatumDobavePos.HasValue ? ppa.DatumDobavePos.Value : DateTime.MinValue,
+                                DobaviteljNaziv_PA = ppa.DobaviteljNaziv_PA != null ? ppa.DobaviteljNaziv_PA : pp.DobaviteljNaziv_P,
 
                             };
 
@@ -1318,8 +1325,11 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     }
                     sDobavitelj.JezikID = sDobavitelj.JezikID > 0 ? sDobavitelj.JezikID : 1;
                     sDobavitelj.ZadnjaIzbranaKategorija = item.KategorijaNaziv;
+                    ppa.DobaviteljID = sDobavitelj.idStranka;
+                    ppa.DobaviteljNaziv_PA = sDobavitelj.NazivPrvi;
                     clientPdoRepo.SaveClient(sDobavitelj, true);
                 }
+                
                 ppa.EnotaMere2 = item.EnotaMere2;
                 ppa.KategorijaNaziv = item.KategorijaNaziv;
                 ppa.Kolicina1 = item.Kolicina1 <= 0 ? (decimal?)null : item.Kolicina1;
@@ -1702,7 +1712,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 GetEmailsForSelectedContactPersons(InquiryPositionsGroupedBySupplier, false);
 
                 //fill emails for grafolit uporabniki
-                GetEmailsForSelectedContactPersons(InquiryPositionsGroupedBySupplier,true);
+                GetEmailsForSelectedContactPersons(InquiryPositionsGroupedBySupplier, true);
 
 
                 return InquiryPositionsGroupedBySupplier;
@@ -1727,13 +1737,13 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 //string[] split = item.SelectedContactPersons.Split(';');
                 sListEmails = sListEmails.Replace("\t", " ");
                 string[] split = sListEmails.Split(';');
-                
+
                 if (split.Length > 0)
                 {
                     foreach (string sContactName in split)
                     {
                         string sEmail = "";
-                        
+
                         var obj = context.KontaktnaOseba_PDO.Where(ppd => ppd.Naziv == sContactName).FirstOrDefault();
                         if (obj == null) continue;
                         sEmail = obj.Email;

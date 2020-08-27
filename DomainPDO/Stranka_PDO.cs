@@ -22,6 +22,7 @@ namespace DatabaseWebService.DomainPDO
             this.NarociloPozicija_PDO = new HashSet<NarociloPozicija_PDO>();
             this.Narocilo_PDO = new HashSet<Narocilo_PDO>();
             this.Povprasevanje = new HashSet<Povprasevanje>();
+            this.PovprasevanjePozicijaArtikel = new HashSet<PovprasevanjePozicijaArtikel>();
         }
     
         public int StrankaID { get; set; }
@@ -67,5 +68,6 @@ namespace DatabaseWebService.DomainPDO
         public virtual ICollection<NarociloPozicija_PDO> NarociloPozicija_PDO { get; set; }
         public virtual ICollection<Narocilo_PDO> Narocilo_PDO { get; set; }
         public virtual ICollection<Povprasevanje> Povprasevanje { get; set; }
+        public virtual ICollection<PovprasevanjePozicijaArtikel> PovprasevanjePozicijaArtikel { get; set; }
     }
 }

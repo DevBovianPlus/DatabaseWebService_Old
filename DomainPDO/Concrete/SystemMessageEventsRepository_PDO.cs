@@ -3,6 +3,7 @@ using DatabaseWebService.Common.EmailTemplates;
 using DatabaseWebService.Common.Enums;
 using DatabaseWebService.DomainPDO.Abstract;
 using DatabaseWebService.Models;
+using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsPDO;
 using DatabaseWebService.ModelsPDO.Inquiry;
@@ -74,7 +75,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     emailConstruct.Status = (int)Enums.SystemEmailMessageStatus.UnProcessed;
                     emailConstruct.ts = DateTime.Now;
                     emailConstruct.tsIDOsebe = userID.HasValue ? userID.Value : 0;
-                    emailConstruct.CCEmails = CCEmails;                    
+                    emailConstruct.CCEmails = CCEmails;
 
                     emailConstruct.OsebaEmailFromID = submitedInquiryByEmployeeID != null ? submitedInquiryByEmployeeID.idOsebe : (int?)null;
 
@@ -166,11 +167,16 @@ namespace DatabaseWebService.DomainPDO.Concrete
                             message.BodyText = item.EmailBody;
                             message.SupplierName = item.Supplier.NazivPrvi;
                             message.Email = item.Supplier.Email;
-                            message.CCEmails = item.SelectedGrafolitPersonsEmails;                            
+                            message.CCEmails = item.SelectedGrafolitPersonsEmails;
                             message.Signature = inquirySubmittedByEmployee.Podpis;
                             message.InquiryNumber = StevilkaPovprasevanja;
 
                             message.ThanksAndGreeting = TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_THANKANDGREETING);
+
+                            if (Convert.ToBoolean(item.KupecViden))
+                            {
+                                message.ForCustomer = TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_FORCUSTOMER) + item.Buyer.NazivPrvi.ToString();
+                            }
 
 
                             //Dodamo pozicije povpraševanja v html šablono
@@ -226,11 +232,13 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 DataTypesHelper.LogThis(ex.Message);
             }
         }
-        private void CreateEmailForEmployeeForSendingInquiry(SupplierMailModel model, EmployeeFullModel inquirySubmittedByEmployee, string StevilkaPovprasevanja)
+        private void CreateEmailForEmployeeForSendingInquiry( SupplierMailModel model, EmployeeFullModel inquirySubmittedByEmployee, string StevilkaPovprasevanja)
         {
             StreamReader reader = null;
             try
             {
+
+
                 string emailSubject = SystemEmailMessageResource.res_20;
                 string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["SUPPLIERS_INQUIRY_FOR_EMPLOYEES_MAIL"].ToString()).Replace("\"", "\\");
                 DataTypesHelper.LogThis(AppDomain.CurrentDomain.BaseDirectory);
@@ -240,7 +248,6 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 {
                     model.EmployeeName = inquirySubmittedByEmployee.Ime + " " + inquirySubmittedByEmployee.Priimek;
                     model.Email = inquirySubmittedByEmployee.Email;
-                    model.Signature = inquirySubmittedByEmployee.Podpis;
                     model.InquiryNumber = StevilkaPovprasevanja;
 
                     reader = new StreamReader(templatePath);
@@ -252,6 +259,69 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 else
                 {
                     throw new Exception("Zaposlen " + inquirySubmittedByEmployee.Ime + " " + inquirySubmittedByEmployee.Priimek + "nima vpisanega elektrnoskega naslova!");
+                }
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message);
+            }
+        }
+
+        private string GetAllPurchaseEmployees(ClientFullModel cfmGrafolit)
+        {
+            var listOfPurchaseGrafolitDeptEmployees = cfmGrafolit.KontaktneOsebe.Where(ko => ko.IsNabava == true).ToList();
+
+            string sCC = "";
+
+            foreach (var itm in listOfPurchaseGrafolitDeptEmployees)
+            {
+                if (itm.Email != null && itm.Email.Length > 0)
+                {
+                    if (listOfPurchaseGrafolitDeptEmployees.Count > 1)
+                        sCC += itm.Email + ";";
+                    else
+                        sCC = itm.Email;
+
+                }
+            }
+            if (listOfPurchaseGrafolitDeptEmployees.Count > 1)
+            {
+                sCC = sCC.Substring(0, sCC.Length - 1);
+            }
+
+
+            return sCC;
+        }
+
+        public void CreateEmailForGrafolitPurcaheDept(ClientFullModel cfmGrafolit, EmployeeFullModel InqueryEmployee, InquiryFullModel InqModel)
+        {
+            StreamReader reader = null;
+            try
+            {
+                SupplierMailModel model = new SupplierMailModel();
+
+                string emailSubject = SystemEmailMessageResource.res_24;
+                string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["GRAFOLITPURCHASEDEPT_NOTIFY_MAIL"].ToString()).Replace("\"", "\\");
+                DataTypesHelper.LogThis(AppDomain.CurrentDomain.BaseDirectory);
+
+                // get all cc email Purchasing Department
+                string sCC = GetAllPurchaseEmployees(cfmGrafolit);
+
+                if (!String.IsNullOrEmpty(InqueryEmployee.Email))
+                {
+                    model.EmployeeName = InqueryEmployee.Ime + " " + InqueryEmployee.Priimek;
+                    model.Email = InqueryEmployee.Email;
+                    model.NarociloSt = InqModel.PovprasevanjeStevilka;
+
+                    reader = new StreamReader(templatePath);
+                    string templateString = reader.ReadToEnd();
+                    templateString = ReplaceDefaultValuesInTemplate(model, templateString);
+                    emailSubject = "(" + InqModel.PovprasevanjeStevilka + ") " + emailSubject;
+                    SaveToSystemEmailMessage(model.Email, templateString, null, 1, emailSubject, "", InqueryEmployee, sCC);
+                }
+                else
+                {
+                    throw new Exception("Zaposlen " + InqueryEmployee.Ime + " " + InqueryEmployee.Priimek + "nima vpisanega elektrnoskega naslova!");
                 }
             }
             catch (Exception ex)

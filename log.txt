@@ -1647,3 +1647,420 @@ The statement has been terminated.
 31. 07. 2020 08:51:29 D:\GitHub\DatabaseWebService\
 31. 07. 2020 08:51:38 D:\GitHub\DatabaseWebService\
 31. 07. 2020 08:51:42 D:\GitHub\DatabaseWebService\
+12. 08. 2020 13:50:04 Start - Controler
+12. 08. 2020 13:50:04 Start - SaveTender
+12. 08. 2020 13:50:04 Start - SaveTender
+12. 08. 2020 13:50:04 12. 08. 2020 13:50:04
+12. 08. 2020 13:50:10 12. 08. 2020 13:50:10
+12. 08. 2020 13:56:34 Start - SaveTender
+12. 08. 2020 13:56:34 12. 08. 2020 13:56:34
+12. 08. 2020 13:56:57 12. 08. 2020 13:56:57
+14. 08. 2020 14:51:00 Start - Controler
+14. 08. 2020 14:51:01 Start - SaveTender
+14. 08. 2020 14:51:04 Start - SaveTender
+14. 08. 2020 14:51:04 14. 08. 2020 14:51:04
+14. 08. 2020 14:51:04 14. 08. 2020 14:51:04
+14. 08. 2020 14:53:40 Start - SaveTender
+14. 08. 2020 14:53:41 14. 08. 2020 14:53:41
+14. 08. 2020 14:53:41 14. 08. 2020 14:53:41
+14. 08. 2020 15:06:23 Start - SaveTender
+14. 08. 2020 15:06:23 14. 08. 2020 15:06:23
+14. 08. 2020 15:06:24 14. 08. 2020 15:06:24
+14. 08. 2020 15:13:23 Start - Controler
+14. 08. 2020 15:13:23 Start - SaveTender
+14. 08. 2020 15:13:37 Start - SaveTender
+14. 08. 2020 15:13:37 14. 08. 2020 15:13:37
+14. 08. 2020 15:13:43 14. 08. 2020 15:13:43
+14. 08. 2020 15:16:39 Start - SaveTender
+14. 08. 2020 15:16:39 14. 08. 2020 15:16:39
+14. 08. 2020 15:17:04 14. 08. 2020 15:17:04
+14. 08. 2020 15:19:30 Start - Controler
+14. 08. 2020 15:19:30 Start - SaveTender
+14. 08. 2020 15:19:35 Start - SaveTender
+14. 08. 2020 15:19:35 14. 08. 2020 15:19:35
+14. 08. 2020 15:23:26 14. 08. 2020 15:23:26
+17. 08. 2020 08:38:24 Start - Controler
+17. 08. 2020 08:38:24 Start - SaveTender
+17. 08. 2020 08:38:29 Start - SaveTender
+17. 08. 2020 08:38:29 17. 08. 2020 08:38:29
+17. 08. 2020 08:40:06 17. 08. 2020 08:40:06
+17. 08. 2020 08:52:05 Start - SaveTender
+17. 08. 2020 08:52:05 17. 08. 2020 08:52:05
+17. 08. 2020 08:55:09 17. 08. 2020 08:55:09
+17. 08. 2020 12:05:57 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:10:33 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:27:11 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:27:32 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:30:10 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:30:51 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:37:59 D:\GitHub\DatabaseWebService\
+17. 08. 2020 12:38:11 D:\GitHub\DatabaseWebService\
+17. 08. 2020 23:04:15 Start - SaveTender
+17. 08. 2020 23:04:15 17. 08. 2020 23:04:15
+17. 08. 2020 23:18:02 17. 08. 2020 23:18:02
+17. 08. 2020 23:28:10 Start - SaveTender
+17. 08. 2020 23:28:10 17. 08. 2020 23:28:10
+17. 08. 2020 23:37:37 17. 08. 2020 23:37:37
+20. 08. 2020 10:24:27 GetListOfOrderNumber10
+20. 08. 2020 10:26:25 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+20. 08. 2020 10:29:19 GetListOfOrderNumber10
+20. 08. 2020 10:29:24 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+20. 08. 2020 10:31:00 GetListOfOrderNumber10
+20. 08. 2020 10:31:06 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+20. 08. 2020 10:33:06 GetListOfOrderNumber10
+20. 08. 2020 10:33:12 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+20. 08. 2020 11:14:53 GetListOfOrderNumber10
+20. 08. 2020 11:15:01 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+20. 08. 2020 11:16:28 GetListOfOpenedOrderPositions for : MEL PAPER GREECE
+20. 08. 2020 11:16:45 GetListOfOpenedOrderPositions for : MEL PAPER GREECE
+25. 08. 2020 15:58:04 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>25. 08. 2020 15:58:03</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI AUSTRIA VERTRIEBS-GESMBH</Supplier>
+  <Buyer>GRAFO D.O.O.                  </Buyer>
+  <OrderDate>25. 08. 2020 15:58:04</OrderDate>
+  <LoadDate>12. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718120321011   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 135G 64X90 SB</Name>
+      <Qty>100,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+25. 08. 2020 15:58:04 Run Create order procedure _upJM_CreateSupplierOrder
+25. 08. 2020 15:58:21 Update Create order Recall Data
+25. 08. 2020 15:58:23 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>25. 08. 2020 15:58:22</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>GRAFO D.O.O.                  </Buyer>
+  <OrderDate>25. 08. 2020 15:58:23</OrderDate>
+  <LoadDate>12. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100431018   </Ident>
+      <Name>ROYAL EXTRA BULK VOL. 1.1 100G 70X100 SB</Name>
+      <Qty>200,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+25. 08. 2020 15:58:23 Run Create order procedure _upJM_CreateSupplierOrder
+25. 08. 2020 15:58:23 Update Create order Recall Data
+26. 08. 2020 08:25:59 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26. 08. 2020 08:25:55</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI AUSTRIA VERTRIEBS-GESMBH</Supplier>
+  <Buyer>SOMAPAF                       </Buyer>
+  <OrderDate>26. 08. 2020 08:25:59</OrderDate>
+  <LoadDate>6. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718120321011   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 135G 64X90 SB</Name>
+      <Qty>123,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+26. 08. 2020 08:25:59 Run Create order procedure _upJM_CreateSupplierOrder
+26. 08. 2020 08:26:16 Update Create order Recall Data
+26. 08. 2020 08:26:25 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26. 08. 2020 08:26:16</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI EUROPE</Supplier>
+  <Buyer>SOMAPAF                       </Buyer>
+  <OrderDate>26. 08. 2020 08:26:25</OrderDate>
+  <LoadDate>6. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712130301006   </Ident>
+      <Name>ROYALSET OFFSET 140G 64X90 SB</Name>
+      <Qty>456,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+26. 08. 2020 08:26:25 Run Create order procedure _upJM_CreateSupplierOrder
+26. 08. 2020 08:26:26 Update Create order Recall Data
+26. 08. 2020 08:26:32 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26. 08. 2020 08:26:26</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH BE</Supplier>
+  <Buyer>SOMAPAF                       </Buyer>
+  <OrderDate>26. 08. 2020 08:26:32</OrderDate>
+  <LoadDate>6. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712130301010F  </Ident>
+      <Name>ROYALSET OFFSET 140G 64X90 SB FSC Mix Credit</Name>
+      <Qty>789,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+26. 08. 2020 08:26:32 Run Create order procedure _upJM_CreateSupplierOrder
+26. 08. 2020 08:26:32 Update Create order Recall Data
+26. 08. 2020 15:03:15 D:\GitHub\DatabaseWebService\
+26. 08. 2020 15:04:45 D:\GitHub\DatabaseWebService\
+26. 08. 2020 15:11:57 D:\GitHub\DatabaseWebService\
+26. 08. 2020 15:23:36 D:\GitHub\DatabaseWebService\
+26. 08. 2020 15:23:36 Value cannot be null.
+Parameter name: source
+26. 08. 2020 15:24:26 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:26:52 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:30:42 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:36:23 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:36:31 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:36:41 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:36:52 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:37:02 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:37:24 D:\GitHub\DatabaseWebService\
+27. 08. 2020 09:37:38 D:\GitHub\DatabaseWebService\
+27. 08. 2020 11:13:05 D:\GitHub\DatabaseWebService\
+27. 08. 2020 11:22:57 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 11:22:56</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>3 IDEJE D.O.O.                </Buyer>
+  <OrderDate>27. 08. 2020 11:22:57</OrderDate>
+  <LoadDate>12. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718100431018   </Ident>
+      <Name>ROYAL EXTRA BULK VOL. 1.1 100G 70X100 SB</Name>
+      <Qty>100,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 11:22:57 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 11:23:14 Update Create order Recall Data
+27. 08. 2020 11:23:16 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 11:23:15</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>SAPPI AUSTRIA VERTRIEBS-GESMBH</Supplier>
+  <Buyer>3 IDEJE D.O.O.                </Buyer>
+  <OrderDate>27. 08. 2020 11:23:16</OrderDate>
+  <LoadDate>12. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>12. 08. 2020 00:00:00</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718120321011   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 135G 64X90 SB</Name>
+      <Qty>200,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 11:23:16 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 11:23:16 Update Create order Recall Data
+27. 08. 2020 11:30:35 D:\GitHub\DatabaseWebService\
+27. 08. 2020 11:32:55 D:\GitHub\DatabaseWebService\
+27. 08. 2020 11:36:37 D:\GitHub\DatabaseWebService\
+27. 08. 2020 11:40:45 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 11:40:43</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI AUSTRIA VERTRIEBS-GESMBH</Supplier>
+  <Buyer>BIROGRAFIKA BORI D00          </Buyer>
+  <OrderDate>27. 08. 2020 11:40:45</OrderDate>
+  <LoadDate>28. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>28. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>28. 08. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718120321011   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 135G 64X90 SB</Name>
+      <Qty>2000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 11:40:45 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 11:40:45 Update Create order Recall Data
+27. 08. 2020 11:40:47 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 11:40:46</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH BE</Supplier>
+  <Buyer>BIROGRAFIKA BORI D00          </Buyer>
+  <OrderDate>27. 08. 2020 11:40:47</OrderDate>
+  <LoadDate>28. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>28. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>28. 08. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0712130301010F  </Ident>
+      <Name>ROYALSET OFFSET 140G 64X90 SB FSC Mix Credit</Name>
+      <Qty>3000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 11:40:47 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 11:40:47 Update Create order Recall Data
+27. 08. 2020 12:05:56 D:\GitHub\DatabaseWebService\
+27. 08. 2020 12:06:23 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 12:06:22</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>ARCTIC PAPER KOSTRZYN S.A.</Supplier>
+  <Buyer>BAKROTISAK D.D.               </Buyer>
+  <OrderDate>27. 08. 2020 12:06:23</OrderDate>
+  <LoadDate>6. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712410301027F  </Ident>
+      <Name>OFFSET AMBER 120G 64X90 SB FSC Mix Credit</Name>
+      <Qty>100,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 12:06:23 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 12:06:23 Update Create order Recall Data
+27. 08. 2020 12:06:25 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>27. 08. 2020 12:06:24</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI AUSTRIA VERTRIEBS-GESMBH</Supplier>
+  <Buyer>BAKROTISAK D.D.               </Buyer>
+  <OrderDate>27. 08. 2020 12:06:25</OrderDate>
+  <LoadDate>6. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>6. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718120321011   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 135G 64X90 SB</Name>
+      <Qty>100,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+27. 08. 2020 12:06:25 Run Create order procedure _upJM_CreateSupplierOrder
+27. 08. 2020 12:06:25 Update Create order Recall Data
