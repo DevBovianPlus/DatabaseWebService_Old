@@ -1419,6 +1419,8 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 Opombe = ipos.Opombe,
                                 PovprasevanjePozicijaArtikelID = ipos.PovprasevanjePozicijaArtikelID,
                                 PovprasevanjePozicijaID = ipos.PovprasevanjePozicijaID,
+                                DobaviteljID = ipos.DobaviteljID.HasValue ? ipos.DobaviteljID.Value : 0,
+                                DobaviteljNaziv_PA = ipos.DobaviteljNaziv_PA,
                                 ts = ipos.ts.HasValue ? ipos.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = ipos.tsIDOsebe.HasValue ? ipos.tsIDOsebe.Value : 0,
                                 tsUpdate = ipos.tsUpdate.HasValue ? ipos.tsUpdate.Value : DateTime.MinValue,

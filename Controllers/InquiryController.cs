@@ -308,8 +308,8 @@ namespace DatabaseWebService.Controllers
                     else // We add and save new recod to DB 
                         model.Content.PovprasevanjePozicijaID = inquiryRepo.SaveInquiryPositionModel(model.Content, false);
 
-                    //model.Content.PovprasevanjePozicijaArtikel = inquiryRepo.GetInquiryPositionSuppliersByInquiryPositionID(model.Content.PovprasevanjePozicijaID);
-
+                    model.Content.PovprasevanjePozicijaArtikel = inquiryRepo.GetInquiryPositionArtikelByInquiryPositionID(model.Content.PovprasevanjePozicijaID);
+                    //model = inquiryRepo.GetInquiryPositionByID(model.Content.PovprasevanjeID);
                     model.IsRequestSuccesful = true;
                 }
                 else

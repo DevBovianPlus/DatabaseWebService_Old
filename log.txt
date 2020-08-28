@@ -2064,3 +2064,104 @@ Parameter name: source
 </Document>
 27. 08. 2020 12:06:25 Run Create order procedure _upJM_CreateSupplierOrder
 27. 08. 2020 12:06:25 Update Create order Recall Data
+28. 08. 2020 10:51:40 D:\GitHub\DatabaseWebService\
+28. 08. 2020 11:00:28 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28. 08. 2020 11:00:26</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI EUROPE</Supplier>
+  <Buyer>OFICIU-SERVICE S.R.L.         </Buyer>
+  <OrderDate>28. 08. 2020 11:00:28</OrderDate>
+  <LoadDate>19. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718090321018   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 90G 64X90 SB</Name>
+      <Qty>1000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718090331023   </Ident>
+      <Name>ROYALCOAT PREMIUM SILK 90G 64X90 SB</Name>
+      <Qty>2000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+28. 08. 2020 11:00:28 Run Create order procedure _upJM_CreateSupplierOrder
+28. 08. 2020 11:00:36 Update Create order Recall Data
+28. 08. 2020 11:00:39 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28. 08. 2020 11:00:37</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>ARCTIC PAPER GRYCKSBO AB</Supplier>
+  <Buyer>OFICIU-SERVICE S.R.L.         </Buyer>
+  <OrderDate>28. 08. 2020 11:00:39</OrderDate>
+  <LoadDate>19. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718110331032   </Ident>
+      <Name>ARCTIC MATT 115G 64X90 SB</Name>
+      <Qty>1000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+28. 08. 2020 11:00:39 Run Create order procedure _upJM_CreateSupplierOrder
+28. 08. 2020 11:00:39 Update Create order Recall Data
+28. 08. 2020 11:00:41 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28. 08. 2020 11:00:39</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>ARCTIC PAPER KOSTRZYN S.A.</Supplier>
+  <Buyer>OFICIU-SERVICE S.R.L.         </Buyer>
+  <OrderDate>28. 08. 2020 11:00:41</OrderDate>
+  <LoadDate>19. 08. 2020 00:00:00</LoadDate>
+  <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>19. 08. 2020 00:00:00</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712060301006F  </Ident>
+      <Name>OFFSET AMBER 60G 64X90 SB FSC Mix Credit</Name>
+      <Qty>2000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+28. 08. 2020 11:00:41 Run Create order procedure _upJM_CreateSupplierOrder
+28. 08. 2020 11:00:41 Update Create order Recall Data
