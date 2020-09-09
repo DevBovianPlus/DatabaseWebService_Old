@@ -1109,7 +1109,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                     // če je zahteva po vseh artikleh za enega dobavitelja, potem se izvede ta koda, ki doda vse artikle za izbranega dobavitlja
                     if (hlpOptimalStock.sSelectedSupplier != null && hlpOptimalStock.sSelectedSupplier.Length > 0)
                     {
-                        productsOnGroup = productsOnGroup.Where(p => p.DOBAVITELJ.Trim() == hlpOptimalStock.sSelectedSupplier.Trim()).ToList();
+                        productsOnGroup = productsOnGroup.Where(p => p.DOBAVITELJ.Contains(hlpOptimalStock.sSelectedSupplier.Trim())).ToList();
                         foreach (var pr in productsOnGroup)
                         {
 
