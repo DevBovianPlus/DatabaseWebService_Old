@@ -67,7 +67,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 idOsebe = (subClient == null ? 0 : subClient.Osebe.idOsebe),
-                                ImeInPriimekZaposlen = (subClient == null ? String.Empty : subClient.Osebe.Ime + " " + subClient.Osebe.Priimek)
+                                ImeInPriimekZaposlen = (subClient == null ? String.Empty : subClient.Osebe.Ime + " " + subClient.Osebe.Priimek),
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
                             };
 
                 return query.ToList();
@@ -118,7 +119,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0
+                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
                             };
 
                 return query.ToList();
@@ -167,7 +169,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0
+                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
                                 //TODO: Add collections of Dogodek, KontaktneOsebe, Nadzor, Plan, StrankaZaposleni
                             };
 
@@ -310,7 +313,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0
+                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
                             };
 
                 ClientSimpleModel model = query.FirstOrDefault();
@@ -1087,7 +1091,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0
+                                tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
                             };
 
                 return query.ToList();

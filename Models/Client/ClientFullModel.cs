@@ -11,6 +11,8 @@ namespace DatabaseWebService.Models.Client
 {
     public class ClientFullModel
     {
+        internal bool Aktivnost;
+
         public int idStranka { get; set; }
         public string KodaStranke { get; set; }
         public string NazivPrvi { get; set; }

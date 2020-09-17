@@ -57,6 +57,7 @@ namespace DatabaseWebService.Domain
         public Nullable<int> SecondID { get; set; }
         public Nullable<System.DateTime> ts { get; set; }
         public Nullable<int> tsIDOsebe { get; set; }
+        public Nullable<bool> AKTIVNOST { get; set; }
     
         public virtual ICollection<Dogodek> Dogodek { get; set; }
         public virtual ICollection<KontaktneOsebe> KontaktneOsebe { get; set; }
