@@ -721,6 +721,15 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
           <Parameter Name="p_cKey" Type="char" Mode="InOut" />
           <Parameter Name="p_cError" Type="varchar" Mode="InOut" />
         </Function>
+        <Function Name="GetCategoryListOTP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="GetLastYearRecallCountBySuplierAndRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="RelacijaID" Type="int" Mode="In" />
           <Parameter Name="DobaviteljID" Type="int" Mode="In" />
@@ -747,6 +756,25 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="SeznamPozicijNarocilnic10ZaOdpoklic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Status" Type="char" MaxLength="1" />
+                <Property Name="ZeljeniRokDobave" Type="smalldatetime" />
+                <Property Name="StevilkaDokumenta" Type="varchar" MaxLength="15" />
+                <Property Name="Stranka" Type="char" MaxLength="30" />
+                <Property Name="Dobavitelj" Type="char" MaxLength="30" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" />
+                <Property Name="KodaArtikla" Type="char" MaxLength="16" />
+                <Property Name="NazivArtikla" Type="varchar" MaxLength="80" />
+                <Property Name="NarocenaKolicina" Type="decimal" Precision="19" Scale="6" Nullable="false" />
+                <Property Name="EnotaMere" Type="char" MaxLength="3" />
+                <Property Name="PotrjeniRokDobave" Type="datetime" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Dobavitelj" Type="varchar" Mode="In" />
           <ReturnType>
@@ -756,6 +784,7 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
                 <Property Name="St_Pozicija" Type="int" Nullable="false" />
                 <Property Name="Order_Confirm" Type="varchar" MaxLength="25" />
                 <Property Name="Tovarna" Type="varchar" MaxLength="25" />
+                <Property Name="Kategorija" Type="varchar" MaxLength="30" />
                 <Property Name="Ident" Type="char" MaxLength="16" />
                 <Property Name="Artikel" Type="varchar" MaxLength="80" />
                 <Property Name="Datum_narocila" Type="smalldatetime" />
@@ -958,9 +987,6 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <FunctionImport Name="SeznamDobaviteljev" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamDobaviteljev_Result)" />
           <EntitySet Name="TipPrevoza" EntityType="GrafolitOTPModel.TipPrevoza" />
           <EntitySet Name="LastnaZaloga" EntityType="GrafolitOTPModel.LastnaZaloga" />
-          <FunctionImport Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result)">
-          <Parameter Name="Dobavitelj" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="GetLastYearRecallCountBySuplierAndRoute" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.GetLastYearRecallCountBySuplierAndRoute_Result)">
             <Parameter Name="RelacijaID" Mode="In" Type="Int32" />
             <Parameter Name="DobaviteljID" Mode="In" Type="Int32" />
@@ -1046,6 +1072,11 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
             <End Role="Odpoklic" EntitySet="Odpoklic" />
             <End Role="OdpoklicPozicija" EntitySet="OdpoklicPozicija" />
           </AssociationSet>
+          <FunctionImport Name="GetCategoryListOTP" IsComposable="true" ReturnType="Collection(String)" />
+          <FunctionImport Name="SeznamPozicijNarocilnic10ZaOdpoklic" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijNarocilnic10ZaOdpoklic_Result)" />
+          <FunctionImport Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result)">
+            <Parameter Name="Dobavitelj" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="Osebe_OTP">
           <Key>
@@ -1390,30 +1421,6 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Odpoklic" FromRole="LastnaZaloga" ToRole="Odpoklic" />
           <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_LastnaZaloga_Stranka_OTP" FromRole="LastnaZaloga" ToRole="Stranka_OTP" />
         </EntityType>
-        <ComplexType Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
-          <Property Type="String" Name="Narocilnica" Nullable="true" MaxLength="15" />
-          <Property Type="Int32" Name="St_Pozicija" Nullable="false" />
-          <Property Type="String" Name="Order_Confirm" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="Tovarna" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="Ident" Nullable="true" MaxLength="16" />
-          <Property Type="String" Name="Artikel" Nullable="true" MaxLength="80" />
-          <Property Type="DateTime" Name="Datum_narocila" Nullable="true" Precision="16" />
-          <Property Type="DateTime" Name="Datum_Dobave" Nullable="false" Precision="16" />
-          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="Kupec" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="Kupec_Naslov" Nullable="true" MaxLength="60" />
-          <Property Type="String" Name="Kupec_Posta" Nullable="true" MaxLength="13" />
-          <Property Type="String" Name="Kupec_Kraj" Nullable="true" MaxLength="40" />
-          <Property Type="Decimal" Name="Naroceno" Nullable="true" Precision="30" Scale="12" />
-          <Property Type="Decimal" Name="Proizvedeno" Nullable="true" Precision="22" Scale="6" />
-          <Property Type="Decimal" Name="Prevzeto" Nullable="true" Precision="30" Scale="12" />
-          <Property Type="Decimal" Name="Razlika" Nullable="true" Precision="31" Scale="12" />
-          <Property Type="String" Name="Tip" Nullable="true" MaxLength="30" />
-          <Property Type="Decimal" Name="Zaloga" Nullable="true" Precision="38" Scale="2" />
-          <Property Type="Int32" Name="Dovoljeno_odpoklicati" Nullable="false" />
-          <Property Type="String" Name="Enota_Mere" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="Interno" Nullable="false" MaxLength="9" />
-        </ComplexType>
         <ComplexType Name="GetLastYearRecallCountBySuplierAndRoute_Result">
           <Property Type="Int32" Name="RelacijaID" Nullable="true" />
           <Property Type="Int32" Name="DobaviteljID" Nullable="true" />
@@ -1839,6 +1846,44 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="SeznamPozicijNarocilnic10ZaOdpoklic_Result">
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="ZeljeniRokDobave" Nullable="true" Precision="16" />
+          <Property Type="String" Name="StevilkaDokumenta" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Stranka" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Kategorija" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="KodaArtikla" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="NazivArtikla" Nullable="true" MaxLength="80" />
+          <Property Type="Decimal" Name="NarocenaKolicina" Nullable="false" Precision="19" Scale="6" />
+          <Property Type="String" Name="EnotaMere" Nullable="true" MaxLength="3" />
+          <Property Type="DateTime" Name="PotrjeniRokDobave" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
+          <Property Type="String" Name="Narocilnica" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="St_Pozicija" Nullable="false" />
+          <Property Type="String" Name="Order_Confirm" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Tovarna" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Kategorija" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Ident" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="Artikel" Nullable="true" MaxLength="80" />
+          <Property Type="DateTime" Name="Datum_narocila" Nullable="true" Precision="16" />
+          <Property Type="DateTime" Name="Datum_Dobave" Nullable="false" Precision="16" />
+          <Property Type="String" Name="Dobavitelj" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Kupec" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Kupec_Naslov" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="Kupec_Posta" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="Kupec_Kraj" Nullable="true" MaxLength="40" />
+          <Property Type="Decimal" Name="Naroceno" Nullable="false" Precision="30" Scale="12" />
+          <Property Type="Decimal" Name="Proizvedeno" Nullable="false" Precision="19" Scale="6" />
+          <Property Type="Decimal" Name="Prevzeto" Nullable="false" Precision="30" Scale="12" />
+          <Property Type="Decimal" Name="Razlika" Nullable="true" Precision="31" Scale="12" />
+          <Property Type="String" Name="Tip" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="Zaloga" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Int32" Name="Dovoljeno_odpoklicati" Nullable="false" />
+          <Property Type="String" Name="Enota_Mere" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Interno" Nullable="false" MaxLength="9" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2096,34 +2141,6 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" FunctionName="GrafolitOTPModel.Store.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
-                <ScalarProperty Name="Narocilnica" ColumnName="Narocilnica" />
-                <ScalarProperty Name="St_Pozicija" ColumnName="St_Pozicija" />
-                <ScalarProperty Name="Order_Confirm" ColumnName="Order_Confirm" />
-                <ScalarProperty Name="Tovarna" ColumnName="Tovarna" />
-                <ScalarProperty Name="Ident" ColumnName="Ident" />
-                <ScalarProperty Name="Artikel" ColumnName="Artikel" />
-                <ScalarProperty Name="Datum_narocila" ColumnName="Datum_narocila" />
-                <ScalarProperty Name="Datum_Dobave" ColumnName="Datum_Dobave" />
-                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
-                <ScalarProperty Name="Kupec" ColumnName="Kupec" />
-                <ScalarProperty Name="Kupec_Naslov" ColumnName="Kupec_Naslov" />
-                <ScalarProperty Name="Kupec_Posta" ColumnName="Kupec_Posta" />
-                <ScalarProperty Name="Kupec_Kraj" ColumnName="Kupec_Kraj" />
-                <ScalarProperty Name="Naroceno" ColumnName="Naroceno" />
-                <ScalarProperty Name="Proizvedeno" ColumnName="Proizvedeno" />
-                <ScalarProperty Name="Prevzeto" ColumnName="Prevzeto" />
-                <ScalarProperty Name="Razlika" ColumnName="Razlika" />
-                <ScalarProperty Name="Tip" ColumnName="Tip" />
-                <ScalarProperty Name="Zaloga" ColumnName="Zaloga" />
-                <ScalarProperty Name="Dovoljeno_odpoklicati" ColumnName="Dovoljeno_odpoklicati" />
-                <ScalarProperty Name="Enota_Mere" ColumnName="Enota_Mere" />
-                <ScalarProperty Name="Interno" ColumnName="Interno" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetLastYearRecallCountBySuplierAndRoute" FunctionName="GrafolitOTPModel.Store.GetLastYearRecallCountBySuplierAndRoute">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GrafolitOTPModel.GetLastYearRecallCountBySuplierAndRoute_Result">
@@ -2323,6 +2340,53 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCategoryListOTP" FunctionName="GrafolitOTPModel.Store.GetCategoryListOTP" />
+          <FunctionImportMapping FunctionImportName="SeznamPozicijNarocilnic10ZaOdpoklic" FunctionName="GrafolitOTPModel.Store.SeznamPozicijNarocilnic10ZaOdpoklic">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitOTPModel.SeznamPozicijNarocilnic10ZaOdpoklic_Result">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ZeljeniRokDobave" ColumnName="ZeljeniRokDobave" />
+                <ScalarProperty Name="StevilkaDokumenta" ColumnName="StevilkaDokumenta" />
+                <ScalarProperty Name="Stranka" ColumnName="Stranka" />
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="KodaArtikla" ColumnName="KodaArtikla" />
+                <ScalarProperty Name="NazivArtikla" ColumnName="NazivArtikla" />
+                <ScalarProperty Name="NarocenaKolicina" ColumnName="NarocenaKolicina" />
+                <ScalarProperty Name="EnotaMere" ColumnName="EnotaMere" />
+                <ScalarProperty Name="PotrjeniRokDobave" ColumnName="PotrjeniRokDobave" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" FunctionName="GrafolitOTPModel.Store.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result">
+                <ScalarProperty Name="Narocilnica" ColumnName="Narocilnica" />
+                <ScalarProperty Name="St_Pozicija" ColumnName="St_Pozicija" />
+                <ScalarProperty Name="Order_Confirm" ColumnName="Order_Confirm" />
+                <ScalarProperty Name="Tovarna" ColumnName="Tovarna" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Ident" ColumnName="Ident" />
+                <ScalarProperty Name="Artikel" ColumnName="Artikel" />
+                <ScalarProperty Name="Datum_narocila" ColumnName="Datum_narocila" />
+                <ScalarProperty Name="Datum_Dobave" ColumnName="Datum_Dobave" />
+                <ScalarProperty Name="Dobavitelj" ColumnName="Dobavitelj" />
+                <ScalarProperty Name="Kupec" ColumnName="Kupec" />
+                <ScalarProperty Name="Kupec_Naslov" ColumnName="Kupec_Naslov" />
+                <ScalarProperty Name="Kupec_Posta" ColumnName="Kupec_Posta" />
+                <ScalarProperty Name="Kupec_Kraj" ColumnName="Kupec_Kraj" />
+                <ScalarProperty Name="Naroceno" ColumnName="Naroceno" />
+                <ScalarProperty Name="Proizvedeno" ColumnName="Proizvedeno" />
+                <ScalarProperty Name="Prevzeto" ColumnName="Prevzeto" />
+                <ScalarProperty Name="Razlika" ColumnName="Razlika" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Zaloga" ColumnName="Zaloga" />
+                <ScalarProperty Name="Dovoljeno_odpoklicati" ColumnName="Dovoljeno_odpoklicati" />
+                <ScalarProperty Name="Enota_Mere" ColumnName="Enota_Mere" />
+                <ScalarProperty Name="Interno" ColumnName="Interno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

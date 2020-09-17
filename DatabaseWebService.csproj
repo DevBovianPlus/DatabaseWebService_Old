@@ -434,6 +434,9 @@
     <Compile Include="DomainOTP\SeznamDobaviteljev_Result.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
+    <Compile Include="DomainOTP\SeznamPozicijNarocilnic10ZaOdpoklic_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainOTP\SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
@@ -484,6 +487,9 @@
     <Compile Include="DomainPDO\Concrete\SystemEmailMessageRepository_PDO.cs" />
     <Compile Include="DomainPDO\Concrete\SystemMessageEventsRepository_PDO.cs" />
     <Compile Include="DomainPDO\Concrete\UserPDORepository.cs" />
+    <Compile Include="DomainPDO\GetArtikelByNamePantheonOnly_Result.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainPDO\GetArtikelByName_Result.cs">
       <DependentUpon>Grafolit_PDO.tt</DependentUpon>
     </Compile>
@@ -778,6 +784,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Common\EmailTemplates\GrafolitPurchaseDeptNotifyMail.html" />
     <Content Include="Common\EmailTemplates\CarrierCongratsOrBetterLuckNextTimeMail.html" />
     <Content Include="Common\EmailTemplates\AdministratorEmail_Odpoklic.html" />
     <Content Include="Common\EmailTemplates\UserMailNOZ.html" />

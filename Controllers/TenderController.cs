@@ -233,7 +233,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveTenderAndTenderPosition([FromBody]object tenderData)
+        public IHttpActionResult SaveTenderAndUploadPosition([FromBody]object tenderData)
         {
             WebResponseContentModel<TenderFullModel> model = null;
             try

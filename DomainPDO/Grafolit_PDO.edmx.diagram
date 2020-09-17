@@ -47,6 +47,7 @@
         <AssociationConnector Association="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" />
         <EntityTypeShape EntityType="GrafolitPDOModel.SystemEmailMessage_PDO" Width="1.5" PointX="5.25" PointY="22.25" />
         <AssociationConnector Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID" />
+        <AssociationConnector Association="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

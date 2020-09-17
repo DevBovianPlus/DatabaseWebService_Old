@@ -7,10 +7,12 @@ using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsOTP.Tender;
+using DatabaseWebService.ModelsPDO.Inquiry;
 using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
 using System.Data.Objects;
+using System.Data.Objects.SqlClient;
 using System.Linq;
 using System.Web;
 using static DatabaseWebService.Common.Enums.Enums;
@@ -72,7 +74,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
         {
             foreach (OrderPositionModelNew itmPos in listPositions)
             {
-                DataTypesHelper.LogThis("Before PDO naročila");
+                //DataTypesHelper.LogThis("Before PDO naročila");
                 string sOrderNumber = (itmPos.Narocilnica != null && itmPos.Narocilnica.Length > 0) ? itmPos.Narocilnica : "";
                 //DataTypesHelper.LogThis("1");
                 if (sOrderNumber.Length == 0) continue;
@@ -92,7 +94,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     itmPos.SortGledeNaTipApp = (itmPos.Order_Confirm != null && itmPos.Order_Confirm.Length>0) ? 0 : 1;
                     continue;
                 }
-                DataTypesHelper.LogThis("Before NOZ naročila");
+                //DataTypesHelper.LogThis("Before NOZ naročila");
                 // preverimo ali je med NOZ naročili
                 var queryNOZ = from narItm in contextNOZ.NarociloOptimalnihZalog where narItm.NarociloID_P != null && narItm.NarociloID_P.Trim() == sOrderNumber select narItm;
                 //DataTypesHelper.LogThis("1");
@@ -118,6 +120,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
         {//TODO: pridobimo še vse pozicije iz tabele lastna zaloga če je izbran dobavitelj iz naše tabele stranka_otp i da je tipa SKLADISCE
             try
             {
+                if (supplier == null || supplier.Length == 0) return null;
+
                 DataTypesHelper.LogThis("GetListOfOpenedOrderPositions for : " + supplier);
 
                 supplier = supplier.Replace("|", "&");
@@ -125,15 +129,17 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 var query = from np in context.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja(supplier.Trim())
                             select new OrderPositionModelNew
                             {
+                                UniqueID = string.Concat("-", np.Narocilnica, SqlFunctions.StringConvert((double)np.St_Pozicija)),
+                                //UniqueID = SqlFunctions.StringConvert((double)np.St_Pozicija),
                                 Artikel = np.Artikel,
                                 Datum_Dobave = np.Datum_Dobave,
                                 Datum_narocila = np.Datum_narocila.HasValue ? np.Datum_narocila.Value : DateTime.MinValue,
                                 Dobavitelj = np.Dobavitelj,
                                 Kupec = np.Kupec,
-                                Naroceno = np.Naroceno.HasValue ? np.Naroceno.Value : 0,
+                                Naroceno = np.Naroceno,
                                 Narocilnica = np.Narocilnica,
                                 Order_Confirm = np.Order_Confirm,
-                                Prevzeto = np.Prevzeto.HasValue ? np.Prevzeto.Value : 0,
+                                Prevzeto = np.Prevzeto,
                                 Razlika = np.Razlika.HasValue ? np.Razlika.Value : 0,
                                 St_Pozicija = np.St_Pozicija,
                                 Tovarna = np.Tovarna,
@@ -141,7 +147,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 Zaloga = np.Zaloga.HasValue ? np.Zaloga.Value : 0,
                                 Interno = np.Interno,
                                 Dovoljeno_Odpoklicati = np.Dovoljeno_odpoklicati,
-                                Proizvedeno = np.Proizvedeno.HasValue ? np.Proizvedeno.Value : 0,
+                                Proizvedeno = np.Proizvedeno,
+                                Kategorija = np.Kategorija == null ? "" : np.Kategorija,
                                 Ident = np.Ident,
                                 Kupec_Kraj = np.Kupec_Kraj,
                                 Kupec_Naslov = np.Kupec_Naslov,
@@ -149,7 +156,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 EnotaMere = np.Enota_Mere
                             };
 
-                var pos = query.Where(o => o.Order_Confirm == "15-4988/30").FirstOrDefault();
+                //var pos = query.Where(o => o.Order_Confirm == "15-4988/30").FirstOrDefault();
                 List<OrderPositionModelNew> list = query.ToList();
                 int count = 1;
                 foreach (var item in list)
@@ -157,20 +164,20 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     item.tempID = count;
                     count++;
                 }
-                DataTypesHelper.LogThis("count : " + count);
+                //DataTypesHelper.LogThis("count : " + count);
 
                 string kodaPotrjen = Enums.StatusOfRecall.POTRJEN.ToString();
                 int statusPotrjen = context.StatusOdpoklica.Where(so => so.Koda == kodaPotrjen).FirstOrDefault().StatusOdpoklicaID;
 
                 string kodaDelnoPrevzet = Enums.StatusOfRecall.DELNO_PREVZET.ToString();
                 int statusDelnoPrevzet = context.StatusOdpoklica.Where(so => so.Koda == kodaDelnoPrevzet).FirstOrDefault().StatusOdpoklicaID;
-                DataTypesHelper.LogThis("Before CheckPositionQuantity");
+                //DataTypesHelper.LogThis("Before CheckPositionQuantity");
                 CheckPositionQuantity(list, statusPotrjen, statusDelnoPrevzet);
-                DataTypesHelper.LogThis("After CheckPositionQuantity");
+                //DataTypesHelper.LogThis("After CheckPositionQuantity");
                 // preverimo za katero aplikacijo gre
-                DataTypesHelper.LogThis("Before SetApplicationToOrderPosition");
+                //DataTypesHelper.LogThis("Before SetApplicationToOrderPosition");
                 list = SetApplicationToOrderPosition(list);
-                DataTypesHelper.LogThis("After SetApplicationToOrderPosition");
+                //DataTypesHelper.LogThis("After SetApplicationToOrderPosition");
                 list = list.OrderBy(p => p.Datum_Dobave).OrderBy(p1 => p1.SortGledeNaTipApp).ToList();
 
                 #region
@@ -238,7 +245,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     }
                 }*/
                 #endregion
-                DataTypesHelper.LogThis("Before clientID : " + clientID.ToString());
+                //DataTypesHelper.LogThis("Before clientID : " + clientID.ToString());
                 if (clientID > 0)
                 {
                     var lastnoSkladisce = from ow in context.LastnaZaloga
@@ -283,7 +290,46 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                     list.AddRange(newList);
                 }
-                DataTypesHelper.LogThis("After Client");
+                //DataTypesHelper.LogThis("After Client");
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
+        public List<OrderPositionModelNew> GetListOfOrderNumber10()
+        {//TODO: pridobimo še vse pozicije iz tabele lastna zaloga če je izbran dobavitelj iz naše tabele stranka_otp i da je tipa SKLADISCE
+            try
+            {
+                DataTypesHelper.LogThis("GetListOfOrderNumber10");
+                
+
+                var query = from np in context.SeznamPozicijNarocilnic10ZaOdpoklic()
+                            select new OrderPositionModelNew
+                            {
+                                Status = np.Status,
+                                ZeljeniRokDobave = np.ZeljeniRokDobave.HasValue ? np.ZeljeniRokDobave.Value : DateTime.MinValue,
+                                Narocilnica = np.StevilkaDokumenta,
+                                Kupec = np.Stranka,
+                                Dobavitelj = np.Dobavitelj == null ? "" : np.Dobavitelj,
+                                Kategorija = np.Kategorija == null ? "" : np.Kategorija,
+                                Ident = np.KodaArtikla,
+                                Artikel = np.NazivArtikla,
+                                Naroceno = np.NarocenaKolicina,
+                                EnotaMere = np.EnotaMere,
+                                PotrjeniRokDobave = np.PotrjeniRokDobave.HasValue ? np.PotrjeniRokDobave.Value : DateTime.MinValue
+                            };                
+                List<OrderPositionModelNew> list = query.ToList();
+
+                int count = 1;
+                foreach (var item in list)
+                {
+                    item.tempID = count;
+                    count++;
+                }
+
                 return list;
             }
             catch (Exception ex)
@@ -326,6 +372,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 else
                     primerjalnaKolicina = item.Naroceno;
 
+
                 if (item.OdpoklicKolicinaOTP == primerjalnaKolicina)
                     list.RemoveAt(i);
                 else if (currentRecallQuantity.HasValue && primerjalnaKolicina == (currentRecallQuantity + item.Zaloga))
@@ -366,6 +413,9 @@ namespace DatabaseWebService.DomainOTP.Concrete
                         }
                     }*/
                 }
+
+                if (item.OdpoklicKolicinaOTP == 0) item.OdpoklicKolicinaOTP = primerjalnaKolicina;
+
             }
 
             return list;
@@ -420,6 +470,24 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
 
             return _coData;
+        }
+
+        public List<ProductCategory> GetCategoryList()
+        {
+            int tempNum = 0;
+            var query = from c in context.GetCategoryListOTP()
+                        select new ProductCategory
+                        {
+                            Naziv = c
+                        };
+
+            var list = query.ToList();
+            foreach (var item in list)
+            {
+                item.TempID = tempNum++;
+            }
+
+            return list;
         }
 
 

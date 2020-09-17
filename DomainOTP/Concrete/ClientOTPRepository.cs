@@ -410,6 +410,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 kontOseba.idKontaktneOsebe = model.idKontaktneOsebe;
                 kontOseba.idStranka = model.idStranka;
                 kontOseba.Naziv = model.NazivKontaktneOsebe;
+                kontOseba.NazivKontaktneOsebe = model.NazivKontaktneOsebe;
                 kontOseba.Telefon = model.Telefon;
                 kontOseba.GSM = model.GSM;
                 kontOseba.Email = model.Email;

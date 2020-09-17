@@ -8,6 +8,7 @@ namespace DatabaseWebService.ModelsOTP.Order
     public class OrderPositionModelNew
     {
         public int tempID { get; set; }
+        public string UniqueID { get; set; }
         public string Narocilnica { get; set; }
         public int St_Pozicija { get; set; }
         public string Order_Confirm { get; set; }
@@ -28,10 +29,15 @@ namespace DatabaseWebService.ModelsOTP.Order
         public decimal Zaloga { get; set; }
         public int Dovoljeno_Odpoklicati { get; set; }
         public string Interno { get; set; }
+        public string Kategorija { get; set; }
         public string Ident { get; set; }
         public decimal OdpoklicKolicinaOTP { get; set; }
         public decimal VsotaOdpoklicKolicinaOTP { get; set; }
         public string EnotaMere { get; set; }
+
+        public DateTime ZeljeniRokDobave { get; set; }
+        public DateTime PotrjeniRokDobave { get; set; }
+        public string Status { get; set; }        
 
         //Uporabljeno samo za skladišča z Lastno zalogo
         public int OdpoklicID { get; set; }

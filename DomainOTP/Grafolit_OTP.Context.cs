@@ -58,16 +58,6 @@ namespace DatabaseWebService.DomainOTP
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamDobaviteljev_Result>("[GrafolitOTPEntities].[SeznamDobaviteljev]()");
         }
     
-        [EdmFunction("GrafolitOTPEntities", "SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja")]
-        public virtual IQueryable<SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result> SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja(string dobavitelj)
-        {
-            var dobaviteljParameter = dobavitelj != null ?
-                new ObjectParameter("Dobavitelj", dobavitelj) :
-                new ObjectParameter("Dobavitelj", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result>("[GrafolitOTPEntities].[SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja](@Dobavitelj)", dobaviteljParameter);
-        }
-    
         [EdmFunction("GrafolitOTPEntities", "GetLastYearRecallCountBySuplierAndRoute")]
         public virtual IQueryable<GetLastYearRecallCountBySuplierAndRoute_Result> GetLastYearRecallCountBySuplierAndRoute(Nullable<int> relacijaID, Nullable<int> dobaviteljID)
         {
@@ -89,6 +79,28 @@ namespace DatabaseWebService.DomainOTP
                 new ObjectParameter("p_xParameters", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DodajPantheonDokument", p_xParametersParameter, p_cExportPath, p_cKey, p_cError);
+        }
+    
+        [EdmFunction("GrafolitOTPEntities", "GetCategoryListOTP")]
+        public virtual IQueryable<string> GetCategoryListOTP()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[GrafolitOTPEntities].[GetCategoryListOTP]()");
+        }
+    
+        [EdmFunction("GrafolitOTPEntities", "SeznamPozicijNarocilnic10ZaOdpoklic")]
+        public virtual IQueryable<SeznamPozicijNarocilnic10ZaOdpoklic_Result> SeznamPozicijNarocilnic10ZaOdpoklic()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamPozicijNarocilnic10ZaOdpoklic_Result>("[GrafolitOTPEntities].[SeznamPozicijNarocilnic10ZaOdpoklic]()");
+        }
+    
+        [EdmFunction("GrafolitOTPEntities", "SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja")]
+        public virtual IQueryable<SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result> SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja(string dobavitelj)
+        {
+            var dobaviteljParameter = dobavitelj != null ?
+                new ObjectParameter("Dobavitelj", dobavitelj) :
+                new ObjectParameter("Dobavitelj", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result>("[GrafolitOTPEntities].[SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja](@Dobavitelj)", dobaviteljParameter);
         }
     }
 }

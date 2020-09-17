@@ -20,7 +20,10 @@ namespace DatabaseWebService.ModelsPDO
         public DateTime InquiryDate { get; set; }
         public string InquiryNumber { get; set; }
         public string ThanksAndGreeting { get; set; }
+        public string ForCustomer { get; set; }
 
         public string ListOfPositions { get; set; }
+
+        public string NarociloSt { get; set; }
     }
 }

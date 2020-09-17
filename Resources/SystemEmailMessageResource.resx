@@ -176,7 +176,7 @@
   </data>
   <data name="res_20" xml:space="preserve">
     <value>Obvestilo o poslanem povpraševanju</value>
-  </data>
+  </data>  
   <data name="res_21" xml:space="preserve">
     <value>Obvestilo za administratorja sistema</value>
   </data>
@@ -185,5 +185,8 @@
   </data>
   <data name="res_23" xml:space="preserve">
     <value>Obvestilo o potrebnem odprtju nove šifre</value>
+  </data>
+  <data name="res_24" xml:space="preserve">
+    <value>Obvestilo o generiranju naročilnice</value>
   </data>
 </root>

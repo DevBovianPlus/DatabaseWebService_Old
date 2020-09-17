@@ -3,6 +3,7 @@ using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.Models;
 using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Order;
+using DatabaseWebService.ModelsPDO.Inquiry;
 using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,44 @@ namespace DatabaseWebService.Controllers
             try
             {
                 tmpUser.Content = sqlFunctionRepo.GetListOfOpenedOrderPositions(supplier, clientID);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetListOfOrderNumber10()
+        {
+            WebResponseContentModel<List<OrderPositionModelNew>> tmpUser = new WebResponseContentModel<List<OrderPositionModelNew>>();
+            Del<List<OrderPositionModelNew>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = sqlFunctionRepo.GetListOfOrderNumber10();
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        public IHttpActionResult GetCategoryList()
+        {
+            WebResponseContentModel<List<ProductCategory>> tmpUser = new WebResponseContentModel<List<ProductCategory>>();
+            Del<List<ProductCategory>> responseStatusHandler = ProcessContentModel;
+
+            try
+            {
+                tmpUser.Content = sqlFunctionRepo.GetCategoryList();
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)

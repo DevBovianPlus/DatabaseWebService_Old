@@ -1,5 +1,6 @@
 ﻿using DatabaseWebService.Common;
 using DatabaseWebService.Common.Enums;
+using DatabaseWebService.DomainPDO;
 using DatabaseWebService.DomainPDO.Abstract;
 using DatabaseWebService.Models;
 using DatabaseWebService.Models.Client;
@@ -9,6 +10,7 @@ using DatabaseWebService.Resources;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -22,15 +24,18 @@ namespace DatabaseWebService.Controllers
         private IMSSQLPDOFunctionRepository mssqlRepo;
         private ISystemMessageEventsRepository_PDO messageEventsRepo;
         private IEmployeePDORepository employeeRepo;
+        private IClientPDORepository clientPdoRepo;
+
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
         public InquiryController(IInquiryRepository iinquiryRepo, IMSSQLPDOFunctionRepository imssqlRepo, ISystemMessageEventsRepository_PDO imessageEventsRepo,
-            IEmployeePDORepository iemployeeRepo)
+            IEmployeePDORepository iemployeeRepo, IClientPDORepository iclientPdoRepo)
         {
             inquiryRepo = iinquiryRepo;
             mssqlRepo = imssqlRepo;
             messageEventsRepo = imessageEventsRepo;
             employeeRepo = iemployeeRepo;
+            clientPdoRepo = iclientPdoRepo;
         }
 
         public WebResponseContentModel<T> ProcessContentModel<T>(WebResponseContentModel<T> model, Exception ex = null)
@@ -98,7 +103,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveInquiry([FromBody]object inquiryData)
+        public IHttpActionResult SaveInquiry([FromBody] object inquiryData)
         {
             WebResponseContentModel<InquiryFullModel> model = null;
             try
@@ -151,18 +156,29 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveInquiryPurchase([FromBody]object inquiryData)
+        public IHttpActionResult SaveInquiryPurchase([FromBody] object inquiryData)
         {
             WebResponseContentModel<InquiryFullModel> model = null;
             try
             {
                 model = JsonConvert.DeserializeObject<WebResponseContentModel<InquiryFullModel>>(inquiryData.ToString());
 
+
+
                 if (model.Content != null)
                 {
                     if (model.Content.PovprasevanjeID > 0)//We update existing record in DB
                     {
                         inquiryRepo.SaveInquiry(model.Content);
+                        // send email to all grafolit contacts = Nabava
+                        if (model.Content.StatusPovprasevanja.Koda == Enums.StatusOfInquiry.POSLANO_V_NABAVO.ToString())
+                        {
+                            var employee = employeeRepo.GetEmployeeByID(model.Content.PovprasevanjeOddalID);
+                            string sGrafolitDept = ConfigurationManager.AppSettings["PantheonCreateOrderDefBuyer"].ToString();
+                            ClientFullModel cfmGrafolit = clientPdoRepo.GetClientByName(sGrafolitDept);
+
+                            messageEventsRepo.CreateEmailForGrafolitPurcaheDept(cfmGrafolit, employee, model.Content);
+                        }
                     }
 
                     model.IsRequestSuccesful = true;
@@ -275,10 +291,10 @@ namespace DatabaseWebService.Controllers
 
             return Json(tmpUser);
         }
-       
+
 
         [HttpPost]
-        public IHttpActionResult SaveInquiryPosition([FromBody]object inquiryPosData)
+        public IHttpActionResult SaveInquiryPosition([FromBody] object inquiryPosData)
         {
             WebResponseContentModel<InquiryPositionModel> model = null;
             try
@@ -292,8 +308,8 @@ namespace DatabaseWebService.Controllers
                     else // We add and save new recod to DB 
                         model.Content.PovprasevanjePozicijaID = inquiryRepo.SaveInquiryPositionModel(model.Content, false);
 
-                    //model.Content.PovprasevanjePozicijaArtikel = inquiryRepo.GetInquiryPositionSuppliersByInquiryPositionID(model.Content.PovprasevanjePozicijaID);
-
+                    model.Content.PovprasevanjePozicijaArtikel = inquiryRepo.GetInquiryPositionArtikelByInquiryPositionID(model.Content.PovprasevanjePozicijaID);
+                    //model = inquiryRepo.GetInquiryPositionByID(model.Content.PovprasevanjeID);
                     model.IsRequestSuccesful = true;
                 }
                 else
@@ -313,7 +329,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveInquiryPositions([FromBody]object inquiryPosData)
+        public IHttpActionResult SaveInquiryPositions([FromBody] object inquiryPosData)
         {
             WebResponseContentModel<List<InquiryPositionModel>> model = null;
             try
@@ -369,7 +385,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult DeleteInquiryPositionArtikles([FromBody]object inquirySupplierPosData)
+        public IHttpActionResult DeleteInquiryPositionArtikles([FromBody] object inquirySupplierPosData)
         {
             WebResponseContentModel<List<InquiryPositionArtikelModel>> model = null;
             try
@@ -648,7 +664,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveInquiryPositionSupplierPdfReport([FromBody]object data)
+        public IHttpActionResult SaveInquiryPositionSupplierPdfReport([FromBody] object data)
         {
             WebResponseContentModel<GroupedInquiryPositionsBySupplier> model = null;
             try

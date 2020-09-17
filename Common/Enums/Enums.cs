@@ -157,6 +157,7 @@ namespace DatabaseWebService.Common.Enums
             EMAILTOSUPPLIER_KOLICINA = 20,
             EMAILTOSUPPLIER_OPOMBE = 21,
             EMAILTOSUPPLIER_THANKANDGREETING = 22,
+            EMAILTOSUPPLIER_FORCUSTOMER = 23,
 
         }
 
