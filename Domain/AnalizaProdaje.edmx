@@ -4,18 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AnalizaProdajeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AnalizaProdajeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Avtomatika">
           <Key>
             <PropertyRef Name="AvtomatikaID" />
           </Key>
           <Property Name="AvtomatikaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OsebaID" Type="int" Nullable="false" />
-          <Property Name="DogodekID" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="StopnjaNadrejenega" Type="int" Nullable="false" />
           <Property Name="Opis" Type="varchar" MaxLength="500" />
           <Property Name="ts" Type="datetime" />
+          <Property Name="DogodekID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Dogodek">
           <Key>
@@ -224,6 +224,7 @@
           <Property Name="SecondID" Type="int" />
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="AKTIVNOST" Type="bit" />
         </EntityType>
         <EntityType Name="StrankaKategorija">
           <Key>
@@ -280,7 +281,7 @@
           <Property Name="tsIDOsebe" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'GrafolitCRM.dbo.FinancniDashboard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="FinancniDashboard">
           <Key>
             <PropertyRef Name="FinancniDashboardID" />
@@ -509,9 +510,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OsebeNadrejeni_Osebe">
-          <End Role="Osebe" Type="Self.Osebe" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="1" />
           <End Role="OsebeNadrejeni" Type="Self.OsebeNadrejeni" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Osebe">
@@ -535,9 +534,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PLANSTRA_REFERENCE_KATEGORI">
-          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="0..1" />
           <End Role="PlanStranka" Type="Self.PlanStranka" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Kategorija">
@@ -563,9 +560,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SPOROCIL_REFERENCE_DOGODEK">
-          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="0..1" />
           <End Role="Sporocila" Type="Self.Sporocila" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dogodek">
@@ -577,9 +572,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StrankaKategorija_Kategorija">
-          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
           <End Role="StrankaKategorija" Type="Self.StrankaKategorija" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Kategorija">
@@ -591,9 +584,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StrankaKategorija_Stranka">
-          <End Role="Stranka" Type="Self.Stranka" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="1" />
           <End Role="StrankaKategorija" Type="Self.StrankaKategorija" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stranka">
@@ -605,9 +596,7 @@ warning 6002: The table/view 'AnalizaProdaje3.dbo.FinancniDashboard' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_STRANKAZ_REFERENCE_OSEBE">
-          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Osebe" Type="Self.Osebe" Multiplicity="0..1" />
           <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Osebe">
@@ -982,6 +971,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <NavigationProperty Name="Naprava" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Stranka" ToRole="Naprava" />
           <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="Stranka" ToRole="StrankaKategorija" />
           <NavigationProperty Name="IzpisGrafa" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="Stranka" ToRole="IzpisGrafa" />
+          <Property Name="AKTIVNOST" Type="Boolean" />
         </EntityType>
         <EntityType Name="StrankaZaposleni">
           <Key>
@@ -1745,6 +1735,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySetMapping Name="Stranka">
             <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
               <MappingFragment StoreEntitySet="Stranka">
+                <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
                 <ScalarProperty Name="idStranka" ColumnName="idStranka" />
                 <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
                 <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
