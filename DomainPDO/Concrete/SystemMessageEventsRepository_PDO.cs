@@ -303,6 +303,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 string emailSubject = SystemEmailMessageResource.res_24;
                 string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["GRAFOLITPURCHASEDEPT_NOTIFY_MAIL"].ToString()).Replace("\"", "\\");
                 DataTypesHelper.LogThis(AppDomain.CurrentDomain.BaseDirectory);
+                DataTypesHelper.LogThis("CreateEmailForGrafolitPurcaheDept");
 
                 // get all cc email Purchasing Department
                 string sCC = GetAllPurchaseEmployees(cfmGrafolit);

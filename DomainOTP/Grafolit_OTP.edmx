@@ -242,6 +242,7 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="Naziv" Type="varchar" MaxLength="500" />
           <Property Name="RazpisKreiran" Type="bit" />
+          <Property Name="PotRazpisa" Type="varchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="RazpisPozicija">
           <Key>
@@ -785,6 +786,7 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
                 <Property Name="Order_Confirm" Type="varchar" MaxLength="25" />
                 <Property Name="Tovarna" Type="varchar" MaxLength="25" />
                 <Property Name="Kategorija" Type="varchar" MaxLength="30" />
+                <Property Name="KategorijaNabava" Type="varchar" MaxLength="30" />
                 <Property Name="Ident" Type="char" MaxLength="16" />
                 <Property Name="Artikel" Type="varchar" MaxLength="80" />
                 <Property Name="Datum_narocila" Type="smalldatetime" />
@@ -1075,7 +1077,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <FunctionImport Name="GetCategoryListOTP" IsComposable="true" ReturnType="Collection(String)" />
           <FunctionImport Name="SeznamPozicijNarocilnic10ZaOdpoklic" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijNarocilnic10ZaOdpoklic_Result)" />
           <FunctionImport Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result)">
-            <Parameter Name="Dobavitelj" Mode="In" Type="String" />
+          <Parameter Name="Dobavitelj" Mode="In" Type="String" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Osebe_OTP">
@@ -1253,6 +1255,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_RazpisID" FromRole="Razpis" ToRole="RazpisPozicija" />
           <Property Name="RazpisKreiran" Type="Boolean" />
+          <Property Name="PotRazpisa" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="RazpisPozicija">
           <Key>
@@ -2013,6 +2016,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="Razpis">
             <EntityTypeMapping TypeName="GrafolitOTPModel.Razpis">
               <MappingFragment StoreEntitySet="Razpis">
+                <ScalarProperty Name="PotRazpisa" ColumnName="PotRazpisa" />
                 <ScalarProperty Name="RazpisKreiran" ColumnName="RazpisKreiran" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="ts" ColumnName="ts" />

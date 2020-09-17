@@ -171,12 +171,15 @@ namespace DatabaseWebService.Controllers
                     {
                         inquiryRepo.SaveInquiry(model.Content);
                         // send email to all grafolit contacts = Nabava
+                        DataTypesHelper.LogThis("Generate mail for Purchase dept : " + model.Content.StatusPovprasevanja.Koda.ToString()) ;
+
                         if (model.Content.StatusPovprasevanja.Koda == Enums.StatusOfInquiry.POSLANO_V_NABAVO.ToString())
                         {
                             var employee = employeeRepo.GetEmployeeByID(model.Content.PovprasevanjeOddalID);
                             string sGrafolitDept = ConfigurationManager.AppSettings["PantheonCreateOrderDefBuyer"].ToString();
                             ClientFullModel cfmGrafolit = clientPdoRepo.GetClientByName(sGrafolitDept);
 
+                            DataTypesHelper.LogThis("Generate mail for Purchase dept");
                             messageEventsRepo.CreateEmailForGrafolitPurcaheDept(cfmGrafolit, employee, model.Content);
                         }
                     }

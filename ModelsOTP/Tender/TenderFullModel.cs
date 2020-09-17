@@ -18,5 +18,7 @@ namespace DatabaseWebService.ModelsOTP.Tender
         public bool RazpisKreiran { get; set; }
 
         public List<TenderPositionModel> RazpisPozicija { get; set; }
+
+        public string PotRazpisa { get; set; }
     }
 }

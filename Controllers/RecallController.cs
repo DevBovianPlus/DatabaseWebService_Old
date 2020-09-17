@@ -143,38 +143,45 @@ namespace DatabaseWebService.Controllers
 
                 if (model.Content != null)
                 {
+                    
                     var employee = employeeRepo.GetEmployeeByID(model.Content.UserID);
 
                     if (model.Content.OdpoklicID > 0)//We update existing record in DB
                     {
+                        DataTypesHelper.LogThis("SaveRecall : (model.Content.OdpoklicID) :" + model.Content.OdpoklicID.ToString());
                         recallRepo.SaveRecall(model.Content);
                         
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());
                         if (model.Content.RecallStatusChanged && (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID))
                         {
                             //messageEventsRepo.CreateEmailForRecallStatusChanged(model.Content);
+                            DataTypesHelper.LogThis("SaveRecall : " + stat.Koda);
                             messageEventsRepo.CreateEmailForLeaderToApproveRecall(model.Content);
                         }
 
                         stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.RAZPIS_PREVOZNIK.ToString());
                         if (model.Content.RecallStatusChanged && (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID))
                         {
+                            DataTypesHelper.LogThis("SaveRecall : " + stat.Koda);
                             messageEventsRepo.CreateEmailForCarriers(model.Content, employee);
                         }
                     }
                     else // We add and save new recod to DB 
                     {
+                        DataTypesHelper.LogThis("SaveRecall : (model.Content.OdpoklicID) :" + model.Content.OdpoklicID.ToString());
                         model.Content.OdpoklicID = recallRepo.SaveRecall(model.Content, false);
 
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());
                         if (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID)
-                        {                            
+                        {
+                            DataTypesHelper.LogThis("SaveRecall : " + stat.Koda);
                             messageEventsRepo.CreateEmailForLeaderToApproveRecall(model.Content);
                         }
 
                         stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.RAZPIS_PREVOZNIK.ToString());
                         if (model.Content.RecallStatusChanged && (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID))
                         {
+                            DataTypesHelper.LogThis("SaveRecall : " + stat.Koda);
                             messageEventsRepo.CreateEmailForCarriers(model.Content, employee);
                         }
                     }

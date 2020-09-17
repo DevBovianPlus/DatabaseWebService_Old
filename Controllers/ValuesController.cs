@@ -458,6 +458,8 @@ namespace DatabaseWebService.Controllers
             return Json(tmpUser);
         }
 
+       
+
 
         #region Grafolit_NOZ
         [HttpGet]

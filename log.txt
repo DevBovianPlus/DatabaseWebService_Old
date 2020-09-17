@@ -2165,3 +2165,258 @@ Parameter name: source
 </Document>
 28. 08. 2020 11:00:41 Run Create order procedure _upJM_CreateSupplierOrder
 28. 08. 2020 11:00:41 Update Create order Recall Data
+28. 08. 2020 11:41:51 GetListOfOrderNumber10
+28. 08. 2020 11:42:24 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+28. 08. 2020 11:42:30 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28. 08. 2020 12:05:17 GetListOfOrderNumber10
+28. 08. 2020 12:05:26 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+28. 08. 2020 14:56:52 GetListOfOrderNumber10
+28. 08. 2020 15:04:27 GetListOfOpenedOrderPositions for : MEL PAPER GREECE              
+28. 08. 2020 15:36:47 D:\GitHub\DatabaseWebService\
+28. 08. 2020 15:39:08 D:\GitHub\DatabaseWebService\
+28. 08. 2020 15:43:53 D:\GitHub\DatabaseWebService\
+1. 09. 2020 14:18:29 Start - Controler
+1. 09. 2020 14:18:29 Start - SaveTender
+1. 09. 2020 14:18:31 Start - SaveTender
+1. 09. 2020 14:18:32 1. 09. 2020 14:18:32
+1. 09. 2020 14:18:32 1. 09. 2020 14:18:32
+1. 09. 2020 14:20:47 Start - Controler
+1. 09. 2020 14:20:47 Start - SaveTender
+1. 09. 2020 14:20:50 Start - SaveTender
+1. 09. 2020 14:20:50 1. 09. 2020 14:20:50
+1. 09. 2020 14:20:50 1. 09. 2020 14:20:50
+1. 09. 2020 14:22:18 Start - Controler
+1. 09. 2020 14:22:18 Start - SaveTender
+1. 09. 2020 14:22:19 Start - SaveTender
+1. 09. 2020 14:22:19 1. 09. 2020 14:22:19
+1. 09. 2020 14:22:19 1. 09. 2020 14:22:19
+1. 09. 2020 14:25:29 Start - Controler
+1. 09. 2020 14:25:29 Start - SaveTender
+1. 09. 2020 14:25:30 Start - SaveTender
+1. 09. 2020 14:25:31 1. 09. 2020 14:25:31
+1. 09. 2020 14:25:31 1. 09. 2020 14:25:31
+1. 09. 2020 14:44:11 Start - Controler
+1. 09. 2020 14:44:11 Start - SaveTender
+1. 09. 2020 14:44:12 Start - SaveTender
+1. 09. 2020 14:44:12 1. 09. 2020 14:44:12
+1. 09. 2020 14:44:12 1. 09. 2020 14:44:12
+1. 09. 2020 15:02:53 Start - Controler
+1. 09. 2020 15:02:53 Start - SaveTender
+1. 09. 2020 15:03:10 Start - SaveTender
+1. 09. 2020 15:03:16 1. 09. 2020 15:03:16
+1. 09. 2020 15:03:16 1. 09. 2020 15:03:16
+1. 09. 2020 15:03:32 Start - Controler
+1. 09. 2020 15:03:32 Start - SaveTender
+1. 09. 2020 15:20:38 Start - Controler
+1. 09. 2020 15:20:38 Start - SaveTender
+1. 09. 2020 15:20:39 Start - SaveTender
+1. 09. 2020 15:20:40 1. 09. 2020 15:20:40
+1. 09. 2020 15:20:40 1. 09. 2020 15:20:40
+1. 09. 2020 15:20:49 Start - Controler
+1. 09. 2020 15:20:49 Start - SaveTender
+5. 09. 2020 05:16:09 GetListOfOrderNumber10
+5. 09. 2020 05:16:41 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+5. 09. 2020 05:17:26 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+5. 09. 2020 05:22:58 GetListOfOrderNumber10
+5. 09. 2020 05:23:04 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+5. 09. 2020 11:11:17 D:\GitHub\DatabaseWebService\
+5. 09. 2020 11:16:25 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>5. 09. 2020 11:16:24</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ABI PRINT D.O.O.              </Buyer>
+  <OrderDate>5. 09. 2020 11:16:25</OrderDate>
+  <LoadDate>25. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731410401008   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 125G 72X102 SB</Name>
+      <Qty>918,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731390401016   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 230g 72X102 SB</Name>
+      <Qty>3378,24</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+5. 09. 2020 11:16:25 Run Create order procedure _upJM_CreateSupplierOrder
+5. 09. 2020 11:16:31 Update Create order Recall Data
+5. 09. 2020 11:22:21 D:\GitHub\DatabaseWebService\
+5. 09. 2020 11:25:17 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>5. 09. 2020 11:24:48</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>DOOEL "DONIKA PLUS"           </Buyer>
+  <OrderDate>5. 09. 2020 11:24:56</OrderDate>
+  <LoadDate>30. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>30. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate />
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0731390401016   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 230g 72X102 SB</Name>
+      <Qty>16,89</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate />
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0731410401050   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 125G 72X102 SB PK</Name>
+      <Qty>18,36</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+5. 09. 2020 11:25:17 Run Create order procedure _upJM_CreateSupplierOrder
+5. 09. 2020 11:25:17 Update Create order Recall Data
+5. 09. 2020 11:26:35 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>5. 09. 2020 11:26:34</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ABI PRINT D.O.O.              </Buyer>
+  <OrderDate>5. 09. 2020 11:26:35</OrderDate>
+  <LoadDate>25. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731410401008   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 125G 72X102 SB</Name>
+      <Qty>918,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731390401016   </Ident>
+      <Name>SIRIO PEARL POLAR DAWN 230g 72X102 SB</Name>
+      <Qty>3378,24</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+5. 09. 2020 11:26:36 Run Create order procedure _upJM_CreateSupplierOrder
+5. 09. 2020 11:26:36 Update Create order Recall Data
+5. 09. 2020 11:40:26 GetListOfOrderNumber10
+5. 09. 2020 11:40:51 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+7. 09. 2020 15:02:41 GetListOfOrderNumber10
+7. 09. 2020 15:02:50 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+7. 09. 2020 15:14:23 GetListOfOrderNumber10
+7. 09. 2020 15:14:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+8. 09. 2020 08:50:28 GetListOfOrderNumber10
+8. 09. 2020 08:50:48 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+8. 09. 2020 08:50:53 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+8. 09. 2020 09:49:15 GetListOfOrderNumber10
+8. 09. 2020 09:49:22 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+8. 09. 2020 10:03:20 GetListOfOrderNumber10
+8. 09. 2020 10:03:24 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+8. 09. 2020 11:13:11 GetListOfOrderNumber10
+8. 09. 2020 11:13:15 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+8. 09. 2020 11:25:33 D:\GitHub\DatabaseWebService\
+8. 09. 2020 11:35:11 D:\GitHub\DatabaseWebService\
+9. 09. 2020 11:02:27 GetListOfOrderNumber10
+9. 09. 2020 11:04:34 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+9. 09. 2020 11:20:18 GetListOfOrderNumber10
+9. 09. 2020 11:23:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 11:45:32 GetListOfOrderNumber10
+9. 09. 2020 11:45:51 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 11:59:14 GetListOfOrderNumber10
+9. 09. 2020 11:59:26 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 12:15:46 GetListOfOrderNumber10
+9. 09. 2020 12:15:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 13:49:31 GetListOfOrderNumber10
+9. 09. 2020 13:57:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 14:16:29 GetListOfOrderNumber10
+9. 09. 2020 14:16:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 14:24:09 GetListOfOrderNumber10
+9. 09. 2020 14:24:55 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 14:51:45 GetListOfOrderNumber10
+9. 09. 2020 14:51:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 15:03:08 GetListOfOrderNumber10
+9. 09. 2020 15:03:20 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 15:05:13 GetListOfOrderNumber10
+9. 09. 2020 15:05:18 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 15:08:26 D:\GitHub\DatabaseWebService\
+9. 09. 2020 15:08:26 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+9. 09. 2020 15:33:56 GetListOfOrderNumber10
+9. 09. 2020 15:37:37 GetListOfOrderNumber10
+9. 09. 2020 15:37:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 16:01:57 GetListOfOrderNumber10
+9. 09. 2020 16:02:05 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 16:02:42 GetListOfOrderNumber10
+9. 09. 2020 16:02:47 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 16:20:23 D:\GitHub\DatabaseWebService\
+9. 09. 2020 16:20:23 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+9. 09. 2020 16:25:06 GetListOfOrderNumber10
+9. 09. 2020 16:25:11 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 09. 2020 16:26:52 D:\GitHub\DatabaseWebService\
+9. 09. 2020 16:26:52 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+10. 09. 2020 11:32:32 GetListOfOrderNumber10
+14. 09. 2020 11:06:52 Start - Controler
+14. 09. 2020 11:06:52 Start - SaveTender
+14. 09. 2020 11:06:53 Start - SaveTender
+14. 09. 2020 11:06:53 14. 09. 2020 11:06:53
+14. 09. 2020 11:06:53 14. 09. 2020 11:06:53
+14. 09. 2020 11:07:55 Start - Controler
+14. 09. 2020 11:07:55 Start - SaveTender
+14. 09. 2020 11:30:04 Start - Controler
+14. 09. 2020 11:30:04 Start - SaveTender
+14. 09. 2020 11:30:23 Start - SaveTender
+14. 09. 2020 11:30:25 14. 09. 2020 11:30:25
+14. 09. 2020 11:30:25 14. 09. 2020 11:30:25
+14. 09. 2020 11:30:55 Start - Controler
+14. 09. 2020 11:30:55 Start - SaveTender
+14. 09. 2020 15:47:17 Start - Controler
+14. 09. 2020 15:47:18 Start - SaveTender
+14. 09. 2020 15:47:18 Start - SaveTender
+14. 09. 2020 15:47:18 14. 09. 2020 15:47:18
+14. 09. 2020 15:47:18 14. 09. 2020 15:47:18
+14. 09. 2020 15:47:26 Start - Controler
+14. 09. 2020 15:47:26 Start - SaveTender
+14. 09. 2020 16:29:13 GetListOfOrderNumber10
+14. 09. 2020 16:29:52 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+14. 09. 2020 16:33:17 D:\GitHub\DatabaseWebService\

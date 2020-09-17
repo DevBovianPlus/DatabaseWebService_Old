@@ -36,7 +36,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 RazpisID = tender.RazpisID,
                                 ts = tender.ts.HasValue ? tender.ts.Value : DateTime.MinValue,
                                 tsIDOseba = tender.tsIDOseba.HasValue ? tender.tsIDOseba.Value : 0,
-                                RazpisKreiran = tender.RazpisKreiran.HasValue? tender.RazpisKreiran.Value : false
+                                RazpisKreiran = tender.RazpisKreiran.HasValue? tender.RazpisKreiran.Value : false,
+                                PotRazpisa = tender.PotRazpisa,
                             };
 
                 List<TenderFullModel> model = query.ToList();
@@ -156,7 +157,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 RazpisID = tender.RazpisID,
                                 ts = tender.ts.HasValue ? tender.ts.Value : DateTime.MinValue,
                                 tsIDOseba = tender.tsIDOseba.HasValue ? tender.tsIDOseba.Value : 0,
-                                RazpisKreiran = tender.RazpisKreiran.HasValue ? tender.RazpisKreiran.Value : false
+                                RazpisKreiran = tender.RazpisKreiran.HasValue ? tender.RazpisKreiran.Value : false,
+                                PotRazpisa = tender.PotRazpisa,
                             };
 
                 TenderFullModel model = query.FirstOrDefault();
@@ -187,6 +189,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 tender.ts = model.ts.CompareTo(DateTime.MinValue) == 0 ? (DateTime?)null : model.ts;
                 tender.tsIDOseba = model.tsIDOseba;
                 tender.RazpisKreiran = model.RazpisKreiran;
+                tender.PotRazpisa = model.PotRazpisa;
 
                 if (tender.RazpisID == 0)
                 {

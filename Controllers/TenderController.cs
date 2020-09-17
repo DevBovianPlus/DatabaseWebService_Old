@@ -88,7 +88,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveTender([FromBody]object tenderData)
+        public IHttpActionResult SaveTender([FromBody] object tenderData)
         {
             WebResponseContentModel<TenderFullModel> model = null;
             try
@@ -170,7 +170,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveTenders([FromBody]object tendersData)
+        public IHttpActionResult SaveTenders([FromBody] object tendersData)
         {
             WebResponseContentModel<List<TenderFullModel>> model = null;
             try
@@ -200,7 +200,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveTenderPosition([FromBody]object tenderPositionData)
+        public IHttpActionResult SaveTenderPosition([FromBody] object tenderPositionData)
         {
             WebResponseContentModel<TenderPositionModel> model = null;
             try
@@ -233,7 +233,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SaveTenderAndUploadPosition([FromBody]object tenderData)
+        public IHttpActionResult SaveTenderAndUploadPosition([FromBody] object tenderData)
         {
             WebResponseContentModel<TenderFullModel> model = null;
             try
@@ -292,7 +292,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult DeleteTenderPositions([FromBody]object tenderPosData)
+        public IHttpActionResult DeleteTenderPositions([FromBody] object tenderPosData)
         {
             WebResponseContentModel<List<int>> model = null;
             try
@@ -322,7 +322,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult GetTransportCounByTransporterAndRoute([FromBody]object tendersData)
+        public IHttpActionResult GetTransportCounByTransporterAndRoute([FromBody] object tendersData)
         {
             WebResponseContentModel<List<TransportCountModel>> model = null;
             try
@@ -354,7 +354,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult GetTransportCounByTransporterIDAndRouteID([FromBody]object tendersData)
+        public IHttpActionResult GetTransportCounByTransporterIDAndRouteID([FromBody] object tendersData)
         {
             WebResponseContentModel<TransportCountModel> model = null;
             try
@@ -419,6 +419,45 @@ namespace DatabaseWebService.Controllers
             catch (Exception ex)
             {
                 responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetTenderDownloadFile(int TenderID)
+        {
+            WebResponseContentModel<byte[]> tmpUser = new WebResponseContentModel<byte[]>();
+
+            try
+            {
+
+                TenderFullModel tender = tenderRepo.GetTenderModelByID(TenderID);
+
+                if ((tender != null) && tender.PotRazpisa != null && tender.PotRazpisa.Length > 0)
+                {
+
+                    
+                    byte[] bytes = System.IO.File.ReadAllBytes(tender.PotRazpisa);
+                    tmpUser.Content = bytes;
+
+                    if (tmpUser.Content != null)
+                    {
+                        tmpUser.IsRequestSuccesful = true;
+                        tmpUser.ValidationError = "";
+                    }
+                    else
+                    {
+                        tmpUser.IsRequestSuccesful = false;
+                        tmpUser.ValidationError = ValidationExceptionError.res_01;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                tmpUser.IsRequestSuccesful = false;
+                tmpUser.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
                 return Json(tmpUser);
             }
 

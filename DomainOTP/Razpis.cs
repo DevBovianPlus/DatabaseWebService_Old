@@ -26,6 +26,7 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> ts { get; set; }
         public string Naziv { get; set; }
         public Nullable<bool> RazpisKreiran { get; set; }
+        public string PotRazpisa { get; set; }
     
         public virtual ICollection<RazpisPozicija> RazpisPozicija { get; set; }
     }
