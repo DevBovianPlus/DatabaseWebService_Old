@@ -43,6 +43,11 @@ namespace DatabaseWebService.Domain.Abstract
 
         bool DeleteDevice(int deviceID, int clientID);
 
+        int SaveNotes(NotesModel model, bool updateRecord = true);
+
+        bool DeleteNotes(int NotesID, int clientID);
+
+        int GetNotesCountByCode(string code);
         int GetClientsCountByCode(string code);
         int GetDevicesCountByCode(string code);
 

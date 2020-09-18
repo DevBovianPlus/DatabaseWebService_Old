@@ -40,9 +40,9 @@ namespace DatabaseWebService.Domain
         public virtual Osebe Osebe { get; set; }
         public virtual Osebe Osebe1 { get; set; }
         public virtual StatusDogodek StatusDogodek { get; set; }
-        public virtual Stranka Stranka { get; set; }
         public virtual ICollection<Sporocila> Sporocila { get; set; }
         public virtual ICollection<DogodekSestanek> DogodekSestanek { get; set; }
         public virtual ICollection<Avtomatika> Avtomatika { get; set; }
+        public virtual Stranka Stranka { get; set; }
     }
 }

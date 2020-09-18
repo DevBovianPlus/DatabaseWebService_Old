@@ -27,7 +27,7 @@
           <Property Name="Skrbnik" Type="int" />
           <Property Name="Izvajalec" Type="int" />
           <Property Name="idStatus" Type="int" />
-          <Property Name="Opis" Type="varchar" MaxLength="2000" />
+          <Property Name="Opis" Type="varchar(max)" />
           <Property Name="DatumOtvoritve" Type="datetime" />
           <Property Name="Rok" Type="datetime" />
           <Property Name="DatumZadZaprtja" Type="char" MaxLength="10" />
@@ -43,7 +43,7 @@
           <Property Name="DogodekSestanekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DogodekID" Type="int" Nullable="false" />
           <Property Name="Tip" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Opis" Type="varchar(max)" Nullable="false" />
+          <Property Name="Opis" Type="varchar(max)" />
           <Property Name="Datum" Type="datetime" Nullable="false" />
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="ts" Type="datetime" />
@@ -112,6 +112,16 @@
           <Property Name="Koda" Type="varchar" MaxLength="15" />
           <Property Name="Naziv" Type="varchar" MaxLength="150" />
           <Property Name="Opis" Type="varchar" MaxLength="500" />
+          <Property Name="ts" Type="datetime" />
+          <Property Name="tsIDOsebe" Type="int" />
+        </EntityType>
+        <EntityType Name="OpombaStranka">
+          <Key>
+            <PropertyRef Name="idOpombaStranka" />
+          </Key>
+          <Property Name="idOpombaStranka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStranka" Type="int" />
+          <Property Name="Opomba" Type="varchar(max)" />
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
         </EntityType>
@@ -224,7 +234,7 @@
           <Property Name="SecondID" Type="int" />
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
-          <Property Name="AKTIVNOST" Type="bit" />
+          <Property Name="AKTIVNOST" Type="int" />
         </EntityType>
         <EntityType Name="StrankaKategorija">
           <Key>
@@ -497,6 +507,18 @@ warning 6002: The table/view 'GrafolitCRM.dbo.FinancniDashboard' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OpombaStranka_Stranka">
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
+          <End Role="OpombaStranka" Type="Self.OpombaStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="OpombaStranka">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OSEBE_REFERENCE_VLOGA">
           <End Role="Vloga" Type="Self.Vloga" Multiplicity="0..1" />
           <End Role="Osebe" Type="Self.Osebe" Multiplicity="*" />
@@ -652,6 +674,7 @@ warning 6002: The table/view 'GrafolitCRM.dbo.FinancniDashboard' does not have a
           <EntitySet Name="KontaktneOsebe" EntityType="Self.KontaktneOsebe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nadzor" EntityType="Self.Nadzor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Naprava" EntityType="Self.Naprava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpombaStranka" EntityType="Self.OpombaStranka" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Osebe" EntityType="Self.Osebe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OsebeNadrejeni" EntityType="Self.OsebeNadrejeni" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanStranka" EntityType="Self.PlanStranka" Schema="dbo" store:Type="Tables" />
@@ -744,6 +767,10 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Stranka" EntitySet="Stranka" />
             <End Role="Naprava" EntitySet="Naprava" />
           </AssociationSet>
+          <AssociationSet Name="FK_OpombaStranka_Stranka" Association="Self.FK_OpombaStranka_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="OpombaStranka" EntitySet="OpombaStranka" />
+          </AssociationSet>
           <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="Self.FK_OSEBE_REFERENCE_VLOGA">
             <End Role="Vloga" EntitySet="Vloga" />
             <End Role="Osebe" EntitySet="Osebe" />
@@ -799,7 +826,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="Skrbnik" Type="Int32" />
           <Property Name="Izvajalec" Type="Int32" />
           <Property Name="idStatus" Type="Int32" />
-          <Property Name="Opis" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DatumOtvoritve" Type="DateTime" Precision="3" />
           <Property Name="Rok" Type="DateTime" Precision="3" />
           <Property Name="DatumZadZaprtja" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
@@ -809,12 +836,12 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <NavigationProperty Name="Osebe" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE" FromRole="Dogodek" ToRole="Osebe" />
           <NavigationProperty Name="Osebe1" Relationship="Self.FK_DOGODEK_REFERENCE_OSEBE1" FromRole="Dogodek" ToRole="Osebe" />
           <NavigationProperty Name="StatusDogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STATUSDO" FromRole="Dogodek" ToRole="StatusDogodek" />
-          <NavigationProperty Name="Stranka" Relationship="Self.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Dogodek" ToRole="Stranka" />
           <NavigationProperty Name="Sporocila" Relationship="Self.FK_SPOROCIL_REFERENCE_DOGODEK" FromRole="Dogodek" ToRole="Sporocila" />
           <NavigationProperty Name="DogodekSestanek" Relationship="AnalizaProdajeModel.FK_DogodekSestanek_Dogodek" FromRole="Dogodek" ToRole="DogodekSestanek" />
           <Property Name="Tip" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="RokIzvedbe" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Avtomatika" Relationship="AnalizaProdajeModel.FK_DogodekID" FromRole="Dogodek" ToRole="Avtomatika" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Dogodek" ToRole="Stranka" />
         </EntityType>
         <EntityType Name="Kategorija">
           <Key>
@@ -845,9 +872,9 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="ZaporednaStevika" Type="Int32" />
           <Property Name="ts" Type="DateTime" Precision="3" />
           <Property Name="tsIDOsebe" Type="Int32" />
-          <NavigationProperty Name="Stranka" Relationship="Self.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="KontaktneOsebe" ToRole="Stranka" />
           <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="KontaktneOsebe" ToRole="Stranka" />
         </EntityType>
         <EntityType Name="Nadzor">
           <Key>
@@ -864,7 +891,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <NavigationProperty Name="Kategorija" Relationship="Self.FK_NADZOR_REFERENCE_KATEGORI" FromRole="Nadzor" ToRole="Kategorija" />
           <NavigationProperty Name="Osebe" Relationship="Self.FK_NADZOR_REFERENCE_OSEBE" FromRole="Nadzor" ToRole="Osebe" />
           <NavigationProperty Name="StatusNadzora" Relationship="Self.FK_NADZOR_REFERENCE_STATUSNA" FromRole="Nadzor" ToRole="StatusNadzora" />
-          <NavigationProperty Name="Stranka" Relationship="Self.FK_NADZOR_REFERENCE_STRANKA" FromRole="Nadzor" ToRole="Stranka" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STRANKA" FromRole="Nadzor" ToRole="Stranka" />
         </EntityType>
         <EntityType Name="Osebe">
           <Key>
@@ -928,51 +955,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="tsIDOsebe" Type="Int32" />
           <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_STATUSNA" FromRole="StatusNadzora" ToRole="Nadzor" />
         </EntityType>
-        <EntityType Name="Stranka">
-          <Key>
-            <PropertyRef Name="idStranka" />
-          </Key>
-          <Property Name="idStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="NazivDrugi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RokPlacila" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
-          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="RangStranke" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="StatusDomacTuji" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Zavezanec_DA_NE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Clan_EU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="StatusKupecDobavitelj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="GenerirajERacun" Type="Int32" />
-          <Property Name="JavniZavod" Type="Int32" />
-          <Property Name="SecondID" Type="Int32" />
-          <Property Name="ts" Type="DateTime" Precision="3" />
-          <Property Name="tsIDOsebe" Type="Int32" />
-          <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Dogodek" />
-          <NavigationProperty Name="KontaktneOsebe" Relationship="Self.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="Stranka" ToRole="KontaktneOsebe" />
-          <NavigationProperty Name="Nadzor" Relationship="Self.FK_NADZOR_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Nadzor" />
-          <NavigationProperty Name="StrankaZaposleni" Relationship="Self.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="Stranka" ToRole="StrankaZaposleni" />
-          <NavigationProperty Name="PlanStranka" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" FromRole="Stranka" ToRole="PlanStranka" />
-          <NavigationProperty Name="Naprava" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Stranka" ToRole="Naprava" />
-          <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="Stranka" ToRole="StrankaKategorija" />
-          <NavigationProperty Name="IzpisGrafa" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="Stranka" ToRole="IzpisGrafa" />
-          <Property Name="AKTIVNOST" Type="Boolean" />
-        </EntityType>
         <EntityType Name="StrankaZaposleni">
           <Key>
             <PropertyRef Name="idStrankaOsebe" />
@@ -983,7 +965,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="ts" Type="DateTime" Precision="3" />
           <Property Name="tsIDOsebe" Type="Int32" />
           <NavigationProperty Name="Osebe" Relationship="Self.FK_STRANKAZ_REFERENCE_OSEBE" FromRole="StrankaZaposleni" ToRole="Osebe" />
-          <NavigationProperty Name="Stranka" Relationship="Self.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="StrankaZaposleni" ToRole="Stranka" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="StrankaZaposleni" ToRole="Stranka" />
         </EntityType>
         <EntityType Name="Vloga">
           <Key>
@@ -1044,18 +1026,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
-          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
-          <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="Dogodek">
-              <PropertyRef Name="idStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SPOROCIL_REFERENCE_DOGODEK">
           <End Role="Dogodek" Type="Self.Dogodek" Multiplicity="0..1" />
           <End Role="Sporocila" Type="Self.Sporocila" Multiplicity="*" />
@@ -1077,18 +1047,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Principal>
             <Dependent Role="Nadzor">
               <PropertyRef Name="idKategorija" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
-          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
-          <End Role="KontaktneOsebe" Type="Self.KontaktneOsebe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="KontaktneOsebe">
-              <PropertyRef Name="idStranka" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1116,18 +1074,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NADZOR_REFERENCE_STRANKA">
-          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
-          <End Role="Nadzor" Type="Self.Nadzor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="Nadzor">
-              <PropertyRef Name="idStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OSEBE_REFERENCE_VLOGA">
           <End Role="Vloga" Type="Self.Vloga" Multiplicity="0..1" />
           <End Role="Osebe" Type="Self.Osebe" Multiplicity="*" />
@@ -1152,18 +1098,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
-          <End Role="Stranka" Type="Self.Stranka" Multiplicity="0..1" />
-          <End Role="StrankaZaposleni" Type="Self.StrankaZaposleni" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="StrankaZaposleni">
-              <PropertyRef Name="idStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="AnalizaProdajeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Dogodek" EntityType="Self.Dogodek" />
           <EntitySet Name="Kategorija" EntityType="Self.Kategorija" />
@@ -1173,7 +1107,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySet Name="Sporocila" EntityType="Self.Sporocila" />
           <EntitySet Name="StatusDogodek" EntityType="Self.StatusDogodek" />
           <EntitySet Name="StatusNadzora" EntityType="Self.StatusNadzora" />
-          <EntitySet Name="Stranka" EntityType="Self.Stranka" />
           <EntitySet Name="StrankaZaposleni" EntityType="Self.StrankaZaposleni" />
           <EntitySet Name="Vloga" EntityType="Self.Vloga" />
           <AssociationSet Name="FK_DOGODEK_REFERENCE_KATEGORI" Association="Self.FK_DOGODEK_REFERENCE_KATEGORI">
@@ -1192,10 +1125,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="StatusDogodek" EntitySet="StatusDogodek" />
             <End Role="Dogodek" EntitySet="Dogodek" />
           </AssociationSet>
-          <AssociationSet Name="FK_DOGODEK_REFERENCE_STRANKA" Association="Self.FK_DOGODEK_REFERENCE_STRANKA">
-            <End Role="Stranka" EntitySet="Stranka" />
-            <End Role="Dogodek" EntitySet="Dogodek" />
-          </AssociationSet>
           <AssociationSet Name="FK_SPOROCIL_REFERENCE_DOGODEK" Association="Self.FK_SPOROCIL_REFERENCE_DOGODEK">
             <End Role="Dogodek" EntitySet="Dogodek" />
             <End Role="Sporocila" EntitySet="Sporocila" />
@@ -1204,20 +1133,12 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Kategorija" EntitySet="Kategorija" />
             <End Role="Nadzor" EntitySet="Nadzor" />
           </AssociationSet>
-          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="Self.FK_KONTAKTN_REFERENCE_STRANKA">
-            <End Role="Stranka" EntitySet="Stranka" />
-            <End Role="KontaktneOsebe" EntitySet="KontaktneOsebe" />
-          </AssociationSet>
           <AssociationSet Name="FK_NADZOR_REFERENCE_OSEBE" Association="Self.FK_NADZOR_REFERENCE_OSEBE">
             <End Role="Osebe" EntitySet="Osebe" />
             <End Role="Nadzor" EntitySet="Nadzor" />
           </AssociationSet>
           <AssociationSet Name="FK_NADZOR_REFERENCE_STATUSNA" Association="Self.FK_NADZOR_REFERENCE_STATUSNA">
             <End Role="StatusNadzora" EntitySet="StatusNadzora" />
-            <End Role="Nadzor" EntitySet="Nadzor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NADZOR_REFERENCE_STRANKA" Association="Self.FK_NADZOR_REFERENCE_STRANKA">
-            <End Role="Stranka" EntitySet="Stranka" />
             <End Role="Nadzor" EntitySet="Nadzor" />
           </AssociationSet>
           <AssociationSet Name="FK_OSEBE_REFERENCE_VLOGA" Association="Self.FK_OSEBE_REFERENCE_VLOGA">
@@ -1228,33 +1149,17 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Osebe" EntitySet="Osebe" />
             <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
           </AssociationSet>
-          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="Self.FK_STRANKAZ_REFERENCE_STRANKA">
-            <End Role="Stranka" EntitySet="Stranka" />
-            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
-          </AssociationSet>
           <EntitySet Name="PlanStranka" EntityType="AnalizaProdajeModel.PlanStranka" />
           <AssociationSet Name="FK_PLANSTRA_REFERENCE_KATEGORI" Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_KATEGORI">
             <End Role="Kategorija" EntitySet="Kategorija" />
             <End Role="PlanStranka" EntitySet="PlanStranka" />
           </AssociationSet>
-          <AssociationSet Name="FK_PLANSTRA_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA">
-            <End Role="Stranka" EntitySet="Stranka" />
-            <End Role="PlanStranka" EntitySet="PlanStranka" />
-          </AssociationSet>
           <EntitySet Name="Naprava" EntityType="AnalizaProdajeModel.Naprava" />
-          <AssociationSet Name="FK_Naprava_Stranka" Association="AnalizaProdajeModel.FK_Naprava_Stranka">
-            <End Role="Stranka" EntitySet="Stranka" />
-            <End Role="Naprava" EntitySet="Naprava" />
-          </AssociationSet>
           <EntitySet Name="SystemEmailMessage" EntityType="AnalizaProdajeModel.SystemEmailMessage" />
           <EntitySet Name="SystemMessageEvents" EntityType="AnalizaProdajeModel.SystemMessageEvents" />
           <EntitySet Name="StrankaKategorija" EntityType="AnalizaProdajeModel.StrankaKategorija" />
           <AssociationSet Name="FK_StrankaKategorija_Kategorija" Association="AnalizaProdajeModel.FK_StrankaKategorija_Kategorija">
             <End Role="Kategorija" EntitySet="Kategorija" />
-            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StrankaKategorija_Stranka" Association="AnalizaProdajeModel.FK_StrankaKategorija_Stranka">
-            <End Role="Stranka" EntitySet="Stranka" />
             <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
           </AssociationSet>
           <EntitySet Name="Avtomatika" EntityType="AnalizaProdajeModel.Avtomatika" />
@@ -1265,10 +1170,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="FK_IzpisGrafa_Kategorija" Association="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija">
             <End Role="Kategorija" EntitySet="Kategorija" />
-            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_IzpisGrafa_Stranka" Association="AnalizaProdajeModel.FK_IzpisGrafa_Stranka">
-            <End Role="Stranka" EntitySet="Stranka" />
             <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
           </AssociationSet>
           <EntitySet Name="OsebeNadrejeni" EntityType="AnalizaProdajeModel.OsebeNadrejeni" />
@@ -1306,6 +1207,44 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Dogodek" EntitySet="Dogodek" />
             <End Role="Avtomatika" EntitySet="Avtomatika" />
           </AssociationSet>
+          <EntitySet Name="Stranka" EntityType="AnalizaProdajeModel.Stranka" />
+          <AssociationSet Name="FK_DOGODEK_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Dogodek" EntitySet="Dogodek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IzpisGrafa_Stranka" Association="AnalizaProdajeModel.FK_IzpisGrafa_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="IzpisGrafa" EntitySet="IzpisGrafa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTAKTN_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="KontaktneOsebe" EntitySet="KontaktneOsebe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NADZOR_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Nadzor" EntitySet="Nadzor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Naprava_Stranka" Association="AnalizaProdajeModel.FK_Naprava_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="Naprava" EntitySet="Naprava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANSTRA_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="PlanStranka" EntitySet="PlanStranka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaKategorija_Stranka" Association="AnalizaProdajeModel.FK_StrankaKategorija_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STRANKAZ_REFERENCE_STRANKA" Association="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="StrankaZaposleni" EntitySet="StrankaZaposleni" />
+          </AssociationSet>
+          <EntitySet Name="OpombaStranka" EntityType="AnalizaProdajeModel.OpombaStranka" />
+          <AssociationSet Name="FK_OpombaStranka_Stranka" Association="AnalizaProdajeModel.FK_OpombaStranka_Stranka">
+            <End Role="Stranka" EntitySet="Stranka" />
+            <End Role="OpombaStranka" EntitySet="OpombaStranka" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="PlanStranka">
           <Key>
@@ -1333,18 +1272,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PLANSTRA_REFERENCE_STRANKA">
-          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
-          <End Type="AnalizaProdajeModel.PlanStranka" Role="PlanStranka" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="PlanStranka">
-              <PropertyRef Name="IDStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Naprava">
           <Key>
             <PropertyRef Name="idNaprava" />
@@ -1358,18 +1285,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="tsIDOsebe" Type="Int32" />
           <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Naprava" ToRole="Stranka" />
         </EntityType>
-        <Association Name="FK_Naprava_Stranka">
-          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
-          <End Type="AnalizaProdajeModel.Naprava" Role="Naprava" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="Naprava">
-              <PropertyRef Name="idStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="SystemEmailMessage">
           <Key>
             <PropertyRef Name="SystemEmailMessageID" />
@@ -1418,18 +1333,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StrankaKategorija_Stranka">
-          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
-          <End Type="AnalizaProdajeModel.StrankaKategorija" Role="StrankaKategorija" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="StrankaKategorija">
-              <PropertyRef Name="idStranka" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Avtomatika">
           <Key>
             <PropertyRef Name="AvtomatikaID" />
@@ -1458,8 +1361,8 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="Vrednost" Type="Decimal" Precision="18" Scale="3" />
           <Property Name="ts" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Kategorija" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija" FromRole="IzpisGrafa" ToRole="Kategorija" />
-          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="IzpisGrafa" ToRole="Stranka" />
           <Property Name="Datum" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="IzpisGrafa" ToRole="Stranka" />
         </EntityType>
         <Association Name="FK_Avtomatika_Osebe">
           <End Type="AnalizaProdajeModel.Osebe" Role="Osebe" Multiplicity="1" />
@@ -1482,18 +1385,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Principal>
             <Dependent Role="IzpisGrafa">
               <PropertyRef Name="KategorijaID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_IzpisGrafa_Stranka">
-          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
-          <End Type="AnalizaProdajeModel.IzpisGrafa" Role="IzpisGrafa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Stranka">
-              <PropertyRef Name="idStranka" />
-            </Principal>
-            <Dependent Role="IzpisGrafa">
-              <PropertyRef Name="StrankaID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1561,7 +1452,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="DogodekSestanekID" Type="Int32" Nullable="false" />
           <Property Name="DogodekID" Type="Int32" Nullable="false" />
           <Property Name="Tip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Opis" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="tsIDOsebe" Type="Int32" />
           <Property Name="ts" Type="DateTime" Precision="3" />
@@ -1605,6 +1496,181 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Principal>
             <Dependent Role="Avtomatika">
               <PropertyRef Name="DogodekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Stranka">
+          <Key>
+            <PropertyRef Name="idStranka" />
+          </Key>
+          <Property Name="idStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodaStranke" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPrvi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NazivDrugi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Naslov" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StevPoste" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NazivPoste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetniNalov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktnaOseba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RokPlacila" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="TRR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaticnaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RangStranke" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDomacTuji" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zavezanec_DA_NE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IdentifikacijskaStev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clan_EU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BIC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KodaPlacila" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="StatusKupecDobavitelj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DrzavaStranke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Neaktivna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GenerirajERacun" Type="Int32" />
+          <Property Name="JavniZavod" Type="Int32" />
+          <Property Name="SecondID" Type="Int32" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <Property Name="AKTIVNOST" Type="Int32" />
+          <NavigationProperty Name="Dogodek" Relationship="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Dogodek" />
+          <NavigationProperty Name="IzpisGrafa" Relationship="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" FromRole="Stranka" ToRole="IzpisGrafa" />
+          <NavigationProperty Name="KontaktneOsebe" Relationship="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="Stranka" ToRole="KontaktneOsebe" />
+          <NavigationProperty Name="Nadzor" Relationship="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STRANKA" FromRole="Stranka" ToRole="Nadzor" />
+          <NavigationProperty Name="Naprava" Relationship="AnalizaProdajeModel.FK_Naprava_Stranka" FromRole="Stranka" ToRole="Naprava" />
+          <NavigationProperty Name="PlanStranka" Relationship="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" FromRole="Stranka" ToRole="PlanStranka" />
+          <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="Stranka" ToRole="StrankaKategorija" />
+          <NavigationProperty Name="StrankaZaposleni" Relationship="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="Stranka" ToRole="StrankaZaposleni" />
+          <NavigationProperty Name="OpombaStranka" Relationship="AnalizaProdajeModel.FK_OpombaStranka_Stranka" FromRole="Stranka" ToRole="OpombaStranka" />
+        </EntityType>
+        <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AnalizaProdajeModel.Dogodek" Role="Dogodek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Dogodek">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IzpisGrafa_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.IzpisGrafa" Role="IzpisGrafa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="IzpisGrafa">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTAKTN_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AnalizaProdajeModel.KontaktneOsebe" Role="KontaktneOsebe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="KontaktneOsebe">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NADZOR_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AnalizaProdajeModel.Nadzor" Role="Nadzor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Nadzor">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Naprava_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.Naprava" Role="Naprava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="Naprava">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANSTRA_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AnalizaProdajeModel.PlanStranka" Role="PlanStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="PlanStranka">
+              <PropertyRef Name="IDStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaKategorija_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="1" />
+          <End Type="AnalizaProdajeModel.StrankaKategorija" Role="StrankaKategorija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaKategorija">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STRANKAZ_REFERENCE_STRANKA">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AnalizaProdajeModel.StrankaZaposleni" Role="StrankaZaposleni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="StrankaZaposleni">
+              <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OpombaStranka">
+          <Key>
+            <PropertyRef Name="idOpombaStranka" />
+          </Key>
+          <Property Name="idOpombaStranka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStranka" Type="Int32" />
+          <Property Name="Opomba" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <Property Name="tsIDOsebe" Type="Int32" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_OpombaStranka_Stranka" FromRole="OpombaStranka" ToRole="Stranka" />
+        </EntityType>
+        <Association Name="FK_OpombaStranka_Stranka">
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.OpombaStranka" Role="OpombaStranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="OpombaStranka">
+              <PropertyRef Name="idStranka" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1727,44 +1793,6 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
                 <ScalarProperty Name="idStatusNadzora" ColumnName="idStatusNadzora" />
                 <ScalarProperty Name="Koda" ColumnName="Koda" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
-                <ScalarProperty Name="ts" ColumnName="ts" />
-                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Stranka">
-            <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
-              <MappingFragment StoreEntitySet="Stranka">
-                <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
-                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
-                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
-                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
-                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
-                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
-                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
-                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="FAX" ColumnName="FAX" />
-                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
-                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
-                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
-                <ScalarProperty Name="TRR" ColumnName="TRR" />
-                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
-                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
-                <ScalarProperty Name="RangStranke" ColumnName="RangStranke" />
-                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
-                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
-                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
-                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
-                <ScalarProperty Name="BIC" ColumnName="BIC" />
-                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
-                <ScalarProperty Name="StatusKupecDobavitelj" ColumnName="StatusKupecDobavitelj" />
-                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
-                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
-                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
-                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
-                <ScalarProperty Name="SecondID" ColumnName="SecondID" />
                 <ScalarProperty Name="ts" ColumnName="ts" />
                 <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
               </MappingFragment>
@@ -1952,6 +1980,55 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
                 <ScalarProperty Name="Dobavitelji" ColumnName="Dobavitelji" />
                 <ScalarProperty Name="FinancniDashboardID" ColumnName="FinancniDashboardID" />
                 <ScalarProperty Name="Timestmp" ColumnName="Timestmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stranka">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
+              <MappingFragment StoreEntitySet="Stranka">
+                <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="SecondID" ColumnName="SecondID" />
+                <ScalarProperty Name="JavniZavod" ColumnName="JavniZavod" />
+                <ScalarProperty Name="GenerirajERacun" ColumnName="GenerirajERacun" />
+                <ScalarProperty Name="Neaktivna" ColumnName="Neaktivna" />
+                <ScalarProperty Name="DrzavaStranke" ColumnName="DrzavaStranke" />
+                <ScalarProperty Name="StatusKupecDobavitelj" ColumnName="StatusKupecDobavitelj" />
+                <ScalarProperty Name="KodaPlacila" ColumnName="KodaPlacila" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="Clan_EU" ColumnName="Clan_EU" />
+                <ScalarProperty Name="IdentifikacijskaStev" ColumnName="IdentifikacijskaStev" />
+                <ScalarProperty Name="Zavezanec_DA_NE" ColumnName="Zavezanec_DA_NE" />
+                <ScalarProperty Name="StatusDomacTuji" ColumnName="StatusDomacTuji" />
+                <ScalarProperty Name="RangStranke" ColumnName="RangStranke" />
+                <ScalarProperty Name="MaticnaStev" ColumnName="MaticnaStev" />
+                <ScalarProperty Name="DavcnaStev" ColumnName="DavcnaStev" />
+                <ScalarProperty Name="TRR" ColumnName="TRR" />
+                <ScalarProperty Name="RokPlacila" ColumnName="RokPlacila" />
+                <ScalarProperty Name="KontaktnaOseba" ColumnName="KontaktnaOseba" />
+                <ScalarProperty Name="InternetniNalov" ColumnName="InternetniNalov" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NazivPoste" ColumnName="NazivPoste" />
+                <ScalarProperty Name="StevPoste" ColumnName="StevPoste" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="NazivDrugi" ColumnName="NazivDrugi" />
+                <ScalarProperty Name="NazivPrvi" ColumnName="NazivPrvi" />
+                <ScalarProperty Name="KodaStranke" ColumnName="KodaStranke" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpombaStranka">
+            <EntityTypeMapping TypeName="AnalizaProdajeModel.OpombaStranka">
+              <MappingFragment StoreEntitySet="OpombaStranka">
+                <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Opomba" ColumnName="Opomba" />
+                <ScalarProperty Name="idStranka" ColumnName="idStranka" />
+                <ScalarProperty Name="idOpombaStranka" ColumnName="idOpombaStranka" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

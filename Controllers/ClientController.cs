@@ -518,6 +518,96 @@ namespace DatabaseWebService.Controllers
         }
         #endregion
 
+        #region Notes
+        [HttpPost]
+        public IHttpActionResult SaveNotesData([FromBody] object notesData)
+        {
+            WebResponseContentModel<NotesModel> returnModel = new WebResponseContentModel<NotesModel>();
+
+            try
+            {
+                returnModel = JsonConvert.DeserializeObject<WebResponseContentModel<NotesModel>>(notesData.ToString());
+
+                if (returnModel.Content != null)
+                {
+                    if (returnModel.Content.idOpombaStranka > 0)//We update existing record in DB
+                        clientRepo.SaveNotes(returnModel.Content);
+                    else // We add and save new recod to DB 
+                    {                        
+                        returnModel.Content.idOpombaStranka = clientRepo.SaveNotes(returnModel.Content, false);
+                    }
+
+                    returnModel.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    returnModel.IsRequestSuccesful = false;
+                    returnModel.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                returnModel.IsRequestSuccesful = false;
+                returnModel.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(returnModel);
+            }
+
+            return Json(returnModel);
+        }
+
+        [HttpGet]
+        public IHttpActionResult DeleteNotes(int NotesID, int clientID)
+        {
+            WebResponseContentModel<bool> isDeleteSuccess = new WebResponseContentModel<bool>();
+            try
+            {
+                isDeleteSuccess.Content = clientRepo.DeleteDevice(NotesID, clientID);
+
+                if (isDeleteSuccess.Content)
+                    isDeleteSuccess.IsRequestSuccesful = true;
+                else
+                {
+                    isDeleteSuccess.IsRequestSuccesful = false;
+                    isDeleteSuccess.ValidationError = ValidationExceptionError.res_20;
+                }
+            }
+            catch (Exception ex)
+            {
+                isDeleteSuccess.IsRequestSuccesful = false;
+                isDeleteSuccess.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(isDeleteSuccess);
+            }
+
+            return Json(isDeleteSuccess);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetNotesCodeCout(string code)
+        {
+            WebResponseContentModel<int> isDeleteSuccess = new WebResponseContentModel<int>();
+            try
+            {
+                isDeleteSuccess.Content = clientRepo.GetClientsCountByCode(code);
+
+                if (isDeleteSuccess.Content > 0)
+                    isDeleteSuccess.IsRequestSuccesful = true;
+                else
+                {
+                    isDeleteSuccess.IsRequestSuccesful = false;
+                    isDeleteSuccess.ValidationError = ValidationExceptionError.res_20;
+                }
+            }
+            catch (Exception ex)
+            {
+                isDeleteSuccess.IsRequestSuccesful = false;
+                isDeleteSuccess.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(isDeleteSuccess);
+            }
+
+            return Json(isDeleteSuccess);
+        }
+        #endregion
+
         #region ClientCategorie
         [HttpPost]
         public IHttpActionResult SaveClientCategorie([FromBody] object clientCategorieData)

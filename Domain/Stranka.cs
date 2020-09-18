@@ -17,13 +17,14 @@ namespace DatabaseWebService.Domain
         public Stranka()
         {
             this.Dogodek = new HashSet<Dogodek>();
+            this.IzpisGrafa = new HashSet<IzpisGrafa>();
             this.KontaktneOsebe = new HashSet<KontaktneOsebe>();
             this.Nadzor = new HashSet<Nadzor>();
-            this.StrankaZaposleni = new HashSet<StrankaZaposleni>();
-            this.PlanStranka = new HashSet<PlanStranka>();
             this.Naprava = new HashSet<Naprava>();
+            this.PlanStranka = new HashSet<PlanStranka>();
             this.StrankaKategorija = new HashSet<StrankaKategorija>();
-            this.IzpisGrafa = new HashSet<IzpisGrafa>();
+            this.StrankaZaposleni = new HashSet<StrankaZaposleni>();
+            this.OpombaStranka = new HashSet<OpombaStranka>();
         }
     
         public int idStranka { get; set; }
@@ -57,15 +58,16 @@ namespace DatabaseWebService.Domain
         public Nullable<int> SecondID { get; set; }
         public Nullable<System.DateTime> ts { get; set; }
         public Nullable<int> tsIDOsebe { get; set; }
-        public Nullable<bool> AKTIVNOST { get; set; }
+        public Nullable<int> AKTIVNOST { get; set; }
     
         public virtual ICollection<Dogodek> Dogodek { get; set; }
+        public virtual ICollection<IzpisGrafa> IzpisGrafa { get; set; }
         public virtual ICollection<KontaktneOsebe> KontaktneOsebe { get; set; }
         public virtual ICollection<Nadzor> Nadzor { get; set; }
-        public virtual ICollection<StrankaZaposleni> StrankaZaposleni { get; set; }
-        public virtual ICollection<PlanStranka> PlanStranka { get; set; }
         public virtual ICollection<Naprava> Naprava { get; set; }
+        public virtual ICollection<PlanStranka> PlanStranka { get; set; }
         public virtual ICollection<StrankaKategorija> StrankaKategorija { get; set; }
-        public virtual ICollection<IzpisGrafa> IzpisGrafa { get; set; }
+        public virtual ICollection<StrankaZaposleni> StrankaZaposleni { get; set; }
+        public virtual ICollection<OpombaStranka> OpombaStranka { get; set; }
     }
 }

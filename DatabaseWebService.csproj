@@ -644,6 +644,9 @@
     <Compile Include="Domain\Naprava.cs">
       <DependentUpon>AnalizaProdaje.tt</DependentUpon>
     </Compile>
+    <Compile Include="Domain\OpombaStranka.cs">
+      <DependentUpon>AnalizaProdaje.tt</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Osebe.cs">
       <DependentUpon>AnalizaProdaje.tt</DependentUpon>
     </Compile>
@@ -751,6 +754,7 @@
     <Compile Include="Models\Client\ClientFullModel.cs" />
     <Compile Include="Models\Client\ClientSimpleModel.cs" />
     <Compile Include="Models\Client\ContactPersonModel.cs" />
+    <Compile Include="Models\Client\NotesModel.cs" />
     <Compile Include="Models\Client\DevicesModel.cs" />
     <Compile Include="Models\EmailMessage\EmailMessageModel.cs" />
     <Compile Include="Models\Employee\EmployeeFullModel.cs" />

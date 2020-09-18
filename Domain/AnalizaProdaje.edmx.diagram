@@ -13,38 +13,29 @@
         <EntityTypeShape EntityType="AnalizaProdajeModel.Sporocila" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.StatusDogodek" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.StatusNadzora" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnalizaProdajeModel.Stranka" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.StrankaZaposleni" Width="1.5" PointX="6" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.Vloga" Width="1.5" PointX="1.5" PointY="19.75" IsExpanded="true" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_KATEGORI" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_OSEBE" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_OSEBE1" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STATUSDO" ManuallyRouted="false" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_SPOROCIL_REFERENCE_DOGODEK" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_KATEGORI" ManuallyRouted="false" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_OSEBE" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STATUSNA" ManuallyRouted="false" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STRANKA" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_OSEBE_REFERENCE_VLOGA" ManuallyRouted="false" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_OSEBE" ManuallyRouted="false" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" ManuallyRouted="false" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.PlanStranka" Width="1.5" PointX="9" PointY="7.875" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_KATEGORI" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.Naprava" Width="1.5" PointX="3" PointY="23.125" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_Naprava_Stranka" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.SystemEmailMessage" Width="1.5" PointX="6.375" PointY="0.75" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.SystemMessageEvents" Width="1.5" PointX="6.375" PointY="4.75" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.StrankaKategorija" Width="1.5" PointX="9" PointY="12.125" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_StrankaKategorija_Kategorija" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.Avtomatika" Width="1.5" PointX="12" PointY="7.125" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.IzpisGrafa" Width="1.5" PointX="9" PointY="4" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_Avtomatika_Osebe" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_IzpisGrafa_Kategorija" />
-        <AssociationConnector Association="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.OsebeNadrejeni" Width="1.5" PointX="3" PointY="26.875" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_OsebeNadrejeni_Osebe1" />
@@ -52,6 +43,17 @@
         <AssociationConnector Association="AnalizaProdajeModel.FK_DogodekSestanek_Dogodek" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.FinancniDashboard" Width="1.875" PointX="9.875" PointY="0.625" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_DogodekID" />
+        <EntityTypeShape EntityType="AnalizaProdajeModel.Stranka" Width="1.5" PointX="0.75" PointY="9.5" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_IzpisGrafa_Stranka" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_NADZOR_REFERENCE_STRANKA" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_Naprava_Stranka" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_PLANSTRA_REFERENCE_STRANKA" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" />
+        <EntityTypeShape EntityType="AnalizaProdajeModel.OpombaStranka" Width="1.5" PointX="3" PointY="30.875" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_OpombaStranka_Stranka" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

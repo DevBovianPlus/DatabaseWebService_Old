@@ -36,7 +36,6 @@ namespace DatabaseWebService.Domain
         public DbSet<Sporocila> Sporocila { get; set; }
         public DbSet<StatusDogodek> StatusDogodek { get; set; }
         public DbSet<StatusNadzora> StatusNadzora { get; set; }
-        public DbSet<Stranka> Stranka { get; set; }
         public DbSet<StrankaZaposleni> StrankaZaposleni { get; set; }
         public DbSet<Vloga> Vloga { get; set; }
         public DbSet<PlanStranka> PlanStranka { get; set; }
@@ -49,6 +48,8 @@ namespace DatabaseWebService.Domain
         public DbSet<OsebeNadrejeni> OsebeNadrejeni { get; set; }
         public DbSet<DogodekSestanek> DogodekSestanek { get; set; }
         public DbSet<FinancniDashboard> FinancniDashboard { get; set; }
+        public DbSet<Stranka> Stranka { get; set; }
+        public DbSet<OpombaStranka> OpombaStranka { get; set; }
     
         [EdmFunction("AnalizaProdajeEntities", "IzrisGrafa")]
         public virtual IQueryable<IzrisGrafa_Result> IzrisGrafa(string stranka, string kategorija, Nullable<int> tip_Grafa, Nullable<int> tip_Izpisa, Nullable<System.DateTime> obdobjeOd, Nullable<System.DateTime> obdobjeDo)

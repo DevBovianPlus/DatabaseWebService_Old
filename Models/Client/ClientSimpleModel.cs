@@ -38,7 +38,7 @@ namespace DatabaseWebService.Models.Client
         public int SecondID { get; set; }
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }
-        public bool Aktivnost { get; set; }
+        public int Aktivnost { get; set; }
 
         //Employees
         public int idOsebe { get; set; }

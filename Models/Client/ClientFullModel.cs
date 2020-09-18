@@ -11,7 +11,7 @@ namespace DatabaseWebService.Models.Client
 {
     public class ClientFullModel
     {
-        internal bool Aktivnost;
+        public int Aktivnost;
 
         public int idStranka { get; set; }
         public string KodaStranke { get; set; }
@@ -51,6 +51,7 @@ namespace DatabaseWebService.Models.Client
         public List<PlanModel> Plan { get; set; }
         public List<ClientEmployeeModel> StrankaZaposleni { get; set; }
         public List<DevicesModel> Naprave { get; set; }
+        public List<NotesModel> Opombe { get; set; }
         public List<ClientCategorieModel> StrankaKategorija { get; set; }
 
         //use only for OTP and PDO project

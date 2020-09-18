@@ -68,7 +68,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 idOsebe = (subClient == null ? 0 : subClient.Osebe.idOsebe),
                                 ImeInPriimekZaposlen = (subClient == null ? String.Empty : subClient.Osebe.Ime + " " + subClient.Osebe.Priimek),
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
                             };
 
                 return query.ToList();
@@ -120,7 +120,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
                             };
 
                 return query.ToList();
@@ -170,7 +170,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
                                 //TODO: Add collections of Dogodek, KontaktneOsebe, Nadzor, Plan, StrankaZaposleni
                             };
 
@@ -189,6 +189,9 @@ namespace DatabaseWebService.Domain.Concrete
 
                 model.Naprave = new List<DevicesModel>();
                 model.Naprave = GetDevicesModelList(clientID);
+
+                model.Opombe = new List<NotesModel>();
+                model.Opombe = GetNotesModelList(clientID);
 
                 model.StrankaKategorija = new List<ClientCategorieModel>();
                 model.StrankaKategorija = GetClientCategorieModelList(clientID);
@@ -314,7 +317,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
                             };
 
                 ClientSimpleModel model = query.FirstOrDefault();
@@ -454,6 +457,30 @@ namespace DatabaseWebService.Domain.Concrete
             }
         }
 
+        private List<NotesModel> GetNotesModelList(int clientID)
+        {
+            try
+            {
+                var query = from device in context.OpombaStranka
+                            where device.idStranka.Value.Equals(clientID)
+                            select new NotesModel
+                            {
+                                idOpombaStranka = device.idOpombaStranka,
+                                idStranka = device.idStranka,
+                                Opomba = device.Opomba,
+                                Stranka = device.Stranka.NazivPrvi + " " + device.Stranka.NazivDrugi,
+                                ts = device.ts.HasValue ? device.ts.Value : DateTime.MinValue,
+                                tsIDOsebe = device.tsIDOsebe.HasValue ? device.tsIDOsebe.Value : 0
+                            };
+
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
         public List<ClientCategorieModel> GetClientCategorieModelList(int clientID)
         {
             try
@@ -509,6 +536,7 @@ namespace DatabaseWebService.Domain.Concrete
                 client.KontaktnaOseba = model.KontaktnaOseba;
                 client.RokPlacila = model.RokPlacila;
                 client.RangStranke = model.RangStranke;
+                client.AKTIVNOST = model.Aktivnost;
                 /*client.ts = model.ts;
                 client.tsIDOsebe = model.tsIDOsebe;*/
 
@@ -968,6 +996,86 @@ namespace DatabaseWebService.Domain.Concrete
             }
         }
 
+        public int SaveNotes(NotesModel model, bool updateRecord = true)
+        {
+            OpombaStranka notes = new OpombaStranka();
+
+            try
+            {
+                notes.idOpombaStranka = model.idOpombaStranka;
+                notes.idStranka = model.idStranka;
+                notes.Opomba = model.Opomba;
+         
+                if (notes.idOpombaStranka == 0)
+                {
+                    notes.ts = DateTime.Now;
+                    notes.tsIDOsebe = model.tsIDOsebe;
+                    context.OpombaStranka.Add(notes);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    if (updateRecord)
+                    {
+                        OpombaStranka original = context.OpombaStranka.Where(n => n.idOpombaStranka == notes.idOpombaStranka).FirstOrDefault();
+                        context.Entry(original).CurrentValues.SetValues(notes);
+                        context.SaveChanges();
+                    }
+                }
+
+                return notes.idOpombaStranka;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_08, ex);
+            }
+        }
+
+        public bool DeleteNotes(int NotesID, int clientID)
+        {
+            try
+            {
+                var notes = context.OpombaStranka.Where(n => n.idOpombaStranka == NotesID && n.idStranka == clientID).FirstOrDefault();
+
+                if (notes != null)
+                {
+                    context.OpombaStranka.Remove(notes);
+                    context.SaveChanges();
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_07, ex);
+            }
+        }
+
+        public int GetNotesCountByCode(string code)
+        {
+            try
+            {
+                code = code.Substring(0, 3);
+                int result = 0;
+                var query = context.Stranka.Where(np => np.KodaStranke.StartsWith(code)).ToList();
+                foreach (var item in query)
+                {
+                    int clientCode = 0;
+                    int.TryParse(item.KodaStranke.Substring(3), out clientCode);
+
+                    if (clientCode > result)
+                        result = clientCode;
+
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
         public int GetDevicesCountByCode(string code)
         {
             try
@@ -1092,7 +1200,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : true
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
                             };
 
                 return query.ToList();
