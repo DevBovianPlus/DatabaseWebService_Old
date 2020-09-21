@@ -2420,3 +2420,38 @@ Parameter name: source
 14. 09. 2020 16:29:13 GetListOfOrderNumber10
 14. 09. 2020 16:29:52 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
 14. 09. 2020 16:33:17 D:\GitHub\DatabaseWebService\
+21. 09. 2020 14:36:56 Generate mail for Purchase dept : POSLANO_V_NABAVO
+21. 09. 2020 14:36:56 Generate mail for Purchase dept
+21. 09. 2020 14:36:56 D:\GitHub\DatabaseWebService\
+21. 09. 2020 14:36:56 CreateEmailForGrafolitPurcaheDept
+21. 09. 2020 14:37:27 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+21. 09. 2020 14:37:30 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>21. 09. 2020 14:37:28</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>Kabel Premium Pulp &amp; Paper Gmb</Supplier>
+  <Buyer>AGPR d.o.o.                   </Buyer>
+  <OrderDate>21. 09. 2020 14:37:30</OrderDate>
+  <LoadDate>23. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>23. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>23. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718070322002   </Ident>
+      <Name>TERRAPRINT GLOSS 70G 88X64 BB</Name>
+      <Qty>777777,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+21. 09. 2020 14:37:30 Run Create order procedure _upJM_CreateSupplierOrder
+21. 09. 2020 14:37:36 Update Create order Recall Data

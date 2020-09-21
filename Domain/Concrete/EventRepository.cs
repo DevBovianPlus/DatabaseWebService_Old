@@ -140,6 +140,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 Izvajalec = events.Izvajalec.HasValue ? events.Izvajalec.Value : 0,
                                 //Kategorija = events.Kategorija.Naziv,
                                 Opis = events.Opis,
+                                Priloge = events.Priloge,
                                 //OsebeIzvajalec = events.Osebe.Ime + " " + events.Osebe.Priimek,
                                 //OsebeSkrbnik = events.Osebe1.Ime + " " + events.Osebe1.Priimek,
                                 Rok = events.Rok.HasValue ? events.Rok.Value : DateTime.MinValue,
@@ -305,13 +306,14 @@ namespace DatabaseWebService.Domain.Concrete
                 //newEvent.Skrbnik = model.Skrbnik;
                 newEvent.Skrbnik = context.OsebeNadrejeni.Where(od => od.idOseba == model.Izvajalec.Value).FirstOrDefault().idNadrejeni;
                 newEvent.Izvajalec = model.Izvajalec;
-                newEvent.idStatus = model.idStatus;
+                newEvent.idStatus = (model.idStatus == 0) ? 1 : model.idStatus;
                 newEvent.Opis = model.Opis;
                 newEvent.DatumOtvoritve = model.DatumOtvoritve;
                 newEvent.Rok = model.Rok;
                 newEvent.DatumZadZaprtja = model.DatumZadZaprtja;
                 newEvent.Tip = model.Tip;
                 newEvent.RokIzvedbe = model.RokIzvedbe;
+                newEvent.Priloge = model.Priloge;
 
                 if (newEvent.idDogodek == 0)
                 {

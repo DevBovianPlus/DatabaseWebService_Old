@@ -35,5 +35,7 @@ namespace DatabaseWebService.Models.Event
         public List<EventMeetingModel> SestanekDokumenti { get; set; }
 
         public EmailMessageModel emailModel { get; set; }
+
+        public string Priloge { get; set; }
     }
 }

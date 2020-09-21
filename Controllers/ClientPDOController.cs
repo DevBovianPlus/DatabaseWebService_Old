@@ -174,6 +174,8 @@ namespace DatabaseWebService.Controllers
 
             try
             {
+                clientName = clientName.IndexOf("{*}") > 0 ? clientName.Replace("{*}", "&") : clientName;
+
                 Client.Content = clientPdoRepo.GetClientByNameOrInsert(clientName);
                 responseStatusHandler(Client);
             }

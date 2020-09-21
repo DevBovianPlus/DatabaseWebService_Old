@@ -35,6 +35,7 @@ namespace DatabaseWebService.Domain
         public Nullable<int> tsIDOsebe { get; set; }
         public string Tip { get; set; }
         public Nullable<System.DateTime> RokIzvedbe { get; set; }
+        public string Priloge { get; set; }
     
         public virtual Kategorija Kategorija { get; set; }
         public virtual Osebe Osebe { get; set; }

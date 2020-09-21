@@ -171,7 +171,7 @@ namespace DatabaseWebService.Controllers
                     {
                         inquiryRepo.SaveInquiry(model.Content);
                         // send email to all grafolit contacts = Nabava
-                        DataTypesHelper.LogThis("Generate mail for Purchase dept : " + model.Content.StatusPovprasevanja.Koda.ToString()) ;
+                        DataTypesHelper.LogThis("Generate mail for Purchase dept : " + model.Content.StatusPovprasevanja.Koda.ToString());
 
                         if (model.Content.StatusPovprasevanja.Koda == Enums.StatusOfInquiry.POSLANO_V_NABAVO.ToString())
                         {
@@ -549,6 +549,8 @@ namespace DatabaseWebService.Controllers
 
             try
             {
+                name = name.IndexOf("{*}") > 0 ? name.Replace("{*}", "&") : name;
+
                 tmpUser.Content = mssqlRepo.GetSupplierByName(name);
                 responseStatusHandler(tmpUser);
             }

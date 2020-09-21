@@ -35,6 +35,7 @@
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="Tip" Type="varchar" MaxLength="30" />
           <Property Name="RokIzvedbe" Type="datetime" />
+          <Property Name="Priloge" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="DogodekSestanek">
           <Key>
@@ -842,6 +843,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="RokIzvedbe" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Avtomatika" Relationship="AnalizaProdajeModel.FK_DogodekID" FromRole="Dogodek" ToRole="Avtomatika" />
           <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_DOGODEK_REFERENCE_STRANKA" FromRole="Dogodek" ToRole="Stranka" />
+          <Property Name="Priloge" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Kategorija">
           <Key>
@@ -1683,6 +1685,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySetMapping Name="Dogodek">
             <EntityTypeMapping TypeName="AnalizaProdajeModel.Dogodek">
               <MappingFragment StoreEntitySet="Dogodek">
+                <ScalarProperty Name="Priloge" ColumnName="Priloge" />
                 <ScalarProperty Name="RokIzvedbe" ColumnName="RokIzvedbe" />
                 <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="idDogodek" ColumnName="idDogodek" />

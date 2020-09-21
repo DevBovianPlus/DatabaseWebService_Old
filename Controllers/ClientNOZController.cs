@@ -154,6 +154,8 @@ namespace DatabaseWebService.Controllers
             WebResponseContentModel<int> getClientID = new WebResponseContentModel<int>();
             try
             {
+                clientName = clientName.IndexOf("{*}") > 0 ? clientName.Replace("{*}", "&") : clientName;
+
                 getClientID.Content = clientNOZRepo.GetClientByNameOrInsert(clientName);
 
                 if (getClientID.Content > 0)
