@@ -83,6 +83,8 @@
           <Property Name="OpombaNarocilnica" Type="varchar" MaxLength="5000" />
           <Property Name="OddelekID" Type="int" />
           <Property Name="PrikaziKupca" Type="bit" />
+          <Property Name="KolicinaVPOL" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="NarEnotaMere2" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Nastavitve">
           <Key>
@@ -231,6 +233,8 @@
           <Property Name="DatumDobavePos" Type="datetime" />
           <Property Name="DobaviteljID" Type="int" />
           <Property Name="DobaviteljNaziv_PA" Type="varchar" MaxLength="1000" />
+          <Property Name="KolicinaVPOL" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="NarEnotaMere2" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="StatusPovprasevanja">
           <Key>
@@ -1424,6 +1428,8 @@
           <Property Name="DobaviteljID" Type="Int32" />
           <Property Name="DobaviteljNaziv_PA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID" FromRole="PovprasevanjePozicijaArtikel" ToRole="Stranka_PDO" />
+          <Property Name="KolicinaVPOL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="NarEnotaMere2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_OddelekID">
           <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
@@ -1488,6 +1494,8 @@
           <NavigationProperty Name="Oddelek" Relationship="GrafolitPDOModel.FK_OddelekNArociloPozicija" FromRole="NarociloPozicija_PDO" ToRole="Oddelek" />
           <NavigationProperty Name="Narocilo_PDO" Relationship="GrafolitPDOModel.FK_Narocilo_PDO" FromRole="NarociloPozicija_PDO" ToRole="Narocilo_PDO" />
           <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" FromRole="NarociloPozicija_PDO" ToRole="PovprasevanjePozicija" />
+          <Property Name="KolicinaVPOL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="NarEnotaMere2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_IzbranDobaviteljID">
           <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
@@ -2030,6 +2038,8 @@
           <EntitySetMapping Name="PovprasevanjePozicijaArtikel">
             <EntityTypeMapping TypeName="GrafolitPDOModel.PovprasevanjePozicijaArtikel">
               <MappingFragment StoreEntitySet="PovprasevanjePozicijaArtikel">
+                <ScalarProperty Name="NarEnotaMere2" ColumnName="NarEnotaMere2" />
+                <ScalarProperty Name="KolicinaVPOL" ColumnName="KolicinaVPOL" />
                 <ScalarProperty Name="DobaviteljNaziv_PA" ColumnName="DobaviteljNaziv_PA" />
                 <ScalarProperty Name="DobaviteljID" ColumnName="DobaviteljID" />
                 <ScalarProperty Name="DatumDobavePos" ColumnName="DatumDobavePos" />
@@ -2062,6 +2072,8 @@
           <EntitySetMapping Name="NarociloPozicija_PDO">
             <EntityTypeMapping TypeName="GrafolitPDOModel.NarociloPozicija_PDO">
               <MappingFragment StoreEntitySet="NarociloPozicija_PDO">
+                <ScalarProperty Name="NarEnotaMere2" ColumnName="NarEnotaMere2" />
+                <ScalarProperty Name="KolicinaVPOL" ColumnName="KolicinaVPOL" />
                 <ScalarProperty Name="PrikaziKupca" ColumnName="PrikaziKupca" />
                 <ScalarProperty Name="OddelekID" ColumnName="OddelekID" />
                 <ScalarProperty Name="OpombaNarocilnica" ColumnName="OpombaNarocilnica" />

@@ -23,6 +23,7 @@ namespace DatabaseWebService.Models.Client
         public string Stranka { get; set; }
 
         public string NazivPodpis { get; set; }
+        public DateTime RojstniDatum { get; set; }
 
         // PDO only
         public bool IsNabava { get; set; }

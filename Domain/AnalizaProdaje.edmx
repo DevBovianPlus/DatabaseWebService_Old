@@ -90,6 +90,7 @@
           <Property Name="Opombe" Type="varchar" MaxLength="3000" />
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
+          <Property Name="RojstniDatum" Type="datetime" />
         </EntityType>
         <EntityType Name="Nadzor">
           <Key>
@@ -877,6 +878,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Opombe" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="KontaktneOsebe" ToRole="Stranka" />
+          <Property Name="RojstniDatum" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Nadzor">
           <Key>
@@ -1717,6 +1719,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySetMapping Name="KontaktneOsebe">
             <EntityTypeMapping TypeName="AnalizaProdajeModel.KontaktneOsebe">
               <MappingFragment StoreEntitySet="KontaktneOsebe">
+                <ScalarProperty Name="RojstniDatum" ColumnName="RojstniDatum" />
                 <ScalarProperty Name="Opombe" ColumnName="Opombe" />
                 <ScalarProperty Name="Fax" ColumnName="Fax" />
                 <ScalarProperty Name="idKontaktneOsebe" ColumnName="idKontaktneOsebe" />

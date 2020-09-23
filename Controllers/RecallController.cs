@@ -139,6 +139,8 @@ namespace DatabaseWebService.Controllers
             WebResponseContentModel<RecallFullModel> model = null;
             try
             {
+                DataTypesHelper.LogThis("SaveRecall : (model.Content.OdpoklicID) - Začetek!");
+
                 model = JsonConvert.DeserializeObject<WebResponseContentModel<RecallFullModel>>(recallData.ToString());
 
                 if (model.Content != null)

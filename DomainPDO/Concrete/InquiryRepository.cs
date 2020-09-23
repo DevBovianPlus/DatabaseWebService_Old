@@ -404,7 +404,9 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                                                  Kolicina1 = ipa.Kolicina1.HasValue ? ipa.Kolicina1.Value : 0,
                                                                  Kolicina2 = ipa.Kolicina2.HasValue ? ipa.Kolicina2.Value : 0,
                                                                  KolicinavKG = ipa.KolicinavKG.HasValue ? ipa.KolicinavKG.Value : 0,
+                                                                 KolicinaVPOL = ipa.KolicinaVPOL.HasValue ? ipa.KolicinaVPOL.Value : 0,
                                                                  EnotaMere = ipa.EnotaMere,
+                                                                 NarEnotaMere2 = ipa.NarEnotaMere2,
                                                                  Naziv = ipa.Naziv,
                                                                  Opombe = ipa.Opombe,
                                                                  OpombaNarocilnica = ipa.OpombaNarocilnica,
@@ -1154,10 +1156,12 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 ppa.Ident = item.IzbraniArtikelIdent_P;
                 ppa.ArtikelCena = item.ArtikelCena > 0 ? item.ArtikelCena : (decimal?)null;
                 ppa.KolicinavKG = item.KolicinavKG > 0 ? item.KolicinavKG : (decimal?)null;
+                ppa.KolicinaVPOL = item.KolicinaVPOL > 0 ? item.KolicinaVPOL : (decimal?)null;
                 ppa.Rabat = item.Rabat > 0 ? item.Rabat : (decimal?)null;
                 ppa.OpombaNarocilnica = item.OpombaNarocilnica;
                 ppa.OddelekID = (item.OddelekID > 0) ? item.OddelekID : (int?)null;
                 ppa.EnotaMere = item.EnotaMere;
+                ppa.NarEnotaMere2 = item.NarEnotaMere2;
                 ppa.DatumDobavePos = item.DatumDobavePos.Equals(DateTime.MinValue) ? (DateTime?)null : item.DatumDobavePos;
                 ppa.DobaviteljID = item.DobaviteljID;
                 ppa.DobaviteljNaziv_PA = item.DobaviteljNaziv_PA;
@@ -1273,7 +1277,9 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 IzbraniArtikelIdent_P = ppa.Ident,
                                 ArtikelCena = ppa.ArtikelCena.HasValue ? ppa.ArtikelCena.Value : 0,
                                 KolicinavKG = ppa.KolicinavKG.HasValue ? ppa.KolicinavKG.Value : 0,
+                                KolicinaVPOL = ppa.KolicinaVPOL.HasValue ? ppa.KolicinaVPOL.Value : 0,
                                 EnotaMere = ppa.EnotaMere,
+                                NarEnotaMere2 = ppa.NarEnotaMere2,
                                 Rabat = ppa.Rabat.HasValue ? ppa.Rabat.Value : 0,
                                 OpombaNarocilnica = ppa.OpombaNarocilnica,
                                 Opombe = ppa.Opombe,
@@ -1345,6 +1351,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 ppa.Ident = item.IzbraniArtikelIdent_P;
                 ppa.ArtikelCena = item.ArtikelCena > 0 ? item.ArtikelCena : (decimal?)null;
                 ppa.KolicinavKG = item.KolicinavKG > 0 ? item.KolicinavKG : (decimal?)null;
+                ppa.KolicinaVPOL = item.KolicinaVPOL > 0 ? item.KolicinaVPOL : (decimal?)null;
                 ppa.Rabat = item.Rabat > 0 ? item.Rabat : (decimal?)null;
                 ppa.OpombaNarocilnica = item.OpombaNarocilnica;
                 ppa.OddelekID = (item.OddelekID > 0) ? item.OddelekID : (int?)null;

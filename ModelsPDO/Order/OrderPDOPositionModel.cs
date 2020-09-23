@@ -28,6 +28,9 @@ namespace DatabaseWebService.ModelsPDO.Order
 
         public decimal KolicinavKG { get; set; }
         public string EnotaMere { get; set; }
+        public decimal KolicinaVPOL { get; set; }
+        public string NarEnotaMere2 { get; set; }
+
         public decimal Rabat { get; set; }
         public string OpombaNarocilnica { get; set; }
 

@@ -163,7 +163,7 @@ namespace DatabaseWebService.Controllers
             {
                 model = JsonConvert.DeserializeObject<WebResponseContentModel<InquiryFullModel>>(inquiryData.ToString());
 
-
+                DataTypesHelper.LogThis("SaveInquiryPurchase : " + model.Content.StatusPovprasevanja.Koda.ToString());
 
                 if (model.Content != null)
                 {

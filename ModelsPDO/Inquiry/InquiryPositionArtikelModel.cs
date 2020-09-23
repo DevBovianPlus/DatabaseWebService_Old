@@ -37,7 +37,9 @@ namespace DatabaseWebService.ModelsPDO.Inquiry
         public decimal ArtikelCena { get; set; }
 
         public decimal KolicinavKG { get; set; }
+        public decimal KolicinaVPOL { get; set; }
         public string EnotaMere { get; set; }
+        public string NarEnotaMere2 { get; set; }
         public decimal Rabat { get; set; }
         public string OpombaNarocilnica { get; set; }
         public DateTime DatumDobavePos { get; set; }

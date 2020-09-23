@@ -376,7 +376,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = contact.tsIDOsebe.HasValue ? contact.tsIDOsebe.Value : 0,
                                 ZaporednaStevika = contact.ZaporednaStevika.HasValue ? contact.ZaporednaStevika.Value : 0,
                                 Fax = contact.Fax,
-                                Opombe = contact.Opombe
+                                Opombe = contact.Opombe,
+                                RojstniDatum = contact.RojstniDatum.HasValue ? contact.RojstniDatum.Value : DateTime.MinValue,
                             };
 
                 return query.ToList();
@@ -685,6 +686,7 @@ namespace DatabaseWebService.Domain.Concrete
                 kontOseba.ZaporednaStevika = model.ZaporednaStevika;
                 kontOseba.Fax = model.Fax;
                 kontOseba.Opombe = model.Opombe;
+                kontOseba.RojstniDatum = model.RojstniDatum;
 
                 if (kontOseba.idKontaktneOsebe == 0)
                 {

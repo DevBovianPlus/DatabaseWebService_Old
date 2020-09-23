@@ -40,6 +40,8 @@ namespace DatabaseWebService.DomainPDO
         public Nullable<System.DateTime> DatumDobavePos { get; set; }
         public Nullable<int> DobaviteljID { get; set; }
         public string DobaviteljNaziv_PA { get; set; }
+        public Nullable<decimal> KolicinaVPOL { get; set; }
+        public string NarEnotaMere2 { get; set; }
     
         public virtual Oddelek Oddelek { get; set; }
         public virtual PovprasevanjePozicija PovprasevanjePozicija { get; set; }

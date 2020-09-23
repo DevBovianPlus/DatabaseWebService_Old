@@ -2455,3 +2455,247 @@ Parameter name: source
 </Document>
 21. 09. 2020 14:37:30 Run Create order procedure _upJM_CreateSupplierOrder
 21. 09. 2020 14:37:36 Update Create order Recall Data
+22. 09. 2020 10:26:48 Generate mail for Purchase dept : POSLANO_V_NABAVO
+22. 09. 2020 10:26:48 Generate mail for Purchase dept
+22. 09. 2020 10:26:48 D:\GitHub\DatabaseWebService\
+22. 09. 2020 10:26:48 CreateEmailForGrafolitPurcaheDept
+22. 09. 2020 10:28:20 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+22. 09. 2020 10:28:59 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>22. 09. 2020 10:28:24</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>Kabel Premium Pulp &amp; Paper Gmb</Supplier>
+  <Buyer>JORDAN D.O.O.                 </Buyer>
+  <OrderDate>22. 09. 2020 10:28:40</OrderDate>
+  <LoadDate>16. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>16. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>16. 09. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718070322002   </Ident>
+      <Name>TERRAPRINT GLOSS 70G 88X64 BB</Name>
+      <Qty>222222,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+22. 09. 2020 10:29:17 Run Create order procedure _upJM_CreateSupplierOrder
+22. 09. 2020 10:29:27 Update Create order Recall Data
+22. 09. 2020 14:48:31 Generate mail for Purchase dept : NEZNAN
+22. 09. 2020 14:51:54 Generate mail for Purchase dept : NEZNAN
+22. 09. 2020 14:52:37 Generate mail for Purchase dept : NEZNAN
+22. 09. 2020 14:53:48 Generate mail for Purchase dept : NEZNAN
+22. 09. 2020 15:00:48 Generate mail for Purchase dept : NEZNAN
+22. 09. 2020 15:04:38 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:28:11 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:50:44 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:50:46 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:51:30 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:51:58 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:56:37 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:58:00 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 14:58:28 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:08:16 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:08:41 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:12:53 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:14:24 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 15:14:24 Generate mail for Purchase dept
+23. 09. 2020 15:14:24 D:\GitHub\DatabaseWebService\
+23. 09. 2020 15:14:24 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 15:15:01 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:15:39 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:16:26 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 15:16:26 Generate mail for Purchase dept
+23. 09. 2020 15:16:26 D:\GitHub\DatabaseWebService\
+23. 09. 2020 15:16:26 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 15:17:44 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:18:28 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:23:22 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 15:23:23 Generate mail for Purchase dept
+23. 09. 2020 15:24:18 D:\GitHub\DatabaseWebService\
+23. 09. 2020 15:24:18 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 15:25:34 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 15:25:37 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 15:26:36 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 15:26:38 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:01:37 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:01:38 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:03:12 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:03:13 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:03:23 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:03:23 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:03:36 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:03:37 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:05:54 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:05:55 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:05:55 Generate mail for Purchase dept
+23. 09. 2020 16:05:55 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:05:55 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:13:31 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:13:32 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:13:46 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:13:47 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:14:18 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:14:18 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:14:18 Generate mail for Purchase dept
+23. 09. 2020 16:14:18 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:14:18 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:18:51 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:18:52 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:19:09 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:19:09 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:21:16 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:21:17 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:21:17 Generate mail for Purchase dept
+23. 09. 2020 16:21:17 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:21:17 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:23:24 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:23:25 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:23:39 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:23:40 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:24:00 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:24:01 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:24:17 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:24:18 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:25:03 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:25:03 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:25:03 Generate mail for Purchase dept
+23. 09. 2020 16:25:03 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:25:03 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:25:24 SaveInquiryPurchase : USTVARJENO_NAROCILO
+23. 09. 2020 16:25:25 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+23. 09. 2020 16:25:28 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>23. 09. 2020 16:25:28</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>Kabel Premium Pulp &amp; Paper Gmb</Supplier>
+  <Buyer>EKG BORIS GORŠEK S.P.         </Buyer>
+  <OrderDate>23. 09. 2020 16:25:28</OrderDate>
+  <LoadDate>1. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>1. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>1. 10. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718070322002   </Ident>
+      <Name>TERRAPRINT GLOSS 70G 88X64 BB</Name>
+      <Qty>7884,80</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+23. 09. 2020 16:25:28 Run Create order procedure _upJM_CreateSupplierOrder
+23. 09. 2020 16:25:48 Update Create order Recall Data
+23. 09. 2020 16:31:40 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:31:40 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:32:14 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:32:15 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:32:21 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:32:22 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:32:54 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:32:55 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:33:28 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:33:28 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:33:28 Generate mail for Purchase dept
+23. 09. 2020 16:33:28 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:33:28 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:34:02 SaveInquiryPurchase : USTVARJENO_NAROCILO
+23. 09. 2020 16:34:03 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+23. 09. 2020 16:34:04 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>23. 09. 2020 16:34:04</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>OFICIU-SERVICE S.R.L.         </Buyer>
+  <OrderDate>23. 09. 2020 16:34:04</OrderDate>
+  <LoadDate>17. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>17. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>17. 09. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0741400402001   </Ident>
+      <Name>PROPHARMA SMOOTH NATURAL 40G 100X70 BB</Name>
+      <Qty>1000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>17. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731080100011   </Ident>
+      <Name>UNO BRIGHT GLOSS 80G 43 CM</Name>
+      <Qty>2000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+23. 09. 2020 16:34:04 Run Create order procedure _upJM_CreateSupplierOrder
+23. 09. 2020 16:34:04 Update Create order Recall Data
+23. 09. 2020 16:38:29 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:38:29 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:38:50 SaveInquiryPurchase : NEZNAN
+23. 09. 2020 16:38:50 Generate mail for Purchase dept : NEZNAN
+23. 09. 2020 16:49:42 SaveInquiryPurchase : POSLANO_V_NABAVO
+23. 09. 2020 16:50:00 Generate mail for Purchase dept : POSLANO_V_NABAVO
+23. 09. 2020 16:50:09 Generate mail for Purchase dept
+23. 09. 2020 16:50:10 D:\GitHub\DatabaseWebService\
+23. 09. 2020 16:50:10 CreateEmailForGrafolitPurcaheDept
+23. 09. 2020 16:51:51 SaveInquiryPurchase : USTVARJENO_NAROCILO
+23. 09. 2020 16:51:56 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+23. 09. 2020 16:53:22 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>23. 09. 2020 16:53:19</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>Kabel Premium Pulp &amp; Paper Gmb</Supplier>
+  <Buyer>EKG BORIS GORŠEK S.P.         </Buyer>
+  <OrderDate>23. 09. 2020 16:53:21</OrderDate>
+  <LoadDate>24. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>24. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>24. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718070322002   </Ident>
+      <Name>TERRAPRINT GLOSS 70G 88X64 BB</Name>
+      <Qty>3942,40</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+23. 09. 2020 16:53:22 Run Create order procedure _upJM_CreateSupplierOrder
+23. 09. 2020 16:53:22 Update Create order Recall Data

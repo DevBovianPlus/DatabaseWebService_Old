@@ -26,6 +26,7 @@ namespace DatabaseWebService.Domain
         public Nullable<int> tsIDOsebe { get; set; }
         public string Fax { get; set; }
         public string Opombe { get; set; }
+        public Nullable<System.DateTime> RojstniDatum { get; set; }
     
         public virtual Stranka Stranka { get; set; }
     }

@@ -241,6 +241,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 tsUpdate = op.tsUpdate.HasValue ? op.tsUpdate.Value : DateTime.MinValue,
                                 tsUpdateUserID = op.tsUpdateUserID.HasValue ? op.tsUpdateUserID.Value : 0,
                                 KolicinavKG = op.KolicinavKG.HasValue ? op.KolicinavKG.Value : 0,
+                                KolicinaVPOL = op.KolicinaVPOL.HasValue ? op.KolicinaVPOL.Value : 0,
                                 EnotaMere = op.EnotaMere,
                                 Rabat = op.Rabat.HasValue ? op.Rabat.Value : 0,
                                 OpombaNarocilnica = op.OpombaNarocilnica,
@@ -746,6 +747,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     np.OddelekID = item.OddelekID > 0 ? item.OddelekID : (int?)null;
 
                     np.KolicinavKG = item.KolicinavKG > 0 ? item.KolicinavKG : (decimal?)null;
+                    np.KolicinaVPOL = item.KolicinaVPOL > 0 ? item.KolicinaVPOL : (decimal?)null;
                     np.EnotaMere = item.EnotaMere;
                     np.Rabat = item.Rabat > 0 ? item.Rabat : (decimal?)null;
                     np.PrikaziKupca = item.PrikaziKupca;

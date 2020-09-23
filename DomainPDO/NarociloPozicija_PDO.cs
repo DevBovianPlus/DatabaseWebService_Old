@@ -33,6 +33,8 @@ namespace DatabaseWebService.DomainPDO
         public string OpombaNarocilnica { get; set; }
         public Nullable<int> OddelekID { get; set; }
         public Nullable<bool> PrikaziKupca { get; set; }
+        public Nullable<decimal> KolicinaVPOL { get; set; }
+        public string NarEnotaMere2 { get; set; }
     
         public virtual Stranka_PDO Stranka_PDO { get; set; }
         public virtual Oddelek Oddelek { get; set; }
