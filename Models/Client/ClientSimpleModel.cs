@@ -39,6 +39,8 @@ namespace DatabaseWebService.Models.Client
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }
         public int Aktivnost { get; set; }
+        public Nullable<int> LastStatusDogodekID { get; set; }
+        public string LastDogodekNaziv { get; set; }
 
         //Employees
         public int idOsebe { get; set; }

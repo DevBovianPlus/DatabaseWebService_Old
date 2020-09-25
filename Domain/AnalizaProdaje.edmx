@@ -237,6 +237,7 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="AKTIVNOST" Type="int" />
+          <Property Name="LastStatusID" Type="int" />
         </EntityType>
         <EntityType Name="StrankaKategorija">
           <Key>
@@ -595,6 +596,18 @@ warning 6002: The table/view 'GrafolitCRM.dbo.FinancniDashboard' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StatusDogodek_Stranka">
+          <End Role="StatusDogodek" Type="Self.StatusDogodek" Multiplicity="0..1" />
+          <End Role="Stranka" Type="Self.Stranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDogodek">
+              <PropertyRef Name="idStatusDogodek" />
+            </Principal>
+            <Dependent Role="Stranka">
+              <PropertyRef Name="LastStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_StrankaKategorija_Kategorija">
           <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
           <End Role="StrankaKategorija" Type="Self.StrankaKategorija" Multiplicity="*" />
@@ -797,6 +810,10 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Dogodek" EntitySet="Dogodek" />
             <End Role="Sporocila" EntitySet="Sporocila" />
           </AssociationSet>
+          <AssociationSet Name="FK_StatusDogodek_Stranka" Association="Self.FK_StatusDogodek_Stranka">
+            <End Role="StatusDogodek" EntitySet="StatusDogodek" />
+            <End Role="Stranka" EntitySet="Stranka" />
+          </AssociationSet>
           <AssociationSet Name="FK_StrankaKategorija_Kategorija" Association="Self.FK_StrankaKategorija_Kategorija">
             <End Role="Kategorija" EntitySet="Kategorija" />
             <End Role="StrankaKategorija" EntitySet="StrankaKategorija" />
@@ -947,6 +964,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <Property Name="ts" Type="DateTime" Precision="3" />
           <Property Name="tsIDOsebe" Type="Int32" />
           <NavigationProperty Name="Dogodek" Relationship="Self.FK_DOGODEK_REFERENCE_STATUSDO" FromRole="StatusDogodek" ToRole="Dogodek" />
+          <NavigationProperty Name="Stranka" Relationship="AnalizaProdajeModel.FK_StatusDogodek_Stranka" FromRole="StatusDogodek" ToRole="Stranka" />
         </EntityType>
         <EntityType Name="StatusNadzora">
           <Key>
@@ -1249,6 +1267,10 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             <End Role="Stranka" EntitySet="Stranka" />
             <End Role="OpombaStranka" EntitySet="OpombaStranka" />
           </AssociationSet>
+          <AssociationSet Name="FK_StatusDogodek_Stranka" Association="AnalizaProdajeModel.FK_StatusDogodek_Stranka">
+            <End Role="StatusDogodek" EntitySet="StatusDogodek" />
+            <End Role="Stranka" EntitySet="Stranka" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="PlanStranka">
           <Key>
@@ -1548,6 +1570,8 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <NavigationProperty Name="StrankaKategorija" Relationship="AnalizaProdajeModel.FK_StrankaKategorija_Stranka" FromRole="Stranka" ToRole="StrankaKategorija" />
           <NavigationProperty Name="StrankaZaposleni" Relationship="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" FromRole="Stranka" ToRole="StrankaZaposleni" />
           <NavigationProperty Name="OpombaStranka" Relationship="AnalizaProdajeModel.FK_OpombaStranka_Stranka" FromRole="Stranka" ToRole="OpombaStranka" />
+          <Property Name="LastStatusID" Type="Int32" />
+          <NavigationProperty Name="StatusDogodek" Relationship="AnalizaProdajeModel.FK_StatusDogodek_Stranka" FromRole="Stranka" ToRole="StatusDogodek" />
         </EntityType>
         <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
           <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
@@ -1675,6 +1699,18 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
             </Principal>
             <Dependent Role="OpombaStranka">
               <PropertyRef Name="idStranka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusDogodek_Stranka">
+          <End Type="AnalizaProdajeModel.StatusDogodek" Role="StatusDogodek" Multiplicity="0..1" />
+          <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDogodek">
+              <PropertyRef Name="idStatusDogodek" />
+            </Principal>
+            <Dependent Role="Stranka">
+              <PropertyRef Name="LastStatusID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1992,6 +2028,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySetMapping Name="Stranka">
             <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
               <MappingFragment StoreEntitySet="Stranka">
+                <ScalarProperty Name="LastStatusID" ColumnName="LastStatusID" />
                 <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
                 <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
                 <ScalarProperty Name="ts" ColumnName="ts" />

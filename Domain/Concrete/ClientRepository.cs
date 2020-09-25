@@ -11,6 +11,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using DatabaseWebService.Common;
 using DatabaseWebService.Common.Enums;
+using DatabaseWebService.Models.Event;
 
 namespace DatabaseWebService.Domain.Concrete
 {
@@ -68,7 +69,17 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 idOsebe = (subClient == null ? 0 : subClient.Osebe.idOsebe),
                                 ImeInPriimekZaposlen = (subClient == null ? String.Empty : subClient.Osebe.Ime + " " + subClient.Osebe.Priimek),
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                LastDogodekNaziv = (from status in context.StatusDogodek
+                                                     where status.idStatusDogodek == client.LastStatusID
+                                                     select new EventStatusModel
+                                                     {
+                                                         Koda = status.Koda,
+                                                         Naziv = status.Naziv,
+                                                         ts = status.ts.HasValue ? status.ts.Value : DateTime.MinValue,
+                                                         tsIDOsebe = status.tsIDOsebe.HasValue ? status.tsIDOsebe.Value : 0
+                                                     }).FirstOrDefault().Naziv,
                             };
 
                 return query.ToList();
@@ -120,7 +131,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0
                             };
 
                 return query.ToList();
@@ -170,8 +182,17 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
-                                //TODO: Add collections of Dogodek, KontaktneOsebe, Nadzor, Plan, StrankaZaposleni
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                LastStatusDogodek = (from status in context.StatusDogodek
+                                              where status.idStatusDogodek == client.LastStatusID
+                                              select new EventStatusModel
+                                              {
+                                                  Koda = status.Koda,
+                                                  Naziv = status.Naziv,                                                                                               
+                                                  ts = status.ts.HasValue ? status.ts.Value : DateTime.MinValue,
+                                                  tsIDOsebe = status.tsIDOsebe.HasValue ? status.tsIDOsebe.Value : 0
+                                              }).FirstOrDefault(),
                             };
 
                 ClientFullModel model = query.FirstOrDefault();
@@ -317,7 +338,17 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                LastDogodekNaziv = (from status in context.StatusDogodek
+                                                     where status.idStatusDogodek == client.LastStatusID
+                                                     select new EventStatusModel
+                                                     {
+                                                         Koda = status.Koda,
+                                                         Naziv = status.Naziv,
+                                                         ts = status.ts.HasValue ? status.ts.Value : DateTime.MinValue,
+                                                         tsIDOsebe = status.tsIDOsebe.HasValue ? status.tsIDOsebe.Value : 0
+                                                     }).FirstOrDefault().Naziv,
                             };
 
                 ClientSimpleModel model = query.FirstOrDefault();
@@ -471,7 +502,15 @@ namespace DatabaseWebService.Domain.Concrete
                                 Opomba = device.Opomba,
                                 Stranka = device.Stranka.NazivPrvi + " " + device.Stranka.NazivDrugi,
                                 ts = device.ts.HasValue ? device.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = device.tsIDOsebe.HasValue ? device.tsIDOsebe.Value : 0
+                                tsIDOsebe = device.tsIDOsebe.HasValue ? device.tsIDOsebe.Value : 0,
+                                VneselOseba = (from PrijOseba in context.Osebe
+                                               where PrijOseba.idOsebe == device.tsIDOsebe
+                                                     select new EmployeeSimpleModel
+                                                     {
+                                                         Ime = PrijOseba.Ime,
+                                                         Priimek = PrijOseba.Priimek                                                         
+                                                     }).FirstOrDefault().Priimek,
+
                             };
 
                 return query.ToList();
@@ -538,6 +577,7 @@ namespace DatabaseWebService.Domain.Concrete
                 client.RokPlacila = model.RokPlacila;
                 client.RangStranke = model.RangStranke;
                 client.AKTIVNOST = model.Aktivnost;
+                client.LastStatusID = model.LastStatusDogodekID;
                 /*client.ts = model.ts;
                 client.tsIDOsebe = model.tsIDOsebe;*/
 
@@ -1202,7 +1242,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 SecondID = client.SecondID.HasValue ? client.SecondID.Value : 0,
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
-                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0
+                                Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
                             };
 
                 return query.ToList();

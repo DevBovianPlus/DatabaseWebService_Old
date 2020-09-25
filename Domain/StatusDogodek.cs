@@ -17,6 +17,7 @@ namespace DatabaseWebService.Domain
         public StatusDogodek()
         {
             this.Dogodek = new HashSet<Dogodek>();
+            this.Stranka = new HashSet<Stranka>();
         }
     
         public int idStatusDogodek { get; set; }
@@ -26,5 +27,6 @@ namespace DatabaseWebService.Domain
         public Nullable<int> tsIDOsebe { get; set; }
     
         public virtual ICollection<Dogodek> Dogodek { get; set; }
+        public virtual ICollection<Stranka> Stranka { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DatabaseWebService.Domain;
+using DatabaseWebService.Models.Event;
 using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsPDO;
@@ -45,7 +46,9 @@ namespace DatabaseWebService.Models.Client
         public int SecondID { get; set; }
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }
-        
+        public Nullable<int> LastStatusDogodekID { get; set; }
+        public string LastDogodekNaziv { get; set; }
+
         public List<EventSimpleModel> Dogodek { get; set; }
         public List<ContactPersonModel> KontaktneOsebe { get; set; }
         public List<PlanModel> Plan { get; set; }
@@ -53,6 +56,8 @@ namespace DatabaseWebService.Models.Client
         public List<DevicesModel> Naprave { get; set; }
         public List<NotesModel> Opombe { get; set; }
         public List<ClientCategorieModel> StrankaKategorija { get; set; }
+        public EventStatusModel LastStatusDogodek { get; set; }
+
 
         //use only for OTP and PDO project
         public int TipStrankaID { get; set; }

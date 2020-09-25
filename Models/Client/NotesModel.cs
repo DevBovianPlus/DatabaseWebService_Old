@@ -14,5 +14,7 @@ namespace DatabaseWebService.Models.Client
         public int tsIDOsebe { get; set; }
 
         public string Stranka { get; set; }
+
+        public string VneselOseba { get; set; }
     }
 }

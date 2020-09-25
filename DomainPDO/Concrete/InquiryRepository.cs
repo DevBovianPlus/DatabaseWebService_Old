@@ -1351,6 +1351,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 ppa.Ident = item.IzbraniArtikelIdent_P;
                 ppa.ArtikelCena = item.ArtikelCena > 0 ? item.ArtikelCena : (decimal?)null;
                 ppa.KolicinavKG = item.KolicinavKG > 0 ? item.KolicinavKG : (decimal?)null;
+                ppa.EnotaMere = item.EnotaMere;
                 ppa.KolicinaVPOL = item.KolicinaVPOL > 0 ? item.KolicinaVPOL : (decimal?)null;
                 ppa.Rabat = item.Rabat > 0 ? item.Rabat : (decimal?)null;
                 ppa.OpombaNarocilnica = item.OpombaNarocilnica;

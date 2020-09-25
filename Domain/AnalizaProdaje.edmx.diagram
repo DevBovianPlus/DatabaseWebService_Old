@@ -54,6 +54,7 @@
         <AssociationConnector Association="AnalizaProdajeModel.FK_STRANKAZ_REFERENCE_STRANKA" />
         <EntityTypeShape EntityType="AnalizaProdajeModel.OpombaStranka" Width="1.5" PointX="3" PointY="30.875" />
         <AssociationConnector Association="AnalizaProdajeModel.FK_OpombaStranka_Stranka" />
+        <AssociationConnector Association="AnalizaProdajeModel.FK_StatusDogodek_Stranka" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

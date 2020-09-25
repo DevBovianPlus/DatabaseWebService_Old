@@ -59,6 +59,7 @@ namespace DatabaseWebService.Domain
         public Nullable<System.DateTime> ts { get; set; }
         public Nullable<int> tsIDOsebe { get; set; }
         public Nullable<int> AKTIVNOST { get; set; }
+        public Nullable<int> LastStatusID { get; set; }
     
         public virtual ICollection<Dogodek> Dogodek { get; set; }
         public virtual ICollection<IzpisGrafa> IzpisGrafa { get; set; }
@@ -69,5 +70,6 @@ namespace DatabaseWebService.Domain
         public virtual ICollection<StrankaKategorija> StrankaKategorija { get; set; }
         public virtual ICollection<StrankaZaposleni> StrankaZaposleni { get; set; }
         public virtual ICollection<OpombaStranka> OpombaStranka { get; set; }
+        public virtual StatusDogodek StatusDogodek { get; set; }
     }
 }
