@@ -22,6 +22,7 @@ namespace DatabaseWebService.Models.Event
         public string DatumZadZaprtja { get; set; }
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }
+        public string VneselOseba { get; set; }
         public string Tip { get; set; }
         public Nullable<DateTime> RokIzvedbe { get; set; }
 

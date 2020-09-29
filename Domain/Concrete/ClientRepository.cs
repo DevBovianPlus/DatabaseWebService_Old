@@ -503,15 +503,16 @@ namespace DatabaseWebService.Domain.Concrete
                                 Stranka = device.Stranka.NazivPrvi + " " + device.Stranka.NazivDrugi,
                                 ts = device.ts.HasValue ? device.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = device.tsIDOsebe.HasValue ? device.tsIDOsebe.Value : 0,
-                                VneselOseba = (from PrijOseba in context.Osebe
-                                               where PrijOseba.idOsebe == device.tsIDOsebe
-                                                     select new EmployeeSimpleModel
-                                                     {
-                                                         Ime = PrijOseba.Ime,
-                                                         Priimek = PrijOseba.Priimek                                                         
-                                                     }).FirstOrDefault().Priimek,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == device.tsIDOsebe.Value).FirstOrDefault().Priimek,
+                //VneselOseba = (from PrijOseba in context.Osebe
+                //               where PrijOseba.idOsebe == device.tsIDOsebe
+                //               select new EmployeeSimpleModel
+                //               {
+                //                   Ime = PrijOseba.Ime,
+                //                   Priimek = PrijOseba.Priimek
+                //               }).FirstOrDefault().Priimek,
 
-                            };
+            };
 
                 return query.ToList();
             }

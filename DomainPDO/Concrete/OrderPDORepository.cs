@@ -305,7 +305,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
 
                     if (productList != null && productList.Count > 0)
                     {
-                        if (productList.Count == 1)//če bo obstajalo več artiklov potem pustimo spodnja polja prazna. Tako bo uporabnik vedel da je potrebno izbrati artikel.
+                        if (productList.Count == 1 && item.IzbraniArtikelIdent_P == null)//če bo obstajalo več artiklov potem pustimo spodnja polja prazna. Tako bo uporabnik vedel da je potrebno izbrati artikel.
                         {
                             item.IzbraniArtikelNaziv_P = productList[0].Naziv;
                             item.IzbraniArtikelIdent_P = productList[0].StevilkaArtikel;

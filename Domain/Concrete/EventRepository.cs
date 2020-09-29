@@ -12,10 +12,13 @@ namespace DatabaseWebService.Domain.Concrete
     public class EventRepository : IEventRepository
     {
         AnalizaProdajeEntities context = new AnalizaProdajeEntities();
-        
-        public EventRepository(AnalizaProdajeEntities dummyEntites)
+
+        private readonly IClientRepository clientRepo;
+        //public EventRepository(IClientRepository clientRepository, AnalizaProdajeEntities dummyEntites)
+            public EventRepository(AnalizaProdajeEntities dummyEntites)
         {
             context = dummyEntites;
+            
         }
 
         public List<EventSimpleModel> GetAllEventModelList()
@@ -42,7 +45,9 @@ namespace DatabaseWebService.Domain.Concrete
                                 StatusDogodek = events.StatusDogodek.Naziv,
                                 Stranka = events.Stranka.NazivPrvi,
                                 ts = events.ts.HasValue ? events.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0
+                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == events.tsIDOsebe.Value).FirstOrDefault().Priimek,
+
                             };
 
                 return query.OrderByDescending(o => o.DatumOtvoritve).ToList();
@@ -77,7 +82,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 StatusDogodek = events.StatusDogodek.Naziv,
                                 Stranka = events.Stranka.NazivPrvi,
                                 ts = events.ts.HasValue ? events.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0
+                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == events.tsIDOsebe.Value).FirstOrDefault().Priimek,
                             };
 
                 return query.OrderByDescending(o => o.DatumOtvoritve).ToList();
@@ -112,7 +118,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 StatusDogodek = events.StatusDogodek.Naziv,
                                 Stranka = events.Stranka.NazivPrvi,
                                 ts = events.ts.HasValue ? events.ts.Value : DateTime.MinValue,
-                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0
+                                tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == events.tsIDOsebe.Value).FirstOrDefault().Priimek,
                             };
 
                 return query.OrderByDescending(o =>o.DatumOtvoritve).ToList();
@@ -149,6 +156,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 //Stranka = events.Stranka.NazivPrvi,
                                 ts = events.ts.HasValue ? events.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == events.tsIDOsebe.Value).FirstOrDefault().Priimek,
                                 Tip = events.Tip,
                                 RokIzvedbe = events.RokIzvedbe
                             };
@@ -196,6 +204,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 //Stranka = events.Stranka.NazivPrvi,
                                 ts = events.ts.HasValue ? events.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = events.tsIDOsebe.HasValue ? events.tsIDOsebe.Value : 0,
+                                VneselOseba = context.Osebe.Where(o => o.idOsebe == events.tsIDOsebe.Value).FirstOrDefault().Priimek,
                                 Tip = events.Tip,
                                 RokIzvedbe = events.RokIzvedbe
                             };
@@ -294,6 +303,17 @@ namespace DatabaseWebService.Domain.Concrete
             }
         }
 
+        private void SaveLastEventStatusToStranka(int idStatus, int idStranka)
+        {
+            
+            Stranka str = context.Stranka.Where(s => s.idStranka == idStranka).FirstOrDefault();
+            if (str != null)
+            {
+                str.LastStatusID = idStatus;
+                context.SaveChanges();
+            }
+        }
+
 
         public int SaveEvent(EventFullModel model, bool updateRecord = true)
         {
@@ -307,6 +327,7 @@ namespace DatabaseWebService.Domain.Concrete
                 newEvent.Skrbnik = context.OsebeNadrejeni.Where(od => od.idOseba == model.Izvajalec.Value).FirstOrDefault().idNadrejeni;
                 newEvent.Izvajalec = model.Izvajalec;
                 newEvent.idStatus = (model.idStatus == 0) ? 1 : model.idStatus;
+                if (newEvent.idStatus > 0) SaveLastEventStatusToStranka(newEvent.idStatus.Value, newEvent.idStranka.Value);
                 newEvent.Opis = model.Opis;
                 newEvent.DatumOtvoritve = model.DatumOtvoritve;
                 newEvent.Rok = model.Rok;

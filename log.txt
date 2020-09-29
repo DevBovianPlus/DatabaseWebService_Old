@@ -2821,3 +2821,156 @@ Parameter name: source
 </Document>
 25. 09. 2020 09:01:29 Run Create order procedure _upJM_CreateSupplierOrder
 25. 09. 2020 09:01:51 Update Create order Recall Data
+28. 09. 2020 12:46:44 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:46:45 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:47:10 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:47:11 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:53:03 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:53:04 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:55:14 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:55:15 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:55:37 SaveInquiryPurchase : POSLANO_V_NABAVO
+28. 09. 2020 12:55:37 Generate mail for Purchase dept : POSLANO_V_NABAVO
+28. 09. 2020 12:55:37 Generate mail for Purchase dept
+28. 09. 2020 12:55:37 D:\GitHub\DatabaseWebService\
+28. 09. 2020 12:55:37 CreateEmailForGrafolitPurcaheDept
+28. 09. 2020 12:58:30 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:58:30 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:59:06 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:59:07 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:59:11 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:59:12 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 12:59:37 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 12:59:37 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:00:35 SaveInquiryPurchase : POSLANO_V_NABAVO
+28. 09. 2020 13:00:36 Generate mail for Purchase dept : POSLANO_V_NABAVO
+28. 09. 2020 13:00:36 Generate mail for Purchase dept
+28. 09. 2020 13:00:36 D:\GitHub\DatabaseWebService\
+28. 09. 2020 13:00:36 CreateEmailForGrafolitPurcaheDept
+28. 09. 2020 13:02:23 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:02:23 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:02:43 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:02:44 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:06:41 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:06:42 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:09:34 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:09:35 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:12:05 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:12:06 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:12:56 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:12:56 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:33:44 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:33:46 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:34:28 SaveInquiryPurchase : NEZNAN
+28. 09. 2020 13:34:30 Generate mail for Purchase dept : NEZNAN
+28. 09. 2020 13:35:08 SaveInquiryPurchase : POSLANO_V_NABAVO
+28. 09. 2020 13:35:11 Generate mail for Purchase dept : POSLANO_V_NABAVO
+28. 09. 2020 13:35:12 Generate mail for Purchase dept
+28. 09. 2020 13:35:13 D:\GitHub\DatabaseWebService\
+28. 09. 2020 13:35:13 CreateEmailForGrafolitPurcaheDept
+28. 09. 2020 13:37:58 SaveInquiryPurchase : USTVARJENO_NAROCILO
+28. 09. 2020 13:38:01 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+28. 09. 2020 13:38:06 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28. 09. 2020 13:38:04</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>HART PRESS, spol s.r.o.       </Buyer>
+  <OrderDate>28. 09. 2020 13:38:05</OrderDate>
+  <LoadDate>18. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>18. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>18. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718451321004   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 130G 45X64 SB</Name>
+      <Qty>4,60</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+28. 09. 2020 13:38:06 Run Create order procedure _upJM_CreateSupplierOrder
+28. 09. 2020 13:38:16 Update Create order Recall Data
+29. 09. 2020 14:56:16 SaveInquiryPurchase : POSLANO_V_NABAVO
+29. 09. 2020 14:56:21 Generate mail for Purchase dept : POSLANO_V_NABAVO
+29. 09. 2020 14:56:22 Generate mail for Purchase dept
+29. 09. 2020 14:56:22 D:\GitHub\DatabaseWebService\
+29. 09. 2020 14:56:22 CreateEmailForGrafolitPurcaheDept
+29. 09. 2020 14:57:49 SaveInquiryPurchase : USTVARJENO_NAROCILO
+29. 09. 2020 14:57:52 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+29. 09. 2020 14:57:57 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>29. 09. 2020 14:57:55</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>ALFAGRAF d.o.o.               </Buyer>
+  <OrderDate>29. 09. 2020 14:57:57</OrderDate>
+  <LoadDate>24. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>24. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>24. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718451321004   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 130G 45X64 SB</Name>
+      <Qty>74,88</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+29. 09. 2020 14:57:57 Run Create order procedure _upJM_CreateSupplierOrder
+29. 09. 2020 14:58:16 Update Create order Recall Data
+29. 09. 2020 15:02:01 SaveInquiryPurchase : POSLANO_V_NABAVO
+29. 09. 2020 15:02:04 Generate mail for Purchase dept : POSLANO_V_NABAVO
+29. 09. 2020 15:02:05 Generate mail for Purchase dept
+29. 09. 2020 15:02:06 D:\GitHub\DatabaseWebService\
+29. 09. 2020 15:02:06 CreateEmailForGrafolitPurcaheDept
+29. 09. 2020 15:07:57 SaveInquiryPurchase : USTVARJENO_NAROCILO
+29. 09. 2020 15:08:00 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+29. 09. 2020 15:09:45 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>29. 09. 2020 15:08:02</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>GRAFITI STUDIO D.O.O          </Buyer>
+  <OrderDate>29. 09. 2020 15:08:03</OrderDate>
+  <LoadDate>25. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>25. 09. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718451331005   </Ident>
+      <Name>ROYALCOAT PREMIUM SILK 130G 45X64 SB </Name>
+      <Qty>1000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+29. 09. 2020 15:09:45 Run Create order procedure _upJM_CreateSupplierOrder
+29. 09. 2020 15:09:46 Update Create order Recall Data

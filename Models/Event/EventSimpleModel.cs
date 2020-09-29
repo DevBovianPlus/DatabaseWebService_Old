@@ -19,6 +19,7 @@ namespace DatabaseWebService.Models.Client
         public string DatumZadZaprtja { get; set; }
         public DateTime ts { get; set; }
         public int tsIDOsebe { get; set; }
+        public string VneselOseba { get; set; }
 
         public string Kategorija { get; set; }
         public string OsebeSkrbnik { get; set; }
