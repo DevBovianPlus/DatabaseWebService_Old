@@ -40,6 +40,7 @@ namespace DatabaseWebService.Models.Client
         public int tsIDOsebe { get; set; }
         public int Aktivnost { get; set; }
         public Nullable<int> LastStatusDogodekID { get; set; }
+        public DateTime tsLastStatus { get; set; }
         public string LastDogodekNaziv { get; set; }
 
         //Employees

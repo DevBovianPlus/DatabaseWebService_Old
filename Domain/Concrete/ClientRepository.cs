@@ -71,6 +71,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 ImeInPriimekZaposlen = (subClient == null ? String.Empty : subClient.Osebe.Ime + " " + subClient.Osebe.Priimek),
                                 Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
                                 LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue,
                                 LastDogodekNaziv = (from status in context.StatusDogodek
                                                      where status.idStatusDogodek == client.LastStatusID
                                                      select new EventStatusModel
@@ -132,7 +133,8 @@ namespace DatabaseWebService.Domain.Concrete
                                 ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
-                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0
+                                LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue,
                             };
 
                 return query.ToList();
@@ -184,6 +186,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
                                 LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue,
                                 LastStatusDogodek = (from status in context.StatusDogodek
                                               where status.idStatusDogodek == client.LastStatusID
                                               select new EventStatusModel
@@ -340,6 +343,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
                                 LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue,
                                 LastDogodekNaziv = (from status in context.StatusDogodek
                                                      where status.idStatusDogodek == client.LastStatusID
                                                      select new EventStatusModel
@@ -579,6 +583,7 @@ namespace DatabaseWebService.Domain.Concrete
                 client.RangStranke = model.RangStranke;
                 client.AKTIVNOST = model.Aktivnost;
                 client.LastStatusID = model.LastStatusDogodekID;
+                client.tsLastStatus = model.tsLastStatus;
                 /*client.ts = model.ts;
                 client.tsIDOsebe = model.tsIDOsebe;*/
 
@@ -1245,6 +1250,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
                                 Aktivnost = client.AKTIVNOST.HasValue ? client.AKTIVNOST.Value : 0,
                                 LastStatusDogodekID = client.LastStatusID.HasValue ? client.LastStatusID.Value : 0,
+                                tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue
                             };
 
                 return query.ToList();

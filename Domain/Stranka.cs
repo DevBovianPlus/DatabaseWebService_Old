@@ -60,6 +60,7 @@ namespace DatabaseWebService.Domain
         public Nullable<int> tsIDOsebe { get; set; }
         public Nullable<int> AKTIVNOST { get; set; }
         public Nullable<int> LastStatusID { get; set; }
+        public Nullable<System.DateTime> tsLastStatus { get; set; }
     
         public virtual ICollection<Dogodek> Dogodek { get; set; }
         public virtual ICollection<IzpisGrafa> IzpisGrafa { get; set; }

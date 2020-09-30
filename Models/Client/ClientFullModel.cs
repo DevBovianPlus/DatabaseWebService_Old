@@ -48,6 +48,7 @@ namespace DatabaseWebService.Models.Client
         public int tsIDOsebe { get; set; }
         public Nullable<int> LastStatusDogodekID { get; set; }
         public string LastDogodekNaziv { get; set; }
+        public DateTime tsLastStatus { get; set; }
 
         public List<EventSimpleModel> Dogodek { get; set; }
         public List<ContactPersonModel> KontaktneOsebe { get; set; }

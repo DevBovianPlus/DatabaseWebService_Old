@@ -310,6 +310,7 @@ namespace DatabaseWebService.Domain.Concrete
             if (str != null)
             {
                 str.LastStatusID = idStatus;
+                str.tsLastStatus = DateTime.Now;
                 context.SaveChanges();
             }
         }

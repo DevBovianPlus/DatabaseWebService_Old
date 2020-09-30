@@ -238,6 +238,7 @@
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="AKTIVNOST" Type="int" />
           <Property Name="LastStatusID" Type="int" />
+          <Property Name="tsLastStatus" Type="datetime" />
         </EntityType>
         <EntityType Name="StrankaKategorija">
           <Key>
@@ -1572,6 +1573,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <NavigationProperty Name="OpombaStranka" Relationship="AnalizaProdajeModel.FK_OpombaStranka_Stranka" FromRole="Stranka" ToRole="OpombaStranka" />
           <Property Name="LastStatusID" Type="Int32" />
           <NavigationProperty Name="StatusDogodek" Relationship="AnalizaProdajeModel.FK_StatusDogodek_Stranka" FromRole="Stranka" ToRole="StatusDogodek" />
+          <Property Name="tsLastStatus" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_DOGODEK_REFERENCE_STRANKA">
           <End Type="AnalizaProdajeModel.Stranka" Role="Stranka" Multiplicity="0..1">
@@ -2028,6 +2030,7 @@ FROM [dbo].[FinancniDashboard] AS [FinancniDashboard]</DefiningQuery>
           <EntitySetMapping Name="Stranka">
             <EntityTypeMapping TypeName="AnalizaProdajeModel.Stranka">
               <MappingFragment StoreEntitySet="Stranka">
+                <ScalarProperty Name="tsLastStatus" ColumnName="tsLastStatus" />
                 <ScalarProperty Name="LastStatusID" ColumnName="LastStatusID" />
                 <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
                 <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
