@@ -83,7 +83,7 @@ namespace DatabaseWebService.Domain.Concrete
                                                      }).FirstOrDefault().Naziv,
                             };
 
-                return query.ToList();
+                return query.OrderByDescending(str => str.Aktivnost).ToList();
             }
             catch (Exception ex)
             {
@@ -137,7 +137,7 @@ namespace DatabaseWebService.Domain.Concrete
                                 tsLastStatus = client.tsLastStatus.HasValue ? client.tsLastStatus.Value : DateTime.MinValue,
                             };
 
-                return query.ToList();
+                return query.OrderByDescending(str => str.Aktivnost).ToList();
             }
             catch (Exception ex)
             {
@@ -582,8 +582,8 @@ namespace DatabaseWebService.Domain.Concrete
                 client.RokPlacila = model.RokPlacila;
                 client.RangStranke = model.RangStranke;
                 client.AKTIVNOST = model.Aktivnost;
-                client.LastStatusID = model.LastStatusDogodekID;
-                client.tsLastStatus = model.tsLastStatus;
+                client.LastStatusID = model.LastStatusDogodekID > 0 ?  model.LastStatusDogodekID : null;
+                client.tsLastStatus = model.tsLastStatus.Equals(DateTime.MinValue) ? (DateTime?)null : model.tsLastStatus;
                 /*client.ts = model.ts;
                 client.tsIDOsebe = model.tsIDOsebe;*/
 

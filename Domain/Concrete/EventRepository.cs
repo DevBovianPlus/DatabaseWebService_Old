@@ -336,7 +336,8 @@ namespace DatabaseWebService.Domain.Concrete
                 newEvent.Tip = model.Tip;
                 newEvent.RokIzvedbe = model.RokIzvedbe;
                 newEvent.Priloge = model.Priloge;
-
+                newEvent.ts = model.ts.Equals(DateTime.MinValue) ? DateTime.Now : model.ts;
+                newEvent.tsIDOsebe = (model.tsIDOsebe > 0) ?  model.tsIDOsebe : (int?)null;
                 if (newEvent.idDogodek == 0)
                 {
                     newEvent.ts = DateTime.Now;
