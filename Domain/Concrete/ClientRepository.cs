@@ -1053,11 +1053,12 @@ namespace DatabaseWebService.Domain.Concrete
                 notes.idOpombaStranka = model.idOpombaStranka;
                 notes.idStranka = model.idStranka;
                 notes.Opomba = model.Opomba;
-         
+                notes.ts = DateTime.Now;
+                notes.tsIDOsebe = model.tsIDOsebe;
+                
+
                 if (notes.idOpombaStranka == 0)
                 {
-                    notes.ts = DateTime.Now;
-                    notes.tsIDOsebe = model.tsIDOsebe;
                     context.OpombaStranka.Add(notes);
                     context.SaveChanges();
                 }

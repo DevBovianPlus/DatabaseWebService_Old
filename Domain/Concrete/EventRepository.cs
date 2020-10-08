@@ -507,11 +507,12 @@ namespace DatabaseWebService.Domain.Concrete
                 eventMeeting.Tip = model.Tip;
                 eventMeeting.Datum = model.Datum;
                 eventMeeting.Opis = model.Opis;
+                eventMeeting.ts = DateTime.Now;
+                eventMeeting.tsIDOsebe = model.tsIDOsebe;
 
                 if (eventMeeting.DogodekSestanekID == 0)
                 {
-                    eventMeeting.ts = DateTime.Now;
-                    eventMeeting.tsIDOsebe = model.tsIDOsebe;
+              
 
                     context.DogodekSestanek.Add(eventMeeting);
                     context.SaveChanges();
