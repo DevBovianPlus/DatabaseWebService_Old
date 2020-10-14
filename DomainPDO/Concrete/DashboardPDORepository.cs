@@ -40,20 +40,22 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 //število odpoklicev v tekočem letu
                 var query = from inquiry in context.Povprasevanje
                             where inquiry.ts.Value.Year == DateTime.Now.Year
-                            group inquiry by new { month = inquiry.ts.Value.Month } into groupInquiries
+                            orderby inquiry.ts.Value.Month
+                            group inquiry by new { month = inquiry.ts.Value.Month }  into groupInquiries
+                            
                             select new InquiriesInYear
                             {
                                 Month = groupInquiries.Key.month,
                                 Count = groupInquiries.Count()
                             };
-
+                var OrdQuery = query.OrderBy(m => m.Month).ToList();
                 model.CurrentYearInquiry = new List<object>();
 
                 model.CurrentYearInquiry.Add(new object[]{
                     "MonthName", "Št. povpraševanj"
                 });
 
-                foreach (var item in query.ToList())
+                foreach (var item in OrdQuery.ToList())
                 {
                     item.MonthName = DataTypesHelper.GetDateTimeMonthByNumber(item.Month);
                     model.CurrentYearInquiry.Add(new object[]{
