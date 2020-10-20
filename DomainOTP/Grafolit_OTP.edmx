@@ -122,7 +122,7 @@
           <Property Name="DobaviteljPosta" Type="varchar" MaxLength="100" />
           <Property Name="DobaviteljKraj" Type="varchar" MaxLength="200" />
           <Property Name="DobaviteljUrediTransport" Type="bit" />
-          <Property Name="RazlogOdobritveSistem" Type="varchar" MaxLength="150" />
+          <Property Name="RazlogOdobritveSistem" Type="varchar" MaxLength="4000" />
           <Property Name="LastenPrevoz" Type="bit" />
           <Property Name="TipPrevoza" Type="int" />
           <Property Name="LastnoSkladisceID" Type="int" />
@@ -1456,7 +1456,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="DobaviteljPosta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="DobaviteljKraj" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="DobaviteljUrediTransport" Type="Boolean" />
-          <Property Name="RazlogOdobritveSistem" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="RazlogOdobritveSistem" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <Property Name="LastenPrevoz" Type="Boolean" />
           <Property Name="TipPrevoza" Type="Int32" />
           <Property Name="LastnoSkladisceID" Type="Int32" />

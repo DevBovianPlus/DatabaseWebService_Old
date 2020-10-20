@@ -2974,3 +2974,411 @@ Parameter name: source
 </Document>
 29. 09. 2020 15:09:45 Run Create order procedure _upJM_CreateSupplierOrder
 29. 09. 2020 15:09:46 Update Create order Recall Data
+15. 10. 2020 10:51:30 GetListOfOrderNumber10
+15. 10. 2020 10:51:48 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+15. 10. 2020 10:51:59 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+15. 10. 2020 11:15:28 GetListOfOrderNumber10
+15. 10. 2020 11:15:32 GetListOfOrderNumber10
+15. 10. 2020 11:15:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 10. 2020 11:24:09 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:24:09 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:24:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:24:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:28:53 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:29:05 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:31:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:31:16 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:39:03 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:39:40 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:42:45 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:42:45 SaveRecall1 : (model.Content.OdpoklicID) :4593
+15. 10. 2020 11:42:55 SaveRecall : V_ODOBRITEV
+15. 10. 2020 11:42:55 D:\GitHub\DatabaseWebService\
+15. 10. 2020 11:42:57 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+15. 10. 2020 11:44:55 GetListOfOrderNumber10
+15. 10. 2020 11:45:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 10. 2020 11:46:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+15. 10. 2020 11:46:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:46:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 11:46:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+15. 10. 2020 11:47:10 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 11:47:11 SaveRecall1 : (model.Content.OdpoklicID) :4594
+15. 10. 2020 11:47:49 GetListOfOrderNumber10
+15. 10. 2020 11:47:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 10. 2020 12:12:42 GetListOfOrderNumber10
+15. 10. 2020 12:14:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 10. 2020 13:47:43 GetListOfOrderNumber10
+15. 10. 2020 13:47:53 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 10. 2020 13:51:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 13:51:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 13:51:15 SaveRecall2 : V_ODOBRITEV
+15. 10. 2020 13:51:15 D:\GitHub\DatabaseWebService\
+15. 10. 2020 13:51:15 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+15. 10. 2020 14:01:59 GetListOfOrderNumber10
+15. 10. 2020 14:02:06 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+15. 10. 2020 14:02:23 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+15. 10. 2020 14:04:10 GetListOfOrderNumber10
+15. 10. 2020 14:04:24 GetListOfOpenedOrderPositions for : MITSUBISHI                    
+15. 10. 2020 14:05:25 GetListOfOpenedOrderPositions for : MITSUBISHI
+15. 10. 2020 14:05:33 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 14:05:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+15. 10. 2020 14:05:45 GetListOfOpenedOrderPositions for : MITSUBISHI
+15. 10. 2020 14:05:53 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 14:05:53 SaveRecall1 : (model.Content.OdpoklicID) :4596
+15. 10. 2020 14:06:13 GetListOfOpenedOrderPositions for : MITSUBISHI
+15. 10. 2020 14:06:23 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 14:06:23 SaveRecall1 : (model.Content.OdpoklicID) :4596
+15. 10. 2020 14:10:10 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 14:10:10 SaveRecall1 : (model.Content.OdpoklicID) :4596
+15. 10. 2020 14:10:11 SaveRecall : V_ODOBRITEV
+15. 10. 2020 14:10:11 D:\GitHub\DatabaseWebService\
+15. 10. 2020 14:10:11 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+15. 10. 2020 14:18:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+15. 10. 2020 14:18:19 SaveRecall1 : (model.Content.OdpoklicID) :4573
+19. 10. 2020 08:35:30 Start - Controler
+19. 10. 2020 08:35:30 Start - SaveTender
+19. 10. 2020 08:35:36 Start - SaveTender
+19. 10. 2020 08:35:38 19. 10. 2020 08:35:38
+19. 10. 2020 08:35:38 19. 10. 2020 08:35:38
+19. 10. 2020 08:35:53 Start - Controler
+19. 10. 2020 08:35:53 Start - SaveTender
+19. 10. 2020 08:45:51 GetListOfOrderNumber10
+19. 10. 2020 09:31:21 GetListOfOrderNumber10
+19. 10. 2020 09:31:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 10. 2020 11:22:29 SaveInquiryPurchase : POSLANO_V_NABAVO
+19. 10. 2020 11:22:31 Generate mail for Purchase dept : POSLANO_V_NABAVO
+19. 10. 2020 11:22:31 Generate mail for Purchase dept
+19. 10. 2020 11:22:31 D:\GitHub\DatabaseWebService\
+19. 10. 2020 11:22:31 CreateEmailForGrafolitPurcaheDept
+19. 10. 2020 11:22:44 SaveInquiryPurchase : USTVARJENO_NAROCILO
+19. 10. 2020 11:22:45 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+19. 10. 2020 11:22:49 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>19. 10. 2020 11:22:47</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>ABO GRAFIKA D.O.O.            </Buyer>
+  <OrderDate>19. 10. 2020 11:22:49</OrderDate>
+  <LoadDate>10. 09. 2020 00:00:00</LoadDate>
+  <DeliveryDate>10. 09. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>10. 09. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718211232026   </Ident>
+      <Name>ROYALCOAT BASIC SILK 300G 81,5X57 BB</Name>
+      <Qty>2996,34</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+19. 10. 2020 11:22:49 Run Create order procedure _upJM_CreateSupplierOrder
+19. 10. 2020 11:22:55 OrderPDORepository.SaveOrder Error: System.Exception: PDO Run Procedure _upJM_CreateSupplierOrder error:<br><br>Ident 0718211232026 ne obstaja v šifrantu identov!
+   at DatabaseWebService.DomainPDO.Concrete.MSSQLPDOFunctionRepository.GetOrderDocumentData(String OrderDocXML) in D:\GitHub\DatabaseWebService\DomainPDO\Concrete\MSSQLPDOFunctionRepository.cs:line 275
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.CreateXMLForPantheon(OrderPDOFullModel model) in D:\GitHub\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 471
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.SaveOrder(OrderPDOFullModel order, Boolean updateRecord, Boolean CreateXMLDoc) in D:\GitHub\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 421
+19. 10. 2020 12:02:21 GetListOfOrderNumber10
+19. 10. 2020 12:02:26 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 10. 2020 12:09:36 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 10. 2020 12:09:37 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 10. 2020 12:09:38 SaveRecall2 : V_ODOBRITEV
+19. 10. 2020 12:09:38 D:\GitHub\DatabaseWebService\
+19. 10. 2020 12:09:38 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+20. 10. 2020 09:33:47 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 09:33:53 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 09:33:55 Generate mail for Purchase dept
+20. 10. 2020 09:33:56 D:\GitHub\DatabaseWebService\
+20. 10. 2020 09:33:56 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 09:35:07 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 09:35:13 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 09:36:44 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 09:35:16</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>EVROGRAFIS D.O.O.             </Buyer>
+  <OrderDate>20. 10. 2020 09:36:43</OrderDate>
+  <LoadDate>22. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>22. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>22. 10. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0712071202019   </Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 97X65 BB</Name>
+      <Qty>5516,87</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 09:36:44 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 09:37:08 Update Create order Recall Data
+20. 10. 2020 09:40:30 SaveInquiryPurchase : ODDANO
+20. 10. 2020 09:42:26 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 09:43:24 SaveInquiryPurchase : ODDANO
+20. 10. 2020 09:43:50 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 09:48:03 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 09:48:19 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 09:48:26 Generate mail for Purchase dept
+20. 10. 2020 09:48:29 D:\GitHub\DatabaseWebService\
+20. 10. 2020 09:48:29 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 09:49:07 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 09:49:13 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 09:49:43 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 09:49:20</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>EVROGRAFIS D.O.O.             </Buyer>
+  <OrderDate>20. 10. 2020 09:49:43</OrderDate>
+  <LoadDate>21. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>21. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>21. 10. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718451321004   </Ident>
+      <Name>ROYALCOAT PREMIUM GLOSS 130G 45X64 SB</Name>
+      <Qty>3931,20</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 09:49:43 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 09:49:44 Update Create order Recall Data
+20. 10. 2020 10:19:30 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:19:36 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:20:15 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:20:29 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:24:37 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 10:24:46 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 10:24:51 Generate mail for Purchase dept
+20. 10. 2020 10:26:03 D:\GitHub\DatabaseWebService\
+20. 10. 2020 10:26:03 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 10:26:35 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 10:26:40 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 10:27:21 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 10:27:20</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>ALENKAS                       </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>GRAFOLIT S D.O.O.             </Buyer>
+  <OrderDate>20. 10. 2020 10:27:21</OrderDate>
+  <LoadDate>15. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0731850401000   </Ident>
+      <Name>SIRIO COLOR CAFFE 700G 70X100 SB</Name>
+      <Qty>490,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 10:27:21 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 10:27:21 Update Create order Recall Data
+20. 10. 2020 10:33:39 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:33:45 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:34:10 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:34:15 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:35:02 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 10:35:07 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 10:35:08 Generate mail for Purchase dept
+20. 10. 2020 10:35:09 D:\GitHub\DatabaseWebService\
+20. 10. 2020 10:35:09 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 10:38:34 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 10:38:41 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 10:41:39 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:41:44 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:42:22 SaveInquiryPurchase : ODDANO
+20. 10. 2020 10:42:27 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 10:43:05 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 10:43:21 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 10:43:22 Generate mail for Purchase dept
+20. 10. 2020 10:43:23 D:\GitHub\DatabaseWebService\
+20. 10. 2020 10:43:24 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 10:45:50 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 10:45:56 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 11:38:24 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 11:38:23</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>ALENKAS                       </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>SAPPI PAPIER HOLDING GMBH DE</Supplier>
+  <Buyer>FLORJANČIČ TISK D.O.O.        </Buyer>
+  <OrderDate>20. 10. 2020 11:38:24</OrderDate>
+  <LoadDate>7. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>7. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>7. 10. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718451231039   </Ident>
+      <Name>ROYALCOAT BASIC SILK 130G 61X90 SB</Name>
+      <Qty>1855,62</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 11:38:24 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 11:38:25 Update Create order Recall Data
+20. 10. 2020 11:43:07 SaveInquiryPurchase : ODDANO
+20. 10. 2020 11:43:12 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 11:43:28 SaveInquiryPurchase : ODDANO
+20. 10. 2020 11:43:33 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 11:44:02 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 11:44:14 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 11:44:16 Generate mail for Purchase dept
+20. 10. 2020 11:44:17 D:\GitHub\DatabaseWebService\
+20. 10. 2020 11:44:17 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 11:44:41 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 11:44:51 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 11:47:22 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 11:47:11</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>ALENKAS                       </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ABO GRAFIKA D.O.O.            </Buyer>
+  <OrderDate>20. 10. 2020 11:47:20</OrderDate>
+  <LoadDate>15. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0712180401012   </Ident>
+      <Name>ARENA EXTRA WHITE SMOOTH 200G 72X102 SB</Name>
+      <Qty>1321,92</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 11:47:22 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 11:47:22 Update Create order Recall Data
+20. 10. 2020 11:50:49 SaveInquiryPurchase : ODDANO
+20. 10. 2020 11:50:54 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 11:51:50 SaveInquiryPurchase : ODDANO
+20. 10. 2020 11:51:55 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 11:52:29 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 11:52:47 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 11:52:48 Generate mail for Purchase dept
+20. 10. 2020 11:52:49 D:\GitHub\DatabaseWebService\
+20. 10. 2020 11:52:49 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 11:55:31 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 11:55:55 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 11:57:09 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 11:56:44</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>PEM                           </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ABO GRAFIKA D.O.O.            </Buyer>
+  <OrderDate>20. 10. 2020 11:57:07</OrderDate>
+  <LoadDate>1. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>1. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>1. 10. 2020 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712210301001   </Ident>
+      <Name>ARENA WHITE SMOOTH 300G 64X90 SB</Name>
+      <Qty>345,60</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 11:57:09 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 11:57:09 Update Create order Recall Data
+20. 10. 2020 15:11:08 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 15:11:15 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 15:11:16 Generate mail for Purchase dept
+20. 10. 2020 15:11:17 D:\GitHub\DatabaseWebService\
+20. 10. 2020 15:11:17 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 15:11:55 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 15:12:01 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 15:12:11 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 15:12:07</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>PEM                           </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>hs Druck GmbH                 </Buyer>
+  <OrderDate>20. 10. 2020 15:12:10</OrderDate>
+  <LoadDate>15. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>15. 10. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718070432001   </Ident>
+      <Name>AKIR MATT 70G 100X70 BB</Name>
+      <Qty>2548,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 15:12:11 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 15:12:11 Update Create order Recall Data

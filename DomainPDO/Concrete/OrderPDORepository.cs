@@ -2,6 +2,7 @@
 using DatabaseWebService.Common.Enums;
 using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.DomainPDO.Abstract;
+using DatabaseWebService.Models;
 using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Recall;
@@ -79,6 +80,27 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                                    tsUpdate = sp.tsUpdate.HasValue ? sp.tsUpdate.Value : DateTime.MinValue,
                                                }).FirstOrDefault(),
                                 PovprasevanjeID = o.PovprasevanjeID,
+                                NarociloIzdelal = (from employee in context.Osebe_PDO
+                                                      where employee.OsebaID == o.tsUpdateUserID.Value
+                                                      select new EmployeeFullModel
+                                                      {
+                                                          DatumRojstva = employee.DatumRojstva.HasValue ? employee.DatumZaposlitve.Value : DateTime.MinValue,
+                                                          DatumZaposlitve = employee.DatumZaposlitve.HasValue ? employee.DatumZaposlitve.Value : DateTime.MinValue,
+                                                          DelovnoMesto = employee.DelovnoMesto,
+                                                          Email = employee.Email,
+                                                          Geslo = employee.Geslo,
+                                                          idOsebe = employee.OsebaID,
+                                                          Ime = employee.Ime,
+                                                          Naslov = employee.Naslov,
+                                                          Priimek = employee.Priimek,
+                                                          TelefonGSM = employee.TelefonGSM,
+                                                          ts = employee.ts.HasValue ? employee.ts.Value : DateTime.MinValue,
+                                                          tsIDOsebe = employee.tsIDOsebe.HasValue ? employee.tsIDOsebe.Value : 0,
+                                                          UporabniskoIme = employee.UporabniskoIme,
+                                                          Zunanji = employee.Zunanji.HasValue ? employee.Zunanji.Value : 0,
+                                                          idVloga = employee.VlogaID,                                                          
+                                                          PDODostop = employee.PDODostop.HasValue ? employee.PDODostop.Value : false,
+                                                      }).FirstOrDefault(),
                             };
 
                 return query.OrderByDescending(s => s.ts).ToList();
@@ -417,7 +439,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     // create XML for order in pantheon 
                     OrderPDOFullModel model = GetOrderByID(n.NarociloID);
                     if ((model != null) && (CreateXMLDoc))
-                    {
+                    {                        
                         CreateXMLForPantheon(model);
                     }
 

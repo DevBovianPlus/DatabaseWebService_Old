@@ -514,6 +514,8 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 {
                     if (updateRecord)
                     {
+              
+
                         Povprasevanje original = context.Povprasevanje.Where(i => i.PovprasevanjeID == p.PovprasevanjeID).FirstOrDefault();
                         context.Entry(original).CurrentValues.SetValues(p);
                         context.SaveChanges();

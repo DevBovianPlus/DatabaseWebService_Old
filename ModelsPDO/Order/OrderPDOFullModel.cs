@@ -1,4 +1,5 @@
-﻿using DatabaseWebService.Models.Client;
+﻿using DatabaseWebService.Models;
+using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsPDO.Inquiry;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,12 @@ namespace DatabaseWebService.ModelsPDO.Order
         public int StrankaDobaviteljID { get; set; }
         public InquiryStatus StatusModel { get; set; }
 
+        public EmployeeFullModel NarociloIzdelal { get; set; }
+
         //uporabljamo samo ko se prvič kreira naročilo da naročilo povežemo z povpraševanjem
         public int PovprasevanjeID { get; set; }
         public int PovprasevanjeStatusID { get; set; }
+        
 
         public DateTime P_CreateOrder { get; set; }
         public int P_UnsuccCountCreatePDFPantheon { get; set; }
