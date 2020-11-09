@@ -14,6 +14,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         int SaveTender(TenderFullModel model, bool updateRecord = true);
         bool DeleteTender(int tenderID);
         List<TenderPositionModel> GetTenderListByRouteID(int routeID);
+        List<TenderPositionModel> GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate);
         void SaveTenders(List<TenderFullModel> model);
         List<TenderPositionModel> GetTenderPositionModelByID(int tenderID);
         int SaveTenderPosition(TenderPositionModel model, bool updateRecord = true);

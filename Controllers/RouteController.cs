@@ -66,6 +66,25 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        {
+            WebResponseContentModel<List<RouteTransporterPricesModel>> tmpUser = new WebResponseContentModel<List<RouteTransporterPricesModel>>();
+            Del<List<RouteTransporterPricesModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = routeRepo.GetAllRoutesTransportPricesByViewType(iViewType, iWeightType);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
         public IHttpActionResult GetRouteByID(int routeID)
         {
             WebResponseContentModel<RouteModel> tmpUser = new WebResponseContentModel<RouteModel>();

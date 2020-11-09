@@ -10,6 +10,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
     public interface IRouteRepository
     {
         List<RouteModel> GetAllRoutes();
+        List<RouteTransporterPricesModel> GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType);
         RouteModel GetRouteByID(int routeID);
         int SaveRoute(RouteModel model, bool updateRecord = true);
         bool DeleteRoute(int routeID);

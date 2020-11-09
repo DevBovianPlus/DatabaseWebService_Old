@@ -724,6 +724,7 @@
     <Compile Include="ModelsOTP\Recall\RecallPositionModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallStatus.cs" />
     <Compile Include="ModelsOTP\Recall\RecallType.cs" />
+    <Compile Include="ModelsOTP\Route\RouteTransporterPricesModel.cs" />
     <Compile Include="ModelsOTP\Route\RouteModel.cs" />
     <Compile Include="ModelsOTP\Tender\TenderFullModel.cs" />
     <Compile Include="ModelsOTP\Tender\TenderModel.cs" />

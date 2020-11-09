@@ -3382,3 +3382,292 @@ Parameter name: source
 </Document>
 20. 10. 2020 15:12:11 Run Create order procedure _upJM_CreateSupplierOrder
 20. 10. 2020 15:12:11 Update Create order Recall Data
+20. 10. 2020 15:25:01 GetListOfOrderNumber10
+20. 10. 2020 15:25:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 15:27:55 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 15:27:55 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 15:27:56 SaveRecall2 : V_ODOBRITEV
+20. 10. 2020 15:27:56 D:\GitHub\DatabaseWebService\
+20. 10. 2020 15:30:47 GetListOfOrderNumber10
+20. 10. 2020 15:32:37 SaveInquiryPurchase : ODDANO
+20. 10. 2020 15:32:38 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 15:33:11 SaveInquiryPurchase : ODDANO
+20. 10. 2020 15:33:11 Generate mail for Purchase dept : ODDANO
+20. 10. 2020 15:33:51 SaveInquiryPurchase : POSLANO_V_NABAVO
+20. 10. 2020 15:33:52 Generate mail for Purchase dept : POSLANO_V_NABAVO
+20. 10. 2020 15:33:52 Generate mail for Purchase dept
+20. 10. 2020 15:33:52 D:\GitHub\DatabaseWebService\
+20. 10. 2020 15:33:52 CreateEmailForGrafolitPurcaheDept
+20. 10. 2020 15:34:03 SaveInquiryPurchase : USTVARJENO_NAROCILO
+20. 10. 2020 15:34:04 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+20. 10. 2020 15:34:11 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>20. 10. 2020 15:34:10</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>SAMSON D.O.O.                 </Buyer>
+  <OrderDate>20. 10. 2020 15:34:11</OrderDate>
+  <LoadDate>8. 10. 2020 00:00:00</LoadDate>
+  <DeliveryDate>8. 10. 2020 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>8. 10. 2020 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0731450301001   </Ident>
+      <Name>SYMBOL TATAMI IVORY 130G 64X88 SB</Name>
+      <Qty>73,21</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+20. 10. 2020 15:34:11 Run Create order procedure _upJM_CreateSupplierOrder
+20. 10. 2020 15:34:11 Update Create order Recall Data
+20. 10. 2020 15:34:48 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 15:36:02 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 15:36:02 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 15:36:03 SaveRecall2 : V_ODOBRITEV
+20. 10. 2020 15:36:03 D:\GitHub\DatabaseWebService\
+20. 10. 2020 15:36:03 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+20. 10. 2020 15:37:58 GetListOfOrderNumber10
+20. 10. 2020 15:38:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 15:39:22 GetListOfOrderNumber10
+20. 10. 2020 15:39:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 15:58:18 GetListOfOrderNumber10
+20. 10. 2020 15:58:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 16:00:47 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:00:47 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 16:00:55 GetListOfOrderNumber10
+20. 10. 2020 16:01:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 10. 2020 16:03:46 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:03:46 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 16:03:46 SaveRecall2 : V_ODOBRITEV
+20. 10. 2020 16:03:46 D:\GitHub\DatabaseWebService\
+20. 10. 2020 16:03:46 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+20. 10. 2020 16:07:14 GetListOfOrderNumber10
+20. 10. 2020 16:07:18 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+20. 10. 2020 16:07:28 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+20. 10. 2020 16:10:00 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:10:00 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 16:10:24 GetListOfOrderNumber10
+20. 10. 2020 16:10:29 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+20. 10. 2020 16:12:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:12:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 10. 2020 16:12:14 SaveRecall2 : V_ODOBRITEV
+20. 10. 2020 16:12:14 D:\GitHub\DatabaseWebService\
+20. 10. 2020 16:12:14 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+20. 10. 2020 16:12:55 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:12:55 SaveRecall1 : (model.Content.OdpoklicID) :4603
+20. 10. 2020 16:13:37 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 10. 2020 16:13:37 SaveRecall1 : (model.Content.OdpoklicID) :4601
+21. 10. 2020 09:54:32 GetListOfOrderNumber10
+21. 10. 2020 09:54:55 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+21. 10. 2020 09:55:11 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+21. 10. 2020 09:55:36 GetListOfOpenedOrderPositions for : RENO DE MEDICI s.p.a.         
+21. 10. 2020 09:55:47 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+21. 10. 2020 09:55:59 GetListOfOpenedOrderPositions for : SAPPI EUROPE                  
+21. 10. 2020 09:56:04 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+21. 10. 2020 11:03:15 GetListOfOrderNumber10
+21. 10. 2020 11:17:03 GetListOfOrderNumber10
+21. 10. 2020 11:30:17 GetListOfOrderNumber10
+21. 10. 2020 11:30:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+21. 10. 2020 11:38:03 GetListOfOrderNumber10
+21. 10. 2020 12:01:07 GetListOfOrderNumber10
+21. 10. 2020 12:01:19 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+21. 10. 2020 12:07:01 GetListOfOrderNumber10
+21. 10. 2020 14:06:02 GetListOfOrderNumber10
+21. 10. 2020 14:06:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+21. 10. 2020 14:37:38 GetListOfOrderNumber10
+21. 10. 2020 14:38:04 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+21. 10. 2020 15:16:15 GetListOfOrderNumber10
+21. 10. 2020 15:16:33 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+21. 10. 2020 15:22:20 GetListOfOrderNumber10
+21. 10. 2020 15:22:30 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+21. 10. 2020 15:22:41 GetListOfOrderNumber10
+21. 10. 2020 15:22:49 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+22. 10. 2020 10:09:05 GetListOfOrderNumber10
+22. 10. 2020 10:09:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 11:12:34 GetListOfOrderNumber10
+22. 10. 2020 11:13:54 GetListOfOrderNumber10
+22. 10. 2020 11:16:23 GetListOfOrderNumber10
+22. 10. 2020 11:56:36 GetListOfOrderNumber10
+22. 10. 2020 15:28:51 GetListOfOrderNumber10
+22. 10. 2020 15:28:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:30:11 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:30:12 SaveRecall2 : (model.Content.OdpoklicID) :0
+22. 10. 2020 15:30:13 SaveRecall2 : V_ODOBRITEV
+22. 10. 2020 15:30:13 D:\GitHub\DatabaseWebService\
+22. 10. 2020 15:30:13 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 10. 2020 15:30:44 GetListOfOrderNumber10
+22. 10. 2020 15:31:04 GetListOfOpenedOrderPositions for : SAPPI EUROPE                  
+22. 10. 2020 15:33:24 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+22. 10. 2020 15:34:03 GetListOfOrderNumber10
+22. 10. 2020 15:34:12 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22. 10. 2020 15:34:47 GetListOfOrderNumber10
+22. 10. 2020 15:34:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:35:38 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:35:38 SaveRecall2 : (model.Content.OdpoklicID) :0
+22. 10. 2020 15:36:38 GetListOfOrderNumber10
+22. 10. 2020 15:36:49 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:38:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:38:27 SaveRecall1 : (model.Content.OdpoklicID) :4605
+22. 10. 2020 15:38:38 GetListOfOrderNumber10
+22. 10. 2020 15:38:44 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:39:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:39:15 SaveRecall1 : (model.Content.OdpoklicID) :4604
+22. 10. 2020 15:39:32 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:39:32 SaveRecall1 : (model.Content.OdpoklicID) :4603
+22. 10. 2020 15:45:25 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:45:25 SaveRecall1 : (model.Content.OdpoklicID) :4602
+22. 10. 2020 15:45:54 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:45:54 SaveRecall1 : (model.Content.OdpoklicID) :4599
+22. 10. 2020 15:46:46 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:46:46 SaveRecall1 : (model.Content.OdpoklicID) :4598
+22. 10. 2020 15:48:07 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 15:48:07 SaveRecall1 : (model.Content.OdpoklicID) :4597
+22. 10. 2020 15:50:31 GetListOfOrderNumber10
+22. 10. 2020 15:50:40 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:51:03 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+22. 10. 2020 15:51:07 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:54:57 GetListOfOrderNumber10
+22. 10. 2020 15:55:06 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 15:59:43 GetListOfOrderNumber10
+22. 10. 2020 15:59:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 16:05:16 GetListOfOrderNumber10
+22. 10. 2020 16:05:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 16:07:53 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 16:07:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+22. 10. 2020 16:07:54 SaveRecall2 : V_ODOBRITEV
+22. 10. 2020 16:07:54 D:\GitHub\DatabaseWebService\
+22. 10. 2020 16:07:54 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 10. 2020 16:08:25 GetListOfOrderNumber10
+22. 10. 2020 16:08:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 16:09:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 16:09:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+22. 10. 2020 16:09:14 SaveRecall2 : V_ODOBRITEV
+22. 10. 2020 16:09:14 D:\GitHub\DatabaseWebService\
+22. 10. 2020 16:09:14 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22. 10. 2020 16:09:19 GetListOfOrderNumber10
+22. 10. 2020 16:09:23 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22. 10. 2020 16:10:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22. 10. 2020 16:10:15 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 07:54:46 GetListOfOrderNumber10
+23. 10. 2020 07:55:15 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+23. 10. 2020 07:56:22 GetListOfOrderNumber10
+23. 10. 2020 07:56:30 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+23. 10. 2020 08:01:00 GetListOfOrderNumber10
+23. 10. 2020 08:01:08 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.           
+23. 10. 2020 08:04:37 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.
+23. 10. 2020 08:07:54 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 08:08:00 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 08:10:11 GetListOfOpenedOrderPositions for : R.D.M. OVARO S.P.A.
+23. 10. 2020 08:10:17 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 08:10:17 SaveRecall1 : (model.Content.OdpoklicID) :4609
+23. 10. 2020 08:10:29 GetListOfOrderNumber10
+23. 10. 2020 08:10:35 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+23. 10. 2020 08:11:40 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+23. 10. 2020 08:11:46 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 10. 2020 08:14:09 GetListOfOrderNumber10
+23. 10. 2020 08:14:17 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 10. 2020 08:15:48 GetListOfOrderNumber10
+23. 10. 2020 08:18:16 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 10. 2020 08:19:11 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+23. 10. 2020 08:20:16 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+23. 10. 2020 08:20:37 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+23. 10. 2020 08:20:44 GetListOfOpenedOrderPositions for : BRANCHER                      
+23. 10. 2020 08:21:01 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+23. 10. 2020 08:21:07 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+23. 10. 2020 08:21:14 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 08:21:30 GetListOfOrderNumber10
+23. 10. 2020 08:21:38 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 08:30:34 GetListOfOrderNumber10
+23. 10. 2020 08:30:43 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 08:56:02 GetListOfOrderNumber10
+23. 10. 2020 08:56:10 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:05:08 GetListOfOrderNumber10
+23. 10. 2020 09:05:22 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:14:56 GetListOfOrderNumber10
+23. 10. 2020 09:15:13 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:19:12 GetListOfOrderNumber10
+23. 10. 2020 09:19:31 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:29:38 GetListOfOrderNumber10
+23. 10. 2020 09:30:01 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:35:07 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:35:07 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 09:36:35 GetListOfOrderNumber10
+23. 10. 2020 09:37:20 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:39:43 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:39:43 SaveRecall1 : (model.Content.OdpoklicID) :4610
+23. 10. 2020 09:40:26 GetListOfOrderNumber10
+23. 10. 2020 09:40:33 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:45:56 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:45:56 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 09:46:00 GetListOfOrderNumber10
+23. 10. 2020 09:46:06 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 09:58:03 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:58:03 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 09:58:59 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:58:59 SaveRecall1 : (model.Content.OdpoklicID) :4612
+23. 10. 2020 09:59:33 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 09:59:33 SaveRecall1 : (model.Content.OdpoklicID) :4611
+23. 10. 2020 10:06:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:06:28 SaveRecall1 : (model.Content.OdpoklicID) :4611
+23. 10. 2020 10:06:40 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:06:40 SaveRecall1 : (model.Content.OdpoklicID) :4608
+23. 10. 2020 10:06:55 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:06:55 SaveRecall1 : (model.Content.OdpoklicID) :4611
+23. 10. 2020 10:18:37 GetListOfOrderNumber10
+23. 10. 2020 10:18:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 10. 2020 10:19:48 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:19:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 10:19:49 SaveRecall2 : V_ODOBRITEV
+23. 10. 2020 10:19:49 D:\GitHub\DatabaseWebService\
+23. 10. 2020 10:19:49 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+23. 10. 2020 10:20:54 GetListOfOrderNumber10
+23. 10. 2020 10:21:00 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+23. 10. 2020 10:25:20 GetListOfOrderNumber10
+23. 10. 2020 10:25:24 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+23. 10. 2020 10:27:40 GetListOfOrderNumber10
+23. 10. 2020 10:27:47 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+23. 10. 2020 10:36:18 GetListOfOrderNumber10
+23. 10. 2020 10:36:26 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+23. 10. 2020 10:40:35 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:40:35 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 10:40:53 GetListOfOrderNumber10
+23. 10. 2020 10:41:02 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+23. 10. 2020 10:42:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 10:42:15 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 10. 2020 11:41:03 GetListOfOrderNumber10
+23. 10. 2020 11:41:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 10. 2020 12:52:57 GetListOfOrderNumber10
+23. 10. 2020 12:53:38 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23. 10. 2020 12:54:22 GetListOfOrderNumber10
+23. 10. 2020 12:54:27 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 10. 2020 13:27:37 GetListOfOrderNumber10
+23. 10. 2020 13:27:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+23. 10. 2020 13:29:45 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+23. 10. 2020 13:29:45 SaveRecall2 : (model.Content.OdpoklicID) :0
+26. 10. 2020 10:42:59 GetListOfOrderNumber10
+26. 10. 2020 10:43:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 10. 2020 10:45:19 GetListOfOrderNumber10
+26. 10. 2020 10:45:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 10. 2020 10:47:47 GetListOfOrderNumber10
+26. 10. 2020 10:47:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 10. 2020 10:51:57 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+26. 10. 2020 10:54:21 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+26. 10. 2020 10:55:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26. 10. 2020 11:44:43 GetListOfOrderNumber10
+26. 10. 2020 11:45:10 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 11. 2020 15:29:04 GetListOfOrderNumber10
+2. 11. 2020 15:29:37 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+3. 11. 2020 15:21:14 GetListOfOrderNumber10
+3. 11. 2020 15:21:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+5. 11. 2020 09:07:05 GetListOfOrderNumber10
+5. 11. 2020 09:07:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            

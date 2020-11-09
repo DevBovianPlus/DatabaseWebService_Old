@@ -169,6 +169,25 @@ namespace DatabaseWebService.Controllers
             return Json(tmpUser);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate)
+        {
+            WebResponseContentModel<List<TenderPositionModel>> tmpUser = new WebResponseContentModel<List<TenderPositionModel>>();
+            Del<List<TenderPositionModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = tenderRepo.GetTenderListByRouteIDAndTenderDate(routeID, TenderDate);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
         [HttpPost]
         public IHttpActionResult SaveTenders([FromBody] object tendersData)
         {

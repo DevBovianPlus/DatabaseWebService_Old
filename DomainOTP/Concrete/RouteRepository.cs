@@ -1,6 +1,8 @@
 ﻿using DatabaseWebService.Common.Enums;
 using DatabaseWebService.DomainOTP.Abstract;
+using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP.Route;
+using DatabaseWebService.ModelsOTP.Tender;
 using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,12 @@ namespace DatabaseWebService.DomainOTP.Concrete
     public class RouteRepository : IRouteRepository
     {
         GrafolitOTPEntities context;
+        ITenderRepository tenderRepo;
 
-        public RouteRepository(GrafolitOTPEntities _context)
+        public RouteRepository(GrafolitOTPEntities _context, ITenderRepository _tenderRepo)
         {
             context = _context;
+            tenderRepo = _tenderRepo;
         }
 
         public List<RouteModel> GetAllRoutes()
@@ -68,7 +72,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                         int iPrviOklepaj = item.Naziv.IndexOf(")");
                         if (iPrviOklepaj > 0)
                         {
-                            item.DrzavaKoda = item.Naziv.Substring(1, iPrviOklepaj-1);
+                            item.DrzavaKoda = item.Naziv.Substring(1, iPrviOklepaj - 1);
                         }
 
                         string[] split = item.Naziv.Split(' ');
@@ -81,11 +85,221 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     int monthDiff = ((DateTime.Now.Year - item.RouteFirstRecallDate.Year) * 12) + DateTime.Now.Month - item.RouteFirstRecallDate.Month;
                     int diff = monthDiff > 0 ? monthDiff : 1;
 
-                    if (item.RecallCount >= diff)
-                        item.RecallCount = (item.RecallCount / diff) * (!checkForPastYear ? 12 : 1);
+                    if (!(checkForPastYear))
+                    {
+                        if (item.RecallCount >= diff)
+                            item.RecallCount = (item.RecallCount / diff) * (!checkForPastYear ? 12 : 1);
+                    }
                 }
                 list = list.OrderBy(d => d.PostaKoda).ToList().OrderByDescending(p => p.DrzavaKoda).ToList();
                 return list;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rList">Seznam vseh relacija</param>
+        /// <param name="iViewType">Pregled 1 - Vsi odpoklici, 2 - Samo Lastni prevoz, 3 - Ostali prevoz (Dobavitelj, Kupec)</param>
+        /// <param name="iWeightType">Teža odpoklica 1 - nad 20t, 2 - Pod 20t </param>
+        /// <returns></returns>
+        List<RouteModel> SetRecalCountRelacijaByType(List<RouteModel> rList, int iViewType, int iWeightType)
+        {
+            DateTime dateStart = DateTime.Now.AddYears(-1).Date;
+            DateTime dateEnd = DateTime.Now.Date;
+
+            string overtake = Enums.StatusOfRecall.PREVZET.ToString();
+            string partialOvertake = Enums.StatusOfRecall.DELNO_PREVZET.ToString();
+            string approvedStat = Enums.StatusOfRecall.POTRJEN.ToString();
+
+            foreach (var rt in rList)
+            {
+                if (iWeightType == 1)
+                {
+                    switch (iViewType)
+                    {
+                        case 1:                            
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && recalls.KolicinaSkupno> 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        case 2:
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && (bool)recalls.LastenPrevoz && recalls.KolicinaSkupno > 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        case 3:                        
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && ((bool)recalls.DobaviteljUrediTransport || (bool)recalls.KupecUrediTransport) && recalls.KolicinaSkupno > 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                    switch (iViewType)
+                    {
+                        case 1:
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && recalls.KolicinaSkupno < 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        case 2:
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && (bool)recalls.LastenPrevoz && recalls.KolicinaSkupno < 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        case 3:
+                            rt.RecallCount = (from recalls in context.Odpoklic
+                                              where (recalls.RelacijaID.Value == rt.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && ((bool)recalls.DobaviteljUrediTransport || (bool)recalls.KupecUrediTransport) && recalls.KolicinaSkupno < 20000 &&
+                                              (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                              select recalls).Count();
+                            break;
+                        default:
+                            break;
+                    }
+            }
+            rList = rList.Where(o => o.RecallCount > 0).ToList();
+            return rList;
+        }
+
+        public List<RouteTransporterPricesModel> GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        {
+            try
+            {
+                List<RouteTransporterPricesModel> ReturnList = null;
+                DateTime dateStart = DateTime.Now.AddYears(-1).Date;
+                DateTime dateEnd = DateTime.Now.Date;
+                string overtake = Enums.StatusOfRecall.PREVZET.ToString();
+                string partialOvertake = Enums.StatusOfRecall.DELNO_PREVZET.ToString();
+                string approvedStat = Enums.StatusOfRecall.POTRJEN.ToString();
+
+                ReturnList = new List<RouteTransporterPricesModel>();
+
+                var query = from route in context.Relacija
+                            select new RouteModel
+                            {
+                                Datum = route.Datum.HasValue ? route.Datum.Value : DateTime.MinValue,
+                                Dolzina = route.Dolzina,
+                                Koda = route.Koda,
+                                Naziv = route.Naziv,
+                                RelacijaID = route.RelacijaID,
+                                Opomba = route.Opomba,
+                                RouteFirstRecallDate = (from recalls in context.Odpoklic
+                                                        where recalls.RelacijaID.Value == route.RelacijaID
+                                                        orderby recalls.OdpoklicID
+                                                        select recalls).FirstOrDefault() != null ? (from recalls in context.Odpoklic
+                                                                                                    where recalls.RelacijaID.Value == route.RelacijaID
+                                                                                                    orderby recalls.OdpoklicID
+                                                                                                    select recalls).FirstOrDefault().ts.Value : DateTime.Now,
+                                ts = route.ts.HasValue ? route.ts.Value : DateTime.MinValue,
+                                tsIDOsebe = route.tsIDOsebe.HasValue ? route.tsIDOsebe.Value : 0,
+                                //RecallCount = iViewType == 1 ? (from recalls in context.Odpoklic
+                                //                                where (recalls.RelacijaID.Value == route.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) &&
+                                //                                (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                //                                select recalls).Count() : iViewType == 2 ? (from recalls in context.Odpoklic
+                                //                                                                            where (recalls.RelacijaID.Value == route.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && (bool)recalls.LastenPrevoz &&
+                                //                                                                            (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                //                                                                            select recalls).Count() :
+                                //                                                           (from recalls in context.Odpoklic
+                                //                                                            where (recalls.RelacijaID.Value == route.RelacijaID) && (recalls.ts.Value >= dateStart && recalls.ts.Value <= dateEnd) && (bool)recalls.DobaviteljUrediTransport &&
+                                //                                                            (recalls.StatusOdpoklica.Koda == approvedStat || recalls.StatusOdpoklica.Koda == overtake || recalls.StatusOdpoklica.Koda == partialOvertake)
+                                //                                                            select recalls).Count()
+                            };
+
+                var list = query.ToList();                
+                List<RouteModel> rList = list;
+
+                rList = SetRecalCountRelacijaByType(rList, iViewType, iWeightType);
+
+                int iTempID = 0;
+                int iCnt = 0;
+                foreach (var item in rList)
+                {
+                    iTempID++;
+                    RouteTransporterPricesModel rtpm = new RouteTransporterPricesModel();
+                    rtpm.TempID = iTempID;
+                    rtpm.Relacija = item.Naziv;
+                    rtpm.RecallCount = item.RecallCount;
+
+                    iCnt = 0;
+
+
+                    //List<TenderPositionModel> tenderRoutesPrices = tenderRepo.GetTenderListByRouteID(item.RelacijaID);
+
+                    var query2 = from tenderPos in context.RazpisPozicija //from tenderPos in tmp.FirstOrDefault().Key.RazpisPozicija
+                                 where tenderPos.RelacijaID == item.RelacijaID && tenderPos.Cena > 0
+                                 orderby tenderPos.Cena ascending
+                                 select new TenderPositionModel
+                                 {
+                                     Cena = tenderPos.Cena.HasValue ? tenderPos.Cena.Value : 0,
+                                     RazpisID = tenderPos.RazpisID,
+                                     RelacijaID = tenderPos.RelacijaID,
+                                     StrankaID = tenderPos.StrankaID,
+                                     Stranka = (from client in context.Stranka_OTP
+                                                where client.idStranka == tenderPos.StrankaID && client.Activity == 1
+                                                select new ClientFullModel
+                                                {
+                                                    idStranka = client.idStranka,
+                                                    KodaStranke = client.KodaStranke,
+                                                    NazivPrvi = client.NazivPrvi,
+                                                    NazivDrugi = client.NazivDrugi,
+                                                    Naslov = client.Naslov
+                                                }).FirstOrDefault()
+                                 };
+
+
+                    foreach (var itm in query2)
+                    {
+                        if (rtpm.DodaneStrankeID == null) rtpm.DodaneStrankeID = new List<int>();
+                        if (!(rtpm.DodaneStrankeID.Contains(itm.StrankaID)))
+                        {
+                            rtpm.DodaneStrankeID.Add(itm.StrankaID);
+                            iCnt++;
+                        }
+                        else
+                            continue;
+
+
+
+                        switch (iCnt)
+                        {
+                            case 1:
+                                rtpm.Prevoznik_1 = itm.Stranka.NazivPrvi;
+                                rtpm.Prevoznik_1_Cena = itm.Cena;
+                                break;
+                            case 2:
+                                rtpm.Prevoznik_2 = itm.Stranka.NazivPrvi;
+                                rtpm.Prevoznik_2_Cena = itm.Cena;
+                                break;
+                            case 3:
+                                rtpm.Prevoznik_3 = itm.Stranka.NazivPrvi;
+                                rtpm.Prevoznik_3_Cena = itm.Cena;
+                                break;
+                            case 4:
+                                rtpm.Prevoznik_4 = itm.Stranka.NazivPrvi;
+                                rtpm.Prevoznik_4_Cena = itm.Cena;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        if (iCnt == 4) break;
+                    }
+
+                    ReturnList.Add(rtpm);
+                }
+                return ReturnList.OrderByDescending(rp => rp.RecallCount).ToList();
             }
             catch (Exception ex)
             {
