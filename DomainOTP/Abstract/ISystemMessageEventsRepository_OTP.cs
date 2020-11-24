@@ -22,5 +22,6 @@ namespace DatabaseWebService.DomainOTP.Abstract
         void CreateEmailLogisticsCarrierNotSelected(List<IGrouping<Odpoklic, PrijavaPrevoznika>> listOdpoklicPrijavaPrevoznikov);
         void CreateEmailForCarriers(List<CarrierInquiryModel> carriers);
         void CreateEmailForAdmin_NoPDFForOrderOTP(string sOdobritevKomentar, string sStevilkaDokumenta, string sStevilkaNarocilnice);
+        void SendTenderToTransportersEmails(hlpTenderCreateExcellData _hlpTenderCreateExcellData, EmployeeFullModel inquirySubmittedByEmployee);
     }
 }

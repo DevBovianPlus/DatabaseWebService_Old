@@ -145,7 +145,7 @@ namespace DatabaseWebService.Common.Enums
             PODPIS2 = 6,
             CARRIRERMAILORDER_SUBJECT = 8,
             CARRIRERMAILORDER_BODY = 9,
-            CARRIRERMAILORDER_ADDTEXT =  10,            
+            CARRIRERMAILORDER_ADDTEXT = 10,
             CARRIRERCONGRATS_OR_BETTERLUCK_SUBJECT_SELECT = 11,
             CARRIRERCONGRATS_OR_BETTERLUCK_SUBJECT_REJECT = 12,
             CARRIRERCONGRATS_OR_BETTERLUCK_BODY_SELECT = 13,
@@ -158,10 +158,14 @@ namespace DatabaseWebService.Common.Enums
             EMAILTOSUPPLIER_OPOMBE = 21,
             EMAILTOSUPPLIER_THANKANDGREETING = 22,
             EMAILTOSUPPLIER_FORCUSTOMER = 23,
-
+            POZDRAVPARTNER = 24,
+            BODYCARIERTENDER = 25,
+            PODPISTENDER = 26,
+            TENDERRETURNEMAIL = 27,
+            CARRIRERTENDERMAIL_SUBJECT = 28,
         }
 
-       
+
 
         public enum PrintType
         {
@@ -194,7 +198,7 @@ namespace DatabaseWebService.Common.Enums
         public enum AppType
         {
             PDO,
-            NOZ            
+            NOZ
         }
     }
 }

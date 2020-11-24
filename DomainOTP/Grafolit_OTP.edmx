@@ -140,6 +140,7 @@
           <Property Name="P_GetPDFOrderFile" Type="datetime" />
           <Property Name="DatumRazklada" Type="datetime" />
           <Property Name="P_SendWarningToAmin" Type="int" />
+          <Property Name="ZbirnikTonID" Type="int" />
         </EntityType>
         <EntityType Name="OdpoklicPozicija">
           <Key>
@@ -257,6 +258,7 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="PotDokumenta" Type="varchar" MaxLength="800" />
           <Property Name="PrevoznikAktualnaCena" Type="bit" />
+          <Property Name="ZbirnikTonID" Type="int" />
         </EntityType>
         <EntityType Name="Relacija">
           <Key>
@@ -401,6 +403,18 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
         </EntityType>
+        <EntityType Name="ZbirnikTon">
+          <Key>
+            <PropertyRef Name="ZbirnikTonID" />
+          </Key>
+          <Property Name="ZbirnikTonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="500" />
+          <Property Name="OdTeza" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DoTeza" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SortIdx" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PrevzemiView">
@@ -501,6 +515,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
             </Principal>
             <Dependent Role="Odpoklic">
               <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odpoklic_ZbirnikTonID">
+          <End Role="ZbirnikTon" Type="Self.ZbirnikTon" Multiplicity="0..1" />
+          <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="ZbirnikTonID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -716,6 +742,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ZbirnikTonID">
+          <End Role="ZbirnikTon" Type="Self.ZbirnikTon" Multiplicity="0..1" />
+          <End Role="RazpisPozicija" Type="Self.RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="DodajPantheonDokument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="p_xParameters" Type="xml" Mode="In" />
           <Parameter Name="p_cExportPath" Type="varchar" Mode="InOut" />
@@ -832,6 +870,7 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
           <EntitySet Name="TipPrevoza" EntityType="Self.TipPrevoza" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipStranka" EntityType="Self.TipStranka" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vloga_OTP" EntityType="Self.Vloga_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZbirnikTon" EntityType="Self.ZbirnikTon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrevzemiView" EntityType="Self.PrevzemiView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [PrevzemiView].[Datum_Prevzema] AS [Datum_Prevzema], 
@@ -868,6 +907,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="FK_Odpoklic_StatusOdpoklica" Association="Self.FK_Odpoklic_StatusOdpoklica">
             <End Role="StatusOdpoklica" EntitySet="StatusOdpoklica" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odpoklic_ZbirnikTonID" Association="Self.FK_Odpoklic_ZbirnikTonID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
             <End Role="Odpoklic" EntitySet="Odpoklic" />
           </AssociationSet>
           <AssociationSet Name="FK_OdpoklicID" Association="Self.FK_OdpoklicID">
@@ -937,6 +980,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <AssociationSet Name="FK_UserID" Association="Self.FK_UserID">
             <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
             <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZbirnikTonID" Association="Self.FK_ZbirnikTonID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1079,6 +1126,15 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <FunctionImport Name="SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja" IsComposable="true" ReturnType="Collection(GrafolitOTPModel.SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result)">
           <Parameter Name="Dobavitelj" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="ZbirnikTon" EntityType="GrafolitOTPModel.ZbirnikTon" />
+          <AssociationSet Name="FK_Odpoklic_ZbirnikTonID" Association="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
+            <End Role="Odpoklic" EntitySet="Odpoklic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZbirnikTonID" Association="GrafolitOTPModel.FK_ZbirnikTonID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
+            <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Osebe_OTP">
           <Key>
@@ -1273,6 +1329,8 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="Relacija" Relationship="GrafolitOTPModel.FK_RelacijaID" FromRole="RazpisPozicija" ToRole="Relacija" />
           <Property Name="PrevoznikAktualnaCena" Type="Boolean" />
           <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_StrankaID" FromRole="RazpisPozicija" ToRole="Stranka_OTP" />
+          <Property Name="ZbirnikTonID" Type="Int32" />
+          <NavigationProperty Name="ZbirnikTon" Relationship="GrafolitOTPModel.FK_ZbirnikTonID" FromRole="RazpisPozicija" ToRole="ZbirnikTon" />
         </EntityType>
         <Association Name="FK_RazpisID">
           <End Type="GrafolitOTPModel.Razpis" Role="Razpis" Multiplicity="1" />
@@ -1483,6 +1541,8 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="Stranka_OTP1" Relationship="GrafolitOTPModel.FK_Stranka_Odpoklic" FromRole="Odpoklic" ToRole="Stranka_OTP" />
           <Property Name="P_SendWarningToAmin" Type="Int32" />
           <NavigationProperty Name="OdpoklicPozicija" Relationship="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic" FromRole="Odpoklic" ToRole="OdpoklicPozicija" />
+          <Property Name="ZbirnikTonID" Type="Int32" />
+          <NavigationProperty Name="ZbirnikTon" Relationship="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID" FromRole="Odpoklic" ToRole="ZbirnikTon" />
         </EntityType>
         <Association Name="FK_LastnaZaloga_Odpoklic">
           <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="1">
@@ -1887,6 +1947,44 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Type="String" Name="Enota_Mere" Nullable="true" MaxLength="3" />
           <Property Type="String" Name="Interno" Nullable="false" MaxLength="9" />
         </ComplexType>
+        <EntityType Name="ZbirnikTon">
+          <Key>
+            <PropertyRef Name="ZbirnikTonID" />
+          </Key>
+          <Property Name="ZbirnikTonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ts" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID" FromRole="ZbirnikTon" ToRole="Odpoklic" />
+          <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_ZbirnikTonID" FromRole="ZbirnikTon" ToRole="RazpisPozicija" />
+          <Property Name="OdTeza" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DoTeza" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SortIdx" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_Odpoklic_ZbirnikTonID">
+          <End Type="GrafolitOTPModel.ZbirnikTon" Role="ZbirnikTon" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="Odpoklic">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZbirnikTonID">
+          <End Type="GrafolitOTPModel.ZbirnikTon" Role="ZbirnikTon" Multiplicity="0..1" />
+          <End Type="GrafolitOTPModel.RazpisPozicija" Role="RazpisPozicija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2030,6 +2128,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="RazpisPozicija">
             <EntityTypeMapping TypeName="GrafolitOTPModel.RazpisPozicija">
               <MappingFragment StoreEntitySet="RazpisPozicija">
+                <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
                 <ScalarProperty Name="PrevoznikAktualnaCena" ColumnName="PrevoznikAktualnaCena" />
                 <ScalarProperty Name="PotDokumenta" ColumnName="PotDokumenta" />
                 <ScalarProperty Name="ts" ColumnName="ts" />
@@ -2158,6 +2257,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="Odpoklic">
             <EntityTypeMapping TypeName="GrafolitOTPModel.Odpoklic">
               <MappingFragment StoreEntitySet="Odpoklic">
+                <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
                 <ScalarProperty Name="P_SendWarningToAmin" ColumnName="P_SendWarningToAmin" />
                 <ScalarProperty Name="DatumRazklada" ColumnName="DatumRazklada" />
                 <ScalarProperty Name="P_GetPDFOrderFile" ColumnName="P_GetPDFOrderFile" />
@@ -2391,6 +2491,19 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="ZbirnikTon">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.ZbirnikTon">
+              <MappingFragment StoreEntitySet="ZbirnikTon">
+                <ScalarProperty Name="SortIdx" ColumnName="SortIdx" />
+                <ScalarProperty Name="DoTeza" ColumnName="DoTeza" />
+                <ScalarProperty Name="OdTeza" ColumnName="OdTeza" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

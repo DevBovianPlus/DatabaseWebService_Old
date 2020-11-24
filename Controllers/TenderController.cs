@@ -18,12 +18,16 @@ namespace DatabaseWebService.Controllers
     {
         private ITenderRepository tenderRepo;
         private IMSSQLFunctionsRepository sqlFunctionRepo;
+        private ISystemMessageEventsRepository_OTP messageEventsRepo;
+        private IEmployeeOTPRepository employeeRepo;
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
-        public TenderController(ITenderRepository itenderRepo, IMSSQLFunctionsRepository isqlFunctionRepo)
+        public TenderController(ITenderRepository itenderRepo, IMSSQLFunctionsRepository isqlFunctionRepo, ISystemMessageEventsRepository_OTP imessageEventsRepo, IEmployeeOTPRepository empRepo)
         {
             tenderRepo = itenderRepo;
             sqlFunctionRepo = isqlFunctionRepo;
+            messageEventsRepo = imessageEventsRepo;
+            employeeRepo = empRepo;
         }
 
         public WebResponseContentModel<T> ProcessContentModel<T>(WebResponseContentModel<T> model, Exception ex = null)
@@ -151,13 +155,16 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetTenderListByRouteID(int routeID)
+        public IHttpActionResult GetTenderListByRouteIDandZbirnikTon(int routeID, int ZbirnikTonID)
         {
             WebResponseContentModel<List<TenderPositionModel>> tmpUser = new WebResponseContentModel<List<TenderPositionModel>>();
             Del<List<TenderPositionModel>> responseStatusHandler = ProcessContentModel;
             try
             {
-                tmpUser.Content = tenderRepo.GetTenderListByRouteID(routeID);
+                // preverimo če obstaja za to pozicijo in toažo kaki razpisi, če ne obstajajo vrnemo samo za to relacijo (24t)
+                List<TenderPositionModel> lTenderPos = tenderRepo.GetTenderListByRouteIDAndTonsID(routeID, ZbirnikTonID, true);
+                tmpUser.Content = lTenderPos.Count>0 ? lTenderPos : tenderRepo.GetTenderListByRouteID(routeID); ;
+
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)
@@ -426,6 +433,26 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(int routeID, int ZbirnikTonID)
+        {
+            WebResponseContentModel<decimal> tmpUser = new WebResponseContentModel<decimal>();
+            Del<decimal> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                decimal dPriceFromTender = tenderRepo.GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeID, ZbirnikTonID);
+                tmpUser.Content = dPriceFromTender == 0 ? tenderRepo.GetLowestAndMostRecentPriceByRouteID(routeID) : dPriceFromTender;
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
         public IHttpActionResult GetTenderListByRouteIDAndRecallID(int routeID, int recallID)
         {
             WebResponseContentModel<List<TenderPositionModel>> tmpUser = new WebResponseContentModel<List<TenderPositionModel>>();
@@ -481,6 +508,84 @@ namespace DatabaseWebService.Controllers
             }
 
             return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAllTons()
+        {
+            WebResponseContentModel<List<TonsModel>> tmpUser = new WebResponseContentModel<List<TonsModel>>();
+            Del<List<TonsModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = tenderRepo.GetAllTons();
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpPost]
+        public IHttpActionResult PrepareDataForTenderTransport([FromBody] object hlpTenderTransporterSelection)
+        {
+            WebResponseContentModel<hlpTenderTransporterSelection> model = null;
+
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<hlpTenderTransporterSelection>>(hlpTenderTransporterSelection.ToString());
+                if (model.Content != null)
+                {
+                    model.Content = tenderRepo.PrepareDataForTenderTransport(model.Content);
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
+        }
+
+        [HttpPost]
+        public IHttpActionResult SendTenderToTransportersEmails([FromBody] object hlpTenderCreateExcellData)
+        {
+            WebResponseContentModel<hlpTenderCreateExcellData> model = null;
+
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<hlpTenderCreateExcellData>>(hlpTenderCreateExcellData.ToString());
+                if (model.Content != null)
+                {
+                    var employee = employeeRepo.GetEmployeeByID(model.Content._TenderModel.tsIDOseba);
+                    messageEventsRepo.SendTenderToTransportersEmails(model.Content, employee);
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
         }
     }
 }

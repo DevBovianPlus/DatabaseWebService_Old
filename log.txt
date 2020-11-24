@@ -3671,3 +3671,614 @@ Parameter name: source
 3. 11. 2020 15:21:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
 5. 11. 2020 09:07:05 GetListOfOrderNumber10
 5. 11. 2020 09:07:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 11. 2020 15:54:54 GetListOfOrderNumber10
+11. 11. 2020 10:40:12 GetListOfOrderNumber10
+11. 11. 2020 10:41:09 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 11. 2020 10:56:26 GetListOfOrderNumber10
+11. 11. 2020 10:56:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 11. 2020 11:11:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 11. 2020 11:11:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+11. 11. 2020 11:11:21 SaveRecall2 : V_ODOBRITEV
+11. 11. 2020 11:11:21 D:\GitHub\DatabaseWebService\
+11. 11. 2020 11:11:22 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+11. 11. 2020 14:40:44 Start - Controler
+11. 11. 2020 14:40:44 Start - SaveTender
+11. 11. 2020 14:40:45 Start - SaveTender
+11. 11. 2020 14:40:45 11. 11. 2020 14:40:45
+11. 11. 2020 14:40:45 11. 11. 2020 14:40:45
+11. 11. 2020 14:49:58 Start - Controler
+11. 11. 2020 14:49:58 Start - SaveTender
+11. 11. 2020 14:49:58 Start - SaveTender
+11. 11. 2020 14:49:58 11. 11. 2020 14:49:58
+11. 11. 2020 14:49:58 11. 11. 2020 14:49:58
+11. 11. 2020 14:50:40 Start - Controler
+11. 11. 2020 14:50:40 Start - SaveTender
+11. 11. 2020 14:52:38 Start - Controler
+11. 11. 2020 14:52:38 Start - SaveTender
+11. 11. 2020 14:52:38 Start - SaveTender
+11. 11. 2020 14:52:38 11. 11. 2020 14:52:38
+11. 11. 2020 14:52:38 11. 11. 2020 14:52:38
+11. 11. 2020 14:55:13 Start - Controler
+11. 11. 2020 14:55:13 Start - SaveTender
+11. 11. 2020 14:59:22 Start - Controler
+11. 11. 2020 14:59:22 Start - SaveTender
+11. 11. 2020 14:59:22 Start - SaveTender
+11. 11. 2020 14:59:22 11. 11. 2020 14:59:22
+11. 11. 2020 14:59:22 11. 11. 2020 14:59:22
+11. 11. 2020 14:59:33 Start - Controler
+11. 11. 2020 14:59:33 Start - SaveTender
+11. 11. 2020 15:46:08 Start - Controler
+11. 11. 2020 15:46:08 Start - SaveTender
+11. 11. 2020 15:46:09 Start - SaveTender
+11. 11. 2020 15:46:09 11. 11. 2020 15:46:09
+11. 11. 2020 15:46:09 11. 11. 2020 15:46:09
+11. 11. 2020 15:46:40 Start - Controler
+11. 11. 2020 15:46:40 Start - SaveTender
+11. 11. 2020 16:16:38 Start - Controler
+11. 11. 2020 16:16:38 Start - SaveTender
+11. 11. 2020 16:17:07 Start - SaveTender
+11. 11. 2020 16:17:43 11. 11. 2020 16:17:43
+11. 11. 2020 16:17:43 11. 11. 2020 16:17:43
+11. 11. 2020 16:18:19 Start - Controler
+11. 11. 2020 16:18:20 Start - SaveTender
+11. 11. 2020 16:21:50 Start - Controler
+11. 11. 2020 16:21:50 Start - SaveTender
+11. 11. 2020 16:21:52 Start - SaveTender
+11. 11. 2020 16:21:52 11. 11. 2020 16:21:52
+11. 11. 2020 16:21:52 11. 11. 2020 16:21:52
+11. 11. 2020 16:22:05 Start - Controler
+11. 11. 2020 16:22:05 Start - SaveTender
+11. 11. 2020 16:42:56 Start - Controler
+11. 11. 2020 16:42:56 Start - SaveTender
+11. 11. 2020 16:42:57 Start - SaveTender
+11. 11. 2020 16:42:57 11. 11. 2020 16:42:57
+11. 11. 2020 16:42:57 11. 11. 2020 16:42:57
+11. 11. 2020 16:43:13 Start - Controler
+11. 11. 2020 16:43:13 Start - SaveTender
+11. 11. 2020 16:55:55 Start - Controler
+11. 11. 2020 16:55:55 Start - SaveTender
+11. 11. 2020 16:55:56 Start - SaveTender
+11. 11. 2020 16:55:56 11. 11. 2020 16:55:56
+11. 11. 2020 16:55:56 11. 11. 2020 16:55:56
+11. 11. 2020 16:56:24 Start - Controler
+11. 11. 2020 16:56:24 Start - SaveTender
+11. 11. 2020 17:03:43 Start - Controler
+11. 11. 2020 17:03:43 Start - SaveTender
+11. 11. 2020 17:06:28 Start - SaveTender
+11. 11. 2020 17:06:28 11. 11. 2020 17:06:28
+11. 11. 2020 17:06:28 11. 11. 2020 17:06:28
+11. 11. 2020 17:06:41 Start - Controler
+11. 11. 2020 17:06:41 Start - SaveTender
+11. 11. 2020 17:08:55 Start - Controler
+11. 11. 2020 17:08:55 Start - SaveTender
+11. 11. 2020 17:08:58 Start - SaveTender
+11. 11. 2020 17:08:59 11. 11. 2020 17:08:59
+11. 11. 2020 17:08:59 11. 11. 2020 17:08:59
+11. 11. 2020 17:09:04 Start - Controler
+11. 11. 2020 17:09:04 Start - SaveTender
+11. 11. 2020 19:14:49 Start - Controler
+11. 11. 2020 19:14:49 Start - SaveTender
+11. 11. 2020 19:14:50 Start - SaveTender
+11. 11. 2020 19:14:50 11. 11. 2020 19:14:50
+11. 11. 2020 19:14:50 11. 11. 2020 19:14:50
+11. 11. 2020 19:14:56 Start - Controler
+11. 11. 2020 19:14:56 Start - SaveTender
+12. 11. 2020 10:23:52 Start - Controler
+12. 11. 2020 10:23:52 Start - SaveTender
+12. 11. 2020 10:23:52 Start - SaveTender
+12. 11. 2020 10:23:52 12. 11. 2020 10:23:52
+12. 11. 2020 10:23:52 12. 11. 2020 10:23:52
+12. 11. 2020 10:23:57 Start - Controler
+12. 11. 2020 10:23:57 Start - SaveTender
+12. 11. 2020 10:29:36 Start - Controler
+12. 11. 2020 10:29:36 Start - SaveTender
+12. 11. 2020 10:29:40 Start - SaveTender
+12. 11. 2020 10:29:41 12. 11. 2020 10:29:41
+12. 11. 2020 10:29:41 12. 11. 2020 10:29:41
+12. 11. 2020 10:32:36 Start - Controler
+12. 11. 2020 10:32:36 Start - SaveTender
+12. 11. 2020 10:32:36 Start - SaveTender
+12. 11. 2020 10:32:37 12. 11. 2020 10:32:37
+12. 11. 2020 10:32:37 12. 11. 2020 10:32:37
+12. 11. 2020 10:34:32 Start - Controler
+12. 11. 2020 10:34:32 Start - SaveTender
+12. 11. 2020 10:34:37 Start - SaveTender
+12. 11. 2020 10:34:38 12. 11. 2020 10:34:38
+12. 11. 2020 10:34:38 12. 11. 2020 10:34:38
+12. 11. 2020 10:40:38 Start - Controler
+12. 11. 2020 10:40:39 Start - SaveTender
+12. 11. 2020 10:40:39 Start - SaveTender
+12. 11. 2020 10:40:39 12. 11. 2020 10:40:39
+12. 11. 2020 10:40:39 12. 11. 2020 10:40:39
+12. 11. 2020 10:41:19 Start - Controler
+12. 11. 2020 10:41:19 Start - SaveTender
+13. 11. 2020 15:18:22 GetListOfOrderNumber10
+13. 11. 2020 18:11:12 GetListOfOrderNumber10
+13. 11. 2020 18:11:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+13. 11. 2020 18:29:02 GetListOfOrderNumber10
+13. 11. 2020 18:29:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+14. 11. 2020 01:35:34 GetListOfOrderNumber10
+14. 11. 2020 01:35:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+15. 11. 2020 17:27:38 Start - Controler
+15. 11. 2020 17:27:38 Start - SaveTender
+15. 11. 2020 17:27:55 Start - SaveTender
+15. 11. 2020 17:27:55 15. 11. 2020 17:27:55
+15. 11. 2020 17:27:55 15. 11. 2020 17:27:55
+15. 11. 2020 17:29:49 Start - Controler
+15. 11. 2020 17:29:49 Start - SaveTender
+15. 11. 2020 17:29:54 Start - SaveTender
+15. 11. 2020 17:29:54 15. 11. 2020 17:29:54
+15. 11. 2020 17:29:54 15. 11. 2020 17:29:54
+15. 11. 2020 17:31:09 Start - Controler
+15. 11. 2020 17:31:09 Start - SaveTender
+15. 11. 2020 17:31:44 Start - SaveTender
+15. 11. 2020 17:31:44 15. 11. 2020 17:31:44
+15. 11. 2020 17:31:44 15. 11. 2020 17:31:44
+15. 11. 2020 17:31:47 Start - Controler
+15. 11. 2020 17:31:47 Start - SaveTender
+15. 11. 2020 17:50:46 Start - Controler
+15. 11. 2020 17:50:46 Start - SaveTender
+15. 11. 2020 17:50:53 Start - SaveTender
+15. 11. 2020 17:50:53 15. 11. 2020 17:50:53
+15. 11. 2020 17:50:54 15. 11. 2020 17:50:54
+15. 11. 2020 17:50:56 Start - Controler
+15. 11. 2020 17:50:56 Start - SaveTender
+15. 11. 2020 18:28:21 Start - Controler
+15. 11. 2020 18:28:21 Start - SaveTender
+15. 11. 2020 18:28:21 Start - SaveTender
+15. 11. 2020 18:28:21 15. 11. 2020 18:28:21
+15. 11. 2020 18:28:21 15. 11. 2020 18:28:21
+15. 11. 2020 18:28:26 Start - Controler
+15. 11. 2020 18:28:26 Start - SaveTender
+15. 11. 2020 18:41:50 Start - Controler
+15. 11. 2020 18:41:50 Start - SaveTender
+15. 11. 2020 18:41:50 Start - SaveTender
+15. 11. 2020 18:41:50 15. 11. 2020 18:41:50
+15. 11. 2020 18:41:50 15. 11. 2020 18:41:50
+15. 11. 2020 18:41:54 Start - Controler
+15. 11. 2020 18:41:54 Start - SaveTender
+15. 11. 2020 19:22:17 Start - Controler
+15. 11. 2020 19:22:17 Start - SaveTender
+15. 11. 2020 19:22:17 Start - SaveTender
+15. 11. 2020 19:22:17 15. 11. 2020 19:22:17
+15. 11. 2020 19:22:18 15. 11. 2020 19:22:18
+15. 11. 2020 19:24:32 Start - Controler
+15. 11. 2020 19:24:32 Start - SaveTender
+15. 11. 2020 19:24:32 Start - SaveTender
+15. 11. 2020 19:24:32 15. 11. 2020 19:24:32
+15. 11. 2020 19:24:32 15. 11. 2020 19:24:32
+15. 11. 2020 19:25:53 Start - Controler
+15. 11. 2020 19:25:53 Start - SaveTender
+15. 11. 2020 19:25:53 Start - SaveTender
+15. 11. 2020 19:25:53 15. 11. 2020 19:25:53
+15. 11. 2020 19:25:53 15. 11. 2020 19:25:53
+15. 11. 2020 19:30:21 Start - Controler
+15. 11. 2020 19:30:21 Start - SaveTender
+15. 11. 2020 19:30:21 Start - SaveTender
+15. 11. 2020 19:30:22 15. 11. 2020 19:30:22
+15. 11. 2020 19:30:22 15. 11. 2020 19:30:22
+15. 11. 2020 19:30:30 Start - Controler
+15. 11. 2020 19:30:30 Start - SaveTender
+15. 11. 2020 19:41:47 Start - Controler
+15. 11. 2020 19:41:47 Start - SaveTender
+15. 11. 2020 19:41:47 Start - SaveTender
+15. 11. 2020 19:41:47 15. 11. 2020 19:41:47
+15. 11. 2020 19:41:47 15. 11. 2020 19:41:47
+15. 11. 2020 19:42:02 Start - Controler
+15. 11. 2020 19:42:02 Start - SaveTender
+15. 11. 2020 19:45:51 Start - Controler
+15. 11. 2020 19:45:51 Start - SaveTender
+15. 11. 2020 19:45:54 Start - SaveTender
+15. 11. 2020 19:45:54 15. 11. 2020 19:45:54
+15. 11. 2020 19:46:03 15. 11. 2020 19:46:03
+15. 11. 2020 19:46:27 Start - Controler
+15. 11. 2020 19:46:27 Start - SaveTender
+16. 11. 2020 21:05:49 Start - Controler
+16. 11. 2020 21:05:49 Start - SaveTender
+16. 11. 2020 21:05:50 Start - SaveTender
+16. 11. 2020 21:05:50 16. 11. 2020 21:05:50
+16. 11. 2020 21:05:50 16. 11. 2020 21:05:50
+16. 11. 2020 21:05:58 Start - Controler
+16. 11. 2020 21:05:58 Start - SaveTender
+16. 11. 2020 21:11:26 Start - Controler
+16. 11. 2020 21:11:26 Start - SaveTender
+16. 11. 2020 21:11:27 Start - SaveTender
+16. 11. 2020 21:11:27 16. 11. 2020 21:11:27
+16. 11. 2020 21:11:27 16. 11. 2020 21:11:27
+16. 11. 2020 21:11:31 Start - Controler
+16. 11. 2020 21:11:31 Start - SaveTender
+16. 11. 2020 21:19:12 Start - Controler
+16. 11. 2020 21:19:12 Start - SaveTender
+16. 11. 2020 21:19:15 Start - SaveTender
+16. 11. 2020 21:19:15 16. 11. 2020 21:19:15
+16. 11. 2020 21:19:15 16. 11. 2020 21:19:15
+16. 11. 2020 21:19:22 Start - Controler
+16. 11. 2020 21:19:22 Start - SaveTender
+16. 11. 2020 21:25:17 Start - Controler
+16. 11. 2020 21:25:17 Start - SaveTender
+16. 11. 2020 21:25:20 Start - SaveTender
+16. 11. 2020 21:25:20 16. 11. 2020 21:25:20
+16. 11. 2020 21:25:20 16. 11. 2020 21:25:20
+16. 11. 2020 21:25:24 Start - Controler
+16. 11. 2020 21:25:24 Start - SaveTender
+16. 11. 2020 21:30:45 Start - Controler
+16. 11. 2020 21:30:45 Start - SaveTender
+16. 11. 2020 21:30:45 Start - SaveTender
+16. 11. 2020 21:30:45 16. 11. 2020 21:30:45
+16. 11. 2020 21:30:45 16. 11. 2020 21:30:45
+16. 11. 2020 21:30:50 Start - Controler
+16. 11. 2020 21:30:51 Start - SaveTender
+16. 11. 2020 21:45:14 Start - Controler
+16. 11. 2020 21:45:14 Start - SaveTender
+16. 11. 2020 21:45:16 Start - SaveTender
+16. 11. 2020 21:45:17 16. 11. 2020 21:45:17
+16. 11. 2020 21:45:17 16. 11. 2020 21:45:17
+16. 11. 2020 21:46:11 Start - Controler
+16. 11. 2020 21:46:11 Start - SaveTender
+16. 11. 2020 21:46:16 Start - SaveTender
+16. 11. 2020 21:46:16 16. 11. 2020 21:46:16
+16. 11. 2020 21:46:16 16. 11. 2020 21:46:16
+16. 11. 2020 21:57:02 Start - Controler
+16. 11. 2020 21:57:02 Start - SaveTender
+16. 11. 2020 21:57:04 Start - SaveTender
+16. 11. 2020 21:57:04 16. 11. 2020 21:57:04
+16. 11. 2020 21:57:04 16. 11. 2020 21:57:04
+16. 11. 2020 22:01:22 Start - Controler
+16. 11. 2020 22:01:22 Start - SaveTender
+16. 11. 2020 22:07:31 Start - Controler
+16. 11. 2020 22:07:31 Start - SaveTender
+16. 11. 2020 22:07:32 Start - SaveTender
+16. 11. 2020 22:07:32 16. 11. 2020 22:07:32
+16. 11. 2020 22:07:33 16. 11. 2020 22:07:33
+16. 11. 2020 22:07:45 Start - Controler
+16. 11. 2020 22:07:45 Start - SaveTender
+16. 11. 2020 22:10:46 Start - Controler
+16. 11. 2020 22:10:46 Start - SaveTender
+16. 11. 2020 22:10:47 Start - SaveTender
+16. 11. 2020 22:10:47 16. 11. 2020 22:10:47
+16. 11. 2020 22:10:47 16. 11. 2020 22:10:47
+16. 11. 2020 22:11:16 Start - Controler
+16. 11. 2020 22:11:16 Start - SaveTender
+16. 11. 2020 22:16:39 Start - Controler
+16. 11. 2020 22:16:39 Start - SaveTender
+16. 11. 2020 22:16:40 Start - SaveTender
+16. 11. 2020 22:16:40 16. 11. 2020 22:16:40
+16. 11. 2020 22:16:40 16. 11. 2020 22:16:40
+16. 11. 2020 22:16:54 Start - Controler
+16. 11. 2020 22:16:54 Start - SaveTender
+16. 11. 2020 22:39:47 Start - Controler
+16. 11. 2020 22:39:47 Start - SaveTender
+16. 11. 2020 22:39:50 Start - SaveTender
+16. 11. 2020 22:39:50 16. 11. 2020 22:39:50
+16. 11. 2020 22:39:50 16. 11. 2020 22:39:50
+16. 11. 2020 22:40:32 Start - Controler
+16. 11. 2020 22:40:32 Start - SaveTender
+16. 11. 2020 22:54:22 Start - Controler
+16. 11. 2020 22:54:22 Start - SaveTender
+16. 11. 2020 22:54:24 Start - SaveTender
+16. 11. 2020 22:54:24 16. 11. 2020 22:54:24
+16. 11. 2020 22:54:24 16. 11. 2020 22:54:24
+16. 11. 2020 22:54:57 Start - Controler
+16. 11. 2020 22:54:57 Start - SaveTender
+16. 11. 2020 22:58:44 Start - Controler
+16. 11. 2020 22:58:44 Start - SaveTender
+16. 11. 2020 22:58:45 Start - SaveTender
+16. 11. 2020 22:58:45 16. 11. 2020 22:58:45
+16. 11. 2020 22:58:45 16. 11. 2020 22:58:45
+16. 11. 2020 22:59:05 Start - Controler
+16. 11. 2020 22:59:05 Start - SaveTender
+16. 11. 2020 23:06:13 Start - Controler
+16. 11. 2020 23:06:13 Start - SaveTender
+16. 11. 2020 23:06:17 Start - SaveTender
+16. 11. 2020 23:06:17 16. 11. 2020 23:06:17
+16. 11. 2020 23:06:17 16. 11. 2020 23:06:17
+16. 11. 2020 23:06:33 Start - Controler
+16. 11. 2020 23:06:33 Start - SaveTender
+16. 11. 2020 23:10:15 Start - Controler
+16. 11. 2020 23:10:15 Start - SaveTender
+16. 11. 2020 23:10:23 Start - SaveTender
+16. 11. 2020 23:10:23 16. 11. 2020 23:10:23
+16. 11. 2020 23:10:23 16. 11. 2020 23:10:23
+16. 11. 2020 23:10:34 Start - Controler
+16. 11. 2020 23:10:34 Start - SaveTender
+16. 11. 2020 23:56:24 Start - SaveTender
+16. 11. 2020 23:56:25 16. 11. 2020 23:56:25
+16. 11. 2020 23:56:25 16. 11. 2020 23:56:25
+16. 11. 2020 23:59:51 Start - SaveTender
+16. 11. 2020 23:59:51 16. 11. 2020 23:59:51
+16. 11. 2020 23:59:52 16. 11. 2020 23:59:52
+17. 11. 2020 00:15:30 GetListOfOrderNumber10
+17. 11. 2020 00:15:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 13:51:36 GetListOfOrderNumber10
+18. 11. 2020 14:11:04 GetListOfOrderNumber10
+18. 11. 2020 14:11:16 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 14:13:03 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+18. 11. 2020 14:13:03 SaveRecall2 : (model.Content.OdpoklicID) :0
+18. 11. 2020 14:13:31 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+18. 11. 2020 14:13:31 SaveRecall2 : (model.Content.OdpoklicID) :0
+18. 11. 2020 14:33:16 GetListOfOrderNumber10
+18. 11. 2020 14:34:02 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:16:56 GetListOfOrderNumber10
+18. 11. 2020 15:17:02 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:21:10 GetListOfOrderNumber10
+18. 11. 2020 15:21:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:35:35 GetListOfOrderNumber10
+18. 11. 2020 15:35:43 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:37:52 GetListOfOrderNumber10
+18. 11. 2020 15:38:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:38:41 GetListOfOrderNumber10
+18. 11. 2020 15:38:47 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:40:25 GetListOfOrderNumber10
+18. 11. 2020 15:40:40 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:42:57 GetListOfOrderNumber10
+18. 11. 2020 15:43:24 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:48:23 GetListOfOrderNumber10
+18. 11. 2020 15:48:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 15:52:12 GetListOfOrderNumber10
+18. 11. 2020 15:52:19 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 16:02:42 GetListOfOrderNumber10
+18. 11. 2020 16:02:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 16:05:49 GetListOfOrderNumber10
+18. 11. 2020 16:05:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 16:45:23 GetListOfOrderNumber10
+18. 11. 2020 16:45:35 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+18. 11. 2020 20:55:11 GetListOfOrderNumber10
+18. 11. 2020 20:55:16 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+18. 11. 2020 20:56:01 Start - Controler
+18. 11. 2020 20:56:01 Start - SaveTender
+18. 11. 2020 20:56:01 Start - SaveTender
+18. 11. 2020 20:56:01 18. 11. 2020 20:56:01
+18. 11. 2020 20:56:01 18. 11. 2020 20:56:01
+18. 11. 2020 20:56:12 Start - Controler
+18. 11. 2020 20:56:12 Start - SaveTender
+18. 11. 2020 21:11:26 Start - SaveTender
+18. 11. 2020 21:11:26 18. 11. 2020 21:11:26
+18. 11. 2020 21:11:27 18. 11. 2020 21:11:27
+18. 11. 2020 21:11:36 GetListOfOrderNumber10
+18. 11. 2020 21:11:41 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+18. 11. 2020 21:12:59 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+18. 11. 2020 21:12:59 SaveRecall2 : (model.Content.OdpoklicID) :0
+18. 11. 2020 21:13:00 SaveRecall3 : RAZPIS_PREVOZNIK
+18. 11. 2020 21:13:00 D:\GitHub\DatabaseWebService\
+18. 11. 2020 21:25:41 GetListOfOrderNumber10
+18. 11. 2020 21:25:49 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+18. 11. 2020 21:30:38 GetListOfOrderNumber10
+18. 11. 2020 21:30:47 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+18. 11. 2020 21:32:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+18. 11. 2020 21:32:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+18. 11. 2020 21:36:23 GetListOfOrderNumber10
+18. 11. 2020 21:36:27 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+19. 11. 2020 10:17:20 GetListOfOrderNumber10
+19. 11. 2020 10:17:37 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+19. 11. 2020 10:17:44 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+19. 11. 2020 10:18:37 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 10:18:38 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 10:20:58 GetListOfOrderNumber10
+19. 11. 2020 10:22:31 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+19. 11. 2020 10:23:08 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 10:23:08 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 10:23:19 GetListOfOrderNumber10
+19. 11. 2020 10:23:23 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+19. 11. 2020 10:23:50 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 10:23:50 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 14:45:09 Start - Controler
+19. 11. 2020 14:45:09 Start - SaveTender
+19. 11. 2020 14:45:10 Start - SaveTender
+19. 11. 2020 14:45:10 19. 11. 2020 14:45:10
+19. 11. 2020 14:45:10 19. 11. 2020 14:45:10
+19. 11. 2020 14:45:25 Start - Controler
+19. 11. 2020 14:45:25 Start - SaveTender
+19. 11. 2020 14:53:41 Start - SaveTender
+19. 11. 2020 14:53:41 19. 11. 2020 14:53:41
+19. 11. 2020 14:53:42 19. 11. 2020 14:53:42
+19. 11. 2020 14:57:04 GetListOfOrderNumber10
+19. 11. 2020 14:57:15 GetListOfOrderNumber10
+19. 11. 2020 14:57:22 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+19. 11. 2020 14:59:42 Start - Controler
+19. 11. 2020 14:59:42 Start - SaveTender
+19. 11. 2020 14:59:42 Start - SaveTender
+19. 11. 2020 14:59:42 19. 11. 2020 14:59:42
+19. 11. 2020 14:59:42 19. 11. 2020 14:59:42
+19. 11. 2020 14:59:47 Start - Controler
+19. 11. 2020 14:59:47 Start - SaveTender
+19. 11. 2020 15:06:44 Start - SaveTender
+19. 11. 2020 15:06:44 19. 11. 2020 15:06:44
+19. 11. 2020 15:06:44 19. 11. 2020 15:06:44
+19. 11. 2020 15:06:52 GetListOfOrderNumber10
+19. 11. 2020 15:06:57 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+19. 11. 2020 15:07:00 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 11. 2020 15:07:46 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:07:46 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:07:54 GetListOfOrderNumber10
+19. 11. 2020 15:07:59 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 11. 2020 15:09:03 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:09:03 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:09:16 GetListOfOrderNumber10
+19. 11. 2020 15:09:20 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 11. 2020 15:10:11 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:10:11 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:10:14 GetListOfOrderNumber10
+19. 11. 2020 15:10:30 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+19. 11. 2020 15:18:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:18:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:18:28 SaveRecall2 : V_ODOBRITEV
+19. 11. 2020 15:18:28 D:\GitHub\DatabaseWebService\
+19. 11. 2020 15:18:28 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+19. 11. 2020 15:18:43 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:18:43 SaveRecall1 : (model.Content.OdpoklicID) :4930
+19. 11. 2020 15:18:47 GetListOfOrderNumber10
+19. 11. 2020 15:18:51 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+19. 11. 2020 15:19:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:19:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:19:50 GetListOfOrderNumber10
+19. 11. 2020 15:20:07 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 11. 2020 15:20:37 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:20:37 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:20:52 GetListOfOrderNumber10
+19. 11. 2020 15:20:57 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 11. 2020 15:21:02 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+19. 11. 2020 15:21:07 GetListOfOpenedOrderPositions for : BRANCHER                      
+19. 11. 2020 15:21:51 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:21:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:22:06 GetListOfOrderNumber10
+19. 11. 2020 15:22:37 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+19. 11. 2020 15:23:10 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:23:10 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 15:27:50 GetListOfOrderNumber10
+19. 11. 2020 15:28:02 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+19. 11. 2020 15:29:45 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 11. 2020 15:29:45 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 11. 2020 21:26:28 GetListOfOrderNumber10
+19. 11. 2020 21:26:36 GetListOfOpenedOrderPositions for : BO STORA ENSO OULU OY         
+19. 11. 2020 21:26:41 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+19. 11. 2020 21:26:47 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+19. 11. 2020 21:29:14 Start - Controler
+19. 11. 2020 21:29:14 Start - SaveTender
+19. 11. 2020 21:29:17 Start - SaveTender
+19. 11. 2020 21:29:22 19. 11. 2020 21:29:22
+19. 11. 2020 21:29:22 19. 11. 2020 21:29:22
+19. 11. 2020 21:29:35 Start - Controler
+19. 11. 2020 21:29:35 Start - SaveTender
+19. 11. 2020 21:43:27 Start - Controler
+19. 11. 2020 21:43:27 Start - SaveTender
+19. 11. 2020 21:43:27 Start - SaveTender
+19. 11. 2020 21:43:27 19. 11. 2020 21:43:27
+19. 11. 2020 21:43:27 19. 11. 2020 21:43:27
+19. 11. 2020 21:44:50 Start - Controler
+19. 11. 2020 21:44:50 Start - SaveTender
+19. 11. 2020 21:52:31 Start - SaveTender
+19. 11. 2020 21:52:31 19. 11. 2020 21:52:31
+19. 11. 2020 21:52:32 19. 11. 2020 21:52:32
+19. 11. 2020 21:53:41 Start - Controler
+19. 11. 2020 21:53:41 Start - SaveTender
+19. 11. 2020 21:53:41 Start - SaveTender
+19. 11. 2020 21:53:41 19. 11. 2020 21:53:41
+19. 11. 2020 21:53:41 19. 11. 2020 21:53:41
+19. 11. 2020 21:53:48 Start - Controler
+19. 11. 2020 21:53:48 Start - SaveTender
+19. 11. 2020 21:59:55 Start - SaveTender
+19. 11. 2020 21:59:55 19. 11. 2020 21:59:55
+19. 11. 2020 21:59:55 19. 11. 2020 21:59:55
+19. 11. 2020 23:24:54 GetListOfOrderNumber10
+20. 11. 2020 08:14:48 GetListOfOrderNumber10
+20. 11. 2020 08:15:11 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+20. 11. 2020 08:15:36 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.
+20. 11. 2020 08:15:44 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 08:15:44 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 11. 2020 08:38:24 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.
+20. 11. 2020 08:39:25 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 08:39:25 SaveRecall1 : (model.Content.OdpoklicID) :4936
+20. 11. 2020 08:41:38 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.
+20. 11. 2020 08:42:23 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.
+20. 11. 2020 08:42:31 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 08:42:31 SaveRecall1 : (model.Content.OdpoklicID) :4936
+20. 11. 2020 08:56:51 GetListOfOrderNumber10
+20. 11. 2020 08:56:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 11. 2020 08:57:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 08:58:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 08:58:15 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 11. 2020 09:16:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 09:16:39 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 09:16:39 SaveRecall1 : (model.Content.OdpoklicID) :4937
+20. 11. 2020 09:21:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 09:21:11 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 09:21:11 SaveRecall1 : (model.Content.OdpoklicID) :4937
+20. 11. 2020 09:22:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 09:23:09 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 09:23:09 SaveRecall1 : (model.Content.OdpoklicID) :4937
+20. 11. 2020 09:25:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 09:25:24 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 09:25:24 SaveRecall1 : (model.Content.OdpoklicID) :4937
+20. 11. 2020 09:25:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+20. 11. 2020 09:25:56 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 09:25:56 SaveRecall1 : (model.Content.OdpoklicID) :4937
+20. 11. 2020 09:53:19 GetListOfOrderNumber10
+20. 11. 2020 09:57:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20. 11. 2020 10:18:55 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 10:18:55 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 11. 2020 10:18:56 SaveRecall3 : RAZPIS_PREVOZNIK
+20. 11. 2020 10:18:56 D:\GitHub\DatabaseWebService\
+20. 11. 2020 10:24:18 GetListOfOrderNumber10
+20. 11. 2020 10:24:40 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+20. 11. 2020 10:26:51 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20. 11. 2020 10:26:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+20. 11. 2020 10:28:04 SaveRecall3 : RAZPIS_PREVOZNIK
+20. 11. 2020 10:36:28 D:\GitHub\DatabaseWebService\
+20. 11. 2020 10:44:33 Start - Controler
+20. 11. 2020 10:44:33 Start - SaveTender
+20. 11. 2020 10:44:33 Start - SaveTender
+20. 11. 2020 10:44:33 20. 11. 2020 10:44:33
+20. 11. 2020 10:44:33 20. 11. 2020 10:44:33
+20. 11. 2020 10:44:38 Start - Controler
+20. 11. 2020 10:44:38 Start - SaveTender
+20. 11. 2020 13:22:06 Start - Controler
+20. 11. 2020 13:22:06 Start - SaveTender
+20. 11. 2020 13:23:08 Start - SaveTender
+20. 11. 2020 13:23:08 20. 11. 2020 13:23:08
+20. 11. 2020 13:23:08 20. 11. 2020 13:23:08
+20. 11. 2020 13:24:58 Start - Controler
+20. 11. 2020 13:24:58 Start - SaveTender
+21. 11. 2020 02:09:22 Start - Controler
+21. 11. 2020 02:09:22 Start - SaveTender
+21. 11. 2020 02:09:23 Start - SaveTender
+21. 11. 2020 02:09:23 21. 11. 2020 02:09:23
+21. 11. 2020 02:09:23 21. 11. 2020 02:09:23
+21. 11. 2020 02:15:19 Start - Controler
+21. 11. 2020 02:15:19 Start - SaveTender
+21. 11. 2020 02:15:19 Start - SaveTender
+21. 11. 2020 02:15:19 21. 11. 2020 02:15:19
+21. 11. 2020 02:15:19 21. 11. 2020 02:15:19
+21. 11. 2020 02:15:51 Start - SaveTender
+21. 11. 2020 02:15:51 21. 11. 2020 02:15:51
+21. 11. 2020 02:15:51 21. 11. 2020 02:15:51
+21. 11. 2020 02:20:23 Start - Controler
+21. 11. 2020 02:20:23 Start - SaveTender
+21. 11. 2020 02:20:24 Start - SaveTender
+21. 11. 2020 02:20:24 21. 11. 2020 02:20:24
+21. 11. 2020 02:20:24 21. 11. 2020 02:20:24
+21. 11. 2020 02:20:46 Start - SaveTender
+21. 11. 2020 02:20:47 21. 11. 2020 02:20:47
+21. 11. 2020 02:20:47 21. 11. 2020 02:20:47
+23. 11. 2020 21:21:14 Start - Controler
+23. 11. 2020 21:21:14 Start - SaveTender
+23. 11. 2020 21:21:14 Start - SaveTender
+23. 11. 2020 21:21:14 23. 11. 2020 21:21:14
+23. 11. 2020 21:21:14 23. 11. 2020 21:21:14
+23. 11. 2020 21:21:29 Start - SaveTender
+23. 11. 2020 21:21:29 23. 11. 2020 21:21:29
+23. 11. 2020 21:21:29 23. 11. 2020 21:21:29
+23. 11. 2020 21:26:35 Start - Controler
+23. 11. 2020 21:26:35 Start - SaveTender
+23. 11. 2020 21:26:35 Start - SaveTender
+23. 11. 2020 21:26:35 23. 11. 2020 21:26:35
+23. 11. 2020 21:26:35 23. 11. 2020 21:26:35
+23. 11. 2020 21:26:52 Start - SaveTender
+23. 11. 2020 21:26:52 23. 11. 2020 21:26:52
+23. 11. 2020 21:26:52 23. 11. 2020 21:26:52
+23. 11. 2020 21:27:35 D:\GitHub\DatabaseWebService\
+23. 11. 2020 21:32:43 Start - Controler
+23. 11. 2020 21:32:43 Start - SaveTender
+23. 11. 2020 21:32:44 Start - SaveTender
+23. 11. 2020 21:32:44 23. 11. 2020 21:32:44
+23. 11. 2020 21:32:44 23. 11. 2020 21:32:44
+23. 11. 2020 21:33:08 Start - SaveTender
+23. 11. 2020 21:33:08 23. 11. 2020 21:33:08
+23. 11. 2020 21:33:08 23. 11. 2020 21:33:08
+23. 11. 2020 21:33:45 D:\GitHub\DatabaseWebService\
+23. 11. 2020 21:41:42 Start - Controler
+23. 11. 2020 21:41:42 Start - SaveTender
+23. 11. 2020 21:41:44 Start - SaveTender
+23. 11. 2020 21:41:44 23. 11. 2020 21:41:44
+23. 11. 2020 21:41:44 23. 11. 2020 21:41:44
+23. 11. 2020 21:43:36 Start - SaveTender
+23. 11. 2020 21:43:37 23. 11. 2020 21:43:37
+23. 11. 2020 21:43:37 23. 11. 2020 21:43:37
+23. 11. 2020 21:43:55 D:\GitHub\DatabaseWebService\
+24. 11. 2020 14:37:01 Start - Controler
+24. 11. 2020 14:37:01 Start - SaveTender
+24. 11. 2020 14:37:01 Start - SaveTender
+24. 11. 2020 14:37:01 24. 11. 2020 14:37:01
+24. 11. 2020 14:37:01 24. 11. 2020 14:37:01
+24. 11. 2020 14:37:17 Start - SaveTender
+24. 11. 2020 14:37:17 24. 11. 2020 14:37:17
+24. 11. 2020 14:37:17 24. 11. 2020 14:37:17

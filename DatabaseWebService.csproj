@@ -467,6 +467,9 @@
     <Compile Include="DomainOTP\Vloga_OTP.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
+    <Compile Include="DomainOTP\ZbirnikTon.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainPDO\Abstract\IDashboardPDORepository.cs" />
     <Compile Include="DomainPDO\Abstract\IEmployeePDORepository.cs" />
     <Compile Include="DomainPDO\Abstract\IClientPDORepository.cs" />
@@ -723,9 +726,13 @@
     <Compile Include="ModelsOTP\Recall\RecallModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallPositionModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallStatus.cs" />
+    <Compile Include="ModelsOTP\Recall\ZbirnikTezaModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallType.cs" />
     <Compile Include="ModelsOTP\Route\RouteTransporterPricesModel.cs" />
     <Compile Include="ModelsOTP\Route\RouteModel.cs" />
+    <Compile Include="ModelsOTP\Tender\RouteSimpleModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TransporterSimpleModel.cs" />
+    <Compile Include="ModelsOTP\Tender\TonsModel.cs" />
     <Compile Include="ModelsOTP\Tender\TenderFullModel.cs" />
     <Compile Include="ModelsOTP\Tender\TenderModel.cs" />
     <Compile Include="ModelsOTP\Tender\TenderPositionModel.cs" />
@@ -747,6 +754,9 @@
     <Compile Include="ModelsPDO\Settings\PDOEmailModel.cs" />
     <Compile Include="ModelsPDO\Settings\SettingsModel.cs" />
     <Compile Include="ModelsPDO\SupplierMailModel.cs" />
+    <Compile Include="Models\hlpTenderTransporterSelection.cs" />
+    <Compile Include="Models\hlpTenderCreateExcellData.cs" />
+    <Compile Include="Models\hlpViewRoutePricesModel.cs" />
     <Compile Include="Models\AutomaticsModel.cs" />
     <Compile Include="Models\ChartRenderModel.cs" />
     <Compile Include="Models\Client\CategorieModel.cs" />
@@ -789,6 +799,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Common\EmailTemplates\CarrierMailTender.html" />
     <Content Include="Common\EmailTemplates\GrafolitPurchaseDeptNotifyMail.html" />
     <Content Include="Common\EmailTemplates\CarrierCongratsOrBetterLuckNextTimeMail.html" />
     <Content Include="Common\EmailTemplates\AdministratorEmail_Odpoklic.html" />

@@ -65,24 +65,40 @@ namespace DatabaseWebService.Controllers
             return Json(tmpUser);
         }
 
-        [HttpGet]
-        public IHttpActionResult GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        [HttpPost]
+        public IHttpActionResult GetAllRoutesTransportPricesByViewType([FromBody] object helperRPModel)
         {
-            WebResponseContentModel<List<RouteTransporterPricesModel>> tmpUser = new WebResponseContentModel<List<RouteTransporterPricesModel>>();
-            Del<List<RouteTransporterPricesModel>> responseStatusHandler = ProcessContentModel;
+            WebResponseContentModel<hlpViewRoutePricesModel> model = null;
+            
             try
             {
-                tmpUser.Content = routeRepo.GetAllRoutesTransportPricesByViewType(iViewType, iWeightType);
-                responseStatusHandler(tmpUser);
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<hlpViewRoutePricesModel>>(helperRPModel.ToString());
+                if (model.Content != null)
+                { 
+                    model.Content = routeRepo.GetAllRoutesTransportPricesByViewType(model.Content);
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
             }
             catch (Exception ex)
             {
-                responseStatusHandler(tmpUser, ex);
-                return Json(tmpUser);
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
             }
 
-            return Json(tmpUser);
+            return Json(model);
         }
+
+
+       
+
+
+
 
         [HttpGet]
         public IHttpActionResult GetRouteByID(int routeID)

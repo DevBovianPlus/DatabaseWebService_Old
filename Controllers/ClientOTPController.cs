@@ -4,6 +4,7 @@ using DatabaseWebService.Models;
 using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
+using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.Resources;
 using Newtonsoft.Json;
 using System;
@@ -534,6 +535,51 @@ namespace DatabaseWebService.Controllers
 
             return Json(deleteTransportType);
         }
+        #endregion
+
+        #region ClientTransportType
+        [HttpGet]
+        public IHttpActionResult GetAllZbirnikTon()
+        {
+            WebResponseContentModel<List<ZbirnikTonModel>> tmpUser = new WebResponseContentModel<List<ZbirnikTonModel>>();
+            Del<List<ZbirnikTonModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+
+                tmpUser.Content = clientOtpRepo.GetZbirnikTonList();
+
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetZbirnikTezaByID(int transportTypeID)
+        {
+            WebResponseContentModel<ClientTransportType> tmpUser = new WebResponseContentModel<ClientTransportType>();
+            Del<ClientTransportType> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = clientOtpRepo.GetClientTransportTypeByID(transportTypeID);
+
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+       
         #endregion
     }
 }

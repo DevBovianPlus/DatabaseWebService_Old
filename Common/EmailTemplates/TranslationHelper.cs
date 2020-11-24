@@ -82,13 +82,13 @@ namespace DatabaseWebService.Common.EmailTemplates
                     switch (langT)
                     {
                         case Language.ANG:
-                            RetStr = "© 2019 GrafolitOTP System. The content of the message is confidential. A message has been sent to ";
+                            RetStr = "©" + DateTime.Now.Year + " GrafolitOTP System. The content of the message is confidential. A message has been sent to ";
                             break;
                         case Language.HRV:
-                            RetStr = "© 2019 GrafolitOTP sustav. Sadržaj poruke je povjerljiv. Poruka je poslana na naslov ";
+                            RetStr = "©" + DateTime.Now.Year + " GrafolitOTP sustav. Sadržaj poruke je povjerljiv. Poruka je poslana na naslov ";
                             break;
                         case Language.SLO:
-                            RetStr = "©2019 Sistem GrafolitOTP. Vsebina sporočila je zaupna. Sporočilo je bilo poslano na naslov ";
+                            RetStr = "©" + DateTime.Now.Year + " Sistem GrafolitOTP. Vsebina sporočila je zaupna. Sporočilo je bilo poslano na naslov ";
                             break;
                         default:
                             break;
@@ -377,6 +377,70 @@ namespace DatabaseWebService.Common.EmailTemplates
                             break;
                         case Language.SLO:
                             RetStr = "Za stranko: ";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case EmailContentType.POZDRAVPARTNER:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "Dear partner";
+                            break;
+                        case Language.HRV:
+                            RetStr = "Poštovani partner";
+                            break;
+                        case Language.SLO:
+                            RetStr = "Spoštovani partner";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case EmailContentType.BODYCARIERTENDER:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "I am sending you tender in the attachment. Next to the relation, write your price, the prices should not contain characters, so only a number. Enter in the green boxes.Please return the completed table to my address";
+                            break;
+                        case Language.HRV:
+                            RetStr = "Šaljem poziv u privitku. Pored relacije napišite svoju cijenu, cijene ne bi trebale sadržavati znakove, već samo broj. Unesite u zelene okvire. Vratite popunjenu tablicu na moju adresu";
+                            break;
+                        case Language.SLO:
+                            RetStr = "v priponki pošiljam razpis. Poleg relacije dopišite vašo ceno, cene naj ne vsebujejo znakov, torej samo številka. Vpišite v zelena polja. Izpolnjeno tabelo mi prosim vrnite na naslov";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case EmailContentType.PODPISTENDER:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "In anticipation of successful cooperation, we warmly welcome you";
+                            break;
+                        case Language.HRV:
+                            RetStr = "U očekivanju uspješne suradnje, toplo vas pozdravljamo";
+                            break;
+                        case Language.SLO:
+                            RetStr = "V pričakovanju uspešnega sodelovanja, vas lepo pozdravljamo";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case EmailContentType.CARRIRERTENDERMAIL_SUBJECT:
+                    switch (langT)
+                    {
+                        case Language.ANG:
+                            RetStr = "Grafo Lit - Invitation to fill tender file";
+                            break;
+                        case Language.HRV:
+                            RetStr = "Grafo Lit - Poziv za oddaju ponudbe za prevoz";
+                            break;
+                        case Language.SLO:
+                            RetStr = "Grafo Lit - Vabilo k oddaji cene za razpis";
                             break;
                         default:
                             break;

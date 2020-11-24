@@ -23,9 +23,11 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> ts { get; set; }
         public string PotDokumenta { get; set; }
         public Nullable<bool> PrevoznikAktualnaCena { get; set; }
+        public Nullable<int> ZbirnikTonID { get; set; }
     
         public virtual Razpis Razpis { get; set; }
         public virtual Relacija Relacija { get; set; }
         public virtual Stranka_OTP Stranka_OTP { get; set; }
+        public virtual ZbirnikTon ZbirnikTon { get; set; }
     }
 }

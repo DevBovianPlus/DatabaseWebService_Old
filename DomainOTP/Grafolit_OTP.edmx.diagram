@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="64523b28ea1b4dd89fb58733ed447080" Name="Diagram1" ZoomLevel="78">
+      <Diagram DiagramId="64523b28ea1b4dd89fb58733ed447080" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="GrafolitOTPModel.Osebe_OTP" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="GrafolitOTPModel.Vloga_OTP" Width="1.5" PointX="0.75" PointY="2.125" />
         <AssociationConnector Association="GrafolitOTPModel.FK_OSEBE_REFERENCE_VLOGA" />
@@ -28,7 +28,7 @@
         <AssociationConnector Association="GrafolitOTPModel.FK_OsebeNadrejeni_Osebe1" />
         <EntityTypeShape EntityType="GrafolitOTPModel.TipPrevoza" Width="1.5" PointX="7.375" PointY="15" />
         <EntityTypeShape EntityType="GrafolitOTPModel.LastnaZaloga" Width="1.5" PointX="17.875" PointY="5.75" />
-        <EntityTypeShape EntityType="GrafolitOTPModel.Odpoklic" Width="1.5" PointX="12.625" PointY="2.125" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.Odpoklic" Width="1.5" PointX="12.75" PointY="0.5" />
         <AssociationConnector Association="GrafolitOTPModel.FK_LastnaZaloga_Odpoklic" />
         <AssociationConnector Association="GrafolitOTPModel.FK_Odpoklic_StatusOdpoklica" />
         <AssociationConnector Association="GrafolitOTPModel.FK_Relacija_Odpoklic" />
@@ -52,6 +52,9 @@
         <AssociationConnector Association="GrafolitOTPModel.FK_KONTAKTN_REFERENCE_STRANKA" />
         <EntityTypeShape EntityType="GrafolitOTPModel.OdpoklicPozicija" Width="1.5" PointX="14.875" PointY="25.125" />
         <AssociationConnector Association="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.ZbirnikTon" Width="1.5" PointX="0.75" PointY="10.875" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_ZbirnikTonID" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -352,6 +352,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 recall.P_TransportOrderPDFName = model.P_TransportOrderPDFName;
                 recall.P_UnsuccCountCreatePDFPantheon = model.P_UnsuccCountCreatePDFPantheon;
                 recall.P_SendWarningToAmin = model.P_SendWarningToAdmin;
+                recall.ZbirnikTonID = model.ZbrirnikTonID > 0 ? model.ZbrirnikTonID : 10;
 
                 if (recall.OdpoklicID == 0)
                 {

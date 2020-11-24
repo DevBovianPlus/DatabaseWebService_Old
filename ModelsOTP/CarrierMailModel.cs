@@ -18,5 +18,6 @@ namespace DatabaseWebService.ModelsOTP
         public string Podpis1 { get; set; }
         public string Podpis2 { get; set; }
         public string GumbZaPrijavo { get; set; }
+        public string Attachments { get; set; }
     }
 }

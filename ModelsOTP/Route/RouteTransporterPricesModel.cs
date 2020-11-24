@@ -24,6 +24,8 @@ namespace DatabaseWebService.ModelsOTP.Route
         public List<int> DodaneStrankeID { get; set; }
 
         public bool LastniPrevoz { get; set; }
+        public bool IsRoute { get; set; }
+        public int SortIndx { get; set; }
 
     }
 }

@@ -61,6 +61,7 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> P_GetPDFOrderFile { get; set; }
         public Nullable<System.DateTime> DatumRazklada { get; set; }
         public Nullable<int> P_SendWarningToAmin { get; set; }
+        public Nullable<int> ZbirnikTonID { get; set; }
     
         public virtual ICollection<LastnaZaloga> LastnaZaloga { get; set; }
         public virtual StatusOdpoklica StatusOdpoklica { get; set; }
@@ -71,5 +72,6 @@ namespace DatabaseWebService.DomainOTP
         public virtual Stranka_OTP Stranka_OTP { get; set; }
         public virtual Stranka_OTP Stranka_OTP1 { get; set; }
         public virtual ICollection<OdpoklicPozicija> OdpoklicPozicija { get; set; }
+        public virtual ZbirnikTon ZbirnikTon { get; set; }
     }
 }

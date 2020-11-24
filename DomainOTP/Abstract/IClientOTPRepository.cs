@@ -1,6 +1,7 @@
 ﻿using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
+using DatabaseWebService.ModelsOTP.Recall;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         ClientType GetClientTypeByID(int typeID);
         List<ClientType> GetClientTypes();
         List<ClientTransportType> GetClientTransportTypes();
+        List<ZbirnikTonModel> GetZbirnikTonList();
         ClientTransportType GetClientTransportTypeByID(int id);
         int SaveClientTransportType(ClientTransportType model, bool updateRecord = true);
         bool DeleteClientTransportType(int trasportTypeID);

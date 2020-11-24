@@ -3,6 +3,7 @@ using DatabaseWebService.Common.EmailTemplates;
 using DatabaseWebService.Common.Enums;
 using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.Models;
+using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Recall;
@@ -286,7 +287,86 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             string templateString = reader.ReadToEnd();
                             templateString = ReplaceDefaultValuesInTemplate(message, templateString);
 
-                            SaveToSystemEmailMessage(message.Email, templateString, null, 1, message.SubjectText,"", inquirySubmittedByEmployee);
+                            SaveToSystemEmailMessage(message.Email, templateString, null, 1, message.SubjectText, "", inquirySubmittedByEmployee);
+                        }
+                        else
+                        {
+                            throw new Exception("Stranka " + item.NazivPrvi + "nima vpisanega elektrnoskega naslova!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message);
+            }
+        }
+
+        public void CreateEmailForTransporterTender(RecallFullModel recall, EmployeeFullModel inquirySubmittedByEmployee)
+        {
+            StreamReader reader = null;
+            try
+            {
+                //DataTypesHelper.LogThis("*****IN Method ProcessEventMessage*****");
+
+
+                string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["CARRIER_MAIL_TENDER"].ToString()).Replace("\"", "\\");
+                string rootURL = ConfigurationManager.AppSettings["ServerTagCarrierPage"].ToString();
+                DataTypesHelper.LogThis(AppDomain.CurrentDomain.BaseDirectory);
+                string[] split = recall.Prevozniki.Split(';');
+
+                List<Stranka_OTP> carriers = context.Stranka_OTP.Where(s => split.Any(sp => sp.Contains(s.NazivPrvi))).ToList();
+                Relacija route = context.Relacija.Where(r => r.RelacijaID == recall.RelacijaID).FirstOrDefault();
+
+                CarrierMailModel message = null;
+
+                if (carriers != null)
+                {
+                    foreach (var item in carriers)
+                    {
+                        string langStr = (item.JezikID > 0) ? item.Jeziki.Koda : Language.SLO.ToString();
+
+                        if (!String.IsNullOrEmpty(item.Email))//TODO: kaj pa če ima stranka vpisanih več mail-ov
+                        {
+                            int idPrijavaPrevoznika = SavePrijavaPrevoznika(item.idStranka, recall);//shranimo zapise za vse prevoznike v tabelo PrijavaPrevoznika
+
+                            if (recall.OpombaZaPovprasevnjePrevoznikom == null) recall.OpombaZaPovprasevnjePrevoznikom = "";
+
+                            string id = idPrijavaPrevoznika.ToString() + ";" +
+                                recall.CenaPrevoza.ToString("N2") + ";" +
+                                recall.RelacijaID.ToString() + ";" +
+                                route.Naziv.Trim() + ";" +
+                                recall.DatumNaklada.Value.ToString() + ";" +
+                                recall.OpombaZaPovprasevnjePrevoznikom.Trim() + ";" +
+                                item.NazivPrvi + ";" +
+                                recall.OdpoklicStevilka;
+
+                            Language enMLanguage = (Language)(Enum.Parse(typeof(Language), langStr));
+
+                            message = new CarrierMailModel();
+
+
+                            message.SubjectText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERMAIL_SUBJECT);
+                            message.Pozdrav = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.POZDRAV);
+                            message.BodyText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERMAIL_BODY) + recall.OdpoklicStevilka.ToString();
+                            message.AdditionalText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERMAIL_ADDTEXT);
+                            message.ZaVprasanja = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.ZA_VPRASANJA);
+                            message.Podpis1 = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.PODPIS1);
+                            message.Podpis2 = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.PODPIS2);
+                            message.GumbZaPrijavo = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERMAIL_REPORTPRICE);
+
+                            message.CarrierName = item.NazivPrvi;
+                            message.Email = item.Email;
+                            message.CustomCarrierURL = rootURL + "?id=" + DataTypesHelper.Base64Encode(id) + "&lang=" + (item.Jeziki != null ? item.Jeziki.KodaJezik : "sl-SI");//TODO:Generiraj hash z naslednjimi podatki: OdpoklicID, Cena, RelacijaID, RelacijaNaziv, OpombaZaPovprasevnjePrevoznikom, NazivPrevoznika
+
+
+                            reader = new StreamReader(templatePath);
+                            string templateString = reader.ReadToEnd();
+                            templateString = ReplaceDefaultValuesInTemplate(message, templateString);
+
+                            SaveToSystemEmailMessage(message.Email, templateString, null, 1, message.SubjectText, "", inquirySubmittedByEmployee);
+
+                           
                         }
                         else
                         {
@@ -720,5 +800,75 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
             return item.PrijavaPrevoznikaID;
         }
+
+        public void SendTenderToTransportersEmails(hlpTenderCreateExcellData _hlpTenderCreateExcellData, EmployeeFullModel inquirySubmittedByEmployee)
+        {
+            StreamReader reader = null;
+            try
+            {
+                //DataTypesHelper.LogThis("*****IN Method ProcessEventMessage*****");
+
+
+                string templatePath = (AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["CARRIER_MAIL_TENDER"].ToString()).Replace("\"", "\\");
+                string rootURL = ConfigurationManager.AppSettings["ServerTagCarrierPage"].ToString();
+                DataTypesHelper.LogThis(AppDomain.CurrentDomain.BaseDirectory);
+
+
+
+                CarrierMailModel message = null;
+
+                if (_hlpTenderCreateExcellData != null)
+                {
+                    foreach (var itm in _hlpTenderCreateExcellData.TransporterList)
+                    {
+                        var _clientOTP = context.Stranka_OTP.Where(s => s.idStranka == itm.ClientID).FirstOrDefault();
+
+                        if (_clientOTP != null)
+                        {
+                            string langStr = (_clientOTP.JezikID > 0) ? _clientOTP.Jeziki.Koda : Language.SLO.ToString();
+
+                            if (!String.IsNullOrEmpty(_clientOTP.Email))//TODO: kaj pa če ima stranka vpisanih več mail-ov
+                            {
+                                Language enMLanguage = (Language)(Enum.Parse(typeof(Language), langStr));
+
+                                message = new CarrierMailModel();
+                                message.Pozdrav = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.POZDRAVPARTNER);
+
+                                message.SubjectText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERTENDERMAIL_SUBJECT);
+                                
+                                message.BodyText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.BODYCARIERTENDER);
+                                message.AdditionalText = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.PODPISTENDER);
+                                message.ZaVprasanja = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.ZA_VPRASANJA);
+                                message.Podpis1 = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.PODPIS1);
+                                message.Podpis2 = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.PODPIS2);
+                                message.GumbZaPrijavo = TranslationHelper.GetTranslateValueByContentAndLanguage(enMLanguage, EmailContentType.CARRIRERMAIL_REPORTPRICE);
+
+                                message.CarrierName = _clientOTP.NazivPrvi;
+                                message.Email = _clientOTP.Email;                                
+
+
+                                reader = new StreamReader(templatePath);
+                                string templateString = reader.ReadToEnd();
+                                templateString = ReplaceDefaultValuesInTemplate(message, templateString);
+                                if (itm.ExcellFilePath.Length > 0)
+                                {
+                                    message.Attachments = itm.ExcellFilePath;
+                                }
+                                SaveToSystemEmailMessage(message.Email, templateString, inquirySubmittedByEmployee.idOsebe, 1, message.SubjectText, message.Attachments, inquirySubmittedByEmployee);
+                            }
+                            else
+                            {
+                                throw new Exception("Stranka " + _clientOTP.NazivPrvi + "nima vpisanega elektrnoskega naslova!");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message);
+            }
+        }
+
     }
 }

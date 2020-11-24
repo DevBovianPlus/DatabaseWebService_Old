@@ -429,7 +429,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 var obj = context.GetLastYearRecallCountBySuplierAndRoute(model.RelacijaID, model.PrevoznikID).FirstOrDefault();
 
                 if (obj != null)
-                    return new TransportCountModel() { PrevoznikID = obj.DobaviteljID.Value, RelacijaID = obj.RelacijaID.Value, StPotrjenihOdpoklicev = obj.St_Relacija_Dobavitelj.Value, StVsehOdpoklicevZaRelacijo = obj.St_Relacija.Value };
+                    return new TransportCountModel() { PrevoznikID = obj.DobaviteljID.Value, RelacijaID = obj.RelacijaID.Value, StPotrjenihOdpoklicevNaRelacijoZaPrevoznika = obj.St_Relacija_Dobavitelj.Value, StPotrjenihOdpoklicevNaRelacijoZaVsePrevoznike = obj.St_Relacija.Value };
                 else
                     return new TransportCountModel();
 

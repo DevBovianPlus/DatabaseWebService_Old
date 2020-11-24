@@ -47,6 +47,8 @@ namespace DatabaseWebService.ModelsOTP.Recall
 
         public int TipPrevozaID { get; set; }
         public ClientTransportType TipPrevoza { get; set; }
+        public int ZbrirnikTonID { get; set; }
+        public ZbirnikTonModel ZbirnikTon { get; set; }
         public int LastnoSkladisceID { get; set; }
 
         public string Prevozniki { get; set; }

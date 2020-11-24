@@ -51,6 +51,7 @@ namespace DatabaseWebService.DomainOTP
         public DbSet<Jeziki> Jeziki { get; set; }
         public DbSet<KontaktneOsebe_OTP> KontaktneOsebe_OTP { get; set; }
         public DbSet<OdpoklicPozicija> OdpoklicPozicija { get; set; }
+        public DbSet<ZbirnikTon> ZbirnikTon { get; set; }
     
         [EdmFunction("GrafolitOTPEntities", "SeznamDobaviteljev")]
         public virtual IQueryable<SeznamDobaviteljev_Result> SeznamDobaviteljev()

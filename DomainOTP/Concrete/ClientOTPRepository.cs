@@ -4,6 +4,7 @@ using DatabaseWebService.Models;
 using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
+using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
@@ -191,7 +192,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                                   TipPrevozaID = transportType.TipPrevozaID,
                                                   ts = transportType.ts.HasValue ? transportType.ts.Value : DateTime.MinValue,
                                                   tsIDPrijave = transportType.tsIDPrijave.HasValue ? transportType.tsIDPrijave.Value : 0
-                                              }).FirstOrDefault(),
+                                              }).FirstOrDefault(),                               
                                 JezikID = client.JezikID.HasValue ? client.JezikID.Value : 0,
                                 JezikOTP = (from jez in context.Jeziki
                                          where jez.JezikID == client.JezikID
@@ -838,6 +839,31 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 ShranjevanjePozicij = transportType.ShranjevanjePozicij.HasValue ? transportType.ShranjevanjePozicij.Value : false,
                                 ts = transportType.ts.HasValue ? transportType.ts.Value : DateTime.MinValue,
                                 tsIDPrijave = transportType.tsIDPrijave.HasValue ? transportType.tsIDPrijave.Value : 0
+                            };
+
+                return query.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
+        public List<ZbirnikTonModel> GetZbirnikTonList()
+        {
+            try
+            {
+                var query = from zbrirnikTon in context.ZbirnikTon
+                            select new ZbirnikTonModel
+                            {
+                                Koda = zbrirnikTon.Koda,
+                                Naziv = zbrirnikTon.Naziv,
+                                ZbirnikTonID = zbrirnikTon.ZbirnikTonID,
+                                TezaOd = zbrirnikTon.OdTeza.HasValue ? zbrirnikTon.OdTeza.Value : 0,
+                                TezaDo = zbrirnikTon.DoTeza.HasValue ? zbrirnikTon.DoTeza.Value : 0,
+                                ts = zbrirnikTon.ts.HasValue ? zbrirnikTon.ts.Value : DateTime.MinValue,
+                                
                             };
 
                 return query.ToList();
