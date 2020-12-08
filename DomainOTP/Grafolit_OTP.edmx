@@ -244,6 +244,11 @@
           <Property Name="Naziv" Type="varchar" MaxLength="500" />
           <Property Name="RazpisKreiran" Type="bit" />
           <Property Name="PotRazpisa" Type="varchar" MaxLength="2000" />
+          <Property Name="PodatkiZaExcell_JSon" Type="varchar(max)" />
+          <Property Name="GeneriranTender" Type="bit" />
+          <Property Name="CiljnaCena" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsCiljnaCena" Type="bit" />
+          <Property Name="IsNajcenejsiPrevoznik" Type="bit" />
         </EntityType>
         <EntityType Name="RazpisPozicija">
           <Key>
@@ -1312,6 +1317,11 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_RazpisID" FromRole="Razpis" ToRole="RazpisPozicija" />
           <Property Name="RazpisKreiran" Type="Boolean" />
           <Property Name="PotRazpisa" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="PodatkiZaExcell_JSon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GeneriranTender" Type="Boolean" />
+          <Property Name="CiljnaCena" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsCiljnaCena" Type="Boolean" />
+          <Property Name="IsNajcenejsiPrevoznik" Type="Boolean" />
         </EntityType>
         <EntityType Name="RazpisPozicija">
           <Key>
@@ -2114,6 +2124,11 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="Razpis">
             <EntityTypeMapping TypeName="GrafolitOTPModel.Razpis">
               <MappingFragment StoreEntitySet="Razpis">
+                <ScalarProperty Name="IsNajcenejsiPrevoznik" ColumnName="IsNajcenejsiPrevoznik" />
+                <ScalarProperty Name="IsCiljnaCena" ColumnName="IsCiljnaCena" />
+                <ScalarProperty Name="CiljnaCena" ColumnName="CiljnaCena" />
+                <ScalarProperty Name="GeneriranTender" ColumnName="GeneriranTender" />
+                <ScalarProperty Name="PodatkiZaExcell_JSon" ColumnName="PodatkiZaExcell_JSon" />
                 <ScalarProperty Name="PotRazpisa" ColumnName="PotRazpisa" />
                 <ScalarProperty Name="RazpisKreiran" ColumnName="RazpisKreiran" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />

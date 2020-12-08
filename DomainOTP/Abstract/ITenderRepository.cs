@@ -10,15 +10,18 @@ namespace DatabaseWebService.DomainOTP.Abstract
 {
     public interface ITenderRepository
     {
-        List<TenderFullModel> GetTenderList();
+        List<TenderFullModel> GetTenderList(string dtFrom, string dtTo);
+        List<TenderPositionModel> GetTenderListPositionByTenderID(int tenderID);
         TenderFullModel GetTenderModelByID(int tenderID);
+        TenderModel GetTenderSimpleModelByID(int tenderID);
+
         int SaveTender(TenderFullModel model, bool updateRecord = true);
         bool DeleteTender(int tenderID);
         List<TenderPositionModel> GetTenderListByRouteID(int routeID);
         List<TenderPositionModel> GetTenderListByRouteIDAndTonsID(int routeID, int tonsID, bool bShowZeroTenders);
         List<TenderPositionModel> GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate);
         void SaveTenders(List<TenderFullModel> model);
-        List<TenderPositionModel> GetTenderPositionModelByID(int tenderID);
+        List<TenderPositionModel> GetTenderPositionModelByID(int tenderID, DateTime ? dtFrom, DateTime ? dtTo);
         int SaveTenderPosition(TenderPositionModel model, bool updateRecord = true);
         bool DeleteTenderPosition(int tenderPosID);
         int SaveTenderWithTenderPositions(TenderFullModel model, bool updateRecord = true);

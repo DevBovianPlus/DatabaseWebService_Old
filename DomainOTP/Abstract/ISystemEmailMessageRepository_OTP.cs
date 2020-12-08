@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseWebService.ModelsOTP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace DatabaseWebService.DomainOTP.Abstract
         List<SystemEmailMessage_OTP> GetUnprocessedEmails();
         void UpdateFailedMessges();
         void SaveEmail(SystemEmailMessage_OTP model);
+        List<OTPEmailModel> GetAllEmailsOTP();
     }
 }

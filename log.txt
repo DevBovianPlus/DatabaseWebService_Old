@@ -4282,3 +4282,761 @@ Parameter name: source
 24. 11. 2020 14:37:17 Start - SaveTender
 24. 11. 2020 14:37:17 24. 11. 2020 14:37:17
 24. 11. 2020 14:37:17 24. 11. 2020 14:37:17
+25. 11. 2020 12:17:45 GetListOfOrderNumber10
+25. 11. 2020 12:18:12 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+26. 11. 2020 16:10:17 Start - Controler
+26. 11. 2020 16:10:17 Start - SaveTender
+26. 11. 2020 16:10:19 Start - SaveTender
+26. 11. 2020 16:10:19 26. 11. 2020 16:10:19
+26. 11. 2020 16:10:19 26. 11. 2020 16:10:19
+26. 11. 2020 16:11:36 Start - SaveTender
+26. 11. 2020 16:11:36 26. 11. 2020 16:11:36
+26. 11. 2020 16:11:36 26. 11. 2020 16:11:36
+26. 11. 2020 16:25:06 Start - Controler
+26. 11. 2020 16:25:06 Start - SaveTender
+26. 11. 2020 16:25:06 Start - SaveTender
+26. 11. 2020 16:25:06 26. 11. 2020 16:25:06
+26. 11. 2020 16:25:06 26. 11. 2020 16:25:06
+26. 11. 2020 16:31:29 Start - SaveTender
+26. 11. 2020 16:31:29 26. 11. 2020 16:31:29
+26. 11. 2020 16:31:30 26. 11. 2020 16:31:30
+26. 11. 2020 22:28:58 Start - Controler
+26. 11. 2020 22:28:58 Start - SaveTender
+26. 11. 2020 22:29:03 Start - SaveTender
+26. 11. 2020 22:29:03 26. 11. 2020 22:29:03
+26. 11. 2020 22:29:03 26. 11. 2020 22:29:03
+26. 11. 2020 22:30:50 Start - SaveTender
+26. 11. 2020 22:30:50 26. 11. 2020 22:30:50
+26. 11. 2020 22:30:50 26. 11. 2020 22:30:50
+26. 11. 2020 22:48:28 Start - Controler
+26. 11. 2020 22:48:29 Start - SaveTender
+26. 11. 2020 22:48:32 Start - SaveTender
+26. 11. 2020 22:48:32 26. 11. 2020 22:48:32
+26. 11. 2020 22:48:32 26. 11. 2020 22:48:32
+26. 11. 2020 22:48:54 Start - SaveTender
+26. 11. 2020 22:48:54 26. 11. 2020 22:48:54
+26. 11. 2020 22:48:54 26. 11. 2020 22:48:54
+26. 11. 2020 22:57:39 Start - Controler
+26. 11. 2020 22:57:39 Start - SaveTender
+26. 11. 2020 22:57:40 Start - SaveTender
+26. 11. 2020 22:57:40 26. 11. 2020 22:57:40
+26. 11. 2020 22:57:40 26. 11. 2020 22:57:40
+26. 11. 2020 22:57:51 Start - SaveTender
+26. 11. 2020 22:57:52 26. 11. 2020 22:57:52
+26. 11. 2020 22:57:52 26. 11. 2020 22:57:52
+26. 11. 2020 23:01:03 Start - Controler
+26. 11. 2020 23:01:03 Start - SaveTender
+26. 11. 2020 23:01:03 Start - SaveTender
+26. 11. 2020 23:01:03 26. 11. 2020 23:01:03
+26. 11. 2020 23:01:04 26. 11. 2020 23:01:04
+26. 11. 2020 23:01:14 Start - SaveTender
+26. 11. 2020 23:01:14 26. 11. 2020 23:01:14
+26. 11. 2020 23:01:15 26. 11. 2020 23:01:15
+26. 11. 2020 23:54:16 Start - Controler
+26. 11. 2020 23:54:16 Start - SaveTender
+26. 11. 2020 23:54:16 Start - SaveTender
+26. 11. 2020 23:54:16 26. 11. 2020 23:54:16
+26. 11. 2020 23:54:16 26. 11. 2020 23:54:16
+26. 11. 2020 23:54:44 Start - SaveTender
+26. 11. 2020 23:54:44 26. 11. 2020 23:54:44
+26. 11. 2020 23:54:44 26. 11. 2020 23:54:44
+26. 11. 2020 23:58:10 Start - Controler
+26. 11. 2020 23:58:10 Start - SaveTender
+26. 11. 2020 23:58:10 Start - SaveTender
+26. 11. 2020 23:58:10 26. 11. 2020 23:58:10
+26. 11. 2020 23:58:10 26. 11. 2020 23:58:10
+26. 11. 2020 23:58:31 Start - SaveTender
+26. 11. 2020 23:58:32 26. 11. 2020 23:58:32
+26. 11. 2020 23:58:32 26. 11. 2020 23:58:32
+28. 11. 2020 16:50:43 Start - Controler
+28. 11. 2020 16:50:43 Start - SaveTender
+28. 11. 2020 16:50:44 Start - SaveTender
+28. 11. 2020 16:50:44 28. 11. 2020 16:50:44
+28. 11. 2020 16:50:44 28. 11. 2020 16:50:44
+28. 11. 2020 16:51:15 Start - SaveTender
+28. 11. 2020 16:51:15 28. 11. 2020 16:51:15
+28. 11. 2020 16:51:15 28. 11. 2020 16:51:15
+28. 11. 2020 16:58:02 Start - Controler
+28. 11. 2020 16:58:02 Start - SaveTender
+28. 11. 2020 16:58:02 Start - SaveTender
+28. 11. 2020 16:58:02 28. 11. 2020 16:58:02
+28. 11. 2020 16:58:02 28. 11. 2020 16:58:02
+28. 11. 2020 16:58:11 Start - SaveTender
+28. 11. 2020 16:58:11 28. 11. 2020 16:58:11
+28. 11. 2020 16:58:11 28. 11. 2020 16:58:11
+30. 11. 2020 09:39:35 Izdelane lokacije št:10 trenutna lokacija: (IT) 03039 SORA - (SLO) 3310 ŽALEC
+30. 11. 2020 09:42:01 Izdelane lokacije št:20 trenutna lokacija: (SLO) 3000 CELJE - (SLO) 3310 ŽALEC
+30. 11. 2020 09:43:13 Start - Controler
+30. 11. 2020 09:43:13 Start - SaveTender
+30. 11. 2020 09:43:14 Start - SaveTender
+30. 11. 2020 09:43:14 30. 11. 2020 09:43:14
+30. 11. 2020 09:43:20 30. 11. 2020 09:43:20
+30. 11. 2020 09:43:59 Start - SaveTender
+30. 11. 2020 09:43:59 30. 11. 2020 09:43:59
+30. 11. 2020 09:44:05 30. 11. 2020 09:44:05
+30. 11. 2020 09:52:15 Izdelane lokacije št:10 / 28 trenutna lokacija: (IT) 03039 SORA - (SLO) 3310 ŽALEC
+30. 11. 2020 09:54:23 Izdelane lokacije št:20 / 28 trenutna lokacija: (SLO) 3000 CELJE - (SLO) 3310 ŽALEC
+30. 11. 2020 10:04:42 Start - Controler
+30. 11. 2020 10:04:42 Start - SaveTender
+30. 11. 2020 10:04:43 Start - SaveTender
+30. 11. 2020 10:04:43 30. 11. 2020 10:04:43
+30. 11. 2020 10:04:49 30. 11. 2020 10:04:49
+30. 11. 2020 10:08:00 Start - SaveTender
+30. 11. 2020 10:08:00 30. 11. 2020 10:08:00
+30. 11. 2020 10:08:06 30. 11. 2020 10:08:06
+30. 11. 2020 12:20:13 Start - Controler
+30. 11. 2020 12:20:14 Start - SaveTender
+30. 11. 2020 12:20:14 Start - SaveTender
+30. 11. 2020 12:20:15 30. 11. 2020 12:20:15
+30. 11. 2020 12:20:15 30. 11. 2020 12:20:15
+30. 11. 2020 12:20:48 Start - SaveTender
+30. 11. 2020 12:20:48 30. 11. 2020 12:20:48
+30. 11. 2020 12:20:48 30. 11. 2020 12:20:48
+30. 11. 2020 12:24:36 Start - Controler
+30. 11. 2020 12:24:36 Start - SaveTender
+30. 11. 2020 12:24:36 Start - SaveTender
+30. 11. 2020 12:24:36 30. 11. 2020 12:24:36
+30. 11. 2020 12:24:36 30. 11. 2020 12:24:36
+30. 11. 2020 12:27:02 Start - SaveTender
+30. 11. 2020 12:27:02 30. 11. 2020 12:27:02
+30. 11. 2020 12:27:02 30. 11. 2020 12:27:02
+30. 11. 2020 14:32:32 Start - SaveTender
+30. 11. 2020 14:32:48 30. 11. 2020 14:32:48
+30. 11. 2020 14:32:58 30. 11. 2020 14:32:58
+1. 12. 2020 15:05:21 Start - Controler
+1. 12. 2020 15:05:21 Start - SaveTender
+1. 12. 2020 15:05:55 D:\GitHub\DatabaseWebService\
+1. 12. 2020 15:12:24 Start - SaveTender
+1. 12. 2020 15:12:41 1. 12. 2020 15:12:41
+1. 12. 2020 15:12:42 1. 12. 2020 15:12:42
+1. 12. 2020 15:30:47 Start - SaveTender
+1. 12. 2020 15:30:57 1. 12. 2020 15:30:57
+1. 12. 2020 15:30:58 1. 12. 2020 15:30:58
+1. 12. 2020 15:33:23 Start - SaveTender
+1. 12. 2020 15:33:26 1. 12. 2020 15:33:26
+1. 12. 2020 15:33:27 1. 12. 2020 15:33:27
+1. 12. 2020 15:36:58 Start - SaveTender
+1. 12. 2020 15:37:01 1. 12. 2020 15:37:01
+1. 12. 2020 15:37:01 1. 12. 2020 15:37:01
+1. 12. 2020 15:40:31 Start - SaveTender
+1. 12. 2020 15:40:32 1. 12. 2020 15:40:32
+1. 12. 2020 15:40:33 1. 12. 2020 15:40:33
+1. 12. 2020 15:44:23 Start - SaveTender
+1. 12. 2020 15:44:25 1. 12. 2020 15:44:25
+1. 12. 2020 15:44:26 1. 12. 2020 15:44:26
+1. 12. 2020 15:54:48 Start - SaveTender
+1. 12. 2020 15:55:14 1. 12. 2020 15:55:14
+1. 12. 2020 15:55:15 1. 12. 2020 15:55:15
+1. 12. 2020 16:00:21 Start - Controler
+1. 12. 2020 16:00:21 Start - SaveTender
+1. 12. 2020 16:00:26 D:\GitHub\DatabaseWebService\
+1. 12. 2020 20:38:13 Start - SaveTender
+1. 12. 2020 20:38:14 1. 12. 2020 20:38:14
+1. 12. 2020 20:38:14 1. 12. 2020 20:38:14
+1. 12. 2020 20:41:37 Start - SaveTender
+1. 12. 2020 20:41:37 1. 12. 2020 20:41:37
+1. 12. 2020 20:41:38 1. 12. 2020 20:41:38
+1. 12. 2020 20:42:28 Start - SaveTender
+1. 12. 2020 20:42:28 1. 12. 2020 20:42:28
+1. 12. 2020 20:42:29 1. 12. 2020 20:42:29
+1. 12. 2020 20:56:04 Start - SaveTender
+1. 12. 2020 20:56:06 1. 12. 2020 20:56:06
+1. 12. 2020 20:56:08 1. 12. 2020 20:56:08
+1. 12. 2020 21:02:29 Izdelane lokacije št:10 / 246 trenutna lokacija: (GR) 57011 THESSALONIKI  – (BIH) 75 320 GRAČANICA
+1. 12. 2020 21:03:52 Izdelane lokacije št:20 / 246 trenutna lokacija: (IT) 12018 ROCCAVIONE - (SLO) 3310 ŽALEC
+1. 12. 2020 21:05:00 Izdelane lokacije št:30 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (SLO) 2000 MARIBOR - (SLO) 3310 ŽALEC
+1. 12. 2020 21:06:24 Izdelane lokacije št:40 / 246 trenutna lokacija: (CZ) 78962 OLŠANY - (SLO) 8310 ŠENTJERNEJ
+1. 12. 2020 21:07:31 Izdelane lokacije št:50 / 246 trenutna lokacija: (CN) 315200 NINGBO - (SLO) 6000 KOPER
+1. 12. 2020 21:08:35 Izdelane lokacije št:60 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (HU) 1131 BUDAPEST 
+1. 12. 2020 21:09:25 Start - Controler
+1. 12. 2020 21:09:25 Start - SaveTender
+1. 12. 2020 21:10:10 Start - SaveTender
+1. 12. 2020 21:10:12 1. 12. 2020 21:10:12
+1. 12. 2020 21:10:13 1. 12. 2020 21:10:13
+1. 12. 2020 21:10:24 Izdelane lokacije št:70 / 246 trenutna lokacija: (IT) 32035 BELLUNO – (SLO) 2383 ŠMARTNO pri SL.GRADCU
+1. 12. 2020 21:11:31 Izdelane lokacije št:80 / 246 trenutna lokacija: (PL) 87100 TORUN - (HR) 10 000 ZAGREB
+1. 12. 2020 21:12:37 Izdelane lokacije št:90 / 246 trenutna lokacija: (SLO) 1261 LJUBLJANA DOBRUNJE - (SLO) 3310 ŽALEC - (HU) 4030 DEBRECEN
+1. 12. 2020 21:13:43 Izdelane lokacije št:100 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (EG) 0000 ALEXANDRIA DEKHEILA
+1. 12. 2020 21:14:51 Izdelane lokacije št:110 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (BA) 71000  SARAJEVO
+1. 12. 2020 21:15:57 Izdelane lokacije št:120 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (HR) 10 410 VUKOVINA - (HR) 10 000 ZAGREB
+1. 12. 2020 21:16:47 Start - Controler
+1. 12. 2020 21:16:47 Start - SaveTender
+1. 12. 2020 21:17:38 Izdelane lokacije št:130 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (MK) 1000 SKOPJE 
+1. 12. 2020 21:17:56 Izdelane lokacije št:10 / 246 trenutna lokacija: (GR) 57011 THESSALONIKI  – (BIH) 75 320 GRAČANICA
+1. 12. 2020 21:18:24 Izdelane lokacije št:20 / 246 trenutna lokacija: (IT) 12018 ROCCAVIONE - (SLO) 3310 ŽALEC
+1. 12. 2020 21:18:33 Izdelane lokacije št:30 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (SLO) 2000 MARIBOR - (SLO) 3310 ŽALEC
+1. 12. 2020 21:18:42 Izdelane lokacije št:140 / 246 trenutna lokacija: (IT) 12039  VERZUOLO (CN) - (HR) 10 000 ZAGREB 
+1. 12. 2020 21:18:43 Izdelane lokacije št:40 / 246 trenutna lokacija: (CZ) 78962 OLŠANY - (SLO) 8310 ŠENTJERNEJ
+1. 12. 2020 21:18:50 Izdelane lokacije št:50 / 246 trenutna lokacija: (CN) 315200 NINGBO - (SLO) 6000 KOPER
+1. 12. 2020 21:18:57 Izdelane lokacije št:60 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (HU) 1131 BUDAPEST 
+1. 12. 2020 21:19:05 Izdelane lokacije št:70 / 246 trenutna lokacija: (IT) 32035 BELLUNO – (SLO) 2383 ŠMARTNO pri SL.GRADCU
+1. 12. 2020 21:19:14 Izdelane lokacije št:80 / 246 trenutna lokacija: (PL) 87100 TORUN - (HR) 10 000 ZAGREB
+1. 12. 2020 21:19:22 Izdelane lokacije št:90 / 246 trenutna lokacija: (SLO) 1261 LJUBLJANA DOBRUNJE - (SLO) 3310 ŽALEC - (HU) 4030 DEBRECEN
+1. 12. 2020 21:19:30 Izdelane lokacije št:100 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (EG) 0000 ALEXANDRIA DEKHEILA
+1. 12. 2020 21:19:40 Izdelane lokacije št:110 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (BA) 71000  SARAJEVO
+1. 12. 2020 21:19:47 Izdelane lokacije št:120 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (HR) 10 410 VUKOVINA - (HR) 10 000 ZAGREB
+1. 12. 2020 21:19:50 Izdelane lokacije št:150 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (HR) 10 000 ZAGREB
+1. 12. 2020 21:19:53 Izdelane lokacije št:130 / 246 trenutna lokacija: (IT) 60044 FABRIANO - (MK) 1000 SKOPJE 
+1. 12. 2020 21:19:59 Izdelane lokacije št:140 / 246 trenutna lokacija: (IT) 12039  VERZUOLO (CN) - (HR) 10 000 ZAGREB 
+1. 12. 2020 21:20:10 Izdelane lokacije št:150 / 246 trenutna lokacija: (SLO) 1433 RADEČE - (HR) 10 000 ZAGREB
+1. 12. 2020 21:20:19 Izdelane lokacije št:160 / 246 trenutna lokacija: (SLO) 3000 CELJE - (SLO) 1000 LJUBLJANA
+1. 12. 2020 21:20:27 Izdelane lokacije št:170 / 246 trenutna lokacija: (ES) 43460 ALCOVER  – (SLO) 3310 ŽALEC
+1. 12. 2020 21:20:35 Izdelane lokacije št:180 / 246 trenutna lokacija: (SE) 16927 SOLNA - (SLO) 3310 ŽALEC 
+1. 12. 2020 21:20:44 Izdelane lokacije št:190 / 246 trenutna lokacija: (IT) 25088 TOSCOLANO - (IT) 36040 SAREGO - (SLO) 3301 LEVEC
+1. 12. 2020 21:20:54 Izdelane lokacije št:200 / 246 trenutna lokacija: (AT) 8101 GRATKORN - (SLO) 3310 ŽALEC - (SLO) 1000 LJUBLJANA
+1. 12. 2020 21:20:57 Izdelane lokacije št:160 / 246 trenutna lokacija: (SLO) 3000 CELJE - (SLO) 1000 LJUBLJANA
+1. 12. 2020 21:21:02 Izdelane lokacije št:210 / 246 trenutna lokacija: (BE) 9130 KALLO - (HU) 8200 VESZPREM
+1. 12. 2020 21:21:10 Izdelane lokacije št:220 / 246 trenutna lokacija: (BE) 9000 GENT - (HU) 2373 DABAS 
+1. 12. 2020 21:21:17 Izdelane lokacije št:230 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (HU) 1037 BUDAPEST - (HU) 1097 BUDAPEST 
+1. 12. 2020 21:21:22 Izdelane lokacije št:240 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA – (SLO) 3210 SLOVENSKE KONJICE - (SLO) 3310 ŽALEC
+1. 12. 2020 23:20:53 Start - SaveTender
+1. 12. 2020 23:22:05 Izdelane lokacije št:170 / 246 trenutna lokacija: (ES) 43460 ALCOVER  – (SLO) 3310 ŽALEC
+1. 12. 2020 23:22:39 1. 12. 2020 23:22:39
+1. 12. 2020 23:23:30 Izdelane lokacije št:180 / 246 trenutna lokacija: (SE) 16927 SOLNA - (SLO) 3310 ŽALEC 
+1. 12. 2020 23:24:43 Izdelane lokacije št:190 / 246 trenutna lokacija: (IT) 25088 TOSCOLANO - (IT) 36040 SAREGO - (SLO) 3301 LEVEC
+1. 12. 2020 23:25:53 Izdelane lokacije št:200 / 246 trenutna lokacija: (AT) 8101 GRATKORN - (SLO) 3310 ŽALEC - (SLO) 1000 LJUBLJANA
+1. 12. 2020 23:27:04 Izdelane lokacije št:210 / 246 trenutna lokacija: (BE) 9130 KALLO - (HU) 8200 VESZPREM
+1. 12. 2020 23:28:15 Izdelane lokacije št:220 / 246 trenutna lokacija: (BE) 9000 GENT - (HU) 2373 DABAS 
+1. 12. 2020 23:29:22 Izdelane lokacije št:230 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (HU) 1037 BUDAPEST - (HU) 1097 BUDAPEST 
+1. 12. 2020 23:30:29 Izdelane lokacije št:240 / 246 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA – (SLO) 3210 SLOVENSKE KONJICE - (SLO) 3310 ŽALEC
+1. 12. 2020 23:47:52 Start - SaveTender
+1. 12. 2020 23:49:09 1. 12. 2020 23:49:09
+2. 12. 2020 00:07:02 Start - Controler
+2. 12. 2020 00:07:02 Start - SaveTender
+2. 12. 2020 00:07:35 Start - SaveTender
+2. 12. 2020 00:07:37 2. 12. 2020 00:07:37
+2. 12. 2020 00:07:37 2. 12. 2020 00:07:37
+2. 12. 2020 00:09:09 Start - SaveTender
+2. 12. 2020 00:09:10 2. 12. 2020 00:09:10
+2. 12. 2020 00:09:11 2. 12. 2020 00:09:11
+2. 12. 2020 00:10:40 Start - Controler
+2. 12. 2020 00:10:40 Start - SaveTender
+2. 12. 2020 00:10:59 Start - SaveTender
+2. 12. 2020 00:11:00 2. 12. 2020 00:11:00
+2. 12. 2020 00:11:02 2. 12. 2020 00:11:02
+2. 12. 2020 00:34:54 Start - Controler
+2. 12. 2020 00:34:54 Start - SaveTender
+2. 12. 2020 14:14:20 Start - Controler
+2. 12. 2020 14:14:20 Start - SaveTender
+2. 12. 2020 14:15:01 Start - SaveTender
+2. 12. 2020 14:15:01 2. 12. 2020 14:15:01
+2. 12. 2020 14:15:06 2. 12. 2020 14:15:06
+2. 12. 2020 14:15:23 Start - Controler
+2. 12. 2020 14:15:24 Start - SaveTender
+2. 12. 2020 14:21:42 Start - Controler
+2. 12. 2020 14:21:42 Start - SaveTender
+2. 12. 2020 14:21:57 Start - SaveTender
+2. 12. 2020 14:21:57 2. 12. 2020 14:21:57
+2. 12. 2020 14:21:59 2. 12. 2020 14:21:59
+2. 12. 2020 14:28:47 Start - Controler
+2. 12. 2020 14:28:47 Start - SaveTender
+2. 12. 2020 14:29:26 Start - SaveTender
+2. 12. 2020 14:29:28 2. 12. 2020 14:29:28
+2. 12. 2020 14:29:29 2. 12. 2020 14:29:29
+2. 12. 2020 14:48:23 Start - Controler
+2. 12. 2020 14:48:23 Start - SaveTender
+2. 12. 2020 14:49:48 Izdelane lokacije št:10 / 252 trenutna lokacija: (GR) 57011 THESSALONIKI  – (BIH) 75 320 GRAČANICA
+2. 12. 2020 14:50:51 Izdelane lokacije št:20 / 252 trenutna lokacija: (IT) 12018 ROCCAVIONE - (SLO) 3310 ŽALEC
+2. 12. 2020 14:52:00 Izdelane lokacije št:30 / 252 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (SLO) 2000 MARIBOR - (SLO) 3310 ŽALEC
+2. 12. 2020 14:53:06 Izdelane lokacije št:40 / 252 trenutna lokacija: (SLO) 3000 CELJE - (SLO) 1241 KAMNIK 
+2. 12. 2020 14:54:07 Izdelane lokacije št:50 / 252 trenutna lokacija: (HR) 3155 BELIŠĆE - (SLO) 3000 CELJE
+2. 12. 2020 14:55:11 Izdelane lokacije št:60 / 252 trenutna lokacija: (IT) 34121 TRST - (HU) 1047 BUDIMPEŠTA
+2. 12. 2020 14:56:14 Izdelane lokacije št:70 / 252 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (HU) 9026 GYOR - (HU) 1131 BUDIMPEŠTA
+2. 12. 2020 14:57:14 Izdelane lokacije št:80 / 252 trenutna lokacija: (SLO) 1433 RADEČE - (IT) 20093 COLOGNO MONZESE
+2. 12. 2020 14:58:17 Izdelane lokacije št:90 / 252 trenutna lokacija: (PL) 66470 KOSTRZYN NAD ODRA - (SLO) 1310 RIBNICA - (SLO) 3310 ŽALEC
+2. 12. 2020 14:59:18 Izdelane lokacije št:100 / 252 trenutna lokacija: (AT) 8101 GRATKORN - (SLO) 2000 MARIBOR - (SLO) 3310 ŽALEC
+2. 12. 2020 15:00:24 Izdelane lokacije št:110 / 252 trenutna lokacija: (PT) 4900-278 VIANA DO CASTELO - (SLO) 3000 CELJE 
+2. 12. 2020 15:01:31 Izdelane lokacije št:120 / 252 trenutna lokacija: (PL) 47110 Kolonowskie - (SLO) 3310 ŽALEC
+2. 12. 2020 15:02:36 Izdelane lokacije št:130 / 252 trenutna lokacija: (BIH) 71300 VISOKO - (SLO) 3241 PODPLAT
+2. 12. 2020 15:03:40 Izdelane lokacije št:140 / 252 trenutna lokacija: (ES) 43460 ALCOVER – (SLO) 1000 LJUBLJANA
+2. 12. 2020 15:04:43 Izdelane lokacije št:150 / 252 trenutna lokacija: (SLO) 1433 RADEČE - (HR) 42 000 VARAŽDIN
+2. 12. 2020 15:05:49 Izdelane lokacije št:160 / 252 trenutna lokacija: (D) 33699 BIELEFELD - (SLO) 3310 ŽALEC - (HR) 49000 KRAPINA
+2. 12. 2020 15:06:54 Izdelane lokacije št:170 / 252 trenutna lokacija: (CN) 315200 NINGBO  - (HU) 1149 BUDAPEST
+2. 12. 2020 15:07:58 Izdelane lokacije št:180 / 252 trenutna lokacija: (SLO) 1433 RADEČE - (HU) 5100 JASZBERENY 
+2. 12. 2020 15:09:01 Izdelane lokacije št:190 / 252 trenutna lokacija: (D) 33699 BIELEFELD - (HR) 10 360 SESVETE
+2. 12. 2020 15:10:07 Izdelane lokacije št:200 / 252 trenutna lokacija: (DE) 33602 BIELEFELD - (HU) 2800 TATABANYA
+2. 12. 2020 15:11:18 Izdelane lokacije št:210 / 252 trenutna lokacija: (SLO) 1261 LJUBLJANA DOBRUNJE (SLO) 1000 LJUBLJANA - (SLO) 3310 ŽALEC - (HU) 9027 GYOR
+2. 12. 2020 15:12:23 Izdelane lokacije št:220 / 252 trenutna lokacija: (IT) 03031 AQUINO FR – (PL) 09-100 Płońsk
+2. 12. 2020 15:13:32 Izdelane lokacije št:230 / 252 trenutna lokacija: (HR) 10 000 ZAGREB - (KS) 30000 PEJE(Peć)
+2. 12. 2020 15:14:45 Izdelane lokacije št:240 / 252 trenutna lokacija: (IT) 36040 SAREGO – (SLO) 4220 ŠKOFJA LOKA - (SLO) 3310 ŽALEC
+2. 12. 2020 15:15:57 Izdelane lokacije št:250 / 252 trenutna lokacija: (SE) 79020 GRYCKSBO - (SLO) 3310 ŽALEC - (SLO) 2000 MARIBOR
+2. 12. 2020 15:17:07 Start - SaveTender
+2. 12. 2020 15:17:47 2. 12. 2020 15:17:47
+2. 12. 2020 21:12:19 Start - Controler
+2. 12. 2020 21:12:19 Start - SaveTender
+2. 12. 2020 21:12:38 Start - SaveTender
+2. 12. 2020 21:12:40 2. 12. 2020 21:12:40
+2. 12. 2020 21:12:48 2. 12. 2020 21:12:48
+2. 12. 2020 21:15:43 Start - Controler
+2. 12. 2020 21:15:43 Start - SaveTender
+2. 12. 2020 21:15:46 D:\GitHub\DatabaseWebService\
+2. 12. 2020 22:18:13 GetListOfOrderNumber10
+2. 12. 2020 22:18:14 GetListOfOrderNumber10
+2. 12. 2020 22:18:57 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 12. 2020 22:28:08 GetListOfOrderNumber10
+2. 12. 2020 22:30:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 12. 2020 22:36:37 GetListOfOrderNumber10
+2. 12. 2020 22:37:00 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 12. 2020 22:41:12 GetListOfOrderNumber10
+2. 12. 2020 22:41:21 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 12. 2020 22:43:14 GetListOfOrderNumber10
+2. 12. 2020 22:43:20 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+2. 12. 2020 22:45:04 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+2. 12. 2020 22:45:04 SaveRecall2 : (model.Content.OdpoklicID) :0
+2. 12. 2020 22:45:06 SaveRecall2 : V_ODOBRITEV
+2. 12. 2020 22:45:06 D:\GitHub\DatabaseWebService\
+2. 12. 2020 22:45:06 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+2. 12. 2020 22:58:38 Start - Controler
+2. 12. 2020 22:58:38 Start - SaveTender
+2. 12. 2020 22:59:45 Start - SaveTender
+2. 12. 2020 22:59:46 2. 12. 2020 22:59:46
+2. 12. 2020 22:59:46 2. 12. 2020 22:59:46
+3. 12. 2020 00:09:36 Start - Controler
+3. 12. 2020 00:09:36 Start - SaveTender
+3. 12. 2020 00:10:18 Start - SaveTender
+3. 12. 2020 00:11:23 3. 12. 2020 00:11:23
+3. 12. 2020 00:11:24 3. 12. 2020 00:11:24
+3. 12. 2020 00:12:40 Start - Controler
+3. 12. 2020 00:12:40 Start - SaveTender
+3. 12. 2020 00:13:28 Start - SaveTender
+3. 12. 2020 00:13:39 3. 12. 2020 00:13:39
+3. 12. 2020 00:13:39 3. 12. 2020 00:13:39
+3. 12. 2020 07:41:22 3. 12. 2020 07:41:22
+3. 12. 2020 08:19:24 Start - Controler
+3. 12. 2020 08:19:24 Start - SaveTender
+3. 12. 2020 08:19:54 Izdelane lokacije št:10 / 11 trenutna lokacija: (IT) 36040 SAREGO  – (SLO) 3310 ŽALEC
+3. 12. 2020 08:20:43 Start - SaveTender
+3. 12. 2020 08:20:57 3. 12. 2020 08:20:57
+3. 12. 2020 08:20:57 CNT :396
+3. 12. 2020 08:21:01 Izdelane pozicije št:50 / 396
+3. 12. 2020 08:21:06 Izdelane pozicije št:100 / 396
+3. 12. 2020 08:21:11 Izdelane pozicije št:150 / 396
+3. 12. 2020 08:21:16 Izdelane pozicije št:200 / 396
+3. 12. 2020 08:21:21 Izdelane pozicije št:250 / 396
+3. 12. 2020 08:21:32 Izdelane pozicije št:300 / 396
+3. 12. 2020 08:21:37 Izdelane pozicije št:350 / 396
+3. 12. 2020 08:21:42 3. 12. 2020 08:21:42
+3. 12. 2020 08:21:52 Save positions finished!
+3. 12. 2020 09:01:34 GetListOfOrderNumber10
+3. 12. 2020 09:22:32 Start - Controler
+3. 12. 2020 09:22:32 Start - SaveTender
+4. 12. 2020 09:59:59 Start - Controler
+4. 12. 2020 09:59:59 Start - SaveTender
+4. 12. 2020 10:00:07 Start - SaveTender
+4. 12. 2020 10:00:07 4. 12. 2020 10:00:07
+4. 12. 2020 10:00:07 CNT :100
+4. 12. 2020 10:00:09 Izdelane pozicije št:50 / 100
+4. 12. 2020 10:00:09 Izdelane pozicije št:100 / 100
+4. 12. 2020 10:00:10 4. 12. 2020 10:00:10
+4. 12. 2020 10:00:12 CNT add :100
+4. 12. 2020 10:00:12 CNT update:0
+4. 12. 2020 10:00:12 Save positions finished!
+4. 12. 2020 10:00:12 Start - SaveTender
+4. 12. 2020 10:09:51 Start - Controler
+4. 12. 2020 10:09:51 Start - SaveTender
+4. 12. 2020 10:40:48 Start - Controler
+4. 12. 2020 10:40:48 Start - SaveTender
+4. 12. 2020 10:40:54 Start - SaveTender
+4. 12. 2020 10:40:55 4. 12. 2020 10:40:55
+4. 12. 2020 10:40:55 CNT :60
+4. 12. 2020 10:40:56 Izdelane pozicije št:50 / 60
+4. 12. 2020 10:40:56 4. 12. 2020 10:40:56
+4. 12. 2020 10:40:57 CNT add :60
+4. 12. 2020 10:40:57 CNT update:0
+4. 12. 2020 10:40:57 Save positions finished!
+4. 12. 2020 10:40:57 Start - SaveTender
+4. 12. 2020 10:41:58 Start - Controler
+4. 12. 2020 10:41:58 Start - SaveTender
+4. 12. 2020 14:45:46 Start - Controler
+4. 12. 2020 14:45:46 Start - SaveTender
+4. 12. 2020 14:45:47 D:\GitHub\DatabaseWebService\
+7. 12. 2020 11:32:52 Start - Controler
+7. 12. 2020 11:32:52 Start - SaveTender
+7. 12. 2020 11:33:33 Start - SaveTender
+7. 12. 2020 11:33:34 7. 12. 2020 11:33:34
+7. 12. 2020 11:33:34 CNT :95
+7. 12. 2020 11:33:34 Izdelane pozicije št:50 / 95
+7. 12. 2020 11:33:49 7. 12. 2020 11:33:49
+7. 12. 2020 11:33:49 CNT add :95
+7. 12. 2020 11:33:49 CNT update:0
+7. 12. 2020 11:33:49 Save positions finished!
+7. 12. 2020 11:33:49 Start - SaveTender
+7. 12. 2020 12:03:02 Start - Controler
+7. 12. 2020 12:03:02 Start - SaveTender
+7. 12. 2020 12:03:53 Izdelane lokacije št:10 / 20 trenutna lokacija: (IT) 03039 SORA - (SLO) 3310 ŽALEC
+7. 12. 2020 12:04:18 Izdelane lokacije št:20 / 20 trenutna lokacija: (IT) 37135 VERONA - (SLO) ŽALEC
+7. 12. 2020 12:04:18 Start - SaveTender
+7. 12. 2020 12:04:20 7. 12. 2020 12:04:20
+7. 12. 2020 12:04:20 CNT :3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:50 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:100 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:150 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:200 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:250 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:300 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:350 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:400 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:450 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:500 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:550 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:600 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:650 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:700 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:750 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:800 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:850 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:900 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:950 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1000 / 3492
+7. 12. 2020 12:04:20 Commit:1000 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1050 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1100 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1150 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1200 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1250 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1300 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1350 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1400 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1450 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1500 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1550 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1600 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1650 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1700 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1750 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1800 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1850 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1900 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:1950 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2000 / 3492
+7. 12. 2020 12:04:20 Commit:2000 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2050 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2100 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2150 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2200 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2250 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2300 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2350 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2400 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2450 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2500 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2550 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2600 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2650 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2700 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2750 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2800 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2850 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2900 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:2950 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3000 / 3492
+7. 12. 2020 12:04:20 Commit:3000 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3050 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3100 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3150 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3200 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3250 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3300 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3350 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3400 / 3492
+7. 12. 2020 12:04:20 Izdelane pozicije št:3450 / 3492
+7. 12. 2020 12:04:23 7. 12. 2020 12:04:23
+7. 12. 2020 12:04:23 CNT add :3492
+7. 12. 2020 12:04:23 CNT update:0
+7. 12. 2020 12:04:23 Save positions finished!
+7. 12. 2020 12:04:23 Start - SaveTender
+7. 12. 2020 12:20:11 Start - Controler
+7. 12. 2020 12:20:11 Start - SaveTender
+7. 12. 2020 12:22:00 Izdelane lokacije št:10 / 20 trenutna lokacija: (IT) 03039 SORA - (SLO) 3310 ŽALEC
+7. 12. 2020 12:24:00 Izdelane lokacije št:20 / 20 trenutna lokacija: (IT) 37135 VERONA - (SLO) ŽALEC
+7. 12. 2020 12:24:01 Start - SaveTender
+7. 12. 2020 12:24:07 7. 12. 2020 12:24:07
+7. 12. 2020 12:24:07 CNT :13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:50 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:100 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:150 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:200 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:250 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:300 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:350 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:400 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:450 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:500 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:550 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:600 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:650 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:700 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:750 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:800 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:850 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:900 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:950 / 13547
+7. 12. 2020 12:24:07 Izdelane pozicije št:1000 / 13547
+7. 12. 2020 12:24:44 Commit:1000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:1950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2000 / 13547
+7. 12. 2020 12:24:45 Commit:2000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:2950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3000 / 13547
+7. 12. 2020 12:24:45 Commit:3000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:3950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4000 / 13547
+7. 12. 2020 12:24:45 Commit:4000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:4950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5000 / 13547
+7. 12. 2020 12:24:45 Commit:5000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:5950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6000 / 13547
+7. 12. 2020 12:24:45 Commit:6000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:6950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7000 / 13547
+7. 12. 2020 12:24:45 Commit:7000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:7950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8000 / 13547
+7. 12. 2020 12:24:45 Commit:8000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:8950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9000 / 13547
+7. 12. 2020 12:24:45 Commit:9000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:9950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10000 / 13547
+7. 12. 2020 12:24:45 Commit:10000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10300 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10350 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10400 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10450 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10500 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10550 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10600 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10650 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10700 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10750 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10800 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10850 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10900 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:10950 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11000 / 13547
+7. 12. 2020 12:24:45 Commit:11000 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11050 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11100 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11150 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11200 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11250 / 13547
+7. 12. 2020 12:24:45 Izdelane pozicije št:11300 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11350 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11400 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11450 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11500 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11550 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11600 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11650 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11700 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11750 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11800 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11850 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11900 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:11950 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12000 / 13547
+7. 12. 2020 12:24:46 Commit:12000 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12050 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12100 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12150 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12200 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12250 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12300 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12350 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12400 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12450 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12500 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12550 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12600 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12650 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12700 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12750 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12800 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12850 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12900 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:12950 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13000 / 13547
+7. 12. 2020 12:24:46 Commit:13000 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13050 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13100 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13150 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13200 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13250 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13300 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13350 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13400 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13450 / 13547
+7. 12. 2020 12:24:46 Izdelane pozicije št:13500 / 13547
+7. 12. 2020 12:26:00 7. 12. 2020 12:26:00
+7. 12. 2020 12:26:00 CNT add :13547
+7. 12. 2020 12:26:00 CNT update:0
+7. 12. 2020 12:26:00 Save positions finished!
+7. 12. 2020 12:26:00 Start - SaveTender

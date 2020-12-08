@@ -54,13 +54,32 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetTenderList()
+        public IHttpActionResult GetTenderList(string dtFrom, string dtTo)
         {
             WebResponseContentModel<List<TenderFullModel>> tmpUser = new WebResponseContentModel<List<TenderFullModel>>();
             Del<List<TenderFullModel>> responseStatusHandler = ProcessContentModel;
             try
             {
-                tmpUser.Content = tenderRepo.GetTenderList();
+                tmpUser.Content = tenderRepo.GetTenderList(dtFrom, dtTo);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetTenderListPositionByTenderID(int tenderID)
+        {
+            WebResponseContentModel<List<TenderPositionModel>> tmpUser = new WebResponseContentModel<List<TenderPositionModel>>();
+            Del<List<TenderPositionModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = tenderRepo.GetTenderListPositionByTenderID(tenderID);
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)
@@ -80,6 +99,25 @@ namespace DatabaseWebService.Controllers
             try
             {
                 tmpUser.Content = tenderRepo.GetTenderModelByID(tenderID);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetTenderSimpleModelByID(int tenderID)
+        {
+            WebResponseContentModel<TenderModel> tmpUser = new WebResponseContentModel<TenderModel>();
+            Del<TenderModel> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = tenderRepo.GetTenderSimpleModelByID(tenderID);
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)

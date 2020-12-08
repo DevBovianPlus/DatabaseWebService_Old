@@ -69,6 +69,17 @@ namespace DatabaseWebService.Common
             return num;
         }
 
+        public static DateTime ? ParseDateTime(object param)
+        {
+            DateTime ? dt = null;
+            if (param != null)
+            {
+                dt = DateTime.Parse(param.ToString());
+                
+            }
+            return dt;
+        }
+
         public static double ParseDouble(object param)
         {
             double num = 0;

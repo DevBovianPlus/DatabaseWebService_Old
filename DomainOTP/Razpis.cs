@@ -27,6 +27,11 @@ namespace DatabaseWebService.DomainOTP
         public string Naziv { get; set; }
         public Nullable<bool> RazpisKreiran { get; set; }
         public string PotRazpisa { get; set; }
+        public string PodatkiZaExcell_JSon { get; set; }
+        public Nullable<bool> GeneriranTender { get; set; }
+        public Nullable<decimal> CiljnaCena { get; set; }
+        public Nullable<bool> IsCiljnaCena { get; set; }
+        public Nullable<bool> IsNajcenejsiPrevoznik { get; set; }
     
         public virtual ICollection<RazpisPozicija> RazpisPozicija { get; set; }
     }

@@ -1,5 +1,7 @@
 ﻿using DatabaseWebService.Common.Enums;
 using DatabaseWebService.DomainOTP.Abstract;
+using DatabaseWebService.ModelsOTP;
+using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +43,30 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 item.Status = (int)Enums.SystemEmailMessageStatus.UnProcessed;
             }
             context.SaveChanges();
+        }
+
+        public List<OTPEmailModel> GetAllEmailsOTP()
+        {
+            try
+            {
+                var query = from email in context.SystemEmailMessage_OTP
+                            select new OTPEmailModel
+                            {
+                                SystemEmailMessageID = email.SystemEmailMessageID,
+                                EmailFrom = email.EmailFrom,
+                                EmailTo = email.EmailTo,
+                                EmailBody = email.EmailBody,
+                                EmailSubject = email.EmailSubject,
+                                EmailStatus = email.Status.HasValue ? email.Status.Value : 0,
+                                ts = email.ts.HasValue ? email.ts.Value : DateTime.MinValue,
+                                tsIDOsebe = email.tsIDOsebe.HasValue ? email.tsIDOsebe.Value : 0,
+                            };
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
         }
     }
 }

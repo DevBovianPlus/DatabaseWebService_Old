@@ -1,8 +1,10 @@
 ﻿using DatabaseWebService.Common;
 using DatabaseWebService.DomainNOZ.Abstract;
+using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.DomainPDO.Abstract;
 using DatabaseWebService.Models;
 using DatabaseWebService.ModelsNOZ.Settings;
+using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsPDO.Settings;
 using DatabaseWebService.Resources;
 using Newtonsoft.Json;
@@ -19,18 +21,20 @@ namespace DatabaseWebService.Controllers
     {
         private ISettingsRepository settingsRepo;
         private ISystemEmailMessageRepository_PDO mailsRepo;
+        private ISystemEmailMessageRepository_OTP OTPmailsRepo;
         private ISystemEmailMessageRepository_NOZ NOZmailsRepo;
 
         private ISettingsNOZRepository settingsNOZRepo;
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
 
-        public SettingsController(ISettingsRepository isettingsRepo, ISystemEmailMessageRepository_PDO ImailsRepo, ISettingsNOZRepository IsettingsNOZRepo, ISystemEmailMessageRepository_NOZ ImailsNOZRepo)
+        public SettingsController(ISettingsRepository isettingsRepo, ISystemEmailMessageRepository_PDO ImailsRepo, ISettingsNOZRepository IsettingsNOZRepo, ISystemEmailMessageRepository_NOZ ImailsNOZRepo, ISystemEmailMessageRepository_OTP iOTPmailsRepo)
         {
             settingsRepo = isettingsRepo;
             mailsRepo = ImailsRepo;
             NOZmailsRepo = ImailsNOZRepo;
             settingsNOZRepo = IsettingsNOZRepo;
+            OTPmailsRepo = iOTPmailsRepo;
         }
 
         public WebResponseContentModel<T> ProcessContentModel<T>(WebResponseContentModel<T> model, Exception ex = null)
@@ -84,6 +88,26 @@ namespace DatabaseWebService.Controllers
             try
             {
                 tmpUser.Content = mailsRepo.GetAllEmails();
+
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAllEmailsOTP()
+        {
+            WebResponseContentModel<List<OTPEmailModel>> tmpUser = new WebResponseContentModel<List<OTPEmailModel>>();
+            Del<List<OTPEmailModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = OTPmailsRepo.GetAllEmailsOTP();
 
                 responseStatusHandler(tmpUser);
             }
