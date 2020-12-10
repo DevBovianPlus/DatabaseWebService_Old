@@ -10,5 +10,7 @@ namespace DatabaseWebService.Models
     {        
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
+        public string FilterSearch { get; set; }
+
     }
 }

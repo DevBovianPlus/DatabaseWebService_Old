@@ -10,7 +10,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
 {
     public interface ITenderRepository
     {
-        List<TenderFullModel> GetTenderList(string dtFrom, string dtTo);
+        List<TenderFullModel> GetTenderList(string dtFrom, string dtTo, string FilterString);
         List<TenderPositionModel> GetTenderListPositionByTenderID(int tenderID);
         TenderFullModel GetTenderModelByID(int tenderID);
         TenderModel GetTenderSimpleModelByID(int tenderID);

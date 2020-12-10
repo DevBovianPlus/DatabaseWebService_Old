@@ -305,6 +305,33 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 {
                     // zaključimo, ker rabimo samo število odpoklicov
                     // pri razpisih
+                    
+                    // dobimo vse relacije
+                    var fullquerry = from route in context.Relacija
+                                     select new RouteModel
+                                     {
+                                         Datum = route.Datum.HasValue ? route.Datum.Value : DateTime.MinValue,
+                                         Dolzina = route.Dolzina,
+                                         Koda = route.Koda,
+                                         Naziv = route.Naziv,
+                                         RelacijaID = route.RelacijaID,
+                                         Opomba = route.Opomba,
+                                         RouteFirstRecallDate = (from recalls in context.Odpoklic
+                                                                 where recalls.RelacijaID.Value == route.RelacijaID
+                                                                 orderby recalls.OdpoklicID
+                                                                 select recalls).FirstOrDefault() != null ? (from recalls in context.Odpoklic
+                                                                                                             where recalls.RelacijaID.Value == route.RelacijaID
+                                                                                                             orderby recalls.OdpoklicID
+                                                                                                             select recalls).FirstOrDefault().ts.Value : DateTime.Now,
+                                         ts = route.ts.HasValue ? route.ts.Value : DateTime.MinValue,
+                                         tsIDOsebe = route.tsIDOsebe.HasValue ? route.tsIDOsebe.Value : 0
+                                     };
+                    List<RouteModel> rFullList = fullquerry.ToList();
+
+                    // dobimo seznam ostalih relacij
+                    var notContain = fullquerry.Except(query).ToList();
+                    List<RouteModel> restList = notContain.ToList();
+                    rList.AddRange(restList);                    
                     vRPModel.lRouteList = rList;
                     return vRPModel;
                 }

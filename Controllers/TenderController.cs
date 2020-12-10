@@ -54,13 +54,13 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetTenderList(string dtFrom, string dtTo)
+        public IHttpActionResult GetTenderList(string dtFrom, string dtTo, string sFilterString)
         {
             WebResponseContentModel<List<TenderFullModel>> tmpUser = new WebResponseContentModel<List<TenderFullModel>>();
             Del<List<TenderFullModel>> responseStatusHandler = ProcessContentModel;
             try
             {
-                tmpUser.Content = tenderRepo.GetTenderList(dtFrom, dtTo);
+                tmpUser.Content = tenderRepo.GetTenderList(dtFrom, dtTo, sFilterString);
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)
