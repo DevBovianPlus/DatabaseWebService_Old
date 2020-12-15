@@ -12,6 +12,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
     {
         List<TenderFullModel> GetTenderList(string dtFrom, string dtTo, string FilterString);
         List<TenderPositionModel> GetTenderListPositionByTenderID(int tenderID);
+        List<TenderPositionChangeModel> GetTenderListPositionChanges();
         TenderFullModel GetTenderModelByID(int tenderID);
         TenderModel GetTenderSimpleModelByID(int tenderID);
 
@@ -38,5 +39,6 @@ namespace DatabaseWebService.DomainOTP.Abstract
         List<TonsModel> GetAllTons();
 
         hlpTenderTransporterSelection PrepareDataForTenderTransport(hlpTenderTransporterSelection vTTModel);
+        void SaverPositionsChanges(List<TenderPositionChangeModel> positionsChanges);
     }
 }

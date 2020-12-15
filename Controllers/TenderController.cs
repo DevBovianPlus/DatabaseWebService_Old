@@ -92,6 +92,25 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetTenderListPositionChanges()
+        {
+            WebResponseContentModel<List<TenderPositionChangeModel>> tmpUser = new WebResponseContentModel<List<TenderPositionChangeModel>>();
+            Del<List<TenderPositionChangeModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = tenderRepo.GetTenderListPositionChanges();
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
         public IHttpActionResult GetTenderByID(int tenderID)
         {
             WebResponseContentModel<TenderFullModel> tmpUser = new WebResponseContentModel<TenderFullModel>();
@@ -310,6 +329,36 @@ namespace DatabaseWebService.Controllers
                         tenderRepo.SaveTenderWithTenderPositions(model.Content);
                     else // We add and save new recod to DB 
                         model.Content.RazpisID = tenderRepo.SaveTenderWithTenderPositions(model.Content, false);
+
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
+        }
+
+        [HttpPost]
+        public IHttpActionResult SaveTenderPositionChanges([FromBody] object tenderPositionsChangeData)
+        {
+            WebResponseContentModel<List<TenderPositionChangeModel>> model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<List<TenderPositionChangeModel>>>(tenderPositionsChangeData.ToString());
+
+                if (model.Content != null)
+                {
+                   tenderRepo.SaverPositionsChanges(model.Content);
 
                     model.IsRequestSuccesful = true;
                 }

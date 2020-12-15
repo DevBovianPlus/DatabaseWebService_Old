@@ -23,6 +23,7 @@ namespace DatabaseWebService.DomainOTP
             this.RazpisPozicija = new HashSet<RazpisPozicija>();
             this.StrankaZaposleni_OTP = new HashSet<StrankaZaposleni_OTP>();
             this.KontaktneOsebe_OTP = new HashSet<KontaktneOsebe_OTP>();
+            this.RazpisPozicijaSpremembe = new HashSet<RazpisPozicijaSpremembe>();
         }
     
         public int idStranka { get; set; }
@@ -70,5 +71,6 @@ namespace DatabaseWebService.DomainOTP
         public virtual TipPrevoza TipPrevoza1 { get; set; }
         public virtual Jeziki Jeziki { get; set; }
         public virtual ICollection<KontaktneOsebe_OTP> KontaktneOsebe_OTP { get; set; }
+        public virtual ICollection<RazpisPozicijaSpremembe> RazpisPozicijaSpremembe { get; set; }
     }
 }

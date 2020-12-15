@@ -17,6 +17,7 @@ namespace DatabaseWebService.DomainOTP
         public Razpis()
         {
             this.RazpisPozicija = new HashSet<RazpisPozicija>();
+            this.RazpisPozicijaSpremembe = new HashSet<RazpisPozicijaSpremembe>();
         }
     
         public int RazpisID { get; set; }
@@ -34,5 +35,6 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<bool> IsNajcenejsiPrevoznik { get; set; }
     
         public virtual ICollection<RazpisPozicija> RazpisPozicija { get; set; }
+        public virtual ICollection<RazpisPozicijaSpremembe> RazpisPozicijaSpremembe { get; set; }
     }
 }

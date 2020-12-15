@@ -265,6 +265,22 @@
           <Property Name="PrevoznikAktualnaCena" Type="bit" />
           <Property Name="ZbirnikTonID" Type="int" />
         </EntityType>
+        <EntityType Name="RazpisPozicijaSpremembe">
+          <Key>
+            <PropertyRef Name="RazpisPozicijaSpremembeID" />
+          </Key>
+          <Property Name="RazpisPozicijaSpremembeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RazpisID" Type="int" Nullable="false" />
+          <Property Name="StrankaID" Type="int" Nullable="false" />
+          <Property Name="RelacijaID" Type="int" Nullable="false" />
+          <Property Name="ZbirnikTonID" Type="int" Nullable="false" />
+          <Property Name="StaraCena" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="NovaCena" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="IDVnosOseba" Type="int" />
+          <Property Name="VnosTS" Type="datetime" />
+          <Property Name="IDSpremembeOseba" Type="int" />
+          <Property Name="SpremembeTS" Type="datetime" />
+        </EntityType>
         <EntityType Name="Relacija">
           <Key>
             <PropertyRef Name="RelacijaID" />
@@ -623,6 +639,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RazpisRazpisPozicijaSpremembeID">
+          <End Role="Razpis" Type="Self.Razpis" Multiplicity="1" />
+          <End Role="RazpisPozicijaSpremembe" Type="Self.RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razpis">
+              <PropertyRef Name="RazpisID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
+              <PropertyRef Name="RazpisID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Relacija_Odpoklic">
           <End Role="Relacija" Type="Self.Relacija" Multiplicity="0..1" />
           <End Role="Odpoklic" Type="Self.Odpoklic" Multiplicity="*" />
@@ -643,6 +671,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
               <PropertyRef Name="RelacijaID" />
             </Principal>
             <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelacijaRazpisPozicijaSpremembeID">
+          <End Role="Relacija" Type="Self.Relacija" Multiplicity="1" />
+          <End Role="RazpisPozicijaSpremembe" Type="Self.RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
               <PropertyRef Name="RelacijaID" />
             </Dependent>
           </ReferentialConstraint>
@@ -679,6 +719,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
               <PropertyRef Name="idStranka" />
             </Principal>
             <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaRazpisPozicijaSpremembeID">
+          <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="1" />
+          <End Role="RazpisPozicijaSpremembe" Type="Self.RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
               <PropertyRef Name="StrankaID" />
             </Dependent>
           </ReferentialConstraint>
@@ -755,6 +807,18 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
               <PropertyRef Name="ZbirnikTonID" />
             </Principal>
             <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZbirnikTonRazpisPozicijaSpremembeID">
+          <End Role="ZbirnikTon" Type="Self.ZbirnikTon" Multiplicity="1" />
+          <End Role="RazpisPozicijaSpremembe" Type="Self.RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
               <PropertyRef Name="ZbirnikTonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -865,6 +929,7 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
           <EntitySet Name="PrijavaPrevoznika" EntityType="Self.PrijavaPrevoznika" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Razpis" EntityType="Self.Razpis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RazpisPozicija" EntityType="Self.RazpisPozicija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RazpisPozicijaSpremembe" EntityType="Self.RazpisPozicijaSpremembe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Relacija" EntityType="Self.Relacija" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusOdpoklica" EntityType="Self.StatusOdpoklica" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stranka_OTP" EntityType="Self.Stranka_OTP" Schema="dbo" store:Type="Tables" />
@@ -946,6 +1011,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
             <End Role="Razpis" EntitySet="Razpis" />
             <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
           </AssociationSet>
+          <AssociationSet Name="FK_RazpisRazpisPozicijaSpremembeID" Association="Self.FK_RazpisRazpisPozicijaSpremembeID">
+            <End Role="Razpis" EntitySet="Razpis" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
+          </AssociationSet>
           <AssociationSet Name="FK_Relacija_Odpoklic" Association="Self.FK_Relacija_Odpoklic">
             <End Role="Relacija" EntitySet="Relacija" />
             <End Role="Odpoklic" EntitySet="Odpoklic" />
@@ -953,6 +1022,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <AssociationSet Name="FK_RelacijaID" Association="Self.FK_RelacijaID">
             <End Role="Relacija" EntitySet="Relacija" />
             <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelacijaRazpisPozicijaSpremembeID" Association="Self.FK_RelacijaRazpisPozicijaSpremembeID">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
           </AssociationSet>
           <AssociationSet Name="FK_Stranka_Odpoklic" Association="Self.FK_Stranka_Odpoklic">
             <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
@@ -965,6 +1038,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <AssociationSet Name="FK_StrankaID" Association="Self.FK_StrankaID">
             <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
             <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaRazpisPozicijaSpremembeID" Association="Self.FK_StrankaRazpisPozicijaSpremembeID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
           </AssociationSet>
           <AssociationSet Name="FK_STRANKAZ_REFERENCE_OSEBE" Association="Self.FK_STRANKAZ_REFERENCE_OSEBE">
             <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
@@ -989,6 +1066,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <AssociationSet Name="FK_ZbirnikTonID" Association="Self.FK_ZbirnikTonID">
             <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
             <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZbirnikTonRazpisPozicijaSpremembeID" Association="Self.FK_ZbirnikTonRazpisPozicijaSpremembeID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1139,6 +1220,23 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <AssociationSet Name="FK_ZbirnikTonID" Association="GrafolitOTPModel.FK_ZbirnikTonID">
             <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
             <End Role="RazpisPozicija" EntitySet="RazpisPozicija" />
+          </AssociationSet>
+          <EntitySet Name="RazpisPozicijaSpremembe" EntityType="GrafolitOTPModel.RazpisPozicijaSpremembe" />
+          <AssociationSet Name="FK_RazpisRazpisPozicijaSpremembeID" Association="GrafolitOTPModel.FK_RazpisRazpisPozicijaSpremembeID">
+            <End Role="Razpis" EntitySet="Razpis" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelacijaRazpisPozicijaSpremembeID" Association="GrafolitOTPModel.FK_RelacijaRazpisPozicijaSpremembeID">
+            <End Role="Relacija" EntitySet="Relacija" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StrankaRazpisPozicijaSpremembeID" Association="GrafolitOTPModel.FK_StrankaRazpisPozicijaSpremembeID">
+            <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZbirnikTonRazpisPozicijaSpremembeID" Association="GrafolitOTPModel.FK_ZbirnikTonRazpisPozicijaSpremembeID">
+            <End Role="ZbirnikTon" EntitySet="ZbirnikTon" />
+            <End Role="RazpisPozicijaSpremembe" EntitySet="RazpisPozicijaSpremembe" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Osebe_OTP">
@@ -1303,6 +1401,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="Opomba" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RazpisPozicija" Relationship="GrafolitOTPModel.FK_RelacijaID" FromRole="Relacija" ToRole="RazpisPozicija" />
           <NavigationProperty Name="Odpoklic" Relationship="GrafolitOTPModel.FK_Relacija_Odpoklic" FromRole="Relacija" ToRole="Odpoklic" />
+          <NavigationProperty Name="RazpisPozicijaSpremembe" Relationship="GrafolitOTPModel.FK_RelacijaRazpisPozicijaSpremembeID" FromRole="Relacija" ToRole="RazpisPozicijaSpremembe" />
         </EntityType>
         <EntityType Name="Razpis">
           <Key>
@@ -1322,6 +1421,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="CiljnaCena" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IsCiljnaCena" Type="Boolean" />
           <Property Name="IsNajcenejsiPrevoznik" Type="Boolean" />
+          <NavigationProperty Name="RazpisPozicijaSpremembe" Relationship="GrafolitOTPModel.FK_RazpisRazpisPozicijaSpremembeID" FromRole="Razpis" ToRole="RazpisPozicijaSpremembe" />
         </EntityType>
         <EntityType Name="RazpisPozicija">
           <Key>
@@ -1693,6 +1793,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="JezikID" Type="Int32" />
           <NavigationProperty Name="Jeziki" Relationship="GrafolitOTPModel.FK_Jezik" FromRole="Stranka_OTP" ToRole="Jeziki" />
           <NavigationProperty Name="KontaktneOsebe_OTP" Relationship="GrafolitOTPModel.FK_KONTAKTN_REFERENCE_STRANKA" FromRole="Stranka_OTP" ToRole="KontaktneOsebe_OTP" />
+          <NavigationProperty Name="RazpisPozicijaSpremembe" Relationship="GrafolitOTPModel.FK_StrankaRazpisPozicijaSpremembeID" FromRole="Stranka_OTP" ToRole="RazpisPozicijaSpremembe" />
         </EntityType>
         <Association Name="FK_LastnaZaloga_Stranka_OTP">
           <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="1">
@@ -1970,6 +2071,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="OdTeza" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="DoTeza" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="SortIdx" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="RazpisPozicijaSpremembe" Relationship="GrafolitOTPModel.FK_ZbirnikTonRazpisPozicijaSpremembeID" FromRole="ZbirnikTon" ToRole="RazpisPozicijaSpremembe" />
         </EntityType>
         <Association Name="FK_Odpoklic_ZbirnikTonID">
           <End Type="GrafolitOTPModel.ZbirnikTon" Role="ZbirnikTon" Multiplicity="0..1" />
@@ -1991,6 +2093,74 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
               <PropertyRef Name="ZbirnikTonID" />
             </Principal>
             <Dependent Role="RazpisPozicija">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RazpisPozicijaSpremembe">
+          <Key>
+            <PropertyRef Name="RazpisPozicijaSpremembeID" />
+          </Key>
+          <Property Name="RazpisPozicijaSpremembeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazpisID" Type="Int32" Nullable="false" />
+          <Property Name="StrankaID" Type="Int32" Nullable="false" />
+          <Property Name="RelacijaID" Type="Int32" Nullable="false" />
+          <Property Name="StaraCena" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="NovaCena" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IDVnosOseba" Type="Int32" />
+          <Property Name="VnosTS" Type="DateTime" Precision="3" />
+          <Property Name="IDSpremembeOseba" Type="Int32" />
+          <Property Name="SpremembeTS" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Razpis" Relationship="GrafolitOTPModel.FK_RazpisRazpisPozicijaSpremembeID" FromRole="RazpisPozicijaSpremembe" ToRole="Razpis" />
+          <NavigationProperty Name="Relacija" Relationship="GrafolitOTPModel.FK_RelacijaRazpisPozicijaSpremembeID" FromRole="RazpisPozicijaSpremembe" ToRole="Relacija" />
+          <NavigationProperty Name="Stranka_OTP" Relationship="GrafolitOTPModel.FK_StrankaRazpisPozicijaSpremembeID" FromRole="RazpisPozicijaSpremembe" ToRole="Stranka_OTP" />
+          <Property Name="ZbirnikTonID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ZbirnikTon" Relationship="GrafolitOTPModel.FK_ZbirnikTonRazpisPozicijaSpremembeID" FromRole="RazpisPozicijaSpremembe" ToRole="ZbirnikTon" />
+        </EntityType>
+        <Association Name="FK_RazpisRazpisPozicijaSpremembeID">
+          <End Type="GrafolitOTPModel.Razpis" Role="Razpis" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicijaSpremembe" Role="RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razpis">
+              <PropertyRef Name="RazpisID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
+              <PropertyRef Name="RazpisID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelacijaRazpisPozicijaSpremembeID">
+          <End Type="GrafolitOTPModel.Relacija" Role="Relacija" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicijaSpremembe" Role="RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacija">
+              <PropertyRef Name="RelacijaID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
+              <PropertyRef Name="RelacijaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StrankaRazpisPozicijaSpremembeID">
+          <End Type="GrafolitOTPModel.Stranka_OTP" Role="Stranka_OTP" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicijaSpremembe" Role="RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stranka_OTP">
+              <PropertyRef Name="idStranka" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
+              <PropertyRef Name="StrankaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZbirnikTonRazpisPozicijaSpremembeID">
+          <End Type="GrafolitOTPModel.ZbirnikTon" Role="ZbirnikTon" Multiplicity="1" />
+          <End Type="GrafolitOTPModel.RazpisPozicijaSpremembe" Role="RazpisPozicijaSpremembe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZbirnikTon">
+              <PropertyRef Name="ZbirnikTonID" />
+            </Principal>
+            <Dependent Role="RazpisPozicijaSpremembe">
               <PropertyRef Name="ZbirnikTonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -2516,6 +2686,23 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="Koda" ColumnName="Koda" />
                 <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RazpisPozicijaSpremembe">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.RazpisPozicijaSpremembe">
+              <MappingFragment StoreEntitySet="RazpisPozicijaSpremembe">
+                <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
+                <ScalarProperty Name="SpremembeTS" ColumnName="SpremembeTS" />
+                <ScalarProperty Name="IDSpremembeOseba" ColumnName="IDSpremembeOseba" />
+                <ScalarProperty Name="VnosTS" ColumnName="VnosTS" />
+                <ScalarProperty Name="IDVnosOseba" ColumnName="IDVnosOseba" />
+                <ScalarProperty Name="NovaCena" ColumnName="NovaCena" />
+                <ScalarProperty Name="StaraCena" ColumnName="StaraCena" />
+                <ScalarProperty Name="RelacijaID" ColumnName="RelacijaID" />
+                <ScalarProperty Name="StrankaID" ColumnName="StrankaID" />
+                <ScalarProperty Name="RazpisID" ColumnName="RazpisID" />
+                <ScalarProperty Name="RazpisPozicijaSpremembeID" ColumnName="RazpisPozicijaSpremembeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

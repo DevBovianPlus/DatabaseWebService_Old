@@ -93,14 +93,14 @@ namespace DatabaseWebService.Common.Enums
             USTVARJENO_NAROCILO,
             KREIRAN_POSLAN_PDF,
             ERR_ADMIN_MAIL, // 5x napaka pri pošiljanju naročilnice
-            ERR_ORDER_NO_SEND // kerirana naročilnica, vendar še ni bil poslana
+            ERR_ORDER_NO_SEND, // kerirana naročilnica, vendar še ni bil poslana            
         }
 
         public enum TransportType
         {
             KAMION,
             LETALO,
-            LADJA,
+            LADJA = 11,
             KOMBI,
             ZBIRNIK
         }

@@ -55,6 +55,11 @@
         <EntityTypeShape EntityType="GrafolitOTPModel.ZbirnikTon" Width="1.5" PointX="0.75" PointY="10.875" />
         <AssociationConnector Association="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID" />
         <AssociationConnector Association="GrafolitOTPModel.FK_ZbirnikTonID" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.RazpisPozicijaSpremembe" Width="1.5" PointX="22.625" PointY="13.75" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_RazpisRazpisPozicijaSpremembeID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_RelacijaRazpisPozicijaSpremembeID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_StrankaRazpisPozicijaSpremembeID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_ZbirnikTonRazpisPozicijaSpremembeID" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

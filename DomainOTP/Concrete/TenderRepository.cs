@@ -36,7 +36,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 if (FilterString != null && FilterString.Length > 0)
                 {
                     var query = from tender in context.Razpis
-                                where (tender.DatumRazpisa >= dtF && tender.DatumRazpisa <= dtT) && (tender.RazpisPozicija.Any(rp=>rp.Relacija.Naziv.Contains(FilterString)))
+                                where (tender.DatumRazpisa >= dtF && tender.DatumRazpisa <= dtT) && (tender.RazpisPozicija.Any(rp => rp.Relacija.Naziv.Contains(FilterString)))
                                 select new TenderFullModel
                                 {
                                     CenaSkupaj = tender.CenaSkupaj,
@@ -73,9 +73,9 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                     IsCiljnaCena = tender.IsCiljnaCena.HasValue ? tender.IsCiljnaCena.Value : false,
                                     IsNajcenejsiPrevoznik = tender.IsNajcenejsiPrevoznik.HasValue ? tender.IsNajcenejsiPrevoznik.Value : false,
                                 };
-                    model  = query.ToList();
+                    model = query.ToList();
                 }
-                
+
                 //foreach (var item in model)
                 //{
                 //    item.RazpisPozicija = GetTenderPositionModelByID(item.RazpisID, dtF.Value, dtT.Value);
@@ -85,6 +85,125 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
             catch (Exception ex)
             {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
+        public List<TenderPositionChangeModel> GetTenderListPositionChanges()
+        {
+            try
+            {
+                var query = from tenderPosChange in context.RazpisPozicijaSpremembe
+                            select new TenderPositionChangeModel
+                            {
+                                StaraCena = tenderPosChange.StaraCena.HasValue ? tenderPosChange.StaraCena.Value : 0,
+                                NovaCena = tenderPosChange.NovaCena.HasValue ? tenderPosChange.NovaCena.Value : 0,
+                                IDVnosOseba = tenderPosChange.IDVnosOseba.HasValue ? tenderPosChange.IDVnosOseba.Value : 0,
+                                IDSpremembeOseba = tenderPosChange.IDSpremembeOseba.HasValue ? tenderPosChange.IDSpremembeOseba.Value : 0,
+                                RazpisID = tenderPosChange.RazpisID,
+                                RazpisPozicijaSpremembeID = tenderPosChange.RazpisPozicijaSpremembeID,
+                                Relacija = (from r in context.Relacija
+                                            where r.RelacijaID == tenderPosChange.RelacijaID
+                                            select new RouteModel
+                                            {
+                                                Datum = r.Datum.HasValue ? r.Datum.Value : DateTime.MinValue,
+                                                Dolzina = r.Dolzina,
+                                                Koda = r.Koda,
+                                                Naziv = r.Naziv,
+                                                RelacijaID = r.RelacijaID,
+                                                ts = r.ts.HasValue ? r.ts.Value : DateTime.MinValue,
+                                                tsIDOsebe = r.tsIDOsebe.HasValue ? r.tsIDOsebe.Value : 0,
+                                            }).FirstOrDefault(),
+                                RelacijaID = tenderPosChange.RelacijaID,
+                                Stranka = (from client in context.Stranka_OTP
+                                           where client.idStranka == tenderPosChange.StrankaID
+                                           select new ClientFullModel
+                                           {
+                                               idStranka = client.idStranka,
+                                               KodaStranke = client.KodaStranke,
+                                               NazivPrvi = client.NazivPrvi,
+                                               NazivDrugi = client.NazivDrugi,
+                                               Naslov = client.Naslov,
+                                               StevPoste = client.StevPoste,
+                                               NazivPoste = client.NazivPoste,
+                                               Email = client.Email,
+                                               Telefon = client.Telefon,
+                                               FAX = client.FAX,
+                                               InternetniNalov = client.InternetniNalov,
+                                               KontaktnaOseba = client.KontaktnaOseba,
+                                               RokPlacila = client.RokPlacila,
+                                               TRR = client.TRR,
+                                               DavcnaStev = client.DavcnaStev,
+                                               MaticnaStev = client.MaticnaStev,
+                                               RangStranke = client.RangStranke,
+                                               StatusDomacTuji = client.StatusDomacTuji,
+                                               Zavezanec_DA_NE = client.Zavezanec_DA_NE,
+                                               IdentifikacijskaStev = client.IdentifikacijskaStev,
+                                               Clan_EU = client.Clan_EU,
+                                               BIC = client.BIC,
+                                               KodaPlacila = client.KodaPlacila,
+                                               StatusKupecDobavitelj = client.StatusKupecDobavitelj,
+                                               DrzavaStranke = client.DrzavaStranke,
+                                               Neaktivna = client.Neaktivna,
+                                               Activity = client.Activity.HasValue ? client.Activity.Value : 0,
+                                               GenerirajERacun = client.GenerirajERacun.HasValue ? client.GenerirajERacun.Value : 0,
+                                               JavniZavod = client.JavniZavod.HasValue ? client.JavniZavod.Value : 0,
+                                               ts = client.ts.HasValue ? client.ts.Value : DateTime.MinValue,
+                                               tsIDOsebe = client.tsIDOsebe.HasValue ? client.tsIDOsebe.Value : 0,
+                                               //TODO: Add collections of Dogodek, KontaktneOsebe, Nadzor, Plan, StrankaZaposleni
+                                               TipStrankaID = client.TipID,
+                                               TipStranka = (from clientType in context.TipStranka
+                                                             where clientType.TipStrankaID == client.TipID
+                                                             select new ClientType
+                                                             {
+                                                                 Koda = clientType.Koda,
+                                                                 Naziv = clientType.Naziv,
+                                                                 Opis = clientType.Opis,
+                                                                 TipStrankaID = clientType.TipStrankaID,
+                                                                 ts = clientType.ts.HasValue ? clientType.ts.Value : DateTime.MinValue,
+                                                                 tsIDOseba = clientType.tsIDOseba.HasValue ? clientType.tsIDOseba.Value : 0
+                                                             }).FirstOrDefault()
+
+                                           }).FirstOrDefault(),
+                                StrankaID = tenderPosChange.StrankaID,
+                                SpremembeTS = tenderPosChange.SpremembeTS.HasValue ? tenderPosChange.SpremembeTS.Value : DateTime.MinValue,
+                                VnosTS = tenderPosChange.VnosTS.HasValue ? tenderPosChange.VnosTS.Value : DateTime.MinValue,
+                                ZbirnikTon = (from zt in context.ZbirnikTon
+                                              where zt.ZbirnikTonID == tenderPosChange.ZbirnikTonID
+                                              select new TonsModel
+                                              {
+                                                  Koda = zt.Koda,
+                                                  Naziv = zt.Naziv,
+                                                  ts = zt.ts.HasValue ? zt.ts.Value : DateTime.MinValue,
+                                              }).FirstOrDefault(),
+                                //OsebaVnos = (from employee in clientEmployee
+                                //                     group employee by employee.Osebe_NOZ into person
+                                //                     select new EmployeeSimpleModel
+                                //                     {
+
+                                //                         DatumRojstva = person.Key.DatumRojstva.HasValue ? person.Key.DatumZaposlitve.Value : DateTime.MinValue,
+                                //                         DatumZaposlitve = person.Key.DatumZaposlitve.HasValue ? person.Key.DatumZaposlitve.Value : DateTime.MinValue,
+                                //                         DelovnoMesto = person.Key.DelovnoMesto,
+                                //                         Email = person.Key.Email,
+                                //                         Geslo = person.Key.Geslo,
+                                //                         idOsebe = person.Key.OsebaID,
+                                //                         Ime = person.Key.Ime,
+                                //                         Naslov = person.Key.Naslov,
+                                //                         Priimek = person.Key.Priimek,
+                                //                         TelefonGSM = person.Key.TelefonGSM,
+                                //                         ts = person.Key.ts.HasValue ? person.Key.ts.Value : DateTime.MinValue,
+                                //                         tsIDOsebe = person.Key.tsIDOsebe.HasValue ? person.Key.tsIDOsebe.Value : 0,
+                                //                         UporabniskoIme = person.Key.UporabniskoIme,
+                                //                         Zunanji = person.Key.Zunanji.HasValue ? person.Key.Zunanji.Value : 0
+                                //                     }).FirstOrDefault()
+                            };
+
+                List<TenderPositionChangeModel> modelPosChange = query.ToList();
+                return modelPosChange;
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message);
                 throw new Exception(ValidationExceptionError.res_06, ex);
             }
         }
@@ -587,6 +706,44 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public void SaverPositionsChanges(List<TenderPositionChangeModel> positionsChanges)
+        {
+            try
+            {
+
+                DataTypesHelper.LogThis(DateTime.Now.ToString());
+
+
+                List<RazpisPozicijaSpremembe> listToAdd = new List<RazpisPozicijaSpremembe>();
+
+
+
+                foreach (var item in positionsChanges)
+                {
+                    RazpisPozicijaSpremembe tenderChangesPos = new RazpisPozicijaSpremembe();
+                    tenderChangesPos.NovaCena = item.NovaCena;
+                    tenderChangesPos.StaraCena = item.StaraCena;
+                    tenderChangesPos.VnosTS = item.VnosTS;
+                    tenderChangesPos.IDVnosOseba = (item.IDVnosOseba == 0) ? item.IDSpremembeOseba : 1;
+                    tenderChangesPos.SpremembeTS = item.SpremembeTS;
+                    tenderChangesPos.IDSpremembeOseba = item.IDSpremembeOseba;
+                    tenderChangesPos.RazpisID = item.RazpisID;
+                    tenderChangesPos.RazpisPozicijaSpremembeID = item.RazpisPozicijaSpremembeID;
+                    tenderChangesPos.RelacijaID = item.RelacijaID;
+                    tenderChangesPos.StrankaID = item.StrankaID;
+                    tenderChangesPos.ZbirnikTonID = item.ZbirnikTonID;
+                    listToAdd.Add(tenderChangesPos);
+                }
+                if (listToAdd.Count > 0) context.BulkInsert(listToAdd);
+
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis("Error :" + ex.ToString());
+                throw new Exception(ValidationExceptionError.res_08, ex);
+            }
+        }
+
         public void SaveTenders(List<TenderFullModel> model)
         {
             /*try
@@ -746,11 +903,34 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public TonsModel GetZbirnikTonByID(int ZbirnikTonID)
+        {
+            try
+            {
+                var query = from zbirnik in context.ZbirnikTon
+                            where zbirnik.ZbirnikTonID == ZbirnikTonID
+                            select new TonsModel
+                            {
+
+                                Koda = zbirnik.Koda,
+                                Naziv = zbirnik.Naziv,
+                                ts = zbirnik.ts.HasValue ? zbirnik.ts.Value : DateTime.MinValue,
+                            };
+
+                return query.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
 
         public List<TenderPositionModel> GetTenderListByRouteIDAndTonsID(int routeID, int tonsID, bool bShowZeroTenders)
         {
             try
             {
+                
                 List<RazpisPozicija> tenderPositions = new List<RazpisPozicija>();
                 var test = (from tenderPos in context.RazpisPozicija
                             where tenderPos.RelacijaID == routeID && tenderPos.ZbirnikTonID == tonsID && tenderPos.Stranka_OTP.Activity == 1
@@ -1439,7 +1619,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             model.RelacijaID = itemRoute.RouteID;
                             model.StrankaID = itemTransporter.ClientID;
                             model.ZbirnikTonID = itemTons.ZbirnikTonID;
-
+                            model.IDOseba = vTTModel.tTenderCreateExcellData._TenderModel.tsIDOseba;
                             vTTModel.RazpisPozicija.Add(model);
                         }
                     }

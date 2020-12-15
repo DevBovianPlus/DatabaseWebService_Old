@@ -9481,3 +9481,180 @@ Error Number:-2,State:0,Class:11
 8. 12. 2020 15:36:53 Zaposlen OTP Adminnima dodeljenega nadrejenega!
 10. 12. 2020 10:38:53 GetListOfOrderNumber10
 10. 12. 2020 10:39:10 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+10. 12. 2020 14:36:00 Start - Controler
+10. 12. 2020 14:36:00 Start - SaveTender
+10. 12. 2020 14:36:07 Start - SaveTender
+10. 12. 2020 14:36:07 10. 12. 2020 14:36:07
+10. 12. 2020 14:36:07 CNT :272
+10. 12. 2020 14:36:07 Izdelane pozicije št:50 / 272
+10. 12. 2020 14:36:07 Izdelane pozicije št:100 / 272
+10. 12. 2020 14:36:07 Izdelane pozicije št:150 / 272
+10. 12. 2020 14:36:07 Izdelane pozicije št:200 / 272
+10. 12. 2020 14:36:07 Izdelane pozicije št:250 / 272
+10. 12. 2020 14:36:09 10. 12. 2020 14:36:09
+10. 12. 2020 14:36:09 CNT add :272
+10. 12. 2020 14:36:09 CNT update:0
+10. 12. 2020 14:36:09 Save positions finished!
+10. 12. 2020 14:36:09 Start - SaveTender
+10. 12. 2020 14:41:23 Start - SaveTender
+10. 12. 2020 14:41:23 10. 12. 2020 14:41:23
+10. 12. 2020 14:41:23 CNT :1
+10. 12. 2020 14:41:23 10. 12. 2020 14:41:23
+10. 12. 2020 14:41:23 CNT add :0
+10. 12. 2020 14:41:23 CNT update:1
+10. 12. 2020 14:41:23 Save positions finished!
+10. 12. 2020 18:10:58 GetListOfOrderNumber10
+10. 12. 2020 18:11:04 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+10. 12. 2020 23:11:47 GetListOfOrderNumber10
+10. 12. 2020 23:11:53 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+10. 12. 2020 23:17:59 GetListOfOrderNumber10
+10. 12. 2020 23:18:05 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+11. 12. 2020 10:43:41 Start - Controler
+11. 12. 2020 10:43:41 Start - SaveTender
+11. 12. 2020 10:43:53 Start - SaveTender
+11. 12. 2020 10:43:53 11. 12. 2020 10:43:53
+11. 12. 2020 10:43:53 CNT :3
+11. 12. 2020 10:43:54 11. 12. 2020 10:43:54
+11. 12. 2020 10:43:54 CNT add :3
+11. 12. 2020 10:43:54 CNT update:0
+11. 12. 2020 10:43:54 Save positions finished!
+11. 12. 2020 10:43:54 Start - SaveTender
+11. 12. 2020 10:44:45 Start - SaveTender
+11. 12. 2020 10:44:45 11. 12. 2020 10:44:45
+11. 12. 2020 10:44:45 CNT :3
+11. 12. 2020 10:44:45 11. 12. 2020 10:44:45
+11. 12. 2020 10:44:45 CNT add :0
+11. 12. 2020 10:44:45 CNT update:3
+11. 12. 2020 10:44:45 Save positions finished!
+11. 12. 2020 10:47:22 GetListOfOrderNumber10
+11. 12. 2020 10:50:32 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+11. 12. 2020 10:56:19 GetListOfOrderNumber10
+11. 12. 2020 10:56:29 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+11. 12. 2020 10:56:38 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+11. 12. 2020 10:56:45 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+11. 12. 2020 11:07:44 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 12. 2020 11:07:44 SaveRecall2 : (model.Content.OdpoklicID) :0
+11. 12. 2020 11:17:59 GetListOfOrderNumber10
+11. 12. 2020 11:18:12 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+11. 12. 2020 11:18:22 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 12. 2020 11:23:55 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+11. 12. 2020 11:24:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 12. 2020 11:24:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+11. 12. 2020 11:34:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+11. 12. 2020 11:34:52 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 12. 2020 11:34:52 SaveRecall1 : (model.Content.OdpoklicID) :5128
+11. 12. 2020 11:49:29 GetListOfOrderNumber10
+11. 12. 2020 11:49:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 12. 2020 12:18:13 GetListOfOrderNumber10
+11. 12. 2020 12:18:21 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 12. 2020 12:19:08 GetListOfOrderNumber10
+11. 12. 2020 12:19:16 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11. 12. 2020 14:06:28 GetListOfOrderNumber10
+11. 12. 2020 14:06:50 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+11. 12. 2020 14:39:19 GetListOfOrderNumber10
+11. 12. 2020 14:42:28 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+11. 12. 2020 14:43:46 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+11. 12. 2020 14:44:44 GetListOfOpenedOrderPositions for : SAPPI EUROPE                  
+11. 12. 2020 14:45:16 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+11. 12. 2020 15:21:17 Start - SaveTender
+11. 12. 2020 15:21:17 11. 12. 2020 15:21:17
+11. 12. 2020 15:21:17 CNT :4
+11. 12. 2020 15:21:19 11. 12. 2020 15:21:19
+11. 12. 2020 15:21:19 CNT add :0
+11. 12. 2020 15:21:19 CNT update:4
+11. 12. 2020 15:21:19 Save positions finished!
+11. 12. 2020 16:13:26 11. 12. 2020 16:13:26
+11. 12. 2020 16:15:31 Error :System.Data.SqlClient.SqlException (0x80131904): The MERGE statement conflicted with the FOREIGN KEY constraint "FK_OsebaOTPVnosRazpisPozicijaSpremembeID". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.Osebe_OTP", column 'idOsebe'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   at System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   at System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at .(DbCommand , BulkOperation , Int32 )
+   at .( , DbCommand )
+   at .Execute(List`1 actions)
+   at Z.BulkOperations.BulkOperation.Execute()
+   at Z.EntityFramework.Extensions.EntityBulkOperation`1.BulkInsert()
+   at .[](BulkOperation`1 this, DbContext , List`1 , Boolean , List`1 , Type , String )
+   at .`1.(SchemaEntityType )
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at .[](DbContext this, BulkOperation`1 , IEnumerable`1 , List`1 )
+   at DbContextExtensions.BulkInsert[T](DbContext this, IEnumerable`1 entities, Action`1 bulkOperationFactory)
+   at DatabaseWebService.DomainOTP.Concrete.TenderRepository.SaverPositionsChanges(List`1 positionsChanges) in D:\GitHub\DatabaseWebService\DomainOTP\Concrete\TenderRepository.cs:line 717
+ClientConnectionId:ce62020f-5daa-4abf-abb9-0b551c10846e
+Error Number:547,State:0,Class:16
+11. 12. 2020 16:26:00 Start - Controler
+11. 12. 2020 16:26:00 Start - SaveTender
+11. 12. 2020 16:26:21 Start - SaveTender
+11. 12. 2020 16:26:21 11. 12. 2020 16:26:21
+11. 12. 2020 16:26:21 CNT :4
+11. 12. 2020 16:26:23 11. 12. 2020 16:26:23
+11. 12. 2020 16:26:23 CNT add :4
+11. 12. 2020 16:26:23 CNT update:0
+11. 12. 2020 16:26:23 Save positions finished!
+11. 12. 2020 16:26:23 Start - SaveTender
+11. 12. 2020 16:27:09 11. 12. 2020 16:27:09
+11. 12. 2020 16:27:24 Start - SaveTender
+11. 12. 2020 16:27:24 11. 12. 2020 16:27:24
+11. 12. 2020 16:27:24 CNT :4
+11. 12. 2020 16:27:24 11. 12. 2020 16:27:24
+11. 12. 2020 16:27:24 CNT add :0
+11. 12. 2020 16:27:24 CNT update:4
+11. 12. 2020 16:27:24 Save positions finished!
+13. 12. 2020 19:25:30 GetListOfOrderNumber10
+13. 12. 2020 19:26:15 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+13. 12. 2020 19:29:11 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+13. 12. 2020 19:33:15 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+13. 12. 2020 19:34:39 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+13. 12. 2020 19:36:43 GetListOfOpenedOrderPositions for : VAL KART d.o.o.               
+13. 12. 2020 19:39:39 GetListOfOpenedOrderPositions for : RŽENIČNIK JANEZ S.P. - PAKO - 
+14. 12. 2020 08:49:33 GetListOfOrderNumber10
+14. 12. 2020 08:49:48 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+14. 12. 2020 09:24:15 GetListOfOrderNumber10
+14. 12. 2020 09:25:03 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+14. 12. 2020 09:26:52 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+14. 12. 2020 15:03:38 GetListOfOrderNumber10
+14. 12. 2020 15:04:22 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+14. 12. 2020 15:11:36 An error occurred while executing the command definition. See the inner exception for details.
+14. 12. 2020 15:14:00 Start - Controler
+14. 12. 2020 15:14:00 Start - SaveTender
+14. 12. 2020 15:14:57 Start - SaveTender
+14. 12. 2020 15:14:58 14. 12. 2020 15:14:58
+14. 12. 2020 15:14:58 CNT :9
+14. 12. 2020 15:15:00 14. 12. 2020 15:15:00
+14. 12. 2020 15:15:00 CNT add :9
+14. 12. 2020 15:15:00 CNT update:0
+14. 12. 2020 15:15:00 Save positions finished!
+14. 12. 2020 15:15:00 Start - SaveTender
+14. 12. 2020 15:16:14 14. 12. 2020 15:16:14
+14. 12. 2020 15:16:14 Start - SaveTender
+14. 12. 2020 15:16:14 14. 12. 2020 15:16:14
+14. 12. 2020 15:16:14 CNT :6
+14. 12. 2020 15:16:14 14. 12. 2020 15:16:14
+14. 12. 2020 15:16:14 CNT add :0
+14. 12. 2020 15:16:14 CNT update:6
+14. 12. 2020 15:16:15 Save positions finished!
+15. 12. 2020 07:42:00 15. 12. 2020 07:42:00
+15. 12. 2020 07:42:02 Start - SaveTender
+15. 12. 2020 07:42:02 15. 12. 2020 07:42:02
+15. 12. 2020 07:42:02 CNT :3
+15. 12. 2020 07:42:03 15. 12. 2020 07:42:03
+15. 12. 2020 07:42:03 CNT add :0
+15. 12. 2020 07:42:03 CNT update:3
+15. 12. 2020 07:42:03 Save positions finished!
+15. 12. 2020 07:42:59 GetListOfOrderNumber10
+15. 12. 2020 07:43:19 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+15. 12. 2020 07:43:30 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+15. 12. 2020 07:58:25 GetListOfOrderNumber10
+15. 12. 2020 07:58:38 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+15. 12. 2020 07:58:49 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+15. 12. 2020 08:05:46 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+15. 12. 2020 08:07:38 GetListOfOrderNumber10
+15. 12. 2020 08:07:48 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
