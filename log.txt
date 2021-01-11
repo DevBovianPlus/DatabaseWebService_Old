@@ -9658,3 +9658,250 @@ Error Number:547,State:0,Class:16
 15. 12. 2020 08:05:46 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
 15. 12. 2020 08:07:38 GetListOfOrderNumber10
 15. 12. 2020 08:07:48 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+16. 12. 2020 11:03:16 GetListOfOrderNumber10
+16. 12. 2020 11:04:41 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+16. 12. 2020 11:06:23 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+16. 12. 2020 11:06:23 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 12. 2020 11:06:42 GetListOfOrderNumber10
+16. 12. 2020 11:06:53 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+16. 12. 2020 11:09:59 GetListOfOrderNumber10
+16. 12. 2020 11:10:09 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+16. 12. 2020 11:14:45 GetListOfOrderNumber10
+16. 12. 2020 11:19:39 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+16. 12. 2020 11:24:47 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+16. 12. 2020 11:24:47 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 12. 2020 11:31:34 GetListOfOrderNumber10
+16. 12. 2020 11:31:52 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+16. 12. 2020 11:42:54 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+16. 12. 2020 11:42:54 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 12. 2020 11:59:54 GetListOfOrderNumber10
+16. 12. 2020 12:00:13 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+16. 12. 2020 12:01:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+16. 12. 2020 12:01:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 12. 2020 12:03:14 GetListOfOrderNumber10
+16. 12. 2020 12:03:43 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+16. 12. 2020 12:17:37 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+16. 12. 2020 12:17:38 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:34:38 GetListOfOrderNumber10
+29. 12. 2020 08:35:50 GetListOfOrderNumber10
+29. 12. 2020 08:36:13 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+29. 12. 2020 08:37:11 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 08:37:11 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:37:45 GetListOfOrderNumber10
+29. 12. 2020 08:37:49 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+29. 12. 2020 08:38:29 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 08:38:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:38:38 GetListOfOrderNumber10
+29. 12. 2020 08:38:44 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+29. 12. 2020 08:39:44 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 08:39:44 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:40:11 GetListOfOrderNumber10
+29. 12. 2020 08:40:45 GetListOfOpenedOrderPositions for : ARTA TRADE SRL                
+29. 12. 2020 08:44:00 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+29. 12. 2020 08:44:36 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 08:44:36 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:44:50 GetListOfOrderNumber10
+29. 12. 2020 08:45:01 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+29. 12. 2020 08:49:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 08:49:16 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 08:49:17 SaveRecall2 : V_ODOBRITEV
+29. 12. 2020 08:49:17 D:\GitHub\DatabaseWebService\
+29. 12. 2020 08:51:05 GetListOfOrderNumber10
+29. 12. 2020 08:51:19 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+29. 12. 2020 10:44:36 GetListOfOrderNumber10
+29. 12. 2020 10:44:42 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+29. 12. 2020 12:38:26 GetListOfOrderNumber10
+29. 12. 2020 12:38:44 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+29. 12. 2020 12:38:51 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+29. 12. 2020 12:39:07 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+29. 12. 2020 12:39:59 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+29. 12. 2020 12:39:59 SaveRecall2 : (model.Content.OdpoklicID) :0
+29. 12. 2020 12:40:04 GetListOfOrderNumber10
+29. 12. 2020 12:40:12 GetListOfOpenedOrderPositions for : HOLMEN AKTIEBOLAG MOMSGRUPP   
+7. 01. 2021 14:19:18 GetListOfOrderNumber10
+7. 01. 2021 14:19:44 GetListOfOrderNumber10
+7. 01. 2021 14:19:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+7. 01. 2021 14:39:28 D:\GitHub\DatabaseWebService\
+7. 01. 2021 14:39:29 D:\GitHub\DatabaseWebService\
+7. 01. 2021 14:39:58 SaveInquiryPurchase : ODDANO
+7. 01. 2021 14:39:59 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 14:40:38 SaveInquiryPurchase : ODDANO
+7. 01. 2021 14:40:39 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 14:40:50 SaveInquiryPurchase : POSLANO_V_NABAVO
+7. 01. 2021 14:40:50 Generate mail for Purchase dept : POSLANO_V_NABAVO
+7. 01. 2021 14:40:50 Generate mail for Purchase dept
+7. 01. 2021 14:40:50 D:\GitHub\DatabaseWebService\
+7. 01. 2021 14:40:50 CreateEmailForGrafolitPurcaheDept
+7. 01. 2021 14:41:35 SaveInquiryPurchase : USTVARJENO_NAROCILO
+7. 01. 2021 14:41:36 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+7. 01. 2021 14:41:38 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>7. 01. 2021 14:41:37</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>PEM                           </ReferentId>
+  <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>DEMAT d.o.o.                  </Buyer>
+  <OrderDate>7. 01. 2021 14:41:38</OrderDate>
+  <LoadDate>15. 01. 2021 00:00:00</LoadDate>
+  <DeliveryDate>15. 01. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate />
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718141231045   </Ident>
+      <Name>NIVIS NEXT MATT 150G 45X85 SB</Name>
+      <Qty>1500,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+    <Product>
+      <DeliveryDate>1. 01. 2001 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0718450130004   </Ident>
+      <Name>BURGO R4 SATIN WEB 130G 88X120X7,6 CM</Name>
+      <Qty>2500,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+7. 01. 2021 14:41:38 Run Create order procedure _upJM_CreateSupplierOrder
+7. 01. 2021 14:41:59 Update Create order Recall Data
+7. 01. 2021 14:50:04 D:\GitHub\DatabaseWebService\
+7. 01. 2021 14:50:04 D:\GitHub\DatabaseWebService\
+7. 01. 2021 15:05:12 D:\GitHub\DatabaseWebService\
+7. 01. 2021 15:05:12 D:\GitHub\DatabaseWebService\
+7. 01. 2021 15:43:50 SaveInquiryPurchase : ODDANO
+7. 01. 2021 15:43:50 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 15:44:11 SaveInquiryPurchase : ODDANO
+7. 01. 2021 15:44:11 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 15:44:23 SaveInquiryPurchase : POSLANO_V_NABAVO
+7. 01. 2021 15:44:23 Generate mail for Purchase dept : POSLANO_V_NABAVO
+7. 01. 2021 15:44:24 Generate mail for Purchase dept
+7. 01. 2021 15:44:24 D:\GitHub\DatabaseWebService\
+7. 01. 2021 15:44:24 CreateEmailForGrafolitPurcaheDept
+7. 01. 2021 16:05:54 SaveInquiryPurchase : ODDANO
+7. 01. 2021 16:05:55 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 16:06:11 SaveInquiryPurchase : ODDANO
+7. 01. 2021 16:06:11 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 16:06:18 SaveInquiryPurchase : ODDANO
+7. 01. 2021 16:06:19 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 16:06:45 SaveInquiryPurchase : ODDANO
+7. 01. 2021 16:06:46 Generate mail for Purchase dept : ODDANO
+7. 01. 2021 16:24:26 SaveInquiryPurchase : POSLANO_V_NABAVO
+7. 01. 2021 16:26:31 Generate mail for Purchase dept : POSLANO_V_NABAVO
+7. 01. 2021 16:26:31 Generate mail for Purchase dept
+7. 01. 2021 16:26:31 D:\GitHub\DatabaseWebService\
+7. 01. 2021 16:26:31 CreateEmailForGrafolitPurcaheDept
+7. 01. 2021 16:36:10 D:\GitHub\DatabaseWebService\
+7. 01. 2021 16:36:10 D:\GitHub\DatabaseWebService\
+7. 01. 2021 16:37:18 SaveInquiryPurchase : POSLANO_V_NABAVO
+7. 01. 2021 16:37:18 Generate mail for Purchase dept : POSLANO_V_NABAVO
+7. 01. 2021 16:37:18 Generate mail for Purchase dept
+7. 01. 2021 16:37:18 D:\GitHub\DatabaseWebService\
+7. 01. 2021 16:37:18 CreateEmailForGrafolitPurcaheDept
+9. 01. 2021 08:00:22 GetListOfOrderNumber10
+9. 01. 2021 08:00:39 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+9. 01. 2021 08:01:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 01. 2021 08:05:18 GetListOfOrderNumber10
+9. 01. 2021 08:05:37 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 01. 2021 08:07:14 GetListOfOrderNumber10
+9. 01. 2021 08:07:20 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 01. 2021 08:08:22 GetListOfOrderNumber10
+9. 01. 2021 08:08:29 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 01. 2021 08:10:10 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 08:10:10 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 08:10:11 SaveRecall2 : V_ODOBRITEV
+9. 01. 2021 08:10:11 D:\GitHub\DatabaseWebService\
+9. 01. 2021 08:10:12 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+9. 01. 2021 08:10:17 GetListOfOrderNumber10
+9. 01. 2021 08:10:22 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 01. 2021 08:13:12 GetListOfOrderNumber10
+9. 01. 2021 08:13:16 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+9. 01. 2021 08:13:21 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+9. 01. 2021 08:18:35 GetListOfOrderNumber10
+9. 01. 2021 08:28:30 GetListOfOrderNumber10
+9. 01. 2021 08:28:36 GetListOfOpenedOrderPositions for : HOLMEN AKTIEBOLAG MOMSGRUPP   
+9. 01. 2021 08:30:32 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 08:30:32 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 08:40:19 GetListOfOrderNumber10
+9. 01. 2021 08:40:24 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+9. 01. 2021 08:40:52 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 08:40:52 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 08:43:19 GetListOfOrderNumber10
+9. 01. 2021 08:43:27 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+9. 01. 2021 08:43:35 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+9. 01. 2021 08:43:53 GetListOfOpenedOrderPositions for : BOMARK PACKAGING d.o.o.       
+9. 01. 2021 08:43:58 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+9. 01. 2021 08:44:10 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+9. 01. 2021 09:20:20 GetListOfOrderNumber10
+9. 01. 2021 09:20:27 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+9. 01. 2021 09:20:59 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:20:59 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 09:21:16 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:21:16 SaveRecall1 : (model.Content.OdpoklicID) :5509
+9. 01. 2021 09:21:33 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:21:33 SaveRecall1 : (model.Content.OdpoklicID) :5509
+9. 01. 2021 09:23:07 GetListOfOrderNumber10
+9. 01. 2021 09:23:10 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+9. 01. 2021 09:25:06 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:25:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 09:25:07 SaveRecall2 : V_ODOBRITEV
+9. 01. 2021 09:25:07 D:\GitHub\DatabaseWebService\
+9. 01. 2021 09:25:56 GetListOfOrderNumber10
+9. 01. 2021 09:26:03 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+9. 01. 2021 09:28:51 GetListOfOrderNumber10
+9. 01. 2021 09:28:56 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+9. 01. 2021 09:30:23 GetListOfOrderNumber10
+9. 01. 2021 09:30:28 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+9. 01. 2021 09:31:22 GetListOfOrderNumber10
+9. 01. 2021 09:31:27 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+9. 01. 2021 09:37:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:37:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 09:40:39 GetListOfOrderNumber10
+9. 01. 2021 09:40:51 GetListOfOpenedOrderPositions for : HOLMEN AKTIEBOLAG MOMSGRUPP   
+9. 01. 2021 09:43:05 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:43:05 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 09:43:20 GetListOfOrderNumber10
+9. 01. 2021 09:43:36 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+9. 01. 2021 09:50:24 GetListOfOrderNumber10
+9. 01. 2021 09:50:35 GetListOfOpenedOrderPositions for : CARTIERA SAN MARTINO SPA      
+9. 01. 2021 09:50:43 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 09:54:30 GetListOfOrderNumber10
+9. 01. 2021 09:54:40 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+9. 01. 2021 09:56:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 09:56:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 10:38:21 GetListOfOrderNumber10
+9. 01. 2021 10:38:29 GetListOfOrderNumber10
+9. 01. 2021 10:38:34 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 10:42:06 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 10:42:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 10:42:13 GetListOfOrderNumber10
+9. 01. 2021 10:42:20 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+9. 01. 2021 10:43:56 GetListOfOrderNumber10
+9. 01. 2021 10:44:02 GetListOfOpenedOrderPositions for : FEDRIGONI S.P.A.              
+9. 01. 2021 10:45:37 GetListOfOrderNumber10
+9. 01. 2021 10:45:45 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 10:59:22 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 10:59:22 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 10:59:27 GetListOfOrderNumber10
+9. 01. 2021 10:59:32 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 11:00:15 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 11:00:15 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 11:00:41 GetListOfOrderNumber10
+9. 01. 2021 11:00:47 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 11:02:17 GetListOfOrderNumber10
+9. 01. 2021 11:02:25 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+9. 01. 2021 11:04:13 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 11:04:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 01. 2021 11:07:21 GetListOfOrderNumber10
+9. 01. 2021 11:07:29 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+9. 01. 2021 11:17:08 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 01. 2021 11:17:08 SaveRecall2 : (model.Content.OdpoklicID) :0

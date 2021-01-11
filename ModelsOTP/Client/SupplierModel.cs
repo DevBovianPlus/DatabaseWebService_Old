@@ -6,7 +6,7 @@ using System.Web;
 namespace DatabaseWebService.ModelsOTP.Client
 {
     public class SupplierModel
-    {
+    {        
         public string Dobavitelj { get; set; }
         public string Naslov { get; set; }
         public string Posta { get; set; }

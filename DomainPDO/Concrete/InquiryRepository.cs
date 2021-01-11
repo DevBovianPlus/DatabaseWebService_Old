@@ -739,6 +739,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     nas.NastavitveID = 0;
                     nas.PovprasevanjeStevilcenjePredpona = prefix;
                     nas.PovprasevanjeStevilcenjeStev = num;
+                    nas.PosiljanjePoste = true;
                     nas.ts = DateTime.Now;
                     nas.tsIDOsebe = 0;
                     nas.tsUpdate = DateTime.Now;

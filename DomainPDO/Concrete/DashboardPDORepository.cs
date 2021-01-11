@@ -70,7 +70,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 //število povpraševanj na zaposlenega
                 var query2 = from inquiry in context.Povprasevanje
                              where inquiry.ts.Value.Year == DateTime.Now.Year
-                             group inquiry by inquiry.tsIDOsebe into groupInquiry
+                             group inquiry by inquiry.PovprasevajneOddal into groupInquiry
                              select new InquiriesInYear
                              {
                                  EmployeeName = (from e in context.Osebe_PDO
