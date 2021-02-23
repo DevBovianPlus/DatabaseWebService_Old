@@ -11,10 +11,13 @@ namespace DatabaseWebService.DomainOTP.Abstract
     public interface IRecallRepository
     {
         List<RecallModel> GetAllRecalls();
+
         RecallFullModel GetRecallFullModelByID(int recallID);
+        RecallBuyerFullModel GetRecallBuyerFullModelByID(int recallID);
         List<RecallPositionModel> GetRecallPositionsByID(int recallID);
         RecallPositionModel GetRecallPositionByID(int recallPositionID);
         int SaveRecall(RecallFullModel model, bool updateRecord = true);
+        int SaveBuyerRecall(RecallBuyerFullModel model, bool updateRecord = true);
         bool DeleteRecall(int recallID);
 
         int SaveRecallPosition(RecallPositionModel model, bool updateRecord = true);
@@ -36,6 +39,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
 
         List<RecallModel> GetAllTakeOverRecalls();
         List<RecallModel> GetAllNonTakeOverRecalls();
+        List<RecallBuyerModel> GetAllBuyersRecalls();
 
 
         string IsPriceSubmittingStillValid(int prijavaPrevoznikaID);
@@ -46,5 +50,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         bool DeleteCarrierInquiry(int carrierInquiryID);
 
         void ResetRecallStatusByID(int iRecallID);
+
+        CreateOrderDocument GenerateNewBuyerOrder(RecallBuyerFullModel model);
     }
 }

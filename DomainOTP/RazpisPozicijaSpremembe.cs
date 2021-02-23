@@ -20,9 +20,9 @@ namespace DatabaseWebService.DomainOTP
         public int RelacijaID { get; set; }
         public Nullable<decimal> StaraCena { get; set; }
         public Nullable<decimal> NovaCena { get; set; }
-        public Nullable<int> IDVnosOseba { get; set; }
+        public int IDVnosOseba { get; set; }
         public Nullable<System.DateTime> VnosTS { get; set; }
-        public Nullable<int> IDSpremembeOseba { get; set; }
+        public int IDSpremembeOseba { get; set; }
         public Nullable<System.DateTime> SpremembeTS { get; set; }
         public int ZbirnikTonID { get; set; }
     
@@ -30,5 +30,7 @@ namespace DatabaseWebService.DomainOTP
         public virtual Relacija Relacija { get; set; }
         public virtual Stranka_OTP Stranka_OTP { get; set; }
         public virtual ZbirnikTon ZbirnikTon { get; set; }
+        public virtual Osebe_OTP Osebe_OTP { get; set; }
+        public virtual Osebe_OTP Osebe_OTP1 { get; set; }
     }
 }

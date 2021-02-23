@@ -69,6 +69,41 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public List<DisconnectedInvoicesModel> GetDisconnectedInvoices()
+        {
+            try
+            {
+                int tempNum = 0;
+
+                var query = from povfak in context.SeznamNepovezanihFaktur()
+                            select new DisconnectedInvoicesModel
+                            {
+                                Kljuc = povfak.Kljuc,
+                                acKey = povfak.acKey,
+                                Datum = povfak.Datum.HasValue ? povfak.Datum.Value : DateTime.MinValue,
+                                Valuta = povfak.Valuta,
+                                Kupec = povfak.Kupec,
+                                Prevzemnik = povfak.Prevzemnik,
+                                Kolicina = povfak.Kolicina.HasValue ? povfak.Kolicina.Value : 0,
+                                ZnesekFakture = povfak.ZnesekFakture
+                            };
+
+
+                List<DisconnectedInvoicesModel> model = query.ToList();
+                model = model.OrderByDescending(d => d.Datum).ToList();
+                foreach (var item in model)
+                {
+                    item.TempID = ++tempNum;
+                }
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
 
         private List<OrderPositionModelNew> SetApplicationToOrderPosition(List<OrderPositionModelNew> listPositions)
         {
@@ -91,7 +126,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 //DataTypesHelper.LogThis("4");
                 if (itmPosPDO != null)
                 {
-                    itmPos.SortGledeNaTipApp = (itmPos.Order_Confirm != null && itmPos.Order_Confirm.Length>0) ? 0 : 1;
+                    itmPos.SortGledeNaTipApp = (itmPos.Order_Confirm != null && itmPos.Order_Confirm.Length > 0) ? 0 : 1;
                     continue;
                 }
                 //DataTypesHelper.LogThis("Before NOZ naročila");
@@ -304,7 +339,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             try
             {
                 DataTypesHelper.LogThis("GetListOfOrderNumber10");
-                
+
 
                 var query = from np in context.SeznamPozicijNarocilnic10ZaOdpoklic()
                             select new OrderPositionModelNew
@@ -320,7 +355,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 Naroceno = np.NarocenaKolicina,
                                 EnotaMere = np.EnotaMere,
                                 PotrjeniRokDobave = np.PotrjeniRokDobave.HasValue ? np.PotrjeniRokDobave.Value : DateTime.MinValue
-                            };                
+                            };
                 List<OrderPositionModelNew> list = query.ToList();
 
                 int count = 1;
@@ -453,20 +488,62 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
             var obj = context.DodajPantheonDokument(OrderDocXML, opExportPath, opPDFFileName, opErrorDesc);
 
-            
+
             string sExportPath = Convert.ToString(opExportPath.Value);
             string sPDFFileName = Convert.ToString(opPDFFileName.Value);
             string sErrorDesc = Convert.ToString(opErrorDesc.Value);
 
             DataTypesHelper.LogThis("Številka naročilnice: " + sPDFFileName);
 
-            if (sErrorDesc.Length>0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
-            
+            if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
+
             if (sErrorDesc.Length > 0) throw new Exception(ValidationExceptionError.res_28 + "<br><br>" + sErrorDesc);
 
             _coData.ExportPath = sExportPath;
             _coData.PDFFile = sPDFFileName;
             _coData.ErrorDesc = sErrorDesc;
+
+
+            return _coData;
+        }
+
+        public CreateOrderDocument GetOrderDocumentDataSupplierOrderAndLinkInvoice(string OrderDocXML, string InvoicesDocXML, string sCreatedOrderNo = "")
+        {
+            CreateOrderDocument _coData = new CreateOrderDocument();
+
+
+            ObjectParameter opReturnOrderNo = new ObjectParameter("p_cKey", "");
+            ObjectParameter opErrorDesc = new ObjectParameter("p_cError", "");
+
+
+            if (sCreatedOrderNo.Length == 0)
+            {
+                var obj = context.DodajPantheonSupplierOrderAndLinkInvoice(OrderDocXML, "", opReturnOrderNo, opErrorDesc);
+            }
+            string sOrderNo = (sCreatedOrderNo.Length > 0 ? sCreatedOrderNo : Convert.ToString(opReturnOrderNo.Value));
+            string sErrorDesc = Convert.ToString(opErrorDesc.Value);
+
+            if (sOrderNo != null && sOrderNo.Length > 0)
+                InvoicesDocXML = InvoicesDocXML.Replace("xxStOrderxx", sOrderNo);
+            else
+            {
+                if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
+            }
+
+            var obj1 = context.DodajPantheonSupplierOrderAndLinkInvoice("", InvoicesDocXML, opReturnOrderNo, opErrorDesc);
+
+            sErrorDesc = Convert.ToString(opErrorDesc.Value);
+
+            DataTypesHelper.LogThis("Številka naročilnice: " + sOrderNo);
+
+            context.OsveziPantheonLinkedInvoicesByOrderNo(sOrderNo);
+
+            if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
+
+            if (sErrorDesc.Length > 0) throw new Exception(ValidationExceptionError.res_28 + "<br><br>" + sErrorDesc);
+
+            _coData.ErrorDesc = sErrorDesc;
+            _coData.OrderNumber = sOrderNo;
 
 
             return _coData;

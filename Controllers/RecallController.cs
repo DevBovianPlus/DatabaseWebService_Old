@@ -21,14 +21,16 @@ namespace DatabaseWebService.Controllers
         private ISystemMessageEventsRepository_OTP messageEventsRepo;
         private IUtilityServiceRepository utilServiceRepo;
         private IEmployeeOTPRepository employeeRepo;
+        private IMSSQLFunctionsRepository sqlFunctionRepo;
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
-        public RecallController(IRecallRepository irecallRepo, ISystemMessageEventsRepository_OTP imessageEventsRepo, IUtilityServiceRepository utilRepo, IEmployeeOTPRepository empRepo)
+        public RecallController(IRecallRepository irecallRepo, ISystemMessageEventsRepository_OTP imessageEventsRepo, IUtilityServiceRepository utilRepo, IEmployeeOTPRepository empRepo, IMSSQLFunctionsRepository isqlFunctionRepo)
         {
             recallRepo = irecallRepo;
             messageEventsRepo = imessageEventsRepo;
             utilServiceRepo = utilRepo;
             employeeRepo = empRepo;
+            sqlFunctionRepo = isqlFunctionRepo;
         }
 
         public WebResponseContentModel<T> ProcessContentModel<T>(WebResponseContentModel<T> model, Exception ex = null)
@@ -113,6 +115,26 @@ namespace DatabaseWebService.Controllers
 
             return Json(tmpUser);
         }
+      
+
+        [HttpGet]
+        public IHttpActionResult GetAllBuyersRecalls()
+        {
+            WebResponseContentModel<List<RecallBuyerModel>> tmpUser = new WebResponseContentModel<List<RecallBuyerModel>>();
+            Del<List<RecallBuyerModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = recallRepo.GetAllBuyersRecalls();
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
 
         [HttpGet]
         public IHttpActionResult GetRecallByID(int recallID)
@@ -122,6 +144,26 @@ namespace DatabaseWebService.Controllers
             try
             {
                 tmpUser.Content = recallRepo.GetRecallFullModelByID(recallID);
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+
+        [HttpGet]
+        public IHttpActionResult GetRecallBuyerByID(int recallID)
+        {
+            WebResponseContentModel<RecallBuyerFullModel> tmpUser = new WebResponseContentModel<RecallBuyerFullModel>();
+            Del<RecallBuyerFullModel> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = recallRepo.GetRecallBuyerFullModelByID(recallID);
                 responseStatusHandler(tmpUser);
             }
             catch (Exception ex)
@@ -187,6 +229,53 @@ namespace DatabaseWebService.Controllers
                             messageEventsRepo.CreateEmailForCarriers(model.Content, employee);
                         }
                     }
+
+                    model.IsRequestSuccesful = true;
+                }
+                else
+                {
+                    model.IsRequestSuccesful = false;
+                    model.ValidationError = ValidationExceptionError.res_09;
+                }
+            }
+            catch (Exception ex)
+            {
+                model.IsRequestSuccesful = false;
+                model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(model);
+            }
+
+            return Json(model);
+        }
+
+        [HttpPost]
+        public IHttpActionResult SaveBuyerRecall([FromBody] object recallData)
+        {
+            WebResponseContentModel<RecallBuyerFullModel> model = null;
+            try
+            {
+                DataTypesHelper.LogThis("SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!");
+
+                model = JsonConvert.DeserializeObject<WebResponseContentModel<RecallBuyerFullModel>>(recallData.ToString());
+
+                if (model.Content != null)
+                {
+
+                    var employee = employeeRepo.GetEmployeeByID(model.Content.UserID);
+
+                    if (model.Content.OdpoklicKupecID > 0)//We update existing record in DB
+                    {
+                        DataTypesHelper.LogThis("SaveBuyerRecall : (model.Content.OdpoklicKupecID) :" + model.Content.OdpoklicKupecID.ToString());
+
+                         recallRepo.SaveBuyerRecall(model.Content);                   
+                    }
+                    else // We add and save new recod to DB 
+                    {
+                        DataTypesHelper.LogThis("SaveRecall2 : (model.Content.OdpoklicID) :" + model.Content.OdpoklicKupecID.ToString());
+                        model.Content.OdpoklicKupecID = recallRepo.SaveBuyerRecall(model.Content, false);                        
+                    }
+
+                    
 
                     model.IsRequestSuccesful = true;
                 }
@@ -995,6 +1084,28 @@ namespace DatabaseWebService.Controllers
 
         #endregion
 
+        #region Odpoklic kupec
+        
+        [HttpGet]
+        public IHttpActionResult GetDisconnectedInvoices()
+        {
+            WebResponseContentModel<List<DisconnectedInvoicesModel>> tmpUser = new WebResponseContentModel<List<DisconnectedInvoicesModel>>();
+            Del<List<DisconnectedInvoicesModel>> responseStatusHandler = ProcessContentModel;
+            try
+            {
+                tmpUser.Content = sqlFunctionRepo.GetDisconnectedInvoices();
+                responseStatusHandler(tmpUser);
+            }
+            catch (Exception ex)
+            {
+                responseStatusHandler(tmpUser, ex);
+                return Json(tmpUser);
+            }
 
+            return Json(tmpUser);
+        }
+
+
+        #endregion
     }
 }

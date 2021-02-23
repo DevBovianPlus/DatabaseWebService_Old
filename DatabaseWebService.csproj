@@ -180,8 +180,8 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=5.1.5.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
-      <HintPath>packages\Z.EntityFramework.Extensions.EF5.5.1.5\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
+    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=5.1.20.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>packages\Z.EntityFramework.Extensions.EF5.5.1.20\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -410,6 +410,12 @@
     <Compile Include="DomainOTP\Odpoklic.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
+    <Compile Include="DomainOTP\OdpoklicKupec.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\OdpoklicKupecPozicija.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainOTP\OdpoklicPozicija.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
@@ -438,6 +444,12 @@
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainOTP\SeznamDobaviteljev_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SeznamNepovezanihFaktur_Result.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\SeznamPovezanihFakturByOrderNo_Result.cs">
       <DependentUpon>Grafolit_OTP.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainOTP\SeznamPozicijNarocilnic10ZaOdpoklic_Result.cs">
@@ -722,6 +734,7 @@
     <Compile Include="ModelsOTP\RecallApprovalEmailModel.cs" />
     <Compile Include="ModelsOTP\Recall\CarrierInquiryModel.cs" />
     <Compile Include="ModelsOTP\Recall\CreateOrderDocument.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallBuyerPositionModel.cs" />
     <Compile Include="ModelsOTP\Recall\MaterialModel.cs" />
     <Compile Include="ModelsOTP\Recall\ModelsDW\CashFlow_Skupno\CashFlow_SkupnoModel.cs" />
     <Compile Include="ModelsOTP\Client\ClientType.cs" />
@@ -729,9 +742,12 @@
     <Compile Include="ModelsOTP\Order\OrderModel.cs" />
     <Compile Include="ModelsOTP\Order\OrderPositionModel.cs" />
     <Compile Include="ModelsOTP\Order\OrderPositionModelNew.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallBuyerFullModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallFullModel.cs" />
+    <Compile Include="ModelsOTP\Recall\RecallBuyerModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallPositionModel.cs" />
+    <Compile Include="ModelsOTP\Recall\DisconnectedInvoicesModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallStatus.cs" />
     <Compile Include="ModelsOTP\Recall\ZbirnikTezaModel.cs" />
     <Compile Include="ModelsOTP\Recall\RecallType.cs" />

@@ -24,25 +24,19 @@ namespace DatabaseWebService.DomainOTP.Concrete
     public class UtilityServiceRepository : IUtilityServiceRepository
     {
         GrafolitOTPEntities context;
-        GrafolitPDOEntities contextPDO;
         ISystemMessageEventsRepository_OTP messageRepo;
-        //ISystemEmailMessageRepository_PDO messageRepoPDO;
         IRecallRepository recallRepo;
-        //IOrderPDORepository orderPDORepo;
         IClientOTPRepository clientRepo;
         IMSSQLFunctionsRepository sqlFunctionRepo;
         
 
-        public UtilityServiceRepository(GrafolitOTPEntities _context, GrafolitPDOEntities _contextPDO, ISystemMessageEventsRepository_OTP _messageRepo, IRecallRepository _recallRepo, IMSSQLFunctionsRepository _sqlRepo, IClientOTPRepository _clientRepo)
+        public UtilityServiceRepository(GrafolitOTPEntities _context, ISystemMessageEventsRepository_OTP _messageRepo, IRecallRepository _recallRepo, IMSSQLFunctionsRepository _sqlRepo, IClientOTPRepository _clientRepo)
         {
             context = _context;
-            contextPDO = _contextPDO;
             messageRepo = _messageRepo;
-            //messageRepoPDO = _messageRepoPDO;
             recallRepo = _recallRepo;
             clientRepo = _clientRepo;
             sqlFunctionRepo = _sqlRepo;
-            //orderPDORepo = _orderPDORepo;
         }
 
         private bool CheckIfExistStevilkaOdpoklica(string stevOdpoklica)

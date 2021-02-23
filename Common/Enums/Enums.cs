@@ -91,6 +91,7 @@ namespace DatabaseWebService.Common.Enums
             RAZPIS_PREVOZNIK,
             POTRJEN_PREVOZNIK,
             USTVARJENO_NAROCILO,
+            POPRAVLJENO_NAROCILO,
             KREIRAN_POSLAN_PDF,
             ERR_ADMIN_MAIL, // 5x napaka pri pošiljanju naročilnice
             ERR_ORDER_NO_SEND, // kerirana naročilnica, vendar še ni bil poslana            

@@ -9,8 +9,12 @@ using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.Resources;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Xml;
 
 namespace DatabaseWebService.DomainOTP.Concrete
 {
@@ -18,11 +22,13 @@ namespace DatabaseWebService.DomainOTP.Concrete
     {
         GrafolitOTPEntities context;
         ISystemMessageEventsRepository_OTP messageEventRepo;
+        IMSSQLFunctionsRepository MSSQLRepo;
 
-        public RecallRepository(GrafolitOTPEntities _context, ISystemMessageEventsRepository_OTP _messageEventRepo)
+        public RecallRepository(GrafolitOTPEntities _context, ISystemMessageEventsRepository_OTP _messageEventRepo, IMSSQLFunctionsRepository _MSSQLRepo)
         {
             context = _context;
             messageEventRepo = _messageEventRepo;
+            MSSQLRepo = _MSSQLRepo;
         }
 
         public List<RecallModel> GetAllRecalls()
@@ -59,6 +65,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+
         public RecallFullModel GetRecallFullModelByID(int recallID)
         {
             try
@@ -69,7 +76,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             {
                                 CenaPrevoza = recall.CenaPrevoza.HasValue ? recall.CenaPrevoza.Value : 0,
                                 DobaviteljID = recall.DobaviteljID.HasValue ? recall.DobaviteljID.Value : 0,
-                                KolicinaSkupno = recall.KolicinaSkupno,                                
+                                KolicinaSkupno = recall.KolicinaSkupno,
                                 OdpoklicID = recall.OdpoklicID,
                                 RelacijaID = recall.RelacijaID.HasValue ? recall.RelacijaID.Value : 0,
                                 StatusID = recall.StatusID,
@@ -235,6 +242,93 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public RecallBuyerFullModel GetRecallBuyerFullModelByID(int recallID)
+        {
+            try
+            {
+                var query = from recall in context.OdpoklicKupec
+                            where recall.OdpoklicKupecID == recallID
+                            select new RecallBuyerFullModel
+                            {
+                                CenaPrevozaSkupno = recall.CenaPrevoza.HasValue ? recall.CenaPrevoza.Value : 0,
+                                KolicinaSkupno = recall.KolicinaSkupno,
+                                OdpoklicKupecID = recall.OdpoklicKupecID,
+                                RelacijaID = recall.RelacijaID.HasValue ? recall.RelacijaID.Value : 0,
+                                StatusID = recall.StatusID,
+                                OdpoklicKupecStevilka = recall.OdpoklicKupecStevilka.HasValue ? recall.OdpoklicKupecStevilka.Value : 0,
+                                ts = recall.ts.HasValue ? recall.ts.Value : DateTime.MinValue,
+                                tsIDOseba = recall.tsIDOseba.HasValue ? recall.tsIDOseba.Value : 0,
+                                ProcentPrevozaSkupno = recall.ProcentTransportaSk,
+                                RazpisPozicijaID = recall.RazpisPozicijaID.HasValue ? recall.RazpisPozicijaID.Value : 0,
+                                ZbirnikTonID = recall.ZbirnikTonID.HasValue ? recall.ZbirnikTonID.Value : 0,
+                                StevilkaNarocilnica = recall.StevilkaNarocilnica,
+                                StatusOdpoklica = (from status in context.StatusOdpoklica
+                                                   where status.StatusOdpoklicaID == recall.StatusID
+                                                   select new RecallStatus
+                                                   {
+                                                       Koda = status.Koda,
+                                                       Naziv = status.Naziv,
+                                                       Opis = status.Opis,
+                                                       StatusOdpoklicaID = status.StatusOdpoklicaID,
+                                                       ts = recall.ts.HasValue ? recall.ts.Value : DateTime.MinValue,
+                                                       tsIDOseba = recall.tsIDOseba.HasValue ? recall.tsIDOseba.Value : 0
+                                                   }).FirstOrDefault(),
+                                Relacija = (from route in context.Relacija
+                                            where route.RelacijaID == recall.RelacijaID
+                                            select new RouteModel
+                                            {
+                                                Datum = route.Datum.HasValue ? route.Datum.Value : DateTime.MinValue,
+                                                Dolzina = route.Dolzina,
+                                                Koda = route.Koda,
+                                                Naziv = route.Naziv,
+                                                RelacijaID = route.RelacijaID,
+                                                ts = recall.ts.HasValue ? recall.ts.Value : DateTime.MinValue,
+                                                tsIDOsebe = recall.tsIDOseba.HasValue ? recall.tsIDOseba.Value : 0
+                                            }).FirstOrDefault(),
+
+                                UserID = recall.UserID.HasValue ? recall.UserID.Value : 0,
+                            };
+
+                RecallBuyerFullModel model = query.FirstOrDefault();
+                if (model != null)
+                {
+                    model.OdpoklicKupecPozicija = GetRecallBuyerPositionsByID(recallID);
+                    string statusDelovna = Enums.StatusOfRecall.DELOVNA.ToString();
+                    if (model.StatusID > 0)
+                    {
+                        model.StatusKoda = context.StatusOdpoklica.Where(so => so.StatusOdpoklicaID == model.StatusID).FirstOrDefault().Koda;
+                        model.StatusNaziv = context.StatusOdpoklica.Where(so => so.StatusOdpoklicaID == model.StatusID).FirstOrDefault().Naziv;
+                    }
+
+                    if (model.RazpisPozicijaID > 0)
+                    {
+                        RazpisPozicija rp = context.RazpisPozicija.Where(rpoz => rpoz.RazpisPozicijaID == model.RazpisPozicijaID).FirstOrDefault();
+
+                        model.PrevoznikNaziv = rp.Stranka_OTP.NazivPrvi;
+                    }
+
+                    if (model.Relacija != null)
+                    {
+                        model.RelacijaNaziv = model.Relacija.Naziv;
+                    }
+
+                    foreach (var item in model.OdpoklicKupecPozicija)
+                    {
+                        if (model.StatusKoda == Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+                        {
+                            item.Akcija = 0;
+                        }
+                    }
+                }
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
 
         public List<RecallPositionModel> GetRecallPositionsByID(int recallID)
         {
@@ -302,6 +396,39 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public List<RecallBuyerPositionModel> GetRecallBuyerPositionsByID(int recallID)
+        {
+            try
+            {
+                var query = from position in context.OdpoklicKupecPozicija
+                            where position.OdpoklicKupecID == recallID && position.Akcija != 3
+                            select new RecallBuyerPositionModel
+                            {
+                                ZaporednaStevilka = position.ZaporednaStevilka.HasValue ? position.ZaporednaStevilka.Value : 0,
+                                OdpoklicKupecPozicijaID = position.OdpoklicKupecPozicijaID,
+                                OdpoklicKupecID = position.OdpoklicKupecID,
+                                Kljuc = position.Kljuc,
+                                acKey = position.acKey,
+                                Datum = position.DatumVnosa.HasValue ? position.DatumVnosa.Value : DateTime.MinValue,
+                                Kupec = position.Kupec,
+                                Prevzemnik = position.Prevzemnik,
+                                Kolicina = position.Kolicina,
+                                Akcija = position.Akcija.HasValue ? position.Akcija.Value :0,                                
+                                Vrednost = position.Vrednost.HasValue ? position.Vrednost.Value : 0,
+                                VrednostPrevoza = position.VrednostTransporta,
+                                ProcentPrevoza = position.ProcentTransporta,
+                                ts = position.ts.HasValue ? position.ts.Value : DateTime.MinValue,
+                                tsIDOseba = position.tsIDOseba.HasValue ? position.tsIDOseba.Value : 0,
+                            };
+
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
         public int SaveRecall(RecallFullModel model, bool updateRecord = true)
         {
             try
@@ -347,7 +474,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 // Save for Create Order procedure info
                 if (model.P_CreateOrder.Year > 2000) recall.P_CreateOrder = model.P_CreateOrder;
-                if (model.P_LastTSCreatePDFPantheon.Year > 2000 ) recall.P_LastTSCreatePDFPantheon = model.P_LastTSCreatePDFPantheon;
+                if (model.P_LastTSCreatePDFPantheon.Year > 2000) recall.P_LastTSCreatePDFPantheon = model.P_LastTSCreatePDFPantheon;
                 recall.P_TransportOrderPDFDocPath = model.P_TransportOrderPDFDocPath;
                 recall.P_TransportOrderPDFName = model.P_TransportOrderPDFName;
                 recall.P_UnsuccCountCreatePDFPantheon = model.P_UnsuccCountCreatePDFPantheon;
@@ -357,7 +484,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 if (recall.OdpoklicID == 0)
                 {
                     recall.ts = DateTime.Now;
-                    int NextStevilka =  GetNextOdpoklicStevilka();
+                    int NextStevilka = GetNextOdpoklicStevilka();
                     recall.OdpoklicStevilka = NextStevilka;
                     model.OdpoklicStevilka = NextStevilka;
                     context.Odpoklic.Add(recall);
@@ -408,6 +535,258 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+
+
+        private string GetXMLForOrderBuyerTransport(RecallBuyerFullModel model)
+        {
+
+            var directory = AppDomain.CurrentDomain.BaseDirectory;
+            //string sPath = directory + "OrderTransport_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm") + ".xml";
+            //XmlTextWriter xml = new XmlTextWriter(sPath, Encoding.Unicode);
+            MemoryStream stream = new MemoryStream(); // The writer closes this for us
+            XmlTextWriter xml = new XmlTextWriter(stream, Encoding.Unicode);
+            xml.Formatting = Formatting.Indented;
+            xml.WriteStartDocument(true);
+
+            try
+            {
+                xml.WriteStartElement("TransportOrder");
+                xml.WriteElementString("OrderNo", DataTypesHelper.Parse(model.StevilkaNarocilnica));
+                xml.WriteElementString("timestamp", DateTime.Now.ToString());
+                xml.WriteElementString("DocType", "0240");
+                xml.WriteElementString("Supplier", model.PrevoznikNaziv);
+                xml.WriteElementString("Buyer", ConfigurationManager.AppSettings["PantheonCreateOrderDefBuyer"].ToString());
+                xml.WriteElementString("OrderDate", DateTime.Now.ToString());
+                xml.WriteElementString("Route", model.RelacijaNaziv.ToString());
+                string printType = (true) ? Enums.PrintType.A0Q.ToString() : Enums.PrintType.A0U.ToString();
+                xml.WriteElementString("PrintType", printType);
+                xml.WriteElementString("OrderNote", "");
+                xml.WriteStartElement("Products");
+                string OddelekID = "15 - SKLADIŠČE MALOPRODAJA";
+                xml.WriteStartElement("Product");
+                xml.WriteElementString("Department", OddelekID);
+                xml.WriteElementString("Ident", ConfigurationManager.AppSettings["PantheonCreateOrderBuyerService"].ToString());
+                xml.WriteElementString("Name", model.RelacijaNaziv.ToString());
+                xml.WriteElementString("Qty", "1");
+                xml.WriteElementString("Price", model.CenaPrevozaSkupno.ToString());
+                xml.WriteElementString("Rabat", "0");
+                xml.WriteEndElement();  // Product            
+                xml.WriteEndElement();  // Products
+                xml.WriteEndElement();  // Recall
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message + "\r\n " + ex.Source + "\r\n " + ex.StackTrace);
+            }
+            finally
+            {
+                xml.Flush();
+            }
+            string result;
+            StreamReader reader = new StreamReader(stream, Encoding.Unicode, true);
+            stream.Seek(0, SeekOrigin.Begin);
+            result = reader.ReadToEnd();
+
+            return result;
+        }
+
+        private string GetStringAkcija(int iAkcija)
+        {
+            switch (iAkcija)
+            {
+                case 1:
+                    return "ADD";
+                case 3:
+                    return "DELETE";
+                default:
+                    break;
+            }
+            return "";
+        }
+
+        private string GetXMLForOrderBuyerInvoices(RecallBuyerFullModel model)
+        {
+
+            var directory = AppDomain.CurrentDomain.BaseDirectory;
+            //string sPath = directory + "OrderTransport_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm") + ".xml";
+            //XmlTextWriter xml = new XmlTextWriter(sPath, Encoding.Unicode);
+            MemoryStream stream = new MemoryStream(); // The writer closes this for us
+            XmlTextWriter xml = new XmlTextWriter(stream, Encoding.Unicode);
+            xml.Formatting = Formatting.Indented;
+            xml.WriteStartDocument(true);
+
+            try
+            {
+                xml.WriteStartElement("ConnectedInvoices");
+
+                xml.WriteElementString("OrderNo", "xxStOrderxx");
+                xml.WriteStartElement("Invoices");
+
+                foreach (RecallBuyerPositionModel pos in model.OdpoklicKupecPozicija)
+                {
+                    xml.WriteStartElement("Invoice");
+                    xml.WriteElementString("Action", GetStringAkcija(pos.Akcija));
+                    xml.WriteElementString("Key", pos.acKey);
+                    xml.WriteElementString("TransportDate", pos.Datum.ToShortDateString());
+                    xml.WriteElementString("Buyer", pos.Kupec);
+                    xml.WriteElementString("Reciever", pos.Prevzemnik.ToString());
+                    xml.WriteElementString("Currency", "EUR");
+                    xml.WriteElementString("InvoiceValue", pos.Vrednost.ToString("N2"));
+                    xml.WriteElementString("TransportValue", pos.VrednostPrevoza.ToString("N2"));
+                    xml.WriteElementString("TransportPercent", pos.ProcentPrevoza.ToString("N2"));
+                    xml.WriteEndElement();  // Invoice
+                }
+
+                xml.WriteEndElement();  // Invoices
+                xml.WriteEndElement();  // ConnectedInvoices
+            }
+            catch (Exception ex)
+            {
+                DataTypesHelper.LogThis(ex.Message + "\r\n " + ex.Source + "\r\n " + ex.StackTrace);
+            }
+            finally
+            {
+                xml.Flush();
+            }
+            string result;
+            StreamReader reader = new StreamReader(stream, Encoding.Unicode, true);
+            stream.Seek(0, SeekOrigin.Begin);
+            result = reader.ReadToEnd();
+
+            return result;
+        }
+
+        public CreateOrderDocument GenerateNewBuyerOrder(RecallBuyerFullModel model)
+        {
+            string xmlTransportOrder = GetXMLForOrderBuyerTransport(model);
+            string xmlInvoiceOrder = GetXMLForOrderBuyerInvoices(model);
+
+            model.XMLOrder = xmlTransportOrder;
+            model.XMLInvoice = xmlInvoiceOrder;
+
+            string sGeneratedOrderNo = (model.StevilkaNarocilnica != null && model.StevilkaNarocilnica.Length > 0 ? model.StevilkaNarocilnica : "");
+
+            CreateOrderDocument coData = MSSQLRepo.GetOrderDocumentDataSupplierOrderAndLinkInvoice(xmlTransportOrder, xmlInvoiceOrder, sGeneratedOrderNo);
+
+            coData.InvoicesXML = xmlInvoiceOrder;
+            coData.OrderXML = xmlTransportOrder;
+
+
+
+            return coData;
+        }
+
+        public void RefreshLinkedInvoices(RecallBuyerFullModel model, string sOrderNo)
+        {
+            var query = from povfak in context.SeznamPovezanihFakturByOrderNo(sOrderNo)
+                        select new DisconnectedInvoicesModel
+                        {
+                            Kljuc = povfak.Kljuc,
+                            acKey = povfak.acKey,
+                            Datum = povfak.Datum.HasValue ? povfak.Datum.Value : DateTime.MinValue,
+                            Valuta = povfak.Valuta,
+                            Kupec = povfak.Kupec,
+                            Prevzemnik = povfak.Prevzemnik,
+                            Kolicina = povfak.Kolicina.HasValue ? povfak.Kolicina.Value : 0,
+                            ProcentPrevoza = Common.DataTypesHelper.ParseDecimal(povfak.ProcTransFakt),
+                            Vrednost = Common.DataTypesHelper.ParseDecimal(povfak.Vrednost),
+                            VrednostPrevoza = Common.DataTypesHelper.ParseDecimal(povfak.VredTrans),
+                        };
+
+
+            List<DisconnectedInvoicesModel> modelDI = query.ToList();
+            model.OdpoklicKupecPozicija = GetRecallBuyerPositionsByID(model.OdpoklicKupecID);
+            foreach (var item in modelDI)
+            {
+                RecallBuyerPositionModel rbpm = model.OdpoklicKupecPozicija.Where(mp => mp.Kljuc == item.Kljuc).FirstOrDefault();
+                if (rbpm != null)
+                {
+                    rbpm.VrednostPrevoza = item.VrednostPrevoza;
+                    rbpm.ProcentPrevoza = item.ProcentPrevoza;
+                }
+            }
+
+            SaveRecallBuyerPosition(model.OdpoklicKupecPozicija, model.OdpoklicKupecID);
+        }
+
+        public int SaveBuyerRecall(RecallBuyerFullModel model, bool updateRecord = true)
+        {
+            try
+            {
+                CreateOrderDocument po = null;
+                if (model.IzdelajNarocilnico == 1)
+                {
+                    po = GenerateNewBuyerOrder(model);
+                }
+
+                OdpoklicKupec recall = new OdpoklicKupec();
+
+                recall.OdpoklicKupecID = model.OdpoklicKupecID;
+                recall.RazpisPozicijaID = model.RazpisPozicijaID;
+                recall.RelacijaID = model.RelacijaID;
+                recall.StatusID = model.StatusID;
+                recall.CenaPrevoza = model.CenaPrevozaSkupno;
+                recall.KolicinaSkupno = model.KolicinaSkupno;
+                recall.ProcentTransportaSk = model.ProcentPrevozaSkupno;
+                recall.ts = model.ts.CompareTo(DateTime.MinValue) == 0 ? (DateTime?)null : model.ts;
+                recall.tsIDOseba = model.tsIDOseba;
+                recall.OdpoklicKupecStevilka = model.OdpoklicKupecStevilka;
+                recall.ZbirnikTonID = model.ZbirnikTonID;
+                recall.StevilkaNarocilnica = (model.StevilkaNarocilnica.Length > 0 ? model.StevilkaNarocilnica : "");
+                if (model.IzdelajNarocilnico == 1)
+                {
+                    if (po != null)
+                    {
+                        recall.StevilkaNarocilnica = po.OrderNumber;
+                        recall.NarocilnicaXML = po.OrderXML;
+                        recall.PovezaneFaktureXML = po.InvoicesXML;
+                        recall.StevilkaNarocilnica = po.OrderNumber;
+                    }
+                }
+
+                if (model.OdpoklicKupecID == 0)
+                {
+                    recall.ts = DateTime.Now;
+                    int NextStevilka = GetNextOdpoklicKupecStevilka();
+                    recall.OdpoklicKupecStevilka = NextStevilka;
+                    model.OdpoklicKupecStevilka = NextStevilka;
+                    context.OdpoklicKupec.Add(recall);
+                    context.SaveChanges();
+                    model.OdpoklicKupecID = recall.OdpoklicKupecID;
+                }
+                else
+                {
+                    if (updateRecord)
+                    {
+                        OdpoklicKupec original = context.OdpoklicKupec.Where(o => o.OdpoklicKupecID == model.OdpoklicKupecID).FirstOrDefault();
+                        //Če ponovno odpremo odpoklic je potrebno pobristi vrstice iz LastneZaloge       
+                        context.Entry(original).CurrentValues.SetValues(recall);
+                        context.SaveChanges();
+                    }
+                }
+
+                if (model.OdpoklicKupecPozicija != null && model.OdpoklicKupecPozicija.Count > 0)
+                {
+                    SaveRecallBuyerPosition(model.OdpoklicKupecPozicija, recall.OdpoklicKupecID);
+                }
+
+                if (model.IzdelajNarocilnico == 1 && po.ErrorDesc.Length == 0)
+                {
+                    // treba je posodobiti zapiše z dejanski zapisi iz pantheona
+                    // pridobiti seznam vseh povezanih faktur in pa procent transporta iz pantheona SeznamPovezanihFakturByOrderNo()
+                    // posodobiti vse poziciji  
+                    RefreshLinkedInvoices(model, po.OrderNumber);
+                }
+
+
+                return recall.OdpoklicKupecID;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_08, ex);
+            }
+        }
+
         public bool DeleteRecall(int recallID)
         {
             try
@@ -421,7 +800,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     // delete all data in PrijavaPrevoznika
                     if (lsPrijavaPrevoznika.Count > 0)
                     {
-                        foreach (CarrierInquiryModel pp  in lsPrijavaPrevoznika)
+                        foreach (CarrierInquiryModel pp in lsPrijavaPrevoznika)
                         {
                             DeleteCarrierInquiry(pp.PrijavaPrevoznikaID);
                         }
@@ -507,6 +886,56 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public void SaveRecallBuyerPosition(List<RecallBuyerPositionModel> model, int recallID = 0)
+        {
+            try
+            {
+                OdpoklicKupecPozicija recallPos = null;
+
+                foreach (var item in model)
+                {
+                    recallPos = new OdpoklicKupecPozicija();
+                    recallPos.ZaporednaStevilka = item.ZaporednaStevilka;
+                    recallPos.OdpoklicKupecID = recallID > 0 ? recallID : item.OdpoklicKupecID;
+                    recallPos.OdpoklicKupecPozicijaID = item.OdpoklicKupecPozicijaID;
+                    recallPos.Kolicina = item.Kolicina;
+                    recallPos.Kljuc = item.Kljuc;
+                    recallPos.acKey = item.acKey;
+                    recallPos.DatumVnosa = item.Datum;
+                    recallPos.Valuta = item.Valuta;
+                    recallPos.Kupec = item.Kupec;
+                    recallPos.Prevzemnik = item.Prevzemnik;
+                    recallPos.Kolicina = item.Kolicina;
+                    recallPos.Vrednost = item.Vrednost;
+                    recallPos.VrednostTransporta = item.VrednostPrevoza;
+                    recallPos.ProcentTransporta = item.ProcentPrevoza;
+                    recallPos.Akcija = item.Akcija;
+                    recallPos.ts = item.ts.CompareTo(DateTime.MinValue) == 0 ? (DateTime?)null : item.ts;
+                    recallPos.tsIDOseba = item.tsIDOseba;
+
+
+                    if (item.OdpoklicKupecPozicijaID == 0)
+                    {
+                        recallPos.TipVnosa = 1;
+                        recallPos.ts = DateTime.Now;
+                        recallPos.DatumVnosa = DateTime.Now;
+                        context.OdpoklicKupecPozicija.Add(recallPos);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        OdpoklicKupecPozicija original = context.OdpoklicKupecPozicija.Where(op => op.OdpoklicKupecPozicijaID == recallPos.OdpoklicKupecPozicijaID).FirstOrDefault();
+                        context.Entry(original).CurrentValues.SetValues(recallPos);
+                        context.SaveChanges();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_08, ex);
+            }
+        }
 
         public void SaveRecallPosition(List<RecallPositionModel> model, int recallID = 0, int ownStockWarehouseID = 0)
         {
@@ -958,6 +1387,22 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 throw new Exception("GetNextOdpoklicStevilka Method Error! ", ex);
             }
         }
+        private int GetNextOdpoklicKupecStevilka()
+        {
+            try
+            {
+                int? maxNum = context.OdpoklicKupec.Max(o => o.OdpoklicKupecStevilka);
+
+                if (maxNum.HasValue)
+                    return maxNum.Value + 1;
+                else
+                    return 1;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("GetNextOdpoklicStevilka Method Error! ", ex);
+            }
+        }
 
         private bool HasRecallStatus(int recallID, string statusCode)
         {
@@ -1131,6 +1576,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+
         #region Recalls for carriers to submit their prices based on our tender values
 
         private string IsRecallStillValid(Odpoklic recall)
@@ -1217,7 +1663,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 PrevoznikID = pp.PrevoznikID,
                                 PrvotnaCena = pp.PrvotnaCena,
                                 PrijavljenaCena = pp.PrijavljenaCena.HasValue ? pp.PrijavljenaCena.Value : 0,
-                                DatumNaklada = pp.DatumNaklada,                                
+                                DatumNaklada = pp.DatumNaklada,
                                 DatumPosiljanjePrijav = pp.DatumPosiljanjePrijav,
                                 DatumPrijave = pp.DatumPrijave.HasValue ? pp.DatumPrijave.Value : DateTime.MinValue,
                                 ts = pp.ts.HasValue ? pp.ts.Value : DateTime.MinValue,
@@ -1379,6 +1825,46 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 throw new Exception("ResetRecallStatusByID Method Error! ", ex);
             }
         }
+        #endregion
+
+        #region Odpoklic Kupca
+
+        public List<RecallBuyerModel> GetAllBuyersRecalls()
+        {
+            try
+            {
+                var query = from recall in context.OdpoklicKupec
+                            select new RecallBuyerModel
+                            {
+                                CenaPrevoza = recall.CenaPrevoza.HasValue ? recall.CenaPrevoza.Value : 0,
+                                RazpisPozicijaID = recall.RazpisPozicijaID.HasValue ? recall.RazpisPozicijaID.Value : 0,
+                                PrevoznikNaziv = (from prev in context.RazpisPozicija
+                                                  where prev.RazpisPozicijaID == recall.RazpisPozicijaID
+                                                  select new ClientSimpleModel
+                                                  {
+                                                      NazivPrvi = prev.Stranka_OTP.NazivPrvi,
+                                                  }).FirstOrDefault().NazivPrvi,
+                                KolicinaSkupno = recall.KolicinaSkupno,
+                                OdpoklicKupecID = recall.OdpoklicKupecID,
+                                RelacijaID = recall.RelacijaID.HasValue ? recall.RelacijaID.Value : 0,
+                                RelacijaNaziv = recall.Relacija != null ? recall.Relacija.Naziv : "",
+                                StatusID = recall.StatusID,
+                                StatusNaziv = recall.StatusOdpoklica != null ? recall.StatusOdpoklica.Naziv : "",
+                                StatusKoda = recall.StatusOdpoklica != null ? recall.StatusOdpoklica.Koda : "",
+                                StevilkaNarocilnica = recall.StevilkaNarocilnica != null ? recall.StevilkaNarocilnica : "",
+                                ts = recall.ts.HasValue ? recall.ts.Value : DateTime.MinValue,
+                                tsIDOseba = recall.tsIDOseba.HasValue ? recall.tsIDOseba.Value : 0,
+                                OdpoklicKupecStevilka = recall.OdpoklicKupecStevilka.HasValue ? recall.OdpoklicKupecStevilka.Value : 0,
+                            };
+
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
         #endregion
     }
 }

@@ -207,7 +207,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 ClientFullModel model = query.FirstOrDefault();
                 model.KontaktneOsebe = new List<ContactPersonModel>();
                 model.KontaktneOsebe = GetContactPersonModelList(clientID);
-
+                
 
                 model.StrankaZaposleni = new List<ClientEmployeeModel>();
                 model.StrankaZaposleni = GetClientEmployeeModelList(clientID);

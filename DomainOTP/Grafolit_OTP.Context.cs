@@ -53,6 +53,8 @@ namespace DatabaseWebService.DomainOTP
         public DbSet<OdpoklicPozicija> OdpoklicPozicija { get; set; }
         public DbSet<ZbirnikTon> ZbirnikTon { get; set; }
         public DbSet<RazpisPozicijaSpremembe> RazpisPozicijaSpremembe { get; set; }
+        public DbSet<OdpoklicKupec> OdpoklicKupec { get; set; }
+        public DbSet<OdpoklicKupecPozicija> OdpoklicKupecPozicija { get; set; }
     
         [EdmFunction("GrafolitOTPEntities", "SeznamDobaviteljev")]
         public virtual IQueryable<SeznamDobaviteljev_Result> SeznamDobaviteljev()
@@ -103,6 +105,43 @@ namespace DatabaseWebService.DomainOTP
                 new ObjectParameter("Dobavitelj", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja_Result>("[GrafolitOTPEntities].[SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja](@Dobavitelj)", dobaviteljParameter);
+        }
+    
+        public virtual int DodajPantheonSupplierOrderAndLinkInvoice(string p_XMLOrder, string p_XMLInvoice, ObjectParameter p_cKey, ObjectParameter p_cError)
+        {
+            var p_XMLOrderParameter = p_XMLOrder != null ?
+                new ObjectParameter("p_XMLOrder", p_XMLOrder) :
+                new ObjectParameter("p_XMLOrder", typeof(string));
+    
+            var p_XMLInvoiceParameter = p_XMLInvoice != null ?
+                new ObjectParameter("p_XMLInvoice", p_XMLInvoice) :
+                new ObjectParameter("p_XMLInvoice", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DodajPantheonSupplierOrderAndLinkInvoice", p_XMLOrderParameter, p_XMLInvoiceParameter, p_cKey, p_cError);
+        }
+    
+        [EdmFunction("GrafolitOTPEntities", "SeznamNepovezanihFaktur")]
+        public virtual IQueryable<SeznamNepovezanihFaktur_Result> SeznamNepovezanihFaktur()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SeznamNepovezanihFaktur_Result>("[GrafolitOTPEntities].[SeznamNepovezanihFaktur]()");
+        }
+    
+        public virtual int OsveziPantheonLinkedInvoicesByOrderNo(string p_orderNo)
+        {
+            var p_orderNoParameter = p_orderNo != null ?
+                new ObjectParameter("p_orderNo", p_orderNo) :
+                new ObjectParameter("p_orderNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("OsveziPantheonLinkedInvoicesByOrderNo", p_orderNoParameter);
+        }
+    
+        public virtual ObjectResult<SeznamPovezanihFakturByOrderNo_Result> SeznamPovezanihFakturByOrderNo(string p_orderNo)
+        {
+            var p_orderNoParameter = p_orderNo != null ?
+                new ObjectParameter("p_orderNo", p_orderNo) :
+                new ObjectParameter("p_orderNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SeznamPovezanihFakturByOrderNo_Result>("SeznamPovezanihFakturByOrderNo", p_orderNoParameter);
         }
     }
 }

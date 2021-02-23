@@ -14,6 +14,11 @@ namespace DatabaseWebService.DomainOTP
     
     public partial class RazpisPozicija
     {
+        public RazpisPozicija()
+        {
+            this.OdpoklicKupec = new HashSet<OdpoklicKupec>();
+        }
+    
         public int RazpisPozicijaID { get; set; }
         public int RazpisID { get; set; }
         public int StrankaID { get; set; }
@@ -29,5 +34,6 @@ namespace DatabaseWebService.DomainOTP
         public virtual Relacija Relacija { get; set; }
         public virtual Stranka_OTP Stranka_OTP { get; set; }
         public virtual ZbirnikTon ZbirnikTon { get; set; }
+        public virtual ICollection<OdpoklicKupec> OdpoklicKupec { get; set; }
     }
 }

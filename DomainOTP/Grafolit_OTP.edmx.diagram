@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="64523b28ea1b4dd89fb58733ed447080" Name="Diagram1" ZoomLevel="82">
+      <Diagram DiagramId="64523b28ea1b4dd89fb58733ed447080" Name="Diagram1" ZoomLevel="62">
         <EntityTypeShape EntityType="GrafolitOTPModel.Osebe_OTP" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="GrafolitOTPModel.Vloga_OTP" Width="1.5" PointX="0.75" PointY="2.125" />
         <AssociationConnector Association="GrafolitOTPModel.FK_OSEBE_REFERENCE_VLOGA" />
@@ -60,6 +60,16 @@
         <AssociationConnector Association="GrafolitOTPModel.FK_RelacijaRazpisPozicijaSpremembeID" />
         <AssociationConnector Association="GrafolitOTPModel.FK_StrankaRazpisPozicijaSpremembeID" />
         <AssociationConnector Association="GrafolitOTPModel.FK_ZbirnikTonRazpisPozicijaSpremembeID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_OsebaOTPSpremembeRazpisPozicijaSpremembeID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_OsebaOTPVnosRazpisPozicijaSpremembeID" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.OdpoklicKupec" Width="1.5" PointX="20.875" PointY="4.75" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_KupecUserID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_Odpoklic_RazpisPozicija" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_OdpoklicKupec_StatusOdpoklica" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_OdpoklicKupec_ZbirnikTonID" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_Relacija_OdpoklicKupec" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.OdpoklicKupecPozicija" Width="1.5" PointX="23.125" PointY="6.125" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_OdpoklicKupecPozicija_Odpoklic" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

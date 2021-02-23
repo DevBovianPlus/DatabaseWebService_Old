@@ -15,6 +15,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
     {
 
         List<SupplierModel> GetListOfSupplier();
+        List<DisconnectedInvoicesModel> GetDisconnectedInvoices();
 
         List<OrderPositionModelNew> GetListOfOpenedOrderPositions(string supplier, int clientID = 0);
         List<OrderPositionModelNew> GetListOfOrderNumber10();
@@ -22,6 +23,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         TransportCountModel GetTransportCounByTransporterAndRoute(TransportCountModel model);
 
         CreateOrderDocument GetOrderDocumentData(string OrderDocXML);
+        CreateOrderDocument GetOrderDocumentDataSupplierOrderAndLinkInvoice(string OrderDocXML, string InvoicesDocXML, string sCreatedOrderNo = "");
 
         List<ProductCategory> GetCategoryList();
     }

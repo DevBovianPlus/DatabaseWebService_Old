@@ -20,6 +20,9 @@ namespace DatabaseWebService.DomainOTP
             this.OsebeNadrejeni_OTP = new HashSet<OsebeNadrejeni_OTP>();
             this.OsebeNadrejeni_OTP1 = new HashSet<OsebeNadrejeni_OTP>();
             this.Odpoklic = new HashSet<Odpoklic>();
+            this.RazpisPozicijaSpremembe = new HashSet<RazpisPozicijaSpremembe>();
+            this.RazpisPozicijaSpremembe1 = new HashSet<RazpisPozicijaSpremembe>();
+            this.OdpoklicKupec = new HashSet<OdpoklicKupec>();
         }
     
         public int idOsebe { get; set; }
@@ -45,5 +48,8 @@ namespace DatabaseWebService.DomainOTP
         public virtual ICollection<OsebeNadrejeni_OTP> OsebeNadrejeni_OTP { get; set; }
         public virtual ICollection<OsebeNadrejeni_OTP> OsebeNadrejeni_OTP1 { get; set; }
         public virtual ICollection<Odpoklic> Odpoklic { get; set; }
+        public virtual ICollection<RazpisPozicijaSpremembe> RazpisPozicijaSpremembe { get; set; }
+        public virtual ICollection<RazpisPozicijaSpremembe> RazpisPozicijaSpremembe1 { get; set; }
+        public virtual ICollection<OdpoklicKupec> OdpoklicKupec { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace DatabaseWebService.DomainOTP
         public StatusOdpoklica()
         {
             this.Odpoklic = new HashSet<Odpoklic>();
+            this.OdpoklicKupec = new HashSet<OdpoklicKupec>();
         }
     
         public int StatusOdpoklicaID { get; set; }
@@ -27,5 +28,6 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> ts { get; set; }
     
         public virtual ICollection<Odpoklic> Odpoklic { get; set; }
+        public virtual ICollection<OdpoklicKupec> OdpoklicKupec { get; set; }
     }
 }

@@ -98,8 +98,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             {
                                 StaraCena = tenderPosChange.StaraCena.HasValue ? tenderPosChange.StaraCena.Value : 0,
                                 NovaCena = tenderPosChange.NovaCena.HasValue ? tenderPosChange.NovaCena.Value : 0,
-                                IDVnosOseba = tenderPosChange.IDVnosOseba.HasValue ? tenderPosChange.IDVnosOseba.Value : 0,
-                                IDSpremembeOseba = tenderPosChange.IDSpremembeOseba.HasValue ? tenderPosChange.IDSpremembeOseba.Value : 0,
+                                IDVnosOseba = tenderPosChange.IDVnosOseba,
+                                IDSpremembeOseba = tenderPosChange.IDSpremembeOseba,
                                 RazpisID = tenderPosChange.RazpisID,
                                 RazpisPozicijaSpremembeID = tenderPosChange.RazpisPozicijaSpremembeID,
                                 Relacija = (from r in context.Relacija

@@ -184,7 +184,9 @@ namespace DatabaseWebService.Domain.Concrete
             try
             {
                 var query = from events in context.Dogodek
-                            where events.idDogodek.Equals(eventID) && events.Izvajalec.Value.Equals(employeeID)
+                            join strEvt in context.StrankaZaposleni
+                                on events.idStranka equals strEvt.idStranka
+                            where events.idDogodek.Equals(eventID) && strEvt.idOsebe.Value.Equals(employeeID)
                             select new EventFullModel
                             {
                                 DatumOtvoritve = events.DatumOtvoritve.HasValue ? events.DatumOtvoritve.Value : DateTime.MinValue,
@@ -323,7 +325,7 @@ namespace DatabaseWebService.Domain.Concrete
                 Dogodek newEvent = new Dogodek();
                 newEvent.idDogodek = model.idDogodek;
                 newEvent.idStranka = model.idStranka;
-                newEvent.idKategorija = model.idKategorija;
+                newEvent.idKategorija = (model.idKategorija != null ? model.idKategorija : null);
                 //newEvent.Skrbnik = model.Skrbnik;
                 newEvent.Skrbnik = context.OsebeNadrejeni.Where(od => od.idOseba == model.Izvajalec.Value).FirstOrDefault().idNadrejeni;
                 newEvent.Izvajalec = model.Izvajalec;
