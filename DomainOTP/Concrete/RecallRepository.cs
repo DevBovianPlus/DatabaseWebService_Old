@@ -215,6 +215,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 P_TransportOrderPDFName = recall.P_TransportOrderPDFName,
                                 P_UnsuccCountCreatePDFPantheon = recall.P_UnsuccCountCreatePDFPantheon.HasValue ? recall.P_UnsuccCountCreatePDFPantheon.Value : 0,
                                 P_SendWarningToAdmin = recall.P_SendWarningToAmin.HasValue ? recall.P_SendWarningToAmin.Value : 0,
+                                ZbrirnikTonID = recall.ZbirnikTonID.HasValue ? recall.ZbirnikTonID.Value : 0,
                             };
 
                 RecallFullModel model = query.FirstOrDefault();

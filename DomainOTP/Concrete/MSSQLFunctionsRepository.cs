@@ -90,7 +90,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
 
                 List<DisconnectedInvoicesModel> model = query.ToList();
-                model = model.OrderByDescending(d => d.Datum).ToList();
+                model = model.OrderBy(dt => dt.Kljuc).ToList();
                 foreach (var item in model)
                 {
                     item.TempID = ++tempNum;

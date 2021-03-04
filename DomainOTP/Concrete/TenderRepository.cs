@@ -176,6 +176,40 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                                   Naziv = zt.Naziv,
                                                   ts = zt.ts.HasValue ? zt.ts.Value : DateTime.MinValue,
                                               }).FirstOrDefault(),
+                                VnosOseba = (from employee in context.Osebe_OTP
+                                             where employee.idOsebe == tenderPosChange.IDVnosOseba
+                                             select new EmployeeSimpleModel
+                                             {
+                                                 DatumRojstva = employee.DatumRojstva.HasValue ? employee.DatumRojstva.Value : DateTime.MinValue,
+                                                 DatumZaposlitve = employee.DatumZaposlitve.HasValue ? employee.DatumZaposlitve.Value : DateTime.MinValue,
+                                                 DelovnoMesto = employee.DelovnoMesto,
+                                                 Email = employee.Email,
+                                                 Geslo = employee.Geslo,
+                                                 idOsebe = employee.idOsebe,
+                                                 idVloga = employee.idVloga.HasValue ? employee.idVloga.Value : 0,
+                                                 Ime = employee.Ime,
+                                                 Naslov = employee.Naslov,
+                                                 Priimek = employee.Priimek,
+                                                 TelefonGSM = employee.TelefonGSM,
+                                                 UporabniskoIme = employee.UporabniskoIme
+                                             }).FirstOrDefault(),
+                                SpremembeOseba = (from employee in context.Osebe_OTP
+                                             where employee.idOsebe == tenderPosChange.IDSpremembeOseba
+                                             select new EmployeeSimpleModel
+                                             {
+                                                 DatumRojstva = employee.DatumRojstva.HasValue ? employee.DatumRojstva.Value : DateTime.MinValue,
+                                                 DatumZaposlitve = employee.DatumZaposlitve.HasValue ? employee.DatumZaposlitve.Value : DateTime.MinValue,
+                                                 DelovnoMesto = employee.DelovnoMesto,
+                                                 Email = employee.Email,
+                                                 Geslo = employee.Geslo,
+                                                 idOsebe = employee.idOsebe,
+                                                 idVloga = employee.idVloga.HasValue ? employee.idVloga.Value : 0,
+                                                 Ime = employee.Ime,
+                                                 Naslov = employee.Naslov,
+                                                 Priimek = employee.Priimek,
+                                                 TelefonGSM = employee.TelefonGSM,
+                                                 UporabniskoIme = employee.UporabniskoIme
+                                             }).FirstOrDefault(),
                                 //OsebaVnos = (from employee in clientEmployee
                                 //                     group employee by employee.Osebe_NOZ into person
                                 //                     select new EmployeeSimpleModel
@@ -724,7 +758,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     tenderChangesPos.NovaCena = item.NovaCena;
                     tenderChangesPos.StaraCena = item.StaraCena;
                     tenderChangesPos.VnosTS = item.VnosTS;
-                    tenderChangesPos.IDVnosOseba = (item.IDVnosOseba == 0) ? item.IDSpremembeOseba : 1;
+                    tenderChangesPos.IDVnosOseba = (item.IDVnosOseba == 0) ? item.IDSpremembeOseba : item.IDVnosOseba;
                     tenderChangesPos.SpremembeTS = item.SpremembeTS;
                     tenderChangesPos.IDSpremembeOseba = item.IDSpremembeOseba;
                     tenderChangesPos.RazpisID = item.RazpisID;
@@ -930,7 +964,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
         {
             try
             {
-                
+
                 List<RazpisPozicija> tenderPositions = new List<RazpisPozicija>();
                 var test = (from tenderPos in context.RazpisPozicija
                             where tenderPos.RelacijaID == routeID && tenderPos.ZbirnikTonID == tonsID && tenderPos.Stranka_OTP.Activity == 1

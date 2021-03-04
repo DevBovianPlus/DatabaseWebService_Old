@@ -1,4 +1,5 @@
-﻿using DatabaseWebService.Models.Client;
+﻿using DatabaseWebService.Models;
+using DatabaseWebService.Models.Client;
 using DatabaseWebService.ModelsOTP.Route;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace DatabaseWebService.ModelsOTP.Tender
         public decimal StaraCena { get; set; }
         public decimal NovaCena { get; set; }
         public int IDVnosOseba { get; set; }
+        public EmployeeSimpleModel VnosOseba { get; set; }
         public DateTime VnosTS { get; set; }
 
         public int IDSpremembeOseba { get; set; }
+        public EmployeeSimpleModel SpremembeOseba { get; set; }
         public DateTime SpremembeTS { get; set; }
 
         public ClientFullModel Stranka { get; set; }

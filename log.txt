@@ -10621,3 +10621,102 @@ Error Number:547,State:0,Class:16
 23. 02. 2021 08:45:37 Številka naročilnice: 2102400000073
 23. 02. 2021 08:49:45 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
 23. 02. 2021 08:49:45 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :3
+23. 02. 2021 10:07:37 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 02. 2021 10:07:37 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :3
+23. 02. 2021 10:07:37 Številka naročilnice: 2102400000073
+24. 02. 2021 14:47:13 GetListOfOrderNumber10
+24. 02. 2021 16:27:29 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+24. 02. 2021 16:27:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+24. 02. 2021 16:28:51 Številka naročilnice: 2102400000075
+25. 02. 2021 08:15:34 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+25. 02. 2021 08:15:34 SaveRecall2 : (model.Content.OdpoklicID) :0
+25. 02. 2021 08:15:52 Številka naročilnice: 2102400000076
+1. 03. 2021 15:17:32 1. 03. 2021 15:17:32
+1. 03. 2021 15:20:18 Start - SaveTender
+1. 03. 2021 15:20:18 1. 03. 2021 15:20:18
+1. 03. 2021 15:20:18 CNT :1
+1. 03. 2021 15:20:18 1. 03. 2021 15:20:18
+1. 03. 2021 15:20:18 CNT add :0
+1. 03. 2021 15:20:18 CNT update:1
+1. 03. 2021 15:20:18 Save positions finished!
+1. 03. 2021 15:23:13 1. 03. 2021 15:23:13
+1. 03. 2021 15:23:33 Start - SaveTender
+1. 03. 2021 15:23:34 1. 03. 2021 15:23:34
+1. 03. 2021 15:23:34 CNT :1
+1. 03. 2021 15:23:34 1. 03. 2021 15:23:34
+1. 03. 2021 15:23:34 CNT add :0
+1. 03. 2021 15:23:34 CNT update:1
+1. 03. 2021 15:23:34 Save positions finished!
+2. 03. 2021 11:00:48 GetListOfOrderNumber10
+2. 03. 2021 11:01:03 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+2. 03. 2021 11:06:21 GetListOfOrderNumber10
+2. 03. 2021 11:07:37 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+2. 03. 2021 11:10:31 GetListOfOrderNumber10
+2. 03. 2021 11:11:14 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+2. 03. 2021 13:39:33 GetListOfOrderNumber10
+2. 03. 2021 13:40:38 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+2. 03. 2021 14:00:50 GetListOfOrderNumber10
+2. 03. 2021 14:01:02 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+2. 03. 2021 14:41:20 GetListOfOrderNumber10
+2. 03. 2021 14:41:30 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 07:35:58 GetListOfOrderNumber10
+3. 03. 2021 07:37:45 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 07:45:13 GetListOfOrderNumber10
+3. 03. 2021 07:45:25 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 07:56:40 GetListOfOrderNumber10
+3. 03. 2021 07:56:53 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:05:06 GetListOfOrderNumber10
+3. 03. 2021 08:06:15 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:15:54 GetListOfOrderNumber10
+3. 03. 2021 08:20:18 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:26:21 GetListOfOrderNumber10
+3. 03. 2021 08:26:30 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:30:15 GetListOfOrderNumber10
+3. 03. 2021 08:31:38 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:35:01 GetListOfOrderNumber10
+3. 03. 2021 08:35:15 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 08:38:56 GetListOfOrderNumber10
+3. 03. 2021 08:39:35 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 09:15:32 GetListOfOrderNumber10
+3. 03. 2021 09:16:34 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 11:30:43 GetListOfOrderNumber10
+3. 03. 2021 11:31:07 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 11:38:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 11:38:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+3. 03. 2021 11:49:48 GetListOfOrderNumber10
+3. 03. 2021 12:16:28 GetListOfOrderNumber10
+3. 03. 2021 12:19:16 GetListOfOrderNumber10
+3. 03. 2021 12:20:36 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:20:37 SaveRecall1 : (model.Content.OdpoklicID) :6040
+3. 03. 2021 12:24:34 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:24:34 SaveRecall1 : (model.Content.OdpoklicID) :6040
+3. 03. 2021 12:25:57 GetListOfOrderNumber10
+3. 03. 2021 12:26:07 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+3. 03. 2021 12:31:18 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:31:18 SaveRecall2 : (model.Content.OdpoklicID) :0
+3. 03. 2021 12:31:19 SaveRecall2 : V_ODOBRITEV
+3. 03. 2021 12:31:19 D:\GitHub\DatabaseWebService\
+3. 03. 2021 12:31:20 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+3. 03. 2021 12:32:21 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:32:21 SaveRecall1 : (model.Content.OdpoklicID) :6041
+3. 03. 2021 12:33:06 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:33:06 SaveRecall1 : (model.Content.OdpoklicID) :6041
+3. 03. 2021 12:34:48 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:34:48 SaveRecall1 : (model.Content.OdpoklicID) :6041
+3. 03. 2021 12:37:12 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:37:12 SaveRecall1 : (model.Content.OdpoklicID) :6041
+3. 03. 2021 12:37:13 SaveRecall : V_ODOBRITEV
+3. 03. 2021 12:37:13 D:\GitHub\DatabaseWebService\
+3. 03. 2021 12:37:13 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+3. 03. 2021 12:54:16 GetListOfOrderNumber10
+3. 03. 2021 12:54:30 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+3. 03. 2021 12:58:43 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 12:58:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+3. 03. 2021 12:59:09 GetListOfOrderNumber10
+3. 03. 2021 12:59:17 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+3. 03. 2021 13:01:38 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 13:01:38 SaveRecall2 : (model.Content.OdpoklicID) :0
+3. 03. 2021 13:28:05 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+3. 03. 2021 13:28:05 SaveRecall1 : (model.Content.OdpoklicID) :6028
+3. 03. 2021 13:31:02 GetListOfOrderNumber10
+3. 03. 2021 13:31:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
