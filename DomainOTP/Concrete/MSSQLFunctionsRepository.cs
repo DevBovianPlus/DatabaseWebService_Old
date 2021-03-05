@@ -527,7 +527,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 InvoicesDocXML = InvoicesDocXML.Replace("xxStOrderxx", sOrderNo);
             else
             {
-                if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
+                if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : -" + sErrorDesc + "-");
             }
 
             var obj1 = context.DodajPantheonSupplierOrderAndLinkInvoice("", InvoicesDocXML, opReturnOrderNo, opErrorDesc);
@@ -538,7 +538,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
             context.OsveziPantheonLinkedInvoicesByOrderNo(sOrderNo);
 
-            if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : " + sErrorDesc);
+            if (sErrorDesc.Length > 0) DataTypesHelper.LogThis("Error create naročilnica : -" + sErrorDesc + "-");
 
             if (sErrorDesc.Length > 0) throw new Exception(ValidationExceptionError.res_28 + "<br><br>" + sErrorDesc);
 
