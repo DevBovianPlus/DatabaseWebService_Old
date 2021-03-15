@@ -134,7 +134,8 @@ namespace DatabaseWebService.DomainPDO.Concrete
                             StevilkaArtikel = p.StArtikla,
                             Tek = p.Tek,
                             Velikost = p.Velikost,
-                            Dobavitelj = p.DOBAVITELJ
+                            Dobavitelj = p.DOBAVITELJ,
+                            Poreklo = p.POREKLO
                         };
 
             var list = query.ToList();

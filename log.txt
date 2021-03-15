@@ -10851,3 +10851,403 @@ Error Number:547,State:0,Class:16
 4. 03. 2021 16:31:23 Generate mail for Purchase dept : NEZNAN
 4. 03. 2021 16:37:37 SaveInquiryPurchase : NEZNAN
 4. 03. 2021 16:37:38 Generate mail for Purchase dept : NEZNAN
+5. 03. 2021 08:09:27 GetListOfOrderNumber10
+5. 03. 2021 08:09:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+5. 03. 2021 08:28:30 SaveInquiryPurchase : ODDANO
+5. 03. 2021 08:28:31 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 09:39:46 SaveInquiryPurchase : ODDANO
+5. 03. 2021 09:39:47 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 09:53:08 SaveInquiryPurchase : ODDANO
+5. 03. 2021 09:53:09 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 09:53:43 SaveInquiryPurchase : ODDANO
+5. 03. 2021 09:53:44 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 09:54:16 SaveInquiryPurchase : POSLANO_V_NABAVO
+5. 03. 2021 09:54:18 Generate mail for Purchase dept : POSLANO_V_NABAVO
+5. 03. 2021 09:54:18 Generate mail for Purchase dept
+5. 03. 2021 09:54:18 D:\GitHub\DatabaseWebService\
+5. 03. 2021 09:54:18 CreateEmailForGrafolitPurcaheDept
+5. 03. 2021 11:05:05 SaveInquiryPurchase : ODDANO
+5. 03. 2021 11:05:06 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 11:06:48 SaveInquiryPurchase : ODDANO
+5. 03. 2021 11:06:57 Generate mail for Purchase dept : ODDANO
+5. 03. 2021 14:54:56 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+5. 03. 2021 14:54:57 SaveRecall2 : (model.Content.OdpoklicID) :0
+5. 03. 2021 14:55:04 Številka naročilnice: 2102400000081
+5. 03. 2021 15:17:45 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+5. 03. 2021 15:17:45 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+5. 03. 2021 15:18:37 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+5. 03. 2021 15:18:37 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+5. 03. 2021 15:19:28 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+5. 03. 2021 15:19:28 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+5. 03. 2021 15:25:12 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+5. 03. 2021 15:25:12 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :8
+6. 03. 2021 08:44:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 08:44:00 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 08:50:01 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 08:50:01 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 08:50:09 Številka naročilnice: 2102400000081
+6. 03. 2021 08:52:18 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 08:52:18 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 09:00:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 09:00:53 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 09:00:53 Številka naročilnice: 2102400000081
+6. 03. 2021 09:22:45 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 09:22:45 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 09:24:26 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 09:24:26 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 09:29:22 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 09:29:28 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 09:58:50 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 09:58:50 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 10:01:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 10:01:09 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :9
+6. 03. 2021 10:01:09 Številka naročilnice: 2102400000081
+6. 03. 2021 10:05:45 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 10:05:45 SaveRecall2 : (model.Content.OdpoklicID) :0
+6. 03. 2021 10:05:55 Številka naročilnice: 2102400000082
+6. 03. 2021 10:07:29 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+6. 03. 2021 10:07:30 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :10
+9. 03. 2021 13:44:10 GetListOfOrderNumber10
+9. 03. 2021 13:44:37 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+9. 03. 2021 13:49:02 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 03. 2021 13:49:02 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 03. 2021 13:51:50 GetListOfOrderNumber10
+9. 03. 2021 13:52:23 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+9. 03. 2021 13:53:48 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 03. 2021 13:53:48 SaveRecall1 : (model.Content.OdpoklicID) :6044
+9. 03. 2021 13:54:31 GetListOfOrderNumber10
+9. 03. 2021 13:55:08 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+9. 03. 2021 13:57:47 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+9. 03. 2021 13:57:47 SaveRecall2 : (model.Content.OdpoklicID) :0
+9. 03. 2021 14:02:42 GetListOfOrderNumber10
+9. 03. 2021 14:03:05 GetListOfOpenedOrderPositions for : PACKPROFIL Sp. z o.o.         
+9. 03. 2021 14:03:43 GetListOfOrderNumber10
+9. 03. 2021 14:03:50 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+9. 03. 2021 14:24:15 SaveInquiryPurchase : ODDANO
+9. 03. 2021 14:24:16 Generate mail for Purchase dept : ODDANO
+9. 03. 2021 14:24:53 SaveInquiryPurchase : ODDANO
+9. 03. 2021 14:24:53 Generate mail for Purchase dept : ODDANO
+9. 03. 2021 14:25:08 SaveInquiryPurchase : POSLANO_V_NABAVO
+9. 03. 2021 14:25:09 Generate mail for Purchase dept : POSLANO_V_NABAVO
+9. 03. 2021 14:25:09 Generate mail for Purchase dept
+9. 03. 2021 14:25:09 D:\GitHub\DatabaseWebService\
+9. 03. 2021 14:25:09 CreateEmailForGrafolitPurcaheDept
+9. 03. 2021 14:28:11 SaveInquiryPurchase : USTVARJENO_NAROCILO
+9. 03. 2021 14:28:12 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+9. 03. 2021 14:32:49 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>9. 03. 2021 14:32:49</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>ARCTIC PAPER GRYCKSBO AB</Supplier>
+  <Buyer>FLORJANČIČ TISK D.O.O.        </Buyer>
+  <OrderDate>9. 03. 2021 14:32:49</OrderDate>
+  <LoadDate>25. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>25. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>25. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0718210332021   </Ident>
+      <Name>ARCTIC MATT 300G 90X64 BB</Name>
+      <Qty>6220,80</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+9. 03. 2021 14:32:49 Run Create order procedure _upJM_CreateSupplierOrder
+9. 03. 2021 14:33:01 Update Create order Recall Data
+9. 03. 2021 14:48:41 SaveInquiryPurchase : USTVARJENO_NAROCILO
+9. 03. 2021 14:48:42 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+9. 03. 2021 14:48:56 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>9. 03. 2021 14:48:55</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>IBERBOARD MILL S.L.</Supplier>
+  <Buyer>EVROGRAFIS D.O.O.             </Buyer>
+  <OrderDate>9. 03. 2021 14:48:56</OrderDate>
+  <LoadDate>18. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>18. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>18. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>1429691202001   </Ident>
+      <Name>LEPENKA DOREXPACK G-2 1,75 MM 114X107 BB</Name>
+      <Qty>300000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+9. 03. 2021 14:48:56 Run Create order procedure _upJM_CreateSupplierOrder
+9. 03. 2021 14:48:56 Update Create order Recall Data
+9. 03. 2021 14:55:44 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 14:55:45 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 14:56:26 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 14:56:27 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 14:58:01 SaveInquiryPurchase : POSLANO_V_NABAVO
+9. 03. 2021 14:58:01 Generate mail for Purchase dept : POSLANO_V_NABAVO
+9. 03. 2021 14:58:01 Generate mail for Purchase dept
+9. 03. 2021 14:58:01 D:\GitHub\DatabaseWebService\
+9. 03. 2021 14:58:01 CreateEmailForGrafolitPurcaheDept
+9. 03. 2021 14:58:50 SaveInquiryPurchase : USTVARJENO_NAROCILO
+9. 03. 2021 14:58:51 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+9. 03. 2021 15:03:26 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>9. 03. 2021 15:03:25</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ALFAGRAF d.o.o.               </Buyer>
+  <OrderDate>9. 03. 2021 15:03:26</OrderDate>
+  <LoadDate>18. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>18. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>18. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712411201005   </Ident>
+      <Name>ARCOSET EXTRA WHITE 120G 61X86 SB</Name>
+      <Qty>62,95</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+    </Product>
+  </Products>
+</Document>
+9. 03. 2021 15:03:26 Run Create order procedure _upJM_CreateSupplierOrder
+9. 03. 2021 15:03:26 Update Create order Recall Data
+9. 03. 2021 15:07:14 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 15:07:15 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 15:08:49 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 15:08:50 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 15:10:12 SaveInquiryPurchase : POSLANO_V_NABAVO
+9. 03. 2021 15:10:13 Generate mail for Purchase dept : POSLANO_V_NABAVO
+9. 03. 2021 15:10:13 Generate mail for Purchase dept
+9. 03. 2021 15:10:13 D:\GitHub\DatabaseWebService\
+9. 03. 2021 15:10:13 CreateEmailForGrafolitPurcaheDept
+9. 03. 2021 15:10:39 SaveInquiryPurchase : USTVARJENO_NAROCILO
+9. 03. 2021 15:10:40 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+9. 03. 2021 15:11:31 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>9. 03. 2021 15:10:53</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>BELVAROSI NYOMDA ZRT.         </Buyer>
+  <OrderDate>9. 03. 2021 15:10:53</OrderDate>
+  <LoadDate>17. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>17. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>17. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712410402018F  </Ident>
+      <Name>ARCOSET EXTRA WHITE 120G 100X70 BB FSC Mix Credit</Name>
+      <Qty>252,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+9. 03. 2021 15:11:41 Run Create order procedure _upJM_CreateSupplierOrder
+9. 03. 2021 15:11:41 Update Create order Recall Data
+9. 03. 2021 15:26:10 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 15:26:11 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 15:26:31 SaveInquiryPurchase : NEZNAN
+9. 03. 2021 15:26:32 Generate mail for Purchase dept : NEZNAN
+9. 03. 2021 15:28:22 SaveInquiryPurchase : POSLANO_V_NABAVO
+9. 03. 2021 15:28:23 Generate mail for Purchase dept : POSLANO_V_NABAVO
+9. 03. 2021 15:28:23 Generate mail for Purchase dept
+9. 03. 2021 15:28:23 D:\GitHub\DatabaseWebService\
+9. 03. 2021 15:28:23 CreateEmailForGrafolitPurcaheDept
+9. 03. 2021 15:28:40 SaveInquiryPurchase : USTVARJENO_NAROCILO
+9. 03. 2021 15:28:40 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+9. 03. 2021 15:29:26 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>9. 03. 2021 15:29:22</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Helena Krajnc                 </Buyer>
+  <OrderDate>9. 03. 2021 15:29:22</OrderDate>
+  <LoadDate>25. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>25. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>25. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0531440302000   </Ident>
+      <Name>SYMBOL CARD PW 270G 90X64 BB</Name>
+      <Qty>155,52</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>380</Poreklo>
+    </Product>
+  </Products>
+</Document>
+9. 03. 2021 15:29:26 Run Create order procedure _upJM_CreateSupplierOrder
+9. 03. 2021 15:29:27 Update Create order Recall Data
+10. 03. 2021 08:21:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+10. 03. 2021 08:21:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+10. 03. 2021 08:22:11 Številka naročilnice: 2102400000084
+10. 03. 2021 08:23:35 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+10. 03. 2021 08:23:35 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :12
+11. 03. 2021 11:06:38 GetListOfOrderNumber10
+11. 03. 2021 11:11:41 GetListOfOrderNumber10
+11. 03. 2021 11:11:48 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+11. 03. 2021 11:12:20 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+11. 03. 2021 11:14:48 GetListOfOrderNumber10
+11. 03. 2021 11:14:59 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+11. 03. 2021 12:04:55 GetListOfOrderNumber10
+11. 03. 2021 12:04:56 GetListOfOrderNumber10
+11. 03. 2021 12:05:35 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+11. 03. 2021 13:38:30 GetListOfOrderNumber10
+11. 03. 2021 13:39:50 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+11. 03. 2021 14:02:29 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 03. 2021 14:02:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+11. 03. 2021 14:02:30 SaveRecall2 : V_ODOBRITEV
+11. 03. 2021 14:02:30 D:\GitHub\DatabaseWebService\
+11. 03. 2021 14:02:30 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+11. 03. 2021 14:26:26 GetListOfOrderNumber10
+11. 03. 2021 14:30:39 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH BE  
+11. 03. 2021 14:54:34 GetListOfOrderNumber10
+11. 03. 2021 14:54:44 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+11. 03. 2021 14:57:32 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+11. 03. 2021 14:57:32 SaveRecall2 : (model.Content.OdpoklicID) :0
+11. 03. 2021 14:57:33 SaveRecall2 : V_ODOBRITEV
+11. 03. 2021 14:57:33 D:\GitHub\DatabaseWebService\
+11. 03. 2021 14:57:33 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+11. 03. 2021 15:23:20 GetListOfOrderNumber10
+11. 03. 2021 15:23:41 GetListOfOpenedOrderPositions for : SAPPI PAPIER HOLDING GMBH DE  
+12. 03. 2021 09:08:04 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:08:04 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:08:16 Številka naročilnice: 2102400000085
+12. 03. 2021 09:08:30 GetListOfOrderNumber10
+12. 03. 2021 09:11:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:11:07 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:11:07 Številka naročilnice: 2102400000086
+12. 03. 2021 09:27:49 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:27:49 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:27:49 Številka naročilnice: 2102400000087
+12. 03. 2021 09:40:01 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:40:01 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:40:01 Številka naročilnice: 2102400000088
+12. 03. 2021 09:43:12 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:43:12 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:43:12 Številka naročilnice: 2102400000089
+12. 03. 2021 09:49:19 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 09:49:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 09:49:19 Številka naročilnice: 2102400000090
+12. 03. 2021 09:50:13 GetListOfOrderNumber10
+12. 03. 2021 09:50:21 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+12. 03. 2021 10:00:36 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+12. 03. 2021 10:00:36 SaveRecall2 : (model.Content.OdpoklicID) :0
+12. 03. 2021 10:00:37 SaveRecall2 : V_ODOBRITEV
+12. 03. 2021 10:00:37 D:\GitHub\DatabaseWebService\
+12. 03. 2021 10:54:32 SaveInquiryPurchase : NEZNAN
+12. 03. 2021 10:54:32 Generate mail for Purchase dept : NEZNAN
+12. 03. 2021 10:54:58 SaveInquiryPurchase : NEZNAN
+12. 03. 2021 10:54:58 Generate mail for Purchase dept : NEZNAN
+12. 03. 2021 10:55:40 SaveInquiryPurchase : POSLANO_V_NABAVO
+12. 03. 2021 10:55:53 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12. 03. 2021 10:55:56 Generate mail for Purchase dept
+12. 03. 2021 10:56:15 D:\GitHub\DatabaseWebService\
+12. 03. 2021 10:56:15 CreateEmailForGrafolitPurcaheDept
+12. 03. 2021 10:57:06 SaveInquiryPurchase : USTVARJENO_NAROCILO
+12. 03. 2021 10:57:14 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+12. 03. 2021 10:58:12 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>12. 03. 2021 10:57:37</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>ALFAGRAF d.o.o.               </Buyer>
+  <OrderDate>12. 03. 2021 10:57:52</OrderDate>
+  <LoadDate>17. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>17. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>17. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712411301003   </Ident>
+      <Name>ARCOSET EXTRA WHITE 120G 45X64 SB </Name>
+      <Qty>62,95</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>380</Poreklo>
+    </Product>
+  </Products>
+</Document>
+12. 03. 2021 10:58:13 Run Create order procedure _upJM_CreateSupplierOrder
+12. 03. 2021 10:58:34 Update Create order Recall Data
+14. 03. 2021 11:38:14 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>14. 03. 2021 11:38:01</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>14. 03. 2021 11:38:01</OrderDate>
+  <LoadDate>14. 03. 2021 11:38:01</LoadDate>
+  <DeliveryDate>14. 03. 2021 11:38:01</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>14. 03. 2021 11:38:01</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+14. 03. 2021 11:38:14 Run Create order procedure _upJM_CreateSupplierOrder
+14. 03. 2021 11:38:32 Update Create order Recall Data

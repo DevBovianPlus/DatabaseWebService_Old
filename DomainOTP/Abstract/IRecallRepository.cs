@@ -19,6 +19,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         int SaveRecall(RecallFullModel model, bool updateRecord = true);
         int SaveBuyerRecall(RecallBuyerFullModel model, bool updateRecord = true);
         bool DeleteRecall(int recallID);
+        bool DeleteBuyerRecall(int recallBuyerID);
 
         int SaveRecallPosition(RecallPositionModel model, bool updateRecord = true);
         void SaveRecallPosition(List<RecallPositionModel> model, int recallID = 0, int ownStockWarehouseID = 0);

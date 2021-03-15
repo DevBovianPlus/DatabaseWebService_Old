@@ -94,20 +94,6 @@ namespace DatabaseWebService.DomainPDO
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetPantheonUsers_Result>("[GrafolitPDOEntities].[GetPantheonUsers]()");
         }
     
-        [EdmFunction("GrafolitPDOEntities", "GetArtikelByName")]
-        public virtual IQueryable<GetArtikelByName_Result2> GetArtikelByName(string supplier, string name)
-        {
-            var supplierParameter = supplier != null ?
-                new ObjectParameter("Supplier", supplier) :
-                new ObjectParameter("Supplier", typeof(string));
-    
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetArtikelByName_Result2>("[GrafolitPDOEntities].[GetArtikelByName](@Supplier, @Name)", supplierParameter, nameParameter);
-        }
-    
         [EdmFunction("GrafolitPDOEntities", "GetArtikelByNamePantheonOnly")]
         public virtual IQueryable<GetArtikelByNamePantheonOnly_Result> GetArtikelByNamePantheonOnly(string supplier, string name)
         {
@@ -120,6 +106,20 @@ namespace DatabaseWebService.DomainPDO
                 new ObjectParameter("Name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetArtikelByNamePantheonOnly_Result>("[GrafolitPDOEntities].[GetArtikelByNamePantheonOnly](@Supplier, @Name)", supplierParameter, nameParameter);
+        }
+    
+        [EdmFunction("GrafolitPDOEntities", "GetArtikelByName")]
+        public virtual IQueryable<GetArtikelByName_Result3> GetArtikelByName(string supplier, string name)
+        {
+            var supplierParameter = supplier != null ?
+                new ObjectParameter("Supplier", supplier) :
+                new ObjectParameter("Supplier", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<GetArtikelByName_Result3>("[GrafolitPDOEntities].[GetArtikelByName](@Supplier, @Name)", supplierParameter, nameParameter);
         }
     }
 }

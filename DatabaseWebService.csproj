@@ -180,8 +180,8 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=5.1.20.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
-      <HintPath>packages\Z.EntityFramework.Extensions.EF5.5.1.20\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
+    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=5.1.23.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>packages\Z.EntityFramework.Extensions.EF5.5.1.23\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -518,6 +518,9 @@
       <DependentUpon>Grafolit_PDO.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainPDO\GetArtikelByName_Result2.cs">
+      <DependentUpon>Grafolit_PDO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainPDO\GetArtikelByName_Result3.cs">
       <DependentUpon>Grafolit_PDO.tt</DependentUpon>
     </Compile>
     <Compile Include="DomainPDO\GetArtikelBySearchStr_Result.cs">

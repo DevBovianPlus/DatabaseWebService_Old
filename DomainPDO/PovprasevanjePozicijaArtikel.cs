@@ -42,6 +42,7 @@ namespace DatabaseWebService.DomainPDO
         public string DobaviteljNaziv_PA { get; set; }
         public Nullable<decimal> KolicinaVPOL { get; set; }
         public string NarEnotaMere2 { get; set; }
+        public string Poreklo { get; set; }
     
         public virtual Oddelek Oddelek { get; set; }
         public virtual PovprasevanjePozicija PovprasevanjePozicija { get; set; }

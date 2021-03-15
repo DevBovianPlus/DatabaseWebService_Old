@@ -51,5 +51,7 @@ namespace DatabaseWebService.ModelsPDO.Order
         public string OpombeArt { get; set; }
 
         public DateTime DatumDobavePos { get; set; }
+
+        public string Poreklo { get; set; }
     }
 }

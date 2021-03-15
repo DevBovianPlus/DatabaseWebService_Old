@@ -196,6 +196,7 @@ namespace DatabaseWebService.Controllers
                         recallRepo.SaveRecall(model.Content);
                         
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());
+                        
                         if (model.Content.RecallStatusChanged && (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID))
                         {
                             //messageEventsRepo.CreateEmailForRecallStatusChanged(model.Content);
@@ -302,6 +303,32 @@ namespace DatabaseWebService.Controllers
             try
             {
                 deleteRecall.Content = recallRepo.DeleteRecall(recallID);
+
+                if (deleteRecall.Content)
+                    deleteRecall.IsRequestSuccesful = true;
+                else
+                {
+                    deleteRecall.IsRequestSuccesful = false;
+                    deleteRecall.ValidationError = ValidationExceptionError.res_04;
+                }
+            }
+            catch (Exception ex)
+            {
+                deleteRecall.IsRequestSuccesful = false;
+                deleteRecall.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(deleteRecall);
+            }
+
+            return Json(deleteRecall);
+        }
+
+        [HttpGet]
+        public IHttpActionResult DeleteBuyerRecall(int recallBuyerID)
+        {
+            WebResponseContentModel<bool> deleteRecall = new WebResponseContentModel<bool>();
+            try
+            {
+                deleteRecall.Content = recallRepo.DeleteBuyerRecall(recallBuyerID);
 
                 if (deleteRecall.Content)
                     deleteRecall.IsRequestSuccesful = true;

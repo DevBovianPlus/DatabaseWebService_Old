@@ -416,6 +416,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                                                  tsIDOsebe = ipa.tsIDOsebe.HasValue ? ipa.tsIDOsebe.Value : 0,
                                                                  tsUpdate = ipa.tsUpdate.HasValue ? ipa.tsUpdate.Value : DateTime.MinValue,
                                                                  tsUpdateUserID = ipa.tsUpdateUserID.HasValue ? ipa.tsUpdateUserID.Value : 0,
+                                                                 Poreklo = ipa.Poreklo
                                                              }).ToList();
                     }
                 }
@@ -1168,6 +1169,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                 ppa.DatumDobavePos = item.DatumDobavePos.Equals(DateTime.MinValue) ? (DateTime?)null : item.DatumDobavePos;
                 ppa.DobaviteljID = item.DobaviteljID;
                 ppa.DobaviteljNaziv_PA = item.DobaviteljNaziv_PA;
+                ppa.Poreklo = item.Poreklo;
 
                 if (ppa.PovprasevanjePozicijaArtikelID == 0)
                 {
@@ -1290,7 +1292,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 IzbranArtikel = ppa.IzbranArtikel.HasValue ? ppa.IzbranArtikel.Value : false,
                                 DatumDobavePos = ppa.DatumDobavePos.HasValue ? ppa.DatumDobavePos.Value : DateTime.MinValue,
                                 DobaviteljNaziv_PA = ppa.DobaviteljNaziv_PA != null ? ppa.DobaviteljNaziv_PA : pp.DobaviteljNaziv_P,
-
+                                Poreklo = ppa.Poreklo
                             };
 
                 List<InquiryPositionArtikelModel> model = query.ToList();

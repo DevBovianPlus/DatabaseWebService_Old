@@ -42,6 +42,7 @@ namespace DatabaseWebService.ModelsPDO.Inquiry
         public string NarEnotaMere2 { get; set; }
         public decimal Rabat { get; set; }
         public string OpombaNarocilnica { get; set; }
+        public string Poreklo { get; set; }
         public DateTime DatumDobavePos { get; set; }
 
         public List<ProductModel> ArtikliPantheon { get; set; }

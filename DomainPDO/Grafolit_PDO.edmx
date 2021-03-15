@@ -85,6 +85,7 @@
           <Property Name="PrikaziKupca" Type="bit" />
           <Property Name="KolicinaVPOL" Type="decimal" Precision="10" Scale="2" />
           <Property Name="NarEnotaMere2" Type="varchar" MaxLength="50" />
+          <Property Name="Poreklo" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Nastavitve">
           <Key>
@@ -235,6 +236,7 @@
           <Property Name="DobaviteljNaziv_PA" Type="varchar" MaxLength="1000" />
           <Property Name="KolicinaVPOL" Type="decimal" Precision="10" Scale="2" />
           <Property Name="NarEnotaMere2" Type="varchar" MaxLength="50" />
+          <Property Name="Poreklo" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="StatusPovprasevanja">
           <Key>
@@ -684,6 +686,7 @@
                 <Property Name="Velikost" Type="varchar" MaxLength="6" Nullable="false" />
                 <Property Name="Tek" Type="varchar" MaxLength="6" Nullable="false" />
                 <Property Name="DOBAVITELJ" Type="char" MaxLength="30" />
+                <Property Name="POREKLO" Type="char" MaxLength="3" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -1173,10 +1176,6 @@
             <End Role="NarociloPozicija_PDO" EntitySet="NarociloPozicija_PDO" />
           </AssociationSet>
           <FunctionImport Name="GetPantheonUsers" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetPantheonUsers_Result)" />
-          <FunctionImport Name="GetArtikelByName" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetArtikelByName_Result2)">
-            <Parameter Name="Supplier" Mode="In" Type="String" />
-            <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
           <EntitySet Name="SystemEmailMessage_PDO" EntityType="GrafolitPDOModel.SystemEmailMessage_PDO" />
           <AssociationSet Name="FK_SysEmailMsg_OsebaID" Association="GrafolitPDOModel.FK_SysEmailMsg_OsebaID">
             <End Role="Osebe_PDO" EntitySet="Osebe_PDO" />
@@ -1190,6 +1189,10 @@
             <End Role="Stranka_PDO" EntitySet="Stranka_PDO" />
             <End Role="PovprasevanjePozicijaArtikel" EntitySet="PovprasevanjePozicijaArtikel" />
           </AssociationSet>
+          <FunctionImport Name="GetArtikelByName" IsComposable="true" ReturnType="Collection(GrafolitPDOModel.GetArtikelByName_Result3)">
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="Nastavitve">
           <Key>
@@ -1430,6 +1433,7 @@
           <NavigationProperty Name="Stranka_PDO" Relationship="GrafolitPDOModel.FK_DobaviteljPozivijaArtikelID" FromRole="PovprasevanjePozicijaArtikel" ToRole="Stranka_PDO" />
           <Property Name="KolicinaVPOL" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="NarEnotaMere2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Poreklo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_OddelekID">
           <End Type="GrafolitPDOModel.Oddelek" Role="Oddelek" Multiplicity="0..1" />
@@ -1496,6 +1500,7 @@
           <NavigationProperty Name="PovprasevanjePozicija" Relationship="GrafolitPDOModel.FK_N_PovprasevanjePozicijaID" FromRole="NarociloPozicija_PDO" ToRole="PovprasevanjePozicija" />
           <Property Name="KolicinaVPOL" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="NarEnotaMere2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Poreklo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_IzbranDobaviteljID">
           <End Type="GrafolitPDOModel.Stranka_PDO" Role="Stranka_PDO" Multiplicity="0..1" />
@@ -1776,6 +1781,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="GetArtikelByName_Result3">
+          <Property Type="String" Name="StArtikla" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="NAZIV" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="Kategorija" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Gloss" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Gramatura" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Velikost" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Tek" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="DOBAVITELJ" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="POREKLO" Nullable="true" MaxLength="3" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2038,6 +2054,7 @@
           <EntitySetMapping Name="PovprasevanjePozicijaArtikel">
             <EntityTypeMapping TypeName="GrafolitPDOModel.PovprasevanjePozicijaArtikel">
               <MappingFragment StoreEntitySet="PovprasevanjePozicijaArtikel">
+                <ScalarProperty Name="Poreklo" ColumnName="Poreklo" />
                 <ScalarProperty Name="NarEnotaMere2" ColumnName="NarEnotaMere2" />
                 <ScalarProperty Name="KolicinaVPOL" ColumnName="KolicinaVPOL" />
                 <ScalarProperty Name="DobaviteljNaziv_PA" ColumnName="DobaviteljNaziv_PA" />
@@ -2072,6 +2089,7 @@
           <EntitySetMapping Name="NarociloPozicija_PDO">
             <EntityTypeMapping TypeName="GrafolitPDOModel.NarociloPozicija_PDO">
               <MappingFragment StoreEntitySet="NarociloPozicija_PDO">
+                <ScalarProperty Name="Poreklo" ColumnName="Poreklo" />
                 <ScalarProperty Name="NarEnotaMere2" ColumnName="NarEnotaMere2" />
                 <ScalarProperty Name="KolicinaVPOL" ColumnName="KolicinaVPOL" />
                 <ScalarProperty Name="PrikaziKupca" ColumnName="PrikaziKupca" />
@@ -2158,20 +2176,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetArtikelByName" FunctionName="GrafolitPDOModel.Store.GetArtikelByName">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetArtikelByName_Result2">
-                <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
-                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
-                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
-                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
-                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
-                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
-                <ScalarProperty Name="Tek" ColumnName="Tek" />
-                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="SystemEmailMessage_PDO">
             <EntityTypeMapping TypeName="GrafolitPDOModel.SystemEmailMessage_PDO">
               <MappingFragment StoreEntitySet="SystemEmailMessage_PDO">
@@ -2199,6 +2203,21 @@
                 <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
                 <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
                 <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetArtikelByName" FunctionName="GrafolitPDOModel.Store.GetArtikelByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GrafolitPDOModel.GetArtikelByName_Result3">
+                <ScalarProperty Name="StArtikla" ColumnName="StArtikla" />
+                <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Gloss" ColumnName="Gloss" />
+                <ScalarProperty Name="Gramatura" ColumnName="Gramatura" />
+                <ScalarProperty Name="Velikost" ColumnName="Velikost" />
+                <ScalarProperty Name="Tek" ColumnName="Tek" />
+                <ScalarProperty Name="DOBAVITELJ" ColumnName="DOBAVITELJ" />
+                <ScalarProperty Name="POREKLO" ColumnName="POREKLO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

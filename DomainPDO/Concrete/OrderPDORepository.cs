@@ -268,6 +268,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                 Rabat = op.Rabat.HasValue ? op.Rabat.Value : 0,
                                 OpombaNarocilnica = op.OpombaNarocilnica,
                                 OddelekID = op.OddelekID.HasValue ? op.OddelekID.Value : 0,
+                                Poreklo = op.Poreklo,
                                 OddelekNaziv = op.Oddelek.Naziv,
                                 Oddelek = (from odd in context.Oddelek
                                            where odd.OddelekID == op.OddelekID
@@ -688,6 +689,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     xml.WriteElementString("Price", _serv.ArtikelCena.ToString());
                     xml.WriteElementString("Rabat", _serv.Rabat.ToString());
                     xml.WriteElementString("Note", _serv.OpombaNarocilnica.ToString());
+                    xml.WriteElementString("Poreklo", (_serv.Poreklo != null ?_serv.Poreklo.ToString() : ""));
                     xml.WriteEndElement();  // Product
                 }
 
@@ -767,6 +769,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     np.tsIDOsebe = item.tsIDOsebe;
                     np.OpombaNarocilnica = item.OpombaNarocilnica;
                     np.OddelekID = item.OddelekID > 0 ? item.OddelekID : (int?)null;
+                    np.Poreklo = item.Poreklo;
 
                     np.KolicinavKG = item.KolicinavKG > 0 ? item.KolicinavKG : (decimal?)null;
                     np.KolicinaVPOL = item.KolicinaVPOL > 0 ? item.KolicinaVPOL : (decimal?)null;

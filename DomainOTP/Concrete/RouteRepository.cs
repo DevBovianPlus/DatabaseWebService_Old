@@ -360,7 +360,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     //List<TenderPositionModel> tenderRoutesPrices = tenderRepo.GetTenderListByRouteID(item.RelacijaID);
 
                     var query2 = from tenderPos in context.RazpisPozicija //from tenderPos in tmp.FirstOrDefault().Key.RazpisPozicija
-                                 where tenderPos.RelacijaID == item.RelacijaID && tenderPos.Cena > 0 && (vRPModel.iWeightType == 1 ? tenderPos.ZbirnikTonID == 10 : tenderPos.ZbirnikTonID < 10)
+                                 where tenderPos.RelacijaID == item.RelacijaID && tenderPos.Cena > 0 && (vRPModel.iWeightType == 1 ? (tenderPos.ZbirnikTonID == 10 || tenderPos.ZbirnikTonID == 11 || tenderPos.ZbirnikTonID == 15) : tenderPos.ZbirnikTonID != 10)
                                  orderby tenderPos.ZbirnikTon.SortIdx ascending, tenderPos.Cena ascending
                                  select new TenderPositionModel
                                  {

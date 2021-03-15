@@ -16,5 +16,6 @@ namespace DatabaseWebService.ModelsPDO.Inquiry
         public string Gramatura { get; set; }
         public string Velikost { get; set; }
         public string Tek { get; set; }
+        public string Poreklo { get; set; }
     }
 }

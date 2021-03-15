@@ -820,6 +820,38 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public bool DeleteBuyerRecall(int recallBuyerID)
+        {
+            try
+            {
+                var recall = context.OdpoklicKupec.Where(o => o.OdpoklicKupecID == recallBuyerID).FirstOrDefault();
+
+                if (recall != null)
+                {
+                    //// check if there is any PrijavaPrevoznika
+                    //var lsPrijavaPrevoznika = GetCarriersInquiry(recall.OdpoklicKupecID);
+                    //// delete all data in PrijavaPrevoznika
+                    //if (lsPrijavaPrevoznika.Count > 0)
+                    //{
+                    //    foreach (CarrierInquiryModel pp in lsPrijavaPrevoznika)
+                    //    {
+                    //        DeleteCarrierInquiry(pp.PrijavaPrevoznikaID);
+                    //    }
+                    //}
+
+                    context.OdpoklicKupec.Remove(recall);
+                    context.SaveChanges();
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_07, ex);
+            }
+        }
+
 
         public int SaveRecallPosition(RecallPositionModel model, bool updateRecord = true)
         {

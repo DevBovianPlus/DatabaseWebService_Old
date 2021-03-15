@@ -1375,6 +1375,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                     xml.WriteElementString("Price", "0");
                     xml.WriteElementString("Rabat", "0");
                     xml.WriteElementString("Note", pos.Opombe.ToString());
+                    xml.WriteElementString("Poreklo", "");
                     xml.WriteEndElement();  // Product
                 }
 
