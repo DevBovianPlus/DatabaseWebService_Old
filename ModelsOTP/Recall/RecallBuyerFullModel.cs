@@ -38,5 +38,6 @@ namespace DatabaseWebService.ModelsOTP.Recall
         public List<RecallBuyerPositionModel> OdpoklicKupecPozicija { get; set; }
         public RouteModel Relacija { get; set; }
         public RecallStatus StatusOdpoklica { get; set; }
+        public bool bBrezFakture { get; set; }
     }
 }

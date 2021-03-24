@@ -11251,3 +11251,237 @@ Error Number:547,State:0,Class:16
 </Document>
 14. 03. 2021 11:38:14 Run Create order procedure _upJM_CreateSupplierOrder
 14. 03. 2021 11:38:32 Update Create order Recall Data
+15. 03. 2021 14:58:17 SaveInquiryPurchase : ODDANO
+15. 03. 2021 14:58:18 Generate mail for Purchase dept : ODDANO
+15. 03. 2021 14:58:35 SaveInquiryPurchase : ODDANO
+15. 03. 2021 14:58:36 Generate mail for Purchase dept : ODDANO
+15. 03. 2021 14:58:39 SaveInquiryPurchase : ODDANO
+15. 03. 2021 14:58:39 Generate mail for Purchase dept : ODDANO
+15. 03. 2021 14:58:52 SaveInquiryPurchase : ODDANO
+15. 03. 2021 14:58:53 Generate mail for Purchase dept : ODDANO
+15. 03. 2021 14:58:58 SaveInquiryPurchase : POSLANO_V_NABAVO
+15. 03. 2021 14:58:58 Generate mail for Purchase dept : POSLANO_V_NABAVO
+15. 03. 2021 14:58:58 Generate mail for Purchase dept
+15. 03. 2021 14:58:58 D:\GitHub\DatabaseWebService\
+15. 03. 2021 14:58:58 CreateEmailForGrafolitPurcaheDept
+15. 03. 2021 14:59:09 SaveInquiryPurchase : USTVARJENO_NAROCILO
+15. 03. 2021 14:59:10 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+15. 03. 2021 14:59:13 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>15. 03. 2021 14:59:13</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>IBERBOARD MILL S.L.</Supplier>
+  <Buyer>KARTONAŽA MUNIH d.o.o.        </Buyer>
+  <OrderDate>15. 03. 2021 14:59:13</OrderDate>
+  <LoadDate>11. 03. 2021 00:00:00</LoadDate>
+  <DeliveryDate>11. 03. 2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>11. 03. 2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>1429691202001   </Ident>
+      <Name>LEPENKA DOREXPACK G-2 1,75 MM 114X107 BB</Name>
+      <Qty>24000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>724</Poreklo>
+    </Product>
+  </Products>
+</Document>
+15. 03. 2021 14:59:13 Run Create order procedure _upJM_CreateSupplierOrder
+15. 03. 2021 14:59:30 Update Create order Recall Data
+16. 03. 2021 15:12:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16. 03. 2021 15:12:02 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 03. 2021 15:12:21 Številka naročilnice: 2102400000091
+16. 03. 2021 15:17:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16. 03. 2021 15:17:14 SaveRecall2 : (model.Content.OdpoklicID) :0
+16. 03. 2021 15:18:49 Številka naročilnice: 2102400000092
+17. 03. 2021 08:19:14 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:19:14 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 08:21:55 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:21:55 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 08:21:57 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:21:57 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 08:22:08 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:22:08 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 08:25:06 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:25:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 08:29:12 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 08:29:12 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1051
+17. 03. 2021 11:56:32 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 11:56:32 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 15:39:17 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 15:39:17 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 15:39:17 Object reference not set to an instance of an object.
+ DatabaseWebService
+    at DatabaseWebService.DomainOTP.Concrete.RecallRepository.GetXMLForOrderBuyerInvoices(RecallBuyerFullModel model) in D:\GitHub\DatabaseWebService\DomainOTP\Concrete\RecallRepository.cs:line 626
+17. 03. 2021 15:43:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 15:43:52 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 15:43:52 Object reference not set to an instance of an object.
+ DatabaseWebService
+    at DatabaseWebService.DomainOTP.Concrete.RecallRepository.GetXMLForOrderBuyerInvoices(RecallBuyerFullModel model) in D:\GitHub\DatabaseWebService\DomainOTP\Concrete\RecallRepository.cs:line 626
+17. 03. 2021 15:45:46 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 15:45:46 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 15:46:36 Object reference not set to an instance of an object.
+ DatabaseWebService
+    at DatabaseWebService.DomainOTP.Concrete.RecallRepository.GetXMLForOrderBuyerInvoices(RecallBuyerFullModel model) in D:\GitHub\DatabaseWebService\DomainOTP\Concrete\RecallRepository.cs:line 626
+17. 03. 2021 15:49:32 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 15:49:32 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 15:50:04 Številka naročilnice: 2102400000096
+17. 03. 2021 16:14:56 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:14:56 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 16:14:57 Številka naročilnice: 2102400000097
+17. 03. 2021 16:29:33 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:29:37 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1054
+17. 03. 2021 16:30:54 Številka naročilnice: 2102400000097
+17. 03. 2021 16:34:51 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:34:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 16:37:22 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:37:22 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1055
+17. 03. 2021 16:39:34 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:39:34 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1055
+17. 03. 2021 16:50:18 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 16:50:18 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1055
+17. 03. 2021 16:50:18 Številka naročilnice: 2102400000098
+17. 03. 2021 17:01:42 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 17:01:42 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 17:01:42 Številka naročilnice: 2102400000099
+17. 03. 2021 17:17:21 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 17:17:21 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1056
+17. 03. 2021 18:20:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:20:07 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 18:20:07 Številka naročilnice: 2102400000100
+17. 03. 2021 18:21:35 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:21:35 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 18:21:35 Številka naročilnice: 2102400000101
+17. 03. 2021 18:22:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:22:52 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1058
+17. 03. 2021 18:22:52 Številka naročilnice: 2102400000101
+17. 03. 2021 18:27:46 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:27:46 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 18:27:46 Error create naročilnica : -Dobavitelj ŠPEDICIJA GOJA D.O.O. ne obstaja v šifrantu subjektov!-
+17. 03. 2021 18:27:46 Številka naročilnice: 
+17. 03. 2021 18:34:41 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:34:41 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 18:34:41 Številka naročilnice: 2102400000102
+17. 03. 2021 18:48:50 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:48:50 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1060
+17. 03. 2021 18:48:50 Številka naročilnice: 2102400000102
+17. 03. 2021 18:53:25 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:53:25 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 18:53:25 Številka naročilnice: 2102400000103
+17. 03. 2021 18:57:17 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 18:57:17 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1061
+17. 03. 2021 18:57:18 Številka naročilnice: 2102400000103
+17. 03. 2021 19:03:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 19:03:02 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 19:03:07 Številka naročilnice: 2102400000104
+17. 03. 2021 19:16:37 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 19:16:38 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1062
+17. 03. 2021 19:16:43 Številka naročilnice: 2102400000104
+17. 03. 2021 19:30:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 19:30:52 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 19:31:21 Številka naročilnice: 2102400000105
+17. 03. 2021 22:04:40 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 22:04:40 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 22:04:45 Številka naročilnice: 2102400000106
+17. 03. 2021 22:06:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 22:06:10 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1064
+17. 03. 2021 22:06:31 Številka naročilnice: 2102400000106
+17. 03. 2021 22:09:48 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 22:09:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+17. 03. 2021 22:09:56 Številka naročilnice: 2102400000107
+17. 03. 2021 22:12:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17. 03. 2021 22:12:54 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1065
+17. 03. 2021 22:13:30 Številka naročilnice: 2102400000107
+19. 03. 2021 13:17:23 GetListOfOrderNumber10
+19. 03. 2021 13:19:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19. 03. 2021 13:27:52 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+19. 03. 2021 13:27:52 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 03. 2021 14:11:18 GetListOfOrderNumber10
+19. 03. 2021 14:11:31 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+19. 03. 2021 14:18:18 GetListOfOrderNumber10
+19. 03. 2021 14:18:29 GetListOfOpenedOrderPositions for : Model Pakiranja d.d.          
+19. 03. 2021 14:55:16 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+19. 03. 2021 14:55:16 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 03. 2021 14:55:27 Številka naročilnice: 2102400000108
+19. 03. 2021 15:00:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+19. 03. 2021 15:00:02 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1066
+19. 03. 2021 15:00:02 Številka naročilnice: 2102400000108
+19. 03. 2021 15:13:47 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+19. 03. 2021 15:13:47 SaveRecall2 : (model.Content.OdpoklicID) :0
+19. 03. 2021 15:13:57 Številka naročilnice: 2102400000109
+19. 03. 2021 15:18:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+19. 03. 2021 15:18:16 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1067
+19. 03. 2021 15:31:26 Številka naročilnice: 2102400000109
+22. 03. 2021 09:50:41 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22. 03. 2021 09:50:41 SaveRecall2 : (model.Content.OdpoklicID) :0
+22. 03. 2021 10:05:51 Številka naročilnice: 2102400000110
+23. 03. 2021 09:52:47 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 09:52:47 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 03. 2021 09:53:56 Številka naročilnice: 2102400000111
+23. 03. 2021 10:14:11 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 10:14:15 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 10:15:08 Številka naročilnice: 2102400000111
+23. 03. 2021 10:17:24 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 10:17:25 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 10:58:31 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 10:58:31 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 10:58:31 Številka naročilnice: 2102400000111
+23. 03. 2021 11:15:54 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:15:54 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:16:37 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:16:37 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:16:37 Številka naročilnice: 2102400000111
+23. 03. 2021 11:17:46 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:17:47 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:20:47 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:20:49 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:22:21 Številka naročilnice: 2102400000111
+23. 03. 2021 11:24:10 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:24:11 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:24:54 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:24:56 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:25:07 Številka naročilnice: 2102400000111
+23. 03. 2021 11:25:57 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:25:58 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:28:39 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:28:40 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:28:43 Številka naročilnice: 2102400000111
+23. 03. 2021 11:29:58 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:29:59 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 11:31:04 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 11:31:05 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 13:42:31 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 13:42:31 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 13:42:31 Številka naročilnice: 2102400000111
+23. 03. 2021 13:43:23 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 13:43:23 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 13:44:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 13:44:09 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 13:44:09 Številka naročilnice: 2102400000111
+23. 03. 2021 13:59:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 13:59:13 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 14:30:15 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:30:15 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1069
+23. 03. 2021 14:30:15 Številka naročilnice: 2102400000111
+23. 03. 2021 14:35:39 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:35:39 SaveRecall2 : (model.Content.OdpoklicID) :0
+23. 03. 2021 14:35:39 Številka naročilnice: 2102400000112
+23. 03. 2021 14:38:03 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:38:03 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1070
+23. 03. 2021 14:40:01 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:40:01 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1070
+23. 03. 2021 14:40:01 Številka naročilnice: 2102400000112
+23. 03. 2021 14:42:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:42:02 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1070
+23. 03. 2021 14:47:20 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23. 03. 2021 14:47:23 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1070
+23. 03. 2021 14:49:25 Številka naročilnice: 2102400000112

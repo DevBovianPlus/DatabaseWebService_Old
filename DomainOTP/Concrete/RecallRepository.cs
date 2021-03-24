@@ -659,9 +659,13 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
         public CreateOrderDocument GenerateNewBuyerOrder(RecallBuyerFullModel model)
         {
-            string xmlTransportOrder = GetXMLForOrderBuyerTransport(model);
-            string xmlInvoiceOrder = GetXMLForOrderBuyerInvoices(model);
+            string xmlInvoiceOrder = "";
 
+            string xmlTransportOrder = GetXMLForOrderBuyerTransport(model);
+            if (!model.bBrezFakture)
+            {
+                xmlInvoiceOrder = GetXMLForOrderBuyerInvoices(model);
+            }
             model.XMLOrder = xmlTransportOrder;
             model.XMLInvoice = xmlInvoiceOrder;
 
