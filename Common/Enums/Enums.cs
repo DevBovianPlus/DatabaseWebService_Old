@@ -96,6 +96,7 @@ namespace DatabaseWebService.Common.Enums
             KREIRAN_POSLAN_PDF,
             ERR_ADMIN_MAIL, // 5x napaka pri pošiljanju naročilnice
             ERR_ORDER_NO_SEND, // kerirana naročilnica, vendar še ni bil poslana            
+            STORNO, // kreirana naročilnica, se označi kot storno      
         }
 
         public enum TransportType

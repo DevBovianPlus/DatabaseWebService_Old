@@ -332,6 +332,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                         {
                             item.IzbraniArtikelNaziv_P = productList[0].Naziv;
                             item.IzbraniArtikelIdent_P = productList[0].StevilkaArtikel;
+                            item.Poreklo = productList[0].Poreklo;
                         }
 
                         item.ArtikliPantheon = productList;
@@ -776,6 +777,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                     np.EnotaMere = item.EnotaMere;
                     np.Rabat = item.Rabat > 0 ? item.Rabat : (decimal?)null;
                     np.PrikaziKupca = item.PrikaziKupca;
+                    
 
                     if (np.NarociloPozicijaID == 0)
                     {

@@ -11485,3 +11485,321 @@ Error Number:547,State:0,Class:16
 23. 03. 2021 14:47:20 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
 23. 03. 2021 14:47:23 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1070
 23. 03. 2021 14:49:25 Številka naročilnice: 2102400000112
+26/03/2021 15:15:17 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+26/03/2021 15:15:20 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1064
+01/04/2021 14:03:36 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+01/04/2021 14:03:36 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1068
+01/04/2021 14:07:12 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+01/04/2021 14:07:16 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1068
+01/04/2021 14:08:12 Številka naročilnice: 2102400000110
+02/04/2021 09:22:48 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 09:22:52 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 09:23:46 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 09:23:46 Generate mail for Purchase dept
+02/04/2021 09:23:46 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 09:23:46 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:24:31 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:24:32 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:24:32 Generate mail for Purchase dept
+02/04/2021 15:24:32 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:24:32 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:25:59 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:26:04 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:26:36 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 15:26:05</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 15:26:05</OrderDate>
+  <LoadDate>13/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>13/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>13/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401033F  </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB FSC Mix Credit</Name>
+      <Qty>616,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+02/04/2021 15:26:37 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 15:27:15 OrderPDORepository.SaveOrder Error: System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommand.ExecuteScalar[T_Result](Func`2 resultSelector)
+   at System.Data.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at DatabaseWebService.DomainPDO.GrafolitPDOEntities.DodajPantheonDokument(String p_xParameters, ObjectParameter p_cExportPath, ObjectParameter p_cKey, ObjectParameter p_cError) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Grafolit_PDO.Context.cs:line 88
+   at DatabaseWebService.DomainPDO.Concrete.MSSQLPDOFunctionRepository.GetOrderDocumentData(String OrderDocXML) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\MSSQLPDOFunctionRepository.cs:line 263
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.CreateXMLForPantheon(OrderPDOFullModel model) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 494
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.SaveOrder(OrderPDOFullModel order, Boolean updateRecord, Boolean CreateXMLDoc) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 444
+02/04/2021 15:30:05 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:30:13 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:30:13 Generate mail for Purchase dept
+02/04/2021 15:30:13 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:30:13 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:31:15 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:31:18 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:32:19 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 15:31:28</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 15:31:28</OrderDate>
+  <LoadDate>14/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>14/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>14/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401012   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB PK</Name>
+      <Qty>616,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+02/04/2021 15:32:19 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 15:32:31 Update Create order Recall Data
+02/04/2021 15:38:32 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:38:33 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:38:33 Generate mail for Purchase dept
+02/04/2021 15:38:33 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:38:33 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:39:42 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:39:48 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:39:48 Generate mail for Purchase dept
+02/04/2021 15:39:48 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:39:48 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:40:27 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:40:29 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:41:31 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 15:41:28</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 15:41:29</OrderDate>
+  <LoadDate>30/03/2021 00:00:00</LoadDate>
+  <DeliveryDate>30/03/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>30/03/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401033F  </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB FSC Mix Credit</Name>
+      <Qty>616,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+02/04/2021 15:41:31 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 15:41:31 Update Create order Recall Data
+02/04/2021 15:43:38 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:44:01 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:51:38 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:51:42 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:51:48 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 15:51:47</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 15:51:47</OrderDate>
+  <LoadDate>15/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>15/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>15/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401011   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB</Name>
+      <Qty>616,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+02/04/2021 15:51:48 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 15:51:48 Update Create order Recall Data
+02/04/2021 15:52:47 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:52:52 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:52:52 Generate mail for Purchase dept
+02/04/2021 15:52:52 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:52:52 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:54:02 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 15:54:05 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 15:54:05 Generate mail for Purchase dept
+02/04/2021 15:54:05 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 15:54:05 CreateEmailForGrafolitPurcaheDept
+02/04/2021 15:56:53 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 15:56:55 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 15:57:06 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 15:57:03</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 15:57:03</OrderDate>
+  <LoadDate>21/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>21/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>21/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401011   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB</Name>
+      <Qty>616,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>380</Poreklo>
+    </Product>
+  </Products>
+</Document>
+02/04/2021 15:57:06 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 15:57:07 Update Create order Recall Data
+02/04/2021 16:11:20 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 16:11:24 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 16:11:24 Generate mail for Purchase dept
+02/04/2021 16:11:24 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 16:11:24 CreateEmailForGrafolitPurcaheDept
+02/04/2021 16:12:02 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 16:12:03 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 16:12:03 Generate mail for Purchase dept
+02/04/2021 16:12:03 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 16:12:03 CreateEmailForGrafolitPurcaheDept
+02/04/2021 16:12:11 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 16:12:15 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 16:12:15 Generate mail for Purchase dept
+02/04/2021 16:12:15 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 16:12:15 CreateEmailForGrafolitPurcaheDept
+02/04/2021 16:12:24 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 16:12:27 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 16:12:43 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 16:12:40</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 16:12:41</OrderDate>
+  <LoadDate>06/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>06/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>06/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401012   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB PK</Name>
+      <Qty>11000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>380</Poreklo>
+    </Product>
+  </Products>
+</Document>
+02/04/2021 16:12:43 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 16:12:43 Update Create order Recall Data
+02/04/2021 16:45:44 SaveInquiryPurchase : POSLANO_V_NABAVO
+02/04/2021 16:45:46 Generate mail for Purchase dept : POSLANO_V_NABAVO
+02/04/2021 16:45:46 Generate mail for Purchase dept
+02/04/2021 16:45:46 C:\Work\Grafolit\DatabaseWebService\
+02/04/2021 16:45:46 CreateEmailForGrafolitPurcaheDept
+02/04/2021 16:46:40 SaveInquiryPurchase : USTVARJENO_NAROCILO
+02/04/2021 16:47:29 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+02/04/2021 16:47:43 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>02/04/2021 16:47:39</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AM                            </ReferentId>
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>Nonparel d.o.o.               </Buyer>
+  <OrderDate>02/04/2021 16:47:39</OrderDate>
+  <LoadDate>02/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>02/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>02/04/2021 00:00:00</DeliveryDate>
+      <Department>16 - TRANZIT</Department>
+      <Ident>0712080401012   </Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 70X100 SB PK</Name>
+      <Qty>11000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>380</Poreklo>
+    </Product>
+  </Products>
+</Document>
+02/04/2021 16:47:43 Run Create order procedure _upJM_CreateSupplierOrder
+02/04/2021 16:47:43 Update Create order Recall Data
