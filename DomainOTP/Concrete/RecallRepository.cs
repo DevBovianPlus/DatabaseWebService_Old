@@ -414,7 +414,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 Kupec = position.Kupec,
                                 Prevzemnik = position.Prevzemnik,
                                 Kolicina = position.Kolicina,
-                                Akcija = position.Akcija.HasValue ? position.Akcija.Value :0,                                
+                                Akcija = position.Akcija.HasValue ? position.Akcija.Value : 0,
                                 Vrednost = position.Vrednost.HasValue ? position.Vrednost.Value : 0,
                                 VrednostPrevoza = position.VrednostTransporta,
                                 ProcentPrevoza = position.ProcentTransporta,
@@ -549,9 +549,17 @@ namespace DatabaseWebService.DomainOTP.Concrete
             xml.Formatting = Formatting.Indented;
             xml.WriteStartDocument(true);
 
+            RecallStatus recStatus = GetRecallStatusByID(model.StatusID);
+            bool bIsStorno = false;
+            if (recStatus != null)
+            {
+                bIsStorno = (recStatus.Koda == Enums.StatusOfRecall.STORNO.ToString() ? true : false);
+            }
+
             try
             {
                 xml.WriteStartElement("TransportOrder");
+                xml.WriteElementString("Storno", bIsStorno ? "1" : "");
                 xml.WriteElementString("OrderNo", DataTypesHelper.Parse(model.StevilkaNarocilnica));
                 xml.WriteElementString("timestamp", DateTime.Now.ToString());
                 xml.WriteElementString("DocType", "0240");

@@ -515,11 +515,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
             ObjectParameter opReturnOrderNo = new ObjectParameter("p_cKey", "");
             ObjectParameter opErrorDesc = new ObjectParameter("p_cError", "");
 
-            // če gre za popravljanje Naročilnice je treba ta if izbrisati
-            if (sCreatedOrderNo.Length == 0)
-            {
-                var obj = context.DodajPantheonSupplierOrderAndLinkInvoice(OrderDocXML, "", opReturnOrderNo, opErrorDesc);
-            }
+            var obj = context.DodajPantheonSupplierOrderAndLinkInvoice(OrderDocXML, "", opReturnOrderNo, opErrorDesc);
+
             string sOrderNo = (sCreatedOrderNo.Length > 0 ? sCreatedOrderNo : Convert.ToString(opReturnOrderNo.Value));
             string sErrorDesc = Convert.ToString(opErrorDesc.Value);
 

@@ -11803,3 +11803,117 @@ Error Number:547,State:0,Class:16
 </Document>
 02/04/2021 16:47:43 Run Create order procedure _upJM_CreateSupplierOrder
 02/04/2021 16:47:43 Update Create order Recall Data
+06/04/2021 09:05:34 GetListOfOrderNumber10
+06/04/2021 09:57:11 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 09:57:11 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/04/2021 09:57:20 Številka naročilnice: 2102400000113
+06/04/2021 09:59:14 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 09:59:14 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 10:03:28 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 10:03:28 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 10:03:28 Številka naročilnice: 2102400000113
+06/04/2021 10:04:44 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 10:04:44 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 10:06:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 10:06:11 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 10:07:16 Številka naročilnice: 2102400000113
+06/04/2021 14:03:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 14:03:02 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/04/2021 14:03:02 Številka naročilnice: 2102400000114
+06/04/2021 14:04:47 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 14:04:47 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 14:08:40 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 14:08:40 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :209
+06/04/2021 14:08:40 Številka naročilnice: 2102400000114
+06/04/2021 14:10:20 GetListOfOrderNumber10
+06/04/2021 15:44:06 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 15:44:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/04/2021 15:44:06 Številka naročilnice: 2102400000115
+06/04/2021 15:46:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 15:46:52 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :210
+06/04/2021 15:49:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 15:49:52 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :210
+06/04/2021 15:49:53 Številka naročilnice: 2102400000115
+06/04/2021 15:53:24 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 15:57:50 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :210
+06/04/2021 16:02:30 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:02:31 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/04/2021 16:02:33 Številka naročilnice: 2102400000116
+06/04/2021 16:03:30 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:03:47 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :211
+06/04/2021 16:24:54 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:24:54 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :211
+06/04/2021 16:25:11 Številka naročilnice: 2102400000116
+06/04/2021 16:28:24 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:28:24 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :211
+06/04/2021 16:28:44 Številka naročilnice: 2102400000116
+06/04/2021 16:34:05 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:34:09 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :211
+06/04/2021 16:35:16 Številka naročilnice: 2102400000116
+06/04/2021 16:41:01 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/04/2021 16:41:04 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :211
+06/04/2021 16:44:41 Številka naročilnice: 2102400000116
+07/04/2021 10:20:27 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:20:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 10:20:37 Številka naročilnice: 2102400000117
+07/04/2021 10:21:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:21:13 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :212
+07/04/2021 10:21:15 Številka naročilnice: 2102400000117
+07/04/2021 10:21:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:22:05 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :212
+07/04/2021 10:22:59 Številka naročilnice: 2102400000117
+07/04/2021 10:26:31 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:26:31 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 10:26:36 Številka naročilnice: 2102400000118
+07/04/2021 10:39:52 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:39:52 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :213
+07/04/2021 10:39:54 Številka naročilnice: 2102400000118
+07/04/2021 10:41:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:41:10 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :212
+07/04/2021 10:41:12 Številka naročilnice: 2102400000117
+07/04/2021 10:50:59 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:51:03 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :212
+07/04/2021 10:54:18 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 10:54:22 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :212
+07/04/2021 10:55:24 Številka naročilnice: 2102400000117
+07/04/2021 11:21:51 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 11:21:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 11:21:52 Številka naročilnice: 2102400000119
+07/04/2021 14:41:20 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 14:41:20 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 14:41:20 Številka naročilnice: 2102400000120
+07/04/2021 14:43:29 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 14:43:29 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :215
+07/04/2021 14:43:37 Številka naročilnice: 2102400000120
+07/04/2021 15:00:32 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:00:32 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
+07/04/2021 15:09:44 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:09:45 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
+07/04/2021 15:10:00 Številka naročilnice: 2102400000119
+07/04/2021 15:33:58 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:33:58 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 15:38:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:38:00 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 15:42:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:42:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/04/2021 15:43:59 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:43:59 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :218
+07/04/2021 15:44:01 Številka naročilnice: 2102400000121
+07/04/2021 15:45:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:45:07 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :218
+07/04/2021 15:47:27 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 15:47:27 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :218
+07/04/2021 15:47:29 Številka naročilnice: 2102400000121
+07/04/2021 16:12:38 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 16:12:38 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :218
+07/04/2021 16:15:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 16:15:02 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :218
+07/04/2021 16:15:18 Številka naročilnice: 2102400000121
+07/04/2021 16:43:16 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 16:43:16 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
+07/04/2021 16:44:39 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 16:44:39 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
+07/04/2021 16:44:39 Številka naročilnice: 2102400000119
+07/04/2021 16:46:16 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+07/04/2021 16:46:16 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
+07/04/2021 16:46:16 Številka naročilnice: 2102400000119
