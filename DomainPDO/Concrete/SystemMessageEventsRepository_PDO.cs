@@ -170,6 +170,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                             message.CCEmails = item.SelectedGrafolitPersonsEmails;
                             message.Signature = inquirySubmittedByEmployee.Podpis;
                             message.InquiryNumber = StevilkaPovprasevanja;
+                            message.CurrentYear = DateTime.Now.Year.ToString();
 
                             message.ThanksAndGreeting = TranslationHelper.GetTranslateValueByContentAndLanguage(enLanguage, EmailContentType.EMAILTOSUPPLIER_THANKANDGREETING);
 
@@ -200,6 +201,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
 
                             message.SubjectText = "(" + StevilkaPovprasevanja + ") " + message.SubjectText;
 
+                            modelForEmployees.CurrentYear = DateTime.Now.Year.ToString();
                             modelForEmployees.ListOfSuppliers += "<li>" + message.SupplierName + "</li>";
                             modelForEmployees.Reports += item.ReportFilePath + ";";
 
@@ -307,6 +309,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
 
                 // get all cc email Purchasing Department
                 string sCC = GetAllPurchaseEmployees(cfmGrafolit);
+                DataTypesHelper.LogThis("CreateEmailForGrafolitPurcaheDept CC: " + sCC);
 
                 if (!String.IsNullOrEmpty(InqueryEmployee.Email))
                 {

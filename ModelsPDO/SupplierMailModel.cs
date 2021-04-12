@@ -21,6 +21,7 @@ namespace DatabaseWebService.ModelsPDO
         public string InquiryNumber { get; set; }
         public string ThanksAndGreeting { get; set; }
         public string ForCustomer { get; set; }
+        public string CurrentYear{ get; set; }
 
         public string ListOfPositions { get; set; }
 

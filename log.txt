@@ -11917,3 +11917,87 @@ Error Number:547,State:0,Class:16
 07/04/2021 16:46:16 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
 07/04/2021 16:46:16 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :214
 07/04/2021 16:46:16 Številka naročilnice: 2102400000119
+08/04/2021 15:49:14 SaveInquiryPurchase : NEZNAN
+08/04/2021 15:49:16 Generate mail for Purchase dept : NEZNAN
+09/04/2021 07:46:39 SaveInquiryPurchase : NEZNAN
+09/04/2021 07:46:40 Generate mail for Purchase dept : NEZNAN
+09/04/2021 07:47:01 SaveInquiryPurchase : POSLANO_V_NABAVO
+09/04/2021 07:47:02 Generate mail for Purchase dept : POSLANO_V_NABAVO
+09/04/2021 07:47:02 Generate mail for Purchase dept
+09/04/2021 07:47:02 C:\Work\Grafolit\DatabaseWebService\
+09/04/2021 07:47:02 CreateEmailForGrafolitPurcaheDept
+09/04/2021 10:12:52 SaveInquiryPurchase : NEZNAN
+09/04/2021 10:12:52 Generate mail for Purchase dept : NEZNAN
+09/04/2021 10:21:34 SaveInquiryPurchase : NEZNAN
+09/04/2021 10:21:35 Generate mail for Purchase dept : NEZNAN
+09/04/2021 12:02:49 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 12:02:49 SaveRecall2 : (model.Content.OdpoklicID) :0
+09/04/2021 12:02:59 Številka naročilnice: 2102400000122
+09/04/2021 12:09:18 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 12:09:18 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :219
+09/04/2021 12:09:19 Številka naročilnice: 2102400000122
+09/04/2021 12:10:02 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 12:10:02 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :219
+09/04/2021 14:46:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 14:46:07 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :219
+09/04/2021 14:46:07 Številka naročilnice: 2102400000122
+09/04/2021 15:18:03 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 15:18:03 SaveRecall2 : (model.Content.OdpoklicID) :0
+09/04/2021 16:03:36 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+09/04/2021 16:03:36 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :220
+09/04/2021 16:03:37 Številka naročilnice: 2102400000123
+11/04/2021 13:03:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+11/04/2021 13:03:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+11/04/2021 13:03:33 Številka naročilnice: 2102400000124
+11/04/2021 13:06:27 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+11/04/2021 13:06:27 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :221
+11/04/2021 13:06:27 Številka naročilnice: 2102400000124
+11/04/2021 14:53:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+11/04/2021 14:53:14 SaveRecall2 : (model.Content.OdpoklicID) :0
+11/04/2021 14:53:29 Številka naročilnice: 2102400000129
+12/04/2021 08:17:15 SaveInquiryPurchase : POSLANO_V_NABAVO
+12/04/2021 08:17:17 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12/04/2021 08:17:17 Generate mail for Purchase dept
+12/04/2021 08:17:17 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 08:17:17 CreateEmailForGrafolitPurcaheDept
+12/04/2021 08:37:33 SaveInquiryPurchase : NEZNAN
+12/04/2021 08:37:34 Generate mail for Purchase dept : NEZNAN
+12/04/2021 08:38:03 SaveInquiryPurchase : NEZNAN
+12/04/2021 08:38:05 Generate mail for Purchase dept : NEZNAN
+12/04/2021 08:38:36 SaveInquiryPurchase : POSLANO_V_NABAVO
+12/04/2021 08:39:00 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12/04/2021 08:39:31 Generate mail for Purchase dept
+12/04/2021 08:39:40 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 08:39:40 CreateEmailForGrafolitPurcaheDept
+12/04/2021 09:42:18 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 09:42:18 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:37:42 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:37:42 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:45:11 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:45:17 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:57:44 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 10:57:50 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 11:56:46 SaveInquiryPurchase : POSLANO_V_NABAVO
+12/04/2021 11:56:49 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12/04/2021 11:57:16 Generate mail for Purchase dept
+12/04/2021 11:57:21 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 11:57:22 CreateEmailForGrafolitPurcaheDept
+12/04/2021 11:57:23 CreateEmailForGrafolitPurcaheDept CC: milena.pececnik@grafolit.si;milena.pececnik@grafolit.si
+12/04/2021 12:12:27 SaveInquiryPurchase : ODDANO
+12/04/2021 12:12:28 Generate mail for Purchase dept : ODDANO
+12/04/2021 12:12:47 SaveInquiryPurchase : ODDANO
+12/04/2021 12:12:48 Generate mail for Purchase dept : ODDANO
+12/04/2021 12:13:33 SaveInquiryPurchase : POSLANO_V_NABAVO
+12/04/2021 12:13:34 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12/04/2021 12:13:34 Generate mail for Purchase dept
+12/04/2021 12:13:34 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 12:13:34 CreateEmailForGrafolitPurcaheDept
+12/04/2021 12:13:34 CreateEmailForGrafolitPurcaheDept CC: milena.pececnik@grafolit.si;milena.pececnik@grafolit.si
+12/04/2021 12:18:21 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 12:18:21 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 12:19:01 SaveInquiryPurchase : POSLANO_V_NABAVO
+12/04/2021 12:19:01 Generate mail for Purchase dept : POSLANO_V_NABAVO
+12/04/2021 12:19:01 Generate mail for Purchase dept
+12/04/2021 12:19:01 C:\Work\Grafolit\DatabaseWebService\
+12/04/2021 12:19:01 CreateEmailForGrafolitPurcaheDept
+12/04/2021 12:19:01 CreateEmailForGrafolitPurcaheDept CC: milena.pececnik@grafolit.si;milena.pececnik@grafolit.si
