@@ -40,7 +40,10 @@ namespace DatabaseWebService.Domain.Concrete
                                 Zunanji = employee.Key.Zunanji.HasValue ? employee.Key.Zunanji.Value : 0,
                                 idVloga = employee.Key.idVloga.HasValue ? employee.Key.idVloga.Value : 0,
                                 ProfileImage = employee.Key.ProfileImage,
-                                NadrejeniID = context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault() != null ? context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault().idNadrejeni : 0
+
+                                NadrejeniID = context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault() != null ? context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault().idNadrejeni : 0,
+                                idNadrejeni = context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault() != null ? context.OsebeNadrejeni.Where(osn => osn.idOseba == id).FirstOrDefault().idNadrejeni : 0
+
                                 /*Vloga = (from role in employee
                                          group role by role.Vloga into userRole
                                          select new RoleModel

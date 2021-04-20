@@ -12001,3 +12001,51 @@ Error Number:547,State:0,Class:16
 12/04/2021 12:19:01 C:\Work\Grafolit\DatabaseWebService\
 12/04/2021 12:19:01 CreateEmailForGrafolitPurcaheDept
 12/04/2021 12:19:01 CreateEmailForGrafolitPurcaheDept CC: milena.pececnik@grafolit.si;milena.pececnik@grafolit.si
+13/04/2021 14:16:46 GetListOfOrderNumber10
+13/04/2021 14:16:52 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+13/04/2021 14:18:25 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+13/04/2021 14:18:25 SaveRecall2 : (model.Content.OdpoklicID) :0
+13/04/2021 14:18:26 SaveRecall3 : RAZPIS_PREVOZNIK
+13/04/2021 14:18:26 C:\Work\Grafolit\DatabaseWebService\
+19/04/2021 14:53:51 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>19/04/2021 14:53:51</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>19/04/2021 14:53:51</OrderDate>
+  <LoadDate>19/04/2021 14:53:51</LoadDate>
+  <DeliveryDate>19/04/2021 14:53:51</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>19/04/2021 14:53:51</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+19/04/2021 14:53:51 Run Create order procedure _upJM_CreateSupplierOrder
+19/04/2021 14:53:51 Update Create order Recall Data
+20/04/2021 08:33:06 GetListOfOrderNumber10
+20/04/2021 08:33:36 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/04/2021 08:42:25 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20/04/2021 08:42:25 SaveRecall2 : (model.Content.OdpoklicID) :0
+20/04/2021 08:42:26 SaveRecall2 : V_ODOBRITEV
+20/04/2021 08:42:26 C:\Work\Grafolit\DatabaseWebService\
+20/04/2021 08:42:27 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+20/04/2021 08:55:33 GetListOfOrderNumber10
+20/04/2021 08:55:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/04/2021 09:00:35 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+20/04/2021 09:00:35 SaveRecall2 : (model.Content.OdpoklicID) :0
