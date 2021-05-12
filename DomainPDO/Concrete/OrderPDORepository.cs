@@ -144,7 +144,7 @@ namespace DatabaseWebService.DomainPDO.Concrete
                                                    tsUpdateuserID = s.tsIDOseba.HasValue ? s.tsIDOseba.Value : 0
                                                }).FirstOrDefault(),
 
-                                P_CreateOrder = o.P_CreateOrder.HasValue ? o.P_CreateOrder.Value : DateTime.MinValue,
+                                P_CreateOrder = o.P_CreateOrder.HasValue ? o.P_CreateOrder.Value : DateTime.MinValue,                                
                                 P_LastTSCreatePDFPantheon = o.P_LastTSCreatePDFPantheon.HasValue ? o.P_LastTSCreatePDFPantheon.Value : DateTime.MinValue,
                                 P_GetPDFOrderFile = o.P_GetPDFOrderFile.HasValue ? o.P_GetPDFOrderFile.Value : DateTime.MinValue,
                                 P_TransportOrderPDFDocPath = o.P_TransportOrderPDFDocPath,

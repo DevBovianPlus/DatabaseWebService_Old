@@ -141,6 +141,8 @@
           <Property Name="DatumRazklada" Type="datetime" />
           <Property Name="P_SendWarningToAmin" Type="int" />
           <Property Name="ZbirnikTonID" Type="int" />
+          <Property Name="ConfirmTS" Type="datetime" />
+          <Property Name="LowestPrice" Type="decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="OdpoklicKupec">
           <Key>
@@ -1919,6 +1921,8 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="OdpoklicPozicija" Relationship="GrafolitOTPModel.FK_OdpoklicPozicija_Odpoklic" FromRole="Odpoklic" ToRole="OdpoklicPozicija" />
           <Property Name="ZbirnikTonID" Type="Int32" />
           <NavigationProperty Name="ZbirnikTon" Relationship="GrafolitOTPModel.FK_Odpoklic_ZbirnikTonID" FromRole="Odpoklic" ToRole="ZbirnikTon" />
+          <Property Name="ConfirmTS" Type="DateTime" Precision="3" />
+          <Property Name="LowestPrice" Type="Decimal" Precision="18" Scale="3" />
         </EntityType>
         <Association Name="FK_LastnaZaloga_Odpoklic">
           <End Type="GrafolitOTPModel.Odpoklic" Role="Odpoklic" Multiplicity="1">
@@ -2892,6 +2896,8 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="Odpoklic">
             <EntityTypeMapping TypeName="GrafolitOTPModel.Odpoklic">
               <MappingFragment StoreEntitySet="Odpoklic">
+                <ScalarProperty Name="LowestPrice" ColumnName="LowestPrice" />
+                <ScalarProperty Name="ConfirmTS" ColumnName="ConfirmTS" />
                 <ScalarProperty Name="ZbirnikTonID" ColumnName="ZbirnikTonID" />
                 <ScalarProperty Name="P_SendWarningToAmin" ColumnName="P_SendWarningToAmin" />
                 <ScalarProperty Name="DatumRazklada" ColumnName="DatumRazklada" />

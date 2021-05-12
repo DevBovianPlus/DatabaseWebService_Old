@@ -62,6 +62,8 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> DatumRazklada { get; set; }
         public Nullable<int> P_SendWarningToAmin { get; set; }
         public Nullable<int> ZbirnikTonID { get; set; }
+        public Nullable<System.DateTime> ConfirmTS { get; set; }
+        public Nullable<decimal> LowestPrice { get; set; }
     
         public virtual ICollection<LastnaZaloga> LastnaZaloga { get; set; }
         public virtual StatusOdpoklica StatusOdpoklica { get; set; }

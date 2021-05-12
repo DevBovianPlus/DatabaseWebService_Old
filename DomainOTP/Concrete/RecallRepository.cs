@@ -216,6 +216,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 P_UnsuccCountCreatePDFPantheon = recall.P_UnsuccCountCreatePDFPantheon.HasValue ? recall.P_UnsuccCountCreatePDFPantheon.Value : 0,
                                 P_SendWarningToAdmin = recall.P_SendWarningToAmin.HasValue ? recall.P_SendWarningToAmin.Value : 0,
                                 ZbrirnikTonID = recall.ZbirnikTonID.HasValue ? recall.ZbirnikTonID.Value : 0,
+                                ConfirmTS = recall.ConfirmTS.HasValue ? recall.ConfirmTS.Value : DateTime.MinValue,
+                                LowestPrice = recall.LowestPrice.HasValue ? recall.LowestPrice.Value : 0,
                             };
 
                 RecallFullModel model = query.FirstOrDefault();
@@ -470,11 +472,20 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 recall.PovprasevanjePoslanoPrevoznikom = model.PovprasevanjePoslanoPrevoznikom;
                 recall.PrevoznikOddalNajnizjoCeno = model.PrevoznikOddalNajnizjoCeno;
                 recall.OpombaZaPovprasevnjePrevoznikom = model.OpombaZaPovprasevnjePrevoznikom;
+                recall.LowestPrice = model.LowestPrice;
+
+                if (recall.StatusID == 4)
+                {
+                    recall.ConfirmTS = DateTime.Now;                    
+                }
+
+               
 
 
 
                 // Save for Create Order procedure info
                 if (model.P_CreateOrder.Year > 2000) recall.P_CreateOrder = model.P_CreateOrder;
+                
                 if (model.P_LastTSCreatePDFPantheon.Year > 2000) recall.P_LastTSCreatePDFPantheon = model.P_LastTSCreatePDFPantheon;
                 recall.P_TransportOrderPDFDocPath = model.P_TransportOrderPDFDocPath;
                 recall.P_TransportOrderPDFName = model.P_TransportOrderPDFName;
@@ -508,6 +519,11 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             {
                                 context.LastnaZaloga.Remove(item);
                             }
+                        }
+
+                        if (original.StatusID == 4)
+                        {
+                            original.ConfirmTS = DateTime.Now;
                         }
 
                         context.Entry(original).CurrentValues.SetValues(recall);

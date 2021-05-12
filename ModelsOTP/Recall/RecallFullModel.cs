@@ -71,5 +71,8 @@ namespace DatabaseWebService.ModelsOTP.Recall
         public decimal IzbranaKolicinaOstalo { get; set; }
         public decimal SkupajNOZPDO { get; set; }
         public decimal SkupajNOZPDOOstalo { get; set; }
+
+        public DateTime ConfirmTS { get; set; }
+        public decimal LowestPrice { get; set; }
     }
 }

@@ -78,10 +78,10 @@ namespace DatabaseWebService.Common.Enums
 
         public enum StatusOfRecall
         {
-            DELOVNA,
-            ZAVRNJEN,
-            V_ODOBRITEV,
-            POTRJEN,
+            DELOVNA = 1,
+            ZAVRNJEN = 2,
+            V_ODOBRITEV = 3,
+            POTRJEN = 4,
             ZAVRNJEN_KONTROLA,
             POSLAN,
             NEZNAN,

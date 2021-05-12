@@ -12049,3 +12049,359 @@ Error Number:547,State:0,Class:16
 20/04/2021 08:55:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
 20/04/2021 09:00:35 SaveRecall : (model.Content.OdpoklicID) - Začetek!
 20/04/2021 09:00:35 SaveRecall2 : (model.Content.OdpoklicID) :0
+21/04/2021 11:18:49 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+21/04/2021 11:18:49 SaveRecall2 : (model.Content.OdpoklicID) :0
+21/04/2021 11:26:44 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+21/04/2021 11:26:44 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 11:08:23 GetListOfOrderNumber10
+22/04/2021 11:08:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+22/04/2021 11:29:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 11:29:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 11:47:54 GetListOfOrderNumber10
+22/04/2021 11:49:49 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 11:55:54 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 11:55:54 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 11:57:58 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 11:57:58 SaveRecall1 : (model.Content.OdpoklicID) :6449
+22/04/2021 11:57:59 SaveRecall : V_ODOBRITEV
+22/04/2021 11:57:59 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 11:58:00 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 12:01:15 GetListOfOrderNumber10
+22/04/2021 12:01:20 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 12:03:13 GetListOfOrderNumber10
+22/04/2021 12:03:16 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 12:05:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 12:05:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 12:05:28 SaveRecall2 : V_ODOBRITEV
+22/04/2021 12:05:28 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 12:05:29 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 13:46:01 GetListOfOrderNumber10
+22/04/2021 13:46:07 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 13:48:39 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:48:39 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 13:49:56 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:49:56 SaveRecall1 : (model.Content.OdpoklicID) :6451
+22/04/2021 13:49:57 SaveRecall : V_ODOBRITEV
+22/04/2021 13:49:57 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 13:49:57 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 13:51:31 GetListOfOrderNumber10
+22/04/2021 13:51:35 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 13:51:50 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:51:50 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 13:54:50 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:54:50 SaveRecall1 : (model.Content.OdpoklicID) :6452
+22/04/2021 13:55:19 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:55:19 SaveRecall1 : (model.Content.OdpoklicID) :6452
+22/04/2021 13:55:20 SaveRecall : V_ODOBRITEV
+22/04/2021 13:55:20 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 13:55:20 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 13:56:17 GetListOfOrderNumber10
+22/04/2021 13:57:09 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 13:58:33 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 13:58:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:00:30 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:00:30 SaveRecall1 : (model.Content.OdpoklicID) :6453
+22/04/2021 14:01:17 GetListOfOrderNumber10
+22/04/2021 14:01:21 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:02:57 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:02:57 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:04:05 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:04:05 SaveRecall1 : (model.Content.OdpoklicID) :6454
+22/04/2021 14:05:00 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:05:01 SaveRecall1 : (model.Content.OdpoklicID) :6454
+22/04/2021 14:05:01 SaveRecall : V_ODOBRITEV
+22/04/2021 14:05:01 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:05:01 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:05:31 GetListOfOrderNumber10
+22/04/2021 14:05:36 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:06:05 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:06:05 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:06:41 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:06:41 SaveRecall1 : (model.Content.OdpoklicID) :6455
+22/04/2021 14:06:41 SaveRecall : V_ODOBRITEV
+22/04/2021 14:06:41 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:06:41 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:07:14 GetListOfOrderNumber10
+22/04/2021 14:07:17 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:07:38 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:07:38 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:07:55 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:07:55 SaveRecall1 : (model.Content.OdpoklicID) :6456
+22/04/2021 14:08:46 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:08:46 SaveRecall1 : (model.Content.OdpoklicID) :6456
+22/04/2021 14:08:46 SaveRecall : V_ODOBRITEV
+22/04/2021 14:08:46 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:08:46 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:09:18 GetListOfOrderNumber10
+22/04/2021 14:09:22 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:09:59 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:09:59 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:10:30 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:10:30 SaveRecall1 : (model.Content.OdpoklicID) :6457
+22/04/2021 14:10:31 SaveRecall : V_ODOBRITEV
+22/04/2021 14:10:31 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:10:31 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:15:59 GetListOfOrderNumber10
+22/04/2021 14:16:03 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:17:27 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:17:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:17:33 GetListOfOrderNumber10
+22/04/2021 14:17:37 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:18:24 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:18:24 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:19:47 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:19:47 SaveRecall1 : (model.Content.OdpoklicID) :6459
+22/04/2021 14:19:48 SaveRecall : V_ODOBRITEV
+22/04/2021 14:19:48 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:19:48 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:20:57 GetListOfOrderNumber10
+22/04/2021 14:21:05 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:21:43 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:21:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:22:25 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:22:25 SaveRecall1 : (model.Content.OdpoklicID) :6460
+22/04/2021 14:26:42 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:26:42 SaveRecall1 : (model.Content.OdpoklicID) :6460
+22/04/2021 14:26:43 SaveRecall : V_ODOBRITEV
+22/04/2021 14:26:43 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:26:43 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:38:47 GetListOfOrderNumber10
+22/04/2021 14:38:51 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:40:46 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:40:46 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:53:54 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:53:54 SaveRecall1 : (model.Content.OdpoklicID) :6461
+22/04/2021 14:53:54 SaveRecall : V_ODOBRITEV
+22/04/2021 14:53:54 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 14:53:54 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 14:54:00 GetListOfOrderNumber10
+22/04/2021 14:54:03 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:55:28 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:55:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:55:37 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:55:37 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:55:47 GetListOfOrderNumber10
+22/04/2021 14:55:52 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 14:56:45 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:56:45 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 14:58:02 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 14:58:02 SaveRecall1 : (model.Content.OdpoklicID) :6464
+22/04/2021 15:06:44 GetListOfOrderNumber10
+22/04/2021 15:07:27 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+22/04/2021 15:09:45 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 15:09:45 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 15:12:29 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 15:12:29 SaveRecall1 : (model.Content.OdpoklicID) :6465
+22/04/2021 15:12:30 SaveRecall : V_ODOBRITEV
+22/04/2021 15:12:30 C:\Work\Grafolit\DatabaseWebService\
+22/04/2021 15:12:30 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+22/04/2021 16:02:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 16:02:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 16:02:25 Številka naročilnice: 2102400000132
+22/04/2021 16:05:43 GetListOfOrderNumber10
+22/04/2021 16:08:31 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 16:08:31 SaveRecall2 : (model.Content.OdpoklicID) :0
+22/04/2021 16:12:45 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/04/2021 16:12:45 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :336
+23/04/2021 07:52:13 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23/04/2021 07:52:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+23/04/2021 07:57:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23/04/2021 07:57:09 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :337
+23/04/2021 07:57:37 Številka naročilnice: 2102400000133
+23/04/2021 08:49:55 GetListOfOrderNumber10
+23/04/2021 08:50:30 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+23/04/2021 10:43:40 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>23/04/2021 10:43:38</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>23/04/2021 10:43:38</OrderDate>
+  <LoadDate>23/04/2021 10:43:38</LoadDate>
+  <DeliveryDate>23/04/2021 10:43:38</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>23/04/2021 10:43:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+23/04/2021 10:43:40 Run Create order procedure _upJM_CreateSupplierOrder
+23/04/2021 10:43:41 Update Create order Recall Data
+23/04/2021 11:08:02 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>23/04/2021 11:08:02</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>R.D.M. OVARO S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>23/04/2021 11:08:02</OrderDate>
+  <LoadDate>23/04/2021 11:08:02</LoadDate>
+  <DeliveryDate>23/04/2021 11:08:02</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>23/04/2021 11:08:02</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>1429641201009</Ident>
+      <Name>LEPENKA 1,5 MM TIPO 918 72X102 SB</Name>
+      <Qty>6000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>23/04/2021 11:08:02</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>1429731201008</Ident>
+      <Name>LEPENKA 2,0 MM TIPO 918 72X102 SB</Name>
+      <Qty>12000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+23/04/2021 11:08:02 Run Create order procedure _upJM_CreateSupplierOrder
+23/04/2021 11:08:02 Update Create order Recall Data
+28/04/2021 14:32:08 GetListOfOrderNumber10
+28/04/2021 14:33:50 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28/04/2021 14:43:16 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+28/04/2021 14:43:36 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/04/2021 14:51:17 GetListOfOrderNumber10
+28/04/2021 14:51:22 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28/04/2021 15:00:22 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+28/04/2021 15:00:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/04/2021 15:00:59 GetListOfOrderNumber10
+28/04/2021 15:01:04 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28/04/2021 15:04:09 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+28/04/2021 15:04:09 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/04/2021 15:04:10 SaveRecall2 : V_ODOBRITEV
+28/04/2021 15:04:10 C:\Work\Grafolit\DatabaseWebService\
+28/04/2021 15:04:10 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+28/04/2021 15:08:06 GetListOfOrderNumber10
+28/04/2021 15:08:11 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+28/04/2021 15:13:51 SaveRecall : (model.Content.OdpoklicID) - Začetek!
+28/04/2021 15:13:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/04/2021 15:23:18 GetListOfOrderNumber10
+28/04/2021 15:23:49 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+05/05/2021 09:13:12 GetListOfOrderNumber10
+05/05/2021 09:15:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+05/05/2021 09:17:13 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 09:17:13 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 09:30:07 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 09:30:07 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 09:45:23 GetListOfOrderNumber10
+05/05/2021 09:45:27 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+05/05/2021 09:49:33 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.
+05/05/2021 09:49:39 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 09:49:39 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 09:58:55 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 09:58:55 SaveRecall1 : (model.Content.OdpoklicID) :6627- Status : 1
+05/05/2021 09:58:55 SaveRecall1 : (model.Content.OdpoklicStevilka) :6445- Status : 1
+05/05/2021 13:20:06 GetListOfOrderNumber10
+05/05/2021 13:20:48 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+05/05/2021 13:23:43 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 13:23:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 13:54:15 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+05/05/2021 13:54:17 SaveRecall1 : (model.Content.OdpoklicID) :6629- Status : 4
+05/05/2021 13:54:17 SaveRecall1 : (model.Content.OdpoklicStevilka) :6447- Status : 4
+05/05/2021 14:11:40 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+05/05/2021 14:11:40 SaveRecall1 : (model.Content.OdpoklicID) :6628- Status : 1
+05/05/2021 14:11:40 SaveRecall1 : (model.Content.OdpoklicStevilka) :6446- Status : 1
+05/05/2021 14:14:01 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+05/05/2021 14:14:01 SaveRecall1 : (model.Content.OdpoklicID) :6628- Status : 4
+05/05/2021 14:14:01 SaveRecall1 : (model.Content.OdpoklicStevilka) :6446- Status : 4
+05/05/2021 14:31:35 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 14:31:35 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 14:31:49 Številka naročilnice: 2102400000134
+05/05/2021 14:34:10 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 14:34:10 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :472
+05/05/2021 14:40:28 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 14:40:28 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :472
+05/05/2021 14:40:30 Številka naročilnice: 2102400000134
+05/05/2021 15:04:43 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 15:04:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+05/05/2021 15:04:45 Številka naročilnice: 2102400000135
+05/05/2021 15:09:19 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 15:09:19 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :473
+05/05/2021 15:20:26 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 15:20:26 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :473
+05/05/2021 15:20:26 Številka naročilnice: 2102400000135
+05/05/2021 15:21:20 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+05/05/2021 15:21:20 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :473
+06/05/2021 13:13:05 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+06/05/2021 13:13:05 SaveRecall1 : (model.Content.OdpoklicID) :6627- Status : 4
+06/05/2021 13:13:05 SaveRecall1 : (model.Content.OdpoklicStevilka) :6445- Status : 4
+06/05/2021 13:20:38 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 3
+06/05/2021 13:20:38 SaveRecall1 : (model.Content.OdpoklicID) :6617- Status : 3
+06/05/2021 13:20:38 SaveRecall1 : (model.Content.OdpoklicStevilka) :6438- Status : 3
+06/05/2021 13:20:43 SaveRecall : V_ODOBRITEV- Status : 3
+06/05/2021 13:20:43 C:\Work\Grafolit\DatabaseWebService\
+06/05/2021 13:23:36 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+06/05/2021 13:23:36 SaveRecall1 : (model.Content.OdpoklicID) :6617- Status : 4
+06/05/2021 13:23:36 SaveRecall1 : (model.Content.OdpoklicStevilka) :6438- Status : 4
+06/05/2021 14:32:59 GetListOfOrderNumber10
+06/05/2021 14:33:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+06/05/2021 15:06:32 GetListOfOrderNumber10
+06/05/2021 15:06:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+06/05/2021 15:17:06 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+06/05/2021 15:17:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/05/2021 15:22:07 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+06/05/2021 15:22:07 SaveRecall1 : (model.Content.OdpoklicID) :6627- Status : 1
+06/05/2021 15:22:07 SaveRecall1 : (model.Content.OdpoklicStevilka) :6445- Status : 1
+07/05/2021 09:14:21 GetListOfOrderNumber10
+07/05/2021 09:14:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+07/05/2021 09:42:14 GetListOfOrderNumber10
+07/05/2021 09:42:42 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+07/05/2021 10:12:21 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 3
+07/05/2021 10:12:21 SaveRecall2 : (model.Content.OdpoklicID) :0
+07/05/2021 10:12:24 SaveRecall2 : V_ODOBRITEV
+07/05/2021 10:12:24 C:\Work\Grafolit\DatabaseWebService\
+07/05/2021 10:12:24 Zaposlen OTP Adminnima dodeljenega nadrejenega!
+07/05/2021 11:52:33 GetListOfOrderNumber10
+07/05/2021 11:53:08 GetListOfOrderNumber10
+07/05/2021 11:53:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 12:16:29 GetListOfOrderNumber10
+10/05/2021 12:16:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 12:21:35 GetListOfOrderNumber10
+10/05/2021 12:21:48 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 12:24:51 GetListOfOrderNumber10
+10/05/2021 12:24:55 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 13:43:29 GetListOfOrderNumber10
+10/05/2021 13:43:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 14:56:50 GetListOfOrderNumber10
+10/05/2021 14:57:07 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 16:10:53 GetListOfOrderNumber10
+10/05/2021 16:11:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+10/05/2021 16:18:53 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+10/05/2021 16:18:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+10/05/2021 16:19:27 GetListOfOrderNumber10
+10/05/2021 16:19:31 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+11/05/2021 15:00:30 GetListOfOrderNumber10
+11/05/2021 15:00:44 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+11/05/2021 15:18:19 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+11/05/2021 15:18:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+12/05/2021 07:33:06 GetListOfOrderNumber10
+12/05/2021 07:44:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/05/2021 08:10:55 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+12/05/2021 08:10:55 SaveRecall2 : (model.Content.OdpoklicID) :0
