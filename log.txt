@@ -12405,3 +12405,99 @@ Error Number:547,State:0,Class:16
 12/05/2021 07:44:08 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
 12/05/2021 08:10:55 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
 12/05/2021 08:10:55 SaveRecall2 : (model.Content.OdpoklicID) :0
+12/05/2021 14:29:46 GetListOfOrderNumber10
+12/05/2021 14:30:38 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+14/05/2021 14:17:21 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+14/05/2021 14:17:21 SaveRecall2 : (model.Content.OdpoklicID) :0
+14/05/2021 14:17:51 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+14/05/2021 14:17:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+14/05/2021 14:18:15 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+14/05/2021 14:18:15 SaveRecall2 : (model.Content.OdpoklicID) :0
+14/05/2021 14:20:27 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+14/05/2021 14:20:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/05/2021 08:27:17 GetListOfOrderNumber10
+17/05/2021 08:27:30 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+17/05/2021 08:46:48 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17/05/2021 08:46:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/05/2021 08:51:30 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17/05/2021 08:51:30 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :476
+17/05/2021 10:08:55 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+17/05/2021 10:08:56 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :476
+17/05/2021 10:09:07 Številka naročilnice: 2102400000137
+18/05/2021 11:38:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+18/05/2021 11:38:00 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :367
+19/05/2021 09:17:26 GetListOfOrderNumber10
+19/05/2021 09:18:04 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19/05/2021 09:23:54 GetListOfOrderNumber10
+19/05/2021 09:24:18 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19/05/2021 09:36:48 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+19/05/2021 09:36:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+19/05/2021 09:41:38 GetListOfOrderNumber10
+19/05/2021 09:41:45 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+19/05/2021 09:49:42 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+19/05/2021 09:49:42 SaveRecall2 : (model.Content.OdpoklicID) :0
+19/05/2021 09:49:50 SaveRecall2 : (RazlogOdobritveSistem) :
+20/05/2021 08:03:21 GetListOfOrderNumber10
+20/05/2021 08:03:36 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/05/2021 08:28:44 GetListOfOrderNumber10
+20/05/2021 08:29:13 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/05/2021 08:38:47 GetListOfOrderNumber10
+20/05/2021 08:39:25 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/05/2021 09:18:38 GetListOfOrderNumber10
+20/05/2021 09:19:11 GetListOfOrderNumber10
+20/05/2021 09:19:47 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/05/2021 09:45:20 GetListOfOrderNumber10
+20/05/2021 09:46:55 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+20/05/2021 09:52:43 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+20/05/2021 09:52:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+20/05/2021 09:52:43 SaveRecall2 : (RazlogOdobritveSistem) :
+25/05/2021 10:27:40 GetListOfOrderNumber10
+25/05/2021 10:27:53 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+25/05/2021 10:29:43 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+25/05/2021 10:29:43 SaveRecall2 : (model.Content.OdpoklicID) :0
+25/05/2021 10:29:43 SaveRecall2 : (RazlogOdobritveSistem) :
+25/05/2021 10:53:33 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+25/05/2021 10:53:33 SaveRecall1 : (model.Content.OdpoklicID) :6630- Status : 1
+25/05/2021 10:53:33 SaveRecall1 : (model.Content.OdpoklicStevilka) :6448- Status : 1
+25/05/2021 11:35:10 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+25/05/2021 11:35:10 SaveRecall1 : (model.Content.OdpoklicID) :6630- Status : 1
+25/05/2021 11:35:10 SaveRecall1 : (model.Content.OdpoklicStevilka) :6448- Status : 1
+26/05/2021 12:25:15 GetListOfOrderNumber10
+26/05/2021 12:25:19 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 12:31:48 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+26/05/2021 12:31:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+26/05/2021 12:31:48 SaveRecall2 : (RazlogOdobritveSistem) :
+26/05/2021 12:31:57 GetListOfOrderNumber10
+26/05/2021 12:32:03 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 12:33:32 GetListOfOrderNumber10
+26/05/2021 12:33:47 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+26/05/2021 12:34:08 GetListOfOrderNumber10
+26/05/2021 12:34:14 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+26/05/2021 12:53:20 GetListOfOrderNumber10
+26/05/2021 12:53:28 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:08:29 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+26/05/2021 13:08:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+26/05/2021 13:08:29 SaveRecall2 : (RazlogOdobritveSistem) :
+26/05/2021 13:08:34 GetListOfOrderNumber10
+26/05/2021 13:09:05 GetListOfOrderNumber10
+26/05/2021 13:09:09 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:10:08 GetListOfOrderNumber10
+26/05/2021 13:10:13 GetListOfOrderNumber10
+26/05/2021 13:10:17 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:16:13 GetListOfOrderNumber10
+26/05/2021 13:16:18 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:16:57 GetListOfOrderNumber10
+26/05/2021 13:17:01 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:24:32 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+26/05/2021 13:24:32 SaveRecall2 : (model.Content.OdpoklicID) :0
+26/05/2021 13:24:32 SaveRecall2 : (RazlogOdobritveSistem) :
+26/05/2021 13:41:01 GetListOfOrderNumber10
+26/05/2021 13:41:06 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:42:37 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+26/05/2021 13:42:37 SaveRecall2 : (model.Content.OdpoklicID) :0
+26/05/2021 13:42:37 SaveRecall2 : (RazlogOdobritveSistem) :
+26/05/2021 13:51:01 GetListOfOrderNumber10
+26/05/2021 13:51:09 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+26/05/2021 13:53:33 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+26/05/2021 13:53:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+26/05/2021 13:53:33 SaveRecall2 : (RazlogOdobritveSistem) :

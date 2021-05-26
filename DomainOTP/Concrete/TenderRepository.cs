@@ -973,10 +973,11 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 foreach (var item in test)
                 {
-                    var list = item.ToList();//dobimo seznam RazpisPozicij za posameznega prevoznika
+                    List<RazpisPozicija> list = item.ToList();//dobimo seznam RazpisPozicij za posameznega prevoznika
 
                     //uredimo seznam po datumu razpisa (padajoče) in izberemo prvo pozicijo (RazpisPozicija)
-                    var tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).Where(o => o.Cena > 0).FirstOrDefault();
+                    var tenderPosOrder = list.OrderByDescending(o => o.Razpis.DatumRazpisa).ToList();
+                    var tenderPos = tenderPosOrder.Where(o => o.Cena > 0).FirstOrDefault(); 
 
                     if (tenderPos == null)
                         tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).FirstOrDefault();

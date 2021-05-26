@@ -218,6 +218,9 @@ namespace DatabaseWebService.Controllers
                     else // We add and save new recod to DB 
                     {
                         DataTypesHelper.LogThis("SaveRecall2 : (model.Content.OdpoklicID) :" + model.Content.OdpoklicID.ToString());
+                        string sRazlog = model.Content.RazlogOdobritveSistem == null ? "" : model.Content.RazlogOdobritveSistem.ToString();
+                        DataTypesHelper.LogThis("SaveRecall2 : (RazlogOdobritveSistem) :" + sRazlog);
+
                         model.Content.OdpoklicID = recallRepo.SaveRecall(model.Content, false);
 
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());

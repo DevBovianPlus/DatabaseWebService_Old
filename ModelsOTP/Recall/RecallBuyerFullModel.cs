@@ -39,5 +39,7 @@ namespace DatabaseWebService.ModelsOTP.Recall
         public RouteModel Relacija { get; set; }
         public RecallStatus StatusOdpoklica { get; set; }
         public bool bBrezFakture { get; set; }
+
+        public string OpisOdpoklicKupec { get; set; }
     }
 }

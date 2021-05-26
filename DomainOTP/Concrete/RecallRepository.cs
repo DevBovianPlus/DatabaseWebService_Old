@@ -265,6 +265,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 RazpisPozicijaID = recall.RazpisPozicijaID.HasValue ? recall.RazpisPozicijaID.Value : 0,
                                 ZbirnikTonID = recall.ZbirnikTonID.HasValue ? recall.ZbirnikTonID.Value : 0,
                                 StevilkaNarocilnica = recall.StevilkaNarocilnica,
+                                OpisOdpoklicKupec = recall.Opis,
                                 StatusOdpoklica = (from status in context.StatusOdpoklica
                                                    where status.StatusOdpoklicaID == recall.StatusID
                                                    select new RecallStatus
@@ -762,6 +763,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 recall.OdpoklicKupecStevilka = model.OdpoklicKupecStevilka;
                 recall.ZbirnikTonID = model.ZbirnikTonID;
                 recall.StevilkaNarocilnica = (model.StevilkaNarocilnica.Length > 0 ? model.StevilkaNarocilnica : "");
+                recall.Opis = model.OpisOdpoklicKupec;
+
                 if (model.IzdelajNarocilnico == 1)
                 {
                     if (po != null)
