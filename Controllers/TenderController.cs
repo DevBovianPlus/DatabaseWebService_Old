@@ -220,7 +220,9 @@ namespace DatabaseWebService.Controllers
             {
                 // preverimo če obstaja za to pozicijo in toažo kaki razpisi, če ne obstajajo vrnemo samo za to relacijo (24t)
                 List<TenderPositionModel> lTenderPos = tenderRepo.GetTenderListByRouteIDAndTonsID(routeID, ZbirnikTonID, true);
-                tmpUser.Content = lTenderPos.Count>0 ? lTenderPos : tenderRepo.GetTenderListByRouteID(routeID); ;
+                //tmpUser.Content = lTenderPos.Count>0 ? lTenderPos : tenderRepo.GetTenderListByRouteID(routeID); 
+
+                tmpUser.Content = lTenderPos;
 
                 responseStatusHandler(tmpUser);
             }

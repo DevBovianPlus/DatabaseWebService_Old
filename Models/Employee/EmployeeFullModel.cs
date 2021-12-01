@@ -36,6 +36,8 @@ namespace DatabaseWebService.Models
         public int EmailVrata { get; set; }
         public bool EmailSifriranjeSSL { get; set; }
         public string Podpis { get; set; }
+        public string OTPPantheonUsrChar { get; set; }
         public string PantheonUsrID { get; set; }
+        public int OTPPantheonUsrID { get; set; }
     }
 }

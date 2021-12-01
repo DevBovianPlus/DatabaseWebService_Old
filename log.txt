@@ -12501,3 +12501,2414 @@ Error Number:547,State:0,Class:16
 26/05/2021 13:53:33 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
 26/05/2021 13:53:33 SaveRecall2 : (model.Content.OdpoklicID) :0
 26/05/2021 13:53:33 SaveRecall2 : (RazlogOdobritveSistem) :
+28/05/2021 11:35:33 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 11:35:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 11:36:25 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 11:36:25 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 11:37:26 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 11:37:26 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 11:41:10 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 11:41:10 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 11:53:33 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 11:53:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 17:49:36 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 17:49:36 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 18:59:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 18:59:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 19:00:27 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 19:00:27 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 19:05:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 19:05:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 19:09:21 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 19:09:21 SaveRecall2 : (model.Content.OdpoklicID) :0
+28/05/2021 19:14:49 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+28/05/2021 19:14:49 SaveRecall2 : (model.Content.OdpoklicID) :0
+31/05/2021 15:04:56 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+31/05/2021 15:04:56 SaveRecall2 : (model.Content.OdpoklicID) :0
+03/06/2021 12:37:26 GetListOfOrderNumber10
+03/06/2021 12:49:32 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+03/06/2021 12:53:06 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+03/06/2021 12:53:06 SaveRecall2 : (model.Content.OdpoklicID) :0
+03/06/2021 12:53:08 SaveRecall2 : (RazlogOdobritveSistem) :
+03/06/2021 12:54:48 GetListOfOrderNumber10
+03/06/2021 12:54:54 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+03/06/2021 13:21:48 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+03/06/2021 13:21:48 SaveRecall2 : (model.Content.OdpoklicID) :0
+03/06/2021 13:22:11 Številka naročilnice: 2102400000139
+03/06/2021 13:31:53 GetListOfOrderNumber10
+03/06/2021 13:31:59 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+03/06/2021 13:51:04 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+03/06/2021 13:51:04 SaveRecall2 : (model.Content.OdpoklicID) :0
+03/06/2021 13:51:06 SaveRecall2 : (RazlogOdobritveSistem) :
+04/06/2021 15:18:53 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+04/06/2021 15:18:53 SaveRecall2 : (model.Content.OdpoklicID) :0
+04/06/2021 15:19:29 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+04/06/2021 15:19:29 SaveRecall2 : (model.Content.OdpoklicID) :0
+04/06/2021 15:19:40 Številka naročilnice: 2102400000140
+04/06/2021 15:20:48 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+04/06/2021 15:20:48 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :692
+06/06/2021 18:21:28 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/06/2021 18:21:28 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/06/2021 18:21:47 Številka naročilnice: 2102400000141
+06/06/2021 18:23:19 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/06/2021 18:23:19 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :693
+06/06/2021 18:25:51 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/06/2021 18:25:51 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :693
+06/06/2021 18:25:51 Številka naročilnice: 2102400000141
+06/06/2021 18:28:23 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/06/2021 18:28:23 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :693
+11/06/2021 10:33:45 GetListOfOrderNumber10
+11/06/2021 10:37:43 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+01/07/2021 11:59:33 C:\Work\Grafolit\DatabaseWebService\
+01/07/2021 11:59:58 C:\Work\Grafolit\DatabaseWebService\
+01/07/2021 12:17:38 C:\Work\Grafolit\DatabaseWebService\
+01/07/2021 12:18:05 C:\Work\Grafolit\DatabaseWebService\
+01/07/2021 12:18:43 C:\Work\Grafolit\DatabaseWebService\
+01/07/2021 12:22:35 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>01/07/2021 12:22:35</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>01/07/2021 12:22:35</OrderDate>
+  <LoadDate>01/07/2021 12:22:35</LoadDate>
+  <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302010</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302017F</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201006</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201029F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080301026</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>01/07/2021 12:22:35</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201028F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+01/07/2021 12:22:35 Run Create order procedure _upJM_CreateSupplierOrder
+01/07/2021 12:22:51 Update Create order Recall Data
+28/07/2021 10:40:41 SaveInquiryPurchase : USTVARJENO_NAROCILO
+28/07/2021 10:40:42 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+28/07/2021 10:40:44 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28/07/2021 10:40:43</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>SAPPI EUROPE</Supplier>
+  <Buyer>AUTOMATIC SERVIS D.O.O.       </Buyer>
+  <OrderDate>28/07/2021 10:40:44</OrderDate>
+  <LoadDate>09/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>09/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate />
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718101331003   </Ident>
+      <Name>ROYALCOAT ULTRA MATT 100G 45X64 SB</Name>
+      <Qty>1000,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo>056</Poreklo>
+    </Product>
+  </Products>
+</Document>
+28/07/2021 10:40:44 Run Create order procedure _upJM_CreateSupplierOrder
+28/07/2021 10:41:15 OrderPDORepository.SaveOrder Error: System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommand.ExecuteScalar[T_Result](Func`2 resultSelector)
+   at System.Data.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at DatabaseWebService.DomainPDO.GrafolitPDOEntities.DodajPantheonDokument(String p_xParameters, ObjectParameter p_cExportPath, ObjectParameter p_cKey, ObjectParameter p_cError) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Grafolit_PDO.Context.cs:line 88
+   at DatabaseWebService.DomainPDO.Concrete.MSSQLPDOFunctionRepository.GetOrderDocumentData(String OrderDocXML) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\MSSQLPDOFunctionRepository.cs:line 263
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.CreateXMLForPantheon(OrderPDOFullModel model) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 495
+   at DatabaseWebService.DomainPDO.Concrete.OrderPDORepository.SaveOrder(OrderPDOFullModel order, Boolean updateRecord, Boolean CreateXMLDoc) in C:\Work\Grafolit\DatabaseWebService\DomainPDO\Concrete\OrderPDORepository.cs:line 445
+28/07/2021 10:43:28 SaveInquiryPurchase : USTVARJENO_NAROCILO
+28/07/2021 10:43:28 Generate mail for Purchase dept : USTVARJENO_NAROCILO
+28/07/2021 10:43:30 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>28/07/2021 10:43:29</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>16 - TRANZIT</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>UNITIS, d.o.o.                </Buyer>
+  <OrderDate>28/07/2021 10:43:30</OrderDate>
+  <LoadDate>22/04/2021 00:00:00</LoadDate>
+  <DeliveryDate>22/04/2021 00:00:00</DeliveryDate>
+  <Route />
+  <PrintType>A0U</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>Please send us an order confirmation.</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>22/04/2021 00:00:00</DeliveryDate>
+      <Department>17 - MALOPRODAJA ZA KUPCE</Department>
+      <Ident>0731170401036   </Ident>
+      <Name>WOODSTOCK MALVA 170G 70X100 SB</Name>
+      <Qty>357,00</Qty>
+      <Price>0,000</Price>
+      <Rabat>0,00</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+28/07/2021 10:43:30 Run Create order procedure _upJM_CreateSupplierOrder
+28/07/2021 10:43:41 Update Create order Recall Data
+28/07/2021 11:02:11 SaveInquiryPurchase : ODDANO
+28/07/2021 11:02:13 Generate mail for Purchase dept : ODDANO
+28/07/2021 11:02:24 SaveInquiryPurchase : ODDANO
+28/07/2021 11:02:25 Generate mail for Purchase dept : ODDANO
+28/07/2021 11:02:31 SaveInquiryPurchase : ODDANO
+28/07/2021 11:02:32 Generate mail for Purchase dept : ODDANO
+28/07/2021 11:02:47 SaveInquiryPurchase : ODDANO
+28/07/2021 11:02:48 Generate mail for Purchase dept : ODDANO
+28/07/2021 11:02:52 SaveInquiryPurchase : ODDANO
+28/07/2021 11:02:53 Generate mail for Purchase dept : ODDANO
+28/07/2021 11:03:08 SaveInquiryPurchase : ODDANO
+28/07/2021 11:03:09 Generate mail for Purchase dept : ODDANO
+26/08/2021 10:47:38 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 10:47:37</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 10:47:38</OrderDate>
+  <LoadDate>26/08/2021 10:47:38</LoadDate>
+  <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302010</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302017F</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201006</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201029F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080301026</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 10:47:38</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201028F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 10:47:38 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 11:07:48 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 11:07:48</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>AD                            </ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>FEDRIGONI S.P.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 11:07:48</OrderDate>
+  <LoadDate>26/08/2021 11:07:48</LoadDate>
+  <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302010</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712070302017F</Ident>
+      <Name>ARCOSET EXTRA WHITE 70G 90X64 BB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201006</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201029F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 61X86 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080301026</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:07:48</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712080201028F</Ident>
+      <Name>ARCOSET EXTRA WHITE 80G 64X90 SB FSC Mix Credit</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 11:07:48 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 11:07:48 Update Create order Recall Data
+26/08/2021 11:51:57 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 11:51:57</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 11:51:57</OrderDate>
+  <LoadDate>26/08/2021 11:51:57</LoadDate>
+  <DeliveryDate>26/08/2021 11:51:57</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 11:51:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526390402000</Ident>
+      <Name>TIPO 115 GD2 230G 101X71 BB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:51:57</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190402002</Ident>
+      <Name>TIPO 112 GD2 250G 101X71 BB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 11:51:57 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 11:52:04 Update Create order Recall Data
+26/08/2021 11:53:39 C:\Work\Grafolit\DatabaseWebService\
+26/08/2021 11:53:39 Oseba NOZ Admin nima vpisanega elektrnoskega naslova!
+26/08/2021 11:57:59 C:\Work\Grafolit\DatabaseWebService\
+26/08/2021 11:57:59 Oseba NOZ Admin nima vpisanega elektrnoskega naslova!
+26/08/2021 11:58:44 C:\Work\Grafolit\DatabaseWebService\
+26/08/2021 11:58:44 Oseba NOZ Admin nima vpisanega elektrnoskega naslova!
+26/08/2021 11:59:03 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 11:59:03</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId />
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 11:59:03</OrderDate>
+  <LoadDate>26/08/2021 11:59:03</LoadDate>
+  <DeliveryDate>26/08/2021 11:59:03</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 11:59:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526200401005</Ident>
+      <Name>TIPO 112 GD2 270G 71X101 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 11:59:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526361201094</Ident>
+      <Name>TIPO 112 GD2 500G 52X72 SB</Name>
+      <Qty>1000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 11:59:03 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 11:59:03 Update Create order Recall Data
+26/08/2021 12:30:49 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 12:30:49</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 12:30:49</OrderDate>
+  <LoadDate>26/08/2021 12:30:49</LoadDate>
+  <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718110321023</Ident>
+      <Name>NIVIS NEXT GLOSS 115G 64X90 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450321023</Ident>
+      <Name>NIVIS NEXT GLOSS 130G 64X90 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718140421019</Ident>
+      <Name>NIVIS NEXT GLOSS 150G 70X100 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170322012</Ident>
+      <Name>NIVIS NEXT GLOSS 170G 90X64 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170321014</Ident>
+      <Name>NIVIS NEXT GLOSS 170G 64X90 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident />
+      <Name>NIVIS NEXT GLOSS 300G 64X90 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210421015</Ident>
+      <Name>NIVIS NEXT GLOSS 300G 70X100 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718220422006</Ident>
+      <Name>NIVIS NEXT GLOSS 350G 100X70 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718090432008</Ident>
+      <Name>NIVIS NEXT MATT 90G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100331013</Ident>
+      <Name>NIVIS NEXT MATT 100G 64X90 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450432014</Ident>
+      <Name>NIVIS NEXT MATT 130G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450431025</Ident>
+      <Name>NIVIS NEXT MATT 130G 70X100 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718140431025</Ident>
+      <Name>NIVIS NEXT MATT 150G 70X100 SB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170432015</Ident>
+      <Name>NIVIS NEXT MATT 170G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718180432009</Ident>
+      <Name>NIVIS NEXT MATT 200G 100X70 BB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718190332016</Ident>
+      <Name>NIVIS NEXT MATT 250G 90X64 BB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210432018</Ident>
+      <Name>NIVIS NEXT MATT 300G 100X70 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 12:30:49</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210431026</Ident>
+      <Name>NIVIS NEXT MATT 300G 70X100 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 12:30:49 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 13:47:03 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>26/08/2021 13:47:03</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>BURGO GROUP s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>26/08/2021 13:47:03</OrderDate>
+  <LoadDate>26/08/2021 13:47:03</LoadDate>
+  <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote />
+  <Products>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718110321023</Ident>
+      <Name>NIVIS NEXT GLOSS 115G 64X90 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450321023</Ident>
+      <Name>NIVIS NEXT GLOSS 130G 64X90 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718140421019</Ident>
+      <Name>NIVIS NEXT GLOSS 150G 70X100 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170322012</Ident>
+      <Name>NIVIS NEXT GLOSS 170G 90X64 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170321014</Ident>
+      <Name>NIVIS NEXT GLOSS 170G 64X90 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210421015</Ident>
+      <Name>NIVIS NEXT GLOSS 300G 70X100 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718220422006</Ident>
+      <Name>NIVIS NEXT GLOSS 350G 100X70 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718090432008</Ident>
+      <Name>NIVIS NEXT MATT 90G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718100331013</Ident>
+      <Name>NIVIS NEXT MATT 100G 64X90 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450432014</Ident>
+      <Name>NIVIS NEXT MATT 130G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718450431025</Ident>
+      <Name>NIVIS NEXT MATT 130G 70X100 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718140431025</Ident>
+      <Name>NIVIS NEXT MATT 150G 70X100 SB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718170432015</Ident>
+      <Name>NIVIS NEXT MATT 170G 100X70 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718180432009</Ident>
+      <Name>NIVIS NEXT MATT 200G 100X70 BB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718190332016</Ident>
+      <Name>NIVIS NEXT MATT 250G 90X64 BB</Name>
+      <Qty>4000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210432018</Ident>
+      <Name>NIVIS NEXT MATT 300G 100X70 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>26/08/2021 13:47:03</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0718210431026</Ident>
+      <Name>NIVIS NEXT MATT 300G 70X100 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+26/08/2021 13:47:03 Run Create order procedure _upJM_CreateSupplierOrder
+26/08/2021 13:47:04 Update Create order Recall Data
+30/09/2021 09:05:03 Start - Controler
+30/09/2021 09:05:03 Start - SaveTender
+30/09/2021 09:09:47 Start - SaveTender
+30/09/2021 09:09:47 30/09/2021 09:09:47
+30/09/2021 09:09:47 CNT :1
+30/09/2021 09:09:47 30/09/2021 09:09:47
+30/09/2021 09:09:47 CNT add :1
+30/09/2021 09:09:47 CNT update:0
+30/09/2021 09:09:47 Save positions finished!
+30/09/2021 09:09:47 Start - SaveTender
+30/09/2021 09:16:15 Start - Controler
+30/09/2021 09:16:15 Start - SaveTender
+30/09/2021 09:20:40 Start - SaveTender
+30/09/2021 09:21:24 30/09/2021 09:21:24
+30/09/2021 09:21:24 CNT :1
+30/09/2021 09:21:52 30/09/2021 09:21:52
+30/09/2021 09:21:52 CNT add :1
+30/09/2021 09:21:52 CNT update:0
+30/09/2021 09:21:55 Save positions finished!
+30/09/2021 09:22:09 Start - SaveTender
+30/09/2021 10:02:55 Start - Controler
+30/09/2021 10:02:55 Start - SaveTender
+30/09/2021 10:05:17 Start - SaveTender
+30/09/2021 10:05:17 30/09/2021 10:05:17
+30/09/2021 10:05:17 CNT :1
+30/09/2021 10:05:17 30/09/2021 10:05:17
+30/09/2021 10:05:17 CNT add :1
+30/09/2021 10:05:17 CNT update:0
+30/09/2021 10:05:17 Save positions finished!
+30/09/2021 10:05:17 Start - SaveTender
+30/09/2021 10:17:32 Start - Controler
+30/09/2021 10:17:32 Start - SaveTender
+30/09/2021 10:19:43 Start - SaveTender
+30/09/2021 10:19:43 30/09/2021 10:19:43
+30/09/2021 10:19:43 CNT :1
+30/09/2021 10:19:44 30/09/2021 10:19:44
+30/09/2021 10:19:44 CNT add :1
+30/09/2021 10:19:44 CNT update:0
+30/09/2021 10:19:44 Save positions finished!
+30/09/2021 10:19:44 Start - SaveTender
+30/09/2021 10:22:59 Start - Controler
+30/09/2021 10:22:59 Start - SaveTender
+30/09/2021 10:29:40 Start - SaveTender
+30/09/2021 10:30:18 30/09/2021 10:30:18
+30/09/2021 10:30:19 CNT :2
+30/09/2021 10:30:45 30/09/2021 10:30:45
+30/09/2021 10:30:46 CNT add :2
+30/09/2021 10:30:46 CNT update:0
+30/09/2021 10:30:47 Save positions finished!
+30/09/2021 10:31:03 Start - SaveTender
+30/09/2021 10:56:12 Start - Controler
+30/09/2021 10:56:12 Start - SaveTender
+30/09/2021 11:03:15 Start - SaveTender
+30/09/2021 11:03:15 30/09/2021 11:03:15
+30/09/2021 11:03:15 CNT :1
+30/09/2021 11:03:16 30/09/2021 11:03:16
+30/09/2021 11:03:16 CNT add :1
+30/09/2021 11:03:16 CNT update:0
+30/09/2021 11:03:16 Save positions finished!
+30/09/2021 11:03:16 Start - SaveTender
+30/09/2021 11:16:24 Start - Controler
+30/09/2021 11:16:24 Start - SaveTender
+30/09/2021 11:24:11 Start - Controler
+30/09/2021 11:24:11 Start - SaveTender
+30/09/2021 11:47:02 Start - SaveTender
+30/09/2021 11:47:02 30/09/2021 11:47:02
+30/09/2021 11:47:02 CNT :1
+30/09/2021 11:47:02 30/09/2021 11:47:02
+30/09/2021 11:47:02 CNT add :1
+30/09/2021 11:47:02 CNT update:0
+30/09/2021 11:47:02 Save positions finished!
+30/09/2021 11:47:10 Start - SaveTender
+30/09/2021 11:53:26 Start - Controler
+30/09/2021 11:53:26 Start - SaveTender
+30/09/2021 12:12:42 Start - Controler
+30/09/2021 12:12:42 Start - SaveTender
+30/09/2021 12:13:29 Start - SaveTender
+30/09/2021 12:13:29 30/09/2021 12:13:29
+30/09/2021 12:13:29 CNT :8
+30/09/2021 12:13:29 30/09/2021 12:13:29
+30/09/2021 12:13:29 CNT add :8
+30/09/2021 12:13:29 CNT update:0
+30/09/2021 12:13:29 Save positions finished!
+30/09/2021 12:13:29 Start - SaveTender
+30/09/2021 12:17:29 Start - Controler
+30/09/2021 12:17:29 Start - SaveTender
+30/09/2021 13:19:14 Start - Controler
+30/09/2021 13:19:14 Start - SaveTender
+30/09/2021 13:24:34 Start - SaveTender
+30/09/2021 13:24:34 30/09/2021 13:24:34
+30/09/2021 13:24:34 CNT :7
+30/09/2021 13:24:34 30/09/2021 13:24:34
+30/09/2021 13:24:34 CNT add :7
+30/09/2021 13:24:34 CNT update:0
+30/09/2021 13:24:34 Save positions finished!
+30/09/2021 13:24:34 Start - SaveTender
+30/09/2021 13:58:04 Start - Controler
+30/09/2021 13:58:04 Start - SaveTender
+30/09/2021 14:03:39 Start - SaveTender
+30/09/2021 14:03:39 30/09/2021 14:03:39
+30/09/2021 14:03:39 CNT :6
+30/09/2021 14:03:39 30/09/2021 14:03:39
+30/09/2021 14:03:39 CNT add :6
+30/09/2021 14:03:39 CNT update:0
+30/09/2021 14:03:39 Save positions finished!
+30/09/2021 14:03:39 Start - SaveTender
+30/09/2021 14:07:14 Start - Controler
+30/09/2021 14:07:14 Start - SaveTender
+30/09/2021 14:15:10 Start - Controler
+30/09/2021 14:15:10 Start - SaveTender
+30/09/2021 14:15:39 Start - SaveTender
+30/09/2021 14:15:39 30/09/2021 14:15:39
+30/09/2021 14:15:39 CNT :2
+30/09/2021 14:15:39 30/09/2021 14:15:39
+30/09/2021 14:15:39 CNT add :2
+30/09/2021 14:15:39 CNT update:0
+30/09/2021 14:15:39 Save positions finished!
+30/09/2021 14:15:39 Start - SaveTender
+30/09/2021 14:19:08 Start - Controler
+30/09/2021 14:19:08 Start - SaveTender
+30/09/2021 14:22:11 Start - Controler
+30/09/2021 14:22:11 Start - SaveTender
+30/09/2021 14:22:20 Start - SaveTender
+30/09/2021 14:22:21 30/09/2021 14:22:21
+30/09/2021 14:22:21 CNT :4
+30/09/2021 14:22:21 30/09/2021 14:22:21
+30/09/2021 14:22:21 CNT add :4
+30/09/2021 14:22:21 CNT update:0
+30/09/2021 14:22:21 Save positions finished!
+30/09/2021 14:22:21 Start - SaveTender
+30/09/2021 14:25:18 Start - Controler
+30/09/2021 14:25:18 Start - SaveTender
+30/09/2021 14:29:56 Start - Controler
+30/09/2021 14:29:56 Start - SaveTender
+30/09/2021 14:30:37 Start - SaveTender
+30/09/2021 14:30:37 30/09/2021 14:30:37
+30/09/2021 14:30:37 CNT :19
+30/09/2021 14:30:37 30/09/2021 14:30:37
+30/09/2021 14:30:37 CNT add :19
+30/09/2021 14:30:37 CNT update:0
+30/09/2021 14:30:37 Save positions finished!
+30/09/2021 14:30:37 Start - SaveTender
+30/09/2021 14:33:19 Start - Controler
+30/09/2021 14:33:19 Start - SaveTender
+30/09/2021 14:51:35 Start - Controler
+30/09/2021 14:51:35 Start - SaveTender
+30/09/2021 14:54:23 Start - SaveTender
+30/09/2021 14:54:23 30/09/2021 14:54:23
+30/09/2021 14:54:23 CNT :27
+30/09/2021 14:54:23 30/09/2021 14:54:23
+30/09/2021 14:54:23 CNT add :27
+30/09/2021 14:54:23 CNT update:0
+30/09/2021 14:54:23 Save positions finished!
+30/09/2021 14:54:23 Start - SaveTender
+30/09/2021 14:58:47 Start - Controler
+30/09/2021 14:58:47 Start - SaveTender
+16/11/2021 10:34:20 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 10:34:20 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 11:50:51 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 11:50:51 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 11:55:08 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 11:55:08 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 11:59:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 11:59:09 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 12:11:03 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 12:11:03 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 12:18:44 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 12:18:44 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 12:19:04 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 12:19:07 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 13:54:38 Št. trenutni: 36
+16/11/2021 13:57:25 Št. trenutni: 36
+16/11/2021 13:59:25 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 13:59:28 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:04:05 Št. trenutni: 36
+16/11/2021 14:17:28 Št. trenutni: 36
+16/11/2021 14:19:33 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 14:19:39 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:23:55 Št. trenutni: 36
+16/11/2021 14:24:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 14:24:14 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:28:17 Št. trenutni: 36
+16/11/2021 14:28:50 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 14:28:52 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:38:14 Št. trenutni: 36
+16/11/2021 14:43:44 Št. trenutni: 36
+16/11/2021 14:44:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 14:44:00 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:46:14 Št. trenutni: 36
+16/11/2021 14:48:58 Št. trenutni: 36
+16/11/2021 14:52:09 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 14:52:14 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 14:53:43 Številka naročilnice: 2102400002050
+16/11/2021 15:18:58 Št. trenutni: 36
+16/11/2021 15:19:38 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 15:19:46 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 15:23:08 Št. trenutni: 36
+16/11/2021 15:24:07 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+16/11/2021 15:24:07 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2052
+16/11/2021 15:32:19 Št. trenutni: 36
+22/11/2021 11:46:17 Št. trenutni: 27
+22/11/2021 11:49:04 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/11/2021 11:49:04 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1798
+22/11/2021 11:51:07 Št. trenutni: 27
+22/11/2021 11:54:43 Št. trenutni: 27
+22/11/2021 12:03:41 Št. trenutni: 27
+22/11/2021 12:08:27 Št. trenutni: 27
+22/11/2021 12:10:52 Št. trenutni: 27
+22/11/2021 14:19:58 Št. trenutni: 27
+22/11/2021 14:22:32 Št. trenutni: 27
+22/11/2021 14:26:03 Št. trenutni: 27
+22/11/2021 14:27:54 Št. trenutni: 27
+22/11/2021 14:30:53 Št. trenutni: 27
+22/11/2021 14:32:35 Št. trenutni: 27
+22/11/2021 14:40:52 Št. trenutni: 27
+22/11/2021 15:13:49 Št. trenutni: 27
+22/11/2021 15:15:39 Št. trenutni: 0
+22/11/2021 15:17:41 Št. trenutni: 0
+22/11/2021 15:21:33 Št. trenutni: 0
+22/11/2021 15:23:34 Št. trenutni: 0
+22/11/2021 15:24:41 Št. trenutni: 1
+22/11/2021 15:34:07 Št. trenutni: 0
+22/11/2021 15:34:27 Št. trenutni: 1
+22/11/2021 15:51:42 Št. trenutni: 1
+22/11/2021 15:51:56 Št. trenutni: 0
+22/11/2021 15:52:05 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/11/2021 15:52:05 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1798
+22/11/2021 15:52:16 Številka naročilnice: 2102400001795
+22/11/2021 15:52:24 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/11/2021 15:52:24 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1798
+22/11/2021 15:52:24 Številka naročilnice: 2102400001795
+22/11/2021 15:57:33 Št. trenutni: 0
+22/11/2021 16:00:21 Št. trenutni: 1
+22/11/2021 16:00:43 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+22/11/2021 16:00:43 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :1798
+22/11/2021 16:00:44 Številka naročilnice: 2102400001795
+23/11/2021 12:01:07 Št. trenutni: 7
+23/11/2021 12:01:15 Št. trenutni: 0
+23/11/2021 12:01:46 Št. trenutni: 5
+23/11/2021 12:01:56 Št. trenutni: 0
+23/11/2021 12:04:04 Št. trenutni: 7
+23/11/2021 12:04:19 Št. trenutni: 5
+23/11/2021 12:04:23 Št. trenutni: 0
+23/11/2021 12:04:27 Št. trenutni: 0
+23/11/2021 12:04:30 Št. trenutni: 5
+23/11/2021 12:04:39 Št. trenutni: 0
+23/11/2021 12:06:32 Št. trenutni: 7
+23/11/2021 12:06:42 Št. trenutni: 0
+23/11/2021 12:06:51 Št. trenutni: 7
+23/11/2021 12:09:02 Št. trenutni: 2
+23/11/2021 12:09:05 Št. trenutni: 0
+23/11/2021 12:17:55 Št. trenutni: 7
+23/11/2021 12:18:11 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+23/11/2021 12:18:11 SaveBuyerRecall : (model.Content.OdpoklicKupecID) :2141
+23/11/2021 12:18:13 Številka naročilnice: 2102400002137
+24/11/2021 14:22:25 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>24/11/2021 14:22:25</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>24/11/2021 14:22:25</OrderDate>
+  <LoadDate>24/11/2021 14:22:25</LoadDate>
+  <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190402002</Ident>
+      <Name>TIPO 112 GD2 250G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210402005</Ident>
+      <Name>TIPO 112 GD2 300G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210401007</Ident>
+      <Name>TIPO 112 GD2 300G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402008</Ident>
+      <Name>TIPO 112 GD2 350G 101X71 BB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401014</Ident>
+      <Name>TIPO 112 GD2 350G 71X101 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402006</Ident>
+      <Name>TIPO 112 GD2 400G 101X71 BB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401012</Ident>
+      <Name>TIPO 112 GD2 400G 71X101 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402006</Ident>
+      <Name>TIPO 112 GD2 450G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401005</Ident>
+      <Name>TIPO 112 GD2 450G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360402002</Ident>
+      <Name>TIPO 112 GD2 500G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360401007</Ident>
+      <Name>TIPO 112 GD2 500G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370402005</Ident>
+      <Name>TIPO 112 GD2 550G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370401006</Ident>
+      <Name>TIPO 112 GD2 550G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526200401006</Ident>
+      <Name>TIPO 117 GT2 290G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430402008</Ident>
+      <Name>TIPO 117 GT2 320G 101X71 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430401011</Ident>
+      <Name>TIPO 117 GT2 320G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402010</Ident>
+      <Name>TIPO 117 GT2 350G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401015</Ident>
+      <Name>TIPO 117 GT2 350G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402010</Ident>
+      <Name>TIPO 117 GT2 400G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401020</Ident>
+      <Name>TIPO 117 GT2 400G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402012</Ident>
+      <Name>TIPO 117 GT2 450G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>24/11/2021 14:22:25</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401013</Ident>
+      <Name>TIPO 117 GT2 450G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+24/11/2021 14:22:25 Run Create order procedure _upJM_CreateSupplierOrder
+24/11/2021 14:22:50 Update Create order Recall Data
+24/11/2021 14:24:29 C:\Work\Grafolit\DatabaseWebService\
+24/11/2021 14:24:32 C:\Work\Grafolit\DatabaseWebService\
+24/11/2021 15:07:45 C:\Work\Grafolit\DatabaseWebService\
+24/11/2021 15:10:47 C:\Work\Grafolit\DatabaseWebService\
+24/11/2021 15:11:25 C:\Work\Grafolit\DatabaseWebService\
+26/11/2021 15:49:10 GetListOfOrderNumber10
+26/11/2021 15:49:47 GetListOfOpenedOrderPositions for : RADEČE PAPIR NOVA, d.o.o.     
+26/11/2021 15:51:20 Št. trenutni: 0
+26/11/2021 15:53:00 Št. trenutni: 0
+26/11/2021 15:53:00 Št. trenutni: 0
+26/11/2021 15:53:01 Št. trenutni: 0
+26/11/2021 15:53:01 Št. trenutni: 0
+26/11/2021 15:53:27 Št. trenutni: 0
+26/11/2021 15:53:27 Št. trenutni: 0
+26/11/2021 15:53:27 Št. trenutni: 0
+26/11/2021 15:57:22 Št. trenutni: 0
+26/11/2021 15:59:03 Št. trenutni: 0
+26/11/2021 15:59:03 Št. trenutni: 0
+26/11/2021 15:59:03 Št. trenutni: 0
+26/11/2021 15:59:03 Št. trenutni: 0
+26/11/2021 15:59:51 Št. trenutni: 0
+26/11/2021 16:00:12 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+26/11/2021 16:00:13 SaveRecall1 : (model.Content.OdpoklicID) :8994- Status : 1
+26/11/2021 16:00:13 SaveRecall1 : (model.Content.OdpoklicStevilka) :8528- Status : 1
+26/11/2021 16:00:21 Št. trenutni: 0
+29/11/2021 14:58:01 Št. trenutni: 0
+29/11/2021 15:00:04 Št. trenutni: 0
+29/11/2021 15:01:53 Št. trenutni: 0
+29/11/2021 15:05:43 Št. trenutni: 0
+29/11/2021 15:08:42 Št. trenutni: 0
+29/11/2021 15:10:41 Št. trenutni: 0
+29/11/2021 15:44:15 Št. trenutni: 0
+30/11/2021 12:22:29 C:\Work\Grafolit\DatabaseWebService\
+30/11/2021 12:28:34 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>30/11/2021 12:28:34</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>ARCTIC PAPER KOSTRZYN S.A.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>30/11/2021 12:28:34</OrderDate>
+  <LoadDate>30/11/2021 12:28:34</LoadDate>
+  <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712410401016</Ident>
+      <Name>OFFSET AMBER 120G 72X102 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712131201004</Ident>
+      <Name>OFFSET AMBER 140G 72X102 SB</Name>
+      <Qty>6000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712081301013P</Ident>
+      <Name>OFFSET PREPRINT 80G 45X64 SB 100% PEFC CERTIFIED</Name>
+      <Qty>4423,68</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712081301011</Ident>
+      <Name>OFFSET PREPRINT 80G 45X64 SB PK</Name>
+      <Qty>3317,76</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712091301016P</Ident>
+      <Name>OFFSET PREPRINT 90G 45X64 SB 100% PEFC CERTIFIED</Name>
+      <Qty>2073,6</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712101301007P</Ident>
+      <Name>OFFSET PREPRINT 100G 45X64 SB 100% PEFC CERTIFIED</Name>
+      <Qty>2073,6</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:28:34</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0712411301004</Ident>
+      <Name>OFFSET PREPRINT 120G 45X64 SB PK</Name>
+      <Qty>3317,76</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+30/11/2021 12:28:34 Run Create order procedure _upJM_CreateSupplierOrder
+30/11/2021 12:28:50 Update Create order Recall Data
+30/11/2021 12:30:36 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>30/11/2021 12:30:36</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>30/11/2021 12:30:36</OrderDate>
+  <LoadDate>30/11/2021 12:30:36</LoadDate>
+  <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190402002</Ident>
+      <Name>TIPO 112 GD2 250G 101X71 BB</Name>
+      <Qty>2500,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>1500,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210402005</Ident>
+      <Name>TIPO 112 GD2 300G 101X71 BB</Name>
+      <Qty>2600,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210401007</Ident>
+      <Name>TIPO 112 GD2 300G 71X101 SB</Name>
+      <Qty>800,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402008</Ident>
+      <Name>TIPO 112 GD2 350G 101X71 BB</Name>
+      <Qty>7000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401014</Ident>
+      <Name>TIPO 112 GD2 350G 71X101 SB</Name>
+      <Qty>34000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402006</Ident>
+      <Name>TIPO 112 GD2 400G 101X71 BB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401012</Ident>
+      <Name>TIPO 112 GD2 400G 71X101 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402006</Ident>
+      <Name>TIPO 112 GD2 450G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401005</Ident>
+      <Name>TIPO 112 GD2 450G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360402002</Ident>
+      <Name>TIPO 112 GD2 500G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360401007</Ident>
+      <Name>TIPO 112 GD2 500G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370402005</Ident>
+      <Name>TIPO 112 GD2 550G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370401006</Ident>
+      <Name>TIPO 112 GD2 550G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526200401006</Ident>
+      <Name>TIPO 117 GT2 290G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430402008</Ident>
+      <Name>TIPO 117 GT2 320G 101X71 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430401011</Ident>
+      <Name>TIPO 117 GT2 320G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402010</Ident>
+      <Name>TIPO 117 GT2 350G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401015</Ident>
+      <Name>TIPO 117 GT2 350G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402010</Ident>
+      <Name>TIPO 117 GT2 400G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401020</Ident>
+      <Name>TIPO 117 GT2 400G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402012</Ident>
+      <Name>TIPO 117 GT2 450G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 12:30:36</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401013</Ident>
+      <Name>TIPO 117 GT2 450G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+30/11/2021 12:30:36 Run Create order procedure _upJM_CreateSupplierOrder
+30/11/2021 12:30:38 Update Create order Recall Data
+30/11/2021 14:23:33 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>30/11/2021 14:23:32</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>30/11/2021 14:23:33</OrderDate>
+  <LoadDate>30/11/2021 14:23:33</LoadDate>
+  <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190402002</Ident>
+      <Name>TIPO 112 GD2 250G 101X71 BB</Name>
+      <Qty>2,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>3,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210402005</Ident>
+      <Name>TIPO 112 GD2 300G 101X71 BB</Name>
+      <Qty>4,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210401007</Ident>
+      <Name>TIPO 112 GD2 300G 71X101 SB</Name>
+      <Qty>5020,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402008</Ident>
+      <Name>TIPO 112 GD2 350G 101X71 BB</Name>
+      <Qty>6,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401014</Ident>
+      <Name>TIPO 112 GD2 350G 71X101 SB</Name>
+      <Qty>7,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402006</Ident>
+      <Name>TIPO 112 GD2 400G 101X71 BB</Name>
+      <Qty>8,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401012</Ident>
+      <Name>TIPO 112 GD2 400G 71X101 SB</Name>
+      <Qty>9,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402006</Ident>
+      <Name>TIPO 112 GD2 450G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401005</Ident>
+      <Name>TIPO 112 GD2 450G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360402002</Ident>
+      <Name>TIPO 112 GD2 500G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360401007</Ident>
+      <Name>TIPO 112 GD2 500G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370402005</Ident>
+      <Name>TIPO 112 GD2 550G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370401006</Ident>
+      <Name>TIPO 112 GD2 550G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526200401006</Ident>
+      <Name>TIPO 117 GT2 290G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430402008</Ident>
+      <Name>TIPO 117 GT2 320G 101X71 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430401011</Ident>
+      <Name>TIPO 117 GT2 320G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402010</Ident>
+      <Name>TIPO 117 GT2 350G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401015</Ident>
+      <Name>TIPO 117 GT2 350G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402010</Ident>
+      <Name>TIPO 117 GT2 400G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401020</Ident>
+      <Name>TIPO 117 GT2 400G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402012</Ident>
+      <Name>TIPO 117 GT2 450G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:23:33</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401013</Ident>
+      <Name>TIPO 117 GT2 450G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+30/11/2021 14:23:33 Run Create order procedure _upJM_CreateSupplierOrder
+30/11/2021 14:23:34 Update Create order Recall Data
+30/11/2021 14:29:28 <?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<Document>
+  <timestamp>30/11/2021 14:29:27</timestamp>
+  <DocType>0250</DocType>
+  <ReferentId>STA</ReferentId>
+  <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+  <Supplier>RENO DE MEDICI s.p.a.</Supplier>
+  <Buyer>GRAFO LIT D.O.O.</Buyer>
+  <OrderDate>30/11/2021 14:29:28</OrderDate>
+  <LoadDate>30/11/2021 14:29:28</LoadDate>
+  <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+  <Route />
+  <PrintType>A0Q</PrintType>
+  <OrderPDFPath>c:\PATH</OrderPDFPath>
+  <OrderNote>PLEASE CONFIRM DELIVERY DATE</OrderNote>
+  <Products>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190402002</Ident>
+      <Name>TIPO 112 GD2 250G 101X71 BB</Name>
+      <Qty>1,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526190401002</Ident>
+      <Name>TIPO 112 GD2 250G 71X101 SB</Name>
+      <Qty>2,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210402005</Ident>
+      <Name>TIPO 112 GD2 300G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526210401007</Ident>
+      <Name>TIPO 112 GD2 300G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402008</Ident>
+      <Name>TIPO 112 GD2 350G 101X71 BB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401014</Ident>
+      <Name>TIPO 112 GD2 350G 71X101 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402006</Ident>
+      <Name>TIPO 112 GD2 400G 101X71 BB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401012</Ident>
+      <Name>TIPO 112 GD2 400G 71X101 SB</Name>
+      <Qty>10000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402006</Ident>
+      <Name>TIPO 112 GD2 450G 101X71 BB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401005</Ident>
+      <Name>TIPO 112 GD2 450G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360402002</Ident>
+      <Name>TIPO 112 GD2 500G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526360401007</Ident>
+      <Name>TIPO 112 GD2 500G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370402005</Ident>
+      <Name>TIPO 112 GD2 550G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526370401006</Ident>
+      <Name>TIPO 112 GD2 550G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526200401006</Ident>
+      <Name>TIPO 117 GT2 290G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430402008</Ident>
+      <Name>TIPO 117 GT2 320G 101X71 BB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526430401011</Ident>
+      <Name>TIPO 117 GT2 320G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220402010</Ident>
+      <Name>TIPO 117 GT2 350G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526220401015</Ident>
+      <Name>TIPO 117 GT2 350G 71X101 SB</Name>
+      <Qty>3000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380402010</Ident>
+      <Name>TIPO 117 GT2 400G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526380401020</Ident>
+      <Name>TIPO 117 GT2 400G 71X101 SB</Name>
+      <Qty>5000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350402012</Ident>
+      <Name>TIPO 117 GT2 450G 101X71 BB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+    <Product>
+      <DeliveryDate>30/11/2021 14:29:28</DeliveryDate>
+      <Department>15 - SKLADIŠČE MALOPRODAJA</Department>
+      <Ident>0526350401013</Ident>
+      <Name>TIPO 117 GT2 450G 71X101 SB</Name>
+      <Qty>2000,0</Qty>
+      <Price>0</Price>
+      <Rabat>0</Rabat>
+      <Note />
+      <Poreklo />
+    </Product>
+  </Products>
+</Document>
+30/11/2021 14:29:28 Run Create order procedure _upJM_CreateSupplierOrder
+30/11/2021 14:29:29 Update Create order Recall Data

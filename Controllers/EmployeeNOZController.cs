@@ -18,6 +18,7 @@ namespace DatabaseWebService.Controllers
     {
         private IEmployeeNOZRepository employeeNOZRepo;
         private IMSSQLNOZFunctionRepository msSqlFunctionRepo;
+        
 
         public delegate WebResponseContentModel<T> Del<T>(WebResponseContentModel<T> model, Exception ex = null);
         public EmployeeNOZController(IEmployeeNOZRepository _employeeNOZRepo, IMSSQLNOZFunctionRepository _msSqlFunctionRepo)

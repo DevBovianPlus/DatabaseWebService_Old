@@ -15,7 +15,7 @@ namespace DatabaseWebService.Domain.Abstract
 
         List<EmployeeSimpleModel> GetAllEmployees();
 
-        int SaveEmployee(EmployeeFullModel model, bool updateRecord = true);
+        int SaveEmployee(EmployeeFullModel model, bool updateRecord = true);        
 
         bool DeleteEmployee(int employeeID);
 

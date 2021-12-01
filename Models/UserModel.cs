@@ -14,6 +14,7 @@ namespace DatabaseWebService.Models
         public string Role { get; set; }
         public string RoleName { get; set; }
         public int RoleID { get; set; }
+        public int OTPPantheonUsrID { get; set; }
         public string Job { get; set; }
         public DateTime dateCreated { get; set; }
 

@@ -973,7 +973,31 @@ namespace DatabaseWebService.DomainNOZ.Concrete
             }
 
 
+            // preverim še produkte, ki so bili odprti en teden nazaj, pomeni da so produkti novi in nimajo ne zaloge in ne prodaje
+            var newProducts = productsOnGoup.Where(p => p.DATUMZAP > DateTime.Now.AddDays(-30)).ToList();
+            foreach (var pr in newProducts)
+            {
 
+                pr.TrenutnaZaloga = 0;
+                // če ima zalogo je potrebno tega dobavitleja označiti, da ima zalogo
+                iHasStock = 0;
+                //preverimo ali product še ne obstaja v seznamu najbolj prodajanih v enem letu, če ne obstaja preverimo ali ima zalog, če ne obstaja in 
+                // ima zalogo ugotovimo h kateri podskupini spada in mu dodamo zalogo v to podskupino
+                if (lProducts.Where(p => p.IDENT == pr.IDENT).FirstOrDefault() == null)
+                {
+
+                    SumSubCategoryModel sc = GetSubCategoryFromNaziv(pr.IDENT, pr.NAZIV, 0);
+                    iHasStock = GetOrAddSubCategoryOnCalculateSum(sc, lSubCategoryBySum, pr);
+             
+
+                }
+
+                pr.DOBAVITELJ = pr.DOBAVITELJ.Trim();
+                pr.DOBAVITELJ_ALTER = pr.DOBAVITELJ.Trim();
+                pr.DOBAVITELJ = pr.DOBAVITELJ.Contains("SAPPI") ? "SAPPI" : pr.DOBAVITELJ;
+
+                AddOrUpdateSupplierHasStock(pr.DOBAVITELJ.Trim(), pr.DOBAVITELJ_ALTER, hlpOptimalStock, iHasStock, 0, 0);
+            }
 
 
 
@@ -1119,7 +1143,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                             // 28.07.2020 - popravek
                             sc.Gloss = (columnValues.Gloss != null) ? columnValues.Gloss : null;
 
-                            List <OptimalStockTreeHierarchy> selListProductForUpdate = list.Where(l => (l.NazivPodkategorije == sc.NazivPodKategorije && l.Gloss == sc.Gloss)).ToList();
+                            List<OptimalStockTreeHierarchy> selListProductForUpdate = list.Where(l => (l.NazivPodkategorije == sc.NazivPodKategorije && l.Gloss == sc.Gloss)).ToList();
 
                             foreach (var item in selListProductForUpdate)
                             {
@@ -1203,7 +1227,7 @@ namespace DatabaseWebService.DomainNOZ.Concrete
                 // poiščemo tistega dobavitelja, ki je bil zadnji naročeni - velja samo za subsuplier 
                 foreach (ClientSimpleModel supp in hlpOptimalStock.Suppliers)
                 {
-                    
+
                     if (supp.NazivPrvi == "SAPPI")
                     {
                         supp.NazivPrvi = supp.NazivPrvi.ToUpper().Trim();

@@ -42,6 +42,10 @@ namespace DatabaseWebService.DomainOTP
         public Nullable<System.DateTime> ts { get; set; }
         public Nullable<int> tsIDOsebe { get; set; }
         public Nullable<int> activity { get; set; }
+        public Nullable<int> PantheonUsrID { get; set; }
+        public string PantheonUsrChar { get; set; }
+        public Nullable<int> OTPPantheonUsrID { get; set; }
+        public string OTPPantheonUsrChar { get; set; }
     
         public virtual Vloga_OTP Vloga_OTP { get; set; }
         public virtual ICollection<StrankaZaposleni_OTP> StrankaZaposleni_OTP { get; set; }

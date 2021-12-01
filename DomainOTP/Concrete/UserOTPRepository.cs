@@ -35,6 +35,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 model.dateCreated = tmpUsers.ts.HasValue ? tmpUsers.ts.Value : DateTime.MinValue;
                 model.Job = tmpUsers.DelovnoMesto;
                 model.profileImage = tmpUsers.ProfileImage;
+                model.OTPPantheonUsrID = Common.DataTypesHelper.ParseInt(tmpUsers.OTPPantheonUsrID);
 
                 if (tmpUsers.idVloga != null)
                 {
@@ -47,7 +48,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             return model;
         }
 
-       public Vloga_OTP GetRoleByID(int id)
+        public Vloga_OTP GetRoleByID(int id)
         {
             return context.Vloga_OTP.Where(r => r.idVloga == id).FirstOrDefault();
         }
@@ -61,6 +62,6 @@ namespace DatabaseWebService.DomainOTP.Concrete
         private Osebe_OTP GetEmployeeByID(int id)
         {
             return context.Osebe_OTP.Where(e => e.idOsebe == id).FirstOrDefault();
-        } 
+        }
     }
 }

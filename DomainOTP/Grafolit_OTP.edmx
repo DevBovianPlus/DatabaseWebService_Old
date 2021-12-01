@@ -260,6 +260,10 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="activity" Type="int" />
+          <Property Name="PantheonUsrID" Type="int" />
+          <Property Name="PantheonUsrChar" Type="varchar" MaxLength="50" />
+          <Property Name="OTPPantheonUsrID" Type="int" />
+          <Property Name="OTPPantheonUsrChar" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OsebeNadrejeni_OTP">
           <Key>
@@ -1530,6 +1534,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <NavigationProperty Name="RazpisPozicijaSpremembe" Relationship="GrafolitOTPModel.FK_OsebaOTPSpremembeRazpisPozicijaSpremembeID" FromRole="Osebe_OTP" ToRole="RazpisPozicijaSpremembe" />
           <NavigationProperty Name="RazpisPozicijaSpremembe1" Relationship="GrafolitOTPModel.FK_OsebaOTPVnosRazpisPozicijaSpremembeID" FromRole="Osebe_OTP" ToRole="RazpisPozicijaSpremembe" />
           <NavigationProperty Name="OdpoklicKupec" Relationship="GrafolitOTPModel.FK_KupecUserID" FromRole="Osebe_OTP" ToRole="OdpoklicKupec" />
+          <Property Name="PantheonUsrID" Type="Int32" />
+          <Property Name="PantheonUsrChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OTPPantheonUsrID" Type="Int32" />
+          <Property Name="OTPPantheonUsrChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Vloga_OTP">
           <Key>
@@ -2628,6 +2636,10 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <EntitySetMapping Name="Osebe_OTP">
             <EntityTypeMapping TypeName="GrafolitOTPModel.Osebe_OTP">
               <MappingFragment StoreEntitySet="Osebe_OTP">
+                <ScalarProperty Name="OTPPantheonUsrChar" ColumnName="OTPPantheonUsrChar" />
+                <ScalarProperty Name="OTPPantheonUsrID" ColumnName="OTPPantheonUsrID" />
+                <ScalarProperty Name="PantheonUsrChar" ColumnName="PantheonUsrChar" />
+                <ScalarProperty Name="PantheonUsrID" ColumnName="PantheonUsrID" />
                 <ScalarProperty Name="activity" ColumnName="activity" />
                 <ScalarProperty Name="tsIDOsebe" ColumnName="tsIDOsebe" />
                 <ScalarProperty Name="ts" ColumnName="ts" />

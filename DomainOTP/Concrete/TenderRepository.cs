@@ -453,6 +453,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                 DatumRazpisa = tender.DatumRazpisa,
                                 Naziv = tender.Naziv,
                                 RazpisID = tender.RazpisID,
+                                IsCiljnaCena = tender.IsCiljnaCena.HasValue ? tender.IsCiljnaCena.Value : false,
                                 ts = tender.ts.HasValue ? tender.ts.Value : DateTime.MinValue,
                                 tsIDOseba = tender.tsIDOseba.HasValue ? tender.tsIDOseba.Value : 0,
                                 RazpisKreiran = tender.RazpisKreiran.HasValue ? tender.RazpisKreiran.Value : false,
@@ -828,18 +829,24 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             group tenderPos by tenderPos.StrankaID into transportGroup
                             select transportGroup).ToList();
 
+                RazpisPozicija rpPos = null;
+
                 foreach (var item in test)
                 {
                     var list = item.ToList();//dobimo seznam RazpisPozicij za posameznega prevoznika
 
                     //uredimo seznam po datumu razpisa (padajoče) in izberemo prvo pozicijo (RazpisPozicija)
-                    var tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).Where(o => o.Cena > 0).FirstOrDefault();
 
-                    if (tenderPos == null)
-                        tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).FirstOrDefault();
+                    //var tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).Where(o => o.Cena > 0).FirstOrDefault();
+                    var tenderListPos = list.Where(o => o.Cena > 0).ToList();
 
-                    if (tenderPos != null)
-                        tenderPositions.Add(tenderPos);
+                    rpPos = tenderListPos.Count > 1 ? tenderListPos.OrderByDescending(o => o.Razpis.DatumRazpisa).FirstOrDefault() : tenderListPos.FirstOrDefault();
+
+                    if (rpPos == null)
+                        rpPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).FirstOrDefault();
+
+                    if (rpPos != null)
+                        tenderPositions.Add(rpPos);
                 }
 
                 //pridobimo zadnji razpis (DatumRazpis) ki vsebuje podano relacijo
@@ -967,24 +974,35 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 List<RazpisPozicija> tenderPositions = new List<RazpisPozicija>();
                 var test = (from tenderPos in context.RazpisPozicija
-                            where tenderPos.RelacijaID == routeID && tenderPos.ZbirnikTonID == tonsID && tenderPos.Stranka_OTP.Activity == 1
+                            where tenderPos.RelacijaID == routeID && tenderPos.ZbirnikTonID == tonsID && tenderPos.Cena > 0 && tenderPos.Stranka_OTP.Activity == 1
                             group tenderPos by tenderPos.StrankaID into transportGroup
                             select transportGroup).ToList();
 
                 foreach (var item in test)
                 {
                     List<RazpisPozicija> list = item.ToList();//dobimo seznam RazpisPozicij za posameznega prevoznika
-
+                    RazpisPozicija tenderPos = null;
                     //uredimo seznam po datumu razpisa (padajoče) in izberemo prvo pozicijo (RazpisPozicija)
-                    var tenderPosOrder = list.OrderByDescending(o => o.Razpis.DatumRazpisa).ToList();
-                    var tenderPos = tenderPosOrder.Where(o => o.Cena > 0).FirstOrDefault(); 
+                    List<RazpisPozicija> tenderPosOrder = null;
+                    if (list.Count > 1)
+                    {
+                         tenderPosOrder = list.OrderByDescending(o => o.Razpis.DatumRazpisa).ToList();
+                    }
+                    else
+                    {
+                         tenderPosOrder = list;
+                    }
+                    
+                    tenderPos = tenderPosOrder.Where(o => o.Cena > 0).FirstOrDefault(); 
 
                     if (tenderPos == null)
-                        tenderPos = list.OrderByDescending(o => o.Razpis.DatumRazpisa).FirstOrDefault();
+                        tenderPos = tenderPosOrder.FirstOrDefault();
 
                     if (tenderPos != null)
                         tenderPositions.Add(tenderPos);
                 }
+
+                DataTypesHelper.LogThis("Št. trenutni: " + test.Count);
 
 
                 //poiščemo vse relacije ki so v razpisu in jih pošljemo uporanbiku

@@ -5,16 +5,18 @@ using System.Web;
 using DatabaseWebService.Domain.Abstract;
 using DatabaseWebService.Common.Enums;
 using DatabaseWebService.Models;
-
+using DatabaseWebService.DomainOTP;
 using DatabaseWebService.Common;
 using DatabaseWebService.Models.Employee;
 using DatabaseWebService.Resources;
 using System.Data.Entity.Validation;
+using DatabaseWebService.DomainOTP;
+
 namespace DatabaseWebService.Domain.Concrete
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        AnalizaProdajeEntities context = new AnalizaProdajeEntities();
+        AnalizaProdajeEntities context = new AnalizaProdajeEntities();        
         public EmployeeFullModel GetEmployeeByID(int id)
         {
             try
@@ -199,6 +201,7 @@ namespace DatabaseWebService.Domain.Concrete
                 throw new Exception(ValidationExceptionError.res_08, ex);
             }
         }
+
 
 
         public bool DeleteEmployee(int employeeID)

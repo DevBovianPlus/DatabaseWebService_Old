@@ -41,5 +41,6 @@ namespace DatabaseWebService.ModelsOTP.Recall
         public bool bBrezFakture { get; set; }
 
         public string OpisOdpoklicKupec { get; set; }
+        public int OTPPantheonUsrID { get; set; }
     }
 }

@@ -257,6 +257,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
             try
             {
                 List<RouteTransporterPricesModel> ReturnList = null;
+                
                 string overtake = Enums.StatusOfRecall.PREVZET.ToString();
                 string partialOvertake = Enums.StatusOfRecall.DELNO_PREVZET.ToString();
                 string approvedStat = Enums.StatusOfRecall.POTRJEN.ToString();
@@ -265,9 +266,6 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 vRPModel.DateTo = vRPModel.DateTo.AddHours(23).AddMinutes(59);
                 //var qOdpoklic = context.Odpoklic.Select(o => o.ts >= vRPModel.DateFrom && o.ts <= vRPModel.DateTo).ToList().Select(p => p.RelacijaID);
                 var qOdpoklic1 = context.Odpoklic.Where(o => o.ts >= vRPModel.DateFrom && o.ts <= vRPModel.DateTo).Select(p => p.RelacijaID);
-
-
-
 
 
                 var list1 = qOdpoklic1.ToList();
@@ -305,7 +303,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 {
                     // zaključimo, ker rabimo samo število odpoklicov
                     // pri razpisih
-                    
+
                     // dobimo vse relacije
                     var fullquerry = from route in context.Relacija
                                      select new RouteModel
@@ -331,12 +329,13 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     // dobimo seznam ostalih relacij
                     var notContain = fullquerry.Except(query).ToList();
                     List<RouteModel> restList = notContain.ToList();
-                    rList.AddRange(restList);                    
+                    rList.AddRange(restList);
                     vRPModel.lRouteList = rList;
                     return vRPModel;
                 }
 
                 int iTempID = 0;
+                int iTempInerID = 0;
                 int iCnt = 0;
                 int iCntTons = 0;
                 int iMyOrder = 0;
@@ -346,17 +345,6 @@ namespace DatabaseWebService.DomainOTP.Concrete
 
                 foreach (var item in rList)
                 {
-                    iMyOrder++;
-                    iTempID++;
-                    RouteTransporterPricesModel rtpm = new RouteTransporterPricesModel();
-                    rtpm.TempID = iTempID;
-                    rtpm.Relacija = item.Naziv;
-                    rtpm.RecallCount = item.RecallCount;
-                    rtpm.IsRoute = true;
-                    rtpm.SortIndx = iMyOrder;
-                    iCnt = 0;
-                    ReturnList.Add(rtpm);
-
                     //List<TenderPositionModel> tenderRoutesPrices = tenderRepo.GetTenderListByRouteID(item.RelacijaID);
 
                     var query2 = from tenderPos in context.RazpisPozicija //from tenderPos in tmp.FirstOrDefault().Key.RazpisPozicija
@@ -389,24 +377,67 @@ namespace DatabaseWebService.DomainOTP.Concrete
                                                    }).FirstOrDefault(),
                                  };
 
+                    List<TenderPositionModel> rFullList = query2.ToList();
+
+                    if (rFullList.Count > 0)
+                    {
+                        iMyOrder++;
+                        iTempID++;
+                        RouteTransporterPricesModel rtpm = new RouteTransporterPricesModel();
+                        rtpm.TempID = iTempID;
+                        rtpm.Relacija = item.Naziv;
+                        rtpm.RecallCount = item.RecallCount;
+                        rtpm.IsRoute = true;
+                        rtpm.SortIndx = iMyOrder;
+                        iCnt = 0;
+                        ReturnList.Add(rtpm);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+
                     iCntTons = 0;
                     int iLastZTId = 0;
                     RouteTransporterPricesModel rtpmTonsItem = new RouteTransporterPricesModel();
-                    foreach (var itm in query2)
+                    iTempInerID = 0;
+                    rFullList = rFullList.OrderBy(d => d.ZbirnikTonID).ToList();
+                    bool bMultipleZbirnikID = false;
+                    foreach (var itm in rFullList)
                     {
+                        int cntZbirnik = rFullList.Where(o => o.ZbirnikTonID == itm.ZbirnikTonID).Count(); // ugotovimo če je več različnih zbirnikov za relacijo
+                        bMultipleZbirnikID = (cntZbirnik == rFullList.Count ? false : true);
 
-                        if (iLastZTId == itm.ZbirnikTonID)
-                            continue;
-                        else
+                        if (iLastZTId != itm.ZbirnikTonID)
                         {
-                            if (iCntTons == 4)
+                            if (iCntTons > 4)
                             {
+                                ReturnList.Add(rtpmTonsItem);
+
+                                iCntTons = 0;
+                                rtpmTonsItem = new RouteTransporterPricesModel();
+                            }
+                            else if (iLastZTId != 0 && bMultipleZbirnikID)
+                            {
+                                if (rtpmTonsItem.RecallCount > 0)
+                                {
+                                    ReturnList.Add(rtpmTonsItem);
+                                }
                                 iCntTons = 0;
                                 rtpmTonsItem = new RouteTransporterPricesModel();
                             }
                         }
+                        else if (iCntTons > 4 && !bMultipleZbirnikID)
+                        {
+                            ReturnList.Add(rtpmTonsItem);
+                            break;
+                        }
+
+
 
                         iTempID++;
+                        iTempInerID++;
 
                         rtpmTonsItem.TempID = iTempID;
                         rtpmTonsItem.Relacija = itm.ZbirnikTon.Koda;
@@ -424,49 +455,56 @@ namespace DatabaseWebService.DomainOTP.Concrete
                             rtpmTonsItem.DodaneStrankeID.Add(itm.StrankaID);
                             iCntTons++;
                         }
-                        else
-                            continue;
-
-
-
-                        switch (iCntTons)
+                        else if (iTempInerID < query2.Count()) // preveri vse za to tonažo
                         {
-                            case 1:
-                                rtpmTonsItem.Prevoznik_1 = itm.Stranka.NazivPrvi;
-                                rtpmTonsItem.Prevoznik_1_Cena = itm.Cena;
-                                break;
-                            case 2:
-                                rtpmTonsItem.Prevoznik_2 = itm.Stranka.NazivPrvi;
-                                rtpmTonsItem.Prevoznik_2_Cena = itm.Cena;
-                                break;
-                            case 3:
-                                rtpmTonsItem.Prevoznik_3 = itm.Stranka.NazivPrvi;
-                                rtpmTonsItem.Prevoznik_3_Cena = itm.Cena;
-                                break;
-                            case 4:
-                                rtpmTonsItem.Prevoznik_4 = itm.Stranka.NazivPrvi;
-                                rtpmTonsItem.Prevoznik_4_Cena = itm.Cena;
-                                break;
-                            default:
-                                break;
+                            continue;
                         }
 
-                        if (iCntTons == 4)
+
+                        if (iTempInerID <= query2.Count())
+                        {
+                            switch (iCntTons)
+                            {
+                                case 1:
+                                    rtpmTonsItem.Prevoznik_1 = itm.Stranka.NazivPrvi;
+                                    rtpmTonsItem.Prevoznik_1_Cena = itm.Cena;
+                                    break;
+                                case 2:
+                                    rtpmTonsItem.Prevoznik_2 = itm.Stranka.NazivPrvi;
+                                    rtpmTonsItem.Prevoznik_2_Cena = itm.Cena;
+                                    break;
+                                case 3:
+                                    rtpmTonsItem.Prevoznik_3 = itm.Stranka.NazivPrvi;
+                                    rtpmTonsItem.Prevoznik_3_Cena = itm.Cena;
+                                    break;
+                                case 4:
+                                    rtpmTonsItem.Prevoznik_4 = itm.Stranka.NazivPrvi;
+                                    rtpmTonsItem.Prevoznik_4_Cena = itm.Cena;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            //if (iCntTons == 4)
+                            //{
+                            //    ReturnList.Add(rtpmTonsItem);                                
+                            //    continue;
+                            //}
+                        }
+                        //else if (iCntTons < 4)
+                        //{
+                        //    ReturnList.Add(rtpmTonsItem);                            
+                        //    continue;
+                        //}
+
+                        iLastZTId = itm.ZbirnikTonID;
+
+                        if (rFullList.Count <= iCntTons)
                         {
                             ReturnList.Add(rtpmTonsItem);
-                            iLastZTId = itm.ZbirnikTonID;
-                            continue;
+                            break;
                         }
-                        else if (query2.Count() < 4 && iCntTons == query2.Count())
-                        {
-                            ReturnList.Add(rtpmTonsItem);
-                            iLastZTId = itm.ZbirnikTonID;
-                            continue;
-                        }
-
-
                     }
-
 
                 }
 

@@ -581,6 +581,7 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 xml.WriteElementString("timestamp", DateTime.Now.ToString());
                 xml.WriteElementString("DocType", "0240");
                 xml.WriteElementString("Supplier", model.PrevoznikNaziv);
+                xml.WriteElementString("OTPPantheonUsrID", model.OTPPantheonUsrID.ToString());
                 xml.WriteElementString("Buyer", ConfigurationManager.AppSettings["PantheonCreateOrderDefBuyer"].ToString());
                 xml.WriteElementString("OrderDate", DateTime.Now.ToString());
                 xml.WriteElementString("Route", model.RelacijaNaziv.ToString());
