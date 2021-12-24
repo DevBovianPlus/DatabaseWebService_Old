@@ -187,8 +187,12 @@ namespace DatabaseWebService.Controllers
 
                 if (model.Content != null)
                 {
-
                     DataTypesHelper.LogThis("SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : " + model.Content.StatusID.ToString());
+                    DataTypesHelper.LogThis("SaveRecall-0 : (model.Content.Dobavitelj) :" + DataTypesHelper.Parse(model.Content.DobaviteljNaziv));
+                    DataTypesHelper.LogThis("SaveRecall-0 : (model.Content.DobaviteljID) :" + DataTypesHelper.ParseInt(model.Content.DobaviteljID).ToString());
+
+                    DataTypesHelper.LogThis("SaveRecall-0 : (model.Content.Dobavitelj) : :" + model.Content.DobaviteljID == null ? "" : model.Content.DobaviteljID.ToString());
+                    DataTypesHelper.LogThis("SaveRecall-0 :" + model.Content.DobaviteljNaziv == null ? "" : model.Content.DobaviteljNaziv);
 
                     var employee = employeeRepo.GetEmployeeByID(model.Content.UserID);
 
@@ -196,7 +200,9 @@ namespace DatabaseWebService.Controllers
                     {
                         DataTypesHelper.LogThis("SaveRecall1 : (model.Content.OdpoklicID) :" + model.Content.OdpoklicID.ToString() + "- Status : " + model.Content.StatusID.ToString());
                         DataTypesHelper.LogThis("SaveRecall1 : (model.Content.OdpoklicStevilka) :" + model.Content.OdpoklicStevilka.ToString() + "- Status : " + model.Content.StatusID.ToString());
-                        
+                        DataTypesHelper.LogThis("SaveRecall-1 : (model.Content.Dobavitelj) : :" + model.Content.DobaviteljID == null ? "" : model.Content.DobaviteljID.ToString());
+                        DataTypesHelper.LogThis("SaveRecall-1 :" + model.Content.DobaviteljNaziv == null ? "" : model.Content.DobaviteljNaziv);
+
                         recallRepo.SaveRecall(model.Content);
                         
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());
@@ -217,11 +223,16 @@ namespace DatabaseWebService.Controllers
                     }
                     else // We add and save new recod to DB 
                     {
+                        DataTypesHelper.LogThis("SaveRecall-2 : (model.Content.Dobavitelj) : :" + model.Content.DobaviteljID == null ? "" : model.Content.DobaviteljID.ToString());
+                        DataTypesHelper.LogThis("SaveRecall-2 :" + model.Content.DobaviteljNaziv == null ? "" : model.Content.DobaviteljNaziv);
+
                         DataTypesHelper.LogThis("SaveRecall2 : (model.Content.OdpoklicID) :" + model.Content.OdpoklicID.ToString());
                         string sRazlog = model.Content.RazlogOdobritveSistem == null ? "" : model.Content.RazlogOdobritveSistem.ToString();
                         DataTypesHelper.LogThis("SaveRecall2 : (RazlogOdobritveSistem) :" + sRazlog);
 
                         model.Content.OdpoklicID = recallRepo.SaveRecall(model.Content, false);
+                        DataTypesHelper.LogThis("SaveRecall-3 : (model.Content.Dobavitelj) : :" + model.Content.DobaviteljID == null ? "" : model.Content.DobaviteljID.ToString());
+                        DataTypesHelper.LogThis("SaveRecall-3 :" + model.Content.DobaviteljNaziv == null ? "" : model.Content.DobaviteljNaziv);
 
                         RecallStatus stat = recallRepo.GetRecallStatusByCode(Enums.StatusOfRecall.V_ODOBRITEV.ToString());
                         if (stat != null && model.Content.StatusID == stat.StatusOdpoklicaID)

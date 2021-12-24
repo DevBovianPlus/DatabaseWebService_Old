@@ -6,6 +6,7 @@ using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.DomainPDO.Abstract;
 using DatabaseWebService.Models;
 using DatabaseWebService.Models.Client;
+using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.Resources;
 using Newtonsoft.Json;
 using System;
@@ -57,6 +58,41 @@ namespace DatabaseWebService.Controllers
             try
             {
                 tmpUser.Content = userRepo.UserLogIn(username, password);
+
+                if (tmpUser.Content != null)
+                {
+                    tmpUser.IsRequestSuccesful = true;
+                    tmpUser.ValidationError = "";
+                }
+                else
+                {
+                    tmpUser.IsRequestSuccesful = false;
+                    tmpUser.ValidationError = ValidationExceptionError.res_01;
+                }
+            }
+            catch (Exception ex)
+            {
+                tmpUser.IsRequestSuccesful = false;
+                tmpUser.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                return Json(tmpUser);
+            }
+
+            return Json(tmpUser);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAktivnostUporabnikaByDateAndUserID(int UserID, string CurentDate)
+        {
+
+
+            WebResponseContentModel<AktivnostUporabnikaModel> tmpUser = new WebResponseContentModel<AktivnostUporabnikaModel>();
+
+            try
+            {
+                DateTime cDateTime = DateTime.Now;
+                CurentDate = cDateTime.ToShortDateString();
+
+                tmpUser.Content = userOTPRepo.GetAktivnostUporabnikaByDateAndUserID(UserID, CurentDate);
 
                 if (tmpUser.Content != null)
                 {
@@ -136,7 +172,7 @@ namespace DatabaseWebService.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult PostNewEmployeeData([FromBody]object employeeData)
+        public IHttpActionResult PostNewEmployeeData([FromBody] object employeeData)
         {
             EmployeeFullModel model = null;
             try
@@ -458,7 +494,7 @@ namespace DatabaseWebService.Controllers
             return Json(tmpUser);
         }
 
-       
+
 
 
         #region Grafolit_NOZ

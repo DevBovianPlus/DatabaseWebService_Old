@@ -70,6 +70,10 @@
         <AssociationConnector Association="GrafolitOTPModel.FK_Relacija_OdpoklicKupec" />
         <EntityTypeShape EntityType="GrafolitOTPModel.OdpoklicKupecPozicija" Width="1.5" PointX="23.125" PointY="6.125" />
         <AssociationConnector Association="GrafolitOTPModel.FK_OdpoklicKupecPozicija_Odpoklic" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.AktivnostUporabnika" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="GrafolitOTPModel.AktivnostUporabnikaStatus" Width="1.5" PointX="3" PointY="12" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_AktivnostUporabnika_AktivnostUporabnikaStatus" />
+        <AssociationConnector Association="GrafolitOTPModel.FK_AktivnostUporabnika_Osebe" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

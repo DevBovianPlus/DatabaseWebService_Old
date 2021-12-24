@@ -14912,3 +14912,283 @@ Error Number:547,State:0,Class:16
 </Document>
 30/11/2021 14:29:28 Run Create order procedure _upJM_CreateSupplierOrder
 30/11/2021 14:29:29 Update Create order Recall Data
+01/12/2021 15:31:54 GetListOfOrderNumber10
+01/12/2021 15:34:42 GetListOfOrderNumber10
+01/12/2021 15:36:22 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+01/12/2021 15:37:44 Št. trenutni: 0
+01/12/2021 15:39:26 Št. trenutni: 0
+01/12/2021 15:39:30 Št. trenutni: 0
+01/12/2021 15:39:31 Št. trenutni: 0
+01/12/2021 15:39:32 Št. trenutni: 0
+01/12/2021 15:40:20 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+01/12/2021 15:40:20 SaveRecall2 : (model.Content.OdpoklicID) :0
+01/12/2021 15:40:20 SaveRecall2 : (RazlogOdobritveSistem) :
+01/12/2021 16:08:42 GetListOfOrderNumber10
+01/12/2021 16:10:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+01/12/2021 16:13:13 Št. trenutni: 0
+01/12/2021 16:15:00 Št. trenutni: 0
+01/12/2021 16:15:03 Št. trenutni: 0
+01/12/2021 16:15:04 Št. trenutni: 0
+01/12/2021 16:15:05 Št. trenutni: 0
+01/12/2021 16:15:41 Št. trenutni: 7
+01/12/2021 16:15:44 Št. trenutni: 7
+01/12/2021 16:15:45 Št. trenutni: 7
+01/12/2021 16:18:19 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 9
+01/12/2021 16:18:19 SaveRecall2 : (model.Content.OdpoklicID) :0
+01/12/2021 16:18:19 SaveRecall2 : (RazlogOdobritveSistem) :
+01/12/2021 16:18:20 SaveRecall3 : RAZPIS_PREVOZNIK
+01/12/2021 16:18:20 C:\Work\Grafolit\DatabaseWebService\
+02/12/2021 11:03:15 GetListOfOrderNumber10
+02/12/2021 11:03:31 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+02/12/2021 11:04:05 GetListOfOpenedOrderPositions for : GRAFOMA D.O.O.                
+02/12/2021 11:04:10 GetListOfOpenedOrderPositions for : LENZING PAPIER                
+02/12/2021 11:27:05 Št. trenutni: 0
+02/12/2021 11:31:04 Št. trenutni: 0
+02/12/2021 13:53:18 GetListOfOrderNumber10
+02/12/2021 13:53:23 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+02/12/2021 13:54:04 Št. trenutni: 0
+02/12/2021 13:55:47 Št. trenutni: 0
+02/12/2021 13:55:54 Št. trenutni: 0
+02/12/2021 13:55:54 Št. trenutni: 0
+02/12/2021 13:55:55 Št. trenutni: 0
+02/12/2021 13:56:06 Št. trenutni: 0
+02/12/2021 13:56:06 Št. trenutni: 0
+02/12/2021 13:56:07 Št. trenutni: 0
+02/12/2021 13:57:26 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+02/12/2021 13:57:26 SaveRecall2 : (model.Content.OdpoklicID) :0
+02/12/2021 13:57:26 SaveRecall2 : (RazlogOdobritveSistem) :
+02/12/2021 14:37:09 GetListOfOrderNumber10
+02/12/2021 14:37:13 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+02/12/2021 14:38:13 Št. trenutni: 0
+02/12/2021 14:42:52 Št. trenutni: 0
+02/12/2021 14:43:26 Št. trenutni: 0
+02/12/2021 14:43:27 Št. trenutni: 0
+02/12/2021 14:43:27 Št. trenutni: 0
+02/12/2021 14:47:24 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+02/12/2021 14:47:24 SaveRecall2 : (model.Content.OdpoklicID) :0
+02/12/2021 14:47:24 SaveRecall2 : (RazlogOdobritveSistem) :
+03/12/2021 10:38:48 GetListOfOrderNumber10
+03/12/2021 10:39:01 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+03/12/2021 10:41:35 Št. trenutni: 0
+03/12/2021 10:43:17 Št. trenutni: 0
+03/12/2021 10:43:20 Št. trenutni: 0
+03/12/2021 10:43:21 Št. trenutni: 0
+03/12/2021 10:43:22 Št. trenutni: 0
+03/12/2021 10:43:31 Št. trenutni: 0
+03/12/2021 10:43:33 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+03/12/2021 10:43:33 SaveRecall2 : (model.Content.OdpoklicID) :0
+03/12/2021 10:43:33 SaveRecall2 : (RazlogOdobritveSistem) :
+03/12/2021 10:43:43 Št. trenutni: 0
+03/12/2021 10:44:09 Št. trenutni: 0
+03/12/2021 10:46:02 Št. trenutni: 0
+03/12/2021 10:54:22 Št. trenutni: 0
+03/12/2021 10:54:43 Št. trenutni: 0
+03/12/2021 10:57:12 Št. trenutni: 2
+03/12/2021 10:57:13 Št. trenutni: 2
+03/12/2021 10:57:15 Št. trenutni: 2
+03/12/2021 10:58:03 Št. trenutni: 2
+03/12/2021 11:02:57 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+03/12/2021 11:02:57 SaveRecall1 : (model.Content.OdpoklicID) :9073- Status : 1
+03/12/2021 11:02:57 SaveRecall1 : (model.Content.OdpoklicStevilka) :8599- Status : 1
+03/12/2021 11:03:13 Št. trenutni: 0
+03/12/2021 11:03:17 Št. trenutni: 2
+03/12/2021 11:04:35 Št. trenutni: 0
+03/12/2021 11:04:38 Št. trenutni: 2
+06/12/2021 10:13:11 Št. trenutni: 0
+06/12/2021 10:13:46 Št. trenutni: 1
+06/12/2021 10:14:00 SaveBuyerRecall : (model.Content.OdpoklicID) - Začetek!
+06/12/2021 10:14:00 SaveRecall2 : (model.Content.OdpoklicID) :0
+06/12/2021 10:14:18 Številka naročilnice: 2102400000918
+08/12/2021 11:05:22 GetListOfOrderNumber10
+08/12/2021 11:06:10 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+08/12/2021 11:06:37 GetListOfOpenedOrderPositions for : GRAFOMA D.O.O.                
+08/12/2021 11:07:02 GetListOfOpenedOrderPositions for : LEIPA GEORG LEINFELDER GMBH   
+08/12/2021 11:07:21 GetListOfOpenedOrderPositions for : LENZING PAPIER                
+08/12/2021 11:09:04 Št. trenutni: 0
+08/12/2021 11:10:46 Št. trenutni: 0
+08/12/2021 11:11:02 Št. trenutni: 0
+08/12/2021 11:11:03 Št. trenutni: 0
+08/12/2021 11:11:03 Št. trenutni: 0
+08/12/2021 11:17:13 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+08/12/2021 11:17:16 SaveRecall2 : (model.Content.OdpoklicID) :0
+08/12/2021 11:17:19 SaveRecall2 : (RazlogOdobritveSistem) :
+08/12/2021 11:23:00 GetListOfOrderNumber10
+08/12/2021 11:23:05 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+08/12/2021 11:23:53 Št. trenutni: 0
+08/12/2021 11:25:55 Št. trenutni: 0
+08/12/2021 11:26:00 Št. trenutni: 0
+08/12/2021 11:26:00 Št. trenutni: 0
+08/12/2021 11:26:01 Št. trenutni: 0
+08/12/2021 11:26:12 Št. trenutni: 0
+08/12/2021 11:26:13 Št. trenutni: 0
+08/12/2021 11:26:13 Št. trenutni: 0
+08/12/2021 12:06:25 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+08/12/2021 12:06:25 SaveRecall2 : (model.Content.OdpoklicID) :0
+08/12/2021 12:06:25 SaveRecall2 : (RazlogOdobritveSistem) :
+09/12/2021 11:14:19 Št. trenutni: 0
+09/12/2021 11:36:01 Št. trenutni: 0
+10/12/2021 08:07:58 Št. trenutni: 0
+10/12/2021 08:16:03 Št. trenutni: 0
+10/12/2021 08:24:12 Št. trenutni: 11
+10/12/2021 09:46:18 Št. trenutni: 7
+10/12/2021 09:48:59 Št. trenutni: 22
+10/12/2021 09:51:21 Št. trenutni: 22
+10/12/2021 09:53:13 Št. trenutni: 22
+10/12/2021 09:55:46 Št. trenutni: 22
+10/12/2021 09:57:42 Št. trenutni: 22
+10/12/2021 09:58:12 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 6
+10/12/2021 09:58:12 SaveRecall1 : (model.Content.OdpoklicID) :9008- Status : 6
+10/12/2021 09:58:12 SaveRecall1 : (model.Content.OdpoklicStevilka) :8542- Status : 6
+10/12/2021 09:58:40 Št. trenutni: 22
+10/12/2021 10:02:28 Št. trenutni: 22
+10/12/2021 11:14:29 GetListOfOrderNumber10
+15/12/2021 14:16:56 GetListOfOrderNumber10
+15/12/2021 14:19:32 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+15/12/2021 14:19:41 GetListOfOpenedOrderPositions for : IBERBOARD MILL S.L.           
+15/12/2021 14:20:23 GetListOfOrderNumber10
+15/12/2021 14:20:29 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+15/12/2021 14:31:45 GetListOfOrderNumber10
+15/12/2021 14:31:51 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+15/12/2021 14:37:52 GetListOfOrderNumber10
+15/12/2021 14:38:21 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+15/12/2021 14:50:08 GetListOfOrderNumber10
+15/12/2021 14:50:13 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+15/12/2021 14:51:59 GetListOfOrderNumber10
+15/12/2021 14:52:06 GetListOfOpenedOrderPositions for : CARTIERA GIORGIONE S.P.A.     
+15/12/2021 14:54:14 GetListOfOrderNumber10
+15/12/2021 14:54:20 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+15/12/2021 15:09:13 GetListOfOrderNumber10
+15/12/2021 15:09:28 GetListOfOpenedOrderPositions for : CARTIERA FORNACI S.p.A.       
+15/12/2021 15:13:12 GetListOfOrderNumber10
+15/12/2021 15:13:34 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+15/12/2021 15:17:49 Št. trenutni: 3
+15/12/2021 15:17:52 Št. trenutni: 3
+15/12/2021 15:19:43 Št. trenutni: 3
+15/12/2021 15:19:46 Št. trenutni: 3
+15/12/2021 15:29:42 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+15/12/2021 15:29:42 SaveRecall2 : (model.Content.OdpoklicID) :0
+15/12/2021 15:29:42 SaveRecall2 : (RazlogOdobritveSistem) :
+16/12/2021 15:58:46 GetListOfOrderNumber10
+16/12/2021 16:03:04 GetListOfOpenedOrderPositions for : BRANCHER                      
+17/12/2021 10:37:20 GetListOfOrderNumber10
+17/12/2021 10:37:49 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/12/2021 10:38:27 GetListOfOrderNumber10
+17/12/2021 10:38:32 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/12/2021 11:13:31 Št. trenutni: 3
+17/12/2021 11:15:45 Št. trenutni: 3
+17/12/2021 11:15:46 Št. trenutni: 3
+17/12/2021 11:19:51 GetListOfOrderNumber10
+17/12/2021 11:20:35 GetListOfOpenedOrderPositions for : ROXCEL TRADING GMBH.          
+17/12/2021 11:23:48 Št. trenutni: 3
+17/12/2021 11:23:54 Št. trenutni: 3
+17/12/2021 11:23:56 Št. trenutni: 3
+17/12/2021 11:29:06 GetListOfOrderNumber10
+17/12/2021 11:29:12 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+17/12/2021 11:30:42 Št. trenutni: 0
+17/12/2021 11:32:31 GetListOfOrderNumber10
+17/12/2021 11:32:38 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+17/12/2021 11:33:49 Št. trenutni: 2
+17/12/2021 11:33:52 Št. trenutni: 2
+17/12/2021 11:33:57 Št. trenutni: 2
+17/12/2021 11:36:20 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+17/12/2021 11:36:25 SaveRecall-0 : (model.Content.Dobavitelj) :0- Status : 4
+17/12/2021 11:36:41 SaveRecall-3 : (model.Content.Dobavitelj) :0- Status : 4
+17/12/2021 11:36:41 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/12/2021 11:36:43 SaveRecall2 : (RazlogOdobritveSistem) :
+17/12/2021 11:38:27 SaveRecall-4 : (model.Content.Dobavitelj) :0- Status : 4
+19/12/2021 12:56:02 Št. trenutni: 1
+19/12/2021 13:01:06 Št. trenutni: 1
+19/12/2021 13:05:32 Št. trenutni: 1
+19/12/2021 13:06:20 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+19/12/2021 13:10:17 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+19/12/2021 13:10:18 SaveRecall-0 : (model.Content.Dobavitelj) :MEL PAPER GREECE
+19/12/2021 13:10:25 SaveRecall-0 : (model.Content.DobaviteljID) :0
+19/12/2021 13:10:26 SaveRecall1 : (model.Content.OdpoklicID) :9537- Status : 1
+19/12/2021 13:10:26 SaveRecall1 : (model.Content.OdpoklicStevilka) :8883- Status : 1
+19/12/2021 13:10:26 SaveRecall-1 : (model.Content.DobaviteljID) :0
+19/12/2021 13:10:26 SaveRecall-1 : (model.Content.Dobavitelj) :MEL PAPER GREECE
+19/12/2021 13:15:01 Št. trenutni: 1
+19/12/2021 13:15:25 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+19/12/2021 13:15:25 SaveRecall-0 : (model.Content.Dobavitelj) :MEL PAPER GREECE
+19/12/2021 13:15:25 SaveRecall-0 : (model.Content.DobaviteljID) :0
+19/12/2021 13:15:25 SaveRecall1 : (model.Content.OdpoklicID) :9537- Status : 1
+19/12/2021 13:15:25 SaveRecall1 : (model.Content.OdpoklicStevilka) :8883- Status : 1
+19/12/2021 13:15:25 SaveRecall-1 : (model.Content.DobaviteljID) :0
+19/12/2021 13:15:25 SaveRecall-1 : (model.Content.Dobavitelj) :MEL PAPER GREECE
+19/12/2021 13:15:47 GetListOfOrderNumber10
+19/12/2021 13:20:05 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+19/12/2021 13:29:27 Št. trenutni: 3
+19/12/2021 13:29:30 Št. trenutni: 3
+19/12/2021 13:29:33 Št. trenutni: 3
+19/12/2021 13:38:04 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+19/12/2021 13:38:04 SaveRecall-0 : (model.Content.Dobavitelj) :JMPRINT d.o.o.
+19/12/2021 13:38:05 SaveRecall-0 : (model.Content.DobaviteljID) :0
+19/12/2021 13:38:07 SaveRecall-3 : (model.Content.DobaviteljID) :0
+19/12/2021 13:38:07 SaveRecall-3 : (model.Content.Dobavitelj) :JMPRINT d.o.o.
+19/12/2021 13:38:07 SaveRecall2 : (model.Content.OdpoklicID) :0
+19/12/2021 13:38:10 SaveRecall2 : (RazlogOdobritveSistem) :
+19/12/2021 13:38:11 SaveRecall-4 : (model.Content.DobaviteljID) :0
+19/12/2021 13:38:12 SaveRecall-4 : (model.Content.Dobavitelj) :JMPRINT d.o.o.
+19/12/2021 23:20:40 Št. trenutni: 10
+19/12/2021 23:21:12 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+19/12/2021 23:21:12 SaveRecall-0 : (model.Content.Dobavitelj) :ARCTIC PAPER KOSTRZYN S.A.
+19/12/2021 23:21:12 SaveRecall-0 : (model.Content.DobaviteljID) :0
+19/12/2021 23:21:12 0
+19/12/2021 23:21:12 ARCTIC PAPER KOSTRZYN S.A.
+19/12/2021 23:21:12 SaveRecall1 : (model.Content.OdpoklicID) :9375- Status : 1
+19/12/2021 23:21:12 SaveRecall1 : (model.Content.OdpoklicStevilka) :8761- Status : 1
+19/12/2021 23:21:12 0
+19/12/2021 23:21:12 ARCTIC PAPER KOSTRZYN S.A.
+20/12/2021 11:40:45 GetListOfOrderNumber10
+20/12/2021 11:41:00 GetListOfOpenedOrderPositions for : VAL KART d.o.o.               
+20/12/2021 11:45:23 Št. trenutni: 0
+20/12/2021 11:45:26 Št. trenutni: 0
+20/12/2021 11:45:27 Št. trenutni: 0
+20/12/2021 11:46:03 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+20/12/2021 11:46:03 SaveRecall-0 : (model.Content.Dobavitelj) :VAL KART d.o.o.
+20/12/2021 11:46:03 SaveRecall-0 : (model.Content.DobaviteljID) :0
+20/12/2021 11:46:03 0
+20/12/2021 11:46:03 VAL KART d.o.o.
+20/12/2021 11:46:03 0
+20/12/2021 11:46:03 VAL KART d.o.o.
+20/12/2021 11:46:03 SaveRecall2 : (model.Content.OdpoklicID) :0
+20/12/2021 11:46:03 SaveRecall2 : (RazlogOdobritveSistem) :
+20/12/2021 11:46:03 0
+20/12/2021 11:46:03 VAL KART d.o.o.
+20/12/2021 11:46:45 GetListOfOrderNumber10
+20/12/2021 11:46:54 GetListOfOpenedOrderPositions for : VAL KART d.o.o.               
+20/12/2021 11:48:15 Št. trenutni: 0
+20/12/2021 11:48:16 Št. trenutni: 0
+20/12/2021 11:48:17 Št. trenutni: 0
+20/12/2021 11:48:41 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+20/12/2021 11:48:41 SaveRecall-0 : (model.Content.Dobavitelj) :VAL KART d.o.o.
+20/12/2021 11:48:41 SaveRecall-0 : (model.Content.DobaviteljID) :0
+20/12/2021 11:48:41 0
+20/12/2021 11:48:41 VAL KART d.o.o.
+20/12/2021 11:48:41 0
+20/12/2021 11:48:41 VAL KART d.o.o.
+20/12/2021 11:48:41 SaveRecall2 : (model.Content.OdpoklicID) :0
+20/12/2021 11:48:41 SaveRecall2 : (RazlogOdobritveSistem) :
+20/12/2021 11:48:41 0
+20/12/2021 11:48:41 VAL KART d.o.o.
+24/12/2021 10:05:02 GetListOfOrderNumber10
+24/12/2021 10:05:52 GetListOfOpenedOrderPositions for : JMPRINT d.o.o.                
+24/12/2021 10:05:58 GetListOfOpenedOrderPositions for : HOLMEN AKTIEBOLAG MOMSGRUPP   
+24/12/2021 10:36:28 GetListOfOrderNumber10
+24/12/2021 10:36:34 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+24/12/2021 10:38:46 Št. trenutni: 0
+24/12/2021 10:40:32 Št. trenutni: 0
+24/12/2021 10:40:41 Št. trenutni: 0
+24/12/2021 10:40:42 Št. trenutni: 0
+24/12/2021 10:40:43 Št. trenutni: 0
+24/12/2021 10:42:34 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+24/12/2021 10:42:34 SaveRecall-0 : (model.Content.Dobavitelj) :BURGO GROUP s.p.a.
+24/12/2021 10:42:34 SaveRecall-0 : (model.Content.DobaviteljID) :0
+24/12/2021 10:42:34 0
+24/12/2021 10:42:34 BURGO GROUP s.p.a.
+24/12/2021 10:42:34 0
+24/12/2021 10:42:34 BURGO GROUP s.p.a.
+24/12/2021 10:42:34 SaveRecall2 : (model.Content.OdpoklicID) :0
+24/12/2021 10:42:34 SaveRecall2 : (RazlogOdobritveSistem) :
+24/12/2021 10:42:35 0
+24/12/2021 10:42:35 BURGO GROUP s.p.a.

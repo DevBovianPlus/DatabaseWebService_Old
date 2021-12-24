@@ -1,5 +1,7 @@
-﻿using DatabaseWebService.DomainOTP.Abstract;
+﻿using DatabaseWebService.Common;
+using DatabaseWebService.DomainOTP.Abstract;
 using DatabaseWebService.Models;
+using DatabaseWebService.ModelsOTP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,10 +45,89 @@ namespace DatabaseWebService.DomainOTP.Concrete
                     model.Role = tmpUsers.Vloga_OTP.Koda;
                     model.RoleName = tmpUsers.Vloga_OTP.Naziv;
                 }
+
+
+                //login into logging table
+                AktivnostUporabnikaModel aktUporab = GetAktivnostUporabnikaByDateAndUser(model, DateTime.Now.Date);
+
+                if (aktUporab == null)
+                {
+                    AddUpdateAktivnostUporabnika(model, aktUporab, false);
+                }
+                else
+                {
+                    AddUpdateAktivnostUporabnika(model, aktUporab, true);
+                }
             }
 
             return model;
         }
+
+        public AktivnostUporabnikaModel GetAktivnostUporabnikaByDateAndUser(UserModel usr, DateTime CurentDate)
+        {
+            var query = from akt in context.AktivnostUporabnika
+                        where akt.OsebaID.Equals(usr.ID) && akt.TS.Year == CurentDate.Year
+                            && akt.TS.Month == CurentDate.Month
+                            && akt.TS.Day == CurentDate.Day
+                        select new AktivnostUporabnikaModel
+                        {
+                            AktivnostUporabnikaID = akt.AktivnostUporabnikaID,
+                            AktivnostUporabnikaStatusID = akt.AktivnostUporabnikaStatusID,
+                            OsebaID = akt.OsebaID,
+                            Opis = akt.Opis,
+                            ts = akt.TS,
+                        };
+
+            return query.FirstOrDefault();
+        }
+
+        public AktivnostUporabnikaModel GetAktivnostUporabnikaByDateAndUserID(int UserID, string CurentDateStr)
+        {
+            DateTime? CurentDate = DataTypesHelper.ParseDateTime(CurentDateStr);
+
+            var query = from akt in context.AktivnostUporabnika
+                        where akt.OsebaID.Equals(UserID) && akt.TS.Year == CurentDate.Value.Year
+                            && akt.TS.Month == CurentDate.Value.Month
+                            && akt.TS.Day == CurentDate.Value.Day
+                        select new AktivnostUporabnikaModel
+                        {
+                            AktivnostUporabnikaID = akt.AktivnostUporabnikaID,
+                            AktivnostUporabnikaStatusID = akt.AktivnostUporabnikaStatusID,
+                            OsebaID = akt.OsebaID,
+                            Opis = akt.Opis,
+                            ts = akt.TS,
+                        };
+
+            return query.FirstOrDefault();
+        }
+
+        public void AddUpdateAktivnostUporabnika(UserModel usr, AktivnostUporabnikaModel aktUporab, bool updateRecord = true)
+        {
+            AktivnostUporabnika record = new AktivnostUporabnika();
+            record.AktivnostUporabnikaID = aktUporab==null ? 0 : aktUporab.AktivnostUporabnikaID;
+            record.OsebaID = usr.ID;
+            record.AktivnostUporabnikaStatusID = 1;
+            record.Opis = "Prijava";
+
+            if (!updateRecord)
+            {
+                record.TS = DateTime.Now;
+
+                context.AktivnostUporabnika.Add(record);
+                context.SaveChanges();
+            }
+            else
+            {
+                record.TS = DateTime.Now;
+                AktivnostUporabnika original = context.AktivnostUporabnika.Where(e => e.AktivnostUporabnikaID == aktUporab.AktivnostUporabnikaID).FirstOrDefault();
+                context.Entry(original).CurrentValues.SetValues(record);
+
+                context.SaveChanges();
+            }
+        }
+
+
+
 
         public Vloga_OTP GetRoleByID(int id)
         {

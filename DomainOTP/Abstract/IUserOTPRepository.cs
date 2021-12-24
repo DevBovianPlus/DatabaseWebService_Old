@@ -1,4 +1,5 @@
 ﻿using DatabaseWebService.Models;
+using DatabaseWebService.ModelsOTP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,8 @@ namespace DatabaseWebService.DomainOTP.Abstract
         Vloga_OTP GetRoleByID(int id);
 
         string GetRoleNameByID(int id);
+
+        AktivnostUporabnikaModel GetAktivnostUporabnikaByDateAndUser(UserModel usr, DateTime CurentDate);
+        AktivnostUporabnikaModel GetAktivnostUporabnikaByDateAndUserID(int UserID, string CurentDateStr);
     }
 }

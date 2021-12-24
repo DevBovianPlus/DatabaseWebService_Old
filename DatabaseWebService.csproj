@@ -360,8 +360,15 @@
     <Compile Include="DomainOTP\Abstract\ISystemEmailMessageRepository_OTP.cs" />
     <Compile Include="DomainOTP\Abstract\ISystemMessageEventsRepository_OTP.cs" />
     <Compile Include="DomainOTP\Abstract\ITenderRepository.cs" />
+    <Compile Include="DomainOTP\Abstract\IAktivnostUporabnikaRepository.cs" />
     <Compile Include="DomainOTP\Abstract\IUserOTPRepository.cs" />
     <Compile Include="DomainOTP\Abstract\IUtilityServiceRepository.cs" />
+    <Compile Include="DomainOTP\AktivnostUporabnika.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainOTP\AktivnostUporabnikaStatus.cs">
+      <DependentUpon>Grafolit_OTP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DomainOTP\Concrete\ClientOTPRepository.cs" />
     <Compile Include="DomainOTP\Concrete\DashboardRepository.cs" />
     <Compile Include="DomainOTP\Concrete\EmployeeOTPRepository.cs" />
@@ -372,6 +379,7 @@
     <Compile Include="DomainOTP\Concrete\SystemEmailMessageRepository_OTP.cs" />
     <Compile Include="DomainOTP\Concrete\SystemMessageEventsRepository_OTP.cs" />
     <Compile Include="DomainOTP\Concrete\TenderRepository.cs" />
+    <Compile Include="DomainOTP\Concrete\AktivnostUporabnikaRepository.cs" />
     <Compile Include="DomainOTP\Concrete\UserOTPRepository.cs" />
     <Compile Include="DomainOTP\Concrete\UtilityServiceRepository.cs" />
     <Compile Include="DomainOTP\GetLastYearRecallCountBySuplierAndRoute_Result.cs">
@@ -725,8 +733,10 @@
     <Compile Include="ModelsNOZ\ProductColor.cs" />
     <Compile Include="ModelsNOZ\Settings\NOZEmailModel.cs" />
     <Compile Include="ModelsNOZ\Settings\SettingsNOZModel.cs" />
+    <Compile Include="ModelsOTP\AktivnostUporabnikaModel.cs" />
     <Compile Include="ModelsOTP\Client\CarrierModel.cs" />
     <Compile Include="ModelsOTP\CreateOrderModel.cs" />
+    <Compile Include="ModelsOTP\AktivnostUporabnikaStatusModel.cs" />
     <Compile Include="ModelsOTP\LanguageModelOTP.cs" />
     <Compile Include="ModelsOTP\LogisticsMailPartialModel.cs" />
     <Compile Include="ModelsOTP\LogisticsMailModel.cs" />

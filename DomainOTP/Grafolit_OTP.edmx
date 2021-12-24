@@ -5,6 +5,27 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="GrafolitOTPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AktivnostUporabnika">
+          <Key>
+            <PropertyRef Name="AktivnostUporabnikaID" />
+          </Key>
+          <Property Name="AktivnostUporabnikaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OsebaID" Type="int" Nullable="false" />
+          <Property Name="AktivnostUporabnikaStatusID" Type="int" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="20" />
+          <Property Name="Opis" Type="nchar" MaxLength="10" />
+          <Property Name="TS" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AktivnostUporabnikaStatus">
+          <Key>
+            <PropertyRef Name="AktivnostUporabnikaStatusID" />
+          </Key>
+          <Property Name="AktivnostUporabnikaStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Koda" Type="varchar" MaxLength="15" />
+          <Property Name="Naziv" Type="varchar" MaxLength="30" />
+          <Property Name="Opis" Type="varchar" MaxLength="150" />
+          <Property Name="TS" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Jeziki">
           <Key>
             <PropertyRef Name="JezikID" />
@@ -260,10 +281,10 @@
           <Property Name="ts" Type="datetime" />
           <Property Name="tsIDOsebe" Type="int" />
           <Property Name="activity" Type="int" />
-          <Property Name="PantheonUsrID" Type="int" />
-          <Property Name="PantheonUsrChar" Type="varchar" MaxLength="50" />
           <Property Name="OTPPantheonUsrID" Type="int" />
           <Property Name="OTPPantheonUsrChar" Type="varchar" MaxLength="50" />
+          <Property Name="PantheonUsrID" Type="int" />
+          <Property Name="PantheonUsrChar" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OsebeNadrejeni_OTP">
           <Key>
@@ -508,6 +529,34 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
           <Property Name="Artikel" Type="varchar" MaxLength="80" />
           <Property Name="Kolicina_Prevzema" Type="decimal" Precision="19" Scale="6" Nullable="false" />
         </EntityType>
+        <Association Name="FK_AktivnostUporabnika_AktivnostUporabnikaStatus">
+          <End Role="AktivnostUporabnikaStatus" Type="Self.AktivnostUporabnikaStatus" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AktivnostUporabnika" Type="Self.AktivnostUporabnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AktivnostUporabnikaStatus">
+              <PropertyRef Name="AktivnostUporabnikaStatusID" />
+            </Principal>
+            <Dependent Role="AktivnostUporabnika">
+              <PropertyRef Name="AktivnostUporabnikaStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AktivnostUporabnika_Osebe">
+          <End Role="Osebe_OTP" Type="Self.Osebe_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AktivnostUporabnika" Type="Self.AktivnostUporabnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="AktivnostUporabnika">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Jezik">
           <End Role="Jeziki" Type="Self.Jeziki" Multiplicity="0..1" />
           <End Role="Stranka_OTP" Type="Self.Stranka_OTP" Multiplicity="*" />
@@ -1102,6 +1151,8 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
           </ReturnType>
         </Function>
         <EntityContainer Name="GrafolitOTPModelStoreContainer">
+          <EntitySet Name="AktivnostUporabnika" EntityType="Self.AktivnostUporabnika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AktivnostUporabnikaStatus" EntityType="Self.AktivnostUporabnikaStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jeziki" EntityType="Self.Jeziki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KontaktneOsebe_OTP" EntityType="Self.KontaktneOsebe_OTP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LastnaZaloga" EntityType="Self.LastnaZaloga" Schema="dbo" store:Type="Tables" />
@@ -1138,6 +1189,14 @@ warning 6002: The table/view 'GrafolitOTP_Prod1.dbo.PrevzemiView' does not have 
 [PrevzemiView].[Kolicina_Prevzema] AS [Kolicina_Prevzema]
 FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_AktivnostUporabnika_AktivnostUporabnikaStatus" Association="Self.FK_AktivnostUporabnika_AktivnostUporabnikaStatus">
+            <End Role="AktivnostUporabnikaStatus" EntitySet="AktivnostUporabnikaStatus" />
+            <End Role="AktivnostUporabnika" EntitySet="AktivnostUporabnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AktivnostUporabnika_Osebe" Association="Self.FK_AktivnostUporabnika_Osebe">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="AktivnostUporabnika" EntitySet="AktivnostUporabnika" />
+          </AssociationSet>
           <AssociationSet Name="FK_Jezik" Association="Self.FK_Jezik">
             <End Role="Jeziki" EntitySet="Jeziki" />
             <End Role="Stranka_OTP" EntitySet="Stranka_OTP" />
@@ -1504,6 +1563,16 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <FunctionImport Name="SeznamPovezanihFakturByOrderNo" ReturnType="Collection(GrafolitOTPModel.SeznamPovezanihFakturByOrderNo_Result)">
           <Parameter Name="p_orderNo" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="AktivnostUporabnika" EntityType="GrafolitOTPModel.AktivnostUporabnika" />
+          <EntitySet Name="AktivnostUporabnikaStatus" EntityType="GrafolitOTPModel.AktivnostUporabnikaStatus" />
+          <AssociationSet Name="FK_AktivnostUporabnika_AktivnostUporabnikaStatus" Association="GrafolitOTPModel.FK_AktivnostUporabnika_AktivnostUporabnikaStatus">
+            <End Role="AktivnostUporabnikaStatus" EntitySet="AktivnostUporabnikaStatus" />
+            <End Role="AktivnostUporabnika" EntitySet="AktivnostUporabnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AktivnostUporabnika_Osebe" Association="GrafolitOTPModel.FK_AktivnostUporabnika_Osebe">
+            <End Role="Osebe_OTP" EntitySet="Osebe_OTP" />
+            <End Role="AktivnostUporabnika" EntitySet="AktivnostUporabnika" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Osebe_OTP">
           <Key>
@@ -1538,6 +1607,7 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Name="PantheonUsrChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OTPPantheonUsrID" Type="Int32" />
           <Property Name="OTPPantheonUsrChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AktivnostUporabnika" Relationship="GrafolitOTPModel.FK_AktivnostUporabnika_Osebe" FromRole="Osebe_OTP" ToRole="AktivnostUporabnika" />
         </EntityType>
         <EntityType Name="Vloga_OTP">
           <Key>
@@ -2626,7 +2696,59 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
           <Property Type="Double" Name="VredTrans" Nullable="true" />
           <Property Type="Double" Name="ProcTransFakt" Nullable="true" />
           <Property Type="Decimal" Name="Kolicina" Nullable="true" Precision="38" Scale="6" />
-        </ComplexType>       
+        </ComplexType>
+        <EntityType Name="AktivnostUporabnika">
+          <Key>
+            <PropertyRef Name="AktivnostUporabnikaID" />
+          </Key>
+          <Property Name="AktivnostUporabnikaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OsebaID" Type="Int32" Nullable="false" />
+          <Property Name="AktivnostUporabnikaStatusID" Type="Int32" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TS" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AktivnostUporabnikaStatus" Relationship="GrafolitOTPModel.FK_AktivnostUporabnika_AktivnostUporabnikaStatus" FromRole="AktivnostUporabnika" ToRole="AktivnostUporabnikaStatus" />
+          <NavigationProperty Name="Osebe_OTP" Relationship="GrafolitOTPModel.FK_AktivnostUporabnika_Osebe" FromRole="AktivnostUporabnika" ToRole="Osebe_OTP" />
+        </EntityType>
+        <EntityType Name="AktivnostUporabnikaStatus">
+          <Key>
+            <PropertyRef Name="AktivnostUporabnikaStatusID" />
+          </Key>
+          <Property Name="AktivnostUporabnikaStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Koda" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Opis" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TS" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AktivnostUporabnika" Relationship="GrafolitOTPModel.FK_AktivnostUporabnika_AktivnostUporabnikaStatus" FromRole="AktivnostUporabnikaStatus" ToRole="AktivnostUporabnika" />
+        </EntityType>
+        <Association Name="FK_AktivnostUporabnika_AktivnostUporabnikaStatus">
+          <End Type="GrafolitOTPModel.AktivnostUporabnikaStatus" Role="AktivnostUporabnikaStatus" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.AktivnostUporabnika" Role="AktivnostUporabnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AktivnostUporabnikaStatus">
+              <PropertyRef Name="AktivnostUporabnikaStatusID" />
+            </Principal>
+            <Dependent Role="AktivnostUporabnika">
+              <PropertyRef Name="AktivnostUporabnikaStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AktivnostUporabnika_Osebe">
+          <End Type="GrafolitOTPModel.Osebe_OTP" Role="Osebe_OTP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="GrafolitOTPModel.AktivnostUporabnika" Role="AktivnostUporabnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osebe_OTP">
+              <PropertyRef Name="idOsebe" />
+            </Principal>
+            <Dependent Role="AktivnostUporabnika">
+              <PropertyRef Name="OsebaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>       
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3262,6 +3384,29 @@ FROM [dbo].[PrevzemiView] AS [PrevzemiView]</DefiningQuery>
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="AktivnostUporabnika">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.AktivnostUporabnika">
+              <MappingFragment StoreEntitySet="AktivnostUporabnika">
+                <ScalarProperty Name="TS" ColumnName="TS" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="AktivnostUporabnikaStatusID" ColumnName="AktivnostUporabnikaStatusID" />
+                <ScalarProperty Name="OsebaID" ColumnName="OsebaID" />
+                <ScalarProperty Name="AktivnostUporabnikaID" ColumnName="AktivnostUporabnikaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AktivnostUporabnikaStatus">
+            <EntityTypeMapping TypeName="GrafolitOTPModel.AktivnostUporabnikaStatus">
+              <MappingFragment StoreEntitySet="AktivnostUporabnikaStatus">
+                <ScalarProperty Name="TS" ColumnName="TS" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Koda" ColumnName="Koda" />
+                <ScalarProperty Name="AktivnostUporabnikaStatusID" ColumnName="AktivnostUporabnikaStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
