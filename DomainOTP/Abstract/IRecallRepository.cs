@@ -13,6 +13,7 @@ namespace DatabaseWebService.DomainOTP.Abstract
         List<RecallModel> GetAllRecalls();
 
         RecallFullModel GetRecallFullModelByID(int recallID);
+        RecallModel GetRecallModelByID(int recallID);
         RecallBuyerFullModel GetRecallBuyerFullModelByID(int recallID);
         List<RecallPositionModel> GetRecallPositionsByID(int recallID);
         RecallPositionModel GetRecallPositionByID(int recallPositionID);

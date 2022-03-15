@@ -203,5 +203,10 @@ namespace DatabaseWebService.Common.Enums
             PDO,
             NOZ
         }
+        public enum StatusPozicijeOTP
+        {
+            O = 0, // odpoklicana pozicija 
+            D = 1  // delavna pozicija
+        }
     }
 }

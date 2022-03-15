@@ -65,6 +65,43 @@ namespace DatabaseWebService.DomainOTP.Concrete
             }
         }
 
+        public RecallModel GetRecallModelByID(int recallID)
+        {
+            try
+            {
+                var query = from recall in context.Odpoklic
+                            where recall.OdpoklicID == recallID
+                            select new RecallModel
+                            {
+                                CenaPrevoza = recall.CenaPrevoza.HasValue ? recall.CenaPrevoza.Value : 0,
+                                DobaviteljID = recall.DobaviteljID.HasValue ? recall.DobaviteljID.Value : 0,
+                                DobaviteljNaziv = recall.DobaviteljNaziv,
+                                KolicinaSkupno = recall.KolicinaSkupno,
+                                OdpoklicID = recall.OdpoklicID,
+                                RelacijaID = recall.RelacijaID.HasValue ? recall.RelacijaID.Value : 0,
+                                RelacijaNaziv = recall.Relacija != null ? recall.Relacija.Naziv : "",
+                                StatusID = recall.StatusID,
+                                StatusNaziv = recall.StatusOdpoklica != null ? recall.StatusOdpoklica.Naziv : "",
+                                StatusKoda = recall.StatusOdpoklica != null ? recall.StatusOdpoklica.Koda : "",
+                                ts = recall.ts.HasValue ? recall.ts.Value : DateTime.MinValue,
+                                tsIDOseba = recall.tsIDOseba.HasValue ? recall.tsIDOseba.Value : 0,
+                                OdpoklicStevilka = recall.OdpoklicStevilka.HasValue ? recall.OdpoklicStevilka.Value : 0,
+                                DobaviteljUrediTransport = recall.DobaviteljUrediTransport.HasValue ? recall.DobaviteljUrediTransport.Value : false,
+                                DobaviteljKraj = recall.DobaviteljKraj,
+                                DobaviteljNaslov = recall.DobaviteljNaslov,
+                                DobaviteljPosta = recall.DobaviteljPosta
+                            };
+
+                RecallModel model = query.FirstOrDefault();
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ValidationExceptionError.res_06, ex);
+            }
+        }
+
 
         public RecallFullModel GetRecallFullModelByID(int recallID)
         {

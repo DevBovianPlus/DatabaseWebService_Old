@@ -24,12 +24,14 @@ namespace DatabaseWebService.DomainOTP.Concrete
         GrafolitOTPEntities context;
         GrafolitPDOEntities contextPDO;
         GrafolitNOZEntities contextNOZ;
+        //IRecallRepository recallRepo;
 
         public MSSQLFunctionsRepository(GrafolitOTPEntities _context, GrafolitPDOEntities _contextPDO, GrafolitNOZEntities _contextNOZ)
         {
             context = _context;
             contextPDO = _contextPDO;
             contextNOZ = _contextNOZ;
+            //recallRepo = _recallRepo;
         }
 
         public List<SupplierModel> GetListOfSupplier()
@@ -102,6 +104,70 @@ namespace DatabaseWebService.DomainOTP.Concrete
             {
                 throw new Exception(ValidationExceptionError.res_06, ex);
             }
+        }
+
+        private RecallPositionModel CheckIfOTPPosIsOnTakeOver(string sIdent, string sNarocilnica)
+        {
+
+            var query = from position in context.OdpoklicPozicija
+                        where position.MaterialIdent == sIdent && position.NarociloID == sNarocilnica
+                        select new RecallPositionModel
+                        {
+                            Kolicina = position.Kolicina,
+                            StPalet = position.StPalet.HasValue ? position.StPalet.Value : 0,
+                            KolicinaIzNarocila = position.KolicinaIzNarocila,
+                            Material = position.Material,
+                            NarociloID = position.NarociloID,
+                            NarociloPozicijaID = position.NarociloPozicijaID,
+                            OdpoklicID = position.OdpoklicID,
+                            OdpoklicPozicijaID = position.OdpoklicPozicijaID,
+                            StatusKolicine = position.StatusKolicine,
+                            ts = position.ts.HasValue ? position.ts.Value : DateTime.MinValue,
+                            tsIDOseba = position.tsIDOseba.HasValue ? position.tsIDOseba.Value : 0,
+                            TipID = position.TipID,
+                            TipOdpoklica = (from type in context.TipOdpoklica
+                                            where type.TipOdpoklicaID == position.TipID
+                                            select new RecallType
+                                            {
+                                                Koda = type.Koda,
+                                                Naziv = type.Naziv,
+                                                Opis = type.Opis,
+                                                TipOdpoklicaID = type.TipOdpoklicaID,
+                                                ts = position.ts.HasValue ? position.ts.Value : DateTime.MinValue,
+                                                tsIDOseba = position.tsIDOseba.HasValue ? position.tsIDOseba.Value : 0
+                                            }).FirstOrDefault(),
+                            OC = position.OC,
+                            KolicinaPrevzeta = position.KolicinaPrevzeta.HasValue ? position.KolicinaPrevzeta.Value : 0,
+                            KolicinaRazlika = position.KolicinaRazlika.HasValue ? position.KolicinaRazlika.Value : 0,
+                            Palete = position.Palete.HasValue ? position.Palete.Value : 0,
+                            KupecNaziv = position.KupecNaziv,
+                            KupecViden = position.KupecViden.HasValue ? position.KupecViden.Value : 0,
+                            OptimalnaZaloga = position.OptimalnaZaloga.HasValue ? position.OptimalnaZaloga.Value : 0,
+                            TrenutnaZaloga = position.TrenutnaZaloga.HasValue ? position.TrenutnaZaloga.Value : 0,
+                            Interno = position.Interno,
+                            TipNaziv = position.TipNaziv,
+                            Proizvedeno = position.Proizvedeno.HasValue ? position.Proizvedeno.Value : 0,
+                            MaterialIdent = position.MaterialIdent,
+                            DatumVnosa = position.DatumVnosa.HasValue ? position.DatumVnosa.Value : DateTime.MinValue,
+                            KolicinaOTP = position.KolicinaOTP.HasValue ? position.KolicinaOTP.Value : 0,
+                            StatusPrevzeto = position.StatusPrevzeto.HasValue ? position.StatusPrevzeto.Value : false,
+                            ZaporednaStevilka = position.ZaporednaStevilka.HasValue ? position.ZaporednaStevilka.Value : 0,
+                            KolicinaOTPPozicijaNarocilnice = position.KolicinaOTPPozicijaNarocilnice.HasValue ? position.KolicinaOTPPozicijaNarocilnice.Value : 0,
+                            KupecNaslov = position.KupecNaslov,
+                            KupecKraj = position.KupecKraj,
+                            KupecPosta = position.KupecPosta,
+                            OdpoklicIzLastneZaloge = position.OdpoklicIzLastneZaloge.HasValue ? position.OdpoklicIzLastneZaloge.Value : false,
+                            PrvotniOdpoklicPozicijaID = position.PrvotniOdpoklicPozicijaID.HasValue ? position.PrvotniOdpoklicPozicijaID.Value : 0,
+                            Split = position.Split.HasValue ? position.Split.Value : false,
+                            EnotaMere = position.EnotaMere,
+                            TransportnaKolicina = position.TransportnaKolicina.HasValue ? position.TransportnaKolicina.Value : 0
+                        };
+
+
+            RecallPositionModel model = query.FirstOrDefault();
+
+
+            return model;
         }
 
 
@@ -196,6 +262,25 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 int count = 1;
                 foreach (var item in list)
                 {
+                    RecallPositionModel newOPM = CheckIfOTPPosIsOnTakeOver(item.Ident, item.Narocilnica);                                        
+
+                    if (newOPM != null)
+                    {
+                        Odpoklic oDB = context.Odpoklic.Where(o => o.OdpoklicID == newOPM.OdpoklicID).FirstOrDefault();
+
+                        if (oDB != null)
+                        {
+                            if (oDB.StatusID == 3 || oDB.StatusID == 4 || oDB.StatusID == 6)
+                            {
+                                item.StatusPozicije = Enums.StatusPozicijeOTP.O.ToString();
+                            }
+                            else if (oDB.StatusID == 1)
+                            {
+                                item.StatusPozicije = Enums.StatusPozicijeOTP.D.ToString();
+                            }                                
+                        }
+                    }
+
                     item.tempID = count;
                     count++;
                 }
@@ -361,6 +446,8 @@ namespace DatabaseWebService.DomainOTP.Concrete
                 int count = 1;
                 foreach (var item in list)
                 {
+
+
                     item.tempID = count;
                     count++;
                 }

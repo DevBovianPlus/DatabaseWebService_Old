@@ -43,6 +43,7 @@ namespace DatabaseWebService.ModelsOTP.Order
         public int OdpoklicID { get; set; }
         public int OdpoklicPozicijeID { get; set; }
         public string TipAplikacije { get; set; } // NOZ, PDO 
+        public string StatusPozicije { get; set; } // Status že Odpoklicano-Potrjeno - OP
         public int SortGledeNaTipApp { get; set; } // 0 - PDO + OC, 1 - PDO, 2 - samo tisti ki imajo OC, 3 - ostali
     }
 }

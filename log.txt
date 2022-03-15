@@ -15192,3 +15192,286 @@ Error Number:547,State:0,Class:16
 24/12/2021 10:42:34 SaveRecall2 : (RazlogOdobritveSistem) :
 24/12/2021 10:42:35 0
 24/12/2021 10:42:35 BURGO GROUP s.p.a.
+12/01/2022 13:51:07 GetListOfOrderNumber10
+12/01/2022 13:53:29 GetListOfOpenedOrderPositions for : MAKROMIKRO SKUPINA d.o.o.     
+12/01/2022 14:16:02 GetListOfOrderNumber10
+12/01/2022 14:16:18 GetListOfOpenedOrderPositions for : CARTIERA CAMA S.R.L.          
+12/01/2022 14:20:22 GetListOfOrderNumber10
+12/01/2022 14:20:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:22:57 GetListOfOrderNumber10
+12/01/2022 14:23:46 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:25:44 GetListOfOrderNumber10
+12/01/2022 14:25:52 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:26:13 GetListOfOrderNumber10
+12/01/2022 14:26:19 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:30:24 GetListOfOrderNumber10
+12/01/2022 14:30:31 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:31:29 GetListOfOrderNumber10
+12/01/2022 14:31:51 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:32:35 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+12/01/2022 14:32:35 SaveRecall-0 : (model.Content.Dobavitelj) :BURGO GROUP s.p.a.
+12/01/2022 14:32:35 SaveRecall-0 : (model.Content.DobaviteljID) :0
+12/01/2022 14:32:35 0
+12/01/2022 14:32:35 BURGO GROUP s.p.a.
+12/01/2022 14:32:35 0
+12/01/2022 14:32:35 BURGO GROUP s.p.a.
+12/01/2022 14:32:35 SaveRecall2 : (model.Content.OdpoklicID) :0
+12/01/2022 14:32:35 SaveRecall2 : (RazlogOdobritveSistem) :
+12/01/2022 14:32:36 0
+12/01/2022 14:32:36 BURGO GROUP s.p.a.
+12/01/2022 14:40:51 GetListOfOrderNumber10
+12/01/2022 14:40:58 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:41:53 GetListOfOrderNumber10
+12/01/2022 14:42:00 GetListOfOrderNumber10
+12/01/2022 14:42:45 GetListOfOrderNumber10
+12/01/2022 14:42:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+12/01/2022 14:49:49 GetListOfOrderNumber10
+12/01/2022 14:49:53 GetListOfOpenedOrderPositions for : CARTIERA FORNACI S.p.A.       
+12/01/2022 14:50:07 Št. trenutni: 0
+12/01/2022 14:52:02 Št. trenutni: 0
+12/01/2022 14:52:07 Št. trenutni: 0
+12/01/2022 14:52:08 Št. trenutni: 0
+12/01/2022 14:52:09 Št. trenutni: 0
+13/01/2022 08:52:44 GetListOfOrderNumber10
+13/01/2022 08:52:56 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+13/01/2022 08:54:37 GetListOfOrderNumber10
+13/01/2022 08:54:42 GetListOfOpenedOrderPositions for : BRANCHER                      
+13/01/2022 08:55:29 Št. trenutni: 0
+13/01/2022 08:57:18 Št. trenutni: 0
+13/01/2022 08:57:26 Št. trenutni: 0
+13/01/2022 08:57:27 Št. trenutni: 0
+13/01/2022 08:57:29 Št. trenutni: 0
+13/01/2022 08:58:36 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+13/01/2022 08:58:36 SaveRecall-0 : (model.Content.Dobavitelj) :BRANCHER
+13/01/2022 08:58:36 SaveRecall-0 : (model.Content.DobaviteljID) :0
+13/01/2022 08:58:36 0
+13/01/2022 08:58:36 BRANCHER
+13/01/2022 08:58:36 0
+13/01/2022 08:58:36 BRANCHER
+13/01/2022 08:58:36 SaveRecall2 : (model.Content.OdpoklicID) :0
+13/01/2022 08:58:36 SaveRecall2 : (RazlogOdobritveSistem) :
+13/01/2022 08:58:37 0
+13/01/2022 08:58:37 BRANCHER
+17/02/2022 07:32:06 Št. trenutni: 0
+17/02/2022 07:45:51 Št. trenutni: 0
+17/02/2022 07:47:07 Št. trenutni: 0
+17/02/2022 07:49:27 Št. trenutni: 0
+17/02/2022 07:51:27 Št. trenutni: 0
+17/02/2022 07:54:35 Št. trenutni: 7
+17/02/2022 07:55:36 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 07:55:36 SaveRecall-0 : (model.Content.Dobavitelj) :INNA d.o.o.
+17/02/2022 07:55:36 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 07:55:36 0
+17/02/2022 07:55:36 INNA d.o.o.
+17/02/2022 07:55:36 SaveRecall1 : (model.Content.OdpoklicID) :10202- Status : 1
+17/02/2022 07:55:36 SaveRecall1 : (model.Content.OdpoklicStevilka) :9480- Status : 1
+17/02/2022 07:55:36 0
+17/02/2022 07:55:36 INNA d.o.o.
+17/02/2022 07:55:42 Št. trenutni: 7
+17/02/2022 07:57:26 Št. trenutni: 10
+17/02/2022 07:58:07 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 07:58:07 SaveRecall-0 : (model.Content.Dobavitelj) :GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 07:58:07 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 07:58:07 0
+17/02/2022 07:58:07 GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 07:58:07 SaveRecall1 : (model.Content.OdpoklicID) :10164- Status : 1
+17/02/2022 07:58:07 SaveRecall1 : (model.Content.OdpoklicStevilka) :9442- Status : 1
+17/02/2022 07:58:07 0
+17/02/2022 07:58:07 GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 07:58:12 Št. trenutni: 10
+17/02/2022 07:58:27 Št. trenutni: 10
+17/02/2022 07:59:43 Št. trenutni: 10
+17/02/2022 07:59:44 Št. trenutni: 10
+17/02/2022 08:00:11 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 08:00:11 SaveRecall-0 : (model.Content.Dobavitelj) :GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 08:00:11 SaveRecall-0 : (model.Content.DobaviteljID) :11
+17/02/2022 08:00:11 11
+17/02/2022 08:00:11 GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 08:00:11 SaveRecall1 : (model.Content.OdpoklicID) :10164- Status : 1
+17/02/2022 08:00:11 SaveRecall1 : (model.Content.OdpoklicStevilka) :9442- Status : 1
+17/02/2022 08:00:11 11
+17/02/2022 08:00:11 GORIČANE TOVARNA PAPIRJA D.D.
+17/02/2022 08:01:00 Št. trenutni: 10
+17/02/2022 08:01:36 Št. trenutni: 0
+17/02/2022 08:03:37 Št. trenutni: 11
+17/02/2022 08:05:18 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 08:05:18 SaveRecall-0 : (model.Content.Dobavitelj) :SAPPI PAPIER HOLDING GMBH BE
+17/02/2022 08:05:18 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 08:05:18 0
+17/02/2022 08:05:18 SAPPI PAPIER HOLDING GMBH BE
+17/02/2022 08:05:18 SaveRecall1 : (model.Content.OdpoklicID) :10182- Status : 1
+17/02/2022 08:05:18 SaveRecall1 : (model.Content.OdpoklicStevilka) :9460- Status : 1
+17/02/2022 08:05:18 0
+17/02/2022 08:05:18 SAPPI PAPIER HOLDING GMBH BE
+17/02/2022 08:05:23 Št. trenutni: 11
+17/02/2022 08:14:29 Št. trenutni: 0
+17/02/2022 08:16:31 Št. trenutni: 0
+17/02/2022 08:17:01 Št. trenutni: 0
+17/02/2022 08:19:38 Št. trenutni: 6
+17/02/2022 08:22:20 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 6
+17/02/2022 08:22:20 SaveRecall-0 : (model.Content.Dobavitelj) :RADEČE PAPIR NOVA, d.o.o.
+17/02/2022 08:22:20 SaveRecall-0 : (model.Content.DobaviteljID) :4
+17/02/2022 08:22:20 4
+17/02/2022 08:22:20 RADEČE PAPIR NOVA, d.o.o.
+17/02/2022 08:22:20 SaveRecall1 : (model.Content.OdpoklicID) :10132- Status : 6
+17/02/2022 08:22:20 SaveRecall1 : (model.Content.OdpoklicStevilka) :9410- Status : 6
+17/02/2022 08:22:20 4
+17/02/2022 08:22:20 RADEČE PAPIR NOVA, d.o.o.
+17/02/2022 08:22:45 Št. trenutni: 6
+17/02/2022 08:51:10 Št. trenutni: 0
+17/02/2022 08:51:39 Št. trenutni: 0
+17/02/2022 08:52:12 Št. trenutni: 23
+17/02/2022 08:55:21 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 6
+17/02/2022 08:55:21 SaveRecall-0 : (model.Content.Dobavitelj) :RENO DE MEDICI s.p.a.
+17/02/2022 08:55:21 SaveRecall-0 : (model.Content.DobaviteljID) :59
+17/02/2022 08:55:21 59
+17/02/2022 08:55:21 RENO DE MEDICI s.p.a.
+17/02/2022 08:55:21 SaveRecall1 : (model.Content.OdpoklicID) :10116- Status : 6
+17/02/2022 08:55:21 SaveRecall1 : (model.Content.OdpoklicStevilka) :9394- Status : 6
+17/02/2022 08:55:21 59
+17/02/2022 08:55:21 RENO DE MEDICI s.p.a.
+17/02/2022 08:55:45 Št. trenutni: 23
+17/02/2022 09:09:42 GetListOfOrderNumber10
+17/02/2022 09:09:57 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 09:24:01 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 09:24:01 SaveRecall-0 : (model.Content.Dobavitelj) :AR METALLIZING S.R.L.
+17/02/2022 09:24:01 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 09:24:01 0
+17/02/2022 09:24:01 AR METALLIZING S.R.L.
+17/02/2022 09:24:01 0
+17/02/2022 09:24:01 AR METALLIZING S.R.L.
+17/02/2022 09:24:01 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/02/2022 09:24:01 SaveRecall2 : (RazlogOdobritveSistem) :
+17/02/2022 09:24:02 0
+17/02/2022 09:24:02 AR METALLIZING S.R.L.
+17/02/2022 09:28:21 Št. trenutni: 0
+17/02/2022 09:30:41 Št. trenutni: 0
+17/02/2022 09:31:05 Št. trenutni: 1
+17/02/2022 09:31:06 Št. trenutni: 1
+17/02/2022 09:31:07 Št. trenutni: 1
+17/02/2022 09:31:40 Št. trenutni: 1
+17/02/2022 09:32:02 Št. trenutni: 1
+17/02/2022 09:32:08 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 4
+17/02/2022 09:32:08 SaveRecall-0 : (model.Content.Dobavitelj) :AR METALLIZING S.R.L.
+17/02/2022 09:32:08 SaveRecall-0 : (model.Content.DobaviteljID) :21
+17/02/2022 09:32:08 21
+17/02/2022 09:32:08 AR METALLIZING S.R.L.
+17/02/2022 09:32:08 SaveRecall1 : (model.Content.OdpoklicID) :10220- Status : 4
+17/02/2022 09:32:08 SaveRecall1 : (model.Content.OdpoklicStevilka) :9498- Status : 4
+17/02/2022 09:32:08 21
+17/02/2022 09:32:08 AR METALLIZING S.R.L.
+17/02/2022 09:33:53 GetListOfOrderNumber10
+17/02/2022 09:34:00 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 09:34:40 Št. trenutni: 1
+17/02/2022 09:35:23 GetListOfOrderNumber10
+17/02/2022 09:35:27 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 09:42:06 GetListOfOrderNumber10
+17/02/2022 11:26:25 GetListOfOrderNumber10
+17/02/2022 11:26:30 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 11:26:54 GetListOfOrderNumber10
+17/02/2022 11:27:17 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 11:31:08 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 11:32:07 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 12:02:34 GetListOfOrderNumber10
+17/02/2022 12:04:07 GetListOfOrderNumber10
+17/02/2022 12:04:33 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 12:06:38 GetListOfOrderNumber10
+17/02/2022 12:06:55 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 12:07:15 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 12:08:15 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 12:12:03 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 12:13:54 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 12:27:31 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 13:40:21 GetListOfOrderNumber10
+17/02/2022 13:40:33 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 13:41:10 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 13:43:16 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 13:43:32 GetListOfOpenedOrderPositions for : BRANCHER                      
+17/02/2022 13:44:55 GetListOfOrderNumber10
+17/02/2022 13:45:20 Št. trenutni: 1
+17/02/2022 13:46:25 GetListOfOrderNumber10
+17/02/2022 13:46:34 GetListOfOpenedOrderPositions for : CARTIERA PIRINOLI S.C.        
+17/02/2022 13:49:29 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 13:52:32 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 13:54:47 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 13:54:52 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 13:55:28 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 13:55:33 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 13:56:08 GetListOfOrderNumber10
+17/02/2022 13:56:14 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 14:59:39 GetListOfOrderNumber10
+17/02/2022 14:59:41 GetListOfOrderNumber10
+17/02/2022 14:59:49 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 15:00:27 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:00:33 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 15:00:40 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:00:45 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 15:00:53 GetListOfOpenedOrderPositions for : BRANCHER                      
+17/02/2022 15:01:00 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:01:07 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 15:01:46 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:02:39 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 15:02:54 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:03:20 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 15:03:31 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:04:31 GetListOfOpenedOrderPositions for : BillerudKorsnas Finland Oy    
+17/02/2022 15:04:56 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:05:47 Št. trenutni: 0
+17/02/2022 15:07:35 Št. trenutni: 0
+17/02/2022 15:07:46 Št. trenutni: 0
+17/02/2022 15:07:46 Št. trenutni: 0
+17/02/2022 15:07:46 Št. trenutni: 0
+17/02/2022 15:08:47 Št. trenutni: 0
+17/02/2022 15:08:51 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 15:08:51 SaveRecall-0 : (model.Content.Dobavitelj) :ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:08:51 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 15:08:51 0
+17/02/2022 15:08:51 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:08:51 0
+17/02/2022 15:08:51 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:08:51 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/02/2022 15:08:51 SaveRecall2 : (RazlogOdobritveSistem) :
+17/02/2022 15:08:52 0
+17/02/2022 15:08:52 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:09:24 GetListOfOrderNumber10
+17/02/2022 15:09:40 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:19:32 GetListOfOrderNumber10
+17/02/2022 15:19:41 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:20:16 GetListOfOpenedOrderPositions for : AR METALLIZING S.R.L.         
+17/02/2022 15:22:50 GetListOfOrderNumber10
+17/02/2022 15:23:05 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:25:56 GetListOfOrderNumber10
+17/02/2022 15:26:03 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:29:44 GetListOfOrderNumber10
+17/02/2022 15:29:52 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:34:42 GetListOfOrderNumber10
+17/02/2022 15:34:54 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:36:19 GetListOfOpenedOrderPositions for : ARCTIC PAPER GRYCKSBO AB      
+17/02/2022 15:36:28 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:40:10 GetListOfOrderNumber10
+17/02/2022 15:40:17 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:41:38 GetListOfOrderNumber10
+17/02/2022 15:41:46 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:43:05 GetListOfOrderNumber10
+17/02/2022 15:43:15 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:50:37 SaveRecall : (model.Content.OdpoklicID) - Začetek! - Status : 1
+17/02/2022 15:50:37 SaveRecall-0 : (model.Content.Dobavitelj) :ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:50:37 SaveRecall-0 : (model.Content.DobaviteljID) :0
+17/02/2022 15:50:37 0
+17/02/2022 15:50:37 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:50:37 0
+17/02/2022 15:50:37 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:50:37 SaveRecall2 : (model.Content.OdpoklicID) :0
+17/02/2022 15:50:37 SaveRecall2 : (RazlogOdobritveSistem) :
+17/02/2022 15:50:38 0
+17/02/2022 15:50:38 ARCTIC PAPER KOSTRZYN S.A.
+17/02/2022 15:50:44 GetListOfOrderNumber10
+17/02/2022 15:50:54 GetListOfOpenedOrderPositions for : ARCTIC PAPER KOSTRZYN S.A.    
+17/02/2022 15:53:34 GetListOfOrderNumber10
+17/02/2022 15:53:41 GetListOfOpenedOrderPositions for : BRANCHER                      
+17/02/2022 15:53:59 GetListOfOpenedOrderPositions for : BURGO GROUP s.p.a.            
+17/02/2022 15:54:54 GetListOfOrderNumber10
+17/02/2022 15:55:12 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+17/02/2022 15:56:05 GetListOfOrderNumber10
+17/02/2022 15:56:15 GetListOfOpenedOrderPositions for : CARTIERE DEL POLESINE S.P.A.  
+08/03/2022 11:29:32 Št. trenutni: 7
